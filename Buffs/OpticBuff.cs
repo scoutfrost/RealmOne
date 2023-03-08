@@ -1,0 +1,35 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using RealmOne.Buffs;
+using RealmOne.Items;
+
+namespace RealmOne.Buffs
+{
+    public class OpticBuff : ModBuff
+    {
+        public override void SetStaticDefaults()
+
+
+        {
+            DisplayName.SetDefault("Midnight Hunter");
+            Description.SetDefault("Hunter and Nightowl effects, 5% increased crit");
+           
+
+        }
+
+
+        public override void Update(Player player, ref int buffIndex)
+        {
+
+            player.nightVision = true;
+            player.AddBuff(BuffID.Hunter, 60);
+            
+
+        }
+
+
+
+
+    }
+}
