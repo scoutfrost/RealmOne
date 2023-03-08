@@ -28,7 +28,7 @@ namespace RealmOne.Tiles
             AddMapEntry(new Color(90, 127, 78), name);
 
             DustType = DustID.Grass;
-            ItemDrop = ModContent.ItemType<Items.Placeables.EvoGrass>();
+            ItemDrop = ModContent.ItemType<Items.Placeables.EvoGrassItem>();
             
 
 
