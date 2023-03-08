@@ -9,7 +9,7 @@ using Terraria.GameContent;
 
 namespace RealmOne.Items.Placeables
 {
-    internal class EvoGrass : ModItem
+    internal class EvoGrassItem : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -33,7 +33,7 @@ namespace RealmOne.Items.Placeables
             Item.autoReuse = true;
 
 
-            Item.createTile = ModContent.TileType<Tiles.TestGrass>();
+            Item.createTile = ModContent.TileType<Tiles.EvoGrassTile>();
         }
     }
 }
