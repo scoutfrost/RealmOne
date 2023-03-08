@@ -1,0 +1,12 @@
+
+Mods: {
+	RealmOne: {
+		Common: {
+			BarkShield: Щит из коры
+
+			LocalizedTooltip: 'Вырезан из коры деревьев'
+
+			
+		}
+	}
+}

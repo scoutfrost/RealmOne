@@ -1,0 +1,11 @@
+
+Mods: {
+	RealmOne: {
+		GameTips: {
+			ExampleTip0: "The Archeologist is a wise but lost man, find him in snowbanks!"
+			ExampleTip1: "Cthulhu in Ohio"
+			ExampleTip2: "The soil feels moist and dire. Defeat Squirmo, the sludgy scavenger of the soil!"
+			DisabledExampleTip: "Ambabatakum."
+		}
+	}
+}
