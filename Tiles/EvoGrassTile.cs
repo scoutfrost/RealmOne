@@ -10,7 +10,7 @@ using Terraria.Audio;
 
 namespace RealmOne.Tiles
 {
-    internal class TestGrass : ModTile
+    internal class EvoGrassTile : ModTile
     {
         public override void SetStaticDefaults()
         {
