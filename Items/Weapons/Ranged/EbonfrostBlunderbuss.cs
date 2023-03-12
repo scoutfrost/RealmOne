@@ -34,8 +34,8 @@ namespace RealmOne.Items.Weapons.Ranged
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 58;
-            Item.useAnimation = 58;
+            Item.useTime = 60;
+            Item.useAnimation = 60;
             Item.useStyle = 5;
             Item.knockBack = 1f;
             Item.value = 30000;
