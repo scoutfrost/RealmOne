@@ -32,10 +32,10 @@ namespace RealmOne.Items.Weapons.Ranged
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 57;
-            Item.useAnimation = 57;
+            Item.useTime = 62;
+            Item.useAnimation = 62;
             Item.useStyle = 5;
-            Item.knockBack = 4f;
+            Item.knockBack = 2f;
             Item.value = 30000;
             Item.rare = 3;
             Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
