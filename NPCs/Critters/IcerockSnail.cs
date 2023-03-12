@@ -73,6 +73,11 @@ namespace RealmOne.NPCs.Critters
 
             }
         }
+	  public override void AI()
+        {
+            Lighting.AddLight(NPC.position, r: 0f, g: 0.2f, b: 1f);
+        }
+	
 
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
