@@ -28,7 +28,7 @@ namespace RealmOne.Items.Weapons.Ranged
 
         public override void SetDefaults()
         {
-            Item.damage = 17;
+            Item.damage = 16;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
