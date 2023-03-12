@@ -29,14 +29,14 @@ namespace RealmOne.Items.Weapons.Ranged
 
         public override void SetDefaults()
         {
-            Item.damage = 20;
+            Item.damage = 19;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 59;
-            Item.useAnimation = 59;
+            Item.useTime = 60;
+            Item.useAnimation = 60;
             Item.useStyle = 5;
-            Item.knockBack = 4f;
+            Item.knockBack = 2f;
             Item.value = 30000;
             Item.rare = 3;
             Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
