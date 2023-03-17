@@ -11,7 +11,7 @@ namespace RealmOne.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Rusty Ammo Stock"); 
-            Tooltip.SetDefault("35% chance to not consume ammo"
+            Tooltip.SetDefault("30% chance to not consume ammo"
                 + "\nDue to rust, you are bleeding"
                 + "\n10 second affect after unequipped");
 
