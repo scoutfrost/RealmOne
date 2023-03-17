@@ -9,7 +9,6 @@ using Terraria.ID;
 using RealmOne;
 using RealmOne.Projectiles;
 using Terraria.Localization;
-using CsvHelper.TypeConversion;
 using System.Drawing;
 using Microsoft.Xna.Framework;
 using RealmOne.Items.Misc;
