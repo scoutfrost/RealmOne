@@ -38,6 +38,10 @@ namespace RealmOne.RealmPlayer
         int timer1 = 0;
         public bool BombScreenshake = false;
         bool makeTimerWork1 = false;
+        
+          int timerworm = 0;
+        public bool WormScreenshake = false;
+        bool WormTimerWork = false;
         public override void ModifyScreenPosition()
         {
             //screenshake
@@ -85,6 +89,27 @@ namespace RealmOne.RealmPlayer
                 }
             }
         
+            if (WormScreenshake == true)
+            {
+                WormTimerWork = true;
+            }
+            if (WormTimerWork == true)
+            {
+                int powerworm = 22;
+
+                Vector2 randomworm = new(Main.rand.Next(-powerworm, powerworm), Main.rand.Next(-powerworm, powerworm));
+
+               timerworm++;
+                if (timerworm > 0)
+                {
+                    Main.screenPosition += randomworm;
+                }
+                if (timerworm >= 21)
+                {
+                    timerworm = 0;
+                    WormTimerWork = false;
+                }
+            }
 
 
 
@@ -106,6 +131,11 @@ namespace RealmOne.RealmPlayer
                 BombScreenshake = false;
             }
             
+             if (!makeTimerWork)
+            {
+                WormScreenshake = false;
+            }
+            
         }
     }
     public class RealmModPlayer: ModPlayer
@@ -123,7 +153,7 @@ namespace RealmOne.RealmPlayer
         {
             if (Rusty == true)
             {
-                return Main.rand.NextFloat() >= 0.35f;
+                return Main.rand.NextFloat() >= 0.30f;
             }
             return base.CanConsumeAmmo(weapon, ammo);
 
