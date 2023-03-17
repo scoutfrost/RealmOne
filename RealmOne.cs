@@ -53,7 +53,7 @@ namespace RealmOne
                     "AddBoss",
                     this,
                     "Squirmo",
-                    ModContent.NPCType<MegaSquirmHead>(),
+                    ModContent.NPCType<SquirmoHead>(),
                     0.7f,
                     (Func<bool>)(() => DownedBossSystem.downedSquirmo),
                     (Func<bool>)(() => true),
