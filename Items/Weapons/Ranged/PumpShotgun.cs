@@ -9,6 +9,7 @@ using RealmOne.Projectiles.HeldProj;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 using RealmOne.Projectiles.Bullet;
+using RealmOne.RealmPlayer;
 
 namespace RealmOne.Items.Weapons.Ranged
 {
@@ -33,24 +34,28 @@ namespace RealmOne.Items.Weapons.Ranged
             Item.DamageType = DamageClass.Ranged;
             Item.width = 34;
             Item.height = 25;
-            Item.useTime = 60;
-            Item.useAnimation = 60;
+            Item.useTime = 40;
+            Item.useAnimation = 40;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.knockBack = 6;
+            Item.knockBack = 4;
             Item.rare = 3;
             Item.autoReuse = true;
             Item.shootSpeed = 87f;
             Item.shoot = ModContent.ProjectileType<VintageBulletProjectile>();
-            Item.crit = 6;
+            Item.crit = 4;
             Item.noMelee = true; // The projectile will do the damage and not the item
-            Item.value = Item.buyPrice(silver: 3);
+            Item.value = Item.buyPrice(gold: 8, silver: 3);
             //   Item.noUseGraphic = true;
             // Item.channel = true;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_PumpShotgun");
-            Item.reuseDelay = 40;
+            Item.reuseDelay = 20;
             Item.useAmmo = AmmoID.Bullet;
         }
-
+        public override bool? UseItem(Player player)
+        {
+            player.GetModPlayer<Screenshake>().SmallScreenshake = true;
+            return true;
+        }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 
@@ -58,14 +63,23 @@ namespace RealmOne.Items.Weapons.Ranged
             if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
                 position += muzzleOffset;
             float numberProjectiles = 3 + Main.rand.Next(2); // 3, 4, or 5 shots
-            float rotation = MathHelper.ToRadians(5);
+            float rotation = MathHelper.ToRadians(4);
+            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("TommyGunPellets").Type, 1f);
+
             position += Vector2.Normalize(velocity) * 28f;
             for (int i = 0; i < numberProjectiles; i++)
             {
                 Vector2 perturbedSpeed = velocity.RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .2f; // Watch out for dividing by 0 if there is only 1 projectile.
                 Projectile.NewProjectile(source, position, perturbedSpeed, ModContent.ProjectileType<VintageBulletProjectile>(), damage, knockback, player.whoAmI);
             }
-
+            for (int d = 0; d < 40; d++)
+            {
+              
+                Dust.NewDust(player.position, player.width, player.height, DustID.Smoke, 0f, 0f, 150, default, 1.5f);
+                
+                Dust.NewDust(player.position, player.width, player.height, DustID.Torch, 0f, 0f, 150, default, 1.5f);
+                
+            }
             return false;
         }
 
@@ -81,7 +95,7 @@ namespace RealmOne.Items.Weapons.Ranged
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();
 
-
+                
 
             Recipe recipe1 = CreateRecipe();
             recipe1.AddIngredient(ItemID.Wood, 25);
@@ -95,7 +109,6 @@ namespace RealmOne.Items.Weapons.Ranged
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "", "");
 
             line = new TooltipLine(Mod, "PumpShotgun", "'Can't Double Pump with this!'")
