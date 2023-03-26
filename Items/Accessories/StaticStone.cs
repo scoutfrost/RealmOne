@@ -17,7 +17,7 @@ namespace RealmOne.Items.Accessories
         {
             DisplayName.SetDefault("Static Stone"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Increases the effectiveness of the Electrified buff"
-                + "\nFull immune to the Electrified debuff"
+                + "\nFull immunity to the Electrified debuff"
                 + "\nBuffs E-Weapons");
 
 
@@ -26,7 +26,6 @@ namespace RealmOne.Items.Accessories
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "", "");
 
             line = new TooltipLine(Mod, "StaticStone", "'Portable Electricity!'")
@@ -36,7 +35,6 @@ namespace RealmOne.Items.Accessories
             };
             tooltips.Add(line);
 
-            // Here we give the item name a rainbow effect.
 
         }
         public override void SetDefaults()
@@ -64,14 +62,14 @@ namespace RealmOne.Items.Accessories
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(Mod, "ImpactTech", 6);
+                        recipe.AddIngredient(ItemID.StoneBlock, 6);
+
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
         }
     }
 }
-//Tooltip.SetDefault("How are you feeling today?"
-//  + $"\n[c/FF0000:Colors ][c/00FF00:are ][c/0000FF:fun ]and so are items: [i:{Item.type}][i:{ModContent.ItemType<EmptyLocket>()}"
-//    + $"][i/s123:{ItemID.Ectoplasm}]");----tm
+
 
 
