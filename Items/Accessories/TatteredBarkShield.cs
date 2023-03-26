@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-
+using RealmOne.Buffs.Debuffs;
 
 namespace RealmOne.Items.Accessories
 {
@@ -12,7 +12,8 @@ namespace RealmOne.Items.Accessories
         {
             DisplayName.SetDefault("Tattered Bark Shield"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("'Nothing but skin penetrating wooden splinters on this shield'"
-                + "\nWhen hit by an enemy, they take damage and get inflicted by 'Splintered' which damages the enemy for 2 damage forever until they die"
+                + "\nWhen hit by an enemy, they take 20 damage and get inflicted by 'Splinted"
+                +"\nWhen an enemy is inflicted by Splinted, the enemy rapidly loses life for a short duration"
                 + "\nAll weapons inflict Splintered while equipping the shield");
 
 
@@ -29,14 +30,8 @@ namespace RealmOne.Items.Accessories
             Item.value = 10000;
             Item.rare = 1;
             Item.accessory = true;
+            Item.defense += 2;
 
-
-
-        }
-
-        public override void UpdateAccessory(Player player, bool hideVisual)
-        {
-            player.statDefense += 2;
 
         }
         public override void AddRecipes()
@@ -49,10 +44,39 @@ namespace RealmOne.Items.Accessories
 
         }
 
-
-
-
-
-
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            player.GetModPlayer<BarkShieldPlayer>().splinteredShield = true;
+        }
     }
+
+    public class BarkShieldPlayer : ModPlayer
+    {
+        public bool splinteredShield = false;
+        
+        public override void OnHitByNPC(NPC npc, int damage, bool crit)
+        {
+            if (splinteredShield)
+            {
+                npc.StrikeNPC(Damage: 20, 0f, 0, false, false, false);
+                npc.AddBuff(ModContent.BuffType<Splintered>(), 60 * 60 * 24 * 365); // Inflict the 'Splintered' debuff for 1 year (60 seconds * 60 minutes * 24 hours * 365 days)
+            }
+        }
+    }
+   
 }
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+    
