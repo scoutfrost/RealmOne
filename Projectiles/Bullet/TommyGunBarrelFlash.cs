@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿    using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,32 +30,30 @@ namespace RealmOne.Projectiles.Bullet
             Projectile.damage = 0;
             Projectile.height = 2;
             Projectile.DamageType = DamageClass.Ranged;
-            Projectile.timeLeft = 5;
+            Projectile.timeLeft = 4;
             Projectile.friendly = false;
+            Projectile.aiStyle = 0;
+            Projectile.scale = 0.9f;
+            Projectile.alpha = 255;
         }
 
         public override void AI()
         {
+            
             Player player = Main.player[Projectile.owner];
 
-            Lighting.AddLight(Projectile.Center, Color.Orange.ToVector3() * 0.4f);
-            Projectile.Center = Owner.Center + flashoffset;
+            Lighting.AddLight(Projectile.Center, Color.Orange.ToVector3() * 0.8f);
             Projectile.rotation = Projectile.ai[0];
             if (!FullyUsed)
             {
                 FullyUsed = true;
                 flashoffset = Projectile.Center - Owner.Center;
             }
+            //     Projectile.rotation = player.DirectionTo(Main.MouseWorld).ToRotation;
+            Projectile.rotation = player.DirectionTo(Main.MouseWorld).ToRotation();
 
 
-
-            float offset = 10;
-
-            Projectile.spriteDirection = Projectile.direction;
-
-
-            Projectile.Center = player.Center + Projectile.rotation.ToRotationVector2() * offset;
-
+            Projectile.Center = Owner.Center + flashoffset;
         }
 
         public override bool PreDraw(ref Color lightColor)
