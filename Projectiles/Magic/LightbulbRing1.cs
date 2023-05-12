@@ -33,8 +33,8 @@ namespace RealmOne.Projectiles.Magic
 
         public override void SetDefaults()
         {
-            Projectile.width = 180;
-            Projectile.height = 180;
+            Projectile.width = 260;
+            Projectile.height = 260;
 
             Projectile.aiStyle = 9;
             Projectile.DamageType = DamageClass.Magic;
@@ -43,23 +43,26 @@ namespace RealmOne.Projectiles.Magic
             Projectile.ignoreWater = true;
             Projectile.light = 3.5f;
             Projectile.tileCollide = false;
-            Projectile.timeLeft = 200;
-
+            Projectile.timeLeft = 100;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
             Projectile.penetrate = 5;
             Projectile.stepSpeed = 1f;
             Projectile.alpha = 255;
-            Projectile.scale = 2f;
+            Projectile.scale = 1f;
+            
+           
         }
 
 
         public override void AI() // this may add flamelash
         {
-            AIType = ProjectileID.Flamelash;
-            Lighting.AddLight(Projectile.position, 0.2f, 0.2f, 0.2f);
+         //   AIType = ProjectileID.Flamelash;
+            Lighting.AddLight(Projectile.position, 3f, 3f, 1f);
             Lighting.Brightness(2, 2);
 
 
-            Projectile.localAI[0] += 1f;
+          //  Projectile.localAI[0] += 1f;
         }
 
         public override void Load()
@@ -78,7 +81,7 @@ namespace RealmOne.Projectiles.Magic
             Color drawColor = Lighting.GetColor((int)Projectile.Center.X / 16, (int)(Projectile.Center.Y / 16));
 
             Main.EntitySpriteDraw(LightbulbRing.Value, Projectile.Center - Main.screenPosition,
-                          LightbulbRing.Value.Bounds, Color.LightYellow, Projectile.rotation,
+                          LightbulbRing.Value.Bounds, Color.NavajoWhite, Projectile.rotation,
                           LightbulbRing.Size() * 0.5f, 1f, SpriteEffects.None, 0);
             return true;
         }
