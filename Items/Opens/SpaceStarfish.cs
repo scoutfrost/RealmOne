@@ -11,10 +11,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using RealmOne.Items.Accessories;
 using RealmOne.Items.Weapons.Melee;
-using RealmOne.Items.Weapons.Ranged;
-using RealmOne.Items.Weapons.Magic;
 using RealmOne.Items.Weapons;
 using RealmOne.Items.Weapons.Demolitionist;
+using RealmOne.Items.Weapons.PreHM.Crossbows;
+using RealmOne.Items.Weapons.PreHM.Forest;
 
 namespace RealmOne.Items.Opens
 {
@@ -28,7 +28,7 @@ namespace RealmOne.Items.Opens
                 + "\nBelow are the Weapons you get from it!(You also get other necessities!)"
 
 
-             + $"\n[i:{ModContent.ItemType<DualWieldCrossbows>()}][i:{ModContent.ItemType<DumLightbulb>()}]"
+             + $"\n[i:{ModContent.ItemType<DualWieldCrossbows>()}][i:{ModContent.ItemType<Twigbulb>()}]"
                           + $"\n[i:{ModContent.ItemType<ShatteredGemBlade>()}][i:{ModContent.ItemType<EmptyLocket>()}]");
 
         }
@@ -50,12 +50,11 @@ namespace RealmOne.Items.Opens
 
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
-            itemLoot.Add(ItemDropRule.Common(ItemID.WoodenArrow, 1, 100, 100));
+            itemLoot.Add(ItemDropRule.Common(ItemID.WoodenArrow, 1, 50, 50));
             itemLoot.Add(ItemDropRule.Common(ItemID.Aglet, 1, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.BlandWhip, 1, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ItemID.ManaCrystal, 1, 2, 2));
             itemLoot.Add(ItemDropRule.Common(ItemID.LifeCrystal, 1, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 20, 20));
+            itemLoot.Add(ItemDropRule.Common(ItemID.RopeCoil, 1, 15, 15));
             itemLoot.Add(ItemDropRule.Common(ItemID.ShinePotion, 1, 5, 5));
             itemLoot.Add(ItemDropRule.Common(ItemID.Torch, 1, 50, 50));
             itemLoot.Add(ItemDropRule.Common(ItemID.MiningPotion, 1, 5, 5));
@@ -63,7 +62,7 @@ namespace RealmOne.Items.Opens
             itemLoot.Add(ItemDropRule.Common(ItemID.Bomb, 1, 15, 15));
             itemLoot.Add(ItemDropRule.Common(ItemID.SpelunkerPotion, 1, 5, 5));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShatteredGemBlade>(), 1, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DumLightbulb>(), 1, 1, 1));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Twigbulb>(), 1, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DualWieldCrossbows>(), 1, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EmptyLocket>(), 1, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Food.SalmonAvoSushi>(), 1, 1, 1));
@@ -136,7 +135,7 @@ namespace RealmOne.Items.Opens
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "", "");
 
-            line = new TooltipLine(Mod, "SpaceStarfish", "'Wet, cold and has a distinct and otherworldly touch to it.'")
+            line = new TooltipLine(Mod, "SpaceStarfish", "'Wet and cold, it also has a distinct and otherworldly touch to it.'")
             {
                 OverrideColor = new Color(107, 234, 186)
 
