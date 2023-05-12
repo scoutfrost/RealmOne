@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Common.Systems;
+using RealmOne.Projectiles.Magic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -9,56 +10,55 @@ using Terraria.ModLoader;
 namespace RealmOne.Projectiles.Sword
 {
 
-    public class ShatteredGemBladeProj2 : ModProjectile
+    public class UnstableWireBladeProj : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Shattered Gem Blade Alt");
-            Main.projFrames[Projectile.type] = 9;
+            DisplayName.SetDefault("Wireblade");
+            Main.projFrames[Projectile.type] = 4;
 
+            ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true;
         }
 
         public override void SetDefaults()
         {
             Projectile.width = 120;
-            Projectile.height = 100;
+            Projectile.height = 70;
 
             Projectile.DamageType = DamageClass.Melee;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
-            Projectile.timeLeft = 70;
+            Projectile.timeLeft = 24;
             Projectile.light = 1;
-            Projectile.penetrate = 2;
+            Projectile.penetrate = -1;
             Projectile.extraUpdates = 1;
             Projectile.scale = 1.5f;
-        }
+            }
 
         public override void AI()
         {
-            if (++Projectile.frameCounter >= 8f)//the amount of ticks the game spends on each frame
+            Player player = Main.player[Projectile.owner];
+
+
+            if (++Projectile.frameCounter >= 6f)//the amount of ticks the game spends on each frame
             {
                 Projectile.frameCounter = 0;
 
                 if (++Projectile.frame >= Main.projFrames[Projectile.type])
                     Projectile.frame = 0;
             }
-            Projectile.aiStyle = 0;
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Electric, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f, Scale: 0.6f, Alpha: 120) ;   //spawns dust behind it, this is a spectral light blue dust
 
-            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.LastPrism, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f, Scale: 1f);   //spawns dust behind it, this is a spectral light blue dust
-            Player player = Main.player[Projectile.owner];
-            Vector2 ownerMountedCenter = player.RotatedRelativePoint(player.MountedCenter, true);
+            Vector2 swingangle = new Vector2(Projectile.ai[0], Projectile.ai[1]);
+            Projectile.rotation = swingangle.ToRotation();
+            Projectile.position = player.Center + swingangle - new Vector2(Projectile.width / 2, Projectile.height / 2);
 
-            Projectile.direction = player.direction;
-            player.heldProj = Projectile.whoAmI;
-            Projectile.Center = ownerMountedCenter + new Vector2(40, 0) * player.direction;
-            player.ChangeDir(Projectile.direction);
-            Projectile.spriteDirection = Projectile.direction;
-
-
+         
         }
-
+       
+      
         public override bool PreDraw(ref Color lightColor)
         {
             Vector2 drawPosition = Projectile.Center;
@@ -77,8 +77,8 @@ namespace RealmOne.Projectiles.Sword
 
             Vector2 origin = sourceRectangle.Size() / 2f;
 
-            float offsetX = 43;
-            origin.X = Projectile.spriteDirection == 1 ? sourceRectangle.Width - offsetX : offsetX;
+          //  float offsetX = 43;
+         //   origin.X = Projectile.spriteDirection == 1 ? sourceRectangle.Width - offsetX : offsetX;
 
             //float offsetY = 40;
             //origin.Y = (float)(Projectile.spriteDirection == 1 ? sourceRectangle.Height - offsetY : offsetY);
@@ -89,14 +89,8 @@ namespace RealmOne.Projectiles.Sword
                 sourceRectangle, drawColor, Projectile.rotation, origin, Projectile.scale, spriteEffects, 0);
 
             return false;
-
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            target.AddBuff(BuffID.WitheredArmor, 180);
-            SoundEngine.PlaySound(rorAudio.GemBladeAltSwing);
-
-        }
+      
     }
 
 

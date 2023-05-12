@@ -22,14 +22,14 @@ namespace RealmOne.Projectiles.Sword
         public override void SetDefaults()
         {
             Projectile.width = 130;
-            Projectile.height = 50;
+            Projectile.height = 70;
 
             Projectile.DamageType = DamageClass.Melee;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
-            Projectile.timeLeft = 24;
+            Projectile.timeLeft = 26;
             Projectile.light = 1;
             Projectile.penetrate = 2;
             Projectile.extraUpdates = 1;
@@ -89,11 +89,7 @@ namespace RealmOne.Projectiles.Sword
 
             return false;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            target.AddBuff(BuffID.WitheredArmor, 180);
-
-        }
+      
     }
 
 
