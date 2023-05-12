@@ -8,6 +8,7 @@ using static Terraria.ModLoader.ModContent;
 using RealmOne.Common.Systems;
 using Terraria.Graphics.Shaders;
 using RealmOne.Projectiles.Magic;
+using RealmOne.Projectiles.Summoner;
 
 namespace RealmOne.Projectiles.HeldProj
 {

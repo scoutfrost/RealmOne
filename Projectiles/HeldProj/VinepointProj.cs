@@ -9,21 +9,32 @@ namespace RealmOne.Projectiles.HeldProj;
 
 public class VinepointProj : ModProjectile
 {
-    protected virtual float HoldoutRangeMin => 26f;
-    protected virtual float HoldoutRangeMax => 108f;
+    protected virtual float HoldoutRangeMin => 10f;
+    protected virtual float HoldoutRangeMax => 90f;
 
     public override void SetStaticDefaults()
     {
-        DisplayName.SetDefault("Vinepoint");
+        DisplayName.SetDefault("Bone Spine");
+        ProjectileID.Sets.TrailCacheLength[Type] = 4;
+        ProjectileID.Sets.TrailingMode[Type] = 0;
     }
 
     public override void SetDefaults()
     {
         Projectile.CloneDefaults(ProjectileID.Spear);
     }
+    int Speartimer = 10;
 
     public override bool PreAI()
     {
+       
+        for (int i = 0; i < 2; ++i)
+        {
+            int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Plantera_Green, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f);
+            Main.dust[dust].noGravity = true;
+            Main.dust[dust].velocity *= 0.4f;
+            Main.dust[dust].scale = 1f;
+        }
         Player player = Main.player[Projectile.owner];
         int duration = player.itemAnimationMax;
 
@@ -33,7 +44,7 @@ public class VinepointProj : ModProjectile
             Projectile.timeLeft = duration;
 
         Projectile.velocity = Vector2.Normalize(Projectile.velocity);
-        float halfDuration = duration * 0.5f;
+        float halfDuration = duration * 0.4f;
         float progress;
 
 
@@ -52,14 +63,7 @@ public class VinepointProj : ModProjectile
 
             Projectile.rotation += MathHelper.ToRadians(135f);
 
-        if (!Main.dedServ)
-        {
-            if (Main.rand.NextBool(3))
-                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.JungleSpore, Projectile.velocity.X * 1f, Projectile.velocity.Y * 1f, Alpha: 128, Scale: 1f);
-
-            if (Main.rand.NextBool(4))
-                Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Grass, Alpha: 128, Scale: 0.3f);
-        }
+        
 
         return false;
     }

@@ -5,6 +5,11 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.Audio;
 using static Terraria.ModLoader.ModContent;
+using System;
+using RealmOne.Projectiles.Magic;
+using RealmOne.Projectiles.Other;
+using System.Reflection.Metadata;
+using static Terraria.ModLoader.PlayerDrawLayer;
 
 namespace RealmOne.Projectiles.HeldProj
 {
@@ -32,20 +37,29 @@ namespace RealmOne.Projectiles.HeldProj
 
         public override void SetDefaults()
         {
-            Projectile.extraUpdates = 0;
-            Projectile.width = 16;
-            Projectile.height = 16;
-            // aiStyle 99 is used for all yoyos, and is Extremely suggested, as yoyo are extremely difficult without them
-            Projectile.aiStyle = 99;
-            Projectile.friendly = true;
-            Projectile.penetrate = -1;
-            Projectile.DamageType = DamageClass.Melee;
-            Projectile.scale = 1f;
-
+            Projectile.CloneDefaults(ProjectileID.Valor);
+            Projectile.damage = 16;
+            Projectile.extraUpdates = 1;
+            AIType = ProjectileID.Valor;
 
         }
 
+        public override void AI()
+        {
+            Projectile.frameCounter++;
+            if (Projectile.frameCounter >= 140)
+            {
+                float angle = Main.rand.NextFloat(MathHelper.PiOver4, -Microsoft.Xna.Framework.MathHelper.Pi - MathHelper.PiOver2);
+                Vector2 PositionArea = Vector2.Normalize(new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle))) * 35f;
 
+                Vector2 velocity = Vector2.Normalize(Main.MouseWorld - PositionArea) * 1f;
+
+
+                Projectile.frameCounter = 0;
+                int proj = Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center.X, Projectile.Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<MiniSand>(), Projectile.damage, Projectile.owner, 0, 0f);
+                
+            }
+        }
         public override void PostAI()
         {
             if (Main.rand.NextBool())

@@ -15,8 +15,8 @@ namespace RealmOne.Projectiles.HeldProj
     public class KnopperBall : ModProjectile
     {
 
-        private const string ChainTexturePath = "RealmOne/Projectiles/KnopperChainProj"; // The folder path to the flail chain sprite
-        private const string ChainTextureExtraPath = "RealmOne/Projectiles/KnopperChain2Proj";  // This texture and related code is optional and used for a unique effe
+        private const string ChainTexturePath = "RealmOne/Projectiles/HeldProj/KnopperChainProj"; // The folder path to the flail chain sprite
+        private const string ChainTextureExtraPath = "RealmOne/Projectiles/HeldProj/KnopperChain2Proj";  // This texture and related code is optional and used for a unique effe
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Knopper Ball");
