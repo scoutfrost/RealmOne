@@ -31,6 +31,8 @@ namespace RealmOne.Projectiles.Arrow
             Projectile.penetrate = 3;
             Projectile.timeLeft = 320;
             AIType = ProjectileID.DD2BallistraProj;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
         public override void Kill(int timeleft)
         {

@@ -28,20 +28,28 @@ namespace RealmOne.Projectiles.Arrow
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
-            Projectile.penetrate = -2;
-            Projectile.timeLeft = 320;
+            Projectile.penetrate = 1;
+            
+            Projectile.timeLeft = 380;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;    
             Projectile.CloneDefaults(ProjectileID.WoodenArrowFriendly);
             AIType = ProjectileID.WoodenArrowFriendly;
         }
         public override void Kill(int timeleft)
         {
             for (var i = 0; i < 6; i++)
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.WoodFurniture, 0f, 0f, 0, default, 1.5f);
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.WoodFurniture, 0f, 0f, 0, default, 0.6f);
             Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             SoundEngine.PlaySound(rorAudio.SFX_CrossbowImpact);
 
         }
+        public override void AI()
+        {
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.WoodFurniture, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.4f, Scale: 0.6f);   //spawns dust behind it, this is a spectral light blue dust
+            
 
+        }
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 
         {
