@@ -105,14 +105,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
             return player.ownedProjectileCounts[Item.shoot] < 5;
 
         }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(Mod, "ScavengerSteel", 6);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-
-        }
+        
         public override Vector2? HoldoutOffset()
         {
             Vector2 offset = new Vector2(6, 0);

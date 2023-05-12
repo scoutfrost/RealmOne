@@ -101,11 +101,11 @@ namespace RealmOne.Items.Weapons.Demolitionist
         {
             Recipe recipe = CreateRecipe(50);
             recipe.AddIngredient(ItemID.CopperBar, 12);
-            recipe.AddIngredient(ItemID.Grenade, 50);
+            recipe.AddIngredient(ItemID.Grenade, 5);
 
             recipe.AddRecipeGroup("IronBar", 8);
 
-            recipe.AddTile(TileID.HeavyWorkBench);
+            recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
         }

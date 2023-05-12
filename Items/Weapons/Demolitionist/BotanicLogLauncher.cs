@@ -101,19 +101,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
         }
 
 
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.MudBlock, 25);
-            recipe.AddIngredient(ItemID.Acorn, 20);
-
-            recipe.AddIngredient(ItemID.Wood, 50);
-            recipe.AddIngredient(ItemID.GrassSeeds, 10);
-            recipe.AddIngredient(Mod, "GoopyGrass", 12);
-
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-        }
+     
 
 
     }

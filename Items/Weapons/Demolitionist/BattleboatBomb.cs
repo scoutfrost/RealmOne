@@ -117,11 +117,10 @@ namespace RealmOne.Items.Weapons.Demolitionist
         {
             CreateRecipe()
             .AddIngredient(ItemID.Bomb, 50)
-           .AddIngredient(Mod, "GoopyGrass", 7)
             .AddIngredient(ItemID.ExplosivePowder, 25)
             .AddIngredient(ItemID.Cannonball, 5)
             .AddIngredient(ItemID.Fireblossom, 8)
-            .AddTile(TileID.Mythril)
+            .AddTile(TileID.MythrilAnvil)
             .Register();
 
         }
