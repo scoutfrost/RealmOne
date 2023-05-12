@@ -23,9 +23,68 @@ using Terraria.ModLoader.IO;
 using Steamworks;
 using RealmOne.Buffs;
 using RealmOne.Items.Opens;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Core;
 
 namespace RealmOne.RealmPlayer
 {
+
+
+
+
+        public class Scrolly : ModPlayer
+        {
+            public bool ShowScroll = false;
+
+            public override void PostUpdate()
+            {
+                if (ShowScroll == true)
+                {
+                    var target = Main.LocalPlayer;
+
+                }
+
+                base.PostUpdate();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+    //ALL THIS CODE UP TO THE # IS SPIRIT MOD'S GITHUB CODE, ALL CREDIT GOES TO THEM.
+    public class ItemGlowy : ModPlayer
+    {
+
+        internal new static void Unload() => ItemGlowMask.Clear();
+
+        public static void AddItemGlowMask(int itemType, string texturePath) => ItemGlowMask[itemType] = ModContent.Request<Texture2D>(texturePath, ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+        internal static readonly Dictionary<int, Texture2D> ItemGlowMask = new Dictionary<int, Texture2D>();
+        public int TexturesDefaults = 0;
+    }
+
+    public class GlowMaskItemLayer : PlayerDrawLayer
+    {
+        public override Position GetDefaultPosition() => new BeforeParent(PlayerDrawLayers.ArmOverItem);
+
+        protected override void Draw(ref PlayerDrawSet drawInfo)
+        {
+            Item item = drawInfo.drawPlayer.HeldItem;
+
+            if (item.type >= ItemID.Count && ItemGlowy.ItemGlowMask.TryGetValue(item.type, out Texture2D textureItem) && (drawInfo.drawPlayer.itemTime > 0 || item.useStyle != ItemUseStyleID.None)) //Held ItemType
+                GlowMaskSystem.DrawItemGlowMask(textureItem, drawInfo);
+        }
+    }
+//#
+
+
     public class Screenshake : ModPlayer
     {
         int timer = 0;
@@ -37,10 +96,18 @@ namespace RealmOne.RealmPlayer
         int timer1 = 0;
         public bool BombScreenshake = false;
         bool makeTimerWork1 = false;
-        
-          int timerworm = 0;
+
+
+        int timerworm = 0;
         public bool WormScreenshake = false;
         bool WormTimerWork = false;
+
+
+
+        int LongShakeTimer = 0;
+        public bool LongShake = false;
+        bool LongShakeWork= false;
+
         public override void ModifyScreenPosition()
         {
             //screenshake
@@ -50,7 +117,7 @@ namespace RealmOne.RealmPlayer
             }
             if (makeTimerWork == true)
             {
-                int power = 7;
+                int power = 6;
 
                 Vector2 random = new(Main.rand.Next(-power, power), Main.rand.Next(-power, power));
 
@@ -65,6 +132,8 @@ namespace RealmOne.RealmPlayer
                     makeTimerWork = false;
                 }
             }
+
+
 
             if (BombScreenshake == true)
             {
@@ -87,7 +156,7 @@ namespace RealmOne.RealmPlayer
                     makeTimerWork1 = false;
                 }
             }
-        
+
             if (WormScreenshake == true)
             {
                 WormTimerWork = true;
@@ -110,31 +179,55 @@ namespace RealmOne.RealmPlayer
                 }
             }
 
+            if (LongShake == true)
+            {
+                LongShakeWork = true;
+            }
+            if (LongShakeWork == true)
+            {
+                int longpower =11;
+
+                Vector2 randomlong = new(Main.rand.Next(-longpower, longpower), Main.rand.Next(-longpower, longpower));
+
+                LongShakeTimer++;
+                if (LongShakeTimer > 0)
+                {
+                    Main.screenPosition += randomlong;
+                }
+                if (LongShakeTimer >= 320)
+                {
+                    LongShakeTimer = 0;
+                    LongShakeWork = false;
+                }
+            }
 
 
-    }
+        }
 
 
         
             //screenshake
            
-        public override void ResetEffects()
-        {
-            if (!makeTimerWork)
+            public override void ResetEffects()
             {
-                SmallScreenshake = false;
-            }
+                if (!makeTimerWork)
+                {
+                    SmallScreenshake = false;
+                }
 
             if (!makeTimerWork)
             {
                 BombScreenshake = false;
             }
-            
-             if (!makeTimerWork)
+            if (!makeTimerWork)
             {
                 WormScreenshake = false;
             }
-            
+            if (!makeTimerWork)
+            {
+                LongShake = false;
+            }
+
         }
     }
     public class RealmModPlayer: ModPlayer
@@ -158,7 +251,7 @@ namespace RealmOne.RealmPlayer
 
         }
 
-
+        
 
         public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
         {
@@ -174,7 +267,12 @@ namespace RealmOne.RealmPlayer
                 Player.AddBuff(ModContent.BuffType<OverseerBuff>(), 400);
             }
         }
-      
+        public class BrightProjectilePlayer : ModPlayer
+        {
+            public bool brightProjectiles = false;
+
+            
+        }
         public override void PreUpdate()
         {
             if (Main.GameModeInfo.IsMasterMode)
@@ -196,9 +294,11 @@ namespace RealmOne.RealmPlayer
 
         public override void OnEnterWorld(Player player)
         {
+            
             if (Main.netMode != 2)
             {
                 Main.NewText(Language.GetTextValue("Another day, Another Disappointment"), 100, 30, 250);
+                
 
             }
             if (Main.netMode != 2)
@@ -248,5 +348,6 @@ namespace RealmOne.RealmPlayer
                 new Item(ModContent.ItemType<BreadLoaf>(), 1, 0)
             };
         }
+        
     }
 }
