@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 using Terraria.Audio;
 using Microsoft.Xna.Framework;
+using RealmOne.Items.Weapons.PreHM.Throwing;
 
 namespace RealmOne.Projectiles.Throwing
 {
@@ -36,7 +37,7 @@ namespace RealmOne.Projectiles.Throwing
         }
         public override void AI()
         {
-            Lighting.AddLight(Projectile.position, 0.2f, 1f, 2f);
+            Lighting.AddLight(Projectile.position, r: 0.2f, g: 0.8f, b:1.5f); ;
             Lighting.Brightness(1, 1);
 
            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Water_GlowingMushroom, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 1f);
@@ -57,7 +58,7 @@ namespace RealmOne.Projectiles.Throwing
 
             if (Main.rand.Next(0, 5) == 0)
                 Item.NewItem(Projectile.GetSource_DropAsItem(), (int)Projectile.position.X, (int)Projectile.position.Y, Projectile.width, Projectile.height,
-                    ModContent.ItemType<Items.Weapons.Ranged.EleJelly>(), 1, false, 0, false, false);
+                    ModContent.ItemType<EleJelly>(), 1, false, 0, false, false);
 
             int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.Electric, 0f, 0f, 100, default, 1f);
         
