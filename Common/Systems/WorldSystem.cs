@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using RealmOne.Common.Systems;
 using RealmOne.Common.Systems.GenPasses;
 using System;
-using IL.Terraria.GameContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
@@ -46,7 +45,7 @@ namespace RealmOne.Common.Systems
     public class WorldSystem : ModSystem
     {
         
-        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
             int shiniesIndex = tasks.FindIndex(genpass =>genpass.Name.Equals("Shinies"));
             if (shiniesIndex != -1)

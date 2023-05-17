@@ -147,7 +147,7 @@ namespace RealmOne.Projectiles.Other
         private const int MaxStickies = 3; // This is the max amount of javelins able to be attached to a single NPC
         private readonly Point[] StickingCactis = new Point[MaxStickies]; // The point array holding for sticking javelins
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.Poisoned, 200);
             IsStickingToTarget = true; // we are sticking to a target

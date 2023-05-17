@@ -56,7 +56,7 @@ namespace RealmOne.Projectiles.Sword
             Projectile.Center = player.Center;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player p = Main.player[Projectile.owner];
             int healingAmount = damage / 8; //decrease the value 30 to increase heal, increase value to decrease. Or you can just replace damage/x with a set value to heal, instead of making it based on damage.

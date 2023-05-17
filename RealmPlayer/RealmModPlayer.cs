@@ -253,14 +253,14 @@ namespace RealmOne.RealmPlayer
 
         
 
-        public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
         {
             if (Overseer && Main.rand.NextBool(2) && !target.friendly && crit  && target.lifeMax > 10 && target.type != NPCID.TargetDummy)
             {
                 Player.AddBuff(ModContent.BuffType<OverseerBuff>(), 400);
             }
         }
-        public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Projectile, consider using OnHitNPC instead */
         {
             if (Overseer && Main.rand.NextBool(2) && crit && !target.friendly && target.lifeMax > 10 && !target.SpawnedFromStatue && target.type != NPCID.TargetDummy)
             {
@@ -292,7 +292,7 @@ namespace RealmOne.RealmPlayer
 
 
 
-        public override void OnEnterWorld(Player player)
+        public override void OnEnterWorld()
         {
             
             if (Main.netMode != 2)
@@ -308,7 +308,7 @@ namespace RealmOne.RealmPlayer
             }
         }
      
-        public override void OnRespawn(Player player)
+        public override void OnRespawn()
         {
             if (Main.netMode != 2)
             {
@@ -316,14 +316,14 @@ namespace RealmOne.RealmPlayer
 
             }
         }
-        public override void PlayerConnect(Player player)
+        public override void PlayerConnect()
         {
             if (Main.netMode != 2)
             {
                 Main.NewText(Language.GetTextValue("'Your acquaintance wants to feel distress as well I see'"), (byte)64, (byte)16, (byte)227);
             }
         }
-        public override void PlayerDisconnect(Player player)
+        public override void PlayerDisconnect()
         {
             if (Main.netMode != 2)
             {

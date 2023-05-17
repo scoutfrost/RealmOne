@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
@@ -48,7 +49,7 @@ namespace RealmOne.Tiles
                 16,
                 16
                         };
-            TileObjectData.addTile(Type); ModTranslation name = CreateMapEntryName();
+            TileObjectData.addTile(Type); LocalizedText name = CreateMapEntryName();
             name.SetDefault("Photosynthesis Pillar");
             AddMapEntry(new Color(50, 70, 150), name);
             TileID.Sets.DisableSmartCursor[Type] = true;

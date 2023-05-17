@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
@@ -23,7 +24,7 @@ namespace RealmOne.Tiles.Blocks
 
 
 
-            ModTranslation name = CreateMapEntryName();
+            LocalizedText name = CreateMapEntryName();
             name.SetDefault("Florence Marble");
             AddMapEntry(new Color(168, 190, 152), name);
 

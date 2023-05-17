@@ -41,7 +41,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
 
 
         }
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.Frostburn, 180);
         }

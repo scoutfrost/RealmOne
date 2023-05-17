@@ -22,7 +22,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
                 + "\n'Plenty of unwanted insects thrive off this acorn'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-            SacrificeTotal = 1;
+            Item.ResearchUnlockCount = 1;
 
             // This line will make the damage shown in the tooltip twice the actual Item.damage. This multiplier is used to adjust for the dynamic damage capabilities of the projectile.
             // When thrown directly at enemies, the flail projectile will deal double Item.damage, matching the tooltip, but deals normal damage in other modes.

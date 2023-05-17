@@ -25,7 +25,7 @@ namespace RealmOne.Buffs
             player.moveSpeed += 0.15f;
             player.accRunSpeed += 0.15f;
             player.calmed = true;
-            player.discount = true;
+            player.discountAvailable = true;
 
         }
 

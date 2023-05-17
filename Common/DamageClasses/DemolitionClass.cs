@@ -18,7 +18,7 @@ namespace RealmOne.Common.DamageClasses
 
         public override void SetStaticDefaults()
         {
-            ((DamageClass)this).ClassName.SetDefault("demolition damage");
+            ((DamageClass)this).DisplayName.SetDefault("demolition damage");
         }
         public override StatInheritanceData GetModifierInheritance(DamageClass damageClass) {
 			// This method lets you make your damage class benefit from other classes' stat bonuses by default, as well as universal stat bonuses.

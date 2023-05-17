@@ -146,7 +146,7 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
                 dust.alpha = 0;
             }
         }
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             Collision.AnyCollision(Item.position + Item.velocity, Item.velocity, Item.width, Item.height);
             SoundEngine.PlaySound(rorAudio.SFX_MetalClash);

@@ -73,7 +73,7 @@ namespace RealmOne.Projectiles.Throwing
             Main.dust[dustIndex1].position = Projectile.Center + new Vector2(0f, (float)(-(float)Projectile.height / 2)).RotatedBy(Projectile.rotation, default) * 1.1f;
             Main.dust[dustIndex1].noLight = false;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 
         {
             target.AddBuff(BuffID.Electrified, 180);

@@ -53,7 +53,7 @@ namespace RealmOne.Projectiles.Bullet
             Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Enchanted_Gold, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 1f);   //spawns dust behind it, this is a spectral light blue dust
 
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             SoundEngine.PlaySound(rorAudio.SFX_OldGoldBeam);
 

@@ -100,7 +100,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
         }
 
 
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.Poisoned, 180);
             SoundEngine.PlaySound(SoundID.DD2_SkeletonHurt);

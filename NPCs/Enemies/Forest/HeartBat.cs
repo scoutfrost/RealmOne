@@ -79,7 +79,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             Main.EntitySpriteDraw(glow.Value, NPC.Center - screenPos + new Vector2(0, 3), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.None, 0);
         }
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)
             {
@@ -95,7 +95,7 @@ namespace RealmOne.NPCs.Enemies.Forest
                 return SpawnCondition.Underground.Chance * 0.20f;
             return SpawnCondition.Cavern.Chance * 0.20f;
         }
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
 
             target.AddBuff(BuffID.Rabies, 180);

@@ -91,7 +91,7 @@ namespace RealmOne.Projectiles.Sword
             return false;
 
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.WitheredArmor, 180);
             SoundEngine.PlaySound(rorAudio.GemBladeAltSwing);

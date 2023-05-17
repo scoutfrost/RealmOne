@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
@@ -6,7 +7,6 @@ using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
 using System;
-using IL.Terraria.GameContent;
 
 namespace RealmOne.Projectiles.Explosive
 {

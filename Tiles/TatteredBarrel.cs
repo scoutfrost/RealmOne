@@ -48,7 +48,7 @@ namespace RealmOne.Tiles
             
             // Names
 
-            ModTranslation name = CreateMapEntryName();
+            LocalizedText name = CreateMapEntryName();
             name.SetDefault("Tattered Barrel");
             AddMapEntry(new Color(200, 200, 200), name);
 
@@ -57,7 +57,7 @@ namespace RealmOne.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
-            ChestDrop = ModContent.ItemType<TatteredBarrelItem>();
+            ItemDrop = ModContent.ItemType<TatteredBarrelItem>();
 
 
             TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock };

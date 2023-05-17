@@ -94,7 +94,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 				// so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
             });
         }
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)
             {
@@ -122,7 +122,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 
 
         }
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
             // Common use is applying buffs/debuffs:
@@ -245,7 +245,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             NPC.DeathSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SquirmoMudBubblePop");
         }
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)
             {
@@ -284,7 +284,7 @@ namespace RealmOne.NPCs.Enemies.Forest
             NPC.netUpdate = true;
             NPC.DeathSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SquirmoMudBubblePop");
         }
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)
             {

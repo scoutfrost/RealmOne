@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
@@ -22,7 +23,7 @@ namespace RealmOne.Tiles.Blocks
             TileID.Sets.Conversion.Grass[Type] = true;
 
 
-            ModTranslation name = CreateMapEntryName();
+            LocalizedText name = CreateMapEntryName();
             name.SetDefault("Evo Grass");
             AddMapEntry(new Color(90, 127, 78), name);
 

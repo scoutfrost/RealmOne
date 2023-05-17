@@ -57,7 +57,7 @@ namespace RealmOne.Items.Weapons.HM
             if (type == ProjectileID.Meteor1)
                 type = ProjectileID.Meteor2; // or ProjectileID.FireArrow;
         }
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.OnFire, 180);
         }

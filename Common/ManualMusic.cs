@@ -11,7 +11,6 @@ using System.Collections.Generic;
 using RealmOne.Common.Systems;
 using RealmOne.Common.Systems.GenPasses;
 using System;
-using IL.Terraria.GameContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;

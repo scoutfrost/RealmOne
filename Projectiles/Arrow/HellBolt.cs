@@ -49,7 +49,7 @@ namespace RealmOne.Projectiles.Arrow
             Lighting.Brightness(1, 1);
 
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 
         {
             SoundEngine.PlaySound(rorAudio.SFX_CrossbowHit);

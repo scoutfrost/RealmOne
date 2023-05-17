@@ -22,7 +22,7 @@ namespace RealmOne.Projectiles.Other
             Projectile.penetrate = 4;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (Main.rand.NextBool(2))
                 target.AddBuff(BuffID.ShadowFlame, 160, true);

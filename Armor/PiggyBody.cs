@@ -54,7 +54,7 @@ namespace RealmOne.Armor
         {
             player.GetKnockback(DamageClass.Generic) += 0.05f;
             player.moveSpeed -= 0.08f;
-            player.discount = true;
+            player.discountAvailable = true;
 
         }
 

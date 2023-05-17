@@ -21,7 +21,7 @@ namespace RealmOne.Common.DamageClasses
 
         public override void SetStaticDefaults()
         {
-            ((DamageClass)this).ClassName.SetDefault("fighter damage");
+            ((DamageClass)this).DisplayName.SetDefault("fighter damage");
         }
         public override StatInheritanceData GetModifierInheritance(DamageClass damageClass)
         {

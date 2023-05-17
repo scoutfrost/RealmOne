@@ -37,7 +37,7 @@ namespace RealmOne.Projectiles.Throwing
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.ownerHitCheck = true;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) => Projectile.Kill();
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) => Projectile.Kill();
 
         public override void AI()
         {

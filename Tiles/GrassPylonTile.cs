@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
@@ -59,7 +60,7 @@ namespace RealmOne.Tiles
             // Adds functionality for proximity of pylons; if this is true, then being near this tile will count as being near a pylon for the teleportation process.
             AddToArray(ref TileID.Sets.CountsAsPylon);
 
-            ModTranslation pylonName = CreateMapEntryName(); //Name is in the localization file
+            LocalizedText pylonName = CreateMapEntryName(); //Name is in the localization file
             AddMapEntry(Color.White, pylonName);
         }
 

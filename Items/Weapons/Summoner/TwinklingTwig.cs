@@ -88,7 +88,7 @@ namespace RealmOne.Items.Weapons.Summoner
             SoundEngine.PlaySound(rorAudio.TwinkleBell);
             return true;
         }
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y - 20, player.width, player.height), new Color(234, 129, 178, 105), "Twinkle", false, false);
 

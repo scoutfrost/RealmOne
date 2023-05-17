@@ -55,7 +55,7 @@ namespace RealmOne.Items.Weapons.PreHM.Brass
         }
 
 
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             SoundEngine.PlaySound(rorAudio.SFX_Porce);
 

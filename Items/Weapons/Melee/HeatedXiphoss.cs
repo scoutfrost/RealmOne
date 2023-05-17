@@ -59,7 +59,7 @@ namespace RealmOne.Items.Weapons.Melee
         }
 
 
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
 
             target.AddBuff(BuffID.OnFire3, 180);

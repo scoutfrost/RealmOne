@@ -95,7 +95,7 @@ namespace RealmOne.Projectiles.Magic
 
             return closestNPC;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             SoundEngine.PlaySound(SoundID.NPCDeath55);
             Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Torch, Projectile.velocity.X * 0.6f, Projectile.velocity.Y * 0.6f, Scale: 2f);   //spawns dust behind it, this is a spectral light blue dust

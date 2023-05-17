@@ -1,8 +1,8 @@
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-using IL.Terraria.GameContent;
 using RealmOne.Buffs;
 
 namespace RealmOne.Items.Accessories

@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
@@ -25,7 +26,7 @@ namespace RealmOne.Tiles.Blocks
 
 
 
-            ModTranslation name = CreateMapEntryName();
+            LocalizedText name = CreateMapEntryName();
             name.SetDefault("Old Gold Ore");
             AddMapEntry(new Color(243, 255, 0), name);
 

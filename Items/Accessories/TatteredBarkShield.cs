@@ -54,7 +54,7 @@ namespace RealmOne.Items.Accessories
     {
         public bool splinteredShield = false;
         
-        public override void OnHitByNPC(NPC npc, int damage, bool crit)
+        public override void OnHitByNPC(NPC npc, Player.HurtInfo hurtInfo)
         {
             if (splinteredShield)
             {

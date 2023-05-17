@@ -98,7 +98,7 @@ namespace RealmOne.Projectiles.Returning
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity, ProjectileID.ThunderStaffShot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
             return true;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 
         {
             SoundEngine.PlaySound(rorAudio.SFX_Shuriken, Projectile.position);

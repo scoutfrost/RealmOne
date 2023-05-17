@@ -134,7 +134,7 @@ namespace RealmOne.NPCs.Enemies
 
         }
 
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
 
             for (int i = 0; i < 23; i++)

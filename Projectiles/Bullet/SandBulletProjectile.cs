@@ -54,7 +54,7 @@ namespace RealmOne.Projectiles.Bullet
             Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             SoundEngine.PlaySound(SoundID.DD2_BetsyWindAttack, Projectile.position);
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
             for (var i = 0; i < 6; i++)

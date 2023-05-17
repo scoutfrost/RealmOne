@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
@@ -6,7 +7,6 @@ using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using IL.Terraria.GameContent;
 
 namespace RealmOne.Projectiles.Explosive
 {
@@ -73,7 +73,7 @@ namespace RealmOne.Projectiles.Explosive
 
 
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 
         {
             target.immune[Projectile.owner] = 20;

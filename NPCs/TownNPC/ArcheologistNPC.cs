@@ -68,7 +68,7 @@ namespace RealmOne.NPCs.TownNPC
             });
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+        public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
         {
             if (NPC.AnyNPCs(NPCType<BoundArcheologist>()))
                 return false;
@@ -106,13 +106,13 @@ namespace RealmOne.NPCs.TownNPC
             button2 = "Prospector Missions";
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+        public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
                 shop = true;
         }
 
-        public override void SetupShop(Chest shop, ref int nextSlot)
+        public override void ModifyActiveShop(string shopName, Item[] items)
         {
 
             shop.item[nextSlot].SetDefaults(ItemID.FrostburnArrow, false);
