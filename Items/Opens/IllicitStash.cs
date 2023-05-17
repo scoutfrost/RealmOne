@@ -1,184 +1,161 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Items.Misc;
+using RealmOne.Rarities;
 using Terraria;
+using Terraria.GameContent;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent.ItemDropRules;
-using RealmOne.Projectiles;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
-using RealmOne.Items.Accessories;
-using RealmOne.Items.Weapons.Ranged;
-using RealmOne.Items.Weapons.Magic;
-using RealmOne.Items.Weapons.Melee;
-using RealmOne.Rarities;
-using Microsoft.CodeAnalysis.Operations;
-using RealmOne.Items.Misc;
 
 namespace RealmOne.Items.Opens
 {
-    public class IllicitStash : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Illicit Stash");
-            Tooltip.SetDefault("<right> to open up a bag of risky items"
-                + "\nGuaranteed chance of getting something, but something you're not looking for"
-                + "\n'You get what you get and don't get upset'");
+	public class IllicitStash : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Illicit Stash");
+			Tooltip.SetDefault("<right> to open up a bag of risky items"
+				+ "\nGuaranteed chance of getting something, but something you're not looking for"
+				+ "\n'You get what you get and don't get upset'");
 
+			//  + $"\n[i:{ModContent.ItemType<DualWieldCrossbows>()}][i:{ModContent.ItemType<DumLightbulb>()}]"
+			//        + $"\n[i:{ModContent.ItemType<ShatteredGemBlade>()}][i:{ModContent.ItemType<EmptyLocket>()}]");
 
-            //  + $"\n[i:{ModContent.ItemType<DualWieldCrossbows>()}][i:{ModContent.ItemType<DumLightbulb>()}]"
-            //        + $"\n[i:{ModContent.ItemType<ShatteredGemBlade>()}][i:{ModContent.ItemType<EmptyLocket>()}]");
+		}
 
-        }
+		public override void SetDefaults()
+		{
+			Item.width = 20;
+			Item.height = 20;
+			Item.rare = ModContent.RarityType<ModRarities>();
+			Item.consumable = true;
+			Item.maxStack = 30;
+			Item.value = Item.buyPrice(gold: 15);
 
-        public override void SetDefaults()
-        {
-            Item.width = 20;
-            Item.height = 20;
-            Item.rare = ModContent.RarityType<ModRarities>();
-            Item.consumable = true;
-            Item.maxStack = 30;
-            Item.value = Item.buyPrice(gold: 15);
+		}
+		public override bool CanRightClick()
+		{
+			return true;
+		}
 
-        }
-        public override bool CanRightClick()
-        {
-            return true;
-        }
+		public override void ModifyItemLoot(ItemLoot itemLoot)
+		{
+			itemLoot.Add(ItemDropRule.Common(ItemID.WoodenArrow, 3, 18, 30));
+			itemLoot.Add(ItemDropRule.Common(ItemID.CopperCoin, 3, 10, 40));
+			itemLoot.Add(ItemDropRule.Common(ItemID.SilverCoin, 5, 10, 20));
+			itemLoot.Add(ItemDropRule.Common(ItemID.GoldCoin, 8, 4, 10));
+			itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumCoin, 16, 1, 2));
+			itemLoot.Add(ItemDropRule.Common(ItemID.DirtBlock, 3, 8, 15));
+			itemLoot.Add(ItemDropRule.Common(ItemID.StoneBlock, 3, 8, 15));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Leather, 5, 4, 6));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Cobweb, 5, 8, 14));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Mushroom, 3, 5, 7));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Wood, 3, 15, 20));
+			itemLoot.Add(ItemDropRule.Common(ItemID.MarshmallowonaStick, 15, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.WandofSparking, 15, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.WoodenBoomerang, 15, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.LuckyHorseshoe, 18, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Gel, 3, 10, 18));
+			itemLoot.Add(ItemDropRule.Common(ItemID.HermesBoots, 18, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Torch, 3, 16, 20));
+			itemLoot.Add(ItemDropRule.Common(ItemID.AntlionMandible, 5, 3, 5));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Apple, 6, 2, 4));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Peach, 6, 2, 4));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Banana, 6, 2, 4));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Bomb, 6, 5, 9));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Grenade, 6, 10, 15));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Dynamite, 7, 4, 5));
+			itemLoot.Add(ItemDropRule.Common(ItemID.FrogLeg, 18, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.GoldWatch, 17, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumWatch, 17, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.RodofDiscord, 90, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Rope, 3, 16, 20));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Spear, 15, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Stinger, 6, 3, 5));
+			itemLoot.Add(ItemDropRule.Common(ItemID.JungleSpores, 6, 3, 5));
 
+			itemLoot.Add(ItemDropRule.Common(ItemID.Sunflower, 6, 2, 3));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Sunglasses, 9, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Goggles, 9, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Shackle, 12, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Shuriken, 3, 16, 26));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Starfury, 19, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Chain, 4, 6, 8));
+			itemLoot.Add(ItemDropRule.Common(ItemID.IronBar, 6, 6, 10));
+			itemLoot.Add(ItemDropRule.Common(ItemID.LeadBar, 6, 6, 10));
+			itemLoot.Add(ItemDropRule.Common(ItemID.GoldBar, 6, 6, 10));
+			itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumBar, 6, 6, 10));
+			itemLoot.Add(ItemDropRule.Common(ItemID.Campfire, 10, 1, 1));
 
-        public override void ModifyItemLoot(ItemLoot itemLoot)
-        {
-            itemLoot.Add(ItemDropRule.Common(ItemID.WoodenArrow, 3, 18, 30));
-            itemLoot.Add(ItemDropRule.Common(ItemID.CopperCoin, 3, 10, 40));
-            itemLoot.Add(ItemDropRule.Common(ItemID.SilverCoin, 5, 10, 20));
-            itemLoot.Add(ItemDropRule.Common(ItemID.GoldCoin, 8, 4, 10));
-            itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumCoin, 16, 1, 2));
-            itemLoot.Add(ItemDropRule.Common(ItemID.DirtBlock, 3, 8, 15));
-            itemLoot.Add(ItemDropRule.Common(ItemID.StoneBlock, 3, 8, 15));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Leather, 5, 4, 6));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Cobweb, 5, 8, 14));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Mushroom, 3, 5, 7));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Wood, 3, 15, 20));
-            itemLoot.Add(ItemDropRule.Common(ItemID.MarshmallowonaStick, 15, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.WandofSparking, 15, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.WoodenBoomerang, 15, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.LuckyHorseshoe, 18, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Gel, 3, 10, 18));
-            itemLoot.Add(ItemDropRule.Common(ItemID.HermesBoots, 18, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Torch, 3, 16, 20));
-            itemLoot.Add(ItemDropRule.Common(ItemID.AntlionMandible, 5, 3, 5));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Apple, 6, 2, 4));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Peach, 6, 2, 4));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Banana, 6, 2, 4));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Bomb, 6, 5, 9));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Grenade, 6, 10, 15));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Dynamite, 7, 4, 5));
-            itemLoot.Add(ItemDropRule.Common(ItemID.FrogLeg, 18, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.GoldWatch, 17, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumWatch, 17, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.RodofDiscord, 90, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Rope, 3, 16, 20));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Spear, 15, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Stinger, 6, 3, 5));
-            itemLoot.Add(ItemDropRule.Common(ItemID.JungleSpores, 6, 3, 5));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrassNuggets>(), 6, 8, 10));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Food.SalmonAvoSushi>(), 6, 1, 3));
 
-            itemLoot.Add(ItemDropRule.Common(ItemID.Sunflower, 6, 2, 3));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Sunglasses, 9, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Goggles, 9, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Shackle, 12, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Shuriken, 3, 16, 26));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Starfury, 19, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Chain, 4, 6, 8));
-            itemLoot.Add(ItemDropRule.Common(ItemID.IronBar, 6, 6, 10));
-            itemLoot.Add(ItemDropRule.Common(ItemID.LeadBar, 6, 6, 10));
-            itemLoot.Add(ItemDropRule.Common(ItemID.GoldBar, 6, 6, 10));
-            itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumBar, 6, 6, 10));
-            itemLoot.Add(ItemDropRule.Common(ItemID.Campfire, 10, 1, 1));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Food.TunaAndAvacado>(), 6, 1, 3));
 
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrassNuggets>(), 6, 8, 10));
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Food.SalmonAvoSushi>(), 6, 1, 3));
+		}
+		public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+		{
+			Texture2D texture = TextureAssets.Item[Item.type].Value;
 
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Food.TunaAndAvacado>(), 6, 1, 3));
+			Rectangle frame;
 
+			if (Main.itemAnimations[Item.type] != null)
+				frame = Main.itemAnimations[Item.type].GetFrame(texture, Main.itemFrameCounter[whoAmI]);
+			else
+				frame = texture.Frame();
 
-        }
-        public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
-        {
-            Texture2D texture = TextureAssets.Item[Item.type].Value;
+			Vector2 frameOrigin = frame.Size() / 2f;
+			var offset = new Vector2(Item.width / 2 - frameOrigin.X, Item.height - frame.Height);
+			Vector2 drawPos = Item.position - Main.screenPosition + frameOrigin + offset;
 
-            Rectangle frame;
+			float time = Main.GlobalTimeWrappedHourly;
+			float timer = Item.timeSinceItemSpawned / 240f + time * 0.04f;
 
-            if (Main.itemAnimations[Item.type] != null)
-                frame = Main.itemAnimations[Item.type].GetFrame(texture, Main.itemFrameCounter[whoAmI]);
-            else
-                frame = texture.Frame();
+			time %= 4f;
+			time /= 2f;
 
-            Vector2 frameOrigin = frame.Size() / 2f;
-            Vector2 offset = new Vector2(Item.width / 2 - frameOrigin.X, Item.height - frame.Height);
-            Vector2 drawPos = Item.position - Main.screenPosition + frameOrigin + offset;
+			if (time >= 1f)
+				time = 2f - time;
 
-            float time = Main.GlobalTimeWrappedHourly;
-            float timer = Item.timeSinceItemSpawned / 240f + time * 0.04f;
+			time = time * 0.5f + 0.5f;
 
-            time %= 4f;
-            time /= 2f;
+			for (float i = 0f; i < 1f; i += 0.25f)
+			{
+				float radians = (i + timer) * MathHelper.TwoPi;
+				spriteBatch.Draw(texture, drawPos + new Vector2(0f, 8f).RotatedBy(radians) * time, frame, new Color(118, 240, 209, 70), rotation, frameOrigin, scale, SpriteEffects.None, 0);
+			}
 
-            if (time >= 1f)
-                time = 2f - time;
+			for (float i = 0f; i < 1f; i += 0.34f)
+			{
+				float radians = (i + timer) * MathHelper.TwoPi;
+				spriteBatch.Draw(texture, drawPos + new Vector2(0f, 4f).RotatedBy(radians) * time, frame, new Color(196, 120, 255, 77), rotation, frameOrigin, scale, SpriteEffects.None, 0);
+			}
 
-            time = time * 0.5f + 0.5f;
+			return true;
+		}
+		public override void PostUpdate()
+		{
+			Lighting.AddLight(Item.Center, Color.Gold.ToVector3() * 0.4f);
 
-            for (float i = 0f; i < 1f; i += 0.25f)
-            {
-                float radians = (i + timer) * MathHelper.TwoPi;
-                spriteBatch.Draw(texture, drawPos + new Vector2(0f, 8f).RotatedBy(radians) * time, frame, new Color(118, 240, 209, 70), rotation, frameOrigin, scale, SpriteEffects.None, 0);
-            }
+			if (Item.timeSinceItemSpawned % 12 == 0)
+			{
+				Vector2 center = Item.Center + new Vector2(0f, Item.height * -0.1f);
 
-            for (float i = 0f; i < 1f; i += 0.34f)
-            {
-                float radians = (i + timer) * MathHelper.TwoPi;
-                spriteBatch.Draw(texture, drawPos + new Vector2(0f, 4f).RotatedBy(radians) * time, frame, new Color(196, 120, 255, 77), rotation, frameOrigin, scale, SpriteEffects.None, 0);
-            }
+				Vector2 direction = Main.rand.NextVector2CircularEdge(Item.width * 0.6f, Item.height * 0.6f);
+				float distance = 0.3f + Main.rand.NextFloat() * 0.5f;
+				var velocity = new Vector2(0f, -Main.rand.NextFloat() * 0.3f - 1.5f);
 
-            return true;
-        }
-        public override void PostUpdate()
-        {
-            Lighting.AddLight(Item.Center, Color.Gold.ToVector3() * 0.4f);
-
-            if (Item.timeSinceItemSpawned % 12 == 0)
-            {
-                Vector2 center = Item.Center + new Vector2(0f, Item.height * -0.1f);
-
-                Vector2 direction = Main.rand.NextVector2CircularEdge(Item.width * 0.6f, Item.height * 0.6f);
-                float distance = 0.3f + Main.rand.NextFloat() * 0.5f;
-                Vector2 velocity = new Vector2(0f, -Main.rand.NextFloat() * 0.3f - 1.5f);
-
-                Dust dust = Dust.NewDustPerfect(center + direction * distance, DustID.GoldCoin, velocity);
-                dust.scale = 0.9f;
-                dust.fadeIn = 1.1f;
-                dust.noGravity = true;
-                dust.noLight = true;
-                dust.alpha = 0;
-            }
-        }
-
-    }
-
+				var dust = Dust.NewDustPerfect(center + direction * distance, DustID.GoldCoin, velocity);
+				dust.scale = 0.9f;
+				dust.fadeIn = 1.1f;
+				dust.noGravity = true;
+				dust.noLight = true;
+				dust.alpha = 0;
+			}
+		}
+	}
 }
-
-
-
-
-
-
-
-
-
 
 //   IItemDropRule[] oreTypes = new IItemDropRule[] {
 //      ItemDropRule.Common(ItemID.CopperOre, 1, 15, 20),
