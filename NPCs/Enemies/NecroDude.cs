@@ -14,6 +14,7 @@ using RealmOne.Projectiles;
 using RealmOne.Items.Tools.Hooks;
 using RealmOne.Items.Weapons.PreHM.Forest;
 using RealmOne.Items.Placeables;
+using RealmOne.Items.Misc.EnemyDrops;
 
 namespace RealmOne.NPCs.Enemies
 {
@@ -21,14 +22,24 @@ namespace RealmOne.NPCs.Enemies
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Necro Envoyholder");
+            // DisplayName.SetDefault("Necro Envoyholder");
             Main.npcFrameCount[NPC.type] = 6;
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             { // Influences how the NPC looks in the Bestiary
                 Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             };
-            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
+
+            var drawModifier = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            { // Influences how the NPC looks in the Bestiary
+                CustomTexturePath = "RealmOne/Assets/Textures/Classified", // If the NPC is multiple parts like a worm, a custom texture for the Bestiary is encouraged.
+                
+                Position = new Vector2(40f, 28f),
+                PortraitPositionXOverride = 0f,
+                PortraitPositionYOverride = 12f,
+                PortraitScale = 1.5f,
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, drawModifier);
         }
 
         public override void SetDefaults()
@@ -49,7 +60,7 @@ namespace RealmOne.NPCs.Enemies
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDay.Chance * 0.12f;
+            return SpawnCondition.Overworld.Chance * 0.14f;
         }
 
 
@@ -70,7 +81,7 @@ namespace RealmOne.NPCs.Enemies
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
 				// Sets the description of this NPC that is listed in the bestiary.
-				new FlavorTextBestiaryInfoElement("A y'tarp ph'nglui n'ghftnah cloak ah'f'nah be'wa ot orr'ee.  Ah'n'gha nilgh'ri oi'uytalesi ph'nglui way.]"),
+				new FlavorTextBestiaryInfoElement("A y'tarp ph'nglui n'ghftnah cloak ah'f'nah be'wa ot orr'ee.  Ah'n'gha nilgh'ri oi'uytalesi ph'lyutio yta."),
 
 				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
 				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
@@ -85,7 +96,7 @@ namespace RealmOne.NPCs.Enemies
 
         }
         
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
             for (int i = 0; i < 20; i++)
             {
@@ -97,18 +108,22 @@ namespace RealmOne.NPCs.Enemies
 
             }
 
-            if (NPC.life <= 0)
+
+            if (Main.netMode != NetmodeID.Server)
             {
-                // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
+                if (NPC.life <= 0)
+                {
+                    // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeGore1").Type, 1f);
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeGore2").Type, 1f);
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeGore3").Type, 1f);
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeStick").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeGore1").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeGore2").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeGore3").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeStick").Type, 1f);
 
+                }
             }
         }
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
             // Common use is applying buffs/debuffs:
@@ -128,7 +143,7 @@ namespace RealmOne.NPCs.Enemies
 
 
             Vector2 center = NPC.Center;
-            for (int j = 0; j < 60; j++)
+            for (int j = 0; j < 70; j++)
             {
                 int dust1 = Dust.NewDust(center, 0, 0, DustID.ShadowbeamStaff, 0f, 0f, 100, default, 0.6f);
                 Main.dust[dust1].noGravity = true;
