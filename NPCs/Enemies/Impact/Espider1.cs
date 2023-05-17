@@ -9,9 +9,9 @@ using Terraria.GameContent.Bestiary;
 using Terraria.Audio;
 using RealmOne.Common.Systems;
 using Terraria.GameContent.ItemDropRules;
-using RealmOne.Items.Misc;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using RealmOne.Items.Misc.EnemyDrops;
 
 namespace RealmOne.NPCs.Enemies.Impact
 {
@@ -21,7 +21,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("E-Spider");
+            // DisplayName.SetDefault("E-Spider");
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.DesertGhoul];
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
@@ -85,9 +85,21 @@ namespace RealmOne.NPCs.Enemies.Impact
             Lighting.AddLight(NPC.position, r: 0.1f, g: 0.2f, b: 1.0f);
         }
 
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
+            if (Main.netMode != NetmodeID.Server)
+            {
+                if (NPC.life <= 0)
+                {
+                    // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EspiderGore1").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EspiderGore2").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EspiderGore3").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EspiderGore4").Type, 1f);
+
+                }
+            }
             for (int i = 0; i < 10; i++)
             {
 
@@ -106,7 +118,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
 
         }
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
             // Common use is applying buffs/debuffs:
