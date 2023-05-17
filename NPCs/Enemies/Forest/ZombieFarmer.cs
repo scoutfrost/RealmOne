@@ -14,7 +14,7 @@ namespace RealmOne.NPCs.Enemies.Forest
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Zombie Farmer");
+            // DisplayName.SetDefault("Zombie Farmer");
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Zombie];
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
@@ -75,8 +75,22 @@ namespace RealmOne.NPCs.Enemies.Forest
 
         }
 
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hit)
         {
+
+            if (Main.netMode != NetmodeID.Server)
+            {
+                if (NPC.life <= 0)
+                {
+                    // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
+
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ZombieFarmerGore1").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ZombieFarmerGore2").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ZombieFarmerGore3").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ZombieFarmerGore4").Type, 1f);
+
+                }
+            }
 
             for (int i = 0; i < 12; i++)
             {
