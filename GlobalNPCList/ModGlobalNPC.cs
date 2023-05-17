@@ -1,107 +1,110 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using RealmOne.Items;
-using Terraria.GameContent.ItemDropRules;
-using static Terraria.GameContent.ItemDropRules.Conditions;
-using RealmOne.Items.Placeables;
-using System;
-using RealmOne.Vanities;
-using RealmOne.Items.Misc;
-using RealmOne.Items.Tools;
-using RealmOne.Items.Weapons.Ranged;
+﻿using RealmOne.Bosses;
 using RealmOne.Items.Accessories;
-using Terraria.Localization;
-using RealmOne.Bosses;
+using RealmOne.Items.Misc;
 using RealmOne.Items.Opens;
+using RealmOne.Vanities;
+using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using static Terraria.GameContent.ItemDropRules.Conditions;
 
 namespace RealmOne.GlobalNPCList
 {
-    public class ModGlobalNPCList : GlobalNPC
+	public class ModGlobalNPCList : GlobalNPC
 	{
-        // ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.
-        // Here we go through all of them, and how they can be used.
-        // There are tons of other examples in vanilla! In a decompiled vanilla build, GameContent/ItemDropRules/ItemDropDatabase adds item drops to every single vanilla NPC, which can be a good resource.
-        public override void OnKill(NPC npc)
-        {
+		// ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.
+		// Here we go through all of them, and how they can be used.
+		// There are tons of other examples in vanilla! In a decompiled vanilla build, GameContent/ItemDropRules/ItemDropDatabase adds item drops to every single vanilla NPC, which can be a good resource.
+		public override void OnKill(NPC npc)
+		{
 			if (npc.type == ModContent.NPCType<SquirmoHead>())
-            {
-                if (Main.netMode != 2)
-                {
-                    Main.NewText(Language.GetTextValue("The soil has been adhered, the ground has been enchanted!"), 71, 229, 231);
+			{
+				if (Main.netMode != NetmodeID.Server)
+				{
+					Main.NewText(Language.GetTextValue("The soil has been adhered, the ground has been enchanted!"), 71, 229, 231);
 
-                }
-            }
-            if (npc.type == NPCID.KingSlime)
-            {
-                if (Main.netMode != 2)
-                {
-                    Main.NewText(Language.GetTextValue("The oversized glob of bacteria has been vanquished, but for what reason?"), 71, 229, 231);
+				}
+			}
 
-                }
-            }
+			if (npc.type == NPCID.KingSlime)
+			{
+				if (Main.netMode != NetmodeID.Server)
+				{
+					Main.NewText(Language.GetTextValue("The oversized glob of bacteria has been vanquished, but for what reason?"), 71, 229, 231);
+
+				}
+			}
+
 			if (npc.type == NPCID.EyeofCthulhu)
 			{
-				if (Main.netMode != 2)
+				if (Main.netMode != NetmodeID.Server)
 				{
 					Main.NewText(Language.GetTextValue("The seer of the land has been slayed, but you're still being watched."), 178, 30, 250);
 
 				}
 			}
-            if (npc.type == NPCID.EaterofWorldsHead)
-            {
-                if (Main.netMode != 2)
-                {
-                    Main.NewText(Language.GetTextValue("The vile, slithering worm of infection has been slaughtered, decreasing the spread of power of the corruption"), 200, 50, 230);
 
-                }
-            }
+			if (npc.type == NPCID.EaterofWorldsHead)
+			{
+				if (Main.netMode != NetmodeID.Server)
+				{
+					Main.NewText(Language.GetTextValue("The vile, slithering worm of infection has been slaughtered, decreasing the spread of power of the corruption"), 200, 50, 230);
 
-            if (npc.type == NPCID.BrainofCthulhu)
-            {
-                if (Main.netMode != 2)
-                {
-                    Main.NewText(Language.GetTextValue("The hypnotic brain of amalgamated knowledge has been slain, you feel your mind calming down."), 250, 20, 80);
+				}
+			}
 
-                }
-            }
+			if (npc.type == NPCID.BrainofCthulhu)
+			{
+				if (Main.netMode != NetmodeID.Server)
+				{
+					Main.NewText(Language.GetTextValue("The hypnotic brain of amalgamated knowledge has been slain, you feel your mind calming down."), 250, 20, 80);
 
-            if (npc.type == NPCID.QueenBee)
-            {
-                if (Main.netMode != 2)
-                {
-                    Main.NewText(Language.GetTextValue("The grand protector of the hives has been killed, making insects favour you in positive or negatives ways"), 235, 221, 54);
+				}
+			}
 
-                }
-            }
-        }
-        public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
+			if (npc.type == NPCID.QueenBee)
+			{
+				if (Main.netMode != NetmodeID.Server)
+				{
+					Main.NewText(Language.GetTextValue("The grand protector of the hives has been killed, making insects favour you in positive or negatives ways"), 235, 221, 54);
+
+				}
+			}
+		}
+		public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
 		{
 			if (npc.type == NPCID.Demon)
 			{
-				
-			    npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2)); // 4 and 1 is the chance, so 1 out of 4 chance of dropping it. And two is the amount you will probably get
+
+				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2)); // 4 and 1 is the chance, so 1 out of 4 chance of dropping it. And two is the amount you will probably get
 			}
+
 			if (npc.type == NPCID.Hellbat)
 			{
 
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2));
 			}
+
 			if (npc.type == NPCID.LavaSlime)
 			{
 
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2));
 			}
+
 			if (npc.type == NPCID.FireImp)
 			{
 
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2));
 			}
+
 			if (npc.type == NPCID.BoneSerpentHead)
 			{
 
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 3));
 			}
+
 			if (npc.type == NPCID.VoodooDemon)
 			{
 
@@ -114,33 +117,38 @@ namespace RealmOne.GlobalNPCList
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 3));
 			}
 
-
 			//Goblin Army
 			if (npc.type == NPCID.GoblinArcher)
 			{
-				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4	, 1, 3));
+				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 1, 3));
 
 			}
+
 			if (npc.type == NPCID.GoblinPeon)
 			{
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 1, 3));
 			}
+
 			if (npc.type == NPCID.GoblinScout)
 			{
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 1, 3));
 			}
+
 			if (npc.type == NPCID.GoblinThief)
 			{
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 1, 3));
 			}
+
 			if (npc.type == NPCID.GoblinWarrior)
 			{
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 1, 3));
 			}
+
 			if (npc.type == NPCID.GoblinSorcerer)
 			{
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 1, 3));
 			}
+
 			if (npc.type == NPCID.GoblinSummoner)
 			{
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 1, 5));
@@ -159,10 +167,9 @@ namespace RealmOne.GlobalNPCList
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FleshyCornea>(), 1, 1, 10));
 			}
 
-
 			if (npc.type == NPCID.WallofFlesh)
 			{
-					npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Crimcore>(), 2, 1, 12));
+				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Crimcore>(), 2, 1, 12));
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 2, 1, 12));
 			}
 
@@ -171,6 +178,7 @@ namespace RealmOne.GlobalNPCList
 
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RoyalRawhide>(), 2, 1, 1));
 			}
+
 			if (npc.type == NPCID.SkeletronHead)
 			{
 
@@ -189,50 +197,56 @@ namespace RealmOne.GlobalNPCList
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<vampdag>(), 4, 1, 30)); //4 out of 1 
 			}
 
-            if (npc.type == NPCID.GiantFungiBulb)
-            {
-                new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			if (npc.type == NPCID.GiantFungiBulb)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
 
-            }
+			}
 
-            if (npc.type == NPCID.AnomuraFungus)
-            {
-                new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			if (npc.type == NPCID.AnomuraFungus)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
 
-            }
-            if (npc.type == NPCID.MushiLadybug)
-            {
-				new ItemDropWithConditionRule(ModContent.ItemType <ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			}
 
-            }
-            if (npc.type == NPCID.SporeSkeleton)
-            {
-                new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			if (npc.type == NPCID.MushiLadybug)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
 
-            }
-            if (npc.type == NPCID.SporeBat)
-            {
-                new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			}
 
-            }
-            if (npc.type == NPCID.FungiBulb)
-            {
-                new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			if (npc.type == NPCID.SporeSkeleton)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
 
-            }
-            if (npc.type == NPCID.ZombieMushroom)
-            {
-                new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			}
 
-            }
-            if (npc.type == NPCID.ZombieMushroomHat)
-            {
-                new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+			if (npc.type == NPCID.SporeBat)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
 
-            }
-        }
-		
-		public override void SetupShop(int type, Chest shop, ref int nextSlot)
+			}
+
+			if (npc.type == NPCID.FungiBulb)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+
+			}
+
+			if (npc.type == NPCID.ZombieMushroom)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+
+			}
+
+			if (npc.type == NPCID.ZombieMushroomHat)
+			{
+				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
+
+			}
+		}
+
+		public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
 		{
 			// This example does not use the AppliesToEntity hook, as such, we can handle multiple npcs here by using if statements.
 			if (type == NPCID.Merchant)
@@ -250,7 +264,6 @@ namespace RealmOne.GlobalNPCList
 				shop.item[nextSlot].shopCustomPrice = 2;
 
 				nextSlot++;
-
 
 			}
 
@@ -277,12 +290,6 @@ namespace RealmOne.GlobalNPCList
 					nextSlot++;
 				}
 			}
-			
-            
-
-
-        }
-
-    }
-	
+		}
+	}
 }

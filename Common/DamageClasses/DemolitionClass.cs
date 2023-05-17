@@ -1,26 +1,20 @@
-﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using Terraria;
 using Terraria.ModLoader;
-using System;
-using RealmOne;
-
-
 
 namespace RealmOne.Common.DamageClasses
 {
 	public class DemolitionClass : DamageClass
 	{
-        // This is an example damage class designed to demonstrate all the current functionality of the feature and explain how to create one of your own, should you need one.
-        // For information about how to apply stat bonuses to specific damage classes, please instead refer to ExampleMod/Content/Items/Accessories/ExampleStatBonusAccessory.
-        public new static string DisplayName => "Demolition Damage";
+		// This is an example damage class designed to demonstrate all the current functionality of the feature and explain how to create one of your own, should you need one.
+		// For information about how to apply stat bonuses to specific damage classes, please instead refer to ExampleMod/Content/Items/Accessories/ExampleStatBonusAccessory.
+		public new static string DisplayName => "Demolition Damage";
 
-
-        public override void SetStaticDefaults()
-        {
-            ((DamageClass)this).ClassName.SetDefault("demolition damage");
-        }
-        public override StatInheritanceData GetModifierInheritance(DamageClass damageClass) {
+		public override void SetStaticDefaults()
+		{
+			((DamageClass)this).DisplayName.SetDefault("demolition damage");
+		}
+		public override StatInheritanceData GetModifierInheritance(DamageClass damageClass)
+		{
 			// This method lets you make your damage class benefit from other classes' stat bonuses by default, as well as universal stat bonuses.
 			// To briefly summarize the two nonstandard damage class names used by DamageClass:
 			// Default is, you guessed it, the default damage class. It doesn't scale off of any class-specific stat bonuses or universal stat bonuses.
@@ -65,21 +59,23 @@ namespace RealmOne.Common.DamageClasses
 			// To refer to a non-vanilla damage class for these sorts of things, use "ModContent.GetInstance<TargetDamageClassHere>()" instead of "DamageClass.XYZ".
 		}
 
-		public override bool GetEffectInheritance(DamageClass damageClass) {
+		public override bool GetEffectInheritance(DamageClass damageClass)
+		{
 			// This method allows you to make your damage class benefit from and be able to activate other classes' effects (e.g. Spectre bolts, Magma Stone) based on what returns true.
 			// Note that unlike our stat inheritance methods up above, you do not need to account for universal bonuses in this method.
 			// For this example, we'll make our class able to activate melee- and magic-specifically effects.
-			
+
 			if (damageClass == DamageClass.Throwing)
 				return true;
 
 			return false;
 		}
 
-		public override void SetDefaultStats(Player player) {
+		public override void SetDefaultStats(Player player)
+		{
 			// This method lets you set default statistical modifiers for your example damage class.
 			// Here, we'll make our example damage class have more critical strike chance and armor penetration than normal.
-	
+
 			// These sorts of modifiers also exist for damage (GetDamage), knockback (GetKnockback), and attack speed (GetAttackSpeed).
 			// You'll see these used all around in referencce to vanilla classes and our example class here. Familiarize yourself with them.
 		}
@@ -91,13 +87,10 @@ namespace RealmOne.Common.DamageClasses
 
 		public override bool ShowStatTooltipLine(Player player, string lineName)
 		// This method lets you prevent certain common statistical tooltip lines from appearing on items associated with this DamageClass.
-		{ 	// The four line names you can use are "Damage", "CritChance", "Speed", and "Knockback". All four cases default to true, and thus will be shown. For example...
-		return true;
+		{   // The four line names you can use are "Damage", "CritChance", "Speed", and "Knockback". All four cases default to true, and thus will be shown. For example...
+			return true;
 			// PLEASE BE AWARE that this hook will NOT be here forever; only until an upcoming revamp to tooltips as a whole comes around.
 			// Once this happens, a better, more versatile explanation of how to pull this off will be showcased, and this hook will be removed.
 		}
-
-      
-
-    }
+	}
 }

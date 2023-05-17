@@ -1,75 +1,64 @@
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent.Creative;
-using Mono.Cecil;
-using Terraria.Graphics;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using System;
-using RealmOne.Items.Weapons.Ranged;
 
 namespace RealmOne.Items.Accessories
 {
-    public class StaticStone : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Static Stone"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("Increases the effectiveness of the Electrified buff"
-                + "\nFull immunity to the Electrified debuff"
-                + "\nBuffs E-Weapons");
+	public class StaticStone : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Static Stone"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("Increases the effectiveness of the Electrified buff"
+				+ "\nFull immunity to the Electrified debuff"
+				+ "\nBuffs E-Weapons");
 
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+		}
+		public override void ModifyTooltips(List<TooltipLine> tooltips)
+		{
+			var line = new TooltipLine(Mod, "", "");
 
-        }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            var line = new TooltipLine(Mod, "", "");
+			line = new TooltipLine(Mod, "StaticStone", "'Portable Electricity!'")
+			{
+				OverrideColor = new Color(0, 255, 255)
 
-            line = new TooltipLine(Mod, "StaticStone", "'Portable Electricity!'")
-            {
-                OverrideColor = new Color(0, 255, 255)
+			};
+			tooltips.Add(line);
 
-            };
-            tooltips.Add(line);
+		}
+		public override void SetDefaults()
+		{
 
+			Item.width = 20;
+			Item.height = 20;
+			Item.value = 10000;
+			Item.rare = ItemRarityID.Blue;
+			Item.accessory = true;
+			Item.material = true;
 
-        }
-        public override void SetDefaults()
-        {
+		}
 
+		public override void UpdateAccessory(Player player, bool hideVisual)
+		{
+			player.buffImmune[BuffID.Electrified] = true;
+			if (Item.type == ModContent.ItemType<ImpactPiercer>())
+				Item.damage += 40;
+		}
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient(Mod, "ImpactTech", 6);
+			recipe.AddIngredient(ItemID.StoneBlock, 6);
 
-            Item.width = 20;
-            Item.height = 20;
-            Item.value = 10000;
-            Item.rare = 1;
-            Item.accessory = true;
-            Item.material = true;
+			recipe.AddTile(TileID.Anvils);
+			recipe.Register();
 
-        }
-
-        public override void UpdateAccessory(Player player, bool hideVisual)
-        {
-            player.buffImmune[BuffID.Electrified] = true;
-            if (Item.type == ModContent.ItemType<ImpactPiercer>()) Item.damage += 40;
-
-
-
-        }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(Mod, "ImpactTech", 6);
-                        recipe.AddIngredient(ItemID.StoneBlock, 6);
-
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-
-        }
-    }
+		}
+	}
 }
-
-
 

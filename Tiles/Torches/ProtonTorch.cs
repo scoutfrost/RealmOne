@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -16,7 +17,8 @@ namespace RealmOne.Tiles.Torches
 	{
 		private Asset<Texture2D> flameTexture;
 
-		public override void SetStaticDefaults() {
+		public override void SetStaticDefaults()
+		{
 			// Properties
 			Main.tileLighted[Type] = true;
 			Main.tileFrameImportant[Type] = true;
@@ -51,74 +53,86 @@ namespace RealmOne.Tiles.Torches
 			TileObjectData.addTile(Type);
 
 			// Etc
-			ModTranslation name = CreateMapEntryName();
+			LocalizedText name = CreateMapEntryName();
 
 			name.SetDefault("Proton Torch");
 
 			AddMapEntry(new Color(80, 100, 230), name);
 
 			// Assets
-			if (!Main.dedServ) {
+			if (!Main.dedServ)
+			{
 				flameTexture = ModContent.Request<Texture2D>("RealmOne/Tiles/Torches/ProtonTorch_Flame");
 			}
 		}
 
-		
+		public override void NumDust(int i, int j, bool fail, ref int num)
+		{
+			num = Main.rand.Next(1, 3);
+		}
 
-		public override void NumDust(int i, int j, bool fail, ref int num) => num = Main.rand.Next(1, 3);
-
-		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b) {
+		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+		{
 			Tile tile = Main.tile[i, j];
 
 			// If the torch is on
-			if (tile.TileFrameX < 66) {
+			if (tile.TileFrameX < 66)
+			{
 				// Make it emit the following light.
 				r = 0.4f;
-				g =  1f;
+				g = 1f;
 				b = 2f;
 			}
 		}
 
-		public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY) {
+		public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
+		{
 			offsetY = 0;
 
-			if (WorldGen.SolidTile(i, j - 1)) {
+			if (WorldGen.SolidTile(i, j - 1))
+			{
 				offsetY = 2;
 
-				if (WorldGen.SolidTile(i - 1, j + 1) || WorldGen.SolidTile(i + 1, j + 1)) {
+				if (WorldGen.SolidTile(i - 1, j + 1) || WorldGen.SolidTile(i + 1, j + 1))
+				{
 					offsetY = 4;
 				}
 			}
 		}
 
-		public override void PostDraw(int i, int j, SpriteBatch spriteBatch) {
+		public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+		{
 			// The following code draws multiple flames on top our placed torch.
 
 			int offsetY = 0;
 
-			if (WorldGen.SolidTile(i, j - 1)) {
+			if (WorldGen.SolidTile(i, j - 1))
+			{
 				offsetY = 2;
 
-				if (WorldGen.SolidTile(i - 1, j + 1) || WorldGen.SolidTile(i + 1, j + 1)) {
+				if (WorldGen.SolidTile(i - 1, j + 1) || WorldGen.SolidTile(i + 1, j + 1))
+				{
 					offsetY = 4;
 				}
 			}
 
-			Vector2 zero = new Vector2(Main.offScreenRange, Main.offScreenRange);
+			var zero = new Vector2(Main.offScreenRange, Main.offScreenRange);
 
-			if (Main.drawToScreen) {
+			if (Main.drawToScreen)
+			{
 				zero = Vector2.Zero;
 			}
 
-			ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i); // Don't remove any casts.
-			Color color = new Color(100, 100, 100, 0);
+			ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (uint)i); // Don't remove any casts.
+			var color = new Color(100, 100, 100, 0);
 			int width = 20;
 			int height = 20;
-			var tile = Main.tile[i, j];
+			Tile tile = Main.tile[i, j];
 			int frameX = tile.TileFrameX;
 			int frameY = tile.TileFrameY;
 
-			for (int k = 0; k < 7; k++) {
+			for (int k = 0; k < 7; k++)
+			{
 				float xx = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
 				float yy = Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
 

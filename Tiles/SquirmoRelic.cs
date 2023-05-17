@@ -1,14 +1,14 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using System;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.Enums;
-using System;
-using ReLogic.Content;
-using Terraria.Localization;
 
 namespace RealmOne.Tiles
 {
@@ -31,19 +31,23 @@ namespace RealmOne.Tiles
 		// All relics use the same pedestal texture, this one is copied from vanilla
 		public override string Texture => "RealmOne/Tiles/SquirmoPedestal";
 
-		public override void Load() {
-			if (!Main.dedServ) {
+		public override void Load()
+		{
+			if (!Main.dedServ)
+			{
 				// Cache the extra texture displayed on the pedestal
 				RelicTexture = ModContent.Request<Texture2D>(RelicTextureName);
 			}
 		}
 
-		public override void Unload() {
+		public override void Unload()
+		{
 			// Unload the extra texture displayed on the pedestal
 			RelicTexture = null;
 		}
 
-		public override void SetStaticDefaults() {
+		public override void SetStaticDefaults()
+		{
 			Main.tileShine[Type] = 400; // Responsible for golden particles
 			Main.tileFrameImportant[Type] = true; // Any multitile requires this
 			TileID.Sets.InteractibleByNPCs[Type] = true; // Town NPCs will palm their hand at this tile
@@ -73,30 +77,35 @@ namespace RealmOne.Tiles
 			AddMapEntry(new Color(233, 207, 94), Language.GetText("MapObject.Relic"));
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY) {
+		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		{
 			// This code here infers the placeStyle the tile was placed with. Only required if you go the Item.placeStyle approach. You just need Item.NewItem otherwise
 			// The placeStyle calculated here corresponds to whatever placeStyle you specified on your items that place this tile (Either through Item.placeTile or Item.DefaultToPlacableTile)
 			int placeStyle = frameX / FrameWidth;
 
 			int itemType = 0;
-			switch (placeStyle) {
+			switch (placeStyle)
+			{
 				case 0:
 					itemType = ModContent.ItemType<Items.Placeables.SquirmoRelicItem>();
 					break;
-				// Optional: Add more cases here
+					// Optional: Add more cases here
 			}
 
-			if (itemType > 0) {
+			if (itemType > 0)
+			{
 				// Spawn the item
 				Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, itemType);
 			}
 		}
 
-		public override bool CreateDust(int i, int j, ref int type) {
+		public override bool CreateDust(int i, int j, ref int type)
+		{
 			return false;
 		}
 
-		public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY) {
+		public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
+		{
 			// Only required If you decide to make your tile utilize different styles through Item.placeStyle
 
 			// This preserves its original frameX/Y which is required for determining the correct texture floating on the pedestal, but makes it draw properly
@@ -104,26 +113,31 @@ namespace RealmOne.Tiles
 			tileFrameY %= FrameHeight * 2; // Clamps the frameY (two horizontally aligned place styles, hence * 2)
 		}
 
-		public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData) {
+		public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData)
+		{
 			// Since this tile does not have the hovering part on its sheet, we have to animate it ourselves
 			// Therefore we register the top-left of the tile as a "special point"
 			// This allows us to draw things in SpecialDraw
-			if (drawData.tileFrameX % FrameWidth == 0 && drawData.tileFrameY % FrameHeight == 0) {
+			if (drawData.tileFrameX % FrameWidth == 0 && drawData.tileFrameY % FrameHeight == 0)
+			{
 				Main.instance.TilesRenderer.AddSpecialLegacyPoint(i, j);
 			}
 		}
 
-		public override void SpecialDraw(int i, int j, SpriteBatch spriteBatch) {
+		public override void SpecialDraw(int i, int j, SpriteBatch spriteBatch)
+		{
 			// This is lighting-mode specific, always include this if you draw tiles manually
-			Vector2 offScreen = new Vector2(Main.offScreenRange);
-			if (Main.drawToScreen) {
+			var offScreen = new Vector2(Main.offScreenRange);
+			if (Main.drawToScreen)
+			{
 				offScreen = Vector2.Zero;
 			}
 
 			// Take the tile, check if it actually exists
-			Point p = new Point(i, j);
+			var p = new Point(i, j);
 			Tile tile = Main.tile[p.X, p.Y];
-			if (tile == null || !tile.HasTile) {
+			if (tile == null || !tile.HasTile)
+			{
 				return;
 			}
 
@@ -154,7 +168,8 @@ namespace RealmOne.Tiles
 			Color effectColor = color;
 			effectColor.A = 0;
 			effectColor = effectColor * 0.1f * scale;
-			for (float num5 = 0f; num5 < 1f; num5 += 355f / (678f * (float)Math.PI)) {
+			for (float num5 = 0f; num5 < 1f; num5 += 355f / (678f * (float)Math.PI))
+			{
 				spriteBatch.Draw(texture, drawPos + (TwoPi * num5).ToRotationVector2() * (6f + offset * 2f), frame, effectColor, 1f, origin, 1f, effects, 1f);
 			}
 		}
