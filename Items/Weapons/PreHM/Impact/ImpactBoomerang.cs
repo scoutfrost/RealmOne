@@ -35,7 +35,7 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2;
             Item.value = 10000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.maxStack = 1;

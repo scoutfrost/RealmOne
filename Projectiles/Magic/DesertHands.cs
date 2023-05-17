@@ -22,7 +22,7 @@ namespace RealmOne.Projectiles.Magic
             Projectile.width = 16;
             Projectile.height = 16;
 
-           Projectile.friendly = true;
+            Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.DamageType = DamageClass.Magic;
             Projectile.penetrate = 1;

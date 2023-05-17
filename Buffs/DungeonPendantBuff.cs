@@ -14,11 +14,11 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Dungeon Pendant Buff");
             Description.SetDefault("'The charm empowers when you step foot into the dungeon!'");
-           
+
 
         }
 
-       
+
         public override void Update(Player player, ref int buffIndex)
         {
             if (player.ZoneDungeon)
@@ -27,7 +27,7 @@ namespace RealmOne.Buffs
                 player.GetDamage(DamageClass.Generic) += 0.10f;
                 player.nearbyActiveNPCs = player.statDefense + 1;
             }
-            
+
         }
 
 

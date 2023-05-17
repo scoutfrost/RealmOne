@@ -12,8 +12,8 @@ namespace RealmOne.Items.Misc
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Eidolic Ink"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-                
-              
+
+
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 50;
 
@@ -23,7 +23,7 @@ namespace RealmOne.Items.Misc
 
         public override void SetDefaults()
         {
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
             Item.value = Item.buyPrice(gold: 75);
             Item.rare = ItemRarityID.Purple;

@@ -27,7 +27,7 @@ namespace RealmOne.Tiles
 
             // Placement
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
-            TileObjectData.newTile.CoordinateHeights = new[] { 16,18 };
+            TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
             TileObjectData.newTile.StyleHorizontal = true;
 
             TileObjectData.addTile(Type);
@@ -36,16 +36,16 @@ namespace RealmOne.Tiles
             LocalizedText name = CreateMapEntryName();
             name.SetDefault("Stone Oven");
             AddMapEntry(new Color(200, 200, 200), name);
-         //   AnimationFrameHeight = 38;
+            //   AnimationFrameHeight = 38;
         }
 
         public override void NumDust(int i, int j, bool fail, ref int num) => num = Main.rand.Next(1, 3);
 
-      //  public override void AnimateTile(ref int frame, ref int frameCounter)
-      //  {
-            // We can change frames manually, but since we are just simulating a different tile, we can just use the same value
+        //  public override void AnimateTile(ref int frame, ref int frameCounter)
+        //  {
+        // We can change frames manually, but since we are just simulating a different tile, we can just use the same value
         //    frame = Main.tileFrame[TileID.GoldGrasshopperCage];
-      //  }
+        //  }
         public override void KillMultiTile(int x, int y, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<Items.Placeables.StoneOvenItem>());

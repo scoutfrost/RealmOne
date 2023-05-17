@@ -16,7 +16,7 @@ namespace RealmOne.Items.Misc
                 + "\n'The barrel is polished and thick, incapable for it to be set on fire'"
                 + "\n'Common use of it is typically used for weaker but reliable guns'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 5;
-            
+
 
         }
 
@@ -24,15 +24,15 @@ namespace RealmOne.Items.Misc
         public override void SetDefaults()
         {
             Item.material = true;
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.maxStack = 99;
-            Item.value = Item.buyPrice(gold:1,silver: 5); 
+            Item.value = Item.buyPrice(gold: 1, silver: 5);
 
 
         }
-        
+
         public override void AddRecipes()
         {
             CreateRecipe(1)
@@ -42,5 +42,5 @@ namespace RealmOne.Items.Misc
 
         }
 
-        }
+    }
 }

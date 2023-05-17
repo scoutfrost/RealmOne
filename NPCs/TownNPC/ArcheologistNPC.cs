@@ -40,7 +40,7 @@ namespace RealmOne.NPCs.TownNPC
                 .SetBiomeAffection<JungleBiome>(AffectionLevel.Like)
                 .SetBiomeAffection<SnowBiome>(AffectionLevel.Hate)
                 .SetBiomeAffection<ForestBiome>(AffectionLevel.Love)
-                
+
                 .SetNPCAffection(NPCID.Merchant, AffectionLevel.Love)
                 .SetNPCAffection(NPCID.PartyGirl, AffectionLevel.Dislike)
                 .SetNPCAffection(NPCID.Mechanic, AffectionLevel.Hate);
@@ -116,7 +116,7 @@ namespace RealmOne.NPCs.TownNPC
         {
 
             shop.item[nextSlot].SetDefaults(ItemID.FrostburnArrow, false);
-            shop.item[nextSlot].value = Item.buyPrice(copper:7);
+            shop.item[nextSlot].value = Item.buyPrice(copper: 7);
             nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.Snowball, false);
@@ -124,8 +124,8 @@ namespace RealmOne.NPCs.TownNPC
             nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.SnowballLauncher, false);
-            shop.item[nextSlot].value = Item.buyPrice(gold: 3, silver: 40) ;
-            nextSlot++;                                                                                                     
+            shop.item[nextSlot].value = Item.buyPrice(gold: 3, silver: 40);
+            nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.SnowballCannon, false);
             shop.item[nextSlot].value = Item.buyPrice(gold: 8, silver: 20);

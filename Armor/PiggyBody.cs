@@ -29,8 +29,8 @@ namespace RealmOne.Armor
             base.SetStaticDefaults();
             DisplayName.SetDefault("Piggy Patroller Bodyplate");
             Tooltip.SetDefault("5% increased knockback but 8% decreased movement speed"
-                +"\nDiscount on all Shop Items!"
-                +"\n'Carrying a heavy bodyplate full of porcelain'");
+                + "\nDiscount on all Shop Items!"
+                + "\n'Carrying a heavy bodyplate full of porcelain'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -68,8 +68,8 @@ namespace RealmOne.Armor
         public override void AddRecipes()
         {
             CreateRecipe()
-           
-            .AddIngredient(Mod,"PiggyPorcelain", 6)
+
+            .AddIngredient(Mod, "PiggyPorcelain", 6)
             .AddTile(TileID.Furnaces)
             .Register();
 

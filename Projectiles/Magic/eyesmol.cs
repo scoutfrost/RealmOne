@@ -66,8 +66,8 @@ namespace RealmOne.Projectiles.Magic
 
             SoundEngine.PlaySound(SoundID.NPCHit18);
         }
-        
-        
+
+
     }
 
 

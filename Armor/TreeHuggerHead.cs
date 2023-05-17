@@ -26,10 +26,10 @@ namespace RealmOne.Armor
     {
         public override void SetStaticDefaults()
         {
-           
+
             DisplayName.SetDefault("Tree Hugger Helmet");
             Tooltip.SetDefault("5% increased damage"
-                +"\n'Helmet of the tree tops!'");
+                + "\n'Helmet of the tree tops!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -78,7 +78,7 @@ namespace RealmOne.Armor
             CreateRecipe()
             .AddIngredient(ItemID.Wood, 25)
             .AddIngredient(ItemID.Acorn, 5)
-            .AddIngredient(Mod,"CrushedAcorns", 10)
+            .AddIngredient(Mod, "CrushedAcorns", 10)
             .AddTile(TileID.WorkBenches)
             .Register();
 

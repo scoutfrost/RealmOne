@@ -30,7 +30,7 @@ namespace RealmOne.Items.Placeables
         {
             DisplayName.SetDefault("Renaissance Pylon"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Right Click to teleport to another pylon and back!");
-                
+
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 

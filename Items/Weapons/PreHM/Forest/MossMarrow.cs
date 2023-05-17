@@ -27,9 +27,9 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.height = 40;
             Item.useTime = 35;
             Item.useAnimation = 35;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 3;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item5;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.Arrow;

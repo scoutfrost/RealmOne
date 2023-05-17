@@ -23,11 +23,11 @@ namespace RealmOne.Armor
 {
     [AutoloadEquip(EquipType.Legs)]
 
-    public class BrassLegs: ModItem
+    public class BrassLegs : ModItem
     {
         public override void SetStaticDefaults()
         {
-           
+
             DisplayName.SetDefault("Brass Greaves");
             Tooltip.SetDefault("7% increased running and movement speed");
 
@@ -63,6 +63,6 @@ namespace RealmOne.Armor
 
 
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-       
+
     }
 }

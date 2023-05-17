@@ -87,20 +87,20 @@ namespace RealmOne.NPCs.Enemies
 
                 dustTimer = 0;
             }
-            
+
         }
         public override void OnSpawn(IEntitySource source)
         {
             SoundEngine.PlaySound(SoundID.Item9);
 
         }
-       /* public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
-        {
-            
-                Color color = Helper.IndicatorColor;
-                spriteBatch.Draw(Request<Texture2D>("RealmOne/NPCs/Enemies/GlitterdustSlime_Tex").Value, NPC.position - screenPos + new Vector2(-3, -6), color);
-            
-        }*/
+        /* public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+         {
+
+                 Color color = Helper.IndicatorColor;
+                 spriteBatch.Draw(Request<Texture2D>("RealmOne/NPCs/Enemies/GlitterdustSlime_Tex").Value, NPC.position - screenPos + new Vector2(-3, -6), color);
+
+         }*/
         public override void FindFrame(int frameHeight)
         {
             NPC.frameCounter++;
@@ -148,6 +148,6 @@ namespace RealmOne.NPCs.Enemies
             }
 
         }
-       
+
     }
 }

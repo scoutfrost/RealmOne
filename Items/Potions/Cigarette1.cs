@@ -31,7 +31,7 @@ namespace RealmOne.Items.Potions
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = 500;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item3;
             Item.autoReuse = false;
             Item.consumable = true;

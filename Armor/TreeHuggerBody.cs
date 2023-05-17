@@ -29,7 +29,7 @@ namespace RealmOne.Armor
             base.SetStaticDefaults();
             DisplayName.SetDefault("Tree Hugger Chestplate");
             Tooltip.SetDefault("5% increased knockback on all weapons"
-                +"\n'Chestplate of the tree tops!'");
+                + "\n'Chestplate of the tree tops!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -68,7 +68,7 @@ namespace RealmOne.Armor
             CreateRecipe()
             .AddIngredient(ItemID.Wood, 30)
             .AddIngredient(ItemID.Acorn, 6)
-            .AddIngredient(Mod,"CrushedAcorns", 30)
+            .AddIngredient(Mod, "CrushedAcorns", 30)
             .AddTile(TileID.WorkBenches)
             .Register();
 

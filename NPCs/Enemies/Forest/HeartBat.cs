@@ -91,7 +91,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (spawnInfo.PlayerSafe)
-           
+
                 return SpawnCondition.Underground.Chance * 0.20f;
             return SpawnCondition.Cavern.Chance * 0.20f;
         }

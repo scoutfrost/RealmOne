@@ -32,10 +32,10 @@ namespace RealmOne.Items.Weapons.PreHM.Grenades
             Item.height = 24;
             Item.useTime = 45;
             Item.useAnimation = 45;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 1f;
             Item.value = 10000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.maxStack = 999;

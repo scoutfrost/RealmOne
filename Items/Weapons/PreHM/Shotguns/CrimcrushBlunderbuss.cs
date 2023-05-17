@@ -35,10 +35,10 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             Item.useTime = 62;
             Item.useAnimation = 62;
             //62 FOR BOTH
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2f;
             Item.value = 30000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.Bullet;

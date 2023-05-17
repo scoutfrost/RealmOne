@@ -37,9 +37,9 @@ namespace RealmOne.Items.Weapons.HM
             Item.height = 40;
             Item.useTime = 11;
             Item.useAnimation = 11;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 5;
-            Item.rare = 4;
+            Item.rare = ItemRarityID.LightRed;
             Item.UseSound = SoundID.Item88;
             Item.autoReuse = true;
             Item.shoot = ProjectileID.Meteor1;

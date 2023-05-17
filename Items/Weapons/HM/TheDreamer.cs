@@ -64,7 +64,7 @@ namespace RealmOne.Items.Weapons.HM
 
             bool pickupText = false;
             for (int i = 0; i < 50; i++)
-                if (player.inventory[i].type == 0 && !pickupText)
+                if (player.inventory[i].type == ItemID.None && !pickupText)
                 {
                     CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y - 20, player.width, player.height), new Color(166, 93, 200, 255), "Dream on!", false, false);
                     pickupText = true;

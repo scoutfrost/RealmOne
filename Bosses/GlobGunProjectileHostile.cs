@@ -143,7 +143,7 @@ namespace RealmOne.Bosses
                 Main.dust[dustIndex].velocity *= 3f;
             }
             // Large Smoke Gore spawn
-           
+
             // reset size to normal width and height.
             Projectile.position.X = Projectile.position.X + (float)(Projectile.width / 2);
             Projectile.position.Y = Projectile.position.Y + (float)(Projectile.height / 2);
@@ -196,10 +196,10 @@ namespace RealmOne.Bosses
                         }
                     }
                 }
-            
+
             }
         }
     }
 }
-        
-    
+
+

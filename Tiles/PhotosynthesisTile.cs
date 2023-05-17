@@ -57,14 +57,14 @@ namespace RealmOne.Tiles
         }
 
 
-   
+
 
         public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
         {
             return base.TileFrame(i, j, ref resetFrame, ref noBreak);
         }
 
-       // public override bool CanKillTile(int i, int j, ref bool blockDamaged) => ;
+        // public override bool CanKillTile(int i, int j, ref bool blockDamaged) => ;
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY) => offsetY = 2;
         public override void NumDust(int i, int j, bool fail, ref int num) => num = fail ? 1 : 3;
 
@@ -86,7 +86,7 @@ namespace RealmOne.Tiles
             for (int k = 0; k < Main.npc.Length; k++)
                 if (Main.npc[k].active && Main.npc[k].type == ModContent.NPCType<SquirmoHead>()) return false;
 
-                
+
 
             Player player = Main.player[Main.myPlayer];
             if (player.HasItem(ModContent.ItemType<IronGunBarrel>()))

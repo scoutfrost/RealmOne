@@ -35,10 +35,10 @@ namespace RealmOne.Items.Weapons.PreHM.Classless
             Item.height = 24;
             Item.useTime = 40;
             Item.useAnimation = 40;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 1f;
             Item.value = 20000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.maxStack = 999;
@@ -70,7 +70,7 @@ namespace RealmOne.Items.Weapons.PreHM.Classless
                 Item.maxStack = 99;
 
                 Item.value = 500;
-                Item.rare = 2;
+                Item.rare = ItemRarityID.Green;
                 Item.consumable = true;
 
                 Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/LightbulbShine");
@@ -113,10 +113,10 @@ namespace RealmOne.Items.Weapons.PreHM.Classless
                 Item.height = 24;
                 Item.useTime = 40;
                 Item.useAnimation = 40;
-                Item.useStyle = 1;
+                Item.useStyle = ItemUseStyleID.Swing;
                 Item.knockBack = 1f;
                 Item.value = 20000;
-                Item.rare = 1;
+                Item.rare = ItemRarityID.Blue;
                 Item.UseSound = SoundID.Item1;
                 Item.autoReuse = true;
                 Item.maxStack = 999;

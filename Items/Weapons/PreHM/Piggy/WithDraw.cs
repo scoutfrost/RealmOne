@@ -49,9 +49,9 @@ namespace RealmOne.Items.Weapons.PreHM.Piggy
             Item.height = 32;
             Item.useTime = 12;
             Item.useAnimation = 12;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = 30000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.CoinPickup;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.Arrow;
@@ -95,7 +95,7 @@ namespace RealmOne.Items.Weapons.PreHM.Piggy
 
             bool pickupText = false;
             for (int i = 0; i < 50; i++)
-                if (player.inventory[i].type == 0 && !pickupText)
+                if (player.inventory[i].type == ItemID.None && !pickupText)
                 {
                     CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y - 20, player.width, player.height), new Color(108, 209, 241, 105), "Please insert card...", false, false);
                     pickupText = true;

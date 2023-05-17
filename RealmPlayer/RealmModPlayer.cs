@@ -33,21 +33,21 @@ namespace RealmOne.RealmPlayer
 
 
 
-        public class Scrolly : ModPlayer
+    public class Scrolly : ModPlayer
+    {
+        public bool ShowScroll = false;
+
+        public override void PostUpdate()
         {
-            public bool ShowScroll = false;
-
-            public override void PostUpdate()
+            if (ShowScroll == true)
             {
-                if (ShowScroll == true)
-                {
-                    var target = Main.LocalPlayer;
+                var target = Main.LocalPlayer;
 
-                }
-
-                base.PostUpdate();
             }
+
+            base.PostUpdate();
         }
+    }
 
 
 
@@ -82,7 +82,7 @@ namespace RealmOne.RealmPlayer
                 GlowMaskSystem.DrawItemGlowMask(textureItem, drawInfo);
         }
     }
-//#
+    //#
 
 
     public class Screenshake : ModPlayer
@@ -106,7 +106,7 @@ namespace RealmOne.RealmPlayer
 
         int LongShakeTimer = 0;
         public bool LongShake = false;
-        bool LongShakeWork= false;
+        bool LongShakeWork = false;
 
         public override void ModifyScreenPosition()
         {
@@ -167,7 +167,7 @@ namespace RealmOne.RealmPlayer
 
                 Vector2 randomworm = new(Main.rand.Next(-powerworm, powerworm), Main.rand.Next(-powerworm, powerworm));
 
-               timerworm++;
+                timerworm++;
                 if (timerworm > 0)
                 {
                     Main.screenPosition += randomworm;
@@ -185,7 +185,7 @@ namespace RealmOne.RealmPlayer
             }
             if (LongShakeWork == true)
             {
-                int longpower =11;
+                int longpower = 11;
 
                 Vector2 randomlong = new(Main.rand.Next(-longpower, longpower), Main.rand.Next(-longpower, longpower));
 
@@ -205,15 +205,15 @@ namespace RealmOne.RealmPlayer
         }
 
 
-        
-            //screenshake
-           
-            public override void ResetEffects()
+
+        //screenshake
+
+        public override void ResetEffects()
+        {
+            if (!makeTimerWork)
             {
-                if (!makeTimerWork)
-                {
-                    SmallScreenshake = false;
-                }
+                SmallScreenshake = false;
+            }
 
             if (!makeTimerWork)
             {
@@ -230,7 +230,7 @@ namespace RealmOne.RealmPlayer
 
         }
     }
-    public class RealmModPlayer: ModPlayer
+    public class RealmModPlayer : ModPlayer
     {
         public bool Overseer = false;
         public bool Rusty = false;
@@ -251,11 +251,11 @@ namespace RealmOne.RealmPlayer
 
         }
 
-        
+
 
         public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
         {
-            if (Overseer && Main.rand.NextBool(2) && !target.friendly && crit  && target.lifeMax > 10 && target.type != NPCID.TargetDummy)
+            if (Overseer && Main.rand.NextBool(2) && !target.friendly && crit && target.lifeMax > 10 && target.type != NPCID.TargetDummy)
             {
                 Player.AddBuff(ModContent.BuffType<OverseerBuff>(), 400);
             }
@@ -271,14 +271,14 @@ namespace RealmOne.RealmPlayer
         {
             public bool brightProjectiles = false;
 
-            
+
         }
         public override void PreUpdate()
         {
             if (Main.GameModeInfo.IsMasterMode)
-            { 
+            {
 
-            if (Player.ZoneSkyHeight)
+                if (Player.ZoneSkyHeight)
                 {
                     Player.AddBuff(BuffID.Suffocation, 20);
                 }
@@ -294,23 +294,23 @@ namespace RealmOne.RealmPlayer
 
         public override void OnEnterWorld()
         {
-            
-            if (Main.netMode != 2)
+
+            if (Main.netMode != NetmodeID.Server)
             {
                 Main.NewText(Language.GetTextValue("Another day, Another Disappointment"), 100, 30, 250);
-                
+
 
             }
-            if (Main.netMode != 2)
+            if (Main.netMode != NetmodeID.Server)
             {
                 Main.NewText(Language.GetTextValue($"Go and join the discord server for the mod!! [c/0000FF:discord.gg]"), 128, 232, 55);
 
             }
         }
-     
+
         public override void OnRespawn()
         {
-            if (Main.netMode != 2)
+            if (Main.netMode != NetmodeID.Server)
             {
                 Main.NewText(Language.GetTextValue("Death is only so fragile, yet you take advantage of it."), (byte)218, (byte)39, (byte)44);
 
@@ -318,14 +318,14 @@ namespace RealmOne.RealmPlayer
         }
         public override void PlayerConnect()
         {
-            if (Main.netMode != 2)
+            if (Main.netMode != NetmodeID.Server)
             {
                 Main.NewText(Language.GetTextValue("'Your acquaintance wants to feel distress as well I see'"), (byte)64, (byte)16, (byte)227);
             }
         }
         public override void PlayerDisconnect()
         {
-            if (Main.netMode != 2)
+            if (Main.netMode != NetmodeID.Server)
             {
                 Main.NewText(Language.GetTextValue("'Never wait a second longer or shorter, it will always drive the pain towards you'"), (byte)210, (byte)30, (byte)30);
             }
@@ -333,21 +333,21 @@ namespace RealmOne.RealmPlayer
 
         public override void PostNurseHeal(NPC nurse, int health, bool removeDebuffs, int price)
         {
-            if (Main.netMode != 2)
+            if (Main.netMode != NetmodeID.Server)
             {
                 Main.NewText(Language.GetTextValue("'Regeneratating is more natural and increases your cardiovascular immunity, avoid healing, you pussy'"), (byte)210, (byte)100, (byte)175);
             }
         }
-        
+
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
-            
+
             return (IEnumerable<Item>)(object)new Item[2]
             {
                 new Item(ModContent.ItemType<SpaceStarfish>(), 1, 0),
                 new Item(ModContent.ItemType<BreadLoaf>(), 1, 0)
             };
         }
-        
+
     }
 }

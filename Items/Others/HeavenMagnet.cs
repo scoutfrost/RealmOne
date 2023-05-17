@@ -115,7 +115,7 @@ namespace RealmOne.Items.Others
         {
             if (player.HasBuff(ModContent.BuffType<MagnetBuff>())) ;
             {
-                if (Main.netMode != 2)
+                if (Main.netMode != NetmodeID.Server)
                     Main.NewText(Language.GetTextValue("You are already under the effect of the Heaven's Magnet Gift")
 
                     , 150, 243, 244);
@@ -124,7 +124,7 @@ namespace RealmOne.Items.Others
             player.AddBuff(ModContent.BuffType<MagnetBuff>(), 5 * 60 * 60);
 
 
-            if (Main.netMode != 2)
+            if (Main.netMode != NetmodeID.Server)
                 Main.NewText(Language.GetTextValue($"\n[i:{ItemID.FallenStar}]The heaven has accepeted your wish, you have been granted an item![i:{ItemID.FallenStar}]"), 150, 243, 244);
 
             return true;
@@ -147,7 +147,7 @@ namespace RealmOne.Items.Others
             // Check if the buff has been active for at least 20 minutes
             if (player.buffTime[buffIndex] % (5 * 60 * 60) == 0)
                 // Give the player a random item
-                if (Main.netMode != 2)
+                if (Main.netMode != NetmodeID.Server)
                     Main.NewText(Language.GetTextValue($"\n[i:{ItemID.FallenStar}]The heaven has accepeted your wish, you have been granted an item![i:{ItemID.FallenStar}]"), 150, 243, 244);
         }
 

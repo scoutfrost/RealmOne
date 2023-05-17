@@ -26,10 +26,10 @@ namespace RealmOne.Armor
     {
         public override void SetStaticDefaults()
         {
-           
+
             DisplayName.SetDefault("Piggy Patroller Mask");
             Tooltip.SetDefault("5% increased damage but 5% decreased acceleration"
-                +"\n'This is so uncomfortable, but it does the job'");
+                + "\n'This is so uncomfortable, but it does the job'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -53,7 +53,7 @@ namespace RealmOne.Armor
         {
             player.GetDamage(DamageClass.Generic) += 0.05f;
             player.runAcceleration -= 0.05f;
-            
+
         }
 
         // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -65,7 +65,7 @@ namespace RealmOne.Armor
         // UpdateArmorSet allows you to give set bonuses to the armor.
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "4% increased armour penetration to all weapons"+"\nGreatly increases coin pickup"; // This is the setbonus tooltip
+            player.setBonus = "4% increased armour penetration to all weapons" + "\nGreatly increases coin pickup"; // This is the setbonus tooltip
             player.GetArmorPenetration(DamageClass.Generic) += 4f;
             player.goldRing = true;
         }
@@ -76,8 +76,8 @@ namespace RealmOne.Armor
         public override void AddRecipes()
         {
             CreateRecipe()
-           
-            .AddIngredient(Mod,"PiggyPorcelain", 5)
+
+            .AddIngredient(Mod, "PiggyPorcelain", 5)
             .AddTile(TileID.Furnaces)
             .Register();
 

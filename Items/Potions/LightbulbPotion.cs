@@ -33,7 +33,7 @@ namespace RealmOne.Items.Potions
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.DrinkLiquid;
             Item.value = 500;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.consumable = true;
             Item.buffType = ModContent.BuffType<LightbulbBuff>();
             Item.buffTime = 9000;

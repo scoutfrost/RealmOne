@@ -37,10 +37,10 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.height = 24;
             Item.useTime = 40;
             Item.useAnimation = 40;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2f;
             Item.value = 10000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item23;
             Item.autoReuse = true;
             Item.useStyle = ItemUseStyleID.DrinkLiquid;

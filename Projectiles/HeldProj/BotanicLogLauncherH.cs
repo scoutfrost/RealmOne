@@ -58,13 +58,13 @@ namespace RealmOne.Projectiles.HeldProj
 
             //calling shootbullets and recoil
             if (Projectile.ai[0] == 80)
-               ShootBullets();
-           if (Projectile.ai[0] == 89)
-               ShootBullets();
-          if (Projectile.ai[0] > 79 && Projectile.ai[0] < 86)
-               recoilFX = true;
+                ShootBullets();
+            if (Projectile.ai[0] == 89)
+                ShootBullets();
+            if (Projectile.ai[0] > 79 && Projectile.ai[0] < 86)
+                recoilFX = true;
             else
-              recoilFX = false;
+                recoilFX = false;
 
 
             Vector2 rrp = player.RotatedRelativePoint(player.MountedCenter, true);
@@ -78,7 +78,7 @@ namespace RealmOne.Projectiles.HeldProj
 
             }
             else if (!stillInUse)
-            Projectile.timeLeft = 2;
+                Projectile.timeLeft = 2;
 
         }
         private void UpdatePlayerVisuals(Player player, Vector2 playerhandpos)
@@ -91,7 +91,7 @@ namespace RealmOne.Projectiles.HeldProj
             player.heldProj = Projectile.whoAmI;
             player.itemTime = 12;
             player.itemAnimation = 12;
-           
+
             player.itemRotation = (Projectile.velocity * Projectile.direction).ToRotation();
 
         }
@@ -152,7 +152,7 @@ namespace RealmOne.Projectiles.HeldProj
                 if (offsetX == 32)
                     offsetX += 4;
 
-              
+
             }
 
             origin.X = Projectile.spriteDirection == 1 ? sourceRectangle.Width - offsetX : offsetX;
@@ -179,6 +179,6 @@ namespace RealmOne.Projectiles.HeldProj
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 0, default(Color), 2f);
             }
         }
-        
+
     }
 }

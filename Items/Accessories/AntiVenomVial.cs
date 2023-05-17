@@ -26,7 +26,7 @@ namespace RealmOne.Items.Accessories
             Item.width = 20;
             Item.height = 20;
             Item.value = 10000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.accessory = true;
 
         }
@@ -41,10 +41,10 @@ namespace RealmOne.Items.Accessories
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.BottledWater, 1);
             recipe.AddIngredient(ItemID.Stinger, 3);
-            recipe.AddIngredient(Mod,"GoopyGrass", 2);
+            recipe.AddIngredient(Mod, "GoopyGrass", 2);
             recipe.AddTile(TileID.Bottles);
             recipe.Register();
-            
+
         }
     }
 }

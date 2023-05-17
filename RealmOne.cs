@@ -81,7 +81,7 @@ namespace RealmOne
                     (Func<bool>)(() => true),
                     new List<int>
                     {
-                  
+
                         ModContent.ItemType<EarthEmerald>(),
                         ModContent.ItemType<TheOutcastsOverseer>(),
                         ModContent.ItemType<TheCalender>(),
@@ -97,7 +97,7 @@ namespace RealmOne
                     ModContent.ItemType<Outcrop>(),
                     "To this day, the dirt titan is a remarkable standpoint of the growth of Terraria, from its hard life and from its happiest life, it will always be a symbol of the land. The name that is given to it now is called The Outcrop Outcast, for many reasons. The dirt effigy still remains on this day and is untouched even for the irresponsible. Would you rather defeat the past or lose the future?\r\n",
                     ""
-                }); 
+                });
 
 
             }

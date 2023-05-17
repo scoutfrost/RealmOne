@@ -36,10 +36,10 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.height = 24;
             Item.useTime = 38;
             Item.useAnimation = 38;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 3;
             Item.value = 10000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SquirmoMudBubbleBlow");
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<WormBall>();

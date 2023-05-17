@@ -25,7 +25,7 @@ namespace RealmOne.Items.Placeables
             Item.maxStack = 999;
             Item.consumable = true;
             Item.value = Item.buyPrice(silver: 70, copper: 50);
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useAnimation = 10;
             Item.useTime = 10;

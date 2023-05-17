@@ -45,9 +45,9 @@ namespace RealmOne.Projectiles.Magic
             Lighting.Brightness(1, 1);
 
 
-           
+
         }
-      
+
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
 

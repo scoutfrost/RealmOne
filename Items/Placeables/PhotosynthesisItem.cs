@@ -10,7 +10,7 @@ using System;
 
 namespace RealmOne.Items.Placeables
 {
-   
+
     public class PhotosynthesisItem : ModItem
     {
         public override void SetDefaults()
@@ -27,12 +27,12 @@ namespace RealmOne.Items.Placeables
         {
             DisplayName.SetDefault("Photosynthesis Pillar"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Right Click to summon the Outcrop Outcast");
-                
+
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
 
         }
-       
+
     }
 }

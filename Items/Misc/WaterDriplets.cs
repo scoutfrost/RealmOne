@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace RealmOne.Items.Misc
 {
-    public class WaterDriplets: ModItem
+    public class WaterDriplets : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -22,12 +22,12 @@ namespace RealmOne.Items.Misc
 
         public override void SetDefaults()
         {
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
             Item.value = 20000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.maxStack = 999;
-            
+
 
         }
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
@@ -62,12 +62,12 @@ namespace RealmOne.Items.Misc
                 spriteBatch.Draw(texture, drawPos + new Vector2(0f, 8f).RotatedBy(radians) * time, frame, new Color(30, 180, 230, 70), rotation, frameOrigin, scale, SpriteEffects.None, 0);
             }
 
-           
+
 
             return true;
         }
-      
-       
+
+
 
 
     }

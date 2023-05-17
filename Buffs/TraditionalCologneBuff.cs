@@ -14,11 +14,11 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Traditional Cologne");
             Description.SetDefault("'You smell like exotic moonglow and cold skybreeze!'");
-           
+
 
         }
 
-       
+
         public override void Update(Player player, ref int buffIndex)
         {
             player.statDefense += 3;

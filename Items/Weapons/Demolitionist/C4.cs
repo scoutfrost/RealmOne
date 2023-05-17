@@ -36,15 +36,15 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.height = 24;
             Item.useTime = 50;
             Item.useAnimation = 50;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2f;
             Item.value = 10000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.crit = 4;
-            
+
             Item.scale = 0.9f;
 
             Item.shoot = ModContent.ProjectileType<C5Proj>();
@@ -105,7 +105,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
             return player.ownedProjectileCounts[Item.shoot] < 5;
 
         }
-        
+
         public override Vector2? HoldoutOffset()
         {
             Vector2 offset = new Vector2(6, 0);

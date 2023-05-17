@@ -29,10 +29,10 @@ namespace RealmOne.Items.Misc
 
         public override void SetDefaults()
         {
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
             Item.value = 20000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.maxStack = 999;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/LeechHeartEat");
             Item.consumable = true;
@@ -107,12 +107,12 @@ namespace RealmOne.Items.Misc
 
             line = new TooltipLine(Mod, "EdibleLeechHeart", "'Gives off a sense of biological immortality or either eadable cardiac arrest'")
             {
-                OverrideColor = new Color(200, 50,120 )
+                OverrideColor = new Color(200, 50, 120)
 
             };
             tooltips.Add(line);
         }
-       
+
 
 
     }

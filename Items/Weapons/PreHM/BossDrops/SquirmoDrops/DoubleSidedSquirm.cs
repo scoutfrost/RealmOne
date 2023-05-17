@@ -41,7 +41,7 @@ namespace RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops
             Item.useAnimation = 19;
             Item.knockBack = 8f;
             Item.value = 30000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.autoReuse = true;
             Item.crit = 3;
             Item.useStyle = ItemUseStyleID.Shoot;

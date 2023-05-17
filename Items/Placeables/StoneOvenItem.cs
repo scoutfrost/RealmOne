@@ -17,7 +17,7 @@ namespace RealmOne.Items.Placeables
         {
             DisplayName.SetDefault("Stone Oven");
             Tooltip.SetDefault("Capable of cooking wheat based foods"
-                +"\n'Always cooked to perfection!'");
+                + "\n'Always cooked to perfection!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
@@ -46,11 +46,11 @@ namespace RealmOne.Items.Placeables
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.Furnace,1)
-                .AddIngredient(ItemID.StoneBlock,50)
+                .AddIngredient(ItemID.Furnace, 1)
+                .AddIngredient(ItemID.StoneBlock, 50)
                 .AddIngredient(ItemID.Torch, 25)
                  .AddIngredient(ItemID.Wood, 20)
-                 
+
                 .Register();
         }
     }

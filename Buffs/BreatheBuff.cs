@@ -14,11 +14,11 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Breathe Buff!");
             Description.SetDefault("'Ability to breathe in space and gain various buffs that increase if your in space'");
-           
+
 
         }
 
-       
+
         public override void Update(Player player, ref int buffIndex)
         {
             player.moveSpeed += 0.08f;

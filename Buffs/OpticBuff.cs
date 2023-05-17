@@ -14,7 +14,7 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Midnight Hunter");
             Description.SetDefault("Hunter and Nightowl effects, 5% increased crit");
-           
+
 
         }
 
@@ -24,7 +24,7 @@ namespace RealmOne.Buffs
 
             player.nightVision = true;
             player.AddBuff(BuffID.Hunter, 60);
-            
+
 
         }
 

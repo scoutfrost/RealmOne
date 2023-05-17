@@ -34,10 +34,10 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
             Item.height = 32;
             Item.useTime = 28;
             Item.useAnimation = 28;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2f;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item64;
             Item.autoReuse = true;
             Item.useAmmo = ItemID.Cactus;
@@ -79,8 +79,8 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
                 Item.height = 32;
                 Item.useTime = 28;
                 Item.useAnimation = 28;
-                Item.useStyle = 5;
-                Item.rare = 2;
+                Item.useStyle = ItemUseStyleID.Shoot;
+                Item.rare = ItemRarityID.Green;
                 Item.CloneDefaults(ItemID.MysticCoilSnake);
                 Item.shoot = ProjectileID.MysticSnakeCoil;
                 Item.shootSpeed = 1f;
@@ -94,10 +94,10 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
                 Item.height = 32;
                 Item.useTime = 28;
                 Item.useAnimation = 28;
-                Item.useStyle = 5;
+                Item.useStyle = ItemUseStyleID.Shoot;
                 Item.knockBack = 2f;
                 Item.value = 30000;
-                Item.rare = 2;
+                Item.rare = ItemRarityID.Green;
                 Item.UseSound = SoundID.Item64;
                 Item.autoReuse = true;
                 Item.useAmmo = ItemID.Cactus;

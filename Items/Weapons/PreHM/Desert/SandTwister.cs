@@ -35,7 +35,7 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 4;
             Item.value = 30000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.shoot = ProjectileType<SandTwisterProj>();

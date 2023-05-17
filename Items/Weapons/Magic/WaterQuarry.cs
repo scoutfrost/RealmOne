@@ -36,7 +36,7 @@ namespace RealmOne.Items.Weapons.Magic
             Item.useAnimation = 20;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.autoReuse = true;
             Item.shootSpeed = 50f;
             Item.shoot = ModContent.ProjectileType<WaterQuarryHeld>();
@@ -54,7 +54,7 @@ namespace RealmOne.Items.Weapons.Magic
 
 
 
-      
+
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
@@ -68,7 +68,7 @@ namespace RealmOne.Items.Weapons.Magic
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
                 Dust d = Dust.NewDustPerfect(Main.LocalPlayer.Center, ModContent.DustType<BubbleDust>(), speed * 6, Scale: 0.9f); ;
                 d.noGravity = true;
-               
+
                 d.velocity *= 0.3f;
             }
 

@@ -37,10 +37,10 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.height = 24;
             Item.useTime = 50;
             Item.useAnimation = 50;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 5;
             Item.value = 10000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_GrenadeThrow");
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<CopperFragGrenadeProj>();

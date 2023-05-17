@@ -27,10 +27,10 @@ namespace RealmOne.Armor
     {
         public override void SetStaticDefaults()
         {
-           
+
             DisplayName.SetDefault("Piggy Patroller Grieves");
             Tooltip.SetDefault("15% increased fall speed but 8% decreased running speed"
-                +"\n'Kicking something will probably shatter the grieves'");
+                + "\n'Kicking something will probably shatter the grieves'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -68,8 +68,8 @@ namespace RealmOne.Armor
         public override void AddRecipes()
         {
             CreateRecipe()
-           
-            .AddIngredient(Mod,"PiggyPorcelain", 3)
+
+            .AddIngredient(Mod, "PiggyPorcelain", 3)
             .AddTile(TileID.Furnaces)
             .Register();
 

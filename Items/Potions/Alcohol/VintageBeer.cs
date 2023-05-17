@@ -21,7 +21,7 @@ namespace RealmOne.Items.Potions.Alcohol
             + "\nGives the Limetwist Rum Buff"
             + "\nIgnores 3 points of enemy defence, increasing endurance by 10% but decreased weapon speed by 17%"
                         + $"\nIngreients: [i:{ItemID.Lemon}], [i:{ItemID.Grapes}] [i:{ItemID.LimeKelp}]"); */
-            
+
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
 
         }
@@ -35,7 +35,7 @@ namespace RealmOne.Items.Potions.Alcohol
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.DrinkLiquid;
             Item.value = 5000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item3;
             Item.consumable = true;
             Item.buffType = ModContent.BuffType<BeerBuff>();

@@ -56,10 +56,10 @@ namespace RealmOne.Projectiles.Other
             for (int i = 0; i < 80; i++)
             {
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                Dust d = Dust.NewDustPerfect(Projectile.Center, DustID.Obsidian, speed * 5, Scale: 2f); 
+                Dust d = Dust.NewDustPerfect(Projectile.Center, DustID.Obsidian, speed * 5, Scale: 2f);
                 d.noGravity = true;
             }
-        }   
+        }
 
 
         public override bool OnTileCollide(Vector2 oldVelocity)

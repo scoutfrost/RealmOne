@@ -32,10 +32,10 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.height = 40;
             Item.useTime = 23;
             Item.useAnimation = 23;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 4;
             Item.value = 10000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
             Item.useTurn = true;
 
@@ -65,7 +65,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
                 Item.knockBack = 0;
                 Item.height = 20;
                 Item.width = 20;
-                Item.rare = 2;
+                Item.rare = ItemRarityID.Green;
 
 
             }
@@ -78,14 +78,14 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
                 Item.height = 40;
                 Item.useTime = 23;
                 Item.useAnimation = 23;
-                Item.useStyle = 1;
+                Item.useStyle = ItemUseStyleID.Swing;
                 Item.knockBack = 4;
                 Item.value = 10000;
-                Item.rare = 2;
+                Item.rare = ItemRarityID.Green;
                 Item.UseSound = SoundID.Item1;
                 Item.useTurn = true;
                 Item.autoReuse = true;
-                Item.shoot = 0;
+                Item.shoot = ProjectileID.None;
                 Item.shootSpeed = 0f;
             }
             return base.CanUseItem(player);

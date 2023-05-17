@@ -42,7 +42,7 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
             Item.value = 30000;
             Item.UseSound = SoundID.Item116;
 
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.Gel;
             Item.noMelee = true;

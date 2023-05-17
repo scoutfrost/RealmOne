@@ -61,20 +61,20 @@ namespace RealmOne.NPCs.Critters
 
             if (NPC.IsABestiaryIconDummy)
                 color = Color.LightBlue;
-           // var effects =NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
-          //  spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
+            // var effects =NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+            //  spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
 
             Main.EntitySpriteDraw(glowmask.Value, NPC.Center - screenPos + new Vector2(0, 0), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.FlipHorizontally, 0);
         }
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
 
-				new FlavorTextBestiaryInfoElement("These fluffy bunnies were unfortunately purged when a catastrophic and otherworldly raid started."),
+                new FlavorTextBestiaryInfoElement("These fluffy bunnies were unfortunately purged when a catastrophic and otherworldly raid started."),
 
-				
+
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
@@ -95,7 +95,7 @@ namespace RealmOne.NPCs.Critters
             Lighting.AddLight(NPC.position, r: 0f, g: 0.3f, b: 1f);
         }
 
-        
-      
+
+
     }
 }

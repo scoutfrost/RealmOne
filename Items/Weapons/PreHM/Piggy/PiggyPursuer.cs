@@ -33,7 +33,7 @@ namespace RealmOne.Items.Weapons.PreHM.Piggy
             Item.height = 42;
             Item.useTime = 20;
             Item.useAnimation = 20;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 3f;
             Item.value = 10000;
             Item.rare = ItemRarityID.Blue;

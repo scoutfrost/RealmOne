@@ -57,7 +57,7 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
             Item.shootSpeed = 2.6f;
             Item.DamageType = DamageClass.MeleeNoSpeed;
             Item.autoReuse = false;
-            Item.noUseGraphic = true; 
+            Item.noUseGraphic = true;
             Item.noMelee = true;
 
         }

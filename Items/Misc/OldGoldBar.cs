@@ -23,12 +23,12 @@ namespace RealmOne.Items.Misc
         public override void SetDefaults()
         {
             Item.material = true;
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
             Item.value = 20000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.maxStack = 999;
-            
+
 
         }
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
@@ -82,7 +82,7 @@ namespace RealmOne.Items.Misc
 
             };
             tooltips.Add(line);
-          
+
         }
         public override void AddRecipes()
         {

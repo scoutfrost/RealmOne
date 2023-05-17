@@ -14,11 +14,11 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Cigarette Buff");
             Description.SetDefault("'You're really feelin it right now'");
-           
+
 
         }
 
-       
+
         public override void Update(Player player, ref int buffIndex)
         {
 

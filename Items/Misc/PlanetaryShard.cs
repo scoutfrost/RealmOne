@@ -33,7 +33,7 @@ namespace RealmOne.Items.Misc
         }
         public override Color? GetAlpha(Color lightColor)
         {
-            
+
             return Color.GhostWhite;
         }
         public override bool CanUseItem(Player player)

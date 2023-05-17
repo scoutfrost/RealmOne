@@ -93,7 +93,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EeyeGore1").Type, 1f);
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EeyeGore2").Type, 1f);
-                 
+
 
                 }
             }

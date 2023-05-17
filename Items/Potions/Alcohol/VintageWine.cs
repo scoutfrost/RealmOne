@@ -35,7 +35,7 @@ namespace RealmOne.Items.Potions.Alcohol
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.DrinkLiquid;
             Item.value = 5000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item3;
             Item.consumable = true;
             Item.buffType = ModContent.BuffType<WineBuff>();

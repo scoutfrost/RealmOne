@@ -64,7 +64,7 @@ namespace RealmOne.Tiles
             AddMapEntry(Color.White, pylonName);
         }
 
-    
+
 
 
         public override void MouseOver(int i, int j)
@@ -90,15 +90,15 @@ namespace RealmOne.Tiles
             return true;
         }
 
-    //    public override bool ValidTeleportCheck_BiomeRequirements(TeleportPylonInfo pylonInfo, SceneMetrics sceneData)
-      //  {
-            // Right before this hook is called, the sceneData parameter exports its information based on wherever the destination pylon is,
-            // and by extension, it will call ALL ModSystems that use the TileCountsAvailable method. This means, that if you determine biomes
-            // based off of tile count, when this hook is called, you can simply check the tile threshold, like we do here. In the context of ExampleMod,
-            // something is considered within the Example Surface/Underground biome if there are 40 or more example blocks at that location.
+        //    public override bool ValidTeleportCheck_BiomeRequirements(TeleportPylonInfo pylonInfo, SceneMetrics sceneData)
+        //  {
+        // Right before this hook is called, the sceneData parameter exports its information based on wherever the destination pylon is,
+        // and by extension, it will call ALL ModSystems that use the TileCountsAvailable method. This means, that if you determine biomes
+        // based off of tile count, when this hook is called, you can simply check the tile threshold, like we do here. In the context of ExampleMod,
+        // something is considered within the Example Surface/Underground biome if there are 40 or more example blocks at that location.
 
-     //       return ForestBiome.exampleBlockCount >= 40;
-     //   }
+        //       return ForestBiome.exampleBlockCount >= 40;
+        //   }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
@@ -123,5 +123,5 @@ namespace RealmOne.Tiles
         }
     }
 }
-    
+
 

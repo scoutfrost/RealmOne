@@ -16,7 +16,7 @@ namespace RealmOne.Buffs.Debuffs
             Description.SetDefault("'Ouch!'");
             Main.buffNoSave[Type] = true;
             Main.debuff[Type] = true;
-            
+
 
         }
 

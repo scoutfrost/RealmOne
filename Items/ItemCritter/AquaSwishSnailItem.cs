@@ -25,7 +25,7 @@ namespace RealmOne.Items.ItemCritter
             Item.maxStack = 99;
             Item.autoReuse = true;
             Item.consumable = true;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.useAnimation = 18;
             Item.useTime = 18;
             Item.bait = 30;
@@ -34,10 +34,10 @@ namespace RealmOne.Items.ItemCritter
             Item.useStyle = ItemUseStyleID.Swing;
             Item.value = Item.sellPrice(silver: 80);
         }
-        
-       public override bool? UseItem(Player player)
-           {
-            NPC.NewNPC(player.GetSource_ItemUse(Item),(int)player.Center.X, (int)player.Center.Y, ModContent.NPCType<AquaSwishSnail>());
+
+        public override bool? UseItem(Player player)
+        {
+            NPC.NewNPC(player.GetSource_ItemUse(Item), (int)player.Center.X, (int)player.Center.Y, ModContent.NPCType<AquaSwishSnail>());
             return true;
         }
     }

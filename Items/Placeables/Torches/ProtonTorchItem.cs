@@ -40,7 +40,7 @@ namespace RealmOne.Items.Placeables.Torches
             Item.holdStyle = ItemHoldStyleID.HoldFront;
             Item.autoReuse = true;
             Item.maxStack = 999;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.consumable = true;
             Item.createTile = ModContent.TileType<Tiles.Torches.ProtonTorch>();
             Item.width = 10;

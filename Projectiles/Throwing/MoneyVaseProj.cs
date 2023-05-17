@@ -28,7 +28,7 @@ namespace RealmOne.Projectiles.Throwing
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
             Projectile.light = 1f;
-            
+
             Projectile.tileCollide = true;
             Projectile.penetrate = 1;
             Projectile.timeLeft = 400;
@@ -37,11 +37,11 @@ namespace RealmOne.Projectiles.Throwing
         }
         public override void AI()
         {
-            Lighting.AddLight(Projectile.position, r: 0.2f, g: 0.2f, b:0.2f); 
+            Lighting.AddLight(Projectile.position, r: 0.2f, g: 0.2f, b: 0.2f);
             Lighting.Brightness(1, 1);
 
-           Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.DungeonPink, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 1f);
-            
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.DungeonPink, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 1f);
+
 
         }
 
@@ -58,19 +58,19 @@ namespace RealmOne.Projectiles.Throwing
                 NPC.NewNPC(Projectile.GetSource_Death(), (int)Projectile.Center.X, (int)Projectile.Center.Y - 40, ModContent.NPCType<PossessedPiggy>());
             }
 
-                Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
+            Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             SoundEngine.PlaySound(SoundID.Shatter, Projectile.position);
 
 
             int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.DungeonPink, 0f, 0f, 100, default, 1f);
-        
+
             Main.dust[dustIndex].noGravity = false;
             Main.dust[dustIndex].position = Projectile.Center + new Vector2(0f, (float)(-(float)Projectile.height / 2)).RotatedBy(Projectile.rotation, default) * 1.1f;
             Main.dust[dustIndex].noLight = false;
 
 
             int dustIndex1 = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.DungeonPink, 0f, 0f, 255, default, 3f);
-          
+
             Main.dust[dustIndex1].noGravity = true;
             Main.dust[dustIndex1].position = Projectile.Center + new Vector2(0f, (float)(-(float)Projectile.height / 2)).RotatedBy(Projectile.rotation, default) * 1.1f;
             Main.dust[dustIndex1].noLight = false;
@@ -79,7 +79,7 @@ namespace RealmOne.Projectiles.Throwing
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("MoneyVaseGore2").Type, 1f);
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("MoneyVaseGore3").Type, 1f);
         }
-     
-        
+
+
     }
 }

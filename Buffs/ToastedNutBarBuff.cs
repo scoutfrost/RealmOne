@@ -14,7 +14,7 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Energised");
             Description.SetDefault("5% increased endurance and increase to all stats");
-           
+
 
         }
 
@@ -25,7 +25,7 @@ namespace RealmOne.Buffs
             player.endurance += 0.1f;
 
 
-             player.AddBuff(BuffID.WellFed, 15000);
+            player.AddBuff(BuffID.WellFed, 15000);
 
         }
 

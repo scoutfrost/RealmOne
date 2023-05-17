@@ -7,7 +7,7 @@ using Terraria.ID;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework; 
+using Microsoft.Xna.Framework;
 
 namespace RealmOne.Projectiles.Throwing
 {
@@ -23,7 +23,7 @@ namespace RealmOne.Projectiles.Throwing
         public override void SetDefaults()
         {
             Projectile.width = 8;
-            
+
             Projectile.height = 18;
             Projectile.aiStyle = ProjAIStyleID.Arrow;
             Projectile.friendly = true;
@@ -50,7 +50,7 @@ namespace RealmOne.Projectiles.Throwing
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("BoneSpineGore1").Type, 1f);
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("BoneSpineGore2").Type, 1f);
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("BoneSpineGore3").Type, 1f);
-           for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 15; i++)
             {
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Bone, Scale: 0.9f, Alpha: 120);
             }

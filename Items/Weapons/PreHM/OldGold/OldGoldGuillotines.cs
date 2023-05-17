@@ -40,7 +40,7 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
             Item.useAnimation = 23;
             Item.knockBack = 2f;
             Item.value = 30000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.autoReuse = true;
             Item.crit = 100;
             Item.noMelee = true;
@@ -176,7 +176,7 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
             {
                 DisplayName.SetDefault("${ProjectileName.ChainGuillotine}");
             }
-                
+
             public override void SetDefaults()
             {
                 // Copies the attributes of the Amethyst hook's projectile.

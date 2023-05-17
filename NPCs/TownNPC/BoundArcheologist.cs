@@ -53,7 +53,7 @@ namespace RealmOne.NPCs.TownNPC
             {
                 return 0.09f;
             }
-            
+
             //Else, the example bone merchant will not spawn if the above conditions are not met.
             return 0f;
         }

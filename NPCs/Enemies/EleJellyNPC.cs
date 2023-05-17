@@ -40,13 +40,13 @@ namespace RealmOne.NPCs.Enemies
             NPC.npcSlots = 0;
 
 
-          
+
 
         }
-		public override float SpawnChance(NPCSpawnInfo spawnInfo) =>  spawnInfo.Water ? 0.6f : 0f;
+        public override float SpawnChance(NPCSpawnInfo spawnInfo) => spawnInfo.Water ? 0.6f : 0f;
 
 
-   
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             // We can use AddRange instead of calling Add multiple times in order to add multiple items at once

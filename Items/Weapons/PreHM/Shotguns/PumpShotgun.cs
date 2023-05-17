@@ -38,7 +38,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             Item.useAnimation = 40;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 4;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.autoReuse = true;
             Item.shootSpeed = 87f;
             Item.shoot = ModContent.ProjectileType<VintageBulletProjectile>();

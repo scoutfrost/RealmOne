@@ -36,7 +36,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.useAnimation = 78;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
             Item.shoot = ProjectileID.SeedlerNut;
             Item.shootSpeed = 88f;

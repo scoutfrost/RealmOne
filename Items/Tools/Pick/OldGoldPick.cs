@@ -29,10 +29,10 @@ namespace RealmOne.Items.Tools.Pick
             Item.height = 32;
             Item.useTime = 13;
             Item.useAnimation = 13;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 6;
             Item.value = 90000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.maxStack = 1;

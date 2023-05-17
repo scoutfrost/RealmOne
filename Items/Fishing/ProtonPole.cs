@@ -45,7 +45,7 @@ namespace RealmOne.Items.Fishing
         }
         public override void SetDefaults()
         {
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.CloneDefaults(ItemID.ReinforcedFishingPole);
             Item.damage = 10;
             Item.fishingPole = 18; // Sets the poles fishing power

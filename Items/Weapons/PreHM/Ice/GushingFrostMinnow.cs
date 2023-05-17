@@ -27,10 +27,10 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
             Item.height = 32;
             Item.useTime = 18;
             Item.useAnimation = 18;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 1;
             Item.value = 30000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item13;
             Item.autoReuse = true;
             Item.shoot = ProjectileID.WaterStream;

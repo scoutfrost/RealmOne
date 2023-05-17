@@ -17,7 +17,7 @@ namespace RealmOne.Items.Misc
                 + "\n'Due to its unique properties, which include corrosion resistance and rusting.'"
                 + "\n'Common uses for brass include applications that require low friction.'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
-            
+
 
         }
 
@@ -25,9 +25,9 @@ namespace RealmOne.Items.Misc
         public override void SetDefaults()
         {
             Item.material = true;
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.maxStack = 999;
             Item.value = Item.buyPrice(silver: 15);
 
@@ -43,5 +43,5 @@ namespace RealmOne.Items.Misc
 
         }
 
-        }
+    }
 }

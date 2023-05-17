@@ -29,7 +29,7 @@ namespace RealmOne.Items.Potions
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.DrinkLiquid;
             Item.value = 500;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item3;
             Item.consumable = true;
             Item.potion = true;

@@ -34,7 +34,7 @@ namespace RealmOne.Items.Weapons.Melee
             Item.height = 60;
             Item.useTime = 40;
             Item.useAnimation = 40;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 9f;
             Item.value = 90000;
             Item.rare = ItemRarityID.Master;

@@ -14,7 +14,7 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Hellfire Vodka");
             Description.SetDefault("Prefered choice of alcohol from the one and only Satan");
-           
+
 
         }
 
@@ -30,7 +30,7 @@ namespace RealmOne.Buffs
             player.onFire = true;
             player.statDefense -= 4;
             player.GetKnockback(DamageClass.Generic) += 0.10f;
-            
+
 
         }
 

@@ -32,7 +32,7 @@ namespace RealmOne.Items.Tools.Axe
             Item.height = 32;
             Item.useTime = 13;
             Item.useAnimation = 13;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 6;
 
             Item.rare = ItemRarityID.Red;
@@ -63,7 +63,7 @@ namespace RealmOne.Items.Tools.Axe
                 Item.height = 32;
                 Item.useTime = 12;
                 Item.useAnimation = 12;
-                Item.useStyle = 1;
+                Item.useStyle = ItemUseStyleID.Swing;
                 Item.knockBack = 5;
 
                 Item.rare = ItemRarityID.Red;
@@ -74,7 +74,7 @@ namespace RealmOne.Items.Tools.Axe
                 Item.axe = 30;
                 Item.useTurn = true;
                 Item.value = Item.buyPrice(gold: 3, silver: 40, copper: 80);
-                Item.shoot = 0;
+                Item.shoot = ProjectileID.None;
                 Item.shootSpeed = 0f;
 
 
@@ -88,7 +88,7 @@ namespace RealmOne.Items.Tools.Axe
                 Item.height = 32;
                 Item.useTime = 13;
                 Item.useAnimation = 13;
-                Item.useStyle = 1;
+                Item.useStyle = ItemUseStyleID.Swing;
                 Item.knockBack = 6;
 
                 Item.rare = ItemRarityID.Red;

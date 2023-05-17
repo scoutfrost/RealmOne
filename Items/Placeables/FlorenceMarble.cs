@@ -24,14 +24,14 @@ namespace RealmOne.Items.Placeables
             Item.maxStack = 999;
             Item.consumable = true;
             Item.value = Item.buyPrice(silver: 70, copper: 50);
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useAnimation = 10;
             Item.useTime = 10;
             Item.useTurn = true;
             Item.autoReuse = true;
-           
-            
+
+
             Item.createTile = ModContent.TileType<Tiles.FlorenceMarbleTile>();
         }
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
@@ -59,7 +59,7 @@ namespace RealmOne.Items.Placeables
                 time = 2f - time;
 
             time = time * 0.5f + 0.5f;
-                
+
             for (float i = 0f; i < 1f; i += 0.25f)
             {
                 float radians = (i + timer) * MathHelper.TwoPi;

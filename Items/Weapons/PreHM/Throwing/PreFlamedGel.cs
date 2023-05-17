@@ -25,10 +25,10 @@ namespace RealmOne.Items.Weapons.PreHM.Throwing
             Item.height = 32;
             Item.useTime = 25;
             Item.useAnimation = 25;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 4;
             Item.value = 20000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item34;
             Item.autoReuse = true;
             Item.shoot = ProjectileID.MolotovFire;

@@ -35,8 +35,8 @@ namespace RealmOne.Items.Weapons.PreHM.Meteorite
             Item.height = 40;
             Item.useTime = 9;
             Item.useAnimation = 9;
-            Item.useStyle = 5;
-            Item.rare = 2;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item157;
             Item.autoReuse = true;
             Item.shoot = ProjectileID.GreenLaser;

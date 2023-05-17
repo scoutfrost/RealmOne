@@ -10,12 +10,12 @@ using RealmOne.Buffs;
 
 namespace RealmOne.Items.Food
 {
-    public class TreeSapJuice: ModItem
+    public class TreeSapJuice : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tree Sap Juice"); 
-             Tooltip.SetDefault("Enemies are less likely to target you\r\nWhen in the forest you are granted 5% increased movement speed\r\n");
+            DisplayName.SetDefault("Tree Sap Juice");
+            Tooltip.SetDefault("Enemies are less likely to target you\r\nWhen in the forest you are granted 5% increased movement speed\r\n");
 
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
@@ -30,7 +30,7 @@ namespace RealmOne.Items.Food
 
         public override void SetDefaults()
         {
-            
+
             Item.width = 24;
             Item.height = 24;
             Item.useTime = 15;
@@ -38,7 +38,7 @@ namespace RealmOne.Items.Food
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.DrinkLiquid;
             Item.value = 500;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.consumable = true;
             Item.healLife = 70;
             Item.buffType = ModContent.BuffType<TreeSapBuff>();
@@ -47,7 +47,7 @@ namespace RealmOne.Items.Food
 
 
 
-       
+
         public override void AddRecipes()
         {
             CreateRecipe(2)

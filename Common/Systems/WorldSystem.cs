@@ -41,13 +41,13 @@ namespace RealmOne.Common.Systems
             }
         }
     }
-    
+
     public class WorldSystem : ModSystem
     {
-        
+
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
-            int shiniesIndex = tasks.FindIndex(genpass =>genpass.Name.Equals("Shinies"));
+            int shiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
             if (shiniesIndex != -1)
             {
                 tasks.Insert(shiniesIndex + 1, new OldGoldOreNameGenPass("OldGoldOreNameGenPass", 320f));
@@ -59,12 +59,12 @@ namespace RealmOne.Common.Systems
             }
 
 
-        }     
+        }
         public override void PostWorldGen()
         {
-            int[] goldenchest = { ItemType<MinersPouch>()};
+            int[] goldenchest = { ItemType<MinersPouch>() };
             int goldenchestchoice = 0;
-            
+
             for (int gchestIndex = 0; gchestIndex < 1000; gchestIndex++)
             {
                 Chest gchest = Main.chest[gchestIndex];
@@ -84,10 +84,10 @@ namespace RealmOne.Common.Systems
                 }
             }
 
-            int[] waterchest = { ItemType<EleJelly>()};
+            int[] waterchest = { ItemType<EleJelly>() };
             int waterchestchoice = 0;
             for (int WchestIndex = 0; WchestIndex < 1000; WchestIndex++)
-                
+
             {
 
                 Chest Wchest = Main.chest[WchestIndex];
@@ -103,7 +103,7 @@ namespace RealmOne.Common.Systems
                             Wchest.item[WinventoryIndex].SetDefaults(waterchest[waterchestchoice]);
 
                             Wchest.item[WinventoryIndex].stack = WorldGen.genRand.Next(25, 30);
-                            
+
                             waterchestchoice = (waterchestchoice + 1) % waterchest.Length;
                             //Wchest.item[WinventoryIndex].SetDefaults(Main.rand.Next(WinventoryIndex));
                             break;
@@ -128,7 +128,7 @@ namespace RealmOne.Common.Systems
 
                         if (lightchest.item[LinventoryIndex].type == ItemID.None)
                         {
-                                
+
                             lightchest.item[LinventoryIndex].SetDefaults(light[lightchoice]);
 
                             lightchest.item[LinventoryIndex].stack = WorldGen.genRand.Next(4, 5);
@@ -161,8 +161,8 @@ namespace RealmOne.Common.Systems
                             Pchest.item[PinventoryIndex].SetDefaults(pot[potchoice]);
 
                             Pchest.item[PinventoryIndex].stack = WorldGen.genRand.Next(2, 5);
-                                
-                            potchoice = (potchoice+ 1) % light.Length;
+
+                            potchoice = (potchoice + 1) % light.Length;
                             //chest.item[inventoryIndex].SetDefaults(Main.rand.Next(itemsToPlaceInIceChests;
                             break;
                         }
@@ -170,7 +170,7 @@ namespace RealmOne.Common.Systems
                 }
             }
 
-            int[] itemsToPlaceInIceChests1 = { ItemType<MinersPouch>()};
+            int[] itemsToPlaceInIceChests1 = { ItemType<MinersPouch>() };
             int itemsToPlaceInIceChestsChoice1 = 0;
             for (int chestIndex1 = 0; chestIndex1 < 1000; chestIndex1++)
             {

@@ -20,7 +20,7 @@ namespace RealmOne.NPCs.Critters
     public class GiantDragonfly : ModNPC
     {
 
-       // static Asset<Texture2D> glowmask;
+        // static Asset<Texture2D> glowmask;
 
         public override void SetStaticDefaults()
         {
@@ -30,8 +30,8 @@ namespace RealmOne.NPCs.Critters
 
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-            { 
-                Velocity = 1f 
+            {
+                Velocity = 1f
             };
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -39,7 +39,7 @@ namespace RealmOne.NPCs.Critters
             NPCID.Sets.CountsAsCritter[Type] = true;
 
 
-          //  glowmask = ModContent.Request<Texture2D>(Texture + "_Glow");
+            //  glowmask = ModContent.Request<Texture2D>(Texture + "_Glow");
 
         }
 
@@ -83,21 +83,21 @@ namespace RealmOne.NPCs.Critters
         public override void AI()
         {
             Lighting.AddLight(NPC.position, r: 0.04f, g: 0.04f, b: 0.08f); ;
-            
+
 
         }
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Color color = GetAlpha(Color.White) ?? Color.White;
-            
+
             if (NPC.IsABestiaryIconDummy)
                 color = Color.White;
 
         }
 
-        
-    
+
+
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {

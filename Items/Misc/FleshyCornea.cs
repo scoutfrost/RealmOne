@@ -10,17 +10,17 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Fleshy Cornea"); 
+            DisplayName.SetDefault("Fleshy Cornea");
             Tooltip.SetDefault("'Dropped from the seers of Terraria'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 
 
         }
-            
+
         public override void SetDefaults()
         {
             Item.material = true;
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
             Item.rare = ItemRarityID.Blue;
             Item.maxStack = 999;

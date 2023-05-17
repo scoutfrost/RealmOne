@@ -41,7 +41,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.useStyle = ItemUseStyleID.HoldUp;
             Item.knockBack = 10f;
             Item.value = 30000;
-            Item.rare = 8;
+            Item.rare = ItemRarityID.Yellow;
             Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
             Item.autoReuse = true;
             Item.noMelee = true;

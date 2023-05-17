@@ -57,7 +57,7 @@ namespace RealmOne.Projectiles.HeldProj
 
                 Projectile.frameCounter = 0;
                 int proj = Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center.X, Projectile.Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<MiniSand>(), Projectile.damage, Projectile.owner, 0, 0f);
-                
+
             }
         }
         public override void PostAI()

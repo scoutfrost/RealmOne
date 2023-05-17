@@ -25,12 +25,12 @@ namespace RealmOne.NPCs.Critters
         {
             DisplayName.SetDefault("Water Lizard");
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.GoldfishWalker];
-              Main.npcCatchable[NPC.type] = true;
+            Main.npcCatchable[NPC.type] = true;
 
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-            { 
-                Velocity = 1f 
+            {
+                Velocity = 1f
             };
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -64,7 +64,7 @@ namespace RealmOne.NPCs.Critters
 
         }
 
-       
+
         public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)
@@ -88,11 +88,11 @@ namespace RealmOne.NPCs.Critters
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) => spawnInfo.SpawnTileY < Main.worldSurface && spawnInfo.Player.ZoneRain && spawnInfo.Player.ZoneForest && !Main.dayTime && !spawnInfo.PlayerSafe ? 0.5f : 0f;
 
-                int Watertimer = 0;
+        int Watertimer = 0;
 
         public override void AI()
         {
-            Lighting.AddLight(NPC.position, r: 0.02f, g: 0.7f, b: 1.1f); 
+            Lighting.AddLight(NPC.position, r: 0.02f, g: 0.7f, b: 1.1f);
             Watertimer++;
 
             if (Watertimer == 9)
@@ -106,15 +106,15 @@ namespace RealmOne.NPCs.Critters
             }
         }
 
-       
 
-      /*  public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
-        {
-            drawColor = NPC.GetNPCColorTintedByBuffs(drawColor);
-            var effects = NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
-            spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
-            return false;
-        }*/
+
+        /*  public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+          {
+              drawColor = NPC.GetNPCColorTintedByBuffs(drawColor);
+              var effects = NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+              spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
+              return false;
+          }*/
 
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

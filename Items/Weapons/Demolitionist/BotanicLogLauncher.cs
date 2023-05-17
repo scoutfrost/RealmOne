@@ -39,7 +39,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.useAnimation = 48;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.autoReuse = true;
             Item.shootSpeed = 20f;
             Item.shoot = ModContent.ProjectileType<BotanicLogLauncherH>();
@@ -101,7 +101,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
         }
 
 
-     
+
 
 
     }

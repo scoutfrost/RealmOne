@@ -20,7 +20,7 @@ namespace RealmOne.NPCs.Critters
     public class AquaSwishFish : ModNPC
     {
 
-       static Asset<Texture2D> glowmask;
+        static Asset<Texture2D> glowmask;
 
         public override void SetStaticDefaults()
         {
@@ -30,8 +30,8 @@ namespace RealmOne.NPCs.Critters
 
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-            { 
-                Velocity = 1f 
+            {
+                Velocity = 1f
             };
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -85,13 +85,13 @@ namespace RealmOne.NPCs.Critters
             Lighting.Brightness(2, 2);
             Player target = Main.player[NPC.target];
             NPC.spriteDirection = -NPC.direction;
-           
+
         }
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Color color = GetAlpha(Color.White) ?? Color.White;
-            
+
             if (NPC.IsABestiaryIconDummy)
                 color = Color.White;
             Main.EntitySpriteDraw(glowmask.Value, NPC.Center - screenPos + new Vector2(0, 0), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.None, 0);
@@ -111,7 +111,7 @@ namespace RealmOne.NPCs.Critters
             NPC.frameCounter += 0.15f;
             NPC.frame.Y = npcframe * frameHeight;
         }
-    
+
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {

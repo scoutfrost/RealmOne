@@ -29,10 +29,10 @@ namespace RealmOne.Projectiles.Arrow
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
             Projectile.penetrate = 1;
-            
+
             Projectile.timeLeft = 380;
             Projectile.netImportant = true;
-            Projectile.netUpdate = true;    
+            Projectile.netUpdate = true;
             Projectile.CloneDefaults(ProjectileID.WoodenArrowFriendly);
             AIType = ProjectileID.WoodenArrowFriendly;
         }
@@ -47,7 +47,7 @@ namespace RealmOne.Projectiles.Arrow
         public override void AI()
         {
             Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.WoodFurniture, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.4f, Scale: 0.6f);   //spawns dust behind it, this is a spectral light blue dust
-            
+
 
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

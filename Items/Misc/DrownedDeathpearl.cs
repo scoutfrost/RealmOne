@@ -13,8 +13,8 @@ namespace RealmOne.Items.Misc
         {
             DisplayName.SetDefault("Drowned Deathpearl"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("'Deep sea explorers seriously swam 100m underwater just to get obliterated by a pearl'");
-                
-              
+
+
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 50;
 
@@ -25,12 +25,12 @@ namespace RealmOne.Items.Misc
         public override void SetDefaults()
         {
             Item.material = true;
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
             Item.value = Item.buyPrice(gold: 75);
             Item.rare = ItemRarityID.Cyan;
             Item.maxStack = 999;
-           
+
 
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -55,7 +55,7 @@ namespace RealmOne.Items.Misc
             // Here we give the item name a rainbow effect.
             foreach (TooltipLine line2 in tooltips)
             {
-               
+
             }
         }
 

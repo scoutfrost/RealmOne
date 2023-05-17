@@ -58,13 +58,13 @@ namespace RealmOne.Projectiles.HeldProj
 
             //calling shootbullets and recoil
             if (Projectile.ai[0] == 80)
-               ShootBullets();
-           if (Projectile.ai[0] == 88)
-               ShootBullets();
-          if (Projectile.ai[0] > 79 && Projectile.ai[0] < 86)
-               recoilFX = true;
+                ShootBullets();
+            if (Projectile.ai[0] == 88)
+                ShootBullets();
+            if (Projectile.ai[0] > 79 && Projectile.ai[0] < 86)
+                recoilFX = true;
             else
-              recoilFX = false;
+                recoilFX = false;
 
 
             Vector2 rrp = player.RotatedRelativePoint(player.MountedCenter, true);
@@ -78,7 +78,7 @@ namespace RealmOne.Projectiles.HeldProj
 
             }
             else if (!stillInUse)
-            Projectile.timeLeft = 2;
+                Projectile.timeLeft = 2;
 
         }
         private void UpdatePlayerVisuals(Player player, Vector2 playerhandpos)
@@ -91,7 +91,7 @@ namespace RealmOne.Projectiles.HeldProj
             player.heldProj = Projectile.whoAmI;
             player.itemTime = 2;
             player.itemAnimation = 2;
-           
+
             player.itemRotation = (Projectile.velocity * Projectile.direction).ToRotation();
 
         }
@@ -152,7 +152,7 @@ namespace RealmOne.Projectiles.HeldProj
                 if (offsetX == 32)
                     offsetX += 4;
 
-              
+
             }
 
             origin.X = Projectile.spriteDirection == 1 ? sourceRectangle.Width - offsetX : offsetX;
@@ -172,10 +172,10 @@ namespace RealmOne.Projectiles.HeldProj
             Player player = Main.player[Projectile.owner];
             SoundEngine.PlaySound(rorAudio.SFX_CrossbowShot);
             if (Main.myPlayer == Projectile.owner)
-                Projectile.NewProjectile(player.GetSource_ItemUse_WithPotentialAmmo(player.HeldItem, AmmoID.Arrow),Projectile.Center, Projectile.velocity * 20f, ModContent.ProjectileType<HellBolt>(), Projectile.damage, Projectile.knockBack, player.whoAmI);
+                Projectile.NewProjectile(player.GetSource_ItemUse_WithPotentialAmmo(player.HeldItem, AmmoID.Arrow), Projectile.Center, Projectile.velocity * 20f, ModContent.ProjectileType<HellBolt>(), Projectile.damage, Projectile.knockBack, player.whoAmI);
             //screenshake
 
         }
-        
+
     }
 }

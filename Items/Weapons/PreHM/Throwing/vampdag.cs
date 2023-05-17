@@ -28,7 +28,7 @@ namespace RealmOne.Items.Weapons.PreHM.Throwing
             Item.height = 28;
             Item.useTime = 13;
             Item.useAnimation = 13;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2;
             Item.value = 90000;
             Item.rare = ItemRarityID.LightPurple;

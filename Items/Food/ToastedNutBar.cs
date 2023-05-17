@@ -10,12 +10,12 @@ using RealmOne.Buffs;
 
 namespace RealmOne.Items.Food
 {
-    public class ToastedNutBar: ModItem
+    public class ToastedNutBar : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Toasted Nut Bar"); 
-             Tooltip.SetDefault("'Extreme trace of nuts!'");
+            DisplayName.SetDefault("Toasted Nut Bar");
+            Tooltip.SetDefault("'Extreme trace of nuts!'");
 
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
@@ -37,16 +37,16 @@ namespace RealmOne.Items.Food
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.EatFood;
             Item.value = 500;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.consumable = true;
             Item.UseSound = SoundID.Item2;
-            Item.buffType = ModContent.BuffType<ToastedNutBarBuff>();   
+            Item.buffType = ModContent.BuffType<ToastedNutBarBuff>();
             Item.buffTime = 18000;
         }
 
 
 
-       
+
         public override void AddRecipes()
         {
             CreateRecipe(2)

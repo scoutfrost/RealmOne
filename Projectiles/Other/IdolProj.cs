@@ -23,7 +23,7 @@ namespace RealmOne.Projectiles.Other
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cthulhu Medallion");
-           
+
         }
 
         public override void SetDefaults()

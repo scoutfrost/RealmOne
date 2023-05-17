@@ -29,7 +29,7 @@ namespace RealmOne.Items.Accessories
             Item.width = 20;
             Item.height = 20;
             Item.value = 10000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.accessory = true;
 
 

@@ -37,7 +37,7 @@ namespace RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 4;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.shoot = ProjectileType<SquirYoProjectile>();

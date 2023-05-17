@@ -33,7 +33,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             Item.useAnimation = 10;
             Item.knockBack = 3;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.autoReuse = true;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.shoot = ModContent.ProjectileType<JungleTechHeld>();

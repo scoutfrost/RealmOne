@@ -18,7 +18,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Type24 Stick Grenade"); 
+            DisplayName.SetDefault("Type24 Stick Grenade");
             Tooltip.SetDefault("Type 24 hand held stick grenade, used in long and precautious situations."
                 + "\n'Best used in long distance relationships"
             + "\nBest use of the Stick Grenade is to throw it high in the air, then catch it and let it blow up in your face :)");
@@ -37,10 +37,10 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.height = 26;
             Item.useTime = 48;
             Item.useAnimation = 48;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2f;
             Item.value = 10000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_GrenadeThrow");
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<Type24StickNadeProj>();

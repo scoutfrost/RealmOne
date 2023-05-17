@@ -1,4 +1,4 @@
-﻿    using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -39,7 +39,7 @@ namespace RealmOne.Projectiles.Bullet
 
         public override void AI()
         {
-            
+
             Player player = Main.player[Projectile.owner];
 
             Lighting.AddLight(Projectile.Center, Color.Orange.ToVector3() * 0.8f);

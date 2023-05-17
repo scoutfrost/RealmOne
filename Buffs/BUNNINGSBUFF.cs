@@ -14,7 +14,7 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Bunnings Buff");
             Description.SetDefault("GET THAT SHI DOWN IN YOUR MOUTH! NOTHIN BETTER THAN GOOD OLD BUNNINGS SNAG");
-           
+
 
         }
 
@@ -25,11 +25,11 @@ namespace RealmOne.Buffs
             player.GetDamage(DamageClass.Generic) += 0.10f;
             player.GetAttackSpeed(DamageClass.Generic) += 0.10f;
             player.maxRunSpeed += 0.10f;
-             player.AddBuff(BuffID.WellFed, 150000);
+            player.AddBuff(BuffID.WellFed, 150000);
             player.buffImmune[BuffID.Poisoned] = true;
             player.buffImmune[BuffID.Weak] = true;
             player.buffImmune[BuffID.Confused] = true;
-            
+
 
         }
 

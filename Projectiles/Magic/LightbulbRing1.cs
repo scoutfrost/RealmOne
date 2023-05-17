@@ -50,19 +50,19 @@ namespace RealmOne.Projectiles.Magic
             Projectile.stepSpeed = 1f;
             Projectile.alpha = 255;
             Projectile.scale = 1f;
-            
-           
+
+
         }
 
 
         public override void AI() // this may add flamelash
         {
-         //   AIType = ProjectileID.Flamelash;
+            //   AIType = ProjectileID.Flamelash;
             Lighting.AddLight(Projectile.position, 3f, 3f, 1f);
             Lighting.Brightness(2, 2);
 
 
-          //  Projectile.localAI[0] += 1f;
+            //  Projectile.localAI[0] += 1f;
         }
 
         public override void Load()

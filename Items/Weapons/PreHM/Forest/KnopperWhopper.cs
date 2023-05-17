@@ -39,7 +39,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.useAnimation = 42;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2.5f;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.autoReuse = true;
             Item.shootSpeed = 30f;
             Item.shoot = ModContent.ProjectileType<KnopperBall>();

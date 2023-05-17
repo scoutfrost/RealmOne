@@ -37,7 +37,7 @@ namespace RealmOne.Items.Food
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.EatFood;
             Item.value = 500;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.consumable = true;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_Toast");
 

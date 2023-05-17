@@ -72,7 +72,7 @@ namespace RealmOne.Projectiles.HeldProj
 
             }
             else if (!stillInUse)
-            Projectile.timeLeft = 2;
+                Projectile.timeLeft = 2;
 
         }
         private void UpdatePlayerVisuals(Player player, Vector2 playerhandpos)
@@ -136,8 +136,8 @@ namespace RealmOne.Projectiles.HeldProj
 
             //recoil
             float offsetX = -5f;
-          
-            
+
+
 
             origin.X = Projectile.spriteDirection == 1 ? sourceRectangle.Width - offsetX : offsetX;
 
@@ -156,7 +156,7 @@ namespace RealmOne.Projectiles.HeldProj
             Player player = Main.player[Projectile.owner];
             SoundEngine.PlaySound(SoundID.Splash);
             if (Main.myPlayer == Projectile.owner)
-                    Projectile.NewProjectile(player.GetSource_ItemUse_WithPotentialAmmo(player.HeldItem, AmmoID.None), Projectile.Center, Projectile.velocity * 1f, ProjectileID.WaterBolt, Projectile.damage, Projectile.knockBack, player.whoAmI);            //screenshake
+                Projectile.NewProjectile(player.GetSource_ItemUse_WithPotentialAmmo(player.HeldItem, AmmoID.None), Projectile.Center, Projectile.velocity * 1f, ProjectileID.WaterBolt, Projectile.damage, Projectile.knockBack, player.whoAmI);            //screenshake
 
         }
 

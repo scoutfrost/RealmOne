@@ -9,7 +9,7 @@ using System;
 namespace RealmOne.Projectiles.Other
 {
 
-    public class LootBalloon: ModProjectile
+    public class LootBalloon : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -21,7 +21,7 @@ namespace RealmOne.Projectiles.Other
             Projectile.width = 20;
             Projectile.height = 60;
 
-           Projectile.friendly = true;
+            Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.penetrate = 1;
             Projectile.timeLeft = 600;
@@ -39,7 +39,7 @@ namespace RealmOne.Projectiles.Other
 
 
             Vector2 center = Projectile.Center;
-          
+
             Lighting.AddLight(Projectile.position, 0.2f, 0.2f, 0.4f);
             Lighting.Brightness(1, 1);
 

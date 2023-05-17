@@ -35,7 +35,7 @@ namespace RealmOne.Items.Weapons.PreHM.Crossbows
             Item.useAnimation = 15;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.autoReuse = true;
             Item.shootSpeed = 50f;
             Item.shoot = ModContent.ProjectileType<CombusterCrossbowProj>();

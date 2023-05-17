@@ -13,7 +13,7 @@ namespace RealmOne.Items.Accessories
             DisplayName.SetDefault("Tattered Bark Shield"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("'Nothing but skin penetrating wooden splinters on this shield'"
                 + "\nWhen hit by an enemy, they take 20 damage and get inflicted by 'Splinted"
-                +"\nWhen an enemy is inflicted by Splinted, the enemy rapidly loses life for a short duration"
+                + "\nWhen an enemy is inflicted by Splinted, the enemy rapidly loses life for a short duration"
                 + "\nAll weapons inflict Splintered while equipping the shield");
 
 
@@ -28,7 +28,7 @@ namespace RealmOne.Items.Accessories
             Item.width = 20;
             Item.height = 20;
             Item.value = 10000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.accessory = true;
             Item.defense += 2;
 
@@ -53,7 +53,7 @@ namespace RealmOne.Items.Accessories
     public class BarkShieldPlayer : ModPlayer
     {
         public bool splinteredShield = false;
-        
+
         public override void OnHitByNPC(NPC npc, Player.HurtInfo hurtInfo)
         {
             if (splinteredShield)
@@ -63,7 +63,7 @@ namespace RealmOne.Items.Accessories
             }
         }
     }
-   
+
 }
 
 
@@ -72,11 +72,11 @@ namespace RealmOne.Items.Accessories
 
 
 
-   
 
 
 
 
 
 
-    
+
+

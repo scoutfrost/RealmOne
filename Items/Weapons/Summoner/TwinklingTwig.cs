@@ -56,10 +56,10 @@ namespace RealmOne.Items.Weapons.Summoner
             Item.useTime = 16;
             Item.mana = 5;
             Item.useAnimation = 16;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2f;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.DD2_DarkMageCastHeal;
             Item.autoReuse = true;
 
@@ -79,7 +79,7 @@ namespace RealmOne.Items.Weapons.Summoner
 
             bool pickupText = false;
             for (int i = 0; i < 50; i++)
-                if (player.inventory[i].type == 0 && !pickupText)
+                if (player.inventory[i].type == ItemID.None && !pickupText)
                 {
                     CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y - 20, player.width, player.height), new Color(210, 120, 150, 255), "...Up above a world so high...", false, false);
                     pickupText = true;

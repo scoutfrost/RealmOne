@@ -27,10 +27,10 @@ namespace RealmOne.Armor
     {
         public override void SetStaticDefaults()
         {
-           
+
             DisplayName.SetDefault("Tree Hugger Trousers");
             Tooltip.SetDefault("5% increased movement speed and acceleration"
-                +"\n'Trousers of the tree tops!'");
+                + "\n'Trousers of the tree tops!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -71,7 +71,7 @@ namespace RealmOne.Armor
             CreateRecipe()
             .AddIngredient(ItemID.Wood, 20)
             .AddIngredient(ItemID.Acorn, 6)
-            .AddIngredient(Mod,"CrushedAcorns", 20)
+            .AddIngredient(Mod, "CrushedAcorns", 20)
             .AddTile(TileID.WorkBenches)
             .Register();
 

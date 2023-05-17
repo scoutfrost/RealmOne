@@ -40,10 +40,10 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
             Item.height = 32;
             Item.useTime = 12;
             Item.useAnimation = 12;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 3f;
             Item.value = 30000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item158;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.None;
@@ -124,7 +124,7 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
                 Item.autoReuse = true;
                 Item.useAmmo = AmmoID.None;
                 for (int d = 0; d < 40; d++)
-                    Dust.NewDust(player.position, player.width, player.height, 206, 0f, 0f, 500, default, 1f);
+                    Dust.NewDust(player.position, player.width, player.height, DustID.UnusedWhiteBluePurple, 0f, 0f, 500, default, 1f);
 
             }
             else
@@ -135,9 +135,9 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
                 Item.height = 32;
                 Item.useTime = 12;
                 Item.useAnimation = 12;
-                Item.useStyle = 5;
+                Item.useStyle = ItemUseStyleID.Shoot;
                 Item.value = 30000;
-                Item.rare = 1;
+                Item.rare = ItemRarityID.Blue;
                 Item.knockBack = 4;
                 Item.UseSound = SoundID.Item158;
                 Item.autoReuse = true;

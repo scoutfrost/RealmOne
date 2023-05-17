@@ -49,12 +49,12 @@ namespace RealmOne.NPCs.Critters
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Snow,
+                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Snow,
                                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				new FlavorTextBestiaryInfoElement("Hardened and frigid, these snails have much tougher shells than most snails. When broken, they turn into ice slugs"),
+                new FlavorTextBestiaryInfoElement("Hardened and frigid, these snails have much tougher shells than most snails. When broken, they turn into ice slugs"),
 
-				
+
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
@@ -86,6 +86,6 @@ namespace RealmOne.NPCs.Critters
             int timeToAdd = 2 * 60; //This makes it 5 seconds, one second is 60 ticks
             target.AddBuff(buffType, timeToAdd);
         }
-      
+
     }
 }

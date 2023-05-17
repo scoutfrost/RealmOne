@@ -60,7 +60,7 @@ namespace RealmOne.NPCs.Enemies
             AnimationType = NPCID.FloatyGross;
 
         }
-        
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             return SpawnCondition.OverworldNightMonster.Chance * 0.20f;
@@ -86,7 +86,7 @@ namespace RealmOne.NPCs.Enemies
 
             Lighting.AddLight(NPC.position, r: 1.4f, g: 1.9f, b: 0.1f);
         }
-      
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             // We can use AddRange instead of calling Add multiple times in order to add multiple items at once

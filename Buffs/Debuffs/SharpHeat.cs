@@ -46,11 +46,11 @@ namespace RealmOne.Buffs.Debuffs
                 if (npc.defense < 5)
                     npc.lifeRegen -= 12;
 
-                
+
                 else
                     npc.lifeRegen -= 4;
 
-                
+
             }
         }
     }

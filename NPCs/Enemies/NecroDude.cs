@@ -33,7 +33,7 @@ namespace RealmOne.NPCs.Enemies
             var drawModifier = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             { // Influences how the NPC looks in the Bestiary
                 CustomTexturePath = "RealmOne/Assets/Textures/Classified", // If the NPC is multiple parts like a worm, a custom texture for the Bestiary is encouraged.
-                
+
                 Position = new Vector2(40f, 28f),
                 PortraitPositionXOverride = 0f,
                 PortraitPositionYOverride = 12f,
@@ -95,7 +95,7 @@ namespace RealmOne.NPCs.Enemies
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EidolicInk>(), 4, 1, 1));
 
         }
-        
+
         public override void HitEffect(NPC.HitInfo hit)
         {
             for (int i = 0; i < 20; i++)

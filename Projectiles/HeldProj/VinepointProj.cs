@@ -27,7 +27,7 @@ public class VinepointProj : ModProjectile
 
     public override bool PreAI()
     {
-       
+
         for (int i = 0; i < 2; ++i)
         {
             int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Plantera_Green, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f);
@@ -63,7 +63,7 @@ public class VinepointProj : ModProjectile
 
             Projectile.rotation += MathHelper.ToRadians(135f);
 
-        
+
 
         return false;
     }

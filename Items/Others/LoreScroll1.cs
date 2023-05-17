@@ -45,7 +45,7 @@ namespace RealmOne.Items.Others
         {
 
 
-            if (Main.netMode != 2)
+            if (Main.netMode != NetmodeID.Server)
                 Main.NewText(Language.GetTextValue("Years have passed and the worms act like nothing happened and kept swarming the wet and earthy layer. The population of worms were so vast that they even adapted to surface rocks and logs and hid in them for seasons. Even for the past dread of worm adaptation, they haven’t really caused global damage. But for Squirmo, ever seeking revenge on human inhabitants is still a current warning for people")
 
                 , 241, byte.MaxValue, 180);

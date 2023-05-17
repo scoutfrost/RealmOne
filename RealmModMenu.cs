@@ -40,7 +40,7 @@ namespace RealmOne
         {
             logoScale = 1.5f;
             return true;
-            
+
         }
     }
 }

@@ -34,8 +34,8 @@ namespace RealmOne.Projectiles.Other
             Projectile.penetrate = -2;
             Projectile.tileCollide = false;
             Projectile.aiStyle = 0;
-            
-           
+
+
         }
         public override bool PreAI()
         {
@@ -51,7 +51,7 @@ namespace RealmOne.Projectiles.Other
                     Projectile.frame = 0;
             }
 
-           
+
             return false;
         }
 
@@ -67,28 +67,28 @@ namespace RealmOne.Projectiles.Other
         {
             Player player = Main.player[Projectile.owner];
 
-           
 
 
-                //Makes a spawn place
-               
-                //Dusts
-                for (int i = 0; i < 130; i++)
-                {
-                    Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                    Dust d = Dust.NewDustPerfect(Projectile.Center, DustID.Sandnado, speed * 8, Scale: 1f); ;
-                    d.noGravity = true;
-                        
-                }
-                //Spawns 3 Desert Hands
-                
-            
+
+            //Makes a spawn place
+
+            //Dusts
+            for (int i = 0; i < 130; i++)
+            {
+                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                Dust d = Dust.NewDustPerfect(Projectile.Center, DustID.Sandnado, speed * 8, Scale: 1f); ;
+                d.noGravity = true;
+
+            }
+            //Spawns 3 Desert Hands
+
+
         }
 
         public override void AI()
         {
-           
-            Lighting.AddLight(Projectile.position, 0.4f , 0.2f, 0.1f);
+
+            Lighting.AddLight(Projectile.position, 0.4f, 0.2f, 0.1f);
 
             int fadeTime = 8;
             if (Projectile.timeLeft > fadeTime)
@@ -102,7 +102,7 @@ namespace RealmOne.Projectiles.Other
             }
 
         }
-       
+
 
     }
 }

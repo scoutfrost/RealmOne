@@ -43,10 +43,10 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
             Item.height = 32;
             Item.useTime = 26;
             Item.useAnimation = 26;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 1f;
             Item.value = 30000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item158;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.Arrow;
@@ -120,10 +120,10 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
                 Item.height = 32;
                 Item.useTime = 26;
                 Item.useAnimation = 26;
-                Item.useStyle = 5;
+                Item.useStyle = ItemUseStyleID.Shoot;
                 Item.knockBack = 1f;
                 Item.value = 30000;
-                Item.rare = 1;
+                Item.rare = ItemRarityID.Blue;
                 Item.UseSound = SoundID.Item158;
                 Item.autoReuse = true;
                 Item.useAmmo = AmmoID.Arrow;

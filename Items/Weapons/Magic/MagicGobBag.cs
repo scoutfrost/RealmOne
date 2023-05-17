@@ -138,8 +138,8 @@ namespace RealmOne.Items.Weapons.Magic
             }
         }
 
-      
-        
+
+
         public override void AddRecipes()
         {
             CreateRecipe(1)

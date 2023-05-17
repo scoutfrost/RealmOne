@@ -33,7 +33,7 @@ namespace RealmOne.Items.Tools.Hooks
             Item.useAnimation = 28;
             Item.knockBack = 4;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.damage = 28;
 
 

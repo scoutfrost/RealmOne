@@ -1,24 +1,24 @@
-﻿    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Terraria;
-    using Terraria.ModLoader;
-    using Terraria.DataStructures;
-    using Terraria.Audio;
-    using Terraria.GameContent;
-    using Terraria.ObjectData;
-    using Terraria.GameContent.ObjectInteractions;
-    using Terraria.Enums;
-    using Terraria.ID;
-    using Microsoft.Xna.Framework;
-    using Terraria.Localization;
-    using RealmOne.Items;
-    using Mono.Cecil;
-    using RealmOne.Buffs;
-    using RealmOne.Common.Systems;
-    using RealmOne.Items.Placeables;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.DataStructures;
+using Terraria.Audio;
+using Terraria.GameContent;
+using Terraria.ObjectData;
+using Terraria.GameContent.ObjectInteractions;
+using Terraria.Enums;
+using Terraria.ID;
+using Microsoft.Xna.Framework;
+using Terraria.Localization;
+using RealmOne.Items;
+using Mono.Cecil;
+using RealmOne.Buffs;
+using RealmOne.Common.Systems;
+using RealmOne.Items.Placeables;
 using RealmOne.Items.Misc;
 
 namespace RealmOne.Tiles
@@ -45,7 +45,7 @@ namespace RealmOne.Tiles
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicChest[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
-            
+
             // Names
 
             LocalizedText name = CreateMapEntryName();
@@ -81,7 +81,7 @@ namespace RealmOne.Tiles
         {
             num = 1;
         }
-     
+
         public override void KillMultiTile(int x, int y, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<Items.Misc.BrassNuggets>(), Main.rand.Next(10, 10));
@@ -164,7 +164,7 @@ namespace RealmOne.Tiles
 
             if (Main.netMode != NetmodeID.Server)
 
-                CombatText.NewText(new Rectangle(Main.tile.Width + 30, (int)Main.tile.Height- 20 , Main.tile.Height -20, Main.tile.Height +30 ), new Color(234, 129, 178, 190), "It won't budge!!", false, false);
+                CombatText.NewText(new Rectangle(Main.tile.Width + 30, (int)Main.tile.Height - 20, Main.tile.Height - 20, Main.tile.Height + 30), new Color(234, 129, 178, 190), "It won't budge!!", false, false);
             if (tile.TileFrameX % 36 != 0)
             {
                 left--;

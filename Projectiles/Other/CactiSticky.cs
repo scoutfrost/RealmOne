@@ -156,7 +156,7 @@ namespace RealmOne.Projectiles.Other
                 0.75f; // Change velocity based on delta center of targets (difference between entity centers)
             Projectile.netUpdate = true; // netUpdate this javelin
 
-            Projectile.knockBack = 0;   
+            Projectile.knockBack = 0;
 
             // KillOldestJavelin will kill the oldest projectile stuck to the specified npc.
             // It only works if ai[0] is 1 when sticking and ai[1] is the target npc index, which is what IsStickingToTarget and TargetWhoAmI correspond to.

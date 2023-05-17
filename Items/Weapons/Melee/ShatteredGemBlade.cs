@@ -32,14 +32,14 @@ namespace RealmOne.Items.Weapons.Melee
         }
 
         public override void SetDefaults()
-        {       
+        {
             Item.damage = 13;
             Item.DamageType = DamageClass.Melee;
             Item.width = 40;
             Item.height = 40;
             Item.useTime = 36;
             Item.useAnimation = 36;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2f;
             Item.value = 20000;
             Item.rare = ItemRarityID.Cyan;

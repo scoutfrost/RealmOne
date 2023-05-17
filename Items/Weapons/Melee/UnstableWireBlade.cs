@@ -34,7 +34,7 @@ namespace RealmOne.Items.Weapons.Melee
             Item.damage = 24;
             Item.DamageType = DamageClass.Melee;
             Item.width = 42;
-            Item.height = 42; 
+            Item.height = 42;
             Item.useTime = 30;
             Item.useAnimation = 30;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -61,7 +61,7 @@ namespace RealmOne.Items.Weapons.Melee
             (
                 texture,
                 new Vector2
-                (   
+                (
                     Item.position.X - Main.screenPosition.X + Item.width * 0.5f,
                     Item.position.Y - Main.screenPosition.Y + Item.height - texture.Height * 0.5f + 2f
                 ),
@@ -77,13 +77,13 @@ namespace RealmOne.Items.Weapons.Melee
 
 
 
-     /*   public override void MeleeEffects(Player player, Rectangle hitbox)
-        {
-            int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.Electric, 1f, 1f, 0, default, 1f);
-            Main.dust[dust].noGravity = true;
-            Main.dust[dust].velocity *= 1.5f;
+        /*   public override void MeleeEffects(Player player, Rectangle hitbox)
+           {
+               int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.Electric, 1f, 1f, 0, default, 1f);
+               Main.dust[dust].noGravity = true;
+               Main.dust[dust].velocity *= 1.5f;
 
-        }*/
+           }*/
 
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)

@@ -37,7 +37,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 3;
             Item.value = 30000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
             Item.useAmmo = AmmoID.Bullet;
             Item.shoot = ModContent.ProjectileType<VintageBulletProjectile>();

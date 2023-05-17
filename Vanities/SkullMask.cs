@@ -19,9 +19,9 @@ namespace RealmOne.Vanities
         {
             DisplayName.SetDefault("Skull Mask");
             Tooltip.SetDefault("'Bro thinks he's bro :skull:'"
-                +"\nSold by the Clothier!"
+                + "\nSold by the Clothier!"
             + "\n'To my skull emoji enthuasists!'");
-           
+
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -57,17 +57,17 @@ namespace RealmOne.Vanities
             bool pickupText = false;
             for (int i = 0; i < 50; i++)
             {
-                if (player.inventory[i].type == 0 && !pickupText)
+                if (player.inventory[i].type == ItemID.None && !pickupText)
                 {
                     CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y - 20, player.width, player.height), new Color(255, 255, 255, 255), $"BRO NAWWWW [i:{ModContent.ItemType<SkullMask>()}]", false, false);
                     pickupText = true;
-            
+
                 }
             }
             SoundEngine.PlaySound(rorAudio.VINEBOOM);
             return true;
         }
-      
+
     }
 
 }

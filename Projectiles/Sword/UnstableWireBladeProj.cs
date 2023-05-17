@@ -35,7 +35,7 @@ namespace RealmOne.Projectiles.Sword
             Projectile.penetrate = -1;
             Projectile.extraUpdates = 1;
             Projectile.scale = 1.5f;
-            }
+        }
 
         public override void AI()
         {
@@ -49,16 +49,16 @@ namespace RealmOne.Projectiles.Sword
                 if (++Projectile.frame >= Main.projFrames[Projectile.type])
                     Projectile.frame = 0;
             }
-            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Electric, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f, Scale: 0.6f, Alpha: 120) ;   //spawns dust behind it, this is a spectral light blue dust
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Electric, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f, Scale: 0.6f, Alpha: 120);   //spawns dust behind it, this is a spectral light blue dust
 
             Vector2 swingangle = new Vector2(Projectile.ai[0], Projectile.ai[1]);
             Projectile.rotation = swingangle.ToRotation();
             Projectile.position = player.Center + swingangle - new Vector2(Projectile.width / 2, Projectile.height / 2);
 
-         
+
         }
-       
-      
+
+
         public override bool PreDraw(ref Color lightColor)
         {
             Vector2 drawPosition = Projectile.Center;
@@ -77,8 +77,8 @@ namespace RealmOne.Projectiles.Sword
 
             Vector2 origin = sourceRectangle.Size() / 2f;
 
-          //  float offsetX = 43;
-         //   origin.X = Projectile.spriteDirection == 1 ? sourceRectangle.Width - offsetX : offsetX;
+            //  float offsetX = 43;
+            //   origin.X = Projectile.spriteDirection == 1 ? sourceRectangle.Width - offsetX : offsetX;
 
             //float offsetY = 40;
             //origin.Y = (float)(Projectile.spriteDirection == 1 ? sourceRectangle.Height - offsetY : offsetY);
@@ -90,7 +90,7 @@ namespace RealmOne.Projectiles.Sword
 
             return false;
         }
-      
+
     }
 
 

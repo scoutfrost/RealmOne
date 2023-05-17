@@ -24,8 +24,8 @@ namespace RealmOne.Projectiles.HeldProj
             if (t == 1)
             {
 
-                Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.position, Projectile.velocity * 1f, ModContent.ProjectileType<CactiSticky>(),2, 0, Main.myPlayer);
-             //   Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.position, Projectile.velocity, ModContent.ProjectileType<CactiSticky>(), 2, 0, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.position, Projectile.velocity * 1f, ModContent.ProjectileType<CactiSticky>(), 2, 0, Main.myPlayer);
+                //   Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.position, Projectile.velocity, ModContent.ProjectileType<CactiSticky>(), 2, 0, Main.myPlayer);
 
             }
             Player player = Main.player[Projectile.owner];

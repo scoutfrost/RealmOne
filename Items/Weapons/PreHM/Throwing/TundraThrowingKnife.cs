@@ -27,10 +27,10 @@ namespace RealmOne.Items.Weapons.PreHM.Throwing
             Item.height = 24;
             Item.useTime = 15;
             Item.useAnimation = 15;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2;
             Item.value = Item.buyPrice(copper: 80);
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.maxStack = 999;

@@ -29,13 +29,13 @@ namespace RealmOne.Armor
             base.SetStaticDefaults();
             DisplayName.SetDefault("Brass Chestplate");
             Tooltip.SetDefault("8% knockback and weapon speed"
-                +"\n'A knight in rusty armour!'");
+                + "\n'A knight in rusty armour!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
         }
         public override void SetDefaults()
-        { 
+        {
             Item.width = 18; // Width of the item
             Item.height = 18; // Height of the item
             Item.value = Item.sellPrice(gold: 1); // How many coins the item is worth

@@ -27,7 +27,7 @@ namespace RealmOne.Projectiles.Throwing
             Projectile.hostile = true;
             Projectile.ignoreWater = true;
             Projectile.light = 1f;
-            
+
             Projectile.tileCollide = true;
             Projectile.penetrate = 0;
             Projectile.timeLeft = 400;
@@ -40,10 +40,10 @@ namespace RealmOne.Projectiles.Throwing
             {
                 SoundEngine.PlaySound(SoundID.Drip, Projectile.position);
             }
-            Lighting.AddLight(Projectile.position, r: 0.8f, g: 0.8f, b:0.8f); ;
+            Lighting.AddLight(Projectile.position, r: 0.8f, g: 0.8f, b: 0.8f); ;
             Lighting.Brightness(1, 1);
 
-           Dust.NewDust(Projectile.Right + Projectile.velocity, Projectile.width, Projectile.height, DustID.GreenTorch, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 0.8f);
+            Dust.NewDust(Projectile.Right + Projectile.velocity, Projectile.width, Projectile.height, DustID.GreenTorch, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 0.8f);
             Dust.NewDust(Projectile.Left + Projectile.velocity, Projectile.width, Projectile.height, DustID.YellowTorch, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 0.8f);
             Dust.NewDust(Projectile.Center + Projectile.velocity, Projectile.width, Projectile.height, DustID.PinkTorch, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 0.8f);
 
@@ -54,7 +54,7 @@ namespace RealmOne.Projectiles.Throwing
         public override void Kill(int timeleft)
 
         {
-            
+
 
             Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             SoundEngine.PlaySound(SoundID.Shatter, Projectile.position);
@@ -109,14 +109,14 @@ namespace RealmOne.Projectiles.Throwing
                         ItemID.NightOwlPotion, 1, false, 0, false, false);
 
             int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.GreenTorch, 0f, 0f, 100, default, 1f);
-        
+
             Main.dust[dustIndex].noGravity = true;
             Main.dust[dustIndex].position = Projectile.Right + new Vector2(0f, (float)(-(float)Projectile.height / 2)).RotatedBy(Projectile.rotation, default) * 1.1f;
             Main.dust[dustIndex].noLight = false;
 
 
             int dustIndex1 = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.YellowTorch, 0f, 0f, 255, default, 3f);
-          
+
             Main.dust[dustIndex1].noGravity = true;
             Main.dust[dustIndex1].position = Projectile.Left + new Vector2(0f, (float)(-(float)Projectile.height / 2)).RotatedBy(Projectile.rotation, default) * 1.1f;
             Main.dust[dustIndex1].noLight = false;
@@ -160,7 +160,7 @@ namespace RealmOne.Projectiles.Throwing
             if (Main.rand.NextBool(5))
                 target.AddBuff(BuffID.Endurance, 240);
 
-                 if (Main.rand.NextBool(5))
+            if (Main.rand.NextBool(5))
                 target.AddBuff(BuffID.ManaRegeneration, 240);
 
             if (Main.rand.NextBool(5))

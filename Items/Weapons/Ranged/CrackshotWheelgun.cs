@@ -49,7 +49,7 @@ namespace RealmOne.Items.Weapons.Ranged
             Item.shootSpeed = 70f;
             Item.shoot = ModContent.ProjectileType<WagonWheel>();
         }
-      
+
 
         public override bool CanUseItem(Player player)
         {
@@ -122,7 +122,7 @@ namespace RealmOne.Items.Weapons.Ranged
             }
             return true;
         }
-       
+
     }
     public class WagonWheel : ModProjectile
     {
@@ -159,8 +159,8 @@ namespace RealmOne.Items.Weapons.Ranged
                 if (proj.GetGlobalProjectile<CrackShotGlobalProj>().hasbeenShot && Projectile.timeLeft > 20 && proj.active)
                 {
                     shot = true;
-                    Projectile.timeLeft = 5;   
-                    
+                    Projectile.timeLeft = 5;
+
                     proj.active = false;
 
                     for (int i = 0; i < 5; i++)
@@ -186,7 +186,7 @@ namespace RealmOne.Items.Weapons.Ranged
         public override bool InstancePerEntity => true;
         public bool hasbeenShot = false;
 
-      
+
     }
 
 }

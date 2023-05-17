@@ -33,10 +33,10 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
             Item.height = 32;
             Item.useTime = 32;
             Item.useAnimation = 32;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 3;
             Item.value = 30000;
-            Item.rare = 3;
+            Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item45;
             Item.autoReuse = true;
             Item.shootSpeed = 26f;

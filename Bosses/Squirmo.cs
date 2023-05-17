@@ -22,11 +22,11 @@ namespace RealmOne.Bosses
     [AutoloadBossHead]
     internal class SquirmoHead : WormHead
     {
-      /*  public bool SpawnedMinions
-        {
-            get => NPC.localAI[0] == 1f;
-            set => NPC.localAI[0] = value ? 1f : 0f;
-        }*/
+        /*  public bool SpawnedMinions
+          {
+              get => NPC.localAI[0] == 1f;
+              set => NPC.localAI[0] = value ? 1f : 0f;
+          }*/
         public ref float RemainingShields => ref NPC.localAI[2];
 
         public override int BodyType => ModContent.NPCType<SquirmoBody>();
@@ -157,7 +157,7 @@ namespace RealmOne.Bosses
 
                 for (int i = 0; i < 2; i++)
                 {
-                    Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4 , 5), Main.rand.Next(-4, 5)), SquirmoGoreBody);
+                    Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreBody);
                     Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreHead);
                 }
 
@@ -195,7 +195,7 @@ namespace RealmOne.Bosses
 
         public override void BossLoot(ref string name, ref int potionType)
         {
-            
+
         }
 
 
@@ -264,7 +264,7 @@ namespace RealmOne.Bosses
                 NPC.EncourageDespawn(10);
                 return;
             }
-       //     SpawnMinions();
+            //     SpawnMinions();
 
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
@@ -286,56 +286,56 @@ namespace RealmOne.Bosses
                     attackCounter = 250;
                     NPC.netUpdate = true;
                     Main.projectile[projectile].velocity *= 6f;
-                    
-                  
+
+
                 }
 
 
             }
 
         }
-      /*  private void SpawnMinions()
-        {
-            if (SpawnedMinions)
-            {
-                // No point executing the code in this method again
-                return;
-            }
+        /*  private void SpawnMinions()
+          {
+              if (SpawnedMinions)
+              {
+                  // No point executing the code in this method again
+                  return;
+              }
 
-            SpawnedMinions = true;
+              SpawnedMinions = true;
 
-            if (Main.netMode == NetmodeID.MultiplayerClient)
-            {
-                // Because we want to spawn minions, and minions are NPCs, we have to do this on the server (or singleplayer, "!= NetmodeID.MultiplayerClient" covers both)
-                // This means we also have to sync it after we spawned and set up the minion
-                return;
-            }
+              if (Main.netMode == NetmodeID.MultiplayerClient)
+              {
+                  // Because we want to spawn minions, and minions are NPCs, we have to do this on the server (or singleplayer, "!= NetmodeID.MultiplayerClient" covers both)
+                  // This means we also have to sync it after we spawned and set up the minion
+                  return;
+              }
 
-            int count = MinionCount();
-            var entitySource = NPC.GetSource_FromAI();
+              int count = MinionCount();
+              var entitySource = NPC.GetSource_FromAI();
 
-            for (int i = 0; i < count; i++)
-            {
-                int index = NPC.NewNPC(entitySource, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<MegaSquirmHead>(), NPC.whoAmI);
-                NPC minionNPC = Main.npc[index];
+              for (int i = 0; i < count; i++)
+              {
+                  int index = NPC.NewNPC(entitySource, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<MegaSquirmHead>(), NPC.whoAmI);
+                  NPC minionNPC = Main.npc[index];
 
-                // Now that the minion is spawned, we need to prepare it with data that is necessary for it to work
-                // This is not required usually if you simply spawn NPCs, but because the minion is tied to the body, we need to pass this information to it
+                  // Now that the minion is spawned, we need to prepare it with data that is necessary for it to work
+                  // This is not required usually if you simply spawn NPCs, but because the minion is tied to the body, we need to pass this information to it
 
-                if (minionNPC.ModNPC is MegaSquirmHead minion)
-                {
-                    // This checks if our spawned NPC is indeed the minion, and casts it so we can access its variables
-                    minion.ParentIndex = NPC.whoAmI; // Let the minion know who the "parent" is
-                    minion.PositionIndex = i; // Give it the iteration index so each minion has a separate one, used for movement
-                }
+                  if (minionNPC.ModNPC is MegaSquirmHead minion)
+                  {
+                      // This checks if our spawned NPC is indeed the minion, and casts it so we can access its variables
+                      minion.ParentIndex = NPC.whoAmI; // Let the minion know who the "parent" is
+                      minion.PositionIndex = i; // Give it the iteration index so each minion has a separate one, used for movement
+                  }
 
-                // Finally, syncing, only sync on server and if the NPC actually exists (Main.maxNPCs is the index of a dummy NPC, there is no point syncing it)
-                if (Main.netMode == NetmodeID.Server && index < Main.maxNPCs)
-                {
-                    NetMessage.SendData(MessageID.SyncNPC, number: index);
-                }
-            }
-        }*/
+                  // Finally, syncing, only sync on server and if the NPC actually exists (Main.maxNPCs is the index of a dummy NPC, there is no point syncing it)
+                  if (Main.netMode == NetmodeID.Server && index < Main.maxNPCs)
+                  {
+                      NetMessage.SendData(MessageID.SyncNPC, number: index);
+                  }
+              }
+          }*/
     }
     internal class SquirmoBody : WormBody
     {

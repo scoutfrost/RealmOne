@@ -34,10 +34,10 @@ namespace RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops
             Item.height = 32;
             Item.useTime = 7;
             Item.useAnimation = 7;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2f;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Grass;
             Item.autoReuse = true;
             Item.useAmmo = AmmoID.None;

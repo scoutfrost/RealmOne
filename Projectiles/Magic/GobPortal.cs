@@ -34,12 +34,12 @@ namespace RealmOne.Projectiles.Magic
         public override void SetDefaults()
         {
             Projectile.width = 32;
-               Projectile.height = 32;
+            Projectile.height = 32;
             Projectile.friendly = true;
             Projectile.penetrate = -2;
             Projectile.aiStyle = 0;
             Projectile.DamageType = DamageClass.Magic;
-             Projectile.friendly = true;
+            Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
@@ -68,7 +68,7 @@ namespace RealmOne.Projectiles.Magic
                 if (npc.active && !npc.friendly && !npc.boss)
                 {
                     float distance = Vector2.Distance(Projectile.Center, npc.Center);
-                    if (distance <= 200) 
+                    if (distance <= 200)
                     {
                         Vector2 direction = npc.Center - Projectile.Center;
                         direction.Normalize();
@@ -90,7 +90,7 @@ namespace RealmOne.Projectiles.Magic
                 NPC target = Main.npc[i];
                 if (target.active && !target.friendly && Vector2.Distance(Projectile.Center, target.Center) < radius)
                 {
-                    int damage = Projectile.damage * 2; 
+                    int damage = Projectile.damage * 2;
                     target.StrikeNPC(damage, 0f, 0, false, false, false);
                 }
             }

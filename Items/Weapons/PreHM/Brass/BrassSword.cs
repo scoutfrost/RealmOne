@@ -29,7 +29,7 @@ namespace RealmOne.Items.Weapons.PreHM.Brass
             Item.height = 40;
             Item.useTime = 21;
             Item.useAnimation = 21;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2f;
             Item.value = 10000;
             Item.rare = ItemRarityID.Green;

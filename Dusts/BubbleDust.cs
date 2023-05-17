@@ -18,7 +18,7 @@ namespace RealmOne.Dusts
         {
             // Move the dust based on its velocity and reduce its size to then remove it, as the 'return false;' at the end will prevent vanilla logic.
             dust.position += dust.velocity;
-            
+
             dust.scale -= 0.01f;
             float light = 0.35f * dust.scale;
 

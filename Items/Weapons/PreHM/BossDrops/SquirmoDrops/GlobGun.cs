@@ -36,10 +36,10 @@ namespace RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops
             Item.height = 32;
             Item.useTime = 62;
             Item.useAnimation = 62;
-            Item.useStyle = 5;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2f;
             Item.value = 30000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
             Item.autoReuse = true;
             Item.useAmmo = ItemID.MudBlock;

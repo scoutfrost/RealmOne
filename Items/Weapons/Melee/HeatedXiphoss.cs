@@ -22,7 +22,7 @@ namespace RealmOne.Items.Weapons.Melee
              + "\n5 hits of enemies makes the sword increase in the sword's speed"
              + "\n10 hits of enemies makes the sword increase its damage by 20%"
              + "\n15 hits of enemies makes the sword reach it's final stage and inflicts Sharp Heat debuff"
-             +"\nThese effects reset on the 16th swing");
+             + "\nThese effects reset on the 16th swing");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -37,7 +37,7 @@ namespace RealmOne.Items.Weapons.Melee
             Item.height = 40;
             Item.useTime = 21;
             Item.useAnimation = 21;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 3f;
             Item.value = 10000;
             Item.rare = ItemRarityID.Green;
@@ -75,10 +75,10 @@ namespace RealmOne.Items.Weapons.Melee
                 Item.useTime = 14;
                 Item.useAnimation = 14;
 
-              //  hitCount = 0;
+                //  hitCount = 0;
             }
 
-           else  if (hitCount >= 10)
+            else if (hitCount >= 10)
             {
                 Item.damage = 18;
 
@@ -92,7 +92,7 @@ namespace RealmOne.Items.Weapons.Melee
                 //hitCount = 0;
             }
 
-           else  if (hitCount >= 20)
+            else if (hitCount >= 20)
             {
 
                 hitCount = 0;

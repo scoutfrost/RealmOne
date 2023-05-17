@@ -43,13 +43,13 @@ namespace RealmOne.BossSummons
 
 
         public override void SetDefaults()
-        {   
+        {
             Item.width = 20;
             Item.height = 20;
             Item.value = 20000;
             Item.rare = ModContent.RarityType<ModRarities>();
             Item.consumable = false;
-            Item.useStyle = 2;
+            Item.useStyle = ItemUseStyleID.EatFood;
             Item.useTime = 30;
             Item.useAnimation = 20;
             Item.UseSound = SoundID.Item2;
@@ -68,7 +68,7 @@ namespace RealmOne.BossSummons
         {
             if (player.whoAmI == Main.myPlayer)
             {
-                
+
                 if (Main.netMode != NetmodeID.Server)
                 {
                     Main.NewText(Language.GetTextValue("'The soil feels moist...'"), (byte)210, (byte)100, (byte)175);
@@ -87,7 +87,7 @@ namespace RealmOne.BossSummons
             {
                 // If the player using the item is the client
                 // (explicitely excluded serverside here)
-              
+
 
                 int type = ModContent.NPCType<SquirmoHead>();
 

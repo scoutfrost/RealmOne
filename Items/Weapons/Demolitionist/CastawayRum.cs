@@ -39,10 +39,10 @@ namespace RealmOne.Items.Weapons.Demolitionist
             Item.height = 24;
             Item.useTime = 40;
             Item.useAnimation = 40;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 5;
             Item.value = 10000;
-            Item.rare = 2;
+            Item.rare = ItemRarityID.Green;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_GrenadeThrow");
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<CastawayRumProj>();
@@ -116,7 +116,7 @@ namespace RealmOne.Items.Weapons.Demolitionist
                 Item.maxStack = 99;
 
                 Item.value = 500;
-                Item.rare = 2;
+                Item.rare = ItemRarityID.Green;
                 Item.consumable = true;
                 Item.buffType = ModContent.BuffType<SaltySwig>();
                 Item.buffTime = 900;
@@ -134,10 +134,10 @@ namespace RealmOne.Items.Weapons.Demolitionist
                 Item.height = 24;
                 Item.useTime = 40;
                 Item.useAnimation = 40;
-                Item.useStyle = 1;
+                Item.useStyle = ItemUseStyleID.Swing;
                 Item.knockBack = 5;
                 Item.value = 10000;
-                Item.rare = 2;
+                Item.rare = ItemRarityID.Green;
                 Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_GrenadeThrow");
                 Item.autoReuse = true;
                 Item.shoot = ModContent.ProjectileType<CastawayRumProj>();

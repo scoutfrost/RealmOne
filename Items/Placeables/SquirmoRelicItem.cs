@@ -13,7 +13,7 @@ using Terraria.GameContent;
 
 namespace RealmOne.Items.Placeables
 {
-   
+
     public class SquirmoRelicItem : ModItem
     {
         public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace RealmOne.Items.Placeables
             Item.maxStack = 99;
             Item.rare = ItemRarityID.Master;
             Item.master = true; // This makes sure that "Master" displays in the tooltip, as the rarity only changes the item name color
-            Item.value = Item.buyPrice(gold:20, silver: 50);
+            Item.value = Item.buyPrice(gold: 20, silver: 50);
             // Another shorthand method that will set the rarity and how much the item is worth.
         }
 
@@ -35,7 +35,7 @@ namespace RealmOne.Items.Placeables
         {
             DisplayName.SetDefault("Squirmo Relic"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Reward for giving relief to the soil!");
-                
+
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 

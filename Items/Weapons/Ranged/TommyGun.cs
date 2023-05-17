@@ -1,4 +1,4 @@
-    using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -28,7 +28,7 @@ namespace RealmOne.Items.Weapons.Ranged
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
         }
-      
+
         public override void SetDefaults()
         {
             Item.damage = 16;

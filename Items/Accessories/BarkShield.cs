@@ -26,7 +26,7 @@ namespace RealmOne.Items.Accessories
             Item.width = 20;
             Item.height = 20;
             Item.value = 10000;
-            Item.rare = 0;
+            Item.rare = ItemRarityID.White;
             Item.accessory = true;
             Item.defense += 1;
 

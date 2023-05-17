@@ -37,7 +37,7 @@ namespace RealmOne.Projectiles.Magic
         }
         public override void AI()
         {
-        
+
             Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Blood, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 2f);
             Projectile.aiStyle = 1;
             Lighting.AddLight(Projectile.position, 0.1f, 0.1f, 0.1f);
@@ -53,7 +53,7 @@ namespace RealmOne.Projectiles.Magic
             }
         }
 
-       
+
         public override void Kill(int timeleft)
         {
             Projectile.ownerHitCheck = true;
@@ -80,11 +80,11 @@ namespace RealmOne.Projectiles.Magic
                 d.noGravity = true;
             }
 
-           
+
             SoundEngine.PlaySound(SoundID.NPCDeath11);
         }
-        
-        
+
+
     }
 
 

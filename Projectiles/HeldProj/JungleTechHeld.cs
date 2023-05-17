@@ -33,7 +33,7 @@ namespace RealmOne.Projectiles.HeldProj
         {
             return false;
         }
-        
+
         public override void AI()
         {
             if (++Projectile.frameCounter >= 15f)

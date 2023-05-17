@@ -32,7 +32,7 @@ namespace RealmOne.Items.Misc
             Item.useAnimation = 15;
             Item.useTime = 15;
             Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.width =20;
+            Item.width = 20;
             Item.height = 20;
             Item.value = Item.buyPrice(silver: 80);
             Item.rare = ItemRarityID.Blue;
@@ -87,7 +87,7 @@ namespace RealmOne.Items.Misc
             if (time >= 1f)
                 time = 2f - time;
 
-            time = time * 0.5f + 0.5f;  
+            time = time * 0.5f + 0.5f;
 
             for (float i = 0f; i < 1f; i += 0.25f)
             {

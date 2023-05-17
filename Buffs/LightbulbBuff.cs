@@ -14,16 +14,16 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Lightbulb Buff");
             Description.SetDefault("'You are a lightbulb!'");
-           
+
 
         }
 
-       
+
         public override void Update(Player player, ref int buffIndex)
         {
 
-            
-           
+
+
 
         }
 

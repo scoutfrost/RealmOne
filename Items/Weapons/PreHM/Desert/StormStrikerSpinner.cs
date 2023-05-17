@@ -40,7 +40,7 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
             Item.useAnimation = 22;
             Item.knockBack = 4f;
             Item.value = 30000;
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.autoReuse = true;
             Item.crit = 2;
             Item.useStyle = ItemUseStyleID.Shoot;

@@ -26,7 +26,7 @@ namespace RealmOne.Armor
     {
         public override void SetStaticDefaults()
         {
-           
+
             DisplayName.SetDefault("Brass Helmet");
             Tooltip.SetDefault("6% increased melee damage ");
 
@@ -52,8 +52,8 @@ namespace RealmOne.Armor
         public override void UpdateEquip(Player player)
         {
             player.GetCritChance(DamageClass.Melee) += 0.5f;
-            
-            
+
+
         }
 
         // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
@@ -66,24 +66,24 @@ namespace RealmOne.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "2+ defense"+"\nDouble tap down to gain 'Brass's Might which increases the players defense by 10+ but 15% decreased movement & running speed " +"\n10 second cooldown"; // This is the setbonus tooltip
-            
-           Watertimer++;
-            
+            player.setBonus = "2+ defense" + "\nDouble tap down to gain 'Brass's Might which increases the players defense by 10+ but 15% decreased movement & running speed " + "\n10 second cooldown"; // This is the setbonus tooltip
+
+            Watertimer++;
+
             if (Watertimer == 8)
             {
                 int d = Dust.NewDust(player.position, player.width, player.height, DustID.CopperCoin);
                 Main.dust[d].scale = 1f;
                 Main.dust[d].velocity *= 0.5f;
                 Main.dust[d].noLight = false;
-                
+
                 Watertimer = 0;
             }
-            player.statDefense +=2;
+            player.statDefense += 2;
         }
 
 
 
-       
+
     }
 }

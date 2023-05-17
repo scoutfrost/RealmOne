@@ -31,11 +31,11 @@ namespace RealmOne.Items.Tools.Pick
             Item.useTime = 13;
             Item.UseSound = SoundID.GlommerBounce;
             Item.useAnimation = 13;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 6;
             Item.value = Item.buyPrice(silver: 90);
 
-            Item.rare = 1;
+            Item.rare = ItemRarityID.Blue;
             Item.autoReuse = true;
             Item.maxStack = 1;
             Item.crit = 2;

@@ -21,7 +21,7 @@ namespace RealmOne.Projectiles.Magic
             Projectile.width = 16;
             Projectile.height = 16;
 
-           Projectile.friendly = true;
+            Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.DamageType = DamageClass.Magic;
             Projectile.penetrate = 1;
@@ -52,7 +52,7 @@ namespace RealmOne.Projectiles.Magic
         }
         public override void Kill(int timeleft)
         {
-            
+
             for (int i = 0; i < 60; i++)
             {
                 Vector2 speed = Main.rand.NextVector2CircularEdge(0.5f, 0.5f);

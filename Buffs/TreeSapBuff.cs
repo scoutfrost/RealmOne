@@ -14,7 +14,7 @@ namespace RealmOne.Buffs
         {
             DisplayName.SetDefault("Tree Sap Buff");
             Description.SetDefault("Calming effect and 5% increased movement speed while in the forest");
-           
+
 
         }
 
@@ -24,7 +24,7 @@ namespace RealmOne.Buffs
 
             player.calmed = true;
             player.moveSpeed += 0.05f;
-            
+
 
         }
 
