@@ -20,6 +20,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne
 {
+	//Test
     public class RealmOne : Mod
 	{
 		public const string AssetPath = $"{nameof(RealmOne)}/Assets/";
