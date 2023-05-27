@@ -1,3 +1,4 @@
+using RealmOne.Items.Misc;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -9,8 +10,8 @@ namespace RealmOne.Items.Accessories
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Liveborn Leaf"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("'A common, powerful, fragile leaf of the overgrown forest'"
+			DisplayName.SetDefault("Noxius Leaf"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("'Bacteria infected leaf, radiating with nature's power'"
 				 + "\n10% increased summon damage");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -37,7 +38,7 @@ namespace RealmOne.Items.Accessories
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.Acorn, 4);
+			recipe.AddIngredient(ModContent.ItemType<GoopyGrass>(), 4);
 			recipe.AddIngredient(ItemID.Wood, 6);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
