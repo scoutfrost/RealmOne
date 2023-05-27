@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Bosses;
+using RealmOne.Common.Systems;
 using RealmOne.NPCs.Enemies.Forest;
 using RealmOne.Rarities;
 using RealmOne.RealmPlayer;

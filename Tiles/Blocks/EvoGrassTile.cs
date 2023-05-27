@@ -23,7 +23,6 @@ namespace RealmOne.Tiles.Blocks
 			AddMapEntry(new Color(90, 127, 78), name);
 
 			DustType = DustID.Grass;
-			ItemDrop = ModContent.ItemType<Items.Placeables.EvoGrassItem>();
 
 			MineResist = 1f;
 			MinPick = 20;

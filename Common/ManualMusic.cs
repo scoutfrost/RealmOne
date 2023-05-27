@@ -13,15 +13,13 @@ namespace RealmOne.Common
 			// Accepted music formats are: .mp3, .ogg, and .wav files.
 			// Do NOT add the file extension in your code when adding music!
 
-			MusicLoader.AddMusic(mod, "Assets/Music/TheUnknown1");
 			MusicLoader.AddMusic(mod, "Assets/Music/SquirmoDrip");
-			MusicLoader.AddMusic(mod, "Assets/Music/BorderlineDisc");
-			MusicLoader.AddMusic(mod, "Assets/Music/ADHDDisc");
+            MusicLoader.AddMusic(mod, "Assets/Music/Rlyeh");
 
-			// An example of registration of Music Boxes can be found in 'Content/Items/Placeable/ExampleMusicBox.cs'.
-		}
+            // An example of registration of Music Boxes can be found in 'Content/Items/Placeable/ExampleMusicBox.cs'.
+        }
 
-		public void Unload() { }
+        public void Unload() { }
 	}
 }
 

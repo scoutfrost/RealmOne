@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using RealmOne.Common.DamageClasses;
+using RealmOne.Common.Systems;
 using RealmOne.Projectiles.Magic;
 using Terraria;
 using Terraria.Audio;

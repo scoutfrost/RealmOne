@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Core;
 using ReLogic.Content;
 using System.Collections.Generic;
 using Terraria;
@@ -177,7 +178,6 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
 				Projectile.damage = 28;
 				Projectile.aiStyle = ProjAIStyleID.Harpoon;
 				AIType = ProjectileID.ChainGuillotine;
-				Projectile.light = 0.7f;
 				Projectile.CritChance = 100;
 				Projectile.CloneDefaults(ProjectileID.ChainGuillotine);
 
@@ -186,11 +186,18 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
 
 			public override void Kill(int timeLeft)
 			{
-				for (int i = 0; i < 6; i++)
-					Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Sandnado, 0f, 0f, 0, default, 0.6f);
-
+				
 				Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-			}
+
+                for (int i = 0; i < 80; i++)
+                {
+                    Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                    var d = Dust.NewDustPerfect(Projectile.Center, DustID.Sandnado, speed * 4, Scale: 1.3f);
+                    ;
+                    d.noGravity = true;
+                    d.noLight = false;
+                }
+            }
 			public override bool PreDrawExtras()
 			{
 				Vector2 playerCenter = Main.player[Projectile.owner].MountedCenter;
@@ -222,6 +229,30 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
 			{
 				Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Enchanted_Gold, Projectile.velocity.X * 0.2f, Projectile.velocity.Y * 0.2f);
 			}
-		}
+
+            public PrimitiveTrail trail = new();
+            public List<Vector2> oldPositions = new List<Vector2>();
+            public override bool PreDraw(ref Color lightColor)
+            {
+                Main.spriteBatch.End();
+                Main.spriteBatch.Begin();
+
+                lightColor = Color.Gold;
+
+                Color color = Color.LightYellow;
+
+                Vector2 pos = (Projectile.Center).RotatedBy(Projectile.rotation, Projectile.Center);
+
+                oldPositions.Add(pos);
+                while (oldPositions.Count > 30)
+                    oldPositions.RemoveAt(0);
+
+                trail.Draw(color, pos, oldPositions, 4f);
+                trail.width = 2;
+                Main.spriteBatch.End();
+                Main.spriteBatch.Begin();
+                return true;
+            }
+        }
 	}
 }

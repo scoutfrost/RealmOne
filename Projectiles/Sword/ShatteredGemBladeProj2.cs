@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -36,7 +37,7 @@ namespace RealmOne.Projectiles.Sword
 
 		public override void AI()
 		{
-			if (++Projectile.frameCounter >= 8f)//the amount of ticks the game spends on each frame
+			if (++Projectile.frameCounter >= 9f)//the amount of ticks the game spends on each frame
 			{
 				Projectile.frameCounter = 0;
 

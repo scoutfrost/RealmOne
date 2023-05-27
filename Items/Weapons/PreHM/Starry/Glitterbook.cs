@@ -31,7 +31,7 @@ namespace RealmOne.Items.Weapons.PreHM.Starry
 
 		public override void SetDefaults()
 		{
-			Item.damage = 12;
+			Item.damage = 13;
 			Item.DamageType = DamageClass.Magic;
 			Item.width = 24;
 			Item.height = 30;
@@ -44,7 +44,7 @@ namespace RealmOne.Items.Weapons.PreHM.Starry
 			Item.shoot = ProjectileType<Stary>();
 			Item.shootSpeed = 40f;
 			Item.value = Item.buyPrice(gold: 2, silver: 75);
-			Item.mana = 4;
+			Item.mana = 3;
 			Item.noMelee = true;
 
 		}
@@ -84,7 +84,7 @@ namespace RealmOne.Items.Weapons.PreHM.Starry
 			{
 				float angle = Main.rand.NextFloat(MathHelper.PiOver4, -MathHelper.Pi - MathHelper.PiOver2);
 
-				Vector2 PositionArea = Vector2.Normalize(new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle))) * 35f;
+				Vector2 PositionArea = Vector2.Normalize(new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle))) * 20f;
 				if (Collision.CanHit(position, 0, 0, position + PositionArea, 0, 0))
 					position += PositionArea;
 
@@ -157,7 +157,6 @@ namespace RealmOne.Items.Weapons.PreHM.Starry
 			.AddIngredient(ItemType<EnchantedStarglitter>(), 15)
 			.AddIngredient(Mod, "Parchment", 5)
 			.AddIngredient(ItemID.FallenStar, 1)
-			.AddIngredient(ItemID.SunplateBlock, 10)
 
 			.AddTile(TileID.Anvils)
 			.Register();

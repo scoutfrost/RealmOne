@@ -1,8 +1,18 @@
+using RealmOne.Bosses;
 using RealmOne.Common.Systems;
 using RealmOne.Items.Accessories;
 using RealmOne.Items.BossSummons;
+using RealmOne.Items.Misc;
+using RealmOne.Items.Others;
+using RealmOne.Items.PaperUI;
+using RealmOne.Items.Placeables;
+using RealmOne.Items.Potions;
 using RealmOne.Items.Weapons.Demolitionist;
+using RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops;
+using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
 using RealmOne.Items.Weapons.Summoner;
+using RealmOne.NPCs.Enemies.Forest;
+using RealmOne.NPCs.Enemies.MiniBoss;
 using System;
 using System.Collections.Generic;
 using Terraria.Audio;
@@ -10,7 +20,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne
 {
-	public class RealmOne : Mod
+    public class RealmOne : Mod
 	{
 		public const string AssetPath = $"{nameof(RealmOne)}/Assets/";
 
@@ -46,7 +56,7 @@ namespace RealmOne
 						ModContent.ItemType<GlobGun>(),
 						ModContent.ItemType<SquirmStaff>(),
 						ModContent.ItemType<SquirYo>(),
-						ModContent.ItemType<LoreScroll1>(),
+						ModContent.ItemType<SquirmoLorePageOne>(),
 						ModContent.ItemType<TwinklingTwig>(),
 					},
 					ModContent.ItemType<SquirmoSummon>(),
@@ -75,12 +85,25 @@ namespace RealmOne
 						ModContent.ItemType<FoliageFury>(),
 
 					},
-					ModContent.ItemType<Outcrop>(),
+					ModContent.ItemType<PhotosynthesisItem>(),
 					"To this day, the dirt titan is a remarkable standpoint of the growth of Terraria, from its hard life and from its happiest life, it will always be a symbol of the land. The name that is given to it now is called The Outcrop Outcast, for many reasons. The dirt effigy still remains on this day and is untouched even for the irresponsible. Would you rather defeat the past or lose the future?\r\n",
 					""
 				});
-
-			}
+                bossChecklist.Call(new object[11]
+             {
+                "AddBoss",
+                this,
+                "Possessed Piggy Bank",
+                ModContent.NPCType<PossessedPiggy>(),
+                0.3f,
+                (Func<bool>)(() => DownedBossSystem.downedPiggy),
+                (Func<bool>)(() => true),
+                new List<int> { ModContent.ItemType<PiggyPorcelain>() },
+                ModContent.ItemType<MoneyVase>(),
+                "A rare scavenger of the land, looking for any Terrarian to stumble across it, stealing all its loot!!",
+                ""
+               });
+            }
 		}
 	}
 }

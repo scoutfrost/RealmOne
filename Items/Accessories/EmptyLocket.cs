@@ -1,5 +1,7 @@
+using RealmOne.Items.Others;
 using Terraria;
 using Terraria.GameContent.Creative;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -26,24 +28,30 @@ namespace RealmOne.Items.Accessories
 			Item.value = 10000;
 			Item.rare = ItemRarityID.Purple;
 			Item.accessory = true;
-			Item.buffType = BuffID.Shine;
 			Item.defense += 1;
 
 		}
-
-		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-		{
-			target.AddBuff(BuffID.Frostburn, 180);
-		}
-
-		public override void AddRecipes()
+        public override bool CanRightClick()
+        {
+			return true;
+        }
+        public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EntropyMedallion>(), 1, 1, 1));
+        }
+      
+        public override void UpdateEquip(Player player)
+        {
+			Lighting.AddLight(player.position, r: 0.6f, 0.3f, b: 1f);
+        }
+        public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.Diamond, 5);
 			recipe.AddIngredient(ItemID.GoldBar, 10);
-			recipe.AddIngredient(ItemID.Chain, 2);
-			recipe.AddIngredient(ItemID.Cog, 2);
-			recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(Mod,"EidolicInk", 10);
+
+            recipe.AddTile(TileID.Anvils);
 			recipe.Register();
 
 		}

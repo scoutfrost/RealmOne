@@ -31,6 +31,7 @@ namespace RealmOne.Projectiles.Magic
 			Projectile.penetrate = 1;
 			Projectile.extraUpdates = 1;
 			Projectile.damage = 40;
+			
 
 		}
 		public override void AI()
@@ -41,7 +42,7 @@ namespace RealmOne.Projectiles.Magic
 			Lighting.AddLight(Projectile.position, 0.1f, 0.1f, 0.1f);
 			Lighting.Brightness(1, 1);
 
-			if (++Projectile.frameCounter >= 15f)
+			if (++Projectile.frameCounter >= 14f)
 			{
 				Projectile.frameCounter = 0;
 
@@ -62,8 +63,8 @@ namespace RealmOne.Projectiles.Magic
 				NPC target = Main.npc[i];
 				if (target.active && !target.friendly && Vector2.Distance(Projectile.Center, target.Center) < radius)
 				{
-					int damage = Projectile.damage * 4; // Deal half the projectile's damage as splash damage
-					target.StrikeNPC(damage, 0f, 0, false, false, false);
+					int damage = Projectile.damage * 3; // Deal half the projectile's damage as splash damage
+					target.SimpleStrikeNPC(50, 0);
 				}
 			}
 

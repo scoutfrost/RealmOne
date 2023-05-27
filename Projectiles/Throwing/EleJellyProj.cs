@@ -1,5 +1,8 @@
 using Microsoft.Xna.Framework;
+using RealmOne.Buffs.Debuffs;
+using RealmOne.Common.Core;
 using RealmOne.Items.Weapons.PreHM.Throwing;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -37,16 +40,49 @@ namespace RealmOne.Projectiles.Throwing
 		public override void AI()
 		{
 			Lighting.AddLight(Projectile.position, r: 0.2f, g: 0.8f, b: 1.5f);
-			;
+			
 			Lighting.Brightness(1, 1);
 
 			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Water_GlowingMushroom, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 1f);
+
+
+
+
 		}
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+			Projectile.Kill();
+			return false;
+        }
+        public PrimitiveTrail trail = new();
+        public List<Vector2> oldPositions = new List<Vector2>();
+        public override bool PreDraw(ref Color lightColor)
+        {
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin();
 
-		public override void Kill(int timeleft)
+            lightColor = Color.White;
 
-		{
-			for (int i = 0; i < 17; i++)
+            Color color = Color.Cyan;
+
+            Vector2 pos = (Projectile.Center).RotatedBy(Projectile.rotation, Projectile.Center);
+
+            oldPositions.Add(pos);
+            while (oldPositions.Count > 30)
+                oldPositions.RemoveAt(0);
+
+            trail.Draw(color, pos, oldPositions, 1.4f);
+			trail.width = 2;
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin();
+            return true;
+        }
+        public override void Kill(int timeleft)
+
+        {
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, 0, ModContent.ProjectileType<JellySpark>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+
+            for (int i = 0; i < 17; i++)
 				Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.UnusedWhiteBluePurple, 0f, 0f, 50, default, 2f);
 
 			Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
@@ -71,7 +107,9 @@ namespace RealmOne.Projectiles.Throwing
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 
 		{
-			target.AddBuff(BuffID.Electrified, 180);
-		}
-	}
+            target.AddBuff(ModContent.BuffType<AltElectrified>(), 600);
+
+            Projectile.Kill();
+        }
+    }
 }

@@ -7,6 +7,7 @@ using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 
@@ -116,13 +117,16 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 		{
 			CombatText.NewText(new Rectangle((int)NPC.position.X, (int)NPC.position.Y - 20, NPC.width, NPC.height), new Color(234, 129, 178, 180), "Ow that hurt!", false, false);
 
-			return true;
 		}
 
 		public override void OnKill()
 		{
+            if (Main.netMode != NetmodeID.Server)
+            {
+                Main.NewText(Language.GetTextValue($"[i:{ItemID.GoldCoin}]The angry lil loot scavenger has been shattered!![i:{ItemID.GoldCoin}]"), 71, 229, 231);
 
-			NPC.SetEventFlagCleared(ref DownedBossSystem.downedPiggy, -1);
+            }
+            NPC.SetEventFlagCleared(ref DownedBossSystem.downedPiggy, -1);
 
 			if (Main.netMode != NetmodeID.Server)
 				CombatText.NewText(new Rectangle((int)NPC.position.X + 30, (int)NPC.position.Y - 20, NPC.width, NPC.height), new Color(234, 129, 178, 190), "You got lucky that time!", false, false);

@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using RealmOne.Common.Systems;
 using RealmOne.Projectiles.Bullet;
 using RealmOne.RealmPlayer;
 using Terraria;
@@ -39,7 +40,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 			Item.UseSound = SoundID.DD2_ExplosiveTrapExplode;
 			Item.useAmmo = AmmoID.Bullet;
 			Item.shoot = ModContent.ProjectileType<VintageBulletProjectile>();
-			Item.shootSpeed = 79f;
+			Item.shootSpeed = 98f;
 			Item.value = Item.buyPrice(gold: 2, silver: 75);
 			Item.crit = 4;
 			Item.reuseDelay = 75;
@@ -73,8 +74,8 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 			{
 				Vector2 speed = Utils.RandomVector2(Main.rand, -10f, 1f);
 				var d = Dust.NewDustPerfect(Main.LocalPlayer.Center, DustID.Torch, speed * 10, Scale: 2.5f);
-				;
-				;
+				
+		
 
 				d.noGravity = true;
 			}

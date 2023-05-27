@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using RealmOne.Common.DamageClasses;
+using RealmOne.Common.Systems;
 using RealmOne.RealmPlayer;
 using Terraria;
 using Terraria.Audio;

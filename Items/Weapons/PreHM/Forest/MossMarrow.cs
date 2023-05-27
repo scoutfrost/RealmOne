@@ -19,7 +19,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
 
 		public override void SetDefaults()
 		{
-			Item.damage = 11;
+			Item.damage = 10;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 40;
 			Item.height = 40;

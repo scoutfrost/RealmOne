@@ -5,8 +5,11 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Accessories
 {
-	public class BarkShield : ModItem
+    [AutoloadEquip(EquipType.Shield)] 
+
+    public class BarkShield : ModItem
 	{
+
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bark Shield"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.

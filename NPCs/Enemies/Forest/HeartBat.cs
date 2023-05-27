@@ -72,8 +72,10 @@ namespace RealmOne.NPCs.Enemies.Forest
 			{
 				Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HeartbatGore1").Type, 1f);
 				Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HeartbatGore2").Type, 1f);
-			}
-		}
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HeartbatGore3").Type, 1f);
+
+            }
+        }
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{

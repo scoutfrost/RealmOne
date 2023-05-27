@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
+using RealmOne.Items.Ammo;
 using RealmOne.Projectiles.Bullet;
 using RealmOne.Rarities;
 using RealmOne.RealmPlayer;
@@ -42,24 +44,56 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 			Item.autoReuse = true;
 			Item.useAmmo = AmmoID.Bullet;
 			Item.noMelee = true;
-			Item.shootSpeed = 10f;
+			Item.shootSpeed = 16f;
 			Item.shoot = ProjectileType<OldChainHook>();
 
 		}
 
 		public override bool CanUseItem(Player player)
 		{
+            bool hasCustomAmmo = player.HasItem(ModContent.ItemType<RustedBullets>());
+
+            if (hasCustomAmmo)
+            {
+                // Use custom modded ammo
+                Item.shootSpeed = 80f;
+                Item.useTime = 73;
+                Item.useAnimation = 73;
+                Item.useStyle = ItemUseStyleID.Shoot;
+                Item.noUseGraphic = false;
+                Item.UseSound = rorAudio.SFX_PumpShotgun;
+                Item.shoot = ProjectileID.Bullet;
+                Item.damage = 5;
+                Item.knockBack = 2f;
+                Item.useAmmo = ModContent.ItemType<RustedBullets>();		
+            }
+            else
+            {
+                // Use normal bullets
+                Item.shootSpeed = 80f;
+                Item.useTime = 73;
+                Item.useAnimation = 73;
+                Item.useStyle = ItemUseStyleID.Shoot;
+                Item.noUseGraphic = false;
+                Item.UseSound = rorAudio.SFX_PumpShotgun;
+                Item.shoot = ProjectileID.Bullet;
+                Item.damage = 5;
+                Item.knockBack = 2f;
+                Item.useAmmo = AmmoID.Bullet;
+            }
+
+        
 			if (player.altFunctionUse == 2)
 			{
-				Item.useTime = 42;
-				Item.useAnimation = 42;
+				Item.useTime = 44;
+				Item.useAnimation = 44;
 				Item.useStyle = ItemUseStyleID.Swing;
 				Item.noUseGraphic = true;
 				Item.UseSound = SoundID.Item1;
 				Item.autoReuse = false;
-				Item.shootSpeed = 20f;
+				Item.shootSpeed = 16f;
 				Item.shoot = ProjectileType<OldChainHook>();
-				Item.damage = 20;
+				Item.damage = 16;
 				Item.knockBack = 6f;
 
 			}
@@ -74,7 +108,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 				Item.shoot = ProjectileID.Bullet;
 				Item.damage = 5;
 				Item.knockBack = 2f;
-
+				Item.useAmmo = AmmoID.Bullet;
 			}
 
 			return base.CanUseItem(player);

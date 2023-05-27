@@ -16,8 +16,6 @@
 		<PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
 	</ItemGroup>
 	<ItemGroup>
-		<Folder Include="Assets\MenuBackground\" />
-		<Folder Include="Common\Gores\" />
 		<Folder Include="Items\Fighter\" />
 	</ItemGroup>
 </Project>

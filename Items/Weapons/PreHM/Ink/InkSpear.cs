@@ -1,4 +1,6 @@
+using RealmOne.Items.Misc;
 using RealmOne.Projectiles.HeldProj;
+using RealmOne.Rarities;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -45,8 +47,8 @@ namespace RealmOne.Items.Weapons.PreHM.Ink
 		{
 			Recipe recipe = CreateRecipe();
 
-			recipe.AddIngredient(ItemID.Cactus, 20);
-
+			recipe.AddIngredient(ModContent.ItemType<EidolicInk>(), 14);
+			recipe.AddRecipeGroup("IronBar", 10);
 			recipe.AddTile(TileID.Anvils);
 			recipe.Register();
 		}

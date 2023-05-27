@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Common.Core;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -18,7 +20,7 @@ namespace RealmOne.Projectiles.Bullet
 
 		public override void SetDefaults()
 		{
-			Projectile.width = 28;
+			Projectile.width = 14;
 			Projectile.height = 3;
 
 			Projectile.aiStyle = 0;
@@ -28,7 +30,7 @@ namespace RealmOne.Projectiles.Bullet
 			Projectile.ignoreWater = true;
 			Projectile.light = 0.5f;
 			Projectile.tileCollide = true;
-			Projectile.timeLeft = 600;
+			Projectile.timeLeft = 60;
 			Projectile.penetrate = 4;
 			Projectile.extraUpdates = 1;
 			AIType = 0;
@@ -55,7 +57,32 @@ namespace RealmOne.Projectiles.Bullet
 			SoundEngine.PlaySound(SoundID.Tink, Projectile.position);
 
 		}
-		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+
+        public PrimitiveTrail trail = new();
+        public List<Vector2> oldPositions = new List<Vector2>();
+        public override bool PreDraw(ref Color lightColor)
+        {
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin();
+
+            lightColor = Color.Yellow;
+
+            Color color = Color.DarkGray;
+
+            Vector2 pos = (Projectile.Center).RotatedBy(Projectile.rotation, Projectile.Center);
+
+            oldPositions.Add(pos);
+            while (oldPositions.Count > 30)
+                oldPositions.RemoveAt(0);
+
+            trail.Draw(color, pos, oldPositions, 3f);
+            trail.width = 4;
+			
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin();
+            return true;
+        }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 
 		{
 

@@ -1,8 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Buffs;
+using RealmOne.Common.Core;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Opens;
+using RealmOne.Items.PaperUI;
+using RealmOne.Items.Weapons.PreHM.Shotguns;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
@@ -19,7 +22,8 @@ namespace RealmOne.RealmPlayer
 	{
 		public bool ShowScroll = false;
 
-		public override void PostUpdate()
+
+        public override void PostUpdate()
 		{
 			if (ShowScroll == true)
 			{
@@ -27,12 +31,33 @@ namespace RealmOne.RealmPlayer
 
 			}
 
+           
+
+
+            base.PostUpdate();
+		}
+	}
+	public class ScrollyWorm : ModPlayer
+
+	{
+
+		public bool ShowWorm1 = false;
+
+		public override void PostUpdate()
+		{
+			
+			if (ShowWorm1 == true)
+			{
+				Player target = Main.LocalPlayer;
+
+			}
+
+
 			base.PostUpdate();
 		}
 	}
-
-	//ALL THIS CODE UP TO THE # IS SPIRIT MOD'S GITHUB CODE, ALL CREDIT GOES TO THEM.
-	public class ItemGlowy : ModPlayer
+    //ALL THIS CODE UP TO THE # IS SPIRIT MOD'S GITHUB CODE, ALL CREDIT GOES TO THEM.
+    public class ItemGlowy : ModPlayer
 	{
 
 		internal new static void Unload()
@@ -209,8 +234,24 @@ namespace RealmOne.RealmPlayer
 			}
 		}
 	}
-	public class RealmModPlayer : ModPlayer
+
+    public class ThornsPlayer : ModPlayer
+    {
+      
+       
+        public override void OnHitByNPC(NPC npc, Player.HurtInfo hurtInfo)
+        {
+            if (Player.HasBuff(BuffID.Thorns))
+
+            {
+                npc.AddBuff(BuffID.Poisoned, 60); // Apply Poisoned buff to the enemy for 1 second (60 frames)
+
+            }
+        }
+    }
+    public class RealmModPlayer : ModPlayer
 	{
+		public bool GreenNeck = false;
 		public bool Overseer = false;
 		public bool Rusty = false;
 
@@ -218,6 +259,7 @@ namespace RealmOne.RealmPlayer
 		{
 			Overseer = false;
 			Rusty = false;
+			GreenNeck = false;
 		}
 
 		public override bool CanConsumeAmmo(Item weapon, Item ammo)
@@ -230,17 +272,29 @@ namespace RealmOne.RealmPlayer
 			return base.CanConsumeAmmo(weapon, ammo);
 
 		}
-
-		public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (GreenNeck)
+            {
+                foreach (NPC npc in Main.npc)
+                {
+                    if (npc.active && npc.Distance(Player.Center) < 300f && npc.lifeMax > 5 && !npc.friendly && !npc.boss)
+                    {
+                        npc.AddBuff(BuffID.ShadowFlame, 1000);
+                    }
+                }
+            }
+        }
+        public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
 		{
-			if (Overseer && Main.rand.NextBool(2) && !target.friendly && crit && target.lifeMax > 10 && target.type != NPCID.TargetDummy)
+			if (Overseer && Main.rand.NextBool(3) && !target.friendly && hit.Crit && target.lifeMax > 10 && target.type != NPCID.TargetDummy)
 			{
 				Player.AddBuff(ModContent.BuffType<OverseerBuff>(), 400);
 			}
 		}
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Projectile, consider using OnHitNPC instead */
 		{
-			if (Overseer && Main.rand.NextBool(2) && crit && !target.friendly && target.lifeMax > 10 && !target.SpawnedFromStatue && target.type != NPCID.TargetDummy)
+			if (Overseer && Main.rand.NextBool(3) && hit.Crit && !target.friendly && target.lifeMax > 10 && !target.SpawnedFromStatue && target.type != NPCID.TargetDummy)
 			{
 				Player.AddBuff(ModContent.BuffType<OverseerBuff>(), 400);
 			}
@@ -279,7 +333,7 @@ namespace RealmOne.RealmPlayer
 
 			if (Main.netMode != NetmodeID.Server)
 			{
-				Main.NewText(Language.GetTextValue($"Go and join the discord server for the mod!! [c/0000FF:discord.gg]"), 128, 232, 55);
+				Main.NewText(Language.GetTextValue($"[i:{ItemID.Book}]Go and join the discord server for the mod!! [c/0000FF:discord.gg/vsBJ8PrmCh] [i:{ItemID.Book}]"), 128, 232, 55);
 
 			}
 		}
@@ -306,7 +360,7 @@ namespace RealmOne.RealmPlayer
 				Main.NewText(Language.GetTextValue("'Never wait a second longer or shorter, it will always drive the pain towards you'"), 210, 30, 30);
 			}
 		}
-
+		
 		public override void PostNurseHeal(NPC nurse, int health, bool removeDebuffs, int price)
 		{
 			if (Main.netMode != NetmodeID.Server)
@@ -314,15 +368,17 @@ namespace RealmOne.RealmPlayer
 				Main.NewText(Language.GetTextValue("'Regeneratating is more natural and increases your cardiovascular immunity, avoid healing, you pussy'"), 210, 100, 175);
 			}
 		}
-
+		
 		public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
 		{
 
 			return (IEnumerable<Item>)(object)new Item[2]
 			{
 				new Item(ModContent.ItemType<SpaceStarfish>(), 1, 0),
-				new Item(ModContent.ItemType<BreadLoaf>(), 1, 0)
-			};
+				new Item(ModContent.ItemType<BreadLoaf>(), 1, 0),
+
+
+            };
 		}
 	}
 }

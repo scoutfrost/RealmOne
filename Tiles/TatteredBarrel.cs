@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Common.Systems;
 using RealmOne.Items.Misc;
 using Terraria;
 using Terraria.Audio;
@@ -39,12 +40,11 @@ namespace RealmOne.Tiles
 			LocalizedText name = CreateMapEntryName();
 			name.SetDefault("Tattered Barrel");
 			AddMapEntry(new Color(200, 200, 200), name);
-
+			
 			// Placement
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
 			TileObjectData.newTile.Origin = new Point16(0, 1);
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
-			ItemDrop = ModContent.ItemType<TatteredBarrelItem>();
 
 			TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock };
 			TileObjectData.newTile.StyleHorizontal = true;
@@ -102,39 +102,7 @@ namespace RealmOne.Tiles
 			}
 		}
 
-		/* public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItemm, Point16 tileCoords, IEntitySource source)
-          {
-
-              for (int q = 0; q < 6; q++)
-              {
-                  Vector2 tilePos = new Vector2(tileCoords.X * 16, tileCoords.Y * 16);
-                  Gore gore = Gore.NewGoreDirect(source, tileCoords.ToVector2() * 16, Vector2.Zero, 99, 1.1f);
-                  gore.velocity *= 0.6f;
-
-                  Vector2 tilePos1 = new Vector2(tileCoords.X * 16, tileCoords.Y * 16);
-                  Gore gore1 = Gore.NewGoreDirect(source, tileCoords.ToVector2() * 16, Vector2.Zero, 99, 1.1f);
-                  gore1.velocity *= 0.6f;
-
-
-                  Vector2 tilePos2 = new Vector2(tileCoords.X * 16, tileCoords.Y * 16);
-                  Gore gore2 = Gore.NewGoreDirect(source, tileCoords.ToVector2() * 16, Vector2.Zero, 99, 1.1f);
-                  gore2.velocity *= 0.6f;
-                 if (q < 5 && !Main.dedServ && Main.netMode != NetmodeID.Server)
-                  {
-                      gore = Gore.NewGoreDirect(source, tilePos + new Vector2(0, 4), Vector2.Zero, ModContent.GetInstance<RealmOne>().Find<ModGore>("BarrelGore1" + (q + 1)).Type, 1f);
-                      gore1 = Gore.NewGoreDirect(source, tilePos1 + new Vector2(0, 4), Vector2.Zero, ModContent.GetInstance<RealmOne>().Find<ModGore>("BarrelGore2" + (q + 1)).Type, 1f);
-                      gore2 = Gore.NewGoreDirect(source, tilePos2 + new Vector2(0, 4), Vector2.Zero, ModContent.GetInstance<RealmOne>().Find<ModGore>("BarrelGore3" + (q + 1)).Type, 1f);
-
-
-
-                      gore.velocity = Main.rand.NextVector2Unit() * Main.rand.NextFloat(0.5f, 1.8f);
-                      gore1.velocity = Main.rand.NextVector2Unit() * Main.rand.NextFloat(0.5f, 1.8f);
-                      gore2.velocity = Main.rand.NextVector2Unit() * Main.rand.NextFloat(0.5f, 1.8f);
-
-                  }
-              }
-          }*/
-
+		
 		public override void MouseOver(int i, int j)
 		{
 			Player player = Main.LocalPlayer;

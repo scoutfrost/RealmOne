@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Common.Systems;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -55,7 +56,7 @@ namespace RealmOne.Vanities
 			{
 				if (player.inventory[i].type == ItemID.None && !pickupText)
 				{
-					CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y - 20, player.width, player.height), new Color(255, 255, 255, 255), $"BRO NAWWWW [i:{ModContent.ItemType<SkullMask>()}]", false, false);
+					CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y - 20, player.width, player.height), new Color(255, 255, 255, 255), "BRO NAWWWW", false, false);
 					pickupText = true;
 
 				}

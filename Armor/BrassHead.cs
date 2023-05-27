@@ -66,5 +66,15 @@ namespace RealmOne.Armor
 
 			player.statDefense += 2;
 		}
-	}
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+
+            .AddIngredient(Mod, "BrassIngot", 4)
+            .AddTile(TileID.Furnaces)
+            .Register();
+
+        }
+    }
 }

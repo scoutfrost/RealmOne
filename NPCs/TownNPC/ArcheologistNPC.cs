@@ -102,11 +102,11 @@ namespace RealmOne.NPCs.TownNPC
 
 		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			if (firstButton)
-				shop = true;
+			if (firstButton) ;
+			//	shop = true;
 		}
 
-		public override void ModifyActiveShop(string shopName, Item[] items)
+		/*public override void ModifyActiveShop(string shopName, Item[] items)
 		{
 
 			shop.item[nextSlot].SetDefaults(ItemID.FrostburnArrow, false);
@@ -182,7 +182,7 @@ namespace RealmOne.NPCs.TownNPC
 				shop.item[nextSlot].SetDefaults(ItemID.PlatinumBow, false);
 				nextSlot++;
 			}
-		}
+		}*/
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
 		{

@@ -26,7 +26,6 @@ namespace RealmOne.Tiles.Blocks
 			AddMapEntry(new Color(243, 255, 0), name);
 
 			DustType = DustID.Gold;
-			ItemDrop = ModContent.ItemType<Items.Placeables.OldGoldOre>();
 
 			//HitSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/OldGoldTink");
 

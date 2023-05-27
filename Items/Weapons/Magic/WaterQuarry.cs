@@ -69,16 +69,6 @@ namespace RealmOne.Items.Weapons.Magic
 			return true;
 		}
 
-		public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.HellstoneBar, 10);
-			recipe.AddIngredient(ItemID.Obsidian, 15);
-			recipe.AddIngredient(ItemID.HellfireArrow, 25);
-
-			recipe.AddIngredient(ItemID.Cobweb, 8);
-			recipe.AddTile(TileID.Hellforge);
-			recipe.Register();
-		}
+		
 	}
 }

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using RealmOne.Items.Misc;
 using RealmOne.Projectiles.Other;
+using RealmOne.Rarities;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
@@ -30,8 +31,8 @@ namespace RealmOne.Items.Weapons.PreHM.Ink
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 32;
 			Item.height = 32;
-			Item.useTime = 18;
-			Item.useAnimation = 18;
+			Item.useTime = 19;
+			Item.useAnimation = 19;
 			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.knockBack = 1f;
 			Item.value = 10000;

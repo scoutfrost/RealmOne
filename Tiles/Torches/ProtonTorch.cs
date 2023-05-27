@@ -30,7 +30,6 @@ namespace RealmOne.Tiles.Torches
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			TileID.Sets.Torch[Type] = true;
 
-			ItemDrop = ModContent.ItemType<ProtonTorchItem>();
 			DustType = DustID.Electric;
 			AdjTiles = new int[] { TileID.Torches };
 
@@ -68,7 +67,7 @@ namespace RealmOne.Tiles.Torches
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
 		{
-			num = Main.rand.Next(1, 3);
+			num = Main.rand.Next(1, 2);
 		}
 
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

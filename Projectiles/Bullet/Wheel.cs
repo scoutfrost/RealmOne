@@ -29,10 +29,7 @@ namespace RealmOne.Projectiles.Bullet
 			Explode();
 		}
 
-		public override void OnHitPvp(Player target, int damage, bool crit)/* tModPorter Note: Removed. Use OnHitPlayer and check info.PvP */
-		{
-			Explode();
-		}
+	
 
 		private void Explode()
 		{

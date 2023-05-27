@@ -24,7 +24,6 @@ namespace RealmOne.Tiles.Blocks
 			AddMapEntry(new Color(168, 190, 152), name);
 
 			DustType = DustID.Marble;
-			ItemDrop = ModContent.ItemType<Items.Placeables.FlorenceMarble>();
 
 			HitSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/MarbleTink");
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -87,17 +88,17 @@ namespace RealmOne.Projectiles.Whip
 		private bool Charge(Player owner)
 		{
 			// Like other whips, this whip updates twice per frame (Projectile.extraUpdates = 1), so 120 is equal to 1 second.
-			if (!owner.channel || ChargeTime >= 160)
+			if (!owner.channel || ChargeTime >= 120)
 				return true; // finished charging
 
 			ChargeTime++;
 
-			if (ChargeTime % 14 == 0) // 1 segment per 12 ticks of charge.
+			if (ChargeTime % 12 == 0) // 1 segment per 12 ticks of charge.
 			{
 				Projectile.WhipSettings.Segments++;
 
 				// Increase range up to 2x for full charge.
-				Projectile.WhipSettings.RangeMultiplier += 1 / 160f;
+				Projectile.WhipSettings.RangeMultiplier += 1 / 120f;
 				Projectile.damage = 24;
 
 				// Reset the animation and item timer while charging.
@@ -112,7 +113,7 @@ namespace RealmOne.Projectiles.Whip
 		{
 			target.AddBuff(BuffID.Electrified, 180);
 			Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-			Projectile.damage = (int)(damage * 1.1f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
+			Projectile.damage = (int)(damageDone * 1f); // Multihit penalty. Decrease the damage the more enemies the whip hits.
 			SoundEngine.PlaySound(rorAudio.SFX_Cord);
 
 		}
@@ -149,7 +150,7 @@ namespace RealmOne.Projectiles.Whip
 
 			//Main.DrawWhip_WhipBland(Projectile, list);
 			// The code below is for custom drawing.
-			// If you don't want that, you can remove it all and instead call one of vanilla's DrawWhip methods, like above.
+			// If you don't want that, you can remove it all and insstead call one of vanilla's DrawWhip methods, like above.
 			// However, you must adhere to how they draw if you do.
 
 			SpriteEffects flip = Projectile.spriteDirection < 0 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;

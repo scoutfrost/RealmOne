@@ -1,3 +1,4 @@
+using RealmOne.RealmPlayer;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -33,7 +34,8 @@ namespace RealmOne.Items.Accessories
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
+            player.GetModPlayer<RealmModPlayer>().GreenNeck = true;
 
-		}
-	}
+        }
+    }
 }

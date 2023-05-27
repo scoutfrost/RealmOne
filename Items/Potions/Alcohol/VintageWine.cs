@@ -31,7 +31,8 @@ namespace RealmOne.Items.Potions.Alcohol
 			Item.rare = ItemRarityID.Green;
 			Item.UseSound = SoundID.Item3;
 			Item.consumable = true;
-			Item.buffType = ModContent.BuffType<WineBuff>();
+			Item.buffType = BuffID.Ironskin;
+			//Item.buffType = ModContent.BuffType<WineBuff>();
 			Item.buffTime = 10000;
 		}
 

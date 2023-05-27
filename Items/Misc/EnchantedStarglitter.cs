@@ -101,7 +101,7 @@ namespace RealmOne.Items.Misc
 			return true;
 		}
 
-		public override void AddRecipes()
+		public override void AddRecipes()	
 		{
 			CreateRecipe(5)
 			.AddIngredient(ItemID.FallenStar, 3)

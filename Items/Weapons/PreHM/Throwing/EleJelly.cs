@@ -23,12 +23,12 @@ namespace RealmOne.Items.Weapons.PreHM.Throwing
 
 		public override void SetDefaults()
 		{
-			Item.damage = 20;
+			Item.damage = 16;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 24;
 			Item.height = 24;
-			Item.useTime = 19;
-			Item.useAnimation = 19;
+			Item.useTime = 22;
+			Item.useAnimation = 22;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 1f;
 			Item.value = 10000;

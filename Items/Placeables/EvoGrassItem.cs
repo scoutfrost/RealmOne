@@ -2,6 +2,7 @@
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using RealmOne.Tiles.Blocks;
 
 namespace RealmOne.Items.Placeables
 {
@@ -28,7 +29,7 @@ namespace RealmOne.Items.Placeables
 			Item.useTurn = true;
 			Item.autoReuse = true;
 
-			Item.createTile = ModContent.TileType<Tiles.EvoGrassTile>();
+			Item.createTile = ModContent.TileType<EvoGrassTile>();
 		}
 	}
 }

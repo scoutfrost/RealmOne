@@ -1,6 +1,8 @@
-﻿using RealmOne.Items.Misc;
+﻿using RealmOne.Common.Systems.GenPasses;
+using RealmOne.Items.Misc;
 using RealmOne.Items.Opens;
 using RealmOne.Items.Weapons.PreHM.Classless;
+using RealmOne.Items.Weapons.PreHM.Grenades;
 using RealmOne.Items.Weapons.PreHM.Throwing;
 using RealmOne.NPCs.Enemies.Forest;
 using System.Collections.Generic;
@@ -26,26 +28,28 @@ namespace RealmOne.Common.Systems
 				NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
 			}
 		}
+		
+		
+		
 	}
-
+	
 	public class WorldSystem : ModSystem
 	{
-
-		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
-		{
-			int shiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
-			if (shiniesIndex != -1)
-			{
-				tasks.Insert(shiniesIndex + 1, new OldGoldOreNameGenPass("OldGoldOreNameGenPass", 320f));
-			}
-
-			int shiniesIndex1 = tasks.FindIndex(genpass1 => genpass1.Name.Equals("Shinies"));
-			if (shiniesIndex1 != -1)
-			{
-				tasks.Insert(shiniesIndex1 + 1, new FlorenceMarbleOreNameGenPass("FlorenceMarbleOreNameGenPass", 320f));
-			}
-		}
-		public override void PostWorldGen()
+		
+        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
+        {
+            int shiniesIndex = tasks.FindIndex((GenPass genpass) => genpass.Name.Equals("Shinies"));
+            if (shiniesIndex != -1)
+            {
+                tasks.Insert(shiniesIndex + 1, (GenPass)(object)new OldGoldOreNameGenPass("OldGoldOreNameGenPass", 320f));
+            }
+            int shiniesIndex2 = tasks.FindIndex((GenPass genpass1) => genpass1.Name.Equals("Shinies"));
+            if (shiniesIndex2 != -1)
+            {
+                tasks.Insert(shiniesIndex2 + 1, (GenPass)(object)new FlorenceMarbleOreNameGenPass("FlorenceMarbleOreNameGenPass", 320f));
+            }
+        }
+        public override void PostWorldGen()
 		{
 			int[] goldenchest = { ItemType<MinersPouch>() };
 			int goldenchestchoice = 0;
@@ -68,8 +72,30 @@ namespace RealmOne.Common.Systems
 					}
 				}
 			}
+            int[] acornchest = { ItemType<AcornGrenade>() };
+            int acornchestchoice = 0;
 
-			int[] waterchest = { ItemType<EleJelly>() };
+            for (int acornchestIndex = 0; acornchestIndex < 1000; acornchestIndex++)
+            {
+                Chest acChest = Main.chest[acornchestIndex];
+                // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Ice Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. 
+                if (acChest != null && Main.tile[acChest.x, acChest.y].TileType == TileID.Containers && Main.tile[acChest.x, acChest.y].TileFrameX == 1 * 36)
+                {
+                    for (int acorninventory = 0; acorninventory < 40; acorninventory++)
+                    {
+                        if (acChest.item[acorninventory].type == ItemID.None)
+                        {
+                            acChest.item[acorninventory].SetDefaults(acornchest[acornchestchoice]);
+                            acChest.item[acorninventory].stack = WorldGen.genRand.Next(10, 18);
+
+                            acornchestchoice = (acornchestchoice + 1) % acornchest.Length;
+                            // Alternate approach: Random instead of cyclical: chest.item[inventoryIndex].SetDefaults(Main.rand.Next(itemsToPlaceInIceChests));
+                            break;
+                        }
+                    }
+                }
+            }
+            int[] waterchest = { ItemType<EleJelly>() };
 			int waterchestchoice = 0;
 			for (int WchestIndex = 0; WchestIndex < 1000; WchestIndex++)
 
@@ -87,7 +113,7 @@ namespace RealmOne.Common.Systems
 
 							Wchest.item[WinventoryIndex].SetDefaults(waterchest[waterchestchoice]);
 
-							Wchest.item[WinventoryIndex].stack = WorldGen.genRand.Next(25, 30);
+							Wchest.item[WinventoryIndex].stack = WorldGen.genRand.Next(20, 30);
 
 							waterchestchoice = (waterchestchoice + 1) % waterchest.Length;
 							//Wchest.item[WinventoryIndex].SetDefaults(Main.rand.Next(WinventoryIndex));

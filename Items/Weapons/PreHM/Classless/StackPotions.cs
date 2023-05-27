@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using RealmOne.Projectiles.Throwing;
+using System.Diagnostics.Tracing;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent.Creative;
@@ -60,7 +61,7 @@ namespace RealmOne.Items.Weapons.PreHM.Classless
 				Item.width = 20;
 				Item.height = 20;
 				Item.maxStack = 99;
-
+				Item.shoot = ProjectileID.None;
 				Item.value = 500;
 				Item.rare = ItemRarityID.Green;
 				Item.consumable = true;

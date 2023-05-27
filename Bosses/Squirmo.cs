@@ -10,6 +10,9 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using RealmOne.Items.BossBags;
+using Terraria.Localization;
+
 namespace RealmOne.Bosses
 {
 	[AutoloadBossHead]
@@ -22,7 +25,13 @@ namespace RealmOne.Bosses
           }*/
 		public ref float RemainingShields => ref NPC.localAI[2];
 
-		public override int BodyType => ModContent.NPCType<SquirmoBody>();
+        public int MinionMaxHealthTotal
+        {
+            get => (int)NPC.ai[1];
+        }
+        public int MinionHealthTotal { get; set; }
+
+        public override int BodyType => ModContent.NPCType<SquirmoBody>();
 
 		public override int TailType => ModContent.NPCType<SquirmoTail>();
 		public override void SetStaticDefaults()
@@ -88,13 +97,13 @@ namespace RealmOne.Bosses
 		}
 		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			NPC.lifeMax = (int)(3000 * bossLifeScale);
+			NPC.lifeMax = (int)(3000 * bossAdjustment);
 			NPC.damage = 40;
 			NPC.defense = 5;
 
 			if (Main.masterMode)
 			{
-				NPC.lifeMax = (int)(3250 * bossLifeScale);
+				NPC.lifeMax = (int)(3250 * bossAdjustment);
 				NPC.damage = 60;
 				NPC.defense = 6;
 			}
@@ -146,7 +155,7 @@ namespace RealmOne.Bosses
 				int SquirmoGoreHead = Mod.Find<ModGore>("SquirmoGore2").Type;
 				IEntitySource entitySource = NPC.GetSource_Death();
 
-				for (int i = 0; i < 2; i++)
+				for (int i = 0; i < 1; i++)
 				{
 					Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreBody);
 					Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreHead);
@@ -180,7 +189,14 @@ namespace RealmOne.Bosses
 		{
 			NPC.SetEventFlagCleared(ref DownedBossSystem.downedSquirmo, -1);
 
-		}
+            
+                if (Main.netMode != NetmodeID.Server)
+                {
+                    Main.NewText(Language.GetTextValue("The soil has been adhered, the ground has been enchanted!"), 71, 229, 231);
+
+                }
+            
+        }
 
 		public override void BossLoot(ref string name, ref int potionType)
 		{
@@ -212,8 +228,8 @@ namespace RealmOne.Bosses
 		{
 			// Set the segment variance
 			// If you want the segment length to be constant, set these two properties to the same value
-			MinSegmentLength = 30;
-			MaxSegmentLength = 30;
+			MinSegmentLength = 20;
+			MaxSegmentLength = 20;
 
 			CommonWormInit(this);
 		}
@@ -359,7 +375,7 @@ namespace RealmOne.Bosses
 
 				IEntitySource entitySource = NPC.GetSource_Death();
 
-				for (int i = 0; i < 2; i++)
+				for (int i = 0; i < 1; i++)
 				{
 					Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreBody);
 					Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreHead);
@@ -425,7 +441,7 @@ namespace RealmOne.Bosses
 				int SquirmoGoreHead = Mod.Find<ModGore>("SquirmoGore2").Type;
 				IEntitySource entitySource = NPC.GetSource_Death();
 
-				for (int i = 0; i < 2; i++)
+				for (int i = 0; i < 1; i++)
 				{
 					Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreBody);
 					Gore.NewGore(entitySource, NPC.position, new Vector2(Main.rand.Next(-4, 5), Main.rand.Next(-4, 5)), SquirmoGoreHead);

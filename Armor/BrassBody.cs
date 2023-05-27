@@ -35,9 +35,17 @@ namespace RealmOne.Armor
 			player.GetKnockback(DamageClass.Generic) += 0.08f;
 		}
 
-		// IsArmorSet determines what armor pieces are needed for the setbonus to take effect
+        // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
 
-		// UpdateArmorSet allows you to give set bonuses to the armor.
+        // UpdateArmorSet allows you to give set bonuses to the armor.
+        public override void AddRecipes()
+        {
+            CreateRecipe()
 
-	}
+            .AddIngredient(Mod, "BrassIngot", 6)
+            .AddTile(TileID.Furnaces)
+            .Register();
+
+        }
+    }
 }

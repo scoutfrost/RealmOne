@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
 using RealmOne.Projectiles.Shortsword;
 using RealmOne.RealmPlayer;
 using ReLogic.Content;

@@ -132,16 +132,6 @@ namespace RealmOne.Items.Weapons.Magic
 			}
 		}
 
-		public override void AddRecipes()
-		{
-			CreateRecipe(1)
-			.AddIngredient(ModContent.ItemType<OldGoldBar>(), 6)
-			.AddIngredient(ModContent.ItemType<Parchment>(), 5)
-			.AddIngredient(ItemID.SandstoneBrick, 15)
-			.AddRecipeGroup("Sand", 10)
-			.AddTile(TileID.MythrilAnvil)
-			.Register();
-
-		}
+		
 	}
 }

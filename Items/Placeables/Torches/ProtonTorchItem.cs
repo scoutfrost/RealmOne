@@ -63,10 +63,7 @@ namespace RealmOne.Items.Placeables.Torches
 			}
 		}
 
-		public override void AutoLightSelect(ref bool dryTorch, ref bool wetTorch, ref bool glowstick)
-		{
-			dryTorch = true; // This makes our item eligible for being selected with smart select at a short distance when not underwater.
-		}
+		
 
 		public override void AddRecipes()
 		{

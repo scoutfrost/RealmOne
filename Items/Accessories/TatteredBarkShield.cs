@@ -6,7 +6,9 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Accessories
 {
-	public class TatteredBarkShield : ModItem
+    [AutoloadEquip(EquipType.Shield)] 
+
+    public class TatteredBarkShield : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -54,8 +56,8 @@ namespace RealmOne.Items.Accessories
 		{
 			if (splinteredShield)
 			{
-				npc.StrikeNPC(Damage: 20, 0f, 0, false, false, false);
-				npc.AddBuff(ModContent.BuffType<Splintered>(), 60 * 60 * 24 * 365); // Inflict the 'Splintered' debuff for 1 year (60 seconds * 60 minutes * 24 hours * 365 days)
+				npc.SimpleStrikeNPC(damage: 40, 0);
+			//	npc.AddBuff(ModContent.BuffType<Splintered>(), 60); // Inflict the 'Splintered' debuff for 1 year (60 seconds * 60 minutes * 24 hours * 365 days)
 			}
 		}
 	}

@@ -2,6 +2,8 @@
 using RealmOne.Items.Accessories;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Opens;
+using RealmOne.Items.Tools.Pick;
+using RealmOne.Items.Weapons.PreHM.Throwing;
 using RealmOne.Vanities;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
@@ -14,19 +16,20 @@ namespace RealmOne.GlobalNPCList
 {
 	public class ModGlobalNPCList : GlobalNPC
 	{
-		// ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.
-		// Here we go through all of them, and how they can be used.
-		// There are tons of other examples in vanilla! In a decompiled vanilla build, GameContent/ItemDropRules/ItemDropDatabase adds item drops to every single vanilla NPC, which can be a good resource.
-		public override void OnKill(NPC npc)
+      
+        // ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.
+        // Here we go through all of them, and how they can be used.
+        // There are tons of other examples in vanilla! In a decompiled vanilla build, GameContent/ItemDropRules/ItemDropDatabase adds item drops to every single vanilla NPC, which can be a good resource.
+        public override void OnKill(NPC npc)
 		{
-			if (npc.type == ModContent.NPCType<SquirmoHead>())
+			/*if (npc.type == ModContent.NPCType<SquirmoHead>())
 			{
 				if (Main.netMode != NetmodeID.Server)
 				{
 					Main.NewText(Language.GetTextValue("The soil has been adhered, the ground has been enchanted!"), 71, 229, 231);
 
 				}
-			}
+			}*/
 
 			if (npc.type == NPCID.KingSlime)
 			{
@@ -75,7 +78,8 @@ namespace RealmOne.GlobalNPCList
 		}
 		public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
 		{
-			if (npc.type == NPCID.Demon)
+           
+            if (npc.type == NPCID.Demon)
 			{
 
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2)); // 4 and 1 is the chance, so 1 out of 4 chance of dropping it. And two is the amount you will probably get
@@ -197,99 +201,53 @@ namespace RealmOne.GlobalNPCList
 				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<vampdag>(), 4, 1, 30)); //4 out of 1 
 			}
 
-			if (npc.type == NPCID.GiantFungiBulb)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
 
-			}
 
-			if (npc.type == NPCID.AnomuraFungus)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
-
-			}
-
-			if (npc.type == NPCID.MushiLadybug)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
-
-			}
-
-			if (npc.type == NPCID.SporeSkeleton)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
-
-			}
-
-			if (npc.type == NPCID.SporeBat)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
-
-			}
-
-			if (npc.type == NPCID.FungiBulb)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
-
-			}
-
-			if (npc.type == NPCID.ZombieMushroom)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
-
-			}
-
-			if (npc.type == NPCID.ZombieMushroomHat)
-			{
-				new ItemDropWithConditionRule(ModContent.ItemType<ShroomiteShattershards>(), 3, 1, 5, new IsHardmode());
-
-			}
-		}
-
-		public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
-		{
-			// This example does not use the AppliesToEntity hook, as such, we can handle multiple npcs here by using if statements.
-			if (type == NPCID.Merchant)
-			{
-				// Adding an item to a vanilla NPC is easy:
-				// This item sells for the normal price.
-				shop.item[nextSlot].SetDefaults(ModContent.ItemType<TundraThrowingKnife>());
-				nextSlot++; // Don't forget this line, it is essential.
-
-				// We can use shopCustomPrice and shopSpecialCurrency to support custom prices and currency. Usually a shop sells an item for item.value.
-				// Editing item.value in SetupShop is an incorrect approach.
-
-				// This shop entry sells for 2 Defenders Medals.
-				shop.item[nextSlot].SetDefaults(ModContent.ItemType<sparky>());
-				shop.item[nextSlot].shopCustomPrice = 2;
-
-				nextSlot++;
-
-			}
-
-			if (type == NPCID.Clothier)
-			{
-				// Adding an item to a vanilla NPC is easy:
-				// This item sells for the normal price.
-				shop.item[nextSlot].SetDefaults(ModContent.ItemType<SkullMask>());
-				nextSlot++; // Don't forget this line, it is essential.
-
-				// We can use shopCustomPrice and shopSpecialCurrency to support custom prices and currency. Usually a shop sells an item for item.value.
-				// Editing item.value in SetupShop is an incorrect approach.
-
-				// This shop entry sells for 2 Defenders Medals
-
-			}
-			else if (type == NPCID.Merchant)
-			{
-				// You can use conditions to dynamically change items offered for sale in a shop
-				if (Main.dayTime == false && Main.hardMode == false)
+			/*	public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
 				{
+					// This example does not use the AppliesToEntity hook, as such, we can handle multiple npcs here by using if statements.
+					if (type == NPCID.Merchant)
+					{
+						// Adding an item to a vanilla NPC is easy:
+						// This item sells for the normal price.
+						shop.item[nextSlot].SetDefaults(ModContent.ItemType<TundraThrowingKnife>());
+						nextSlot++; // Don't forget this line, it is essential.
 
-					shop.item[nextSlot].SetDefaults(ModContent.ItemType<IllicitStash>());
-					nextSlot++;
-				}
-			}
+						// We can use shopCustomPrice and shopSpecialCurrency to support custom prices and currency. Usually a shop sells an item for item.value.
+						// Editing item.value in SetupShop is an incorrect approach.
+
+						// This shop entry sells for 2 Defenders Medals.
+						shop.item[nextSlot].SetDefaults(ModContent.ItemType<sparky>());
+						shop.item[nextSlot].shopCustomPrice = 2;
+
+						nextSlot++;
+
+					}
+
+					if (type == NPCID.Clothier)
+					{
+						// Adding an item to a vanilla NPC is easy:
+						// This item sells for the normal price.
+						shop.item[nextSlot].SetDefaults(ModContent.ItemType<SkullMask>());
+						nextSlot++; // Don't forget this line, it is essential.
+
+						// We can use shopCustomPrice and shopSpecialCurrency to support custom prices and currency. Usually a shop sells an item for item.value.
+						// Editing item.value in SetupShop is an incorrect approach.
+
+						// This shop entry sells for 2 Defenders Medals
+
+					}
+					else if (type == NPCID.Merchant)
+					{
+						// You can use conditions to dynamically change items offered for sale in a shop
+						if (Main.dayTime == false && Main.hardMode == false)
+						{
+
+							shop.item[nextSlot].SetDefaults(ModContent.ItemType<IllicitStash>());
+							nextSlot++;
+						}
+					}
+				}*/
 		}
 	}
 }

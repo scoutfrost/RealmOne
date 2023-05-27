@@ -4,6 +4,7 @@ using RealmOne.Items.Accessories;
 using RealmOne.Items.Weapons.Melee;
 using RealmOne.Items.Weapons.PreHM.Crossbows;
 using RealmOne.Items.Weapons.PreHM.Forest;
+using RealmOne.Items.Weapons.PreHM.Shotguns;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
@@ -48,7 +49,6 @@ namespace RealmOne.Items.Opens
 			itemLoot.Add(ItemDropRule.Common(ItemID.ManaCrystal, 1, 2, 2));
 			itemLoot.Add(ItemDropRule.Common(ItemID.LifeCrystal, 1, 1, 1));
 			itemLoot.Add(ItemDropRule.Common(ItemID.RopeCoil, 1, 15, 15));
-			itemLoot.Add(ItemDropRule.Common(ItemID.ShinePotion, 1, 5, 5));
 			itemLoot.Add(ItemDropRule.Common(ItemID.Torch, 1, 50, 50));
 			itemLoot.Add(ItemDropRule.Common(ItemID.MiningPotion, 1, 5, 5));
 			itemLoot.Add(ItemDropRule.Common(ItemID.Dynamite, 1, 5, 5));
@@ -60,9 +60,11 @@ namespace RealmOne.Items.Opens
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EmptyLocket>(), 1, 1, 1));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Food.SalmonAvoSushi>(), 1, 1, 1));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Food.TunaAndAvacado>(), 1, 1, 1));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HPChainShot>(), 1, 1, 1));
 
-		}
-		public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+
+        }
+        public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{
 			Texture2D texture = TextureAssets.Item[Item.type].Value;
 

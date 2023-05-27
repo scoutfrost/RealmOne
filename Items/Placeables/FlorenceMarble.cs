@@ -5,6 +5,7 @@ using Terraria.GameContent;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using RealmOne.Tiles.Blocks;
 
 namespace RealmOne.Items.Placeables
 {
@@ -30,7 +31,7 @@ namespace RealmOne.Items.Placeables
 			Item.useTurn = true;
 			Item.autoReuse = true;
 
-			Item.createTile = ModContent.TileType<Tiles.FlorenceMarbleTile>();
+			Item.createTile = ModContent.TileType<Tiles.Blocks.FlorenceMarbleTile>();
 		}
 		public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{

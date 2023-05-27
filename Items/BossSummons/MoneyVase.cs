@@ -30,9 +30,9 @@ namespace RealmOne.Items.BossSummons
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.useTime = 30;
 			Item.useAnimation = 20;
-			Item.UseSound = SoundID.Shatter;
+			Item.UseSound = SoundID.Item1;
 			Item.shoot = ModContent.ProjectileType<MoneyVaseProj>();
-			Item.shootSpeed = 15f;
+			Item.shootSpeed = 13f;
 			Item.noUseGraphic = true;
 
 		}

@@ -40,11 +40,19 @@ namespace RealmOne.Armor
 
 		}
 
-		// IsArmorSet determines what armor pieces are needed for the setbonus to take effect
+        // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
 
-		// UpdateArmorSet allows you to give set bonuses to the armor.
+        // UpdateArmorSet allows you to give set bonuses to the armor.
 
-		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        public override void AddRecipes()
+        {
+            CreateRecipe()
 
-	}
+            .AddIngredient(Mod, "BrassIngot", 4)
+            .AddTile(TileID.Furnaces)
+            .Register();
+
+        }
+    }
 }

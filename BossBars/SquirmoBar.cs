@@ -45,15 +45,18 @@ namespace RealmOne.BossBars
 			// We assign bossHeadIndex here because we need to use it in GetIconTexture
 			bossHeadIndex = npc.GetBossHeadTextureIndex();
 
-			lifePercent = Utils.Clamp(npc.life / (float)npc.lifeMax, 0f, 1f);
+            life = npc.life;
+            lifeMax = npc.lifeMax;
 
-			if (npc.ModNPC is SquirmoHead body)
-			{
-				// We did all the calculation work on RemainingShields inside the body NPC already so we just have to fetch the value again
-				shieldPercent = Utils.Clamp(body.RemainingShields, 0f, 1f);
-			}
+            if (npc.ModNPC is SquirmoHead body)
+            {
+                // We did all the calculation work on RemainingShields inside the body NPC already so we just have to fetch the value again
+                shield = body.MinionHealthTotal;
+                shieldMax = body.MinionMaxHealthTotal;
+            }
 
-			return true;
+
+            return true;
 		}
 	}
 }

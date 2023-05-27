@@ -1,11 +1,12 @@
-﻿using RealmOne.Items.Misc;
+﻿using RealmOne.Common.Systems;
+using RealmOne.Items.Misc;
 using RealmOne.Rarities;
 using RealmOne.RealmPlayer;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RealmOne.Items.PaperUi
+namespace RealmOne.Items.PaperUI
 {
 	public class LovecraftPaper : ModItem
 	{
@@ -34,8 +35,8 @@ namespace RealmOne.Items.PaperUi
 		public override void AddRecipes()
 		{
 			CreateRecipe()
-				.AddIngredient(ModContent.ItemType<Parchment>(), 3)
-								.AddIngredient(ModContent.ItemType<EidolicInk>(), 3)
+				.AddIngredient(ModContent.ItemType<Parchment>(), 5)
+								.AddIngredient(ModContent.ItemType<EidolicInk>(), 5)
 
 				.AddTile(TileID.WorkBenches)
 				.Register();

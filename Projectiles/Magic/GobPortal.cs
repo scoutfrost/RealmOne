@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Core;
 using ReLogic.Content;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -81,7 +83,7 @@ namespace RealmOne.Projectiles.Magic
 				if (target.active && !target.friendly && Vector2.Distance(Projectile.Center, target.Center) < radius)
 				{
 					int damage = Projectile.damage * 2;
-					target.StrikeNPC(damage, 0f, 0, false, false, false);
+					target.SimpleStrikeNPC(damage: 12, 0);
 				}
 			}
 
@@ -105,15 +107,22 @@ namespace RealmOne.Projectiles.Magic
 		  // It's currently pretty important to unload your static fields like this, to avoid having parts of your mod remain in memory when it's been unloaded.
 			GobTexture = null;
 		}
-		public override bool PreDraw(ref Color lightColor)
+
+       
+        public override bool PreDraw(ref Color lightColor)
 		{
-			Color drawColor = Lighting.GetColor((int)Projectile.Center.X / 16, (int)(Projectile.Center.Y / 16));
+
+            Color drawColor = Lighting.GetColor((int)Projectile.Center.X / 16, (int)(Projectile.Center.Y / 16));
 
 			Main.EntitySpriteDraw(GobTexture.Value, Projectile.Center - Main.screenPosition,
 						  GobTexture.Value.Bounds, Color.MediumPurple, Projectile.rotation,
 						  GobTexture.Size() * 0.5f, 1f, SpriteEffects.None, 0);
 			return true;
 		}
-	}
+
+
+        
+        
+    }
 }
 
