@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,20 +18,20 @@ namespace RealmOne.Items.Food
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 
-			ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
-				new Color(240, 50, 200),
-				new Color(240, 80, 220),
-				new Color(250, 140, 240)
-			};
+            Main.RegisterItemAnimation(Type, new DrawAnimationVertical(int.MaxValue, 3));
 
-		}
+            ItemID.Sets.DrinkParticleColors[Type] = new Color[2] {
+				new Color(196, 135, 4),
+				new Color(222, 79, 216 ),
+			};
+            ItemID.Sets.IsFood[Type] = true;
+        }
 		public override void SetDefaults()
 		{
-			Item.CloneDefaults(ItemID.CookedFish);
-			Item.width = 24;
-			Item.height = 24;
-			Item.useTime = 15;
-			Item.useAnimation = 15;
+            Item.DefaultToFood(22, 22, BuffID.WellFed3, 57600);
+			
+			Item.useTime = 17;
+			Item.useAnimation = 17;
 			Item.maxStack = 99;
 			Item.useStyle = ItemUseStyleID.EatFood;
 			Item.value = 500;
@@ -52,10 +53,7 @@ namespace RealmOne.Items.Food
 			};
 			tooltips.Add(line);
 
-			// Here we give the item name a rainbow effect.
-			foreach (TooltipLine line2 in tooltips)
-				if (line2.Mod == "Terraria" && line2.Name == "IronAxe")
-					line2.OverrideColor = Main.DiscoColor;
+			
 		}
 		public override void AddRecipes()
 		{

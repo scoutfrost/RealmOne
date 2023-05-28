@@ -1012,6 +1012,21 @@ Mods: {
 				DisplayName: Magma Legs
 				Tooltip: ""
 			}
+
+			InfectedViscus: {
+				DisplayName: Infected Viscus
+				Tooltip: ""
+			}
+
+			ScathedFlesh: {
+				DisplayName: Scathed Flesh
+				Tooltip: ""
+			}
+
+			NewtonCradleItem: {
+				DisplayName: Newton Cradle Item
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -1295,6 +1310,7 @@ Mods: {
 			StoneOvenTilee.MapEntry: Stone Oven Tilee
 			TatteredBarrel.MapEntry: Tattered Barrel
 			ProtonTorch.MapEntry: Proton Torch
+			NewtonCradleTile.MapEntry: Newton Cradle Tile
 		}
 
 		DamageClasses: {
