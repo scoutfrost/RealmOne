@@ -3,6 +3,7 @@ using RealmOne.Buffs.Debuffs;
 using RealmOne.Common.Core;
 using RealmOne.Items.Weapons.PreHM.Throwing;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -59,7 +60,7 @@ namespace RealmOne.Projectiles.Throwing
         public override bool PreDraw(ref Color lightColor)
         {
             Main.spriteBatch.End();
-            Main.spriteBatch.Begin();
+            Main.spriteBatch.Begin(SpriteSortMode.Deferred, null , null, null, null, null, Main.GameViewMatrix.ZoomMatrix);
 
             lightColor = Color.White;
 
@@ -74,7 +75,7 @@ namespace RealmOne.Projectiles.Throwing
             trail.Draw(color, pos, oldPositions, 1.4f);
 			trail.width = 2;
             Main.spriteBatch.End();
-            Main.spriteBatch.Begin();
+            Main.spriteBatch.Begin(SpriteSortMode.Deferred, null , null, null, null, null, Main.GameViewMatrix.ZoomMatrix);
             return true;
         }
         public override void Kill(int timeleft)
