@@ -37,7 +37,7 @@ namespace RealmOne.NPCs.Enemies
 			NPC.height = 20;
 			NPC.damage = 12;
 			NPC.lifeMax = 62;
-			NPC.value = 50f;
+			NPC.value = buyPrive(0, 0, 7, 44);
 			NPC.aiStyle = 1;
 			NPC.HitSound = SoundID.MaxMana;
 			NPC.DeathSound = SoundID.NPCDeath7;

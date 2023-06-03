@@ -48,7 +48,7 @@ namespace RealmOne.NPCs.Enemies
 			NPC.defense = 1;
 			NPC.lifeMax = 48;
 
-			NPC.value = 68f;
+			NPC.value = buyPrive(0, 0, 8, 10);
 			NPC.aiStyle = NPCAIStyleID.DemonEye;
 			NPC.HitSound = SoundID.DD2_WitherBeastHurt;
 			NPC.DeathSound = SoundID.DD2_WitherBeastHurt;

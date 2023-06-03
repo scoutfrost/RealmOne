@@ -58,6 +58,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 			NPC.lifeMax = 100;
 			NPC.HitSound = SoundID.NPCHit9;
 			NPC.damage = 12;
+			NPC.value = buyPrive(0, 0, 15, 0);
 			NPC.netAlways = true;
 			NPC.netUpdate = true;
 			NPC.defense = 1;

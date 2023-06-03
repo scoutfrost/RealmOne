@@ -37,7 +37,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 			NPC.damage = 15;
 			NPC.defense = 1;
 			NPC.lifeMax = 75;
-			NPC.value = 68f;
+			NPC.value = buyPrive(0, 0, 4, 55);
 			NPC.aiStyle = NPCAIStyleID.DemonEye;
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_ElectricDeath");

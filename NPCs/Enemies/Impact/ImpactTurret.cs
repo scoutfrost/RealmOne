@@ -37,7 +37,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 			NPC.damage = 5;
 			NPC.lifeMax = 27;
 			NPC.aiStyle = NPCAIStyleID.TeslaTurret;
-			NPC.value = 50f;
+			NPC.value = buyPrive(0, 0, 15, 00);
 			AIType = NPCID.MartianTurret;
 			NPC.HitSound = SoundID.NPCHit53;
 			NPC.DeathSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_ElectricDeath");

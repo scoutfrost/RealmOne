@@ -43,6 +43,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 			NPC.damage = 8;
 			NPC.defense = 5;
 			NPC.lifeMax = 58;
+			NPC.value = buyPrive(0, 0, 5, 55);
 			NPC.HitSound = SoundID.DD2_WitherBeastCrystalImpact;
 			NPC.DeathSound = SoundID.DD2_WitherBeastDeath;
 
@@ -50,6 +51,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 			// NPC.dontTakeDamageFromHostiles = true;
 
 			//     NPC.npcSlots = 0;
+			
 			NPC.aiStyle = NPCAIStyleID.Bat;
 			AIType = NPCID.CaveBat;
 			AnimationType = NPCID.CaveBat;
