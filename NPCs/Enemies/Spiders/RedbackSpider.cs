@@ -29,7 +29,7 @@ namespace RealmOne.NPCs.Enemies.Spiders
 			NPC.damage = 15;
 			NPC.defense = 0;
 			NPC.lifeMax = 16;
-			NPC.value = buyPrive(0, 0, 2, 45);
+			NPC.value = buyPrice(0, 0, 2, 45);
 			NPC.aiStyle = 3;
 			NPC.HitSound = SoundID.NPCHit29;
 			NPC.DeathSound = SoundID.NPCDeath1;

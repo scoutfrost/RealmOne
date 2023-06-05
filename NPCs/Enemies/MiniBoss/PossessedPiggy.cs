@@ -36,7 +36,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 			NPC.damage = 27;
 			NPC.defense = 15;
 			NPC.lifeMax = 250;
-			NPC.value = buyPrive(0, 2, 37, 50);
+			NPC.value = buyPrice(0, 2, 37, 50);
 			NPC.aiStyle = 25;
 			NPC.HitSound = SoundID.NPCHit4;
 			NPC.DeathSound = SoundID.Item59;

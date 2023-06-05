@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NPCs",
+    "\\NPCs\\Enemies"
   ],
-  "SelectedNode": "\\RealmModMenu.cs",
+  "SelectedNode": "\\NPCs\\Enemies\\Spiders",
   "PreviewInSolutionExplorer": false
 }
