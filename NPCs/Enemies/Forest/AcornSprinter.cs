@@ -32,7 +32,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 			NPC.damage = 13;
 			NPC.defense = 1;
 			NPC.lifeMax = 72;
-			NPC.value = 33f;
+			NPC.value = Item.buyPrice(0,0,5,3);
 			NPC.aiStyle = 3;
 			NPC.HitSound = SoundID.DD2_KoboldFlyerHurt;
 			NPC.DeathSound = SoundID.DD2_KoboldFlyerDeath;

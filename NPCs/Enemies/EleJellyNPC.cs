@@ -28,7 +28,7 @@ namespace RealmOne.NPCs.Enemies
 			NPC.height = 20;
 			NPC.damage = 30;
 			NPC.lifeMax = 60;
-			NPC.value = buyPrice(0, 0, 1, 65);
+			NPC.value = Item.buyPrice(0, 0, 1, 65);
 			NPC.aiStyle = NPCAIStyleID.Jellyfish;
 			NPC.noGravity = true;
 			NPC.HitSound = SoundID.NPCHit25;

@@ -32,7 +32,7 @@ namespace RealmOne.NPCs.Enemies.Ink
 			NPC.damage = 13;
 			NPC.defense = 0;
 			NPC.lifeMax = 40;
-			NPC.value = buyPrice(0, 0, 5, 00);
+			NPC.value = Item.buyPrice(0, 0, 5, 00);
 			NPC.aiStyle = NPCAIStyleID.Fighter;
 			NPC.HitSound = SoundID.NPCDeath19;
 			NPC.DeathSound = SoundID.NPCDeath19;

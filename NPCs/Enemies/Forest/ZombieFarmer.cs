@@ -31,7 +31,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 			NPC.damage = 18;
 			NPC.defense = 1;
 			NPC.lifeMax = 72;
-			NPC.value = buyPrice(0, 0, 2, 35);
+			NPC.value = Item.buyPrice(0, 0, 2, 35);
 			NPC.aiStyle = 3;
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath2;
