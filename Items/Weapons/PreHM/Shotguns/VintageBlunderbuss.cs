@@ -96,7 +96,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 			 .AddIngredient(Mod, "LeadGunBarrel")
 			.AddTile(TileID.Anvils)
 			.Register();
-
+				
 			CreateRecipe()
 			.AddIngredient(ItemID.TissueSample, 15)
 			.AddIngredient(ItemID.IllegalGunParts, 1)
@@ -108,5 +108,11 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 			.Register();
 
 		}
-	}
+        public override Vector2? HoldoutOffset()
+        {
+            var offset = new Vector2(-10, -5);
+            return offset;
+        }
+
+    }
 }

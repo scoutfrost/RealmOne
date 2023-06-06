@@ -2,9 +2,14 @@ using RealmOne.Common.Systems;
 using RealmOne.Items.Accessories;
 using RealmOne.Projectiles.Other;
 using RealmOne.RealmPlayer;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace RealmOne.Items.Others
 {
@@ -13,8 +18,8 @@ namespace RealmOne.Items.Others
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Entropy Medallion"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Toggles Transcendental Entropy Mode."
-				+ "\n'He always knew there was someone stupid enough to use this'"
+			Tooltip.SetDefault("Toggles Transcendental Entropy Mode.");
+				/*+ "\n'He always knew there was someone stupid enough to use this'"
 				+ "\n'Only useable for the one that desires utter control of the universe'"
 				+ "\nOnly available in Master Mode"
 				+ "\n'Changes the way you play Terraria'"
@@ -29,6 +34,7 @@ namespace RealmOne.Items.Others
 				+ "\nLovecraftian Bosses are universally destructive"
 				+ "\n'I've always wondered how far you will go, pathetic!'"
 			   + "\n**TEST ITEM!! DOES NOT FULLY WORK**");
+				*/
 
 		}
 
@@ -48,8 +54,29 @@ namespace RealmOne.Items.Others
 			Item.shoot = ModContent.ProjectileType<IdolProj>();
 			Item.shootSpeed = 0.5f;
 		}
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            var tooltip = tooltips.Where((line => line.Name == "Tooltip0")).FirstOrDefault();
+			tooltip.Text = Main.keyState.IsKeyDown(Keys.LeftShift) ?
+				"He always knew there was someone stupid enough to use this'"
+				+ "\n'Only useable for the one that desires utter control of the universe'"
+				+ "\nOnly available in Master Mode"
+				+ "\n'Changes the way you play Terraria'"
+				+ "\nMakes enemies way more stronger (No AI Changes)"
+				+ "\n'Bosses are now as strong as Cthulhu originally deemed them to be'"
+				+ "\n Healing potions take longer to re consume them"
+				+ "\nBetter loot and exclusive powerful drops"
+				+ "\nShop prices are as valuable as Lay's Chips LUL"
+				+ "\nRealms are now more difficult and the enemies of each realm are harder"
+				+ "\nTraps and fall damage now do ridiculous amount of damage"
+				+ "\nLife Crystals only heal for 10 health now LMFAO HEEHEEHAW"
+				+ "\nLovecraftian Bosses are universally destructive" :
 
-		public override void AddRecipes()
+				"Toggles Transcendental Entropy Mode."
+               + "\nPress [c/22ff22:SHIFT to reveal info]";
+
+        }
+        public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ModContent.ItemType<EmptyLocket>(), 1);

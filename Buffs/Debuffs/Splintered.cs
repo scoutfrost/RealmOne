@@ -12,10 +12,13 @@ namespace RealmOne.Buffs.Debuffs
 			Description.SetDefault("'Ouch!'");
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = true;
+            Main.buffNoTimeDisplay[Type] = false;
 
-		}
+            Main.pvpBuff[Type] = true;
 
-		public override void Update(NPC npc, ref int buffIndex)
+        }
+
+        public override void Update(NPC npc, ref int buffIndex)
 		{
 			npc.life -= 2;
 			if (npc.life <= 0)

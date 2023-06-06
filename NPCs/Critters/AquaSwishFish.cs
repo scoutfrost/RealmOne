@@ -108,7 +108,7 @@ namespace RealmOne.NPCs.Critters
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
 		{
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,	
 
 				new FlavorTextBestiaryInfoElement("From the constantly damp waters of the surface, this glowy fish has a distinct blue glow that come off the gills."),
 

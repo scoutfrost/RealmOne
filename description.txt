@@ -7,16 +7,16 @@ Most of the information is on the server!
 https://discord.gg/Npk2dDzRdt
 [c/E12C00: Developers needed please!! This is a developing mod that is slowly progressing to become a large content mod.]
 
-[c/65CEA6:Current Developers]
-[c/58D68D:Owner: Magma!!
-Head Dev: scoutfrost
-Coders: Quarzz, Magma, scoutfrost, Jigt
-Spriters: scoutfrost, Magma, The Possum, mutater, kogagagachan-san, Lostariake, Mr Liquid, Tendan, Mumb
-Musicians: Elosir, Mr Liquid
-Contributors: DvlSide, Zero, jarix
-Ideas Man: Rzulf, Zero, jarix]
+[c/2BCD49:Current Developers]
+[c/58D68D:Owner:] Magma!!
+[c/58D68D:Head Dev:] scoutfrost
+[c/58D68D:Coders:]Quarzz, Magma, scoutfrost, Jigt
+[c/58D68D:Spriters:] scoutfrost, Magma, The Possum, mutater, kogagagachan-san, Lostariake, Mr Liquid, Tendan, Mumb
+[c/58D68D:Musicians:]: Elosir, Mr Liquid
+[c/58D68D:Contributors]: DvlSide, Zero, jarix
+[c/58D68D:Ideas Man]: Rzulf, Zero, jarix
 
-Current Items
+[c/E12C00:Current Items]
 - 1 NEW WORK IN PROGRESS BOSS - SQUIRMO (before King Slime)
 - 2 NEW CLASSES (DEMOLITIONIST AND FIGHTER) (Demolitionist is the only class started)
 - 1 New Mini Boss - Possessed Piggy Bank

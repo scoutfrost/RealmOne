@@ -94,9 +94,11 @@ namespace RealmOne.Tiles
 					Gore.NewGore(entitySource, new Vector2(x * 16, y * 16), new Vector2(Main.rand.Next(-3, 7), Main.rand.Next(-3, 7)), BGore3);
 
 				}
-			}
 
-			if (Main.netMode != NetmodeID.Server)
+
+			}
+           
+            if (Main.netMode != NetmodeID.Server)
 			{
 				CombatText.NewText(new Rectangle(Main.tile.Width + 30, Main.tile.Height - 20, Main.tile.Height - 10, Main.tile.Height + 10), new Color(234, 129, 178, 190), "It won't budge!!", false, false);
 			}

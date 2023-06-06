@@ -65,7 +65,9 @@ namespace RealmOne.Items.Weapons.HM
 			Item.width = 38;
 			Item.height = 38;
 			Item.maxStack = 1;
-			Item.useTime = 22;
+            Item.staff[Item.type] = true;
+
+            Item.useTime = 22;
 			Item.useAnimation = 22;
 			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.knockBack = 5;

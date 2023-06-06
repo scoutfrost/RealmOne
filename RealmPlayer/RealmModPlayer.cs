@@ -8,7 +8,9 @@ using RealmOne.Items.PaperUI;
 using RealmOne.Items.Weapons.PreHM.Shotguns;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -251,18 +253,70 @@ namespace RealmOne.RealmPlayer
     }
     public class RealmModPlayer : ModPlayer
 	{
-		public bool GreenNeck = false;
+        public bool marbleJustJumped;
+
+        public bool GreenNeck = false;
 		public bool Overseer = false;
 		public bool Rusty = false;
+		public bool brassSet = false;
 
-		public override void ResetEffects()
+        public float marbleJump = 0f;
+
+        public override void ResetEffects()
 		{
 			Overseer = false;
 			Rusty = false;
 			GreenNeck = false;
-		}
+            marbleJustJumped = false;
+			
+            brassSet = false;
 
-		public override bool CanConsumeAmmo(Item weapon, Item ammo)
+        }
+
+		/*public void DoubleTapEffects(int keyDir)
+		{
+			if (keyDir == (Main.ReversedUpDownArmorSetBonuses ? 1 : 0))
+			{
+				if( brassSet && !Player.HasBuff(ModContent.BuffType<BrassMight>()))
+				{
+                    Player.AddBuff(ModContent.BuffType<BrassMight>(), 500);
+
+                }
+            }
+		}*/
+		public override void ProcessTriggers(TriggersSet triggersSet)
+		{
+			if (brassSet && Player.controlUp && Player.releaseUp & marbleJump <= 0)
+			{
+				Player.AddBuff(ModContent.BuffType<BrassMight>(), 400);
+				SoundEngine.PlaySound(SoundID.MaxMana, Player.position);
+				for (int i = 0; i < 8; i++)
+				{
+					int num = Dust.NewDust(Player.position, Player.width, Player.height, DustID.BlueTorch, 0f, -2f, 0, default, 2f);
+					Main.dust[num].noGravity = true;
+					Main.dust[num].position.X += Main.rand.Next(-50, 51) * .05f - 1.5f;
+					Main.dust[num].position.Y += Main.rand.Next(-50, 51) * .05f - 1.5f;
+					Main.dust[num].scale *= .25f;
+					if (Main.dust[num].position != Player.Center)
+						Main.dust[num].velocity = Player.DirectionTo(Main.dust[num].position) * 6f;
+				}
+								marbleJump = 600;
+
+			}
+
+			if (Player.controlJump)
+			{
+				if (marbleJustJumped)
+				{
+					marbleJustJumped = false;
+					if (Player.HasBuff(ModContent.BuffType<BrassMight>()))
+					{
+						
+					}
+				}
+			}
+		}
+        public override bool CanConsumeAmmo(Item weapon, Item ammo)
 		{
 			if (Rusty == true)
 			{
@@ -306,7 +360,11 @@ namespace RealmOne.RealmPlayer
 		}
 		public override void PreUpdate()
 		{
-			if (Main.GameModeInfo.IsMasterMode)
+
+            if (!brassSet)
+                marbleJustJumped = false;
+
+            if (Main.GameModeInfo.IsMasterMode)
 			{
 
 				if (Player.ZoneSkyHeight)

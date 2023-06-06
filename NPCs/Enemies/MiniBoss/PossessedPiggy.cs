@@ -42,10 +42,14 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 			NPC.DeathSound = SoundID.Item59;
 			NPC.netAlways = true;
 			NPC.netUpdate = true;
-			AIType = NPCID.Mimic;
-			AnimationType = NPCID.GiantWalkingAntlion;
+            NPC.boss = true;
 
-		}
+            AIType = NPCID.Mimic;
+			AnimationType = NPCID.GiantWalkingAntlion;
+			Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/PiggyPatrol");
+
+            
+        }
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			return SpawnCondition.OverworldDay.Chance * 0.09f;

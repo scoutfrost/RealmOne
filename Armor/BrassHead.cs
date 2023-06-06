@@ -1,6 +1,8 @@
-﻿using Terraria;
+﻿using RealmOne.RealmPlayer;
+using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace RealmOne.Armor
@@ -50,11 +52,13 @@ namespace RealmOne.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "2+ defense" + "\nDouble tap down to gain 'Brass's Might which increases the players defense by 10+ but 15% decreased movement & running speed " + "\n10 second cooldown"; // This is the setbonus tooltip
+      //      string tapDir = Language.GetTextValue(Main.ReversedUpDownArmorSetBonuses ? "Key.UP" : "Key.DOWN");
+            player.setBonus = "Double tap UP to gain Brass Might which increases the players defense by 10+ but 14% decreased movement & running speed\n10 second cooldown";
+            Watertimer++;
+            player.GetModPlayer<RealmModPlayer>().brassSet = true;
 
-			Watertimer++;
 
-			if (Watertimer == 8)
+            if (Watertimer == 9)
 			{
 				int d = Dust.NewDust(player.position, player.width, player.height, DustID.CopperCoin);
 				Main.dust[d].scale = 1f;

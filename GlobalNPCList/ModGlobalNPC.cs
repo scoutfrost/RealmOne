@@ -78,11 +78,77 @@ namespace RealmOne.GlobalNPCList
 		}
 		public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
 		{
-           
+            //Evil Biome drops
+
+            if (npc.type == NPCID.EaterofSouls)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 4, 1, 2));
+            }
+
+            if (npc.type == NPCID.DevourerHead)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 4, 1, 2));
+            }
+
+            if (npc.type == NPCID.EaterofWorldsHead)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 1, 1, 15));
+            }
+
+            if (npc.type == NPCID.Corruptor)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(),4, 1, 3));
+            }
+            if (npc.type == NPCID.SeekerHead)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 4, 1, 3));
+            }
+
+            if (npc.type == NPCID.Crimera)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ScathedFlesh>(), 4, 1, 2));
+            }
+
+            if (npc.type == NPCID.FaceMonster)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ScathedFlesh>(), 4, 1, 2));
+            }
+
+            if (npc.type == NPCID.BloodCrawler)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ScathedFlesh>(), 4, 1, 2));
+            }
+
+            if (npc.type == NPCID.BloodCrawlerWall)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ScathedFlesh>(), 4, 1, 2));
+            }
+
+            if (npc.type == NPCID.Herpling)
+            {
+
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ScathedFlesh>(), 4, 1, 3));
+            }
+
+
+
+
+
+
+            //Hell Drops
             if (npc.type == NPCID.Demon)
 			{
 
-				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2)); // 4 and 1 is the chance, so 1 out of 4 chance of dropping it. And two is the amount you will probably get
+				npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2)); // 4 and 1 is the chance, so 1 out of 4 chance of dropping it. And 2 is the amount you will probably get
 			}
 
 			if (npc.type == NPCID.Hellbat)

@@ -15,6 +15,8 @@ namespace RealmOne.Common
 
 			MusicLoader.AddMusic(mod, "Assets/Music/SquirmoDrip");
             MusicLoader.AddMusic(mod, "Assets/Music/Rlyeh");
+            MusicLoader.AddMusic(mod, "Assets/Music/PiggyPatrol");
+
 
             // An example of registration of Music Boxes can be found in 'Content/Items/Placeable/ExampleMusicBox.cs'.
         }
