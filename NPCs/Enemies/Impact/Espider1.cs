@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
@@ -12,7 +12,7 @@ using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Enemies.Impact
 {
-	public class Espider1 : ModNPC
+    public class Espider1 : ModNPC
 	{
 		static Asset<Texture2D> glowmask;
 

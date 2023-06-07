@@ -26,8 +26,8 @@ namespace RealmOne.Items.Weapons.PreHM.Grenades
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 24;
 			Item.height = 24;
-			Item.useTime = 45;
-			Item.useAnimation = 45;
+			Item.useTime = 50;
+			Item.useAnimation = 50;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 1f;
 			Item.value = 10000;

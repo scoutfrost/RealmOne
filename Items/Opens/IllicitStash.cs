@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.Ores;
 using RealmOne.Rarities;
 using Terraria;
 using Terraria.GameContent;
@@ -10,7 +10,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Opens
 {
-	public class IllicitStash : ModItem
+    public class IllicitStash : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

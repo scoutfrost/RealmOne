@@ -1,4 +1,4 @@
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Accessories
 {
-	public class LivebornLeaf : ModItem
+    public class LivebornLeaf : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

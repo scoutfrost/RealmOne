@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Projectiles.Magic;
 using Terraria;
 using Terraria.DataStructures;
@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Weapons.Magic
 {
-	public class CorneaScepter : ModItem
+    public class CorneaScepter : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

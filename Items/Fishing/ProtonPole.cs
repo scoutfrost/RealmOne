@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.RealmPlayer;
 using System.IO;
 using Terraria;
@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Fishing
 {
-	public class ProtonPole : ModItem
+    public class ProtonPole : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

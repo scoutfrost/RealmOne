@@ -28,16 +28,16 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
 
             Item.autoReuse = true;
             Item.useTurn = true;
-            Item.mana = 6;
-            Item.damage = 10;
+            Item.mana = 5;
+            Item.damage = 15;
             Item.DamageType = DamageClass.Magic;
             Item.knockBack = 1f;
             Item.noMelee = true;
             Item.rare = ItemRarityID.Blue;
             Item.shootSpeed = 9f;
 
-            Item.useAnimation = 42;
-            Item.useTime = 42;
+            Item.useAnimation = 38;
+            Item.useTime = 38;
             Item.UseSound = SoundID.Item8;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = Item.buyPrice(silver: 11);
@@ -109,4 +109,4 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             return offset;
         }
     }
-}
+}   

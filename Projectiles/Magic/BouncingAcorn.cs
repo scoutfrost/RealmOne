@@ -38,7 +38,7 @@ namespace RealmOne.Projectiles.Magic
                 Projectile.Kill();
             else
             {
-                Projectile.velocity *= 0.85f;
+                Projectile.velocity *= 0.6f;
 
                 if (Projectile.velocity.Y != oldVelocity.Y)
                 {
@@ -59,7 +59,7 @@ namespace RealmOne.Projectiles.Magic
                 Projectile.Kill();
             else
             {
-                Projectile.velocity *= 0.85f;
+                Projectile.velocity *= 0.6f;
 
             }
         }

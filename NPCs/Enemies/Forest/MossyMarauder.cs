@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Weapons.PreHM.Forest;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -10,7 +10,7 @@ using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Enemies.Forest
 {
-	public class MossyMarauder : ModNPC
+    public class MossyMarauder : ModNPC
 	{
 		public override void SetStaticDefaults()
 		{

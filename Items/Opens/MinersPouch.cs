@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.ItemDropRules;
@@ -9,7 +10,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Opens
 {
-	public class MinersPouch : ModItem
+    public class MinersPouch : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -14,7 +14,7 @@ using Terraria.ModLoader.Utilities;
 namespace RealmOne.NPCs.Enemies.MiniBoss
 {
 
-	public class PossessedPiggy : ModNPC
+    public class PossessedPiggy : ModNPC
 	{
 		public override void SetStaticDefaults()
 		{

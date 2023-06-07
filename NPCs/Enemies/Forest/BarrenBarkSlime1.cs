@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -9,7 +9,7 @@ using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Enemies.Forest
 {
-	public class BarrenBarkSlime1 : ModNPC
+    public class BarrenBarkSlime1 : ModNPC
 	{
 		public override void SetStaticDefaults()
 		{

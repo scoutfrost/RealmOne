@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Tools.Hooks;
 using RealmOne.Items.Weapons.PreHM.Forest;
 using Terraria;
@@ -11,7 +11,7 @@ using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Enemies.Forest
 {
-	public class RustedCenturion : ModNPC
+    public class RustedCenturion : ModNPC
 	{
 		public override void SetStaticDefaults()
 		{

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
@@ -11,7 +11,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.NPCs.Enemies.Impact
 {
-	public class ImpactTurret : ModNPC
+    public class ImpactTurret : ModNPC
 	{
 
 		static Asset<Texture2D> glowmask;

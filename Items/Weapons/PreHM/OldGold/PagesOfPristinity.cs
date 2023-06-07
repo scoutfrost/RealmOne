@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.Bars;
 using RealmOne.Projectiles.Magic;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ using Terraria.ModLoader;
 namespace RealmOne.Items.Weapons.PreHM.OldGold
 {
 
-	public class PagesOfPristinity : ModItem
+    public class PagesOfPristinity : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

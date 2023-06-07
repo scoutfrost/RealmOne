@@ -2,7 +2,7 @@ using RealmOne.Bosses;
 using RealmOne.Common.Systems;
 using RealmOne.Items.Accessories;
 using RealmOne.Items.BossSummons;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Others;
 using RealmOne.Items.PaperUI;
 using RealmOne.Items.Placeables;
@@ -20,7 +20,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne
 {
-	//Test
+    //Test
     public class RealmOne : Mod
 	{
 		public const string AssetPath = $"{nameof(RealmOne)}/Assets/";

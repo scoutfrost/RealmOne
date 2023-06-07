@@ -1,6 +1,7 @@
 ﻿using RealmOne.Bosses;
 using RealmOne.Items.Accessories;
 using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Opens;
 using RealmOne.Items.Tools.Pick;
 using RealmOne.Items.Weapons.PreHM.Throwing;
@@ -14,7 +15,7 @@ using static Terraria.GameContent.ItemDropRules.Conditions;
 
 namespace RealmOne.GlobalNPCList
 {
-	public class ModGlobalNPCList : GlobalNPC
+    public class ModGlobalNPCList : GlobalNPC
 	{
       
         // ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.

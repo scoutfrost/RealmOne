@@ -1067,6 +1067,41 @@ Mods: {
 				// DisplayName: Super Snowball Cannon
 				// Tooltip: ""
 			}
+
+			BUNNINGSSNAG: {
+				// DisplayName: B U N N I N G S S N A G
+				// Tooltip: ""
+			}
+
+			MagpieItem: {
+				// DisplayName: Magpie Item
+				// Tooltip: ""
+			}
+
+			ThornyDevilItem: {
+				// DisplayName: Thorny Devil Item
+				// Tooltip: ""
+			}
+
+			Wattle: {
+				// DisplayName: Wattle
+				// Tooltip: ""
+			}
+
+			MiniWattleBushItem: {
+				// DisplayName: Mini Wattle Bush Item
+				// Tooltip: ""
+			}
+
+			WattleBow: {
+				// DisplayName: Wattle Bow
+				// Tooltip: ""
+			}
+
+			PoisonPrickles: {
+				// DisplayName: Poison Prickles
+				// Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -1263,6 +1298,9 @@ Mods: {
 			// IchorGlob.DisplayName: Ichor Glob
 			// IchorGlobSmall.DisplayName: Ichor Glob Small
 			// BouncingAcorn.DisplayName: Bouncing Acorn
+			// WattleArrow.DisplayName: Wattle Arrow
+			// WattleArrowBase.DisplayName: Wattle Arrow Base
+			// PoisonPricklesProj.DisplayName: Poison Prickles Proj
 		}
 
 		NPCs: {
@@ -1347,6 +1385,9 @@ Mods: {
 			// ZombieFarmer.DisplayName: Zombie Farmer
 			// Espider1.DisplayName: Espider1
 			// Eye1.DisplayName: Eye1
+			// MagpieNPC.DisplayName: Magpie N P C
+			// ThornyDevil.DisplayName: Thorny Devil
+			// MangoBat.DisplayName: Mango Bat
 		}
 
 		Tiles: {
@@ -1359,6 +1400,7 @@ Mods: {
 			// TatteredBarrel.MapEntry: Tattered Barrel
 			// ProtonTorch.MapEntry: Proton Torch
 			// NewtonCradleTile.MapEntry: Newton Cradle Tile
+			// MiniWattleBush.MapEntry: Mini Wattle Bush
 		}
 
 		DamageClasses: {

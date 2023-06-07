@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
+using RealmOne.Items.Misc.Ores;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -13,7 +14,7 @@ using Terraria.ObjectData;
 
 namespace RealmOne.Tiles
 {
-	public class TatteredBarrel : ModTile
+    public class TatteredBarrel : ModTile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -70,7 +71,7 @@ namespace RealmOne.Tiles
 
 		public override void KillMultiTile(int x, int y, int frameX, int frameY)
 		{
-			Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<Items.Misc.BrassNuggets>(), Main.rand.Next(10, 10));
+			Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<BrassNuggets>(), Main.rand.Next(10, 10));
 			Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ItemID.Wood, Main.rand.Next(25, 30));
 			Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(10, 30));
 

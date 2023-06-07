@@ -31,8 +31,9 @@ namespace RealmOne.Items.Tools.Axe
 			Item.useAnimation = 30;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 5f;
+            Item.axe = 10;
 
-			Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Blue;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
 			

@@ -4,6 +4,7 @@ using RealmOne.Items.Opens;
 using RealmOne.Items.Weapons.PreHM.Classless;
 using RealmOne.Items.Weapons.PreHM.Grenades;
 using RealmOne.Items.Weapons.PreHM.Throwing;
+using RealmOne.NPCs.Enemies;
 using RealmOne.NPCs.Enemies.Forest;
 using System.Collections.Generic;
 using Terraria;
@@ -24,10 +25,19 @@ namespace RealmOne.Common.Systems
 			if (source is EntitySource_ShakeTree)
 			{
 				IEntitySource newSource = item.GetSource_FromThis(); // Use a separate source for the newly created projectiles, to not cause a stack overflow.
-
+				
 				NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
-			}
-		}
+				if (Main.dayTime!)
+				{
+				}
+				else
+				{
+
+					NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<MangoBat>());
+				}
+
+            }
+        }
 		
 		
 		

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables.Torches
 {
-	public class ProtonTorchItem : ModItem
+    public class ProtonTorchItem : ModItem
 	{
 
 		public override void SetStaticDefaults()

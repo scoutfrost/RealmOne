@@ -1,0 +1,69 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
+using System.Collections.Generic;
+using Terraria.Audio;
+using RealmOne.Buffs;
+
+
+namespace RealmOne.Items.Food
+{
+    public class BUNNINGSSNAG: ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Bunning's Snag!");
+            Tooltip.SetDefault("''NOTHIN LIKE A GOOD OL' BUNNINGS SNAG'\r\nHeals 150HP\r\n25 minutes of increased stats" +
+                "\r\n10% increased weapon speed and damage" +
+                "\r\n10% increased running speed" +
+                "\r\nImmunity to Poison, Weak and Confused.");
+                 
+
+
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+
+            ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
+                new Color(244, 184, 64),
+                new Color(151, 92, 33),
+                new Color(229, 91, 122)
+            };
+
+        }
+
+        public override void SetDefaults()
+        {
+            Item.width = 24;
+            Item.height = 24;
+            Item.useTime = 15;
+            Item.useAnimation = 15;
+            Item.maxStack = 99;
+            Item.useStyle = ItemUseStyleID.EatFood;
+            Item.value = 500;
+            Item.rare = ItemRarityID.Expert;
+            Item.consumable = true;
+            Item.UseSound = SoundID.Item2;
+            Item.buffType = ModContent.BuffType<BUNNINGSBUFF>();
+            Item.healLife = 150;
+            Item.buffTime = 85000;
+            Item.scale = 0.6f;
+        }
+
+
+
+       
+        public override void AddRecipes()
+        {
+            CreateRecipe(2)
+             .AddIngredient(ItemID.Acorn, 2)
+                          .AddIngredient(ItemID.GrassSeeds, 2)
+
+            .AddTile(TileID.Furnaces)
+            .Register();
+
+
+        }
+
+    }
+}
