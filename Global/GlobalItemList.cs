@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 
@@ -12,7 +13,7 @@ namespace RealmOne.Global
     public class GlobalItemList : GlobalItem
     {
 
-
+        
         //remove the tooltip
         //   tooltips.RemoveAll(x => x.Name == "Tooltip0" && x.mod == "Terraria");
         //actually, the hood's old statics is increased damage and crit chance by 10%.
@@ -629,6 +630,12 @@ namespace RealmOne.Global
             EOC5.AddTile(TileID.Anvils);
             EOC5.Register();
 
+
+            Recipe spear = Recipe.Create(ItemID.Spear);
+            spear.AddRecipeGroup("IronBar", 8);
+            spear.AddTile(TileID.WorkBenches);
+            spear.Register();
+
             Recipe Trident = Recipe.Create(ItemID.Trident);
             Trident.AddIngredient(ItemID.Spear, 1);
             Trident.AddIngredient(ItemID.Seashell, 5);
@@ -874,7 +881,34 @@ namespace RealmOne.Global
 		obj7.Register();
 		
         }
+        
+
+    }
+
+    public class RecipeGroups : ModSystem
+    {
+        static string ItemXOrY(int id1, int id2) => $"{Lang.GetItemName(id1)} {Language.GetTextValue($"Mods.RealmOne.RecipeGroups.Or")} {Lang.GetItemName(id2)}";
+
+        static string AnyItem(int id) => $"{Lang.misc[37]} {Lang.GetItemName(id)}";
+
+        public override void AddRecipeGroups()
+        {
+            RecipeGroup group;
+            group = new RecipeGroup(() => AnyItem(ItemID.CopperBar),
+               ItemID.CopperBar,
+               ItemID.TinBar
+
+           ) ;
+            RecipeGroup.RegisterGroup("RealmOne:AnyCopperBar", group);
 
 
+            group = new RecipeGroup(() => AnyItem(ItemID.GoldBar),
+               ItemID.GoldBar,
+               ItemID.PlatinumBar
+
+           );
+            RecipeGroup.RegisterGroup("RealmOne:AnyGoldBar", group);
+
+        }
     }
 }

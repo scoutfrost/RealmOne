@@ -1102,6 +1102,11 @@ Mods: {
 				DisplayName: Poison Prickles
 				Tooltip: ""
 			}
+
+			AddictionPNT: {
+				DisplayName: Addiction P N T
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -1401,6 +1406,7 @@ Mods: {
 			ProtonTorch.MapEntry: Proton Torch
 			NewtonCradleTile.MapEntry: Newton Cradle Tile
 			MiniWattleBush.MapEntry: Mini Wattle Bush
+			AddictionPNTtile.MapEntry: Addiction P N Ttile
 		}
 
 		DamageClasses: {
