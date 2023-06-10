@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Misc;
 using RealmOne.Projectiles.Magic;
 using RealmOne.RealmPlayer;
 using ReLogic.Content;
@@ -12,38 +11,38 @@ using static Terraria.ModLoader.ModContent;
 
 namespace RealmOne.Items.Weapons.Magic
 {
-	public class IchorGlobScepter : ModItem
-	{
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Haemocele Glob Scepter");
-			Tooltip.SetDefault("Shoots out an icky glob of ichor that splits into 3 exploding chunks of ichor");
+    public class IchorGlobScepter : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Haemocele Glob Scepter");
+            Tooltip.SetDefault("Shoots out an icky glob of ichor that splits into 3 exploding chunks of ichor");
             ItemGlowy.AddItemGlowMask(Item.type, "RealmOne/Items/Weapons/Magic/IchorGlobScepter_Glow");
 
         }
 
         public override void SetDefaults()
-		{
-			Item.damage = 38;
-			Item.width = 32;
-			Item.height = 38;
-			Item.maxStack = 1;
-			Item.useTime = 40;
-			Item.useAnimation = 40;
-			Item.useStyle = ItemUseStyleID.Shoot;
-			Item.knockBack = 2f;
-			Item.rare = ItemRarityID.Pink;
-			Item.mana = 10;
-			Item.noMelee = true;
-			Item.staff[Item.type] = true;
-			Item.shoot = ModContent.ProjectileType<IchorGlob>();
-			Item.UseSound = SoundID.Item8;
-			Item.shootSpeed = 3f;
-			Item.autoReuse = true;
-			Item.DamageType = DamageClass.Magic;
-			Item.channel = true;
+        {
+            Item.damage = 38;
+            Item.width = 32;
+            Item.height = 38;
+            Item.maxStack = 1;
+            Item.useTime = 40;
+            Item.useAnimation = 40;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.knockBack = 2f;
+            Item.rare = ItemRarityID.Pink;
+            Item.mana = 10;
+            Item.noMelee = true;
+            Item.staff[Item.type] = true;
+            Item.shoot = ModContent.ProjectileType<IchorGlob>();
+            Item.UseSound = SoundID.Item8;
+            Item.shootSpeed = 3f;
+            Item.autoReuse = true;
+            Item.DamageType = DamageClass.Magic;
+            Item.channel = true;
 
-		}
+        }
         public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
         {
             Texture2D texture = Request<Texture2D>("RealmOne/Items/Weapons/Magic/IchorGlobScepter_Glow", AssetRequestMode.ImmediateLoad).Value;
@@ -86,7 +85,7 @@ namespace RealmOne.Items.Weapons.Magic
             return player.ownedProjectileCounts[Item.shoot] < 1;
 
         }
-      
+
 
     }
 }

@@ -1,16 +1,14 @@
 using Microsoft.Xna.Framework;
+using RealmOne.Buffs;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent.Creative;
-using System.Collections.Generic;
-using Terraria.Audio;
-using RealmOne.Buffs;
 
 
 namespace RealmOne.Items.Food
 {
-    public class BUNNINGSSNAG: ModItem
+    public class BUNNINGSSNAG : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -19,7 +17,7 @@ namespace RealmOne.Items.Food
                 "\r\n10% increased weapon speed and damage" +
                 "\r\n10% increased running speed" +
                 "\r\nImmunity to Poison, Weak and Confused.");
-                 
+
 
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
@@ -52,7 +50,7 @@ namespace RealmOne.Items.Food
 
 
 
-       
+
         public override void AddRecipes()
         {
             CreateRecipe(2)

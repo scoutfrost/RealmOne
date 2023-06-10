@@ -1,20 +1,13 @@
-using System;
-using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Items.PaperUI;
+using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
 using Terraria;
+using Terraria.GameContent;
+using Terraria.GameContent.Creative;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent.ItemDropRules;
-using RealmOne.Projectiles;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
-using RealmOne.Items;
-using Terraria.GameContent.Creative;
-using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
-using RealmOne.NPCs.Enemies.Forest;
-using RealmOne.Items.PaperUI;
 
 namespace RealmOne.Items.BossBags
 {

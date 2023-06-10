@@ -1,9 +1,4 @@
 ﻿using RealmOne.Common.Systems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -11,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Accessories
 {
-    public class Peni  : ModItem
+    public class Peni : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -22,13 +17,13 @@ namespace RealmOne.Items.Accessories
            "\nWhen you are hit you regen health twice as fast" +
            "---------------------"
             + "\nYou can consume the penacillin, making the buffs 2x as strong"
-            +"\nTherefore: 20+HP");
+            + "\nTherefore: 20+HP");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
         }
 
-        public override void SetDefaults() 
+        public override void SetDefaults()
         {
             Item.width = 24;
             Item.height = 24;
@@ -42,7 +37,7 @@ namespace RealmOne.Items.Accessories
             Item.UseSound = SoundID.Item1;
 
             Item.useStyle = ItemUseStyleID.Swing;
-           
+
         }
 
         public override bool AltFunctionUse(Player player)
@@ -84,8 +79,8 @@ namespace RealmOne.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.statLifeMax2 += 10;
-           player.buffImmune[BuffID.Venom] = true;
-           player.buffImmune[BuffID.Poisoned] = true;
+            player.buffImmune[BuffID.Venom] = true;
+            player.buffImmune[BuffID.Poisoned] = true;
             player.buffImmune[BuffID.Bleeding] = true;
 
 

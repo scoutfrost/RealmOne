@@ -2,11 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Buffs.Debuffs;
 using RealmOne.Common.Systems;
-using RealmOne.Projectiles.Magic;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
@@ -19,11 +17,11 @@ namespace RealmOne.Projectiles.Throwing
         {
             DisplayName.SetDefault("Jelly Spark");
         }
-      //  private Vector2 flashoffset = Vector2.Zero;
+        //  private Vector2 flashoffset = Vector2.Zero;
 
-       // private Player Owner => Main.player[Projectile.owner];
+        // private Player Owner => Main.player[Projectile.owner];
 
-      //  private bool FullyUsed = false;
+        //  private bool FullyUsed = false;
 
         private static Asset<Texture2D> Spark;
 
@@ -32,7 +30,7 @@ namespace RealmOne.Projectiles.Throwing
             Projectile.width = 60;
             Projectile.height = 60;
             Projectile.DamageType = DamageClass.Ranged;
-            Projectile.timeLeft = 4 ;
+            Projectile.timeLeft = 4;
             Projectile.friendly = false;
             Projectile.aiStyle = 0;
             Projectile.scale = 1f;
@@ -66,7 +64,7 @@ namespace RealmOne.Projectiles.Throwing
                 NPC target = Main.npc[i];
                 if (target.active && !target.friendly && Vector2.Distance(Projectile.Center, target.Center) < radius)
                 {
-                   target.SimpleStrikeNPC(4, 0);
+                    target.SimpleStrikeNPC(4, 0);
                 }
             }
         }

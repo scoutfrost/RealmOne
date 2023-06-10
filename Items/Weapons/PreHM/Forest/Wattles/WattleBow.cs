@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.Misc.Plants;
 using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
-using Terraria.DataStructures;
-using RealmOne.Items.Misc.Plants;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
 {
@@ -51,7 +44,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
             Item.useAmmo = AmmoID.Arrow;
         }
 
-        
+
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
             if (type == ProjectileID.WoodenArrowFriendly)
@@ -61,7 +54,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
                 type = ModContent.ProjectileType<WattleArrow>();
             }
         }
-            
+
         public override void PostUpdate()
         {
             Lighting.AddLight(Item.Center, Color.DarkGreen.ToVector3() * 1f);

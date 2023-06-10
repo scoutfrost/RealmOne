@@ -1,8 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -13,7 +11,7 @@ namespace RealmOne.Global
     public class GlobalItemList : GlobalItem
     {
 
-        
+
         //remove the tooltip
         //   tooltips.RemoveAll(x => x.Name == "Tooltip0" && x.mod == "Terraria");
         //actually, the hood's old statics is increased damage and crit chance by 10%.
@@ -36,7 +34,7 @@ namespace RealmOne.Global
                 TooltipLine line = tooltips.FirstOrDefault(x => x.Name == "Tooltip0" && x.Mod == "Terraria");
                 if (line != null)
                 {
-                    line.Text = "Enemies are poisoned when touching you"+"\nYour weapons also inflict poisoned";
+                    line.Text = "Enemies are poisoned when touching you" + "\nYour weapons also inflict poisoned";
 
                 }
 
@@ -51,13 +49,13 @@ namespace RealmOne.Global
 
             }
         }
-        
+
         public override void SetDefaults(Item item)
         {
 
             //Pre-Hardmode Accessories
             if (item.type == ItemID.CobaltShield) item.defense = 3;
-            if (item.type == ItemID.ObsidianShield) item.defense = 5;   
+            if (item.type == ItemID.ObsidianShield) item.defense = 5;
             if (item.type == ItemID.AnkhShield) item.defense = 8;
             if (item.type == ItemID.BandofRegeneration) item.lifeRegen += 8;
             if (item.type == ItemID.BandofStarpower) item.manaIncrease += 200;
@@ -162,7 +160,7 @@ namespace RealmOne.Global
 
 
             if (item.type == ItemID.Blowpipe) item.shootSpeed = 15;
-            if (item.type == ItemID.Blowpipe) item.damage= 15;
+            if (item.type == ItemID.Blowpipe) item.damage = 15;
             if (item.type == ItemID.Blowpipe) item.knockBack = 4f;
 
 
@@ -278,54 +276,54 @@ namespace RealmOne.Global
 
 
             //PUMPKIN MOON
-         /*   if (item.type == ItemID.TheHorsemansBlade) item.damage = 180;
-            if (item.type == ItemID.TheHorsemansBlade) item.useTime = 6;
-            if (item.type == ItemID.TheHorsemansBlade) item.useAnimation = 6;
+            /*   if (item.type == ItemID.TheHorsemansBlade) item.damage = 180;
+               if (item.type == ItemID.TheHorsemansBlade) item.useTime = 6;
+               if (item.type == ItemID.TheHorsemansBlade) item.useAnimation = 6;
 
-            if (item.type == ItemID.TheHorsemansBlade) item.crit = 12;
-            if (item.type == ItemID.TheHorsemansBlade) item.knockBack = 12;
-            if (item.type == ItemID.TheHorsemansBlade) item.scale = 3f;
+               if (item.type == ItemID.TheHorsemansBlade) item.crit = 12;
+               if (item.type == ItemID.TheHorsemansBlade) item.knockBack = 12;
+               if (item.type == ItemID.TheHorsemansBlade) item.scale = 3f;
 
-            if (item.type == ItemID.RavenStaff) item.damage = 110;
-            if (item.type == ItemID.RavenStaff) item.useTime = 13;
-            if (item.type == ItemID.RavenStaff) item.crit = 12;
-            if (item.type == ItemID.RavenStaff) item.knockBack = 12;
-            if (item.type == ItemID.RavenStaff) item.mana = 0;
-            if (item.type == ItemID.RavenStaff) item.autoReuse = true;
-            if (item.type == ItemID.RavenStaff) item.shootSpeed = 20f;
+               if (item.type == ItemID.RavenStaff) item.damage = 110;
+               if (item.type == ItemID.RavenStaff) item.useTime = 13;
+               if (item.type == ItemID.RavenStaff) item.crit = 12;
+               if (item.type == ItemID.RavenStaff) item.knockBack = 12;
+               if (item.type == ItemID.RavenStaff) item.mana = 0;
+               if (item.type == ItemID.RavenStaff) item.autoReuse = true;
+               if (item.type == ItemID.RavenStaff) item.shootSpeed = 20f;
 
-            if (item.type == ItemID.BatScepter) item.damage = 97;
-            if (item.type == ItemID.BatScepter) item.useTime = 6;
-            if (item.type == ItemID.BatScepter) item.crit = 6;
-            if (item.type == ItemID.BatScepter) item.knockBack = 6;
-            if (item.type == ItemID.BatScepter) item.shootSpeed = 23f;
-            if (item.type == ItemID.BatScepter) item.mana = 0;
+               if (item.type == ItemID.BatScepter) item.damage = 97;
+               if (item.type == ItemID.BatScepter) item.useTime = 6;
+               if (item.type == ItemID.BatScepter) item.crit = 6;
+               if (item.type == ItemID.BatScepter) item.knockBack = 6;
+               if (item.type == ItemID.BatScepter) item.shootSpeed = 23f;
+               if (item.type == ItemID.BatScepter) item.mana = 0;
 
-            if (item.type == ItemID.CandyCornRifle) item.damage = 75;
-            if (item.type == ItemID.CandyCornRifle) item.useTime = 5;
-            if (item.type == ItemID.CandyCornRifle) item.crit = 6;
-            if (item.type == ItemID.CandyCornRifle) item.knockBack = 6;
-            if (item.type == ItemID.CandyCornRifle) item.shootSpeed = 24f;
+               if (item.type == ItemID.CandyCornRifle) item.damage = 75;
+               if (item.type == ItemID.CandyCornRifle) item.useTime = 5;
+               if (item.type == ItemID.CandyCornRifle) item.crit = 6;
+               if (item.type == ItemID.CandyCornRifle) item.knockBack = 6;
+               if (item.type == ItemID.CandyCornRifle) item.shootSpeed = 24f;
 
-            if (item.type == ItemID.JackOLanternLauncher) item.damage = 130;
-            if (item.type == ItemID.JackOLanternLauncher) item.useTime = 13;
-            if (item.type == ItemID.JackOLanternLauncher) item.crit = 8;
-            if (item.type == ItemID.JackOLanternLauncher) item.knockBack = 10;
-            if (item.type == ItemID.JackOLanternLauncher) item.shootSpeed = 25f;
+               if (item.type == ItemID.JackOLanternLauncher) item.damage = 130;
+               if (item.type == ItemID.JackOLanternLauncher) item.useTime = 13;
+               if (item.type == ItemID.JackOLanternLauncher) item.crit = 8;
+               if (item.type == ItemID.JackOLanternLauncher) item.knockBack = 10;
+               if (item.type == ItemID.JackOLanternLauncher) item.shootSpeed = 25f;
 
-            if (item.type == ItemID.ScytheWhip) item.damage = 120;
-            if (item.type == ItemID.ScytheWhip) item.useTime = 19;
-            if (item.type == ItemID.ScytheWhip) item.crit = 8;
-            if (item.type == ItemID.ScytheWhip) item.knockBack = 6;
-            if (item.type == ItemID.ScytheWhip) item.shootSpeed = 22f;
+               if (item.type == ItemID.ScytheWhip) item.damage = 120;
+               if (item.type == ItemID.ScytheWhip) item.useTime = 19;
+               if (item.type == ItemID.ScytheWhip) item.crit = 8;
+               if (item.type == ItemID.ScytheWhip) item.knockBack = 6;
+               if (item.type == ItemID.ScytheWhip) item.shootSpeed = 22f;
 
 
-            if (item.type == ItemID.StakeLauncher) item.damage = 90;
-            if (item.type == ItemID.StakeLauncher) item.useTime = 10;
-            if (item.type == ItemID.StakeLauncher) item.crit = 20;
-            if (item.type == ItemID.StakeLauncher) item.knockBack = 7;
-            if (item.type == ItemID.StakeLauncher) item.shootSpeed = 30f;
-         */
+               if (item.type == ItemID.StakeLauncher) item.damage = 90;
+               if (item.type == ItemID.StakeLauncher) item.useTime = 10;
+               if (item.type == ItemID.StakeLauncher) item.crit = 20;
+               if (item.type == ItemID.StakeLauncher) item.knockBack = 7;
+               if (item.type == ItemID.StakeLauncher) item.shootSpeed = 30f;
+            */
             //Endgame Weapons (Moon Lord)
 
             if (item.type == ItemID.DayBreak) item.useTime = 10;
@@ -361,7 +359,7 @@ namespace RealmOne.Global
             {
                 item.ammo = item.type;
             }
-     
+
 
 
 
@@ -839,49 +837,49 @@ namespace RealmOne.Global
             climbingclaws1.AddTile(TileID.Anvils);
             climbingclaws1.Register();
 
-            
-		Recipe obj = Recipe.Create(ItemID.Blowpipe);
-		obj.AddIngredient(Mod, "WoodenGunBarrel", 1);
-		obj.AddIngredient(ItemID.Acorn, 5);
-		obj.AddTile(TileID.WorkBenches);
-		obj.Register();
-		Recipe obj2 = Recipe.Create(ItemID.BandofRegeneration, 1);
-		obj2.AddIngredient(ItemID.LesserHealingPotion, 5);
-		obj2.AddRecipeGroup("IronBar", 5);
-		obj2.AddTile(TileID.Anvils);
-		obj2.Register();
-		Recipe obj3 = Recipe.Create(ItemID.BandofStarpower);
-		obj3.AddIngredient(ItemID.ManaCrystal, 2);
-		obj3.AddRecipeGroup("IronBar", 5);
-		obj3.AddTile(TileID.Anvils);
-		obj3.Register();
-		Recipe obj4 = Recipe.Create(ItemID.FlowerofFire, 1);
-		obj4.AddIngredient(ItemID.HellstoneBar, 12);
-		obj4.AddIngredient(ItemID.Fireblossom, 5);
-		obj4.AddIngredient(ItemID.Bone, 10);
-		obj4.AddTile(TileID.Hellforge);
-		obj4.Register();
-		Recipe obj5 = Recipe.Create(ItemID.DarkLance);
-		obj5.AddIngredient(ItemID.HellstoneBar, 8);
-		obj5.AddIngredient(ItemID.DemoniteBar, 15);
-		obj5.AddIngredient(ItemID.Bone, 10);
-		obj5.AddTile(TileID.Hellforge);
-		obj5.Register();
-		Recipe obj6 = Recipe.Create(ItemID.DarkLance);
-		obj6.AddIngredient(ItemID.HellstoneBar, 8);
-		obj6.AddIngredient(ItemID.CrimtaneBar, 15);
-		obj6.AddIngredient(ItemID.Bone, 10);
-		obj6.AddTile(TileID.Hellforge);
-		obj6.Register();
-		Recipe obj7 = Recipe.Create(ItemID.Marrow);
-		obj7.AddIngredient(Mod, "MossMarrow", 1);
-		obj7.AddIngredient(ItemID.SoulofNight, 8);
-		obj7.AddIngredient(ItemID.Bone, 10);
-		obj7.AddTile(TileID.Hellforge);
-		obj7.Register();
-		
+
+            Recipe obj = Recipe.Create(ItemID.Blowpipe);
+            obj.AddIngredient(Mod, "WoodenGunBarrel", 1);
+            obj.AddIngredient(ItemID.Acorn, 5);
+            obj.AddTile(TileID.WorkBenches);
+            obj.Register();
+            Recipe obj2 = Recipe.Create(ItemID.BandofRegeneration, 1);
+            obj2.AddIngredient(ItemID.LesserHealingPotion, 5);
+            obj2.AddRecipeGroup("IronBar", 5);
+            obj2.AddTile(TileID.Anvils);
+            obj2.Register();
+            Recipe obj3 = Recipe.Create(ItemID.BandofStarpower);
+            obj3.AddIngredient(ItemID.ManaCrystal, 2);
+            obj3.AddRecipeGroup("IronBar", 5);
+            obj3.AddTile(TileID.Anvils);
+            obj3.Register();
+            Recipe obj4 = Recipe.Create(ItemID.FlowerofFire, 1);
+            obj4.AddIngredient(ItemID.HellstoneBar, 12);
+            obj4.AddIngredient(ItemID.Fireblossom, 5);
+            obj4.AddIngredient(ItemID.Bone, 10);
+            obj4.AddTile(TileID.Hellforge);
+            obj4.Register();
+            Recipe obj5 = Recipe.Create(ItemID.DarkLance);
+            obj5.AddIngredient(ItemID.HellstoneBar, 8);
+            obj5.AddIngredient(ItemID.DemoniteBar, 15);
+            obj5.AddIngredient(ItemID.Bone, 10);
+            obj5.AddTile(TileID.Hellforge);
+            obj5.Register();
+            Recipe obj6 = Recipe.Create(ItemID.DarkLance);
+            obj6.AddIngredient(ItemID.HellstoneBar, 8);
+            obj6.AddIngredient(ItemID.CrimtaneBar, 15);
+            obj6.AddIngredient(ItemID.Bone, 10);
+            obj6.AddTile(TileID.Hellforge);
+            obj6.Register();
+            Recipe obj7 = Recipe.Create(ItemID.Marrow);
+            obj7.AddIngredient(Mod, "MossMarrow", 1);
+            obj7.AddIngredient(ItemID.SoulofNight, 8);
+            obj7.AddIngredient(ItemID.Bone, 10);
+            obj7.AddTile(TileID.Hellforge);
+            obj7.Register();
+
         }
-        
+
 
     }
 
@@ -898,7 +896,7 @@ namespace RealmOne.Global
                ItemID.CopperBar,
                ItemID.TinBar
 
-           ) ;
+           );
             RecipeGroup.RegisterGroup("RealmOne:AnyCopperBar", group);
 
 

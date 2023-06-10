@@ -9,81 +9,81 @@ using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Critters
 {
-	public class ImpactBunny : ModNPC
-	{
-		static Asset<Texture2D> glowmask;
+    public class ImpactBunny : ModNPC
+    {
+        static Asset<Texture2D> glowmask;
 
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("E-Bunny");
-			glowmask = ModContent.Request<Texture2D>(Texture + "_Glow");
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("E-Bunny");
+            glowmask = ModContent.Request<Texture2D>(Texture + "_Glow");
 
-			Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Bunny];
+            Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Bunny];
 
-			var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-			{ // Influences how the NPC looks in the Bestiary
-				Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
-			};
-			NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
-		}
+            var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            { // Influences how the NPC looks in the Bestiary
+                Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
+        }
 
-		public override void SetDefaults()
-		{
-			NPC.width = 23;
-			NPC.height = 40;
-			NPC.defense = 0;
-			NPC.lifeMax = 5;
-			NPC.value = 76f;
-			NPC.aiStyle = NPCAIStyleID.Passive;
-			NPC.HitSound = SoundID.NPCHit1;
+        public override void SetDefaults()
+        {
+            NPC.width = 23;
+            NPC.height = 40;
+            NPC.defense = 0;
+            NPC.lifeMax = 5;
+            NPC.value = 76f;
+            NPC.aiStyle = NPCAIStyleID.Passive;
+            NPC.HitSound = SoundID.NPCHit1;
 
-			NPC.DeathSound = SoundID.NPCDeath1;
-			AIType = NPCID.Bunny;
-			AnimationType = NPCID.Bunny;
+            NPC.DeathSound = SoundID.NPCDeath1;
+            AIType = NPCID.Bunny;
+            AnimationType = NPCID.Bunny;
 
-		}
-		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			return SpawnCondition.OverworldNight.Chance * 0.23f;
-		}
+        }
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            return SpawnCondition.OverworldNight.Chance * 0.23f;
+        }
 
-		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
-		{
-			Color color = GetAlpha(Color.LightBlue) ?? Color.LightBlue;
+        public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Color color = GetAlpha(Color.LightBlue) ?? Color.LightBlue;
 
-			if (NPC.IsABestiaryIconDummy)
-				color = Color.LightBlue;
-			// var effects =NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
-			//  spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
+            if (NPC.IsABestiaryIconDummy)
+                color = Color.LightBlue;
+            // var effects =NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+            //  spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
 
-			Main.EntitySpriteDraw(glowmask.Value, NPC.Center - screenPos + new Vector2(0, 0), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.FlipHorizontally, 0);
-		}
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-		{
-			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-								BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
+            Main.EntitySpriteDraw(glowmask.Value, NPC.Center - screenPos + new Vector2(0, 0), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.FlipHorizontally, 0);
+        }
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
 
-				new FlavorTextBestiaryInfoElement("These fluffy bunnies were unfortunately purged when a catastrophic and otherworldly raid started."),
+                new FlavorTextBestiaryInfoElement("These fluffy bunnies were unfortunately purged when a catastrophic and otherworldly raid started."),
 
-			});
-		}
-		public override void HitEffect(NPC.HitInfo hit)
-		{
+            });
+        }
+        public override void HitEffect(NPC.HitInfo hit)
+        {
 
-			for (int i = 0; i < 10; i++)
-			{
+            for (int i = 0; i < 10; i++)
+            {
 
-				Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
 
-				var d = Dust.NewDustPerfect(NPC.position, DustID.Electric, speed * 5, Scale: 2f);
-				;
-				d.noGravity = true;
-			}
-		}
-		public override void AI()
-		{
-			Lighting.AddLight(NPC.position, r: 0f, g: 0.3f, b: 1f);
-		}
-	}
+                var d = Dust.NewDustPerfect(NPC.position, DustID.Electric, speed * 5, Scale: 2f);
+                ;
+                d.noGravity = true;
+            }
+        }
+        public override void AI()
+        {
+            Lighting.AddLight(NPC.position, r: 0f, g: 0.3f, b: 1f);
+        }
+    }
 }

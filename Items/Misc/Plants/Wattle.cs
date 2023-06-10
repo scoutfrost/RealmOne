@@ -1,11 +1,8 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ModLoader;
-using Terraria.ID;
-using Microsoft.Xna.Framework;
-using Terraria.ObjectData;
-using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Misc.Plants
 {
@@ -32,7 +29,7 @@ namespace RealmOne.Items.Misc.Plants
             Item.height = 24;
             Item.maxStack = 99;
             Item.rare = ItemRarityID.Green;
-            Item.value = Item.buyPrice(0,0,1, 10);
+            Item.value = Item.buyPrice(0, 0, 1, 10);
         }
 
         public override void Update(ref float gravity, ref float maxFallSpeed)
@@ -42,7 +39,7 @@ namespace RealmOne.Items.Misc.Plants
         public override Color? GetAlpha(Color lightColor)
         {
             return Color.NavajoWhite;
-            
+
         }
 
     }

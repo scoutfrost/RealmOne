@@ -1,34 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
-using Terraria;
-using Terraria.GameContent.Creative;
-using Terraria.ID;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Terraria.GameContent;
 using RealmOne.Common.Systems;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.Audio;
+using Terraria.GameContent;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Whip
 {
     public class WoodenTrainProjectile : ModProjectile
     {
-       public override void SetStaticDefaults()
-         {
+        public override void SetStaticDefaults()
+        {
             ProjectileID.Sets.IsAWhip[Type] = true;
-            }
+        }
 
-            public override void SetDefaults()
-            {
-                Projectile.DefaultToWhip();
+        public override void SetDefaults()
+        {
+            Projectile.DefaultToWhip();
 
-                Projectile.WhipSettings.Segments = 5;
-                Projectile.WhipSettings.RangeMultiplier = 0.7f;
-            }
+            Projectile.WhipSettings.Segments = 5;
+            Projectile.WhipSettings.RangeMultiplier = 0.7f;
+        }
 
         public override void AI()
         {
@@ -79,13 +74,13 @@ namespace RealmOne.Projectiles.Whip
             // If you don't want that, you can remove it all and instead call one of vanilla's DrawWhip methods, like above.
             // However, you must adhere to how they draw if you do.
 
-          
-            
+
+
             return false;
         }
         public override void Kill(int timeLeft)
         {
-            
+
         }
     }
 }

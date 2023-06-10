@@ -1,23 +1,16 @@
-using System;
-using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.GameContent.ItemDropRules;
-using RealmOne.Projectiles;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
-using RealmOne.Items;
-using Terraria.GameContent.Creative;
-
 using RealmOne.Items.Accessories;
 using RealmOne.Items.Others;
 using RealmOne.Items.Potions;
 using RealmOne.Items.Weapons.Demolitionist;
 using RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops;
+using Terraria;
+using Terraria.GameContent;
+using Terraria.GameContent.Creative;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.BossBags
 {

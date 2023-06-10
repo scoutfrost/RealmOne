@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.GameContent.Creative;
-using Terraria.Audio;
-using Microsoft.Xna.Framework;
-using Terraria.ObjectData;
-using Terraria.DataStructures;
-using Terraria.Localization;
+﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.Placeables;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
 
 namespace RealmOne.Tiles.PlantTiles
 {
@@ -59,7 +52,7 @@ namespace RealmOne.Tiles.PlantTiles
 
                 int WattleGore1 = Mod.Find<ModGore>("WattleGore1").Type;
                 int WattleGore2 = Mod.Find<ModGore>("WattleGore2").Type;
-                
+
 
                 var entitySource = new EntitySource_TileBreak(i, j);
 

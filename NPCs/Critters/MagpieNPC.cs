@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using RealmOne.Items.ItemCritter;
 using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
-using Terraria.IO;
-using ReLogic.Content;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.GameContent;
+using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using RealmOne.Items.ItemCritter;
 
 namespace RealmOne.NPCs.Critters
 {
@@ -29,8 +19,8 @@ namespace RealmOne.NPCs.Critters
 
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-            { 
-                Velocity = 1f 
+            {
+                Velocity = 1f
             };
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -64,7 +54,7 @@ namespace RealmOne.NPCs.Critters
             AnimationType = NPCID.Bird;
 
         }
-       
+
         public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)

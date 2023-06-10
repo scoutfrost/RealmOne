@@ -6,36 +6,36 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Accessories
 {
-	public class TheOutcastsOverseer : ModItem
-	{
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("The Outcast's Overseer"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("'A physical form of the dirt titan's purpose'"
-				+ "\n6% increased critical chance"
-				+ "\nCrits have a chance to increase your crit chance"
-				+ "\nThe effect increases your crit chance by %4+"
-				+ "\nMaximum crit stack is +20% (5 times)");
+    public class TheOutcastsOverseer : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("The Outcast's Overseer"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            Tooltip.SetDefault("'A physical form of the dirt titan's purpose'"
+                + "\n6% increased critical chance"
+                + "\nCrits have a chance to increase your crit chance"
+                + "\nThe effect increases your crit chance by %4+"
+                + "\nMaximum crit stack is +20% (5 times)");
 
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
-		}
+        }
 
-		public override void SetDefaults()
-		{
+        public override void SetDefaults()
+        {
 
-			Item.width = 20;
-			Item.height = 20;
-			Item.value = 10000;
-			Item.rare = ItemRarityID.Green;
-			Item.accessory = true;
+            Item.width = 20;
+            Item.height = 20;
+            Item.value = 10000;
+            Item.rare = ItemRarityID.Green;
+            Item.accessory = true;
 
-		}
+        }
 
-		public override void UpdateAccessory(Player player, bool hideVisual)
-		{
-			player.GetModPlayer<RealmModPlayer>().Overseer = true;
-			player.GetCritChance(DamageClass.Generic) += 6f;
-		}
-	}
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            player.GetModPlayer<RealmModPlayer>().Overseer = true;
+            player.GetCritChance(DamageClass.Generic) += 6f;
+        }
+    }
 }

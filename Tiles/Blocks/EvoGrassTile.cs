@@ -6,26 +6,26 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Tiles.Blocks
 {
-	internal class EvoGrassTile : ModTile
-	{
-		public override void SetStaticDefaults()
-		{
-			Main.tileSolid[Type] = true;
-			Main.tileMerge[Type][Type] = true;
-			Main.tileBlockLight[Type] = true;
-			Main.tileMerge[TileID.Dirt][Type] = true;
+    internal class EvoGrassTile : ModTile
+    {
+        public override void SetStaticDefaults()
+        {
+            Main.tileSolid[Type] = true;
+            Main.tileMerge[Type][Type] = true;
+            Main.tileBlockLight[Type] = true;
+            Main.tileMerge[TileID.Dirt][Type] = true;
 
-			TileID.Sets.Grass[Type] = true;
-			TileID.Sets.Conversion.Grass[Type] = true;
+            TileID.Sets.Grass[Type] = true;
+            TileID.Sets.Conversion.Grass[Type] = true;
 
-			LocalizedText name = CreateMapEntryName();
-			name.SetDefault("Evo Grass");
-			AddMapEntry(new Color(90, 127, 78), name);
+            LocalizedText name = CreateMapEntryName();
+            name.SetDefault("Evo Grass");
+            AddMapEntry(new Color(90, 127, 78), name);
 
-			DustType = DustID.Grass;
+            DustType = DustID.Grass;
 
-			MineResist = 1f;
-			MinPick = 20;
-		}
-	}
+            MineResist = 1f;
+            MinPick = 20;
+        }
+    }
 }

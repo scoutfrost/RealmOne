@@ -1,13 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.RealmPlayer;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
-using System.Collections.Generic;
-
-using RealmOne.Common.Systems;
-using RealmOne.RealmPlayer;
 
 namespace RealmOne.Common.UI
 {
@@ -22,10 +20,10 @@ namespace RealmOne.Common.UI
 
             area = new UIElement();
             area.Left.Set(-area.Width.Pixels - 1200, 1f);
-            
+
 
             area.Top.Set(0, 0f);
-            area.Width.Set(30, 0f);        
+            area.Width.Set(30, 0f);
             area.Height.Set(30, 0f);
 
             barFrame = new UIImage(ModContent.Request<Texture2D>("RealmOne/Assets/Textures/SquirmoLore1"));
@@ -65,7 +63,7 @@ namespace RealmOne.Common.UI
 
             if (!Main.dedServ)
             {
-                Scroll = new(); 
+                Scroll = new();
                 ScrollInterface = new();
                 ScrollInterface.SetState(Scroll);
             }

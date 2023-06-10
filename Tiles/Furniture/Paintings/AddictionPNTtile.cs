@@ -1,10 +1,10 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.DataStructures;
-using Terraria.ModLoader;
-using Terraria.ObjectData;
-using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
 
 namespace RealmOne.Tiles.Furniture.Paintings
 {

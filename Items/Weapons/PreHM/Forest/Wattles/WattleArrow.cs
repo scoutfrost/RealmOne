@@ -1,13 +1,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent.Creative;
-using Terraria.Audio;
-using Microsoft.Xna.Framework;
 
 namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
 {
-    public class WattleArrow: ModProjectile
+    public class WattleArrow : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -39,7 +36,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Plantera_Green, 0f, 0f, 0, default, 1f);
             Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.t_Lihzahrd, 0f, 0f, 0, default, 1f);
 
-                       Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity, ProjectileID.NettleBurstLeft, Projectile.damage, Projectile.knockBack, Main.myPlayer);
+            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity, ProjectileID.NettleBurstLeft, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
 
         }
@@ -72,4 +69,3 @@ namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
     }
 }
 
-       

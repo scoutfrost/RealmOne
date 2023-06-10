@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
-using Terraria.IO;
-using ReLogic.Content;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.GameContent;
+using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using RealmOne.NPCs.Enemies;
 
 namespace RealmOne.NPCs.Enemies.Forest
 {
@@ -29,8 +21,8 @@ namespace RealmOne.NPCs.Enemies.Forest
 
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-            { 
-                Velocity = 1f 
+            {
+                Velocity = 1f
             };
             glow = ModContent.Request<Texture2D>(Texture + "_Glow");
 
@@ -62,8 +54,8 @@ namespace RealmOne.NPCs.Enemies.Forest
 
         }
 
-       
-          public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+
+        public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Color color = GetAlpha(Color.White) ?? Color.White;
 
@@ -72,7 +64,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             Main.EntitySpriteDraw(glow.Value, NPC.Center - screenPos + new Vector2(0, 3), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.None, 0);
         }
-        
+
         public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)

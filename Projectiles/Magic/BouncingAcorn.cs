@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ModLoader;
-using Terraria.GameContent.Creative;
-using Terraria.ID;
-using Microsoft.Xna.Framework;
 using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Magic
 {
@@ -48,7 +42,7 @@ namespace RealmOne.Projectiles.Magic
                 {
                     Projectile.velocity.X = -oldVelocity.X;
                 }
-               
+
             }
             return false;
         }

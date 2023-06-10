@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RealmOne.Tiles.Furniture.Paintings;
 using Terraria;
-using Terraria.ModLoader;
-using Terraria.ID;
-using RealmOne.Tiles.Blocks;
 using Terraria.GameContent.Creative;
-using RealmOne.Tiles.Furniture.Paintings;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables.Furniture.Paintings
 {

@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.ObjectData;
-using Terraria.Enums;
-using Terraria.Chat;
 using Terraria.DataStructures;
-using Terraria.Localization;
+using Terraria.Enums;
 using Terraria.ID;
-using RealmOne.Items.Placeables;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
 
 namespace RealmOne.Tiles.Furniture
 {
-    public class NewtonCradleTile :ModTile
+    public class NewtonCradleTile : ModTile
     {
 
         public override void SetStaticDefaults()
@@ -51,6 +44,6 @@ namespace RealmOne.Tiles.Furniture
             }
         }
 
-       
+
     }
 }

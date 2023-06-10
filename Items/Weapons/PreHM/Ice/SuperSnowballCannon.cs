@@ -60,10 +60,10 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
                 Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
             }
 
-           
+
 
             return true;
-        }   
+        }
 
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
@@ -79,7 +79,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
             CreateRecipe()
             .AddIngredient(ItemID.SnowballCannon, 1)
             .AddIngredient(ItemID.IllegalGunParts, 1)
-            .AddIngredient(Mod,"LeadGunBarrel", 1)
+            .AddIngredient(Mod, "LeadGunBarrel", 1)
             .AddIngredient(Mod, "GizmoScrap", 25)
             .AddTile(TileID.Anvils)
             .Register();

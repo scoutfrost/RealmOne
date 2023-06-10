@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
-using Terraria.ID;
-using Humanizer;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Buffs;
+using Terraria;
 using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Global
 {
@@ -34,7 +28,7 @@ namespace RealmOne.Global
         {
             public bool thornsPoisoned;
 
-           
+
             public override void ModifyHitNPCWithItem(Item item, NPC target, ref NPC.HitModifiers modifiers)
             {
                 if (thornsPoisoned && !target.boss && target.lifeMax > 5)
@@ -70,11 +64,11 @@ namespace RealmOne.Global
 
 
 
-    
+
 }
 
 
 
 
-    
+
 

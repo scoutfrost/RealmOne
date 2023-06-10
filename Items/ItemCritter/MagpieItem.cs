@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
+﻿using RealmOne.NPCs.Critters;
 using Terraria;
-using Microsoft.Xna.Framework;
 using Terraria.ID;
-using Terraria.DataStructures;
-using RealmOne.NPCs.Critters;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.ItemCritter
 {
@@ -36,7 +29,7 @@ namespace RealmOne.Items.ItemCritter
         }
         public override bool? UseItem(Player player)
         {
-           NPC.NewNPC(player.GetSource_ItemUse(Item), (int)player.Center.X, (int)player.Center.Y, ModContent.NPCType<MagpieNPC>());
+            NPC.NewNPC(player.GetSource_ItemUse(Item), (int)player.Center.X, (int)player.Center.Y, ModContent.NPCType<MagpieNPC>());
             return true;
         }
 

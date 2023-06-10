@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
-using Terraria;
-using Terraria.ID;
-using Terraria.GameContent.Creative;
+﻿using RealmOne.Projectiles.Whip;
 using RealmOne.Rarities;
-using RealmOne.Projectiles.Whip;
+using Terraria;
+using Terraria.GameContent.Creative;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Weapons.PreHM.Forest
 {

@@ -1107,6 +1107,11 @@ Mods: {
 				// DisplayName: Addiction P N T
 				// Tooltip: ""
 			}
+
+			MusicNotePNT: {
+				// DisplayName: Music Note P N T
+				// Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -1407,6 +1412,8 @@ Mods: {
 			// NewtonCradleTile.MapEntry: Newton Cradle Tile
 			// MiniWattleBush.MapEntry: Mini Wattle Bush
 			// AddictionPNTtile.MapEntry: Addiction P N Ttile
+			// PiggyTile.MapEntry: Piggy Tile
+			// MusicNotePNTtile.MapEntry: Music Note P N Ttile
 		}
 
 		DamageClasses: {

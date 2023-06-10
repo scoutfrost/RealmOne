@@ -109,4 +109,4 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             return offset;
         }
     }
-}   
+}

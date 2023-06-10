@@ -1,9 +1,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent.Creative;
-using Terraria.Audio;
-using Microsoft.Xna.Framework;
 
 namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
 {
@@ -57,7 +54,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
             Main.dust[dust2].velocity *= 0.5f;
 
         }
-       
+
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Projectile.ai[0] = 1f;
@@ -70,4 +67,3 @@ namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
     }
 }
 
-       

@@ -1,11 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Common.Systems;
-using RealmOne.Projectiles.Magic;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -19,11 +16,11 @@ namespace RealmOne.Projectiles.Bullet
         {
             DisplayName.SetDefault("Lightbulb");
         }
-      //  private Vector2 flashoffset = Vector2.Zero;
+        //  private Vector2 flashoffset = Vector2.Zero;
 
-       // private Player Owner => Main.player[Projectile.owner];
+        // private Player Owner => Main.player[Projectile.owner];
 
-      //  private bool FullyUsed = false;
+        //  private bool FullyUsed = false;
 
         private static Asset<Texture2D> Spark;
 
@@ -60,11 +57,11 @@ namespace RealmOne.Projectiles.Bullet
 
             //  Projectile.Center = Owner.Center + flashoffset;
 
-            
+
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            
+
         }
         public override void Load()
         { // This is called once on mod (re)load when this piece of content is being loaded.
@@ -93,7 +90,7 @@ namespace RealmOne.Projectiles.Bullet
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore1").Type, 1.5f);
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore2").Type, 1.5f);
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore3").Type, 1.5f);
-            
+
         }
 
 

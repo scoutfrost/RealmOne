@@ -2,9 +2,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ModLoader;
-using System;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Common.Core
 {

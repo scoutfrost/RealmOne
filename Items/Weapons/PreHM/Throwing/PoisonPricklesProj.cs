@@ -1,9 +1,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent.Creative;
-using Terraria.Audio;
-using Microsoft.Xna.Framework;
 
 namespace RealmOne.Items.Weapons.PreHM.Throwing
 {
@@ -65,8 +62,7 @@ namespace RealmOne.Items.Weapons.PreHM.Throwing
             Projectile.netUpdate = true;
             Projectile.damage = 0;
         }
-      
+
     }
 }
 
-       

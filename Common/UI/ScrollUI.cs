@@ -1,13 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.RealmPlayer;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
-using System.Collections.Generic;
-
-using RealmOne.Common.Systems;
-using RealmOne.RealmPlayer;
 
 namespace RealmOne.Common.UI
 {
@@ -63,7 +61,7 @@ namespace RealmOne.Common.UI
 
             if (!Main.dedServ)
             {
-                Scroll = new(); 
+                Scroll = new();
                 ScrollInterface = new();
                 ScrollInterface.SetState(Scroll);
             }

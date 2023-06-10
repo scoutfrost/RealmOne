@@ -128,7 +128,7 @@ public class rorAudio : ModSystem
 
     static rorAudio()
     {
-    
+
         SFX_MetalSwing = new SoundStyle("RealmOne/Assets/Soundss/SFX_MetalSwing", (SoundType)0);
         SFX_Scroll = new SoundStyle("RealmOne/Assets/Soundss/SFX_Scroll", (SoundType)0);
         ElectricPulse = new SoundStyle("RealmOne/Assets/Soundss/ElectricPulse", (SoundType)0);

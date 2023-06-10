@@ -8,52 +8,52 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.PaperUI
 {
-	public class LovecraftPaper : ModItem
-	{
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("The World we live in - H.P Lovecraft"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+    public class LovecraftPaper : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("The World we live in - H.P Lovecraft"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 
-			Tooltip.SetDefault("Open a scroll of Lovecraft's Ancient Scripts.");
+            Tooltip.SetDefault("Open a scroll of Lovecraft's Ancient Scripts.");
 
-		}
+        }
 
-		public override void SetDefaults()
-		{
-			Item.width = 20;
-			Item.height = 20;
-			Item.rare = ModContent.RarityType<ModRarities>();
-			Item.maxStack = 1;
-			Item.UseSound = rorAudio.SFX_Scroll;
-			Item.useStyle = ItemUseStyleID.Shoot;
-			Item.useAnimation = 1;
-			Item.useTime = 1;
-			Item.autoReuse = false;
-			Item.reuseDelay = 29;
-			Item.noUseGraphic = true;
-		}
-		public override void AddRecipes()
-		{
-			CreateRecipe()
-				.AddIngredient(ModContent.ItemType<Parchment>(), 5)
-								.AddIngredient(ModContent.ItemType<EidolicInk>(), 5)
+        public override void SetDefaults()
+        {
+            Item.width = 20;
+            Item.height = 20;
+            Item.rare = ModContent.RarityType<ModRarities>();
+            Item.maxStack = 1;
+            Item.UseSound = rorAudio.SFX_Scroll;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.useAnimation = 1;
+            Item.useTime = 1;
+            Item.autoReuse = false;
+            Item.reuseDelay = 29;
+            Item.noUseGraphic = true;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ModContent.ItemType<Parchment>(), 5)
+                                .AddIngredient(ModContent.ItemType<EidolicInk>(), 5)
 
-				.AddTile(TileID.WorkBenches)
-				.Register();
-		}
+                .AddTile(TileID.WorkBenches)
+                .Register();
+        }
 
-		public override bool? UseItem(Player player)
-		{
-			if (player.GetModPlayer<Scrolly>().ShowScroll == false)
-			{
-				player.GetModPlayer<Scrolly>().ShowScroll = true;
-			}
-			else
-			{
-				player.GetModPlayer<Scrolly>().ShowScroll = false;
-			}
+        public override bool? UseItem(Player player)
+        {
+            if (player.GetModPlayer<Scrolly>().ShowScroll == false)
+            {
+                player.GetModPlayer<Scrolly>().ShowScroll = true;
+            }
+            else
+            {
+                player.GetModPlayer<Scrolly>().ShowScroll = false;
+            }
 
-			return base.UseItem(player);
-		}
-	}
+            return base.UseItem(player);
+        }
+    }
 }

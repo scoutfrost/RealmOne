@@ -2,10 +2,8 @@ using RealmOne.Common.Systems;
 using RealmOne.Rarities;
 using RealmOne.RealmPlayer;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace RealmOne.Items.PaperUI

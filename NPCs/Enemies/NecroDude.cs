@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Placeables;
-using RealmOne.Items.Weapons.PreHM.Throwing;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -32,7 +31,7 @@ namespace RealmOne.NPCs.Enemies
                 PortraitPositionXOverride = 0f,
                 PortraitPositionYOverride = 11f,
                 PortraitScale = 1.4f,
-                
+
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, drawModifier);
         }

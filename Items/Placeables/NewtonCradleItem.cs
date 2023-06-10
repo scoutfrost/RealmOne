@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
+﻿using RealmOne.Tiles.Furniture;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.Enums;
 using Terraria.ID;
-using Terraria.ObjectData;
-using Microsoft.Xna.Framework;
-using RealmOne.Tiles.Furniture;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables
 {
