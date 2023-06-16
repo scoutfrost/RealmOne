@@ -17,7 +17,7 @@ namespace RealmOne.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
 
-            player.endurance += 0.1f;
+            player.endurance += 0.05f;
 
             player.AddBuff(BuffID.WellFed, 15000);
 

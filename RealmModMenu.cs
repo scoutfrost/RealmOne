@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
 using ReLogic.Content;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ModLoader;
 
 namespace RealmOne
@@ -25,7 +27,7 @@ namespace RealmOne
 
         public override void OnSelected()
         {
-            //	SoundEngine.PlaySound(rorAudio.ModMenuClick);
+            	SoundEngine.PlaySound(rorAudio.ModMenuClick);
 
         }
 

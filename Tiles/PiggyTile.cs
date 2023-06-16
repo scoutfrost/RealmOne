@@ -30,7 +30,7 @@ namespace RealmOne.Tiles
 
             MineResist = 3f;
             MinPick = 20;
-
+            HitSound = rorAudio.OldGoldTink;
             DustType = DustID.DungeonPink;
             TileID.Sets.DisableSmartCursor[Type] = true;
 

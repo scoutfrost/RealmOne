@@ -153,27 +153,45 @@ Mods: {
 
 			ProtonTorchItem: {
 				DisplayName: Proton Torch
-				Tooltip: ""
+				Tooltip: "Creates electrical sparks when swung and placed"
 			}
 
 			BarrenBrew: {
 				DisplayName: Barren Brew
-				Tooltip: ""
+				Tooltip: '''
+				An environmentally friendly type of drink, not sure if you should drink it though
+				Gain Tangled Buff
+				'''
 			}
 
 			BreathePotion: {
 				DisplayName: Breathe Potion
-				Tooltip: ""
+				Tooltip: '''
+				Your lungs will thank you after 'drinking liquid air
+				Immune to suffocation due to lack of air in space
+				Increases jump speed and acceleration by 10%
+				These stats increase by +10% when in space
+				'''
 			}
 
 			Cigarette1: {
 				DisplayName: Cigarette
-				Tooltip: ""
+				Tooltip: '''
+				When you light cigarette...
+				Your life burns with it.
+				You gain 20% increased damage and weapon speed but no life regen nor pickup hearts
+
 			}
 
 			HellfireVodka: {
 				DisplayName: Hellfire Vodka
-				Tooltip: ""
+				Tooltip: '''
+				15% running speed, movement speed and acceleration
+				All weapons inflict OnFire
+				10% increased damage and knockback
+				-5 Defense
+				You are on fire!!!
+
 			}
 
 			LightbulbPotion: {
@@ -1050,92 +1068,96 @@ Mods: {
 		Buffs: {
 			MagnetBuff: {
 				DisplayName: Magnet Buff
-				Description: Mods.RealmOne.Buffs.MagnetBuff.Description
+				Description: Gift from the heavens!
 			}
 
 			TreeSapBuff: {
-				Description: Mods.RealmOne.Buffs.TreeSapBuff.Description
+				Description: Calming effect and 5% increased movement speed while in the forest
 				DisplayName: Tree Sap Buff
 			}
 
 			TraditionalCologneBuff: {
-				Description: Mods.RealmOne.Buffs.TraditionalCologneBuff.Description
+				Description: You smell like exotic moonglow and cold skybreeze!
 				DisplayName: Traditional Cologne Buff
 			}
 
 			ToastedNutBarBuff: {
-				Description: Mods.RealmOne.Buffs.ToastedNutBarBuff.Description
+				Description: 5% increased endurance and increase to all stats
 				DisplayName: Toasted Nut Bar Buff
 			}
 
 			TangledBuff: {
-				Description: Mods.RealmOne.Buffs.TangledBuff.Description
+				Description: Wrath of the vines grows in you, Greatly slows enemies and inflict poison
 				DisplayName: Tangled Buff
 			}
 
 			SaltySwig: {
-				Description: Mods.RealmOne.Buffs.SaltySwig.Description
+				Description: Strong flavour of absolute rum, pineapple, vanilla and spices, washed up!
 				DisplayName: Salty Swig
 			}
 
 			OverseerBuff: {
-				Description: Mods.RealmOne.Buffs.OverseerBuff.Description
+				Description: Increases crit chance by 4%+
 				DisplayName: Overseer Buff
 			}
 
 			OpticBuff: {
-				Description: Mods.RealmOne.Buffs.OpticBuff.Description
+				Description: 
 				DisplayName: Optic Buff
 			}
 
 			LightbulbBuff: {
-				Description: Mods.RealmOne.Buffs.LightbulbBuff.Description
+				Description: You are a lightbulb!
 				DisplayName: Lightbulb Buff
 			}
+			TreeSapBuff: {
+				Description: The power of rust!!
+				DisplayName: Brass Might
 
+			}
 			HellfireVodkaBuff: {
-				Description: Mods.RealmOne.Buffs.HellfireVodkaBuff.Description
+				Description: Prefered choice of alcohol from the one and only evil Satan
 				DisplayName: Hellfire Vodka Buff
 			}
 
 			HazardBuff: {
-				Description: Mods.RealmOne.Buffs.HazardBuff.Description
+				Description: 'You are vulnerable to damage from explosives!!!'
 				DisplayName: Hazard Buff
 			}
 
 			DungeonPendantBuff: {
-				Description: Mods.RealmOne.Buffs.DungeonPendantBuff.Description
+				Description: The charm empowers when you step foot into the dungeon!
 				DisplayName: Dungeon Pendant Buff
 			}
 
 			Splintered: {
-				Description: Mods.RealmOne.Buffs.Splintered.Description
+				Description: Ouch!!
 				DisplayName: Splintered
 			}
 
 			SharpHeat: {
-				Description: Mods.RealmOne.Buffs.SharpHeat.Description
+				Description: Burns the enemy with sharp heat, burns faster if their health is under 4
 				DisplayName: Sharp Heat
 			}
 
 			CigaretteBuff: {
-				Description: Mods.RealmOne.Buffs.CigaretteBuff.Description
+				Description: You're really feelin it right now
 				DisplayName: Cigarette Buff
 			}
 
 			BUNNINGSBUFF: {
-				Description: Mods.RealmOne.Buffs.BUNNINGSBUFF.Description
+				Description: GET THAT SHI DOWN IN YOUR MOUTH! NOTHIN BETTER THAN GOOD OLD BUNNINGS SNAG
 				DisplayName: B U N N I N G S B U F F
 			}
 
 			BreatheBuff: {
-				Description: Mods.RealmOne.Buffs.BreatheBuff.Description
+				Description: GET THAT SHI DOWN IN YOUR MOUTH! NOTHIN BETTER THAN GOOD OLD BUNNINGS SNAG
 				DisplayName: Breathe Buff
 			}
 
 			AltElectrified: {
 				DisplayName: Alt Electrified
-				Description: Mods.RealmOne.Buffs.AltElectrified
+				Description: ZAP!!
 			}
 		}
 
@@ -1259,7 +1281,7 @@ Mods: {
 			Inkling.DisplayName: Inkling
 			LightbulbBouncer.DisplayName: Lightbulb Bouncer
 			PossessedPiggy.DisplayName: Possessed Piggy
-			NecroDude.DisplayName: Necro Dude
+			NecroDude.DisplayName: Necromonical Envoy
 			FunnelWebSpider.DisplayName: Funnel Web Spider
 			HuntsmanSpider.DisplayName: Huntsman Spider
 			RedbackSpider.DisplayName: Redback Spider
@@ -1271,7 +1293,7 @@ Mods: {
 			Eye1.DisplayName: E-Eye
 
 			ArcheologistNPC: {
-				DisplayName: Archeologist N P C
+				DisplayName: Archeologist NPC
 
 				TownNPCMood: {
 					Content: I am content.
