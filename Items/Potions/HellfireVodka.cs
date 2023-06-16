@@ -1,4 +1,5 @@
 using RealmOne.Buffs;
+using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -39,7 +40,7 @@ namespace RealmOne.Items.Potions
             recipe.AddIngredient(ItemID.BottledWater, 1);
             recipe.AddIngredient(ItemID.HellstoneBar, 4);
             recipe.AddIngredient(ItemID.LavaBucket, 1);
-            recipe.AddIngredient(Mod, "Flamestone", 4);
+            recipe.AddIngredient(ModContent.ItemType<HellishMembrane>());
             recipe.AddTile(TileID.Bottles);
             recipe.Register();
         }

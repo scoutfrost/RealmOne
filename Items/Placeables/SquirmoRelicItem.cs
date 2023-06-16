@@ -22,7 +22,7 @@ namespace RealmOne.Items.Placeables
             Item.maxStack = 99;
             Item.rare = ItemRarityID.Master;
             Item.master = true; // This makes sure that "Master" displays in the tooltip, as the rarity only changes the item name color
-            Item.value = Item.buyPrice(gold: 20, silver: 50);
+            Item.value = Item.buyPrice(gold: 5, silver: 50);
             // Another shorthand method that will set the rarity and how much the item is worth.
         }
 

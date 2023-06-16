@@ -145,43 +145,43 @@ namespace RealmOne.GlobalNPCList
             if (npc.type == NPCID.Demon)
             {
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2)); // 4 and 1 is the chance, so 1 out of 4 chance of dropping it. And 2 is the amount you will probably get
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 4, 1, 2)); // 4 and 1 is the chance, so 1 out of 4 chance of dropping it. And 2 is the amount you will probably get
             }
 
             if (npc.type == NPCID.Hellbat)
             {
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 4, 1, 2));
             }
 
             if (npc.type == NPCID.LavaSlime)
             {
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 4, 1, 2));
             }
 
             if (npc.type == NPCID.FireImp)
             {
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 2));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 4, 1, 2));
             }
 
             if (npc.type == NPCID.BoneSerpentHead)
             {
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 3));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 4, 1, 3));
             }
 
             if (npc.type == NPCID.VoodooDemon)
             {
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 3));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 4, 1, 3));
             }
 
             if (npc.type == NPCID.Demon)
             {
 
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 4, 1, 3));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 4, 1, 3));
             }
 
             //Goblin Army
@@ -237,7 +237,7 @@ namespace RealmOne.GlobalNPCList
             if (npc.type == NPCID.WallofFlesh)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Crimcore>(), 2, 1, 12));
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Flamestone>(), 2, 1, 12));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 2, 1, 12));
             }
 
             if (npc.type == NPCID.KingSlime)

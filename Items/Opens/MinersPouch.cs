@@ -18,8 +18,7 @@ namespace RealmOne.Items.Opens
             Tooltip.SetDefault("<right> for a little pouchful of mining necessities"
                 + "\nBelow is the list of items you can get in the bag"
              + $"\n[i:{ItemID.CopperOre}][i:{ItemID.IronOre}][i:{ItemID.TinOre}][i:{ItemID.LeadOre}][i:{ItemID.GoldOre}][i:{ItemID.PlatinumOre}]"
-             + $"\n[i:{ItemID.Bomb}][i:{ItemID.Dynamite}][i:{ItemID.Torch}][i:{ItemID.MiningPotion}][i:{ItemID.SpelunkerPotion}]"
-             + $"\n[i:{ModContent.ItemType<ScavengerSteel>()}][i:{ModContent.ItemType<GizmoScrap>()}]");
+             + $"\n[i:{ItemID.Bomb}][i:{ItemID.Dynamite}][i:{ItemID.Torch}][i:{ItemID.MiningPotion}][i:{ItemID.SpelunkerPotion}]");
         }
 
         public override void SetDefaults()
@@ -41,17 +40,19 @@ namespace RealmOne.Items.Opens
 
             itemLoot.Add(ItemDropRule.Common(ItemID.CopperOre, 4, 15, 20));
             itemLoot.Add(ItemDropRule.Common(ItemID.IronOre, 4, 15, 20));
+            itemLoot.Add(ItemDropRule.Common(ItemID.SilverOre, 4, 15, 20));
+            itemLoot.Add(ItemDropRule.Common(ItemID.TungstenOre, 4, 15, 20));
+
             itemLoot.Add(ItemDropRule.Common(ItemID.TinOre, 4, 15, 20));
             itemLoot.Add(ItemDropRule.Common(ItemID.LeadOre, 4, 15, 20));
             itemLoot.Add(ItemDropRule.Common(ItemID.GoldOre, 4, 15, 20));
             itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumOre, 4, 15, 20));
             itemLoot.Add(ItemDropRule.Common(ItemID.Torch, 4, 20, 26));
-            itemLoot.Add(ItemDropRule.Common(ItemID.MiningPotion, 4, 2, 3));
+            itemLoot.Add(ItemDropRule.Common(ItemID.MiningPotion, 4, 2, 4));
             itemLoot.Add(ItemDropRule.Common(ItemID.Bomb, 4, 8, 10));
             itemLoot.Add(ItemDropRule.Common(ItemID.Dynamite, 4, 4, 6));
-            itemLoot.Add(ItemDropRule.Common(ItemID.SpelunkerPotion, 4, 8, 10));
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<GizmoScrap>(), 4, 3, 4));
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ScavengerSteel>(), 4, 3, 4));
+            itemLoot.Add(ItemDropRule.Common(ItemID.SpelunkerPotion, 4, 2, 4));
+           
 
         }
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

@@ -22,7 +22,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
             Item.material = true;
             Item.width = 20;
             Item.height = 20;
-            Item.value = Item.buyPrice(silver: 50);
+            Item.value = Item.buyPrice(silver: 19);
             Item.rare = ItemRarityID.Green;
             Item.maxStack = 999;
 

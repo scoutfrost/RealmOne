@@ -19,10 +19,9 @@ namespace RealmOne.Items.Misc.EnemyDrops
 
         public override void SetDefaults()
         {
-            Item.material = true;
             Item.width = 20;
             Item.height = 20;
-            Item.value = Item.buyPrice(silver: 1);
+            Item.value = Item.buyPrice(silver: 2);
             Item.rare = ItemRarityID.Green;
             Item.maxStack = 999;
 

@@ -29,6 +29,7 @@ namespace RealmOne.Projectiles.Whip
             Projectile.tileCollide = false;
             Projectile.ownerHitCheck = true; // This prevents the projectile from hitting through solid tiles.
             Projectile.extraUpdates = 1;
+            Projectile.scale = 1f;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = -1;
             Projectile.WhipSettings.Segments = 10;

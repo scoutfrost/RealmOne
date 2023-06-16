@@ -46,7 +46,7 @@ namespace RealmOne.Items.Weapons.Melee
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bone, 50);
             recipe.AddIngredient(ItemID.GoldBar, 40);
-            recipe.AddIngredient(Mod, "Flamestone", 15);
+            recipe.AddIngredient(Mod, "HellishMembrane", 15);
             recipe.AddTile(TileID.Sawmill);
             recipe.Register();
         }

@@ -1,4 +1,5 @@
 ﻿using RealmOne.Tiles;
+using RealmOne.Tiles.Furniture;
 using RealmOne.Tiles.PlantTiles;
 using Terraria;
 using Terraria.GameContent.Creative;
@@ -25,7 +26,7 @@ namespace RealmOne.Items.Placeables
             Item.useTime = 10;
             Item.autoReuse = true;
             Item.consumable = true;
-            Item.createTile = ModContent.TileType<TractorTile>();
+            Item.createTile = ModContent.TileType<ChickenCoopTile>();
             Item.width = 24;
             Item.height = 24;
             Item.maxStack = 99;

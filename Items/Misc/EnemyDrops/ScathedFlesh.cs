@@ -21,7 +21,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
             Item.width = 32;
             Item.height = 32;
             Item.value = 20000;
-            Item.rare = ItemRarityID.Orange;
+            Item.rare = ItemRarityID.Green;
             Item.maxStack = 999;
 
         }
