@@ -4,6 +4,7 @@ Mods: {
 			ExampleTip0: The Archeologist is a wise but lost man, find him in snowbanks!
 			ExampleTip1: Cthulhu in Ohio
 			ExampleTip2: The soil feels moist and dire. Defeat Squirmo, the sludgy scavenger of the soil!
+			ExampleTip3: Fun Fact: Zero saved the mod when magma had lost all the code. He is the saviour!
 			DisabledExampleTip: Ambabatakum.
 		}
 
@@ -78,7 +79,24 @@ Mods: {
 
 			EntropyMedallion: {
 				DisplayName: Entropy Medallion
-				Tooltip: ""
+				Tooltip: '''
+						 [c/9a0e2a:Toggles Transcendental Entropy Mode.]
+						 'He always knew there was someone stupid enough to use this'"
+						 'Only useable for the one that desires utter control of the universe'
+						 Only available in Master Mode!
+						 Changes the way you play Terraria.
+						 Makes enemies way more stronger (No AI Changes)
+						 Bosses are now as strong as Cthulhu originally deemed them to be
+						 Healing potions take longer to re consume them
+						 Better loot and exclusive powerful drops
+						 Shop prices are as valuable as Lay's Chips LUL
+						 Realms are now more difficult and the enemies of each realm are harder!
+						 Traps and fall damage now do ridiculous amount of damage!
+						 Life Crystals only heal for 10 health now LMFAO HEEHEEHAW
+						 Lovecraftian Bosses are universally destructive!!11!!1
+						 'I've always wondered how far you will go, pathetic!'
+						 **TEST ITEM!! DOES NOT FULLY WORK**
+						 '''
 			}
 
 			HeavenMagnet: {
@@ -180,6 +198,7 @@ Mods: {
 				When you light cigarette...
 				Your life burns with it.
 				You gain 20% increased damage and weapon speed but no life regen nor pickup hearts
+				'''
 
 			}
 
@@ -191,172 +210,269 @@ Mods: {
 				10% increased damage and knockback
 				-5 Defense
 				You are on fire!!!
-
+				'''
 			}
 
 			LightbulbPotion: {
 				DisplayName: Lightbulb Potion
-				Tooltip: ""
+				Tooltip: ''' 
+				'An ultra bright fluid that consists of large groups of luminosity minerals'
+				'It's safe to drink, however it feels overly warm'
+				'Gives the player a bright aura that provides warmth and reduces enemy aggression'
+				The aura gets brighter the deeper one goes!
+				'''
 			}
 
 			TraditionalCologne: {
 				DisplayName: Traditional Cologne
-				Tooltip: ""
+				Tooltip: '''
+						 "A classic bottle of fine moonglow and skybreeze liquid
+						 'Using the cologne provides you with a distinct aroma'
+						 'Gives the player cheaper shop prices, increased defense by 3+, reduced enemy aggression and 8% increased movement speed '
+						 '''
 			}
 
 			TheRedAxe: {
 				DisplayName: The Red Axe
-				Tooltip: ""
+				Tooltip: '''
+						 'A weapon, a tool? Who matters, all we know is that it's red and full of magic!'
+						 'Vanquish those annoying pests while you chop down some lumber!'
+						 '''
 			}
 
 			PompeiisPull: {
 				DisplayName: Pompeiis Pull
-				Tooltip: ""
+				Tooltip: '''
+						 Grapple to Italy's Doomsday, and back...
+						 '''
 			}
 
 			CloudDiggingClaw: {
 				DisplayName: Cloud Digging Claw
-				Tooltip: ""
+				Tooltip: '''
+						 'Hand Crafted from the soft fluffy clouds of the sky'
+						 'Light as the clouds'
+						 '''
 			}
 
 			EyePick: {
 				DisplayName: Eye Pick
-				Tooltip: ""
+				Tooltip: '''
+						 'It stares at you while you dig, weird.'
+						 Capable of mining Old Gold! [i:{ModContent.ItemType<OldGoldOre>()}]
+						 '''
 			}
 
 			ImpactPickaxe: {
 				DisplayName: Impact Pickaxe
-				Tooltip: ""
+				Tooltip: '''
+						 'Shoots out thunder zaps randomly'
+						 '''
 			}
 
 			OldGoldPick: {
 				DisplayName: Old Gold Pick
-				Tooltip: ""
+				Tooltip: '''
+						 'Dig with divinity'
+						 'Sells measily well!'
+						 '''
 			}
 
 			BattleboatBomb: {
 				DisplayName: Battleboat Bomb
-				Tooltip: ""
+				Tooltip: '''
+						 'Without a Cannon what's the use of this explosive'
+						 'It has an extremely fast detonation time, so its either you die or you die'
+						 Self Explode yourself, dealing huge damage to enemies and you
+						 'Would this classify as Euthanism?'
+						 '''
 			}
 
 			BotanicLogLauncher: {
 				DisplayName: Botanic Log Launcher
-				Tooltip: ""
+				Tooltip: '''
+						 Hold out a heavy and floral cannon that shoots oversized bouncing flower logs!
+						 Theres a family of worms living in it!
+						 Must reload the launcher after each shot.
+						 '''
 			}
 
 			C4: {
 				DisplayName: C4
-				Tooltip: ""
+				Tooltip: '''
+						 Boom!
+						 This shits kinda dangerous...
+						 '''
 			}
 
 			CastawayRum: {
 				DisplayName: Castaway Rum
-				Tooltip: ""
+				Tooltip: '''
+						 A washed up old bottle of strong pineapple, vanilla, coffee beans and paprika.
+						 'The bottle explodes into explosive, sharp and expensive pieces of glass'
+						 Right click to drink the rum, granting the Salty Swig buff, an exlusive buff to Drink-Related Items
+						 Salty Swig buff grants 8% increased weapon speed and movement speed but you have -5 defence
+						 'Surprised there's no fish or sand in the bottle!'
+						 '''
 			}
 
 			CopperFragGrenade: {
 				DisplayName: Copper Frag Grenade
-				Tooltip: ""
+				Tooltip: '''
+						 A commonly used hand thrown explosive, wrapped around in thick copper plating
+						 'Best used combat situations. It's not something you want to juggle with'
+						 With Frag Grenades, let the grenade cook by throwing it on the floor, just not on enemy impact, making the grenade penetrate and explode in a larger radius'
+						 '''
 			}
 
 			ScavengerSawblade: {
 				DisplayName: Scavenger Sawblade
-				Tooltip: ""
+				Tooltip: '''
+						 Throws a unstable and explosive sawblade
+						 Right click to detonate the sawblade into unstable sparks of electricity
+						 'Recommended to hold the sawblade in the middle not the blades!'
+						 'I'm not even sure how this is safe'
+						 '''
 			}
 
 			TheGardenGlove: {
 				DisplayName: The Garden Glove
-				Tooltip: ""
+				Tooltip: '''
+						 Nah nothing here
+						 '''
 			}
 
 			TinFragGrenade: {
 				DisplayName: Tin Frag Grenade
-				Tooltip: ""
+				Tooltip: '''
+						 A commonly used hand thrown explosive, wrapped around in thick copper plating
+						 'Best used combat situations. It's not something you want to juggle with'
+						 With Frag Grenades, let the grenade cook by throwing it on the floor, just not on enemy impact, making the grenade penetrate and explode in a larger radius'
+						 '''
 			}
 
 			Type24StickNade: {
 				DisplayName: Type24 Stick Nade
-				Tooltip: ""
+				Tooltip: '''
+						 Type 24 hand held stick grenade, used in long and precautious situations.
+						 'Best used in long distance relationships'
+						 Best use of the Stick Grenade is to throw it high in the air, then catch it and let it blow up in your face :)
+						 '''
 			}
 
 			CrashLandChainGun: {
 				DisplayName: Crash Land Chain Gun
-				Tooltip: ""
+				Tooltip: '''
+						 Shoots rapid fire Meteors!
+						 'Not to be mistaken from the Meteor Staff!'
+						 40% chance to not consume Fallen Stars
+						 Uses Fallen Stars
+						 '''
 			}
 
 			NebulaniNox: {
 				DisplayName: Nebulani Nox
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			PhantomPumpkin: {
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 				DisplayName: Phantom Pumpkin
 			}
 
 			PridefulMoraleStaff: {
 				DisplayName: Prideful Morale Staff
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			TheDreamer: {
 				DisplayName: The Dreamer
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			CoconutHarp: {
 				DisplayName: Coconut Harp
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			CorneaScepter: {
 				DisplayName: Cornea Scepter
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			MagicGobBag: {
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 				DisplayName: Magic Gob Bag
 			}
 
 			WaterQuarry: {
 				DisplayName: Water Quarry
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			HeatedXiphoss: {
 				DisplayName: Heated Xiphoss
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			ScarecrowsCut: {
 				DisplayName: Scarecrows Cut
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			ShatteredGemBlade: {
 				DisplayName: Shattered Gem Blade
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			UnstableWireBlade: {
 				DisplayName: Unstable Wire Blade
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			FoliageFury: {
 				DisplayName: Foliage Fury
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			Overgrowth: {
 				DisplayName: Overgrowth
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			DoubleSidedSquirm: {
 				DisplayName: Double Sided Squirm
-				Tooltip: ""
+				Tooltip: '''
+						 
+						 '''
 			}
 
 			GlobGun: {
