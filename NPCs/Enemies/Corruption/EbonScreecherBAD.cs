@@ -1,0 +1,129 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using Terraria.ID;
+using Terraria.ModLoader.Utilities;
+using RealmOne.Items.Misc.EnemyDrops;
+using Terraria.GameContent.ItemDropRules;
+using System.Drawing.Text;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace RealmOne.NPCs.Enemies.Corruption
+{
+    public class EbonScreecherBAD : ModNPC
+    {
+        public override void SetStaticDefaults()
+        {
+           
+
+            NPCID.Sets.TrailingMode[NPC.type] = 0;
+            NPCID.Sets.TrailCacheLength[NPC.type] = 10;
+
+            Main.npcFrameCount[NPC.type] = 4;
+
+        }
+
+        public override void SetDefaults()
+        {
+
+            NPC.width = 26;
+            NPC.height = 28;
+            NPC.height = 38;
+            NPC.defense = 7;
+            NPC.damage = 20;
+            NPC.lifeMax = 160;
+            NPC.aiStyle = 44;
+            NPC.damage = 10;
+            NPC.noGravity = true;
+            NPC.noTileCollide = true;
+            AIType = NPCID.GiantFlyingAntlion;
+            NPC.value = Item.buyPrice(0, 2, 50, 5);
+            NPC.knockBackResist = 0.50f;
+           
+
+            NPC.HitSound = SoundID.ChesterOpen;
+            NPC.DeathSound = SoundID.NPCDeath38;
+
+
+        }
+      
+        public override void FindFrame(int frameHeight)
+        {
+            NPC.frameCounter += 0.19f;
+            NPC.frameCounter %= Main.npcFrameCount[NPC.type];
+            int frame = (int)NPC.frameCounter;
+            NPC.frame.Y = frame * frameHeight;
+        }
+        public override void AI()
+        {
+            Lighting.AddLight(NPC.position, r: 0.1f, g:0.8f, b:0.1f);
+            NPC.velocity *= 1.006f;
+            Player target = Main.player[NPC.target];
+            NPC.spriteDirection = NPC.direction;
+
+
+            Vector2 center = NPC.Center;
+            for (int j = 0; j < 120; j++)
+            {
+                int dust1 = Dust.NewDust(center, 0, 0, 74, 0f, 0f, 100, default, 0.8f);
+                Main.dust[dust1].noGravity = true;
+                Main.dust[dust1].velocity = Vector2.Zero;
+                Main.dust[dust1].noLight = false;       
+            }
+
+            if (++NPC.ai[2] % 130 == 0)
+            {
+               int p=  Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ProjectileID.CursedFlameFriendly, 8, 0, Main.myPlayer, 0, 0);
+                Main.projectile[p].scale = 0.5f;
+                Main.projectile[p].friendly = false;
+                Main.projectile[p].hostile = true;
+
+
+            }
+
+        }
+        public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Vector2 drawOrigin = NPC.frame.Size() / 2;
+            var effects = NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+            return true;
+        }
+        public override void HitEffect(NPC.HitInfo hit)
+        {
+            if (NPC.life <= 0)
+            {
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
+
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore2").Type, 1f);
+
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore3").Type, 1.3f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore3").Type, 1.3f);
+
+
+
+            }
+
+            for (int k = 0; k < 15; k++)
+            {
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptionThorns);
+            }
+           
+
+
+
+        }
+
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 4, 1, 2));
+            
+        }
+    }
+}

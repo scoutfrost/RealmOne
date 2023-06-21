@@ -1580,7 +1580,7 @@ Mods: {
 
 			MagmaBody: {
 				// DisplayName: Magma Body
-				// Tooltip: ""
+				// Tooltip: Hot cape fr
 			}
 
 			MagmaHead: {
@@ -1590,7 +1590,7 @@ Mods: {
 
 			MagmaLegs: {
 				// DisplayName: Magma Legs
-				// Tooltip: ""
+				// Tooltip: Sloppy
 			}
 
 			AcornSprinterB: {
@@ -1616,6 +1616,91 @@ Mods: {
 			FunnelWebSpiderItem: {
 				// DisplayName: Caught FunnelWeb Spider
 				// Tooltip: ""
+			}
+
+			SpiderNet: {
+				// Tooltip: ""
+				// DisplayName: Spider Net
+			}
+
+			NewtonCradleItem: {
+				// Tooltip: ""
+				// DisplayName: Newton Cradle Item
+			}
+
+			MiniWattleBushItem: {
+				// Tooltip: ""
+				// DisplayName: Mini Wattle Bush Item
+			}
+
+			Wattle: {
+				// Tooltip: ""
+				// DisplayName: Wattle
+			}
+
+			PoisonPrickles: {
+				// Tooltip: ""
+				// DisplayName: Poison Prickles
+			}
+
+			SuperSnowballCannon: {
+				// Tooltip: ""
+				// DisplayName: Super Snowball Cannon
+			}
+
+			WattleBow: {
+				// Tooltip: ""
+				// DisplayName: Wattle Bow
+			}
+
+			AcornWand: {
+				// Tooltip: ""
+				// DisplayName: Acorn Wand
+			}
+
+			IchorGlobScepter: {
+				// Tooltip: ""
+				// DisplayName: Ichor Glob Scepter
+			}
+
+			PlatWarAxe: {
+				// Tooltip: ""
+				// DisplayName: Plat War Axe
+			}
+
+			GoldWarAxe: {
+				// Tooltip: ""
+				// DisplayName: Gold War Axe
+			}
+
+			MusicNotePNT: {
+				// Tooltip: ""
+				// DisplayName: Music Note P N T
+			}
+
+			AddictionPNT: {
+				// Tooltip: ""
+				// DisplayName: Addiction P N T
+			}
+
+			ScathedFlesh: {
+				// Tooltip: ""
+				// DisplayName: Scathed Flesh
+			}
+
+			InfectedViscus: {
+				// Tooltip: ""
+				// DisplayName: Infected Viscus
+			}
+
+			HellishMembrane: {
+				// Tooltip: ""
+				// DisplayName: Hellish Membrane
+			}
+
+			BUNNINGSSNAG: {
+				// Tooltip: ""
+				// DisplayName: B U N N I N G S S N A G
 			}
 		}
 
@@ -1655,7 +1740,10 @@ Mods: {
 				// DisplayName: Overseer Buff
 			}
 
-			// OpticBuff.Description: DisplayName: Optic Buff
+			OpticBuff: {
+				// Description: DisplayName: Optic Buff
+				// DisplayName: Optic Buff
+			}
 
 			LightbulbBuff: {
 				// Description: You are a lightbulb!
@@ -1705,6 +1793,21 @@ Mods: {
 			AltElectrified: {
 				// DisplayName: Alt Electrified
 				// Description: ZAP!!
+			}
+
+			BrassMight: {
+				// Description: Mods.RealmOne.Buffs.BrassMight.Description
+				// DisplayName: Brass Might
+			}
+
+			WineBuff: {
+				// Description: Mods.RealmOne.Buffs.WineBuff.Description
+				// DisplayName: Wine Buff
+			}
+
+			BeerBuff: {
+				// Description: Mods.RealmOne.Buffs.BeerBuff.Description
+				// DisplayName: Beer Buff
 			}
 		}
 
@@ -1802,6 +1905,12 @@ Mods: {
 			// WoodenTrainProjectile.DisplayName: Wooden Train Projectile
 			// JellySpark.DisplayName: Jelly Spark
 			// LightbulbBullet.DisplayName: Lightbulb Bullet
+			// IchorGlobSmall.DisplayName: Ichor Glob Small
+			// IchorGlob.DisplayName: Ichor Glob
+			// BouncingAcorn.DisplayName: Bouncing Acorn
+			// PoisonPricklesProj.DisplayName: Poison Prickles Proj
+			// WattleArrowBase.DisplayName: Wattle Arrow Base
+			// WattleArrow.DisplayName: Wattle Arrow
 		}
 
 		NPCs: {
@@ -1841,6 +1950,8 @@ Mods: {
 			// Espider1.DisplayName: E-Spider
 			// Eye1.DisplayName: E-Eye
 			// TumblingVulgar.DisplayName: Tumbling Vulgar
+			// EbonScreecher.DisplayName: Ebon Screecher
+			// EbonScreecherBAD.DisplayName: Aggressive Ebon Screecher
 
 			ArcheologistNPC: {
 				// DisplayName: Archeologist NPC
@@ -1887,6 +1998,8 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 			}
+
+			// MangoBat.DisplayName: Mango Bat
 		}
 
 		Tiles: {
@@ -1898,6 +2011,13 @@ Mods: {
 			// StoneOvenTilee.MapEntry: Stone Oven Tilee
 			// TatteredBarrel.MapEntry: Tattered Barrel
 			// ProtonTorch.MapEntry: Proton Torch
+			// MiniWattleBush.MapEntry: Mini Wattle Bush
+			// PiggyTile.MapEntry: Piggy Tile
+			// MusicNotePNTtile.MapEntry: Music Note P N Ttile
+			// AddictionPNTtile.MapEntry: Addiction P N Ttile
+			// NewtonCradleTile.MapEntry: Newton Cradle Tile
+			// ChickenCoopTile.MapEntry: Chicken Coop Tile
+			// Banners.MapEntry: Banners
 		}
 
 		DamageClasses: {
