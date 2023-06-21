@@ -668,13 +668,9 @@ Mods: {
 			}
 
 			MagpieItem: {
-				DisplayName: Magpie Item
-				Tooltip: ""
 			}
 
 			ThornyDevilItem: {
-				DisplayName: Thorny Devil Item
-				Tooltip: ""
 			}
 
 			Wattle: {
@@ -711,6 +707,26 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Hellish Membrane
 			}
+
+			FunnelWebSpiderItem: {
+			}
+
+			HuntsmanSpiderItem: {
+			}
+
+			RedbackSpiderItem: {
+			}
+
+			SpiderNet: {
+				DisplayName: Spider Net
+				Tooltip: ""
+			}
+
+			AcornSprinterB: {
+			}
+
+			AcornStiltB: {
+			}
 		}
 
 		Buffs: {
@@ -735,8 +751,7 @@ Mods: {
 			OverseerBuff: {
 			}
 
-			OpticBuff: {
-			}
+			OpticBuff.DisplayName: Optic Buff
 
 			LightbulbBuff: {
 			}
@@ -772,6 +787,16 @@ Mods: {
 				DisplayName: Brass Might
 				Description: Mods.RealmOne.Buffs.BrassMight.Description
 			}
+
+			BeerBuff: {
+				DisplayName: Beer Buff
+				Description: Mods.RealmOne.Buffs.BeerBuff.Description
+			}
+
+			WineBuff: {
+				DisplayName: Wine Buff
+				Description: Mods.RealmOne.Buffs.WineBuff.Description
+			}
 		}
 
 		Projectiles: {
@@ -783,21 +808,16 @@ Mods: {
 			PoisonPricklesProj.DisplayName: Poison Prickles Proj
 		}
 
-		NPCs: {
-			ArcheologistNPC: {
-				TownNPCMood: {
-				}
-			}
-
-			BoundArcheologist: {
-				TownNPCMood: {
-				}
-			}
-
-			MagpieNPC.DisplayName: Magpie N P C
-			ThornyDevil.DisplayName: Thorny Devil
-			MangoBat.DisplayName: Mango Bat
+		ArcheologistNPC: {
 		}
+
+		TownNPCMood: {
+		}
+
+		BoundArcheologist: {
+		}
+
+		NPCs.MangoBat.DisplayName: Mango Bat
 
 		Tiles: {
 			NewtonCradleTile.MapEntry: Newton Cradle Tile
@@ -806,6 +826,7 @@ Mods: {
 			PiggyTile.MapEntry: Piggy Tile
 			MusicNotePNTtile.MapEntry: Music Note P N Ttile
 			ChickenCoopTile.MapEntry: Chicken Coop Tile
+			Banners.MapEntry: Banners
 		}
 
 		DamageClasses: {

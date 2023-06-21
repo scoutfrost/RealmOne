@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Earth Emerald"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Earth Emerald"); 
             Tooltip.SetDefault("'If the Earth was shrunk into a gem'"
               + "\n25% increased tool and weapon speed"
               + "\nSpelunker, Night Owl, Shine buffs"
@@ -32,7 +32,7 @@ namespace RealmOne.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-
+            
             if (Main.dayTime)
             {
                 player.GetAttackSpeed(DamageClass.Generic) += 0.5f;
@@ -40,7 +40,10 @@ namespace RealmOne.Items.Accessories
             }
 
             else
-                player.GetDamage(DamageClass.Generic) += 0.3f;
+            {
+                player.GetDamage(DamageClass.Generic) += 0.25f;
+                player.nightVision = true;
+            }
             return;
         }
         public override void AddRecipes()

@@ -11,7 +11,7 @@ namespace RealmOne.Items.BossSummons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Money Vase"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Money Vase"); 
             Tooltip.SetDefault("'Why you takin allat money for kid?'"
                 + "\n'Your bank account finna be empty after using this dawg'"
                 + "\nSummons The Possessed Piggy Bank");

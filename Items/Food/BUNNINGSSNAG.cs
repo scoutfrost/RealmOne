@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using RealmOne.Buffs;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,6 +19,8 @@ namespace RealmOne.Items.Food
                 "\r\n10% increased running speed" +
                 "\r\nImmunity to Poison, Weak and Confused.");
 
+            Main.RegisterItemAnimation(Type, new DrawAnimationVertical(int.MaxValue, 3));
+            ItemID.Sets.IsFood[Type] = true;
 
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
@@ -51,17 +54,7 @@ namespace RealmOne.Items.Food
 
 
 
-        public override void AddRecipes()
-        {
-            CreateRecipe(2)
-             .AddIngredient(ItemID.Acorn, 2)
-                          .AddIngredient(ItemID.GrassSeeds, 2)
-
-            .AddTile(TileID.Furnaces)
-            .Register();
-
-
-        }
+        
 
     }
 }

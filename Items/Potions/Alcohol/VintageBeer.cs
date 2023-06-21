@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using RealmOne.Buffs.AlcoholBuffs;
+using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,7 +13,7 @@ namespace RealmOne.Items.Potions.Alcohol
             // DisplayName.SetDefault("Limetwist Rum"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             /* Tooltip.SetDefault("A slightly tangy but frothy rum"
             + "\nGives the Limetwist Rum Buff"
-            + "\nIgnores 3 points of enemy defence, increasing endurance by 10% but decreased weapon speed by 17%"
+            + "\nIgnores 3 points of enemy defence, increasing endurance by 10% but decreased weapon speed by 15%"
                         + $"\nIngreients: [i:{ItemID.Lemon}], [i:{ItemID.Grapes}] [i:{ItemID.LimeKelp}]"); */
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
@@ -32,7 +33,7 @@ namespace RealmOne.Items.Potions.Alcohol
             Item.UseSound = SoundID.Item3;
             Item.consumable = true;
             Item.buffType = BuffID.Ironskin;
-            //	Item.buffType = ModContent.BuffType<BeerBuff>();
+            	Item.buffType = ModContent.BuffType<BeerBuff>();
             Item.buffTime = 10000;
         }
 

@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Fresh Seaweed"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Fresh Seaweed"); 
             Tooltip.SetDefault("'Way too salty for my liking'"
                 + "\n'Can be dried and wrapped up in sushi!'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
@@ -18,7 +18,6 @@ namespace RealmOne.Items.Misc
 
         public override void SetDefaults()
         {
-            Item.material = true;
             Item.width = 20;
             Item.height = 20;
             Item.rare = ItemRarityID.Green;

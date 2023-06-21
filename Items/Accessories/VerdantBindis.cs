@@ -11,8 +11,8 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Verdant Bindis"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("3+ Base Damage on all weapons"
+            DisplayName.SetDefault("Verdant Bindis"); 
+            Tooltip.SetDefault("2+ Base Damage on all weapons"
                  + "\nYou are poisoned when equipping this, I mean you're carrying around Poisonous Bindis? :skull:");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

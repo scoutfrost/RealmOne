@@ -25,7 +25,6 @@ namespace RealmOne.Items.Misc.EnemyDrops
 
         public override void SetDefaults()
         {
-            Item.material = true;
             Item.width = 20;
             Item.height = 20;
             Item.value = Item.buyPrice(0,0,2,14);

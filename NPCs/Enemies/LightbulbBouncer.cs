@@ -83,18 +83,13 @@ namespace RealmOne.NPCs.Enemies
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
-            // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the spawning conditions of this NPC that is listed in the bestiary.
                    BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
 
-				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("Light is super important, especially when its night, but when these deceptive floating bulbs are around, you know they're up to no good."),
 
-				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
-				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
-				// so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
+				
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
@@ -138,11 +133,8 @@ namespace RealmOne.NPCs.Enemies
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-            // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
-            // Common use is applying buffs/debuffs:
-
+           
             int buffType = BuffID.Blackout;
-            // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
             int timeToAdd = 2 * 60; //This makes it 5 seconds, one second is 60 ticks
             target.AddBuff(buffType, timeToAdd);

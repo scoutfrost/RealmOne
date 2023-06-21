@@ -36,7 +36,7 @@ namespace RealmOne.NPCs.Enemies.Impact
             NPC.height = 15;
             NPC.damage = 15;
             NPC.defense = 1;
-            NPC.lifeMax = 75;
+            NPC.lifeMax = 80;
             NPC.value = Item.buyPrice(0, 0, 4, 55);
             NPC.aiStyle = NPCAIStyleID.DemonEye;
             NPC.HitSound = SoundID.NPCHit1;

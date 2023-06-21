@@ -50,7 +50,6 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
 
         public override Color? GetAlpha(Color lightColor)
         {
-            // Aside from SetDefaults, when making a copy of a vanilla weapon you may have to hunt down other bits of code. This code makes the item draw in full brightness when dropped.
             return Color.White;
         }
 

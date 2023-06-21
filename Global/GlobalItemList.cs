@@ -98,7 +98,7 @@ namespace RealmOne.Global
 
 
 
-
+            
 
 
             //Pre-Hardmode Weapons
@@ -273,6 +273,21 @@ namespace RealmOne.Global
             if (item.type == ItemID.TerraBlade) item.damage = 150;
             if (item.type == ItemID.TerraBlade) item.useTime = 12;
             if (item.type == ItemID.TerraBlade) item.shootSpeed = 40;
+
+            //Eclipse
+            if (item.type == ItemID.BrokenHeroSword) item.damage = 80;
+            if (item.type == ItemID.BrokenHeroSword) item.useTime = 20;
+            if (item.type == ItemID.BrokenHeroSword) item.useAnimation = 20;
+            if (item.type == ItemID.BrokenHeroSword) item.crit = 6;
+            if (item.type == ItemID.BrokenHeroSword) item.useStyle = ItemUseStyleID.Swing;
+            if (item.type == ItemID.BrokenHeroSword) item.DamageType = DamageClass.Melee;
+            if (item.type == ItemID.BrokenHeroSword) item.knockBack = 2f;
+            if (item.type == ItemID.BrokenHeroSword) item.autoReuse = true;
+            if (item.type == ItemID.BrokenHeroSword) item.useTurn = true;
+
+
+
+
 
 
             //PUMPKIN MOON

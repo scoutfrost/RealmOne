@@ -13,8 +13,9 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Empty Locket of The Lords"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("'The internal chaos from the locket was too much for the gods to bespoke, so they abandoned it to a new rival that can withstand the essence'");
+            DisplayName.SetDefault("Empty Locket of The Lords");  
+            Tooltip.SetDefault("'The internal chaos from the locket was too much for the gods to bespoke..." 
+                + "\nSo they abandoned it to a new rival that can withstand the essence'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -47,11 +48,9 @@ namespace RealmOne.Items.Accessories
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Diamond, 5);
-            recipe.AddIngredient(ItemID.GoldBar, 10);
-            recipe.AddIngredient(Mod, "EidolicInk", 10);
+           
+            recipe.AddIngredient(ModContent.ItemType<EntropyMedallion>(), 1);
 
-            recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
         }

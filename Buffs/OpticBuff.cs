@@ -9,6 +9,8 @@ namespace RealmOne.Buffs
         public override void SetStaticDefaults()
 
         {
+            Main.buffNoTimeDisplay[Type] = true;
+
             DisplayName.SetDefault("Midnight Hunter");
             Description.SetDefault("Hunter and Nightowl effects, 5% increased crit");
 

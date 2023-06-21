@@ -55,7 +55,7 @@ namespace RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops
 
         public override Vector2? HoldoutOffset()
         {
-            var offset = new Vector2(8, 0);
+            var offset = new Vector2(0, 0);
             return offset;
         }
     }

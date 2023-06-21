@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
+using RealmOne.Items.Placeables.BannerItems;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -41,7 +42,8 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             AIType = NPCID.GiantWalkingAntlion;
             AnimationType = NPCID.GiantWalkingAntlion;
-
+            Banner = Type;
+            BannerItem = ModContent.ItemType<AcornStiltB>();
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {

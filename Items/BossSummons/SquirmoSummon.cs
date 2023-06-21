@@ -17,7 +17,7 @@ namespace RealmOne.Items.BossSummons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Worm Infested Carrot"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Worm Infested Carrot"); 
             Tooltip.SetDefault("'Awaken the sludgy scavenger of the soil'"
                 + "\n'The soil will adhere relief'"
                 + "\nSummons Squirmo");

@@ -28,7 +28,7 @@ public class AquaBlossomHead : ModItem
 
     public override void UpdateEquip(Player player)
     {
-        player.GetCritChance(DamageClass.Magic) += 0.5f;
+        player.GetCritChance(DamageClass.Magic) += 0.6f;
     }
 
     public override bool IsArmorSet(Item head, Item body, Item legs)

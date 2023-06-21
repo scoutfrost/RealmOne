@@ -9,12 +9,11 @@ namespace RealmOne.Items.Misc.Ores
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Brass Nuggets"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Brass Nuggets"); 
             Tooltip.SetDefault("A durable and inexpensive chunk of common brass");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 
         }
-        // See? look, this doesnt give me any errors! Great for organised your code lines!
         public override void SetDefaults()
         {
             Item.material = true;

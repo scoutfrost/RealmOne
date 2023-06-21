@@ -29,7 +29,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Possessed Piggybank");
-            Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.GiantWalkingAntlion];
+            Main.npcFrameCount[NPC.type] = 6;
             NPCID.Sets.TrailCacheLength[NPC.type] = 3;
             NPCID.Sets.TrailingMode[NPC.type] = 0;
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
@@ -55,10 +55,17 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPC.boss = true;
             NPC.BossBar = ModContent.GetInstance<PiggyBossBar>();
             AIType = NPCID.Mimic;
-            AnimationType = NPCID.GiantWalkingAntlion;
             Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/PiggyPatrol");
 
 
+        }
+
+        public override void FindFrame(int frameHeight)
+        {
+            NPC.frameCounter += 0.14f;
+            NPC.frameCounter %= Main.npcFrameCount[NPC.type];
+            int frame = (int)NPC.frameCounter;
+            NPC.frame.Y = frame * frameHeight;
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {

@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,14 +11,16 @@ namespace RealmOne.Items.Food
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Salmon Avo Sushi Roll"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Salmon Avo Sushi Roll"); 
             Tooltip.SetDefault("'A tasty blend of the most carefully caught salmon in the ocean and fresh creamy slices of avocado'"
             + "\nGives Minor Improvements to all stats"
             + "\nIncreases Charm Duration by 8+ seconds"
             + "\nHeals 70 life");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+            Main.RegisterItemAnimation(Type, new DrawAnimationVertical(int.MaxValue, 3));
 
+            ItemID.Sets.IsFood[Type] = true;
             ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
                 new Color(50, 200,50),
                 new Color(20, 230, 180),
@@ -27,9 +30,8 @@ namespace RealmOne.Items.Food
 
         public override void SetDefaults()
         {
-            Item.CloneDefaults(ItemID.AppleJuice);
-            Item.width = 40;
-            Item.height = 40;
+            Item.DefaultToFood(22, 22, BuffID.WellFed, 57600);
+           
             Item.useTime = 15;
             Item.useAnimation = 15;
             Item.maxStack = 99;

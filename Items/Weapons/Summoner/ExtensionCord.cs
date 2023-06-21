@@ -11,7 +11,7 @@ namespace RealmOne.Items.Weapons.Summoner
     public class ExtensionCord : ModItem
     {
         // The texture doesn't have the same name as the item, so this property points to it.
-        public override string Texture => "RealmOne/Items/Weapons/Summoner/ExtensionCord";
+        //public override string Texture => "RealmOne/Items/Weapons/Summoner/ExtensionCord";
 
         public override void SetStaticDefaults()
         {

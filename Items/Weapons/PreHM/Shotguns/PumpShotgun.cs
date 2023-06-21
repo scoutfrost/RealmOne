@@ -28,7 +28,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
         public override void SetDefaults()
         {
-            Item.damage = 35;
+            Item.damage = 30;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 34;
             Item.height = 25;
@@ -40,7 +40,6 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             Item.autoReuse = true;
             Item.shootSpeed = 87f;
             Item.shoot = ModContent.ProjectileType<VintageBulletProjectile>();
-            Item.crit = 4;
             Item.noMelee = true; // The projectile will do the damage and not the item
             Item.value = Item.buyPrice(gold: 8, silver: 3);
             //   Item.noUseGraphic = true;

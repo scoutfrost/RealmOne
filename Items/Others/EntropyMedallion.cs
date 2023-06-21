@@ -84,7 +84,8 @@ namespace RealmOne.Items.Others
         public override bool? UseItem(Player player)
         {
             player.GetModPlayer<Screenshake>().LongShake = true;
-            player.AddBuff(BuffID.Darkness, 700);
+            player.AddBuff(BuffID.Obstructed, 600);
+            player.AddBuff(BuffID.Darkness, 600);
 
             return true;
         }

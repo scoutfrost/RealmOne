@@ -13,7 +13,7 @@ namespace RealmOne.Items.Food
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Vegemite Toast"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Vegemite Toast"); 
             Tooltip.SetDefault("'How do people not like VEGEMITE!!!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
@@ -30,7 +30,7 @@ namespace RealmOne.Items.Food
         }
         public override void SetDefaults()
         {
-            Item.DefaultToFood(22, 22, BuffID.WellFed3, 57600);
+            Item.DefaultToFood(22, 22, BuffID.WellFed2, 57600);
 
             Item.useTime = 17;
             Item.useAnimation = 17;

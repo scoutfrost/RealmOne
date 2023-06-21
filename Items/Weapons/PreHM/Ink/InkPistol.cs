@@ -17,7 +17,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ink
             DisplayName.SetDefault("Ink Pistol"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Filled to the brim with eidolic ink"
             + "\nShoots out splats of eidolic ink that slide on the ground and inflict Shadowflame"
-                        + "\n20% chance to not consume Eidolic INk"
+                        + "\n20% chance to not consume Eidolic Ink"
 
             + $"\nUses Eidolic Ink [i:{ModContent.ItemType<EidolicInk>()}]");
 

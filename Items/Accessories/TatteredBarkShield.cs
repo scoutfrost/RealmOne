@@ -11,7 +11,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tattered Bark Shield"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Tattered Bark Shield");
             Tooltip.SetDefault("'Nothing but skin penetrating wooden splinters on this shield'"
                 + "\nWhen hit by an enemy, they take 20 damage and get inflicted by 'Splinted"
                 + "\nWhen an enemy is inflicted by Splinted, the enemy rapidly loses life for a short duration"

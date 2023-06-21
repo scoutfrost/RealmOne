@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using RealmOne.Buffs.Debuffs;
 using RealmOne.Common.Systems;
 using Terraria;
 using Terraria.Audio;
@@ -100,7 +101,7 @@ namespace RealmOne.Projectiles.Returning
             SoundEngine.PlaySound(rorAudio.SFX_Shuriken, Projectile.position);
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Projectile.velocity, ProjectileID.ThunderStaffShot, Projectile.damage, Projectile.knockBack, Main.myPlayer);
 
-            target.AddBuff(BuffID.Frostburn, 180);
+            target.AddBuff(ModContent.BuffType<AltElectrified>(), 180);
 
         }
     }

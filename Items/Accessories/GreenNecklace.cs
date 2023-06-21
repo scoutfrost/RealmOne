@@ -10,7 +10,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Renaissance Cross"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Renaissance Cross"); 
             Tooltip.SetDefault("'Wrap Evolution around your neck'"
                  + "\n'Worn from the dying soldiers of the past'"
                  + "\nAll weapons and equipment inflict 'Tangled'"

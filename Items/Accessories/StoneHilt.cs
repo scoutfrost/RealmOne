@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Stone Hilt"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Stone Hilt"); 
             Tooltip.SetDefault("'Smoothened stone, tied around the sword handle'"
                  + "\n'I'm positive this is what the vikings did when they invigorated their swords'"
                  + "\n7% increased melee speed and knockback"

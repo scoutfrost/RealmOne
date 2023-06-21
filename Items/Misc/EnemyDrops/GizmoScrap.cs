@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gizmo Scrap"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Gizmo Scrap"); 
             Tooltip.SetDefault("A mixture of ores, metal and handy parts in one clump"
                 + "\n'Dropped from the sneakiest of goblins'");
 

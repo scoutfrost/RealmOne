@@ -17,7 +17,7 @@ namespace RealmOne.Items.Tools.Pick
              + $"\nCapable of mining Old Gold! [i:{ModContent.ItemType<OldGoldOre>()}]");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-
+                
         }
 
         public override void SetDefaults()

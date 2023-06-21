@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Parchment"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Parchment");
             Tooltip.SetDefault("'Parchment paper is made from cellulose fibers prepared from trees or plants such as cotton or flax.'"
                 + "\n'Paper can be made which mimics the thickness and smooth surface of parchment.'"
                 + "\n'Animal-free Parchment is used'");
@@ -20,10 +20,9 @@ namespace RealmOne.Items.Misc
 
         public override void SetDefaults()
         {
-            Item.material = true;
-            Item.width = 20;
+                Item.width = 20;
             Item.height = 20;
-            Item.value = Item.buyPrice(copper: 98);
+            Item.value = Item.buyPrice(copper: 69);
             Item.rare = ItemRarityID.White;
             Item.maxStack = 999;
 

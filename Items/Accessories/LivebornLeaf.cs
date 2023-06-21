@@ -10,7 +10,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Noxius Leaf"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Noxius Leaf"); 
             Tooltip.SetDefault("'Bacteria infected leaf, radiating with nature's power'"
                  + "\n10% increased summon damage");
 

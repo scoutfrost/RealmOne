@@ -33,8 +33,8 @@ namespace RealmOne.NPCs.Enemies.Impact
         public override void SetDefaults()
         {
             NPC.width = 24;
-            NPC.height = 30;
-            NPC.damage = 5;
+            NPC.height = 34;
+            NPC.damage = 0;
             NPC.lifeMax = 27;
             NPC.aiStyle = NPCAIStyleID.TeslaTurret;
             NPC.value = Item.buyPrice(0, 0, 2, 0);
@@ -58,7 +58,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return spawnInfo.Player.ZoneForest ? 0.07f : 0f;
+            return spawnInfo.Player.ZoneForest ? 0.06f : 0f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -82,7 +82,6 @@ namespace RealmOne.NPCs.Enemies.Impact
         {
             if (NPC.life <= 0)
             {
-                // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("TurretGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("TurretGore2").Type, 1f);
@@ -102,7 +101,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
         public override void AI()
         {
-            Lighting.AddLight(NPC.position, r: 0.1f, g: 0.2f, b: 1.1f);
+            Lighting.AddLight(NPC.position, r: 0.1f, g: 0.2f, b: 1f);
         }
     }
 }

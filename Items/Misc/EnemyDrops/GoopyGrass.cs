@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Goopy Grass"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Goopy Grass");
             Tooltip.SetDefault("'Carries millions of bacteria and nutrients'"
                 + "\n'#Green Thumbs'");
 

@@ -15,7 +15,7 @@ namespace RealmOne.Items.Weapons.PreHM.Crossbows
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Combuster Crossbow"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Combuster Crossbow"); 
             Tooltip.SetDefault("Hold out a burning and powerful crossbow that shoots flaming bolts"
                 + "\nThe crossbow shoots out 2 crossbolts, having to let go of the button and reload"
                 + "\nThe crossbow is equipped with a helpful scope to zoom out and scout further out");
@@ -46,7 +46,7 @@ namespace RealmOne.Items.Weapons.PreHM.Crossbows
 
         }
 
-        public override bool AltFunctionUse(Player player)
+        /*public override bool AltFunctionUse(Player player)
         {
             return true;
         }
@@ -56,7 +56,7 @@ namespace RealmOne.Items.Weapons.PreHM.Crossbows
                 player.scope = true;
 
             return base.CanUseItem(player);
-        }
+        }*/
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {

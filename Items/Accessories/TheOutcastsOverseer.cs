@@ -10,7 +10,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("The Outcast's Overseer"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("The Outcast's Overseer"); 
             Tooltip.SetDefault("'A physical form of the dirt titan's purpose'"
                 + "\n6% increased critical chance"
                 + "\nCrits have a chance to increase your crit chance"

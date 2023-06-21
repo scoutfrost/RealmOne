@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bone Bag"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Bone Bag"); 
             Tooltip.SetDefault("'Used from the Clothier a long time when he was still trapped in the dungeon'"
                 + "\n'Ya bonehead!'"
                 + "\nSkeletons and dungeon enemies drop more loot and bones"

@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using RealmOne.Buffs.AlcoholBuffs;
+using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -32,7 +33,8 @@ namespace RealmOne.Items.Potions.Alcohol
             Item.UseSound = SoundID.Item3;
             Item.consumable = true;
             Item.buffType = BuffID.Ironskin;
-            //Item.buffType = ModContent.BuffType<WineBuff>();
+
+            Item.buffType = ModContent.BuffType<WineBuff>();
             Item.buffTime = 10000;
         }
 

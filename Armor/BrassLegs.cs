@@ -30,7 +30,6 @@ namespace RealmOne.Armor
 
         public override void UpdateEquip(Player player)
         {
-            player.maxRunSpeed += 0.07f;
             player.moveSpeed += 0.07f;
 
         }

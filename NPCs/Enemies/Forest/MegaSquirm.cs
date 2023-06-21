@@ -92,7 +92,6 @@ namespace RealmOne.NPCs.Enemies.Forest
             if (NPC.life <= 0)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
 
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore2").Type, 1f);
 
@@ -242,7 +241,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             if (NPC.life <= 0)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore2").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
+
 
             }
         }
@@ -281,7 +281,7 @@ namespace RealmOne.NPCs.Enemies.Forest
             if (NPC.life <= 0)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore2").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
 
             }
         }

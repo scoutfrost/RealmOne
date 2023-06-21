@@ -56,7 +56,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
         }
         public override bool CanConsumeAmmo(Item ammo, Player player)
         {
-            return Main.rand.NextFloat() >= 0.38f;
+            return Main.rand.NextFloat() >= 0.25f;
         }
 
         public override Vector2? HoldoutOffset()

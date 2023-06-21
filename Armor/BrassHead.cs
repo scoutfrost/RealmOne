@@ -32,11 +32,10 @@ namespace RealmOne.Armor
 
         public override void UpdateEquip(Player player)
         {
-            player.GetCritChance(DamageClass.Melee) += 0.5f;
+            player.GetCritChance(DamageClass.Melee) += 0.6f;
 
         }
 
-        // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
             return body.type == ModContent.ItemType<BrassBody>() && legs.type == ModContent.ItemType<BrassLegs>();

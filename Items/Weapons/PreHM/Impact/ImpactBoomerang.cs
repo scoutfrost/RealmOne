@@ -17,7 +17,7 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
             Tooltip.SetDefault("Throws a frigid and dark boomerang that homes onto enemies"
                 + "\nIf the boomerang hits a tile, it will summon an electrical current"
                 + "\nThis electrical current will go the opposite way of the boomerang"
-                + "\nInflicts Frostburn");
+                + "\nInflicts Electrified");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 

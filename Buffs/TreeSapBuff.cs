@@ -16,9 +16,23 @@ namespace RealmOne.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
 
-            player.calmed = true;
-            player.moveSpeed += 0.05f;
+           
 
+
+            if (player.ZoneForest)
+            {
+                player.moveSpeed += 0.10f;
+                player.maxRunSpeed += 0.05f;
+                player.calmed = true;
+
+            }
+            else
+            {
+                player.moveSpeed += 0.05f;
+                player.maxRunSpeed += 0.05f;
+                player.calmed = true;
+
+            }
         }
     }
 }

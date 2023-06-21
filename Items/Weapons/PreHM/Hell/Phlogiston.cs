@@ -13,7 +13,6 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
         {
             DisplayName.SetDefault("Phlogiston"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Get a fresh breeze of FYAARRR"
-            + "\nShoots rapid fire explosive fire bullets followed with a barrage of flames and exploding fireballs"
             + $"\nUses Gel [i:{ItemID.Gel}]");
 
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(7, 3));

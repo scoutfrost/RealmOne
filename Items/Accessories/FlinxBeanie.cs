@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Flinx Beanie"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Flinx Beanie"); 
             Tooltip.SetDefault("Immune to Chilled and Frozen"
                 + "\n'My goly gosh its so soft!'");
 

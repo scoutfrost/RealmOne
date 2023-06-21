@@ -318,7 +318,7 @@ namespace RealmOne.RealmPlayer
         {
             if (Rusty == true)
             {
-                return Main.rand.NextFloat() >= 0.30f;
+                return Main.rand.NextFloat() >= 0.25f;
             }
 
             return base.CanConsumeAmmo(weapon, ammo);

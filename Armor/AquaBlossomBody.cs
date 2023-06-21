@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace RealmOne.Armor;
 
@@ -21,7 +22,7 @@ public class AquaBlossomBody : ModItem
         Item.width = 18;
         Item.height = 18;
         Item.value = Item.sellPrice(0, 1, 0, 0);
-        Item.rare = 2;
+        Item.rare = ItemRarityID.Green;
         Item.defense = 3;
     }
 

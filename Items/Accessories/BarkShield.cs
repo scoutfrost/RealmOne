@@ -12,7 +12,7 @@ namespace RealmOne.Items.Accessories
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bark Shield"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Bark Shield"); 
             Tooltip.SetDefault("'Carven from the bark of the trees'"
                 + "\n10% increased axe and pickaxe speed when in the forest");
 

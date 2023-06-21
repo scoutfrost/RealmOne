@@ -23,7 +23,7 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
 
         public override void SetDefaults()
         {
-            Item.damage = 25;
+            Item.damage = 21;
             Item.DamageType = DamageClass.Melee;
             Item.width = 50;
             Item.height = 50;

@@ -12,7 +12,7 @@ namespace RealmOne.Items.Misc.Bars
             DisplayName.SetDefault("Brass Ingot"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Crafts antique and durable stationary and weaponary"
                 + "\n'Brass is most widely used in applications that are decorative and mechanical.'"
-                + "\n'Due to its unique properties, which include corrosion resistance and rusting.'"
+                + "\n'Due to its unique properties, which include corrosion resistance to rusting.'"
                 + "\n'Common uses for brass include applications that require low friction.'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.ItemCritter;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -20,10 +21,15 @@ namespace RealmOne.NPCs.Enemies.Spiders
                 Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
+            NPCID.Sets.CountsAsCritter[Type] = true;
+
         }
 
         public override void SetDefaults()
         {
+
+            NPC.catchItem = (short)ModContent.ItemType<RedbackSpiderItem>();
+
             NPC.width = 20;
             NPC.height = 15;
             NPC.damage = 15;

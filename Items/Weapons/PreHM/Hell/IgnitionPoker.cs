@@ -26,7 +26,6 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
              + "\nYou gain 6+ defence, 10% increased movement speed, immunity to lava and fire while holding this in hell"
              + "\nEvery hit of an enemy provides you with an Inferno Ring around you");
 
-            // Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 2));
             ItemGlowy.AddItemGlowMask(Item.type, "RealmOne/Items/Weapons/PreHM/Hell/IgnitionPoker_Glow");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

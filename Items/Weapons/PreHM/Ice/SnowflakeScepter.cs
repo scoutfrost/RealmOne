@@ -28,7 +28,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
 
             Item.autoReuse = true;
             Item.useTurn = true;
-            Item.mana = 7;
+            Item.mana = 8;
             Item.damage = 10;
             Item.DamageType = DamageClass.Magic;
             Item.knockBack = 1f;
