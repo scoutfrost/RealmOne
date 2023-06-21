@@ -1580,7 +1580,7 @@ Mods: {
 
 			MagmaBody: {
 				DisplayName: Magma Body
-				Tooltip: ""
+				Tooltip: "Hot cape fr"
 			}
 
 			MagmaHead: {
@@ -1590,7 +1590,7 @@ Mods: {
 
 			MagmaLegs: {
 				DisplayName: Magma Legs
-				Tooltip: ""
+				Tooltip: "Sloppy"
 			}
 
 			AcornSprinterB: {
