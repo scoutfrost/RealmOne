@@ -17,6 +17,18 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
     public class PossessedPiggy : ModNPC
     {
+        //just some disclaimers
+
+        int coinScatter; //Coin shotgun cooldown
+
+        int groundPound; //Ground Pound cooldown
+
+        int move; // Cooldown for moving (causes bouncing which is wanted)
+
+        int move1; //Cooldown for hopping upwards when Coin Shotgun is happening
+
+        bool coinAtk1 = false; //Is Coin Shotgun happening?
+
 
         public ref float RemainingShields => ref NPC.localAI[2];
 
@@ -33,7 +45,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPCID.Sets.TrailCacheLength[NPC.type] = 3;
             NPCID.Sets.TrailingMode[NPC.type] = 0;
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-            { // Influences how the NPC looks in the Bestiary
+            {
                 Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
@@ -42,31 +54,206 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         public override void SetDefaults()
         {
             NPC.width = 30;
-            NPC.height = 26;
+            NPC.height = 24;
             NPC.damage = 27;
             NPC.defense = 15;
             NPC.lifeMax = 250;
+            NPC.knockBackResist = 0.6f;
             NPC.value = Item.buyPrice(0, 2, 50, 50);
-            NPC.aiStyle = 25;
+            NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit4;
             NPC.DeathSound = SoundID.Item59;
             NPC.netAlways = true;
             NPC.netUpdate = true;
+            NPC.noGravity = false;
             NPC.boss = true;
+            AnimationType = -1;
+            AIType = -1;
             NPC.BossBar = ModContent.GetInstance<PiggyBossBar>();
-            AIType = NPCID.Mimic;
             Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/PiggyPatrol");
 
 
         }
 
+        public override void BossLoot(ref string name, ref int potionType)
+        {
+            potionType = ItemID.None;
+            NPCLoader.blockLoot.Add(ItemID.Heart);
+        }
+
         public override void FindFrame(int frameHeight)
         {
-            NPC.frameCounter += 0.14f;
-            NPC.frameCounter %= Main.npcFrameCount[NPC.type];
-            int frame = (int)NPC.frameCounter;
-            NPC.frame.Y = frame * frameHeight;
+
+            if (NPC.frameCounter < 5)
+            {
+                NPC.frame.Y = 1 * frameHeight;
+            }
+            else if (NPC.frameCounter < 10)
+            {
+                NPC.frame.Y = 2 * frameHeight;
+            }
+            else if (NPC.frameCounter < 15)
+            {
+                NPC.frame.Y = 3 * frameHeight;
+            }
+            else if (NPC.frameCounter < 20)
+            {
+                NPC.frame.Y = 4 * frameHeight;
+            }
+            else if (NPC.frameCounter < 25)
+            {
+                NPC.frame.Y = 4 * frameHeight;
+            }
+            else if (NPC.frameCounter < 30)
+            {
+                NPC.frame.Y = 5 * frameHeight;
+            }
+
+            else
+            {
+                NPC.frameCounter = 0;
+            }
         }
+
+
+        public override void AI()
+        {
+            NPC.TargetClosest(true);
+
+            var t = Main.LocalPlayer;
+
+
+            NPC.frameCounter++;
+
+            Vector2 d = (t.Center - NPC.Center).SafeNormalize(Vector2.UnitX);
+
+            if (t.dead)
+            {
+                if (move == 0)
+                {
+                    NPC.velocity -= d * 10;
+
+                    move = 35;
+                }
+
+                NPC.EncourageDespawn(60);
+                return;
+            }
+
+
+
+            if (move > 0)
+            {
+                move--;
+            }
+            if (move1 > 0)
+            {
+                move1--;
+            }
+
+            /*if (groundPound > 0)
+            {
+                groundPound--;
+            }*/
+
+            if (coinScatter > 0)
+            {
+                coinScatter--;
+            }
+
+            if (/*groundPound > 0 &&*/ coinAtk1 == false)
+            {
+
+
+                if (move == 0)
+                {
+                    NPC.velocity = d * 4;
+
+                    move = 35;
+                }
+            }
+            if (move == 33)
+            {
+                NPC.velocity.Y -= 6;
+            }
+
+            if (coinAtk1 == true)
+            {
+                Vector2 tt = t.Center - NPC.Center;
+
+                NPC.rotation = tt.ToRotation();
+
+
+
+                if (move1 == 0)
+                {
+                    NPC.velocity = d * 2;
+
+                    move1 = 35;
+                }
+                if (move1 == 33)
+                {
+                    NPC.velocity.Y -= 9;
+                }
+            }
+            else if (coinAtk1 == false)
+            {
+                NPC.spriteDirection = NPC.direction;
+            }
+
+            if (groundPound == 0)
+            {
+                groundPound = 0;
+            }
+
+
+            if (coinScatter == 0)
+            {
+
+                coinScatter = 500;
+                NPC.knockBackResist = 1f;
+                coinAtk1 = true;
+            }
+            if (coinScatter == 450)
+            {
+                SoundEngine.PlaySound(SoundID.Item59, NPC.position);
+            }
+            if (coinScatter == 385)
+            {
+                SoundEngine.PlaySound(SoundID.Item59, NPC.position);
+            }
+            if (coinScatter == 380)
+            {
+                SoundEngine.PlaySound(SoundID.Item59, NPC.position);
+            }
+            if (coinScatter == 375)
+            {
+                SoundEngine.PlaySound(SoundID.Item59, NPC.position);
+            }
+            if (coinScatter == 365)
+            {
+                Vector2 direction1 = d.RotatedBy(MathHelper.ToRadians(8));
+                Vector2 direction2 = d.RotatedBy(MathHelper.ToRadians(-8));
+                Vector2 direction3 = d.RotatedBy(MathHelper.ToRadians(5));
+                Vector2 direction4 = d.RotatedBy(MathHelper.ToRadians(-5));
+                Vector2 direction5 = d.RotatedBy(MathHelper.ToRadians(0));
+
+                int projectile = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction1 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
+                int projectile1 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction2 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
+                int projectile2 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction3 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
+                int projectile3 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction4 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
+                int projectile5 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction5 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
+
+                SoundEngine.PlaySound(SoundID.Coins, NPC.position);
+                SoundEngine.PlaySound(SoundID.Item59, NPC.position);
+                coinScatter = 300;
+                coinAtk1 = false;
+                NPC.rotation = 0f;
+                NPC.knockBackResist = 0.6f;
+            }
+
+        }
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             return SpawnCondition.OverworldDay.Chance * 0.09f;
@@ -85,11 +272,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-
             if (NPC.life <= 0)
             {
-                // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
-
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore2").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore3").Type, 1f);
@@ -117,13 +301,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-            // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
-            // Common use is applying buffs/debuffs:
-
             int buffType = BuffID.Midas;
-            // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
-
-            int timeToAdd = 5 * 60; //This makes it 5 seconds, one second is 60 ticks
+            int timeToAdd = 5 * 60;
             target.AddBuff(buffType, timeToAdd);
 
             CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y - 20, target.width, target.height), new Color(234, 129, 178, 110), "That's my money, fool!", false, false);
@@ -149,6 +328,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         }
         public override void OnSpawn(IEntitySource source)
         {
+            coinScatter = 300;
+
             Player player = Main.player[NPC.target];
 
             SoundEngine.PlaySound(SoundID.Item59);
