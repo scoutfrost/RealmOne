@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
-using Terraria.ModLoader.Utilities;
 using RealmOne.Items.Misc.EnemyDrops;
 using Terraria.GameContent.ItemDropRules;
-using System.Drawing.Text;
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria.GameContent.Bestiary;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {
@@ -37,9 +30,9 @@ namespace RealmOne.NPCs.Enemies.Corruption
             NPC.height = 38;
             NPC.defense = 7;
             NPC.damage = 20;
-            NPC.lifeMax = 160;
+            NPC.lifeMax = 150;
             NPC.aiStyle = 44;
-            NPC.damage = 10;
+            NPC.damage = 20;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             AIType = NPCID.GiantFlyingAntlion;
@@ -63,7 +56,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         public override void AI()
         {
             Lighting.AddLight(NPC.position, r: 0.1f, g:0.8f, b:0.1f);
-            NPC.velocity *= 1.006f;
+            NPC.velocity *= 1.0075f;
             Player target = Main.player[NPC.target];
             NPC.spriteDirection = NPC.direction;
 
@@ -71,7 +64,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
             Vector2 center = NPC.Center;
             for (int j = 0; j < 120; j++)
             {
-                int dust1 = Dust.NewDust(center, 0, 0, 74, 0f, 0f, 100, default, 0.8f);
+                int dust1 = Dust.NewDust(center, 0, 0, 75, 0f, 0f, 100,default, 0.7f);
                 Main.dust[dust1].noGravity = true;
                 Main.dust[dust1].velocity = Vector2.Zero;
                 Main.dust[dust1].noLight = false;       
@@ -79,7 +72,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
 
             if (++NPC.ai[2] % 130 == 0)
             {
-               int p=  Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ProjectileID.CursedFlameFriendly, 8, 0, Main.myPlayer, 0, 0);
+               int p=  Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ProjectileID.CursedFlameFriendly, 15, 0, Main.myPlayer, 0, 0);
                 Main.projectile[p].scale = 0.5f;
                 Main.projectile[p].friendly = false;
                 Main.projectile[p].hostile = true;
@@ -88,6 +81,21 @@ namespace RealmOne.NPCs.Enemies.Corruption
             }
 
         }
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.TheCorruption,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
+                                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
+
+
+                new FlavorTextBestiaryInfoElement("A silent hunter, the Ebon Screecher is a mysterious entity that hunts enemies that go anywhere near. It phases into an aggressive phase when it sheds its vile skin."),
+
+
+            });
+        }
+
         public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Vector2 drawOrigin = NPC.frame.Size() / 2;
