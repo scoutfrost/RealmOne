@@ -8,6 +8,11 @@ Mods: {
 		}
 
 		Items: {
+			StunSeed: {
+				// DisplayName: Stun Seed
+				// Tooltip: Features a large variety of nuts!
+			}
+
 			PiggyPorcelain: {
 				// DisplayName: Piggy Porcelain
 				// Tooltip: Sharp, pink porcelain, dropped from the ones that carry allat gold
@@ -1921,6 +1926,12 @@ Mods: {
 			// PoisonPricklesProj.DisplayName: Poison Prickles Proj
 			// WattleArrowBase.DisplayName: Wattle Arrow Base
 			// WattleArrow.DisplayName: Wattle Arrow
+			// StunSeedA.DisplayName: Stun Seed A
+			// StunSeedBA.DisplayName: Stun Seed B A
+			// StunSeedBP.DisplayName: Stun Seed B P
+			// StunSeedBW.DisplayName: Stun Seed B W
+			// StunSeedP.DisplayName: Stun Seed P
+			// StunSeedW.DisplayName: Stun Seed W
 		}
 
 		NPCs: {
