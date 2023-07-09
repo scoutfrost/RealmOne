@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.Food;
 using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -64,15 +65,14 @@ namespace RealmOne.NPCs.Enemies.Forest
 				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("A sludged and poisonous variant of the slime, tends to appear near more grassy and wet areas."),
 
-				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
-				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
-				// so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
             });
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GoopyGrass>(), 1, 2, 4));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TreeSapJuice>(), 18));
+
             npcLoot.Add(ItemDropRule.Common(ItemID.MudBlock, 2, 3, 6));
             npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 2, 6));
 

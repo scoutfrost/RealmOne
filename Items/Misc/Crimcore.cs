@@ -17,7 +17,6 @@ namespace RealmOne.Items.Misc
 
         public override void SetDefaults()
         {
-            Item.material = true;
             Item.width = 20;
             Item.height = 20;
             Item.rare = ItemRarityID.Orange;

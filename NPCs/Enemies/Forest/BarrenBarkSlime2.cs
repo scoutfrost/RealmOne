@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.Food;
 using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -56,24 +57,21 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
-            // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the spawning conditions of this NPC that is listed in the bestiary.
                    BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("A larger and more poisonous variant of its smaller size. Soaks up more damage with its large size"),
 
-				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
-				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
-				// so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
+				
             });
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GoopyGrass>(), 1, 3, 5));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TreeSapJuice>(), 18));
+
             npcLoot.Add(ItemDropRule.Common(ItemID.MudBlock, 2, 3, 6));
             npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 2, 8));
 

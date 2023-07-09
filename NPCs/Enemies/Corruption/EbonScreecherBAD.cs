@@ -6,6 +6,7 @@ using RealmOne.Items.Misc.EnemyDrops;
 using Terraria.GameContent.ItemDropRules;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
+using RealmOne.Items.Food;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {
@@ -131,7 +132,9 @@ namespace RealmOne.NPCs.Enemies.Corruption
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 4, 1, 2));
-            
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedBerries>(), 16, 1, 2));
+
+
         }
     }
 }

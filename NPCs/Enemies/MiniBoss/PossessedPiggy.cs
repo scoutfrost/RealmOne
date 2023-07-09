@@ -41,7 +41,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Possessed Piggybank");
-            Main.npcFrameCount[NPC.type] = 6;
+            Main.npcFrameCount[NPC.type] = 5;
             NPCID.Sets.TrailCacheLength[NPC.type] = 3;
             NPCID.Sets.TrailingMode[NPC.type] = 0;
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
@@ -53,12 +53,12 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
         public override void SetDefaults()
         {
-            NPC.width = 30;
-            NPC.height = 24;
-            NPC.damage = 27;
-            NPC.defense = 15;
-            NPC.lifeMax = 250;
-            NPC.knockBackResist = 0.6f;
+            NPC.width = 65;
+            NPC.height = 40;
+            NPC.damage = 18;
+            NPC.defense = 12;
+            NPC.lifeMax = 225;
+            NPC.knockBackResist = 0.7f;
             NPC.value = Item.buyPrice(0, 2, 50, 50);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit4;
@@ -238,11 +238,11 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 Vector2 direction4 = d.RotatedBy(MathHelper.ToRadians(-5));
                 Vector2 direction5 = d.RotatedBy(MathHelper.ToRadians(0));
 
-                int projectile = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction1 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
-                int projectile1 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction2 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
-                int projectile2 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction3 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
-                int projectile3 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction4 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
-                int projectile5 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction5 * 7, (ModContent.ProjectileType<GoldGold>()), NPC.damage, 1, Main.myPlayer);
+                int projectile = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction1 * 7, ProjectileID.GoldCoin, NPC.damage, 1, Main.myPlayer);
+                int projectile1 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction2 * 7, ProjectileID.GoldCoin, NPC.damage, 1, Main.myPlayer);
+                int projectile2 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction3 * 7, ProjectileID.GoldCoin, NPC.damage, 1, Main.myPlayer);
+                int projectile3 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction4 * 7, ProjectileID.GoldCoin, NPC.damage, 1, Main.myPlayer);
+                int projectile5 = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction5 * 7, ProjectileID.GoldCoin, NPC.damage, 1, Main.myPlayer);
 
                 SoundEngine.PlaySound(SoundID.Coins, NPC.position);
                 SoundEngine.PlaySound(SoundID.Item59, NPC.position);
@@ -250,13 +250,39 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 coinAtk1 = false;
                 NPC.rotation = 0f;
                 NPC.knockBackResist = 0.6f;
+
+                Main.projectile[projectile].friendly = false;
+                Main.projectile[projectile].hostile = true;
+                Main.projectile[projectile].damage = 10;
+
+
+                Main.projectile[projectile1].friendly = false;
+                Main.projectile[projectile1].hostile = true;
+                Main.projectile[projectile1].damage = 10;
+
+
+                Main.projectile[projectile2].friendly = false;
+                Main.projectile[projectile2].hostile = true;
+                Main.projectile[projectile2].damage = 10;
+
+
+                Main.projectile[projectile3].friendly = false;
+                Main.projectile[projectile3].hostile = true;
+                Main.projectile[projectile3].damage = 10;
+
+
+                Main.projectile[projectile5].friendly = false;
+                Main.projectile[projectile5].hostile = true;
+                Main.projectile[projectile5].damage = 10;
+
+
             }
 
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDay.Chance * 0.09f;
+            return SpawnCondition.OverworldDay.Chance * 0.087f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -280,7 +306,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
             }
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 26; i++)
             {
 
                 Vector2 speed = Main.rand.NextVector2Square(1f, 1f);
@@ -296,7 +322,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             npcLoot.Add(ItemDropRule.Common(ItemID.PiggyBank, 20, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.MoneyTrough, 30, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.GoldCoin, 1, 5, 6));
-
+            npcLoot.Add(ItemDropRule.Common(ItemID.Bacon, 20));
         }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

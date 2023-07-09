@@ -8,7 +8,7 @@ using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-
+using RealmOne.Items.Food;
 namespace RealmOne.NPCs.Enemies.Forest
 {
 
@@ -93,6 +93,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             npcLoot.Add(ItemDropRule.Common(ItemID.Acorn, 1, 2, 4));
             npcLoot.Add(ItemDropRule.Common(ItemID.Wood, 2, 4, 6));
             npcLoot.Add(ItemDropRule.Common(ItemID.LivingWoodWand, 40, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ToastedNutBar>(), 20));
+
 
         }
 

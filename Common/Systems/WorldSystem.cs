@@ -1,5 +1,7 @@
 ﻿using RealmOne.Common.Systems.GenPasses;
+using RealmOne.Items.Food;
 using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.Plants;
 using RealmOne.Items.Opens;
 using RealmOne.Items.Weapons.PreHM.Classless;
 using RealmOne.Items.Weapons.PreHM.Grenades;
@@ -15,12 +17,31 @@ using static Terraria.ModLoader.ModContent;
 
 namespace RealmOne.Common.Systems
 {
+    public class TileDrops : GlobalTile
+    {
+        public override void Drop(int i, int j, int type)
+        {
+            if (!Main.dedServ)
+            {
+                Player player = Main.LocalPlayer;
+
+                if (type == TileID.Sunflower && Main.rand.NextBool(1))
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<SunflowerPetal>(), 3);
+
+                if (type == TileID.Trees && Main.rand.NextBool(20) && player.ZoneCorrupt && Main.rand.NextBool(3))
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ModContent.ItemType<CursedBerries>(), Main.rand.Next(1, 3));
+
+            }
+        }
+
+        
+    }
+ 
 
     public sealed class SourceDependentItemTweaks : GlobalItem
     {
         public override void OnSpawn(Item item, IEntitySource source)
         {
-            // Accompany all loot from trees with a slime.
             if (source is EntitySource_ShakeTree)
             {
                 IEntitySource newSource = item.GetSource_FromThis(); // Use a separate source for the newly created projectiles, to not cause a stack overflow.
@@ -44,7 +65,8 @@ namespace RealmOne.Common.Systems
 
     public class WorldSystem : ModSystem
     {
-
+        
+        
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
             int shiniesIndex = tasks.FindIndex((GenPass genpass) => genpass.Name.Equals("Shinies"));

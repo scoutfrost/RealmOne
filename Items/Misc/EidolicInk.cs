@@ -11,7 +11,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Eidolic Ink"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            DisplayName.SetDefault("Eidolic Ink"); 
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 50;
 
@@ -30,7 +30,6 @@ namespace RealmOne.Items.Misc
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "", "");
 
             line = new TooltipLine(Mod, "EidolicInk", "'Such elegant and expensive ink, use it effectively'")

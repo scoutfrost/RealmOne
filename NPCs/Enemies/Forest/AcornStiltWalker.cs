@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
+using RealmOne.Items.Food;
 using RealmOne.Items.Placeables.BannerItems;
 using Terraria;
 using Terraria.Audio;
@@ -58,12 +59,8 @@ namespace RealmOne.NPCs.Enemies.Forest
 				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("Being in the forest gets a bit boring sometimes, so this Acorn found some tree branches and stuck it to its legs! "),
 
-				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
-				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
-				// so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
@@ -95,6 +92,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             npcLoot.Add(ItemDropRule.Common(ItemID.Wood, 2, 4, 6));
             npcLoot.Add(ItemDropRule.Common(ItemID.LivingWoodWand, 40, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.PortableStool, 42, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ToastedNutBar>(), 20));
+
 
         }
 

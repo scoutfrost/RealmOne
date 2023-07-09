@@ -1702,6 +1702,16 @@ Mods: {
 				Tooltip: ""
 				DisplayName: B U N N I N G S S N A G
 			}
+
+			CursedBerries: {
+				DisplayName: Cursed Berries
+				Tooltip: ""
+			}
+
+			SunflowerPetal: {
+				DisplayName: Sunflower Petal
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
