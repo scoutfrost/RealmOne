@@ -19,8 +19,8 @@ namespace RealmOne.Common.UI
         {
 
             area = new UIElement();
-            area.Left.Set(-area.Width.Pixels - 1430, 1f);
-            area.Top.Set(20, 0f);
+            area.Left.Set(-area.Width.Pixels - 1480, 1f);
+            area.Top.Set(50, 0f);
             area.Width.Set(182, 0f);
             area.Height.Set(60, 0f);
 

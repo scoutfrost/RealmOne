@@ -22,7 +22,7 @@ namespace RealmOne.Common.UI
             area.Left.Set(-area.Width.Pixels - 1200, 1f);
 
 
-            area.Top.Set(0, 0f);
+            area.Top.Set(250, 0f);
             area.Width.Set(30, 0f);
             area.Height.Set(30, 0f);
 
