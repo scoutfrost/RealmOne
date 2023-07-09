@@ -10,7 +10,10 @@ Mods: {
 		Items: {
 			StunSeed: {
 				DisplayName: Stun Seed
-				Tooltip: Features a large variety of nuts!
+				Tooltip: '''
+					 Features a large assortment of nuts that stun enemies!
+					 "This is the product of absolute tomfoolery!"
+					 '''
 			}
 
 			PiggyPorcelain: {
