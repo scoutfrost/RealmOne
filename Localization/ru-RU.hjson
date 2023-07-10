@@ -8,6 +8,11 @@ Mods: {
 		}
 
 		Items: {
+			StunSeed: {
+				// DisplayName: Stun Seed
+				// Tooltip: Features a large variety of nuts!
+			}
+
 			PiggyPorcelain: {
 				// DisplayName: Piggy Porcelain
 				// Tooltip: Sharp, pink porcelain, dropped from the ones that carry allat gold
@@ -1712,16 +1717,6 @@ Mods: {
 				// DisplayName: Sunflower Petal
 				// Tooltip: ""
 			}
-
-			VulgarShot: {
-				// DisplayName: Vulgar Shot
-				/* Tooltip:
-					'''
-					'Absolutely Vile!!'
-					Charges up Vile Entities from the bow
-					Release the bow to shoot out a bunch of Vile Arrows and Vile Eyes
-					''' */
-			}
 		}
 
 		Buffs: {
@@ -1806,7 +1801,7 @@ Mods: {
 			}
 
 			BreatheBuff: {
-				// Description: BREATHE AIR!!
+				// Description: GET THAT SHI DOWN IN YOUR MOUTH! NOTHIN BETTER THAN GOOD OLD BUNNINGS SNAG
 				// DisplayName: Breathe Buff
 			}
 
@@ -1931,9 +1926,12 @@ Mods: {
 			// PoisonPricklesProj.DisplayName: Poison Prickles Proj
 			// WattleArrowBase.DisplayName: Wattle Arrow Base
 			// WattleArrow.DisplayName: Wattle Arrow
-			// VileArrow.DisplayName: Vile Arrow
-			// CorruptEye.DisplayName: Corrupt Eye
-			// VulgarShotHeld.DisplayName: Vulgar Shot Held
+			// StunSeedA.DisplayName: Stun Seed A
+			// StunSeedBA.DisplayName: Stun Seed B A
+			// StunSeedBP.DisplayName: Stun Seed B P
+			// StunSeedBW.DisplayName: Stun Seed B W
+			// StunSeedP.DisplayName: Stun Seed P
+			// StunSeedW.DisplayName: Stun Seed W
 		}
 
 		NPCs: {
