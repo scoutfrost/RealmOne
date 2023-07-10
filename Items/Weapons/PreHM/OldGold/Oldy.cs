@@ -1,6 +1,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
 using RealmOne.Projectiles.Bullet;
+using RealmOne.RealmPlayer;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
@@ -15,8 +17,8 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Old Gold Torch Gun"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("'A flaming pristine gun crafted from the pure glistening bars of Old Gold'");
+            DisplayName.SetDefault("Antiquity Revolver"); 
+            Tooltip.SetDefault("'An antique and pristine revolver!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -34,18 +36,18 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
             Item.knockBack = 3;
             Item.value = 30000;
             Item.rare = ItemRarityID.Orange;
-            Item.UseSound = SoundID.Item45;
+            Item.UseSound = rorAudio.WheelgunSound;
             Item.autoReuse = true;
-            Item.shootSpeed = 26f;
+            Item.shootSpeed = 40f;
             Item.noMelee = true;
             Item.useAmmo = AmmoID.Bullet;
-            Item.shoot = ModContent.ProjectileType<GlowTest>();
+            Item.shoot = ModContent.ProjectileType<OldGoldBullet>();
 
         }
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
             if (type == ProjectileID.Bullet)
-                type = ModContent.ProjectileType<GlowTest>(); // or ProjectileID.FireArrow;
+                type = ModContent.ProjectileType<OldGoldBullet>(); // or ProjectileID.FireArrow;
         }
 
         public override void AddRecipes()
@@ -60,9 +62,13 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
+
+            player.GetModPlayer<Screenshake>().SmallScreenshake = true;
+
             Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 25f;
             if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
                 position += muzzleOffset;
+            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("TommyGunPellets").Type, 1f);
 
             for (int i = 0; i < 10; i++)
             {
@@ -71,6 +77,9 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
                 ;
 
                 d.noGravity = true;
+
+                Projectile.NewProjectile(player.GetSource_ItemUse(Item), position + muzzleOffset, Vector2.Zero, ModContent.ProjectileType<ConeFlash>(), 0, 0, player.whoAmI);
+
             }
 
             return true;
@@ -140,14 +149,14 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
             // Here we add a tooltipline that will later be removed, showcasing how to remove tooltips from an item
             var line = new TooltipLine(Mod, "", "");
 
-            line = new TooltipLine(Mod, "Oldy", "'Shoots seeking pristine beam blades that slash enemies into flames.")
+            line = new TooltipLine(Mod, "Oldy", "'Shoots a loud and capshot gold bullet that splits into other bullets.")
             {
                 OverrideColor = new Color(254, 226, 82)
 
             };
             tooltips.Add(line);
 
-            line = new TooltipLine(Mod, "Oldy", $"Converts bullets into pristine beam blades [i:{ItemID.MusketBall}]")
+            line = new TooltipLine(Mod, "Oldy", $"Converts bullets into ancient gold bullets [i:{ItemID.MusketBall}]")
             {
                 OverrideColor = new Color(232, 218, 224)
 
@@ -165,7 +174,7 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
 
         public override Vector2? HoldoutOffset()
         {
-            var offset = new Vector2(6, 0);
+            var offset = new Vector2(-1, 0);
             return offset;
         }
     }

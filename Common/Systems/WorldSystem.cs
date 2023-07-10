@@ -28,7 +28,7 @@ namespace RealmOne.Common.Systems
                 if (type == TileID.Sunflower && Main.rand.NextBool(1))
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<SunflowerPetal>(), 3);
 
-                if (type == TileID.Trees && Main.rand.NextBool(20) && player.ZoneCorrupt && Main.rand.NextBool(3))
+                if (type == TileID.Trees && Main.rand.NextBool(10) && player.ZoneCorrupt && Main.rand.NextBool(3))
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ModContent.ItemType<CursedBerries>(), Main.rand.Next(1, 3));
 
             }

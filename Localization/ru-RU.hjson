@@ -10,7 +10,11 @@ Mods: {
 		Items: {
 			StunSeed: {
 				// DisplayName: Stun Seed
-				// Tooltip: Features a large variety of nuts!
+				/* Tooltip:
+					'''
+					Features a large assortment of nuts that stun enemies!
+					"This is the product of absolute tomfoolery!"
+					''' */
 			}
 
 			PiggyPorcelain: {
@@ -1635,7 +1639,7 @@ Mods: {
 
 			MiniWattleBushItem: {
 				// Tooltip: ""
-				// DisplayName: Mini Wattle Bush Item
+				// DisplayName: Wattle Bush
 			}
 
 			Wattle: {
@@ -1644,22 +1648,26 @@ Mods: {
 			}
 
 			PoisonPrickles: {
-				// Tooltip: ""
+				// Tooltip: Throws a bunch of prickles that has a boost of speed when it penetrates an enemy
 				// DisplayName: Poison Prickles
 			}
 
 			SuperSnowballCannon: {
-				// Tooltip: ""
+				/* Tooltip:
+					'''
+					Go Crazy, Go Stupid!
+					Snowball Cannon but if it was good.
+					''' */
 				// DisplayName: Super Snowball Cannon
 			}
 
 			WattleBow: {
-				// Tooltip: ""
+				// Tooltip: Shoots a Wattle Arrow that has a chance to summon a thorn on kill
 				// DisplayName: Wattle Bow
 			}
 
 			AcornWand: {
-				// Tooltip: ""
+				// Tooltip: Conjures Bouncing Acorns that bounce 3 times
 				// DisplayName: Acorn Wand
 			}
 
@@ -1679,43 +1687,53 @@ Mods: {
 			}
 
 			MusicNotePNT: {
-				// Tooltip: ""
-				// DisplayName: Music Note P N T
+				// Tooltip: "'B.Eduardos'"
+				// DisplayName: Quavers
 			}
 
 			AddictionPNT: {
-				// Tooltip: ""
-				// DisplayName: Addiction P N T
+				// Tooltip: "'J.Salaki'"
+				// DisplayName: Addiction
 			}
 
 			ScathedFlesh: {
-				// Tooltip: ""
+				// Tooltip: Scarred, bloody flesh off a hungry vertabrae of the crimson
 				// DisplayName: Scathed Flesh
 			}
 
 			InfectedViscus: {
-				// Tooltip: ""
+				// Tooltip: The corrupted, vile body parts of a corruption entity
 				// DisplayName: Infected Viscus
 			}
 
 			HellishMembrane: {
-				// Tooltip: ""
+				// Tooltip: The souls of underworld monstrosities
 				// DisplayName: Hellish Membrane
 			}
 
 			BUNNINGSSNAG: {
-				// Tooltip: ""
-				// DisplayName: B U N N I N G S S N A G
+				// Tooltip: NOTHING BETTER THAN A GOOD OL BUNNINGS SNAG
+				// DisplayName: BUNNINGS SNAG
 			}
 
 			CursedBerries: {
 				// DisplayName: Cursed Berries
-				// Tooltip: ""
+				// Tooltip: "'Sour, but too sour, it makes enemy spawn increased!'"
 			}
 
 			SunflowerPetal: {
 				// DisplayName: Sunflower Petal
 				// Tooltip: ""
+			}
+
+			VulgarShot: {
+				// DisplayName: Vulgar Shot
+				/* Tooltip:
+					'''
+					'Absolutely Vile!'
+					Charges up Vile Eyes from the bow
+					Releasing the button shoots all Vile Eyes at once
+					''' */
 			}
 		}
 
@@ -1932,6 +1950,12 @@ Mods: {
 			// StunSeedBW.DisplayName: Stun Seed B W
 			// StunSeedP.DisplayName: Stun Seed P
 			// StunSeedW.DisplayName: Stun Seed W
+			// VileArrow.DisplayName: Vile Arrow
+			// CorruptEye.DisplayName: Corrupt Eye
+			// VulgarShotHeld.DisplayName: Vulgar Shot Held
+			// ConeFlash.DisplayName: Cone Flash
+			// OldGoldBullet.DisplayName: Old Gold Bullet
+			// LilGold.DisplayName: Lil Gold
 		}
 
 		NPCs: {
