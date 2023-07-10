@@ -55,7 +55,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         {
             NPC.width = 65;
             NPC.height = 40;
-            NPC.damage = 18;
+            NPC.damage = 18;    
             NPC.defense = 12;
             NPC.lifeMax = 225;
             NPC.knockBackResist = 0.7f;

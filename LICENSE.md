@@ -5,7 +5,7 @@ The License for this repository
 
 In simple terms:
 Just dont steal large amounts of code.
-If you do steal some portions of code, just credit to the repository you took it off.
+If you do steal some good portions of code, just credit to the repository you took it off.
 
 If you claim the large portion of code to be purely yours, i will spam ping you forever ;)
 
