@@ -1,4 +1,5 @@
 ﻿using RealmOne.Common.Systems.GenPasses;
+using RealmOne.Items.Accessories;
 using RealmOne.Items.Food;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Misc.Plants;
@@ -7,6 +8,8 @@ using RealmOne.Items.Weapons.PreHM.Classless;
 using RealmOne.Items.Weapons.PreHM.Grenades;
 using RealmOne.Items.Weapons.PreHM.Throwing;
 using RealmOne.NPCs.Enemies.Forest;
+using RealmOne.NPCs.Enemies.MiniBoss;
+using RealmOne.NPCs.Enemies.Underground;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
@@ -25,11 +28,36 @@ namespace RealmOne.Common.Systems
             {
                 Player player = Main.LocalPlayer;
 
-                if (type == TileID.Sunflower && Main.rand.NextBool(1))
-                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<SunflowerPetal>(), 3);
+                if (type == 3 && Main.rand.NextBool(20))
+                {
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ItemType<RegenMush>(),1);
+                }
 
-                if (type == TileID.Trees && Main.rand.NextBool(10) && player.ZoneCorrupt && Main.rand.NextBool(3))
-                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ModContent.ItemType<CursedBerries>(), Main.rand.Next(1, 3));
+                if (type == TileID.Sunflower && Main.rand.NextBool(1))
+                {
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ItemType<SunflowerPetal>(), 3);
+                }
+
+                if (type == TileID.Trees && Main.rand.NextBool(10) && player.ZoneCorrupt)
+                {
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<CursedBerries>(), Main.rand.Next(1, 3));
+                }
+
+                if (type == TileID.Seaweed && Main.rand.NextBool(2))
+                {
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<FreshSeaweed>(), Main.rand.Next(1, 4));
+                }
+
+                if (type == TileID.Coral && Main.rand.NextBool(6))
+                {
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<FreshSeaweed>(), Main.rand.Next(1, 4));
+                }
+                if (type == 12 && Main.rand.NextBool(5))
+                {
+                    NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<HeartBat>(), 1);
+                }
+
+
 
             }
         }

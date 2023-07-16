@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Misc.EnemyDrops;
+using RealmOne.Items.Placeables.BannerItems;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
@@ -42,6 +43,8 @@ namespace RealmOne.NPCs.Enemies.Impact
             NPC.HitSound = SoundID.NPCHit53;
             NPC.DeathSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_ElectricDeath");
             AnimationType = NPCID.MartianTurret;
+            Banner = Type;
+            BannerItem = ModContent.ItemType<BannerItem.ImpactTurretB>();
 
         }
 

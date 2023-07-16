@@ -1,5 +1,7 @@
-﻿using RealmOne.Items.ItemCritter;
+﻿using RealmOne.Common.Systems;
+using RealmOne.Items.ItemCritter;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -65,7 +67,7 @@ namespace RealmOne.NPCs.Critters
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDayBirdCritter.Chance * 1.5f;
+            return SpawnCondition.OverworldDayBirdCritter.Chance * 1.8f;
         }
 
 
@@ -79,6 +81,16 @@ namespace RealmOne.NPCs.Critters
 
 
             });
+        }
+
+        public override void AI()
+        {
+            NPC.TargetClosest(true);
+                Player player = Main.player[NPC.target];
+            if (NPC.HasValidTarget && NPC.Distance(player.Center) <= 300)
+            {
+                SoundEngine.PlaySound(rorAudio.MagpieCalling, NPC.position);
+            }
         }
     }
 }

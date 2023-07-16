@@ -2,6 +2,8 @@
 using RealmOne.BossBars;
 using RealmOne.Common.Systems;
 using RealmOne.Items.BossBags;
+using RealmOne.Items.Placeables.Furniture.BossThing;
+using RealmOne.Vanities;
 using System.IO;
 using Terraria;
 using Terraria.Audio;
@@ -148,9 +150,13 @@ namespace RealmOne.Bosses
 
             npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<SquirmoBossBag>()));
 
-            npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<Items.Placeables.SquirmoRelicItem>()));
+            npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<SquirmoRelicItem>()));
 
             var notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SquirmoTrophyItem>(), 10));
+
+            notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<SquirmoMask>(), 7));
 
         }
 

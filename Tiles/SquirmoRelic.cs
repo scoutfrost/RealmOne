@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Items.Placeables.Furniture.BossThing;
 using ReLogic.Content;
 using System;
 using Terraria;
@@ -87,7 +88,7 @@ namespace RealmOne.Tiles
             switch (placeStyle)
             {
                 case 0:
-                    itemType = ModContent.ItemType<Items.Placeables.SquirmoRelicItem>();
+                    itemType = ModContent.ItemType<SquirmoRelicItem>();
                     break;
                     // Optional: Add more cases here
             }

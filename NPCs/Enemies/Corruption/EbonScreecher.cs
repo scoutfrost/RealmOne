@@ -58,7 +58,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         {
             if (spawnInfo.Player.ZoneCorrupt)
             {
-                return SpawnCondition.Corruption.Chance * 0.15f;
+                return SpawnCondition.Corruption.Chance * 0.12f;
             }
             return 0;
         }

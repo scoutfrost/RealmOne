@@ -125,6 +125,9 @@ public class rorAudio : ModSystem
 
     public static readonly SoundStyle TheIdol;
 
+    public static readonly SoundStyle MagpieCalling;
+
+
 
     static rorAudio()
     {
@@ -188,6 +191,8 @@ public class rorAudio : ModSystem
         WheelgunSound = new SoundStyle("RealmOne/Assets/Soundss/WheelgunSound", (SoundType)0);
         BIJOU = new SoundStyle("RealmOne/Assets/Soundss/BIJOU", (SoundType)0);
         TheIdol = new SoundStyle("RealmOne/Assets/Soundss/TheIdol", (SoundType)0);
+        MagpieCalling= new SoundStyle("RealmOne/Assets/Soundss/MagpieCalling", (SoundType)0);
+
 
     }
 }

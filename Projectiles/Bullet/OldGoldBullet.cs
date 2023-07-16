@@ -39,7 +39,7 @@ namespace RealmOne.Projectiles.Bullet
         public override void AI()
         {
 
-            Lighting.AddLight(Projectile.position, 0.3f, 0.3f, 0.2f);
+            Lighting.AddLight(Projectile.position, 0.3f, 0.38f, 0.2f);
             Lighting.Brightness(1, 1);
 
           
@@ -70,7 +70,7 @@ namespace RealmOne.Projectiles.Bullet
             {
                 var offset = new Vector2(Projectile.width / 2f, Projectile.height / 2f);
                 var frame = texture.Frame(1, Main.projFrames[Projectile.type], 0, Projectile.frame);
-                float sizec = Projectile.scale * (Projectile.oldPos.Length - k) / (Projectile.oldPos.Length * 1.5f); 
+                float sizec = Projectile.scale * (Projectile.oldPos.Length - k) / (Projectile.oldPos.Length * 1.7f); 
                 Color ProjColor = new Color(244, 204, 39) * (1f - Projectile.alpha) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length); 
                 Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + offset;
 
@@ -87,9 +87,12 @@ namespace RealmOne.Projectiles.Bullet
             Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, -4, 0, ModContent.ProjectileType<LilGold>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
             Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, 4, ModContent.ProjectileType<LilGold>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
 
-              for (int i = 0; i < 60; i++)
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, 0, ModContent.ProjectileType<StarFlash>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+
+
+            for (int i = 0; i < 60; i++)
             {
-                Vector2 speed = Main.rand.NextVector2CircularEdge(0.5f, 0.5f);
+                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
                 var d = Dust.NewDustPerfect(Projectile.Center, DustID.Sandnado, speed * 5, Scale: 1f);
                 ;
                 d.noGravity = true;

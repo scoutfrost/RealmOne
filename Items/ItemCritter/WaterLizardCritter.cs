@@ -1,4 +1,4 @@
-﻿using RealmOne.NPCs.Critters;
+﻿using RealmOne.NPCs.Critters.Rain;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

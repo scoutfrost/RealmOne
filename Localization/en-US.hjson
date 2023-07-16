@@ -1735,6 +1735,45 @@ Mods: {
 					Releasing the button shoots all Vile Eyes at once
 					'''
 			}
+
+			SquirmoTrophyItem: {
+				DisplayName: Squirmo Trophy Item
+				Tooltip: ""
+			}
+
+			SquirmoMask: {
+				DisplayName: Squirmo Mask
+				Tooltip: ""
+			}
+
+			ImpactTurretB: {
+				DisplayName: Impact Turret B
+				Tooltip: ""
+			}
+
+			EeyeB: {
+				DisplayName: Eeye B
+				Tooltip: ""
+			}
+
+			EslimeB: {
+				DisplayName: Eslime B
+				Tooltip: ""
+			}
+
+			Aquablossom: {
+				DisplayName: Aquablossom
+				Tooltip: Has a taint glow to it!
+			}
+
+			RegenMush: {
+				DisplayName: Regen Mush
+				Tooltip:
+					'''
+					3+ Health Regen
+					'Don't eat it!!!'
+					'''
+			}
 		}
 
 		Buffs: {
@@ -1956,6 +1995,7 @@ Mods: {
 			ConeFlash.DisplayName: Cone Flash
 			OldGoldBullet.DisplayName: Old Gold Bullet
 			LilGold.DisplayName: Lil Gold
+			StarFlash.DisplayName: Star Flash
 		}
 
 		NPCs: {
@@ -1997,6 +2037,7 @@ Mods: {
 			TumblingVulgar.DisplayName: Tumbling Vulgar
 			EbonScreecher.DisplayName: Ebon Screecher
 			EbonScreecherBAD.DisplayName: Aggressive Ebon Screecher
+			GlitterLeaper.DisplayName: Glitter Leaper
 
 			ArcheologistNPC: {
 				DisplayName: Archeologist NPC
@@ -2045,6 +2086,7 @@ Mods: {
 			}
 
 			MangoBat.DisplayName: Mango Bat
+			RainsplurgeSlime.DisplayName: Rainsplurge Slime
 		}
 
 		Tiles: {
@@ -2058,8 +2100,8 @@ Mods: {
 			ProtonTorch.MapEntry: Proton Torch
 			MiniWattleBush.MapEntry: Mini Wattle Bush
 			PiggyTile.MapEntry: Piggy Tile
-			MusicNotePNTtile.MapEntry: Music Note P N Ttile
-			AddictionPNTtile.MapEntry: Addiction P N Ttile
+			MusicNotePNTtile.MapEntry: Quavers
+			AddictionPNTtile.MapEntry: Addiction
 			NewtonCradleTile.MapEntry: Newton Cradle Tile
 			ChickenCoopTile.MapEntry: Chicken Coop Tile
 			Banners.MapEntry: Banners

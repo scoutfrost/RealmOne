@@ -35,11 +35,14 @@ namespace RealmOne.Tiles.Blocks
             MinPick = 60;
         }
 
+
         public override bool CanKillTile(int i, int j, ref bool blockDamaged)
             => NPC.downedBoss1;
 
         public override bool CanExplode(int i, int j)
             => NPC.downedBoss1;
+
+
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {

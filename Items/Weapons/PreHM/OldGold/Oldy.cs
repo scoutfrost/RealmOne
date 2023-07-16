@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Common.Systems;
 using RealmOne.Projectiles.Bullet;
 using RealmOne.RealmPlayer;
+using ReLogic.Content;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
@@ -10,6 +11,7 @@ using Terraria.GameContent;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace RealmOne.Items.Weapons.PreHM.OldGold
 {
@@ -19,6 +21,7 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
         {
             DisplayName.SetDefault("Antiquity Revolver"); 
             Tooltip.SetDefault("'An antique and pristine revolver!'");
+            ItemGlowy.AddItemGlowMask(Item.type, "RealmOne/Items/Weapons/PreHM/OldGold/Oldy_Glow");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -59,6 +62,27 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
             .AddTile(TileID.Anvils)
             .Register();
 
+        }
+        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+        {
+            Texture2D texture = Request<Texture2D>("RealmOne/Items/Weapons/PreHM/OldGold/Oldy_Glow", AssetRequestMode.ImmediateLoad).Value;
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    Item.position.X - Main.screenPosition.X + Item.width * 0.5f,
+                    Item.position.Y - Main.screenPosition.Y + Item.height - texture.Height * 0.5f + 2f
+                ),
+                new Rectangle(0, 0, texture.Width, texture.Height),
+
+                Color.LightCyan,
+                rotation,
+                texture.Size() * 0.5f,
+                scale,
+                SpriteEffects.None,
+                0f
+            );
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {

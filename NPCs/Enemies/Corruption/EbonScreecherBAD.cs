@@ -7,6 +7,7 @@ using Terraria.GameContent.ItemDropRules;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using RealmOne.Items.Food;
+using RealmOne.Items.Weapons.PreHM.Corruption;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {
@@ -131,8 +132,10 @@ namespace RealmOne.NPCs.Enemies.Corruption
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 4, 1, 2));
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedBerries>(), 16, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 3, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<VulgarShot>(), 15, 1, 2));
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedBerries>(), 15, 1, 2));
 
 
         }

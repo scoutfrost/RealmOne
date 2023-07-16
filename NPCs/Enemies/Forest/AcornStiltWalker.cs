@@ -44,11 +44,11 @@ namespace RealmOne.NPCs.Enemies.Forest
             AIType = NPCID.GiantWalkingAntlion;
             AnimationType = NPCID.GiantWalkingAntlion;
             Banner = Type;
-            BannerItem = ModContent.ItemType<AcornStiltB>();
+            BannerItem = ModContent.ItemType<BannerItem.AcornStiltB>();
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return spawnInfo.Player.ZoneForest && Main.dayTime && !spawnInfo.PlayerSafe ? 0.15f : 0f;
+            return spawnInfo.Player.ZoneForest && Main.dayTime && !spawnInfo.PlayerSafe ? 0.14f : 0f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

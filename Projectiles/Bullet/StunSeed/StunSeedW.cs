@@ -48,10 +48,12 @@ namespace RealmOne.Projectiles.Bullet.StunSeed
 
             if (bounce >= maxBounces) return true;
             else return false;
-        }
+        }   
 
         public override void Kill(int timeLeft)
         {
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("SeedGore10").Type, 1f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("SeedGore10").Type, 1f);
             for (int i = 0; i < 7; i++)
             {
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);

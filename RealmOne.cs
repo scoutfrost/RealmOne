@@ -37,14 +37,15 @@ namespace RealmOne
         {
             throw new NotImplementedException();
         }
-
-        public override void PostSetupContent()
+        
+      /*  public override void PostSetupContent()
         {
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
             if (bossChecklist != null)
             {
                 bossChecklist.Call(new object[11]
                 {
+
                     "AddBoss",
                     this,
                     "Squirmo",
@@ -63,6 +64,7 @@ namespace RealmOne
                     ModContent.ItemType<SquirmoSummon>(),
                     "Even from the past dread of worm adaptation, they havent really caused global damage. But for Squirmo, ever seeking revenge on human inhabitants is still a current warning for people.  Adhere the relief of the soil by defeating Squirmo!!",
                     ""
+
                 });
 
                 bossChecklist.Call(new object[11]
@@ -105,6 +107,6 @@ namespace RealmOne
                 ""
                });
             }
-        }
+        }*/
     }
 }

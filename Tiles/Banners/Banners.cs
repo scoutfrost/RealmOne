@@ -8,6 +8,8 @@ using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using RealmOne.NPCs.Enemies.Impact;
+using RealmOne.NPCs.Enemies.Rain;
 
 namespace RealmOne.Tiles.Banners
 {
@@ -35,12 +37,24 @@ namespace RealmOne.Tiles.Banners
             int style = frameX / 18;
             switch (style) {
                 case 0:
-                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16) , i * 16, j * 16, 16, 48, ModContent.ItemType<AcornSprinterB>());
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16) , i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.AcornSprinterB>());
                     break;
                case 1:
-                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16) , i * 16, j * 16, 16, 48, ModContent.ItemType<AcornStiltB>());
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16) , i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.AcornStiltB>());
                     break;
-               
+
+                case 2:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.ImpactTurretB>());
+                    break;
+
+                case 3:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.EslimeB>());
+                    break;
+
+                case 4:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.EeyeB>());
+                    break;
+
                 default:
                     return;
             }
@@ -60,6 +74,22 @@ namespace RealmOne.Tiles.Banners
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<AcornStiltWalker>()] = true;
                         Main.SceneMetrics.hasBanner = true;
                         break;
+
+                    case 2:
+                        Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<ImpactTurret>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
+                        break;
+
+                    case 3:
+                        Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<Eslime>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
+                        break;
+
+                    case 4:
+                        Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<Eye1>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
+                        break;
+
                     default:
                         return;
                 }
