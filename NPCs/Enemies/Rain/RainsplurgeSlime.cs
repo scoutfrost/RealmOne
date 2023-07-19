@@ -56,9 +56,9 @@ namespace RealmOne.NPCs.Enemies.Rain
 
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
-            return SpawnCondition.OverworldDayRain.Chance * 0.15f; ;
-        }
+            => spawnInfo.Player.ZoneForest && Main.raining ? 0.4f : 0f;
+
+
         public override void AI()
         {
             Lighting.AddLight(NPC.position, r: 0.1f, g: 0.2f, b: 0.6f);

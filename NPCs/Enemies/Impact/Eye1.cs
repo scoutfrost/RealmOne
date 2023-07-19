@@ -52,7 +52,7 @@ namespace RealmOne.NPCs.Enemies.Impact
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.18f;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.17f;
         }
 
         public override void AI()

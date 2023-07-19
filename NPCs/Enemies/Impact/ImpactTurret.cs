@@ -61,7 +61,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return spawnInfo.Player.ZoneForest ? 0.06f : 0f;
+            return spawnInfo.Player.ZoneForest ? 0.03f : 0f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

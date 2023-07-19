@@ -66,10 +66,8 @@ namespace RealmOne.NPCs.Critters.Rain
             }
         }
 
-          public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
-            return SpawnCondition.OverworldDayRain.Chance * 0.14f; ;
-        }
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+          => spawnInfo.Player.ZoneForest && Main.raining ? 0.4f : 0f;
 
         public override void AI()
         {

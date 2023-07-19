@@ -57,7 +57,10 @@ namespace RealmOne.Common.Systems
                     NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<HeartBat>(), 1);
                 }
 
-
+                if (type == 5 && Main.rand.NextBool(5))
+                {
+                    NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<AcornSprinter>(), 1);
+                }
 
             }
         }
@@ -73,12 +76,16 @@ namespace RealmOne.Common.Systems
             if (source is EntitySource_ShakeTree)
             {
                 IEntitySource newSource = item.GetSource_FromThis(); // Use a separate source for the newly created projectiles, to not cause a stack overflow.
-
-                NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
-                if (Main.dayTime!)
+                if (Main.rand.NextBool(7))
                 {
+                    NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
+                    if (Main.dayTime!)
+                    {
+                    }
                 }
-                else
+
+                else if (Main.rand.NextBool(4))
+
                 {
 
                     NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<MangoBat>());

@@ -125,7 +125,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
 
             }
 
-            for (int k = 0; k < 5; k++)
+            for (int k = 0; k < 30; k++)
             {
                 Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptionThorns);
             }
