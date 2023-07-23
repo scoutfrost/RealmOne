@@ -8,6 +8,11 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="NPCs\Enemies\MiniBoss\PossessedPiggy.png" />
+    <None Remove="Projectiles\Piggy\Porcelain.png" />
+    <None Remove="Projectiles\Piggy\Shockwave.png" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
 </Project>
