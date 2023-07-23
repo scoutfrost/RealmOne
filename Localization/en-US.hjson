@@ -1767,7 +1767,7 @@ Mods: {
 			}
 
 			RegenMush: {
-				DisplayName: Regen Mush
+				DisplayName: Mushroom of Regen
 				Tooltip:
 					'''
 					3+ Health Regen
@@ -2113,5 +2113,12 @@ Mods: {
 		}
 
 		"Keybinds.Technicians Call.DisplayName": Technicians  Call
+
+		Biomes: {
+			FarmSurface: {
+				DisplayName: Farm Surface
+				TownNPCDialogueName: the Farm Surface
+			}
+		}
 	}
 }
