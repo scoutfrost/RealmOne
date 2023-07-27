@@ -19,10 +19,9 @@ namespace RealmOne.Projectiles.Throwing
         public override void SetDefaults()
         {
             Projectile.width = 24;
-            Projectile.height = 24;
+            Projectile.height = 32;
 
             Projectile.aiStyle = 2;
-            Projectile.DamageType = DamageClass.Generic;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.ignoreWater = true;
@@ -39,7 +38,7 @@ namespace RealmOne.Projectiles.Throwing
             Lighting.AddLight(Projectile.position, r: 0.2f, g: 0.2f, b: 0.2f);
             Lighting.Brightness(1, 1);
 
-            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.DungeonPink, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 1f);
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.DungeonPink, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f, Scale: 0.8f, Alpha: 120);
 
         }
 

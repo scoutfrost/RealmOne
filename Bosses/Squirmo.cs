@@ -203,8 +203,8 @@ namespace RealmOne.Bosses
         {
             // Set the segment variance
             // If you want the segment length to be constant, set these two properties to the same value
-            MinSegmentLength = 20;
-            MaxSegmentLength = 20;
+            MinSegmentLength = 12;
+            MaxSegmentLength = 12;
 
             CommonWormInit(this);
         }
@@ -212,7 +212,7 @@ namespace RealmOne.Bosses
         {
             // These two properties handle the movement of the worm
             worm.MoveSpeed = 14f;
-            worm.Acceleration = 0.19f;
+            worm.Acceleration = 0.2f;
         }
         private int attackCounter;
         public override void SendExtraAI(BinaryWriter writer)

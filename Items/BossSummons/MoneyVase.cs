@@ -28,7 +28,7 @@ namespace RealmOne.Items.BossSummons
             Item.rare = ItemRarityID.Pink;
             Item.consumable = false;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 30;
+            Item.useTime = 30;  
             Item.useAnimation = 20;
             Item.UseSound = SoundID.Item1;
             Item.shoot = ModContent.ProjectileType<MoneyVaseProj>();

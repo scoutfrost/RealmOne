@@ -67,7 +67,7 @@ namespace RealmOne.Common
                 return false;
             }
 
-            int positionX = Main.spawnTileX - 1; //offset by dimensions of statue
+            int positionX = Main.spawnTileX - 1; 
             int positionY = Main.spawnTileY - 4;
             bool placed = false;
             for (int offsetX = -20; offsetX <= 50; offsetX++)

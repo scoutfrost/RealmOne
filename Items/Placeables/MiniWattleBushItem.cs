@@ -26,7 +26,7 @@ namespace RealmOne.Items.Placeables
             Item.useTime = 10;
             Item.autoReuse = true;
             Item.consumable = true;
-            Item.createTile = ModContent.TileType<ChickenCoopTile>();
+            Item.createTile = ModContent.TileType<MiniWattleBush>();
             Item.width = 24;
             Item.height = 24;
             Item.maxStack = 99;

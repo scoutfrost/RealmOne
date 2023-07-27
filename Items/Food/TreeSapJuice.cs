@@ -38,6 +38,7 @@ namespace RealmOne.Items.Food
             Item.healLife = 70;
             Item.buffType = ModContent.BuffType<TreeSapBuff>();
             Item.buffTime = 3600;
+            Item.UseSound = SoundID.Item3;
         }
 
         public override void AddRecipes()

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Bestiary;
 using RealmOne.Items.Food;
 using RealmOne.Items.Weapons.PreHM.Corruption;
+using RealmOne.Items.Food.FarmFood;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {

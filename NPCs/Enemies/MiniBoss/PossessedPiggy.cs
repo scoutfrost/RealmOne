@@ -1,9 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
-using R.Projectiles.Piggy;
+using RealmOne.Projectiles.Piggy;
 using RealmOne.BossBars;
 using RealmOne.Common.Systems;
 using RealmOne.Items.Misc.EnemyDrops;
-using RealmOne.Projectiles.Piggy;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -252,8 +251,16 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             if (NPC.life <= 0)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore1").Type, 1f);
+
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore2").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore2").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore2").Type, 1f);
+
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore3").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore3").Type, 1f);
+
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore4").Type, 1.5f);
+
 
             }
 
@@ -263,13 +270,13 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 Vector2 speed = Main.rand.NextVector2Square(1f, 1f);
 
                 var d = Dust.NewDustPerfect(NPC.position, DustID.DungeonPink, speed * 5, Scale: 1.5f);
-                ;
+                
                 d.noGravity = true;
             }
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PiggyPorcelain>(), 1, 4, 5));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PiggyPorcelain>(), 1, 4, 6));
             npcLoot.Add(ItemDropRule.Common(ItemID.PiggyBank, 20, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.MoneyTrough, 30, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.GoldCoin, 1, 5, 6));
@@ -279,17 +286,17 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             int buffType = BuffID.Midas;
-            int timeToAdd = 5 * 60;
+            int timeToAdd = 7 * 60;
             target.AddBuff(buffType, timeToAdd);
 
             CombatText.NewText(new Rectangle((int)target.position.X, (int)target.position.Y - 20, target.width, target.height), new Color(234, 129, 178, 110), "That's my money, fool!", false, false);
 
         }
-        public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+   /*     public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
         {
             CombatText.NewText(new Rectangle((int)NPC.position.X, (int)NPC.position.Y - 20, NPC.width, NPC.height), new Color(234, 129, 178, 180), "Ow that hurt!", false, false);
 
-        }
+        }*/
 
         public override void OnKill()
         {
@@ -305,7 +312,6 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         }
         public override void OnSpawn(IEntitySource source)
         {
-            coinScatter = 300;
 
             Player player = Main.player[NPC.target];
 

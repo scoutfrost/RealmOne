@@ -19,7 +19,8 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
         }
-
+   
+    
         public override void SetDefaults()
         {
             Item.damage = 14;

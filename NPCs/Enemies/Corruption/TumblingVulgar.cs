@@ -11,6 +11,7 @@ using Terraria.ModLoader.Utilities;
 using RealmOne.Items.Misc.EnemyDrops;
 using Terraria.GameContent.ItemDropRules;
 using RealmOne.Items.Food;
+using RealmOne.Items.Food.FarmFood;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {

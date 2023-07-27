@@ -2,6 +2,7 @@
 using RealmOne.Items.ItemCritter;
 using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -56,7 +57,11 @@ namespace RealmOne.NPCs.Critters
             AnimationType = NPCID.Bird;
 
         }
+        public override void OnSpawn(IEntitySource source)
+        {
+            SoundEngine.PlaySound(rorAudio.MagpieCalling, NPC.position);
 
+        }
         public override void HitEffect(NPC.HitInfo hit)
         {
             if (NPC.life <= 0)
@@ -87,10 +92,10 @@ namespace RealmOne.NPCs.Critters
         {
             NPC.TargetClosest(true);
                 Player player = Main.player[NPC.target];
-            if (NPC.HasValidTarget && NPC.Distance(player.Center) <= 300)
+        /*    if (NPC.HasValidTarget && NPC.Distance(player.Center) <= 300)
             {
                 SoundEngine.PlaySound(rorAudio.MagpieCalling, NPC.position);
-            }
+            }*/
         }
     }
 }

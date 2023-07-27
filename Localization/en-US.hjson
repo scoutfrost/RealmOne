@@ -770,8 +770,8 @@ Mods: {
 			}
 
 			Oldy: {
-				DisplayName: Oldy
-				Tooltip: "'A flaming pristine gun crafted from the pure glistening bars of Old Gold'"
+				DisplayName: Antiquity Revolver
+				Tooltip: "'A precise and antique revolver crafted from the ancient bars of Old Gold"
 			}
 
 			PagesOfPristinity: {
@@ -929,7 +929,7 @@ Mods: {
 			}
 
 			PreFlamedGel: {
-				DisplayName: Pre Flamed Gel
+				DisplayName: Flammable Jelly
 				Tooltip: Throws slippery and flammable chunks of gel
 			}
 
@@ -1774,6 +1774,66 @@ Mods: {
 					'Don't eat it!!!'
 					'''
 			}
+
+			ChickenCoopItem: {
+				DisplayName: Chicken Coop Item
+				Tooltip: ""
+			}
+
+			TractorTileItem: {
+				DisplayName: Tractor Tile Item
+				Tooltip: ""
+			}
+
+			TatteredWood: {
+				DisplayName: Tattered Wood
+				Tooltip: Guaranteed Splinters!
+			}
+
+			FarmKey: {
+				DisplayName: Farm Key
+				Tooltip: Unlocks an Ancient and Tattered Chest
+			}
+
+			FarmChest: {
+				DisplayName: Farm Chest
+				Tooltip: ""
+			}
+
+			FarmAcorn: {
+				DisplayName: Farm Acorn
+				Tooltip: ""
+			}
+
+			FarmSoilItem: {
+				DisplayName: Farm Soil Item
+				Tooltip: ""
+			}
+
+			Carrot: {
+				DisplayName: Carrot
+				Tooltip:
+				'''
+				'Crunchy and great for your eyesight!'
+				'''
+
+			}
+
+			FloralDelight: {
+				DisplayName: Floral Delight
+				Tooltip:
+					'''
+					Sweet, eadable flowers, filled with nutrients and goodness!
+	 Gives the Heartreach buff"
+	 You can wear this on your head as well!
+					'''
+			}
+
+			PumpkinSoup: {
+				DisplayName: Pumpkin Soup
+				Tooltip: "'Gourmet, delicious and it warms your stomach!'"
+				
+			}
 		}
 
 		Buffs: {
@@ -1996,6 +2056,8 @@ Mods: {
 			OldGoldBullet.DisplayName: Old Gold Bullet
 			LilGold.DisplayName: Lil Gold
 			StarFlash.DisplayName: Star Flash
+			Porcelain.DisplayName: Porcelain
+			Shockwave.DisplayName: Shockwave
 		}
 
 		NPCs: {
@@ -2105,6 +2167,15 @@ Mods: {
 			NewtonCradleTile.MapEntry: Newton Cradle Tile
 			ChickenCoopTile.MapEntry: Chicken Coop Tile
 			Banners.MapEntry: Banners
+			TatteredWoodTile.MapEntry: Tattered Wood Tile
+
+			FarmChestTile: {
+				MapEntry0: Farm Chest
+				MapEntry1: Farm Chest
+			}
+
+			FarmSapling.MapEntry: Farm Sapling
+			FarmSoil.MapEntry: Farm Soil
 		}
 
 		DamageClasses: {

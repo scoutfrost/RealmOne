@@ -2,10 +2,12 @@
 using RealmOne.Bosses;
 using RealmOne.Common.Systems;
 using RealmOne.NPCs.Enemies.Forest;
+using RealmOne.Projectiles.Bullet;
 using RealmOne.Rarities;
 using RealmOne.RealmPlayer;
 using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.Localization;
@@ -19,7 +21,7 @@ namespace RealmOne.Items.BossSummons
         {
             DisplayName.SetDefault("Worm Infested Carrot"); 
             Tooltip.SetDefault("'Awaken the sludgy scavenger of the soil'"
-                + "\n'The soil will adhere relief'"
+                + "\n'The soil will adhere relief!!'"
                 + "\nSummons Squirmo");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 3;
             ItemID.Sets.SortingPriorityBossSpawns[Type] = 12;
@@ -35,14 +37,15 @@ namespace RealmOne.Items.BossSummons
         {
             Item.width = 20;
             Item.height = 20;
-            Item.value = 20000;
+            Item.value = Item.buyPrice(0, 2, 0, 0);
             Item.rare = ModContent.RarityType<ModRarities>();
             Item.consumable = false;
             Item.useStyle = ItemUseStyleID.EatFood;
             Item.useTime = 30;
             Item.useAnimation = 20;
             Item.UseSound = SoundID.Item2;
-
+            Item.shoot = ProjectileID.None;
+            Item.shootSpeed = 0;
         }
 
         public override bool CanUseItem(Player player)
@@ -52,11 +55,48 @@ namespace RealmOne.Items.BossSummons
             //    return !Main.dayTime && !NPC.AnyNPCs(ModContent.NPCType<MinionBossBody>()); would mean "not daytime and no MinionBossBody currently alive"
             return !NPC.AnyNPCs(ModContent.NPCType<SquirmoHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>());
         }
+      /*  public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 1f;
+
+            if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+                position += muzzleOffset;
+
+            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore1").Type, 1f);
+            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore2").Type, 1f);
+            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore3").Type, 1f);
+            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore4").Type, 1f);
+
+
+
+            return true;
+        }*/
 
         public override bool? UseItem(Player player)
         {
             if (player.whoAmI == Main.myPlayer)
             {
+                int CarrotGore1 = Mod.Find<ModGore>("CarrotGore1").Type;
+                int CarrotGore2 = Mod.Find<ModGore>("CarrotGore2").Type;
+                int CarrotGore3 = Mod.Find<ModGore>("CarrotGore3").Type;
+                int CarrotGore4 = Mod.Find<ModGore>("CarrotGore4").Type;
+
+
+
+                IEntitySource entitySource = Item.GetSource_Death();
+
+                for (int i = 0; i < 1; i++)
+                {
+                    Gore.NewGore(entitySource, player.position, new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), CarrotGore1);
+                    Gore.NewGore(entitySource, player.position, new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), CarrotGore2);
+                    Gore.NewGore(entitySource, player.position, new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), CarrotGore3);
+                    Gore.NewGore(entitySource, player.position, new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), CarrotGore4);
+
+
+
+
+
+                }
 
                 if (Main.netMode != NetmodeID.Server)
                     Main.NewText(Language.GetTextValue("'The soil feels moist...'"), 210, 100, 175);
@@ -65,6 +105,9 @@ namespace RealmOne.Items.BossSummons
                 SoundEngine.PlaySound(rorAudio.SquirmoSummonSound, player.position);
 
                 player.GetModPlayer<Screenshake>().WormScreenshake = true;
+
+
+
 
             }
 

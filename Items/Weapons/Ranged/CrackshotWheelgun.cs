@@ -24,15 +24,15 @@ namespace RealmOne.Items.Weapons.Ranged
         }
         public override void SetDefaults()
         {
-            Item.damage = 20;
+            Item.damage = 15;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 50;
-            Item.useAnimation = 50;
+            Item.useTime = 55;
+            Item.useAnimation = 55;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2f;
-            Item.value = 30000;
+            Item.value = Item.buyPrice(0, 2, 25, 0);
             Item.UseSound = SoundID.Item1;
             Item.rare = ModContent.RarityType<ModRarities>();
             Item.autoReuse = true;
@@ -46,8 +46,8 @@ namespace RealmOne.Items.Weapons.Ranged
         {
             if (player.altFunctionUse == 2)
             {
-                Item.useTime = 20;
-                Item.useAnimation = 20;
+                Item.useTime = 30;
+                Item.useAnimation = 30;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.noUseGraphic = true;
                 Item.UseSound = SoundID.Item1;
@@ -59,8 +59,8 @@ namespace RealmOne.Items.Weapons.Ranged
             else
             {
                 Item.shootSpeed = 88f;
-                Item.useTime = 50;
-                Item.useAnimation = 50;
+                Item.useTime = 55;
+                Item.useAnimation = 55;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.noUseGraphic = false;
                 Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/WheelgunSound");
@@ -102,10 +102,10 @@ namespace RealmOne.Items.Weapons.Ranged
                     position += muzzleOffset;
                 Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("TommyGunPellets").Type, 1f);
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 19; i++)
                 {
                     Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                    var d = Dust.NewDustPerfect(Main.LocalPlayer.Center, DustID.Smoke, speed * 6, Scale: 1f);
+                    var d = Dust.NewDustPerfect(Main.LocalPlayer.Center, DustID.Smoke, speed * 4, Scale: 1f);
                     d.noGravity = false;
                 }
 
@@ -135,14 +135,13 @@ namespace RealmOne.Items.Weapons.Ranged
             Projectile.timeLeft = 400;
             Projectile.aiStyle = 14;
             Projectile.friendly = false;
-            Projectile.damage = 20;
             Projectile.scale = 1.2f;
-            Projectile.light = 1f;
+            Projectile.light = 0.5f;
         }
 
         public override void AI()
         {
-            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.WoodFurniture, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.4f, Scale: 0.9f, Alpha: 90);
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.WoodFurniture, Projectile.velocity.X * 0.7f, Projectile.velocity.Y * 0.7f, Scale: 0.6f, Alpha: 90);
 
             var Hitbox = new Rectangle((int)Projectile.Center.X - 40, (int)Projectile.Center.Y - 40, 80, 80);
             IEnumerable<Projectile> list = Main.projectile.Where(x => x.Hitbox.Intersects(Hitbox));
@@ -154,15 +153,20 @@ namespace RealmOne.Items.Weapons.Ranged
 
                     proj.active = false;
 
-                    for (int i = 0; i < 5; i++)
+                    for (int i = 0; i < 3; i++)
                     {
                         Vector2 velocity = Vector2.Normalize(proj.velocity).RotatedBy(Main.rand.NextFloat(-0.6f, 0.6f)) * Main.rand.NextFloat(1.3f, 3);
-                        Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.Center, velocity, ProjectileID.MolotovFire3, Projectile.damage, 0, Owner.whoAmI).scale = Main.rand.NextFloat(0.85f, 1.15f);
+                        Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.Center, velocity, ProjectileID.MolotovFire3, Projectile.damage,0, Owner.whoAmI).scale = Main.rand.NextFloat(0.85f, 1.15f);
                     }
                 }
         }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Projectile.Kill();
+        }
         public override void Kill(int timeLeft)
         {
+
             for (int i = 0; i < 2; i++)
                 Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Projectile.velocity, Mod.Find<ModGore>("WheelGore1").Type, 1f);
             for (int i = 0; i < 2; i++)

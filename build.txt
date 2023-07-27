@@ -4,4 +4,6 @@ homepage = https://discord.gg/Npk2dDzRdt
 version = 0.192
 hideCode = false;
 includeSource = true;
+dllReferences = StructureHelper
+
 

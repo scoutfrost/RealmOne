@@ -11,12 +11,18 @@ using RealmOne.NPCs.Enemies.Forest;
 using RealmOne.NPCs.Enemies.MiniBoss;
 using RealmOne.NPCs.Enemies.Underground;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.IO;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
+using StructureHelper;
+
 using static Terraria.ModLoader.ModContent;
+using RealmOne.NPCs.Critters;
+using RealmOne.Items.Food.FarmFood;
 
 namespace RealmOne.Common.Systems
 {
@@ -57,9 +63,11 @@ namespace RealmOne.Common.Systems
                     NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<HeartBat>(), 1);
                 }
 
-                if (type == 5 && Main.rand.NextBool(5))
+           
+
+                if (type == TileID.Dirt && DownedBossSystem.downedSquirmo == false && Main.rand.NextBool(10))
                 {
-                    NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<AcornSprinter>(), 1);
+                    NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<Squirm>(), 1);
                 }
 
             }
@@ -97,11 +105,25 @@ namespace RealmOne.Common.Systems
 
 
     }
-
+    
     public class WorldSystem : ModSystem
     {
-        
-        
+
+        public class Test: GenPass
+        {
+            public Test(string name, double loadWeight) : base(name, loadWeight)
+            {
+            }
+
+            protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration)
+            {
+                int x = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow/ 2);
+                int y = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow/ 2);
+                Point16 point = new Point16(x, y);
+                Generator.GenerateStructure("Structures/Test", point, RealmOne.Instance, false);
+            }
+
+        }
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
             int shiniesIndex = tasks.FindIndex((GenPass genpass) => genpass.Name.Equals("Shinies"));

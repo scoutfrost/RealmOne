@@ -54,9 +54,9 @@ namespace RealmOne.Tiles
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY) => offsetY = 2;
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
-            r = 0.3f;
-            g = 0.3f;
-            b = 0.3f;
+            r = 0.2f;
+            g = 0.2f;
+            b = 0.2f;
         }
 
 
