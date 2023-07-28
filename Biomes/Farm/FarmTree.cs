@@ -63,7 +63,7 @@ namespace RealmOne.Biomes.Farm
             options.Add(FarmTreeEnum.Acorn, 0.8f);
             options.Add(FarmTreeEnum.Wood, 0.8f);
             options.Add(FarmTreeEnum.Critter, 0.6f);
-            options.Add(FarmTreeEnum.Fruit, 0.4f);
+            options.Add(FarmTreeEnum.Fruit, 0.6);
 
             FarmTreeEnum effect = options;
 

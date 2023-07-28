@@ -14,7 +14,6 @@ namespace RealmOne.Biomes.Farm
 {
     public class FarmSapling : ModTile
     {
-       
           public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

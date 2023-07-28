@@ -63,7 +63,7 @@ namespace RealmOne.NPCs.Critters
         public override void HitEffect(NPC.HitInfo hit)
         {
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 15; i++)
             {
 
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
@@ -82,7 +82,7 @@ namespace RealmOne.NPCs.Critters
             int buffType = BuffID.Slow;
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
-            int timeToAdd = 1 * 60; //This makes it 5 seconds, one second is 60 ticks
+            int timeToAdd = 2 * 60; //This makes it 5 seconds, one second is 60 ticks
             target.AddBuff(buffType, timeToAdd);
         }
     }

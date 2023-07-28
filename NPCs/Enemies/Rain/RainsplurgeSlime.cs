@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Items.Misc;
 using RealmOne.Items.Misc.EnemyDrops;
+using RealmOne.Items.Misc.Plants;
 using RealmOne.Items.Placeables.BannerItems;
 using RealmOne.Projectiles.Magic;
 using ReLogic.Content;
@@ -110,6 +112,12 @@ namespace RealmOne.NPCs.Enemies.Rain
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 1, 5));
+             
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Aquablossom>(), 2, 2, 4));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WaterDriplets>(), 2, 2, 4));
+
+
+
 
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
