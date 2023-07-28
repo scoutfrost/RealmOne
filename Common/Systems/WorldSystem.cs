@@ -19,13 +19,17 @@ using Terraria.IO;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
 using StructureHelper;
-
+using RealmOne.Biomes.Farm;
 using static Terraria.ModLoader.ModContent;
 using RealmOne.NPCs.Critters;
 using RealmOne.Items.Food.FarmFood;
 
 namespace RealmOne.Common.Systems
 {
+    public static class BiomePlayer
+    {
+
+    }
     public class TileDrops : GlobalTile
     {
         public override void Drop(int i, int j, int type)

@@ -1748,17 +1748,17 @@ Mods: {
 
 			ImpactTurretB: {
 				// DisplayName: Impact Turret B
-				// Tooltip: ""
+				// Tooltip: Impact Turret Banner
 			}
 
 			EeyeB: {
 				// DisplayName: Eeye B
-				// Tooltip: ""
+				// Tooltip: E-Eye Banner
 			}
 
 			EslimeB: {
 				// DisplayName: Eslime B
-				// Tooltip: ""
+				// Tooltip: E-Slime Banner
 			}
 
 			Aquablossom: {
@@ -1812,7 +1812,7 @@ Mods: {
 
 			Carrot: {
 				// DisplayName: Carrot
-				// Tooltip: Crunchy and great for your eyesight!
+				// Tooltip: "'Crunchy and great for your eyesight!'"
 			}
 
 			FloralDelight: {
@@ -1820,9 +1820,8 @@ Mods: {
 				/* Tooltip:
 					'''
 					Sweet, eadable flowers, filled with nutrients and goodness!
-					            Gives the Heartreach buff"
-					           You can wear this on your head as well!
-					  
+					Gives the Heartreach buff"
+					You can wear this on your head as well!
 					''' */
 			}
 
@@ -1830,9 +1829,19 @@ Mods: {
 				// DisplayName: Pumpkin Soup
 				/* Tooltip:
 					'''
-					Gourmet, delicious and it warms your stomach!!
-					    	
+					Delicious, gourmet and it warms up your tummy
+					Gives Medium Improvements to all stats
 					''' */
+			}
+
+			FarmPylonItem: {
+				// DisplayName: Farm Pylon
+				// Tooltip: ""
+			}
+
+			OldSnailItem: {
+				// DisplayName: Grandfather Snail
+				// Tooltip: ""
 			}
 		}
 
@@ -2100,6 +2109,9 @@ Mods: {
 			// EbonScreecher.DisplayName: Ebon Screecher
 			// EbonScreecherBAD.DisplayName: Aggressive Ebon Screecher
 			// GlitterLeaper.DisplayName: Glitter Leaper
+			// MangoBat.DisplayName: Mango Bat
+			// RainsplurgeSlime.DisplayName: Rainsplurge Slime
+			// OldSnail.DisplayName: Grandfather Slime
 
 			ArcheologistNPC: {
 				// DisplayName: Archeologist NPC
@@ -2146,9 +2158,6 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 			}
-
-			// MangoBat.DisplayName: Mango Bat
-			// RainsplurgeSlime.DisplayName: Rainsplurge Slime
 		}
 
 		Tiles: {
@@ -2176,6 +2185,7 @@ Mods: {
 
 			// FarmSapling.MapEntry: Farm Sapling
 			// FarmSoil.MapEntry: Farm Soil
+			// FarmPylonTile.MapEntry: Farm Pylon Tile
 		}
 
 		DamageClasses: {
@@ -2187,8 +2197,8 @@ Mods: {
 
 		Biomes: {
 			FarmSurface: {
-				// DisplayName: Farm Surface
-				// TownNPCDialogueName: the Farm Surface
+				// DisplayName: The Abandoned Farm
+				// TownNPCDialogueName: The Abandoned Farm
 			}
 		}
 	}

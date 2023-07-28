@@ -9,7 +9,7 @@ using Terraria.WorldBuilding;
 
 namespace RealmOne.Biomes.Farm
 {
-    internal class FarmSurface : ModBiome
+    public class FarmSurface : ModBiome
     {
         public override void SetStaticDefaults() => DisplayName.SetDefault("Abandoned Farm");
        public override ModWaterStyle WaterStyle => ModContent.Find<ModWaterStyle>("RealmOne/FarmWaterfallStyle");
@@ -23,8 +23,15 @@ namespace RealmOne.Biomes.Farm
         public override Color? BackgroundColor => base.BackgroundColor;
         public override string MapBackground => "";
 
-     
+        public override bool IsBiomeActive(Player player)
+        {
+            bool surface = player.ZoneSkyHeight || player.ZoneOverworldHeight;
+            return BiomeTileCount.InFarm&& surface;
+        }
 
-     
+
+
+
+
     }
 }
