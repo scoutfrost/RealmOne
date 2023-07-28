@@ -13,7 +13,6 @@ namespace RealmOne.Biomes
 
         public static bool InFarm => ModContent.GetInstance<BiomeTileCount>().FarmCount > 50;
       
-
         public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
         {
             //Modded biomes

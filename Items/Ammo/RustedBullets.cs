@@ -29,15 +29,15 @@ namespace RealmOne.Items.Ammo
             Item.value = Item.sellPrice(0, 0, 1, 0); // Item price in copper coins (can be converted with Item.sellPrice/Item.buyPrice)
             Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
             Item.shoot = ProjectileID.Bullet; // The projectile that weapons fire when using this item as ammunition.
-
+            Item.CloneDefaults(ItemID.MusketBall);
             Item.ammo = Item.type; // Important. The first item in an ammo class sets the AmmoID to its type
         }
 
         public override void AddRecipes()
         {
-            CreateRecipe(50)
+            CreateRecipe(20)
 
-            .AddRecipeGroup("IronBar", 2)
+            .AddRecipeGroup("IronBar", 3)
 
             .AddTile(TileID.WorkBenches)
             .Register();
