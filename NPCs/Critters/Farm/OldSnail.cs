@@ -42,6 +42,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.aiStyle = NPCAIStyleID.Snail;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
+            NPC.dontTakeDamageFromHostiles = true;
 
             AnimationType = NPCID.Snail;
        //     SpawnModBiomes = new int[1] { ModContent.GetInstance<Scenes.VerdantBiome>().Type };
