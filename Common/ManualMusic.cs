@@ -12,6 +12,7 @@ namespace RealmOne.Common
             MusicLoader.AddMusic(mod, "Assets/Music/SquirmoDrip");
             MusicLoader.AddMusic(mod, "Assets/Music/Rlyeh");
             MusicLoader.AddMusic(mod, "Assets/Music/PiggyPatrol");
+            MusicLoader.AddMusic(mod, "Assets/Music/PiggyPatrol");
 
 
         }

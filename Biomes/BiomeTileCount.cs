@@ -3,10 +3,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using RealmOne.Tiles.Blocks;
-
+using Microsoft.Xna.Framework;
+using Terraria.WorldBuilding;
 namespace RealmOne.Biomes
 {
-    internal class BiomeTileCount : ModSystem
+    public class BiomeTileCount : ModSystem
     {
         public int FarmCount;
       
@@ -15,7 +16,6 @@ namespace RealmOne.Biomes
       
         public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
         {
-            //Modded biomes
             FarmCount = tileCounts[ModContent.TileType<FarmSoil>()];
            
         }

@@ -1737,7 +1737,7 @@ Mods: {
 			}
 
 			SquirmoTrophyItem: {
-				// DisplayName: Squirmo Trophy Item
+				// DisplayName: Squirmo Trophy
 				// Tooltip: ""
 			}
 
@@ -1747,18 +1747,18 @@ Mods: {
 			}
 
 			ImpactTurretB: {
-				// DisplayName: Impact Turret B
-				// Tooltip: Impact Turret Banner
+				// DisplayName: Impact Turret Banner
+				// Tooltip: ""
 			}
 
 			EeyeB: {
-				// DisplayName: Eeye B
-				// Tooltip: E-Eye Banner
+				// DisplayName: E-Eye Banner
+				// Tooltip: ""
 			}
 
 			EslimeB: {
-				// DisplayName: Eslime B
-				// Tooltip: E-Slime Banner
+				// DisplayName: E-Slime Banner
+				// Tooltip: ""
 			}
 
 			Aquablossom: {
@@ -1776,12 +1776,12 @@ Mods: {
 			}
 
 			ChickenCoopItem: {
-				// DisplayName: Chicken Coop Item
+				// DisplayName: Chicken Coop
 				// Tooltip: ""
 			}
 
 			TractorTileItem: {
-				// DisplayName: Tractor Tile Item
+				// DisplayName: Tractor
 				// Tooltip: ""
 			}
 
@@ -1791,7 +1791,7 @@ Mods: {
 			}
 
 			FarmKey: {
-				// DisplayName: Farm Key
+				// DisplayName: Ancient Farm Key
 				// Tooltip: Unlocks an Ancient and Tattered Chest
 			}
 
@@ -1806,7 +1806,7 @@ Mods: {
 			}
 
 			FarmSoilItem: {
-				// DisplayName: Farm Soil Item
+				// DisplayName: Farm Soil
 				// Tooltip: ""
 			}
 
@@ -1842,6 +1842,16 @@ Mods: {
 			OldSnailItem: {
 				// DisplayName: Grandfather Snail
 				// Tooltip: ""
+			}
+
+			DepthsPNT: {
+				// DisplayName: The Depths
+				// Tooltip: @Zero and The Possum
+			}
+
+			NothingPNT: {
+				// DisplayName: Nothing
+				// Tooltip: @Zero
 			}
 		}
 
@@ -2158,6 +2168,8 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 			}
+
+			// HoneyHare.DisplayName: Honey Hare
 		}
 
 		Tiles: {
@@ -2186,6 +2198,8 @@ Mods: {
 			// FarmSapling.MapEntry: Farm Sapling
 			// FarmSoil.MapEntry: Farm Soil
 			// FarmPylonTile.MapEntry: Farm Pylon Tile
+			// Depths.MapEntry: Depths
+			// Nothing.MapEntry: Nothing
 		}
 
 		DamageClasses: {
