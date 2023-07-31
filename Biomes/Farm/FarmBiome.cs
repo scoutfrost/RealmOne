@@ -12,7 +12,7 @@ namespace RealmOne.Biomes.Farm
     public class FarmSurface : ModBiome
     {
         public override void SetStaticDefaults() => DisplayName.SetDefault("Abandoned Farm");
-       public override ModWaterStyle WaterStyle => ModContent.Find<ModWaterStyle>("RealmOne/FarmWaterfallStyle");
+       public override ModWaterStyle WaterStyle => ModContent.Find<ModWaterStyle>("RealmOne/Biomes/Farm/FarmWaterfallStyle");
         public override ModSurfaceBackgroundStyle SurfaceBackgroundStyle => ModContent.Find<ModSurfaceBackgroundStyle>("");
         public override CaptureBiome.TileColorStyle TileColorStyle => CaptureBiome.TileColorStyle.Normal;
 
@@ -23,11 +23,11 @@ namespace RealmOne.Biomes.Farm
         public override Color? BackgroundColor => base.BackgroundColor;
         public override string MapBackground => "";
 
-        public override bool IsBiomeActive(Player player)
+    /*    public override bool IsBiomeActive(Player player)
         {
             bool surface = player.ZoneSkyHeight || player.ZoneOverworldHeight;
             return BiomeTileCount.InFarm&& surface;
-        }
+        }*/
 
 
 
