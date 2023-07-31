@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.DataStructures;
 
 
