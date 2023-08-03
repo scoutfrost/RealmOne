@@ -2,7 +2,10 @@
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Misc;
 using RealmOne.Projectiles.Magic;
+using RealmOne.RealmPlayer;
+using RealmOne.Tiles.Blocks;
 using ReLogic.Content;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -25,6 +28,8 @@ namespace RealmOne.NPCs.Critters.Farm
                 Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
+            NPCID.Sets.CountsAsCritter[Type] = true;
+
         }
 
         public override void SetDefaults()
@@ -33,21 +38,30 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.height = 20;
             NPC.defense = 0;
             NPC.lifeMax = 5;
-            NPC.value = Item.buyPrice(0,2,0,0);
+            NPC.value = Item.buyPrice(0, 0, 5, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.HitSound = SoundID.NPCHit1;
 
             NPC.DeathSound = SoundID.NPCDeath1;
             AIType = NPCID.Bunny;
             AnimationType = NPCID.Bunny;
+            SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
+
 
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNight.Chance * 0.23f;
+            Player player = spawnInfo.Player;
+
+            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
+            {
+                int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
+                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
+            }
+            return 0f;
         }
 
-      
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {

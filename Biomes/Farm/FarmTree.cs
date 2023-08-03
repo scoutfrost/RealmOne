@@ -19,6 +19,8 @@ using RealmOne.Items.Food;
 using RealmOne.NPCs.Enemies.Forest;
 using RealmOne.Tiles.Blocks;
 using RealmOne.Items.Misc.Plants;
+using RealmOne.NPCs.Critters.Farm;
+using RealmOne.Items.Food.FarmFood;
 
 namespace RealmOne.Biomes.Farm
 {
@@ -62,8 +64,8 @@ namespace RealmOne.Biomes.Farm
             options.Add(FarmTreeEnum.None, 0.8f);
             options.Add(FarmTreeEnum.Acorn, 0.8f);
             options.Add(FarmTreeEnum.Wood, 0.8f);
-            options.Add(FarmTreeEnum.Critter, 0.6f);
-            options.Add(FarmTreeEnum.Fruit, 0.6);
+            options.Add(FarmTreeEnum.Critter, 0.8f);
+            options.Add(FarmTreeEnum.Fruit, 0.8);
 
             FarmTreeEnum effect = options;
 
@@ -80,20 +82,37 @@ namespace RealmOne.Biomes.Farm
             }
             else if (effect == FarmTreeEnum.Critter)
             {
-                int repeats = Main.rand.Next(1, 3);
+                WeightedRandom<int> npcType = new WeightedRandom<int>();
+                npcType.Add(ModContent.NPCType<OldSnail>(), 0.8);
+                npcType.Add(ModContent.NPCType<MagpieNPC>(), 1f);
+                npcType.Add(ModContent.NPCType<HoneyHare>(), 0.6);
+
+                int repeats = Main.rand.Next(1, 4);
 
                 for (int i = 0; i < repeats; ++i)
                 {
                     Vector2 offset = this.GetRandomTreePosition(Main.tile[x, y]);
                     Vector2 pos = new Vector2(x * 16, y * 16) + offset;
-                    int npc = NPC.NewNPC(WorldGen.GetItemSource_FromTreeShake(x, y), (int)pos.X, (int)pos.Y, ModContent.NPCType<MagpieNPC>(), ModContent.NPCType<MangoBat>());
-                    Main.npc[npc].velocity = new Vector2(Main.rand.NextFloat(1, 3), 0).RotatedByRandom(MathHelper.TwoPi);
+                    NPC.NewNPC(WorldGen.GetItemSource_FromTreeShake(x, y), (int)pos.X, (int)pos.Y, npcType);
                 }
             }
             else if (effect == FarmTreeEnum.Fruit)
             {
-                Vector2 offset = this.GetRandomTreePosition(Main.tile[x, y]);
-                Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, Main.rand.NextBool() ? ModContent.ItemType<ToastedNutBar>() : ModContent.ItemType<VegeToast>(),ModContent.ItemType<JamToast>(), 1);
+                WeightedRandom<int> getRepeats = new WeightedRandom<int>();
+                getRepeats.Add(1, 1f);
+                getRepeats.Add(2, 0.39f);
+                getRepeats.Add(3, 0.2f);
+                getRepeats.Add(6, 0.05f);
+
+                bool fruit = Main.rand.NextBool();
+                int repeats = getRepeats;
+                for (int i = 0; i < repeats; ++i)
+                {
+                    Vector2 offset = this.GetRandomTreePosition(Main.tile[x, y]);
+                    Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, fruit ? ModContent.ItemType<PumpkinSoup>() : ModContent.ItemType<Carrot>(), 1);
+
+                    Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, fruit ? ModContent.ItemType<ToastedNutBar>() : ModContent.ItemType<FloralDelight>(), 1);
+                }
             }
             return false;
         }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.BossSummons;
+using RealmOne.Items.Food.FarmFood;
 using System.IO;
 using Terraria;
 using Terraria.Audio;
@@ -66,7 +68,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDay.Chance * 0.1f;
+            return SpawnCondition.OverworldDay.Chance * 0.099f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -103,7 +105,11 @@ namespace RealmOne.NPCs.Enemies.Forest
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
 
-            npcLoot.Add(ItemDropRule.Common(ItemID.MudBlock, 2, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ItemID.MudBlock, 1, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SquirmoSummon>(), 36, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Carrot>(), 10, 1, 2));
+
+
 
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

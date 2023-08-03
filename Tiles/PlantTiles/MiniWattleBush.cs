@@ -14,7 +14,7 @@ using System.Collections.Generic;
 namespace RealmOne.Tiles.PlantTiles
 {
 
-    public class MiniWattleBush : ModTile
+  /*  public class MiniWattleBush : ModTile
     {
 
         public enum PlantStage : byte
@@ -219,5 +219,5 @@ namespace RealmOne.Tiles.PlantTiles
       
 
     }
-    
+    */
 }

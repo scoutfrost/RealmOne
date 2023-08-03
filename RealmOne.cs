@@ -29,7 +29,6 @@ using Terraria.ModLoader;
 
 namespace RealmOne
 {
-    //Test
     public class RealmOne : Mod
     {
 
@@ -53,8 +52,8 @@ namespace RealmOne
         }
 
 
-
-            /*  public override void PostSetupContent()
+        
+              public override void PostSetupContent()
               {
                   ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
                   if (bossChecklist != null)
@@ -115,14 +114,14 @@ namespace RealmOne
                       "Possessed Piggy Bank",
                       ModContent.NPCType<PossessedPiggy>(),
                       0.3f,
-                      (Func<bool>)(() => DownedBossSystem.downedPiggy),
-                      (Func<bool>)(() => true),
+                      () => DownedBossSystem.downedPiggy,
+                      () => true,
                       new List<int> { ModContent.ItemType<PiggyPorcelain>() },
                       ModContent.ItemType<MoneyVase>(),
                       "A rare scavenger of the land, looking for any Terrarian to stumble across it, stealing all its loot!!",
                       ""
                      });
                   }
-              }*/
+              }
         }
     }

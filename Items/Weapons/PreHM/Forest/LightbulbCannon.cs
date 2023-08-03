@@ -20,12 +20,12 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
 
         public override void SetDefaults()
         {
-            Item.damage = 26;
+            Item.damage = 20;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 40;
             Item.height = 40;
-            Item.useTime = 32;
-            Item.useAnimation = 32;
+            Item.useTime = 35;
+            Item.useAnimation = 35;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 5f;
             Item.rare = ItemRarityID.Blue;

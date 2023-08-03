@@ -28,7 +28,7 @@ namespace RealmOne.Projectiles.Throwing
             Projectile.tileCollide = false;
             Projectile.timeLeft = 380;
 
-            Projectile.penetrate = -2;
+            Projectile.penetrate = 4;
             AIType = ProjectileID.ThrowingKnife;
         }
         public override void Kill(int timeleft)

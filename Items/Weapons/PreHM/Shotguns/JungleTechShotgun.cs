@@ -21,7 +21,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
         public override void SetDefaults()
         {
-            Item.damage = 19;
+            Item.damage = 15;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 40;
             Item.height = 40;

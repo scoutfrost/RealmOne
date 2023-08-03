@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Tiles.Blocks;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
@@ -27,6 +28,7 @@ namespace RealmOne.Items.Misc.Bars
             Item.value = 20000;
             Item.rare = ItemRarityID.Orange;
             Item.maxStack = 999;
+            Item.createTile = ModContent.TileType<OldGoldBarTile>();
 
         }
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

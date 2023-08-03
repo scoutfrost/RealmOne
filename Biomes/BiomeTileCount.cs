@@ -10,14 +10,10 @@ namespace RealmOne.Biomes
     public class BiomeTileCount : ModSystem
     {
         public int FarmCount;
-      
 
-        public static bool InFarm => ModContent.GetInstance<BiomeTileCount>().FarmCount > 50;
-      
         public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
         {
             FarmCount = tileCounts[ModContent.TileType<FarmSoil>()];
-           
         }
     }
 }

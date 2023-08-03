@@ -266,6 +266,7 @@ namespace RealmOne.Bosses
                 }
             }
         }
+
         
     }
     internal class SquirmoBody : WormBody

@@ -12,6 +12,8 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
+using System.Collections.Generic;
+using System;
 
 namespace RealmOne.NPCs.Enemies.MiniBoss
 {
@@ -69,7 +71,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
 
         }
-
+      
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.None;

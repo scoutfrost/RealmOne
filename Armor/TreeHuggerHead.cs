@@ -7,7 +7,7 @@ namespace RealmOne.Armor
 {
     [AutoloadEquip(EquipType.Head)]
 
-    public class TreeHuggerHead : ModItem
+    public class TreeHuggerHead: ModItem
     {
         public override void SetStaticDefaults()
         {

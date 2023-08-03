@@ -17,7 +17,12 @@ using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace RealmOne.RealmPlayer
 {
+    public static class Zones
+    {
+        public static bool ZoneFarmy(this Player player) 
+            => player.InModBiome<Biomes.Farm.FarmSurface>();
 
+    }
     public class Scrolly : ModPlayer
     {
         public bool ShowScroll = false;
@@ -430,7 +435,7 @@ namespace RealmOne.RealmPlayer
 
             return (IEnumerable<Item>)(object)new Item[2]
             {
-                new Item(ModContent.ItemType<SpaceStarfish>(), 1, 0),
+                new Item(ModContent.ItemType<Suitcase>(), 1, 0),
                 new Item(ModContent.ItemType<BreadLoaf>(), 1, 0),
 
 

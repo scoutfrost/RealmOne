@@ -1,3 +1,4 @@
+using RealmOne.Tiles.Blocks;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -20,12 +21,12 @@ namespace RealmOne.Items.Misc.Bars
 
         public override void SetDefaults()
         {
-            Item.material = true;
             Item.width = 20;
             Item.height = 20;
             Item.rare = ItemRarityID.Blue;
             Item.maxStack = 999;
             Item.value = Item.buyPrice(silver: 15);
+            Item.createTile = ModContent.TileType<BrassBarTile>();
 
         }
 

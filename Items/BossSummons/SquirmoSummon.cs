@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Bosses;
 using RealmOne.Common.Systems;
+using RealmOne.Items.ItemCritter;
 using RealmOne.NPCs.Enemies.Forest;
 using RealmOne.Projectiles.Bullet;
 using RealmOne.Rarities;
@@ -152,6 +153,18 @@ namespace RealmOne.Items.BossSummons
             }
 
             return true;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe(1)
+           .AddIngredient(Mod, "Carrot", 1)
+           .AddIngredient(ModContent.ItemType<SquirmItem>(), 4 )
+                      .AddIngredient(ItemID.Worm, 4)
+
+            .AddTile(TileID.WorkBenches)
+            .Register();
+
         }
     }
 }

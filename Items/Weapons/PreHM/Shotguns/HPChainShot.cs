@@ -51,37 +51,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
         public override bool CanUseItem(Player player)
         {
-            bool hasCustomAmmo = player.HasItem(ModContent.ItemType<RustedBullets>());
-
-            if (hasCustomAmmo)
-            {
-                // Use custom modded ammo
-                Item.shootSpeed = 80f;
-                Item.useTime = 73;
-                Item.useAnimation = 73;
-                Item.useStyle = ItemUseStyleID.Shoot;
-                Item.noUseGraphic = false;
-                Item.UseSound = rorAudio.SFX_PumpShotgun;
-                Item.shoot = ProjectileID.Bullet;
-                Item.damage = 5;
-                Item.knockBack = 2f;
-                Item.useAmmo = ModContent.ItemType<RustedBullets>();
-            }
-            else
-            {
-                // Use normal bullets
-                Item.shootSpeed = 80f;
-                Item.useTime = 73;
-                Item.useAnimation = 73;
-                Item.useStyle = ItemUseStyleID.Shoot;
-                Item.noUseGraphic = false;
-                Item.UseSound = rorAudio.SFX_PumpShotgun;
-                Item.shoot = ProjectileID.Bullet;
-                Item.damage = 5;
-                Item.knockBack = 2f;
-                Item.useAmmo = AmmoID.Bullet;
-            }
-
+           
 
             if (player.altFunctionUse == 2)
             {

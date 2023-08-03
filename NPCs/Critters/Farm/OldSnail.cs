@@ -12,6 +12,9 @@ using RealmOne.Items.Misc;
 using Terraria.GameContent.ItemDropRules;
 using RealmOne.Items.Placeables;
 using RealmOne.Items.ItemCritter;
+using RealmOne.RealmPlayer;
+using RealmOne.Tiles.Blocks;
+using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Critters.Farm
 {
@@ -37,6 +40,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.value = 0f;
             NPC.knockBackResist = 0f;
             NPC.dontCountMe = true;
+            NPC.value = Item.buyPrice(0, 0, 4, 0);
             NPC.catchItem = (short)ModContent.ItemType<TatteredBarrelItem>();
             NPC.catchItem = (short)ModContent.ItemType<OldSnailItem>();
             NPC.aiStyle = NPCAIStyleID.Snail;
@@ -45,8 +49,22 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.dontTakeDamageFromHostiles = true;
 
             AnimationType = NPCID.Snail;
-       //     SpawnModBiomes = new int[1] { ModContent.GetInstance<Scenes.VerdantBiome>().Type };
+            SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
+
+
         }
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            Player player = spawnInfo.Player;
+
+            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
+            {
+                int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
+                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
+            }
+            return 0f;
+        }
+    
      
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
