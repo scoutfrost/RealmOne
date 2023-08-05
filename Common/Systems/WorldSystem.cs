@@ -69,6 +69,7 @@ namespace RealmOne.Common.Systems
 
            
 
+
                 if (type == TileID.Dirt && DownedBossSystem.downedSquirmo == false && Main.rand.NextBool(10))
                 {
                     NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<Squirm>(), 1);
@@ -83,7 +84,7 @@ namespace RealmOne.Common.Systems
 
     public sealed class SourceDependentItemTweaks : GlobalItem
     {
-        public override void OnSpawn(Item item, IEntitySource source)
+       /* public override void OnSpawn(Item item, IEntitySource source)
         {
             if (source is EntitySource_ShakeTree)
             {
@@ -106,7 +107,7 @@ namespace RealmOne.Common.Systems
             }
         }
 
-
+        */
 
     }
     

@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.BossSummons;
 using RealmOne.Items.Misc;
+using RealmOne.RealmPlayer;
+using RealmOne.Tiles.Blocks;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -43,9 +46,14 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (spawnInfo.Player.ZoneForest)
-                return SpawnCondition.OverworldNightMonster.Chance * 0.2f;
-            return base.SpawnChance(spawnInfo);
+            Player player = spawnInfo.Player;
+
+            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && !Main.dayTime  && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
+            {
+                int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
+                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
+            }
+            return 0f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

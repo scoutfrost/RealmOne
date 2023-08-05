@@ -28,12 +28,12 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
         public override void SetDefaults()
         {
-            Item.damage = 30;
+            Item.damage = 20;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 34;
             Item.height = 25;
-            Item.useTime = 40;
-            Item.useAnimation = 40;
+            Item.useTime = 45;
+            Item.useAnimation = 45;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 4;
             Item.rare = ItemRarityID.Orange;

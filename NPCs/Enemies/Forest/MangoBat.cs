@@ -57,7 +57,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Mango, 20));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Mango, 18));
 
         }
 

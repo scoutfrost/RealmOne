@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables
 {
-    internal class TatteredWood : ModItem
+    public class TatteredWood : ModItem
     {
         public override void SetStaticDefaults()
         {

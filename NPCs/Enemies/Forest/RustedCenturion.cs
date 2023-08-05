@@ -44,7 +44,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDay.Chance * 0.15f;
+            return SpawnCondition.OverworldDay.Chance * 0.149f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

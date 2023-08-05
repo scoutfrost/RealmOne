@@ -10,8 +10,11 @@ namespace RealmOne.Biomes.Farm
 {
 	public class FarmWaterStyle : ModWaterStyle
 	{
-		public override int ChooseWaterfallStyle() => ModContent.Find<ModWaterfallStyle>("SpiritMod/SpiritWaterfallStyle").Slot;
-		public override int GetSplashDust() => DustID.Water_Desert;
+        public override int ChooseWaterfallStyle()
+        {
+            return ModContent.GetInstance<FarmWaterfallStyle>().Slot;
+        }
+        public override int GetSplashDust() => DustID.Water_Desert;
 		public override int GetDropletGore() => GoreID.WaterDrip;
         
       

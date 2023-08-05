@@ -44,7 +44,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (spawnInfo.Player.ZoneForest)
-                return SpawnCondition.Overworld.Chance * 0.2f;
+                return SpawnCondition.Overworld.Chance * 0.17f;
             return base.SpawnChance(spawnInfo);
         }
 

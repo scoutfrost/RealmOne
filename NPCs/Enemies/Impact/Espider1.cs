@@ -35,8 +35,8 @@ namespace RealmOne.NPCs.Enemies.Impact
             NPC.width = 70;
             NPC.height = 22;
             NPC.damage = 21;
-            NPC.defense = 3;
-            NPC.lifeMax = 120;
+            NPC.defense = 2;
+            NPC.lifeMax = 110;
             NPC.value = Item.buyPrice(0, 0, 6, 15);
             NPC.aiStyle = 3;
             NPC.HitSound = SoundID.NPCHit29;
@@ -48,7 +48,7 @@ namespace RealmOne.NPCs.Enemies.Impact
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.17f;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.15f;
         }
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
