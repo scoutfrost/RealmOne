@@ -2077,6 +2077,12 @@ Mods: {
 			// StarFlash.DisplayName: Star Flash
 			// Porcelain.DisplayName: Porcelain
 			// Shockwave.DisplayName: Shockwave
+			// CopperCoin.DisplayName: Copper Coin
+			// Fire.DisplayName: Fire
+			// GoldCoin.DisplayName: Gold Coin
+			// HugeGoldCoin.DisplayName: Huge Gold Coin
+			// PlatinumCoin.DisplayName: Platinum Coin
+			// SilverCoin.DisplayName: Silver Coin
 		}
 
 		NPCs: {
@@ -2121,7 +2127,7 @@ Mods: {
 			// GlitterLeaper.DisplayName: Glitter Leaper
 			// MangoBat.DisplayName: Mango Bat
 			// RainsplurgeSlime.DisplayName: Rainsplurge Slime
-			// OldSnail.DisplayName: Grandfather Snail
+			// OldSnail.DisplayName: Grandfather Slime
 
 			ArcheologistNPC: {
 				// DisplayName: Archeologist NPC

@@ -97,6 +97,9 @@ namespace RealmOne.RealmPlayer
         public bool SmallScreenshake = false;
         bool makeTimerWork = false;
 
+        public int ScreenShake = 0;
+        public int BigShake = 0;
+
         int timer1 = 0;
         public bool BombScreenshake = false;
         bool makeTimerWork1 = false;
@@ -115,6 +118,18 @@ namespace RealmOne.RealmPlayer
             if (SmallScreenshake == true)
             {
                 makeTimerWork = true;
+            }
+
+            if (ScreenShake > 0)
+            {
+                Main.screenPosition += new Vector2(Main.rand.Next(-3, 4), Main.rand.Next(-3, 4));
+                ScreenShake--;
+            }
+
+            if (BigShake > 0)
+            {
+                Main.screenPosition += new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-6, 7));
+                BigShake--;
             }
 
             if (makeTimerWork == true)
