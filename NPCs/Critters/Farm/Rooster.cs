@@ -35,11 +35,11 @@ namespace RealmOne.NPCs.Critters.Farm
 
         public override void SetDefaults()
         {
-            NPC.width = 18;
-            NPC.height = 20;
+            NPC.width = 25;
+            NPC.height = 25;
             NPC.defense = 0;
             NPC.lifeMax = 7;
-            NPC.value = Item.buyPrice(0,4,0,0);
+            NPC.value = Item.buyPrice(0,1,0,0);
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.HitSound = SoundID.NPCHit1;
 
@@ -93,15 +93,28 @@ namespace RealmOne.NPCs.Critters.Farm
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-          
-            for (int i = 0; i < 20; i++)
+            if (Main.netMode != NetmodeID.Server)
+            {
+                if (NPC.life <= 0)
+                {
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("RoosterGore1").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("RoosterGore2").Type, 1f);
+
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("RoosterGore3").Type, 1f);
+                    Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("RoosterGore4").Type, 1f);
+
+
+                }
+            }
+
+            for (int i = 0; i < 13; i++)
             {
 
-                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                Vector2 speed = Main.rand.NextVector2CircularEdge(0.5f, 0.5f);
 
-                var d = Dust.NewDustPerfect(NPC.position, DustID.Grass, speed * 5, Scale: 2f);
+                var d = Dust.NewDustPerfect(NPC.position, DustID.Blood, speed * 5, Scale: 1f);
                 ;
-                d.noGravity = false;
+                d.noGravity = true;
             }
         }
         

@@ -40,7 +40,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.value = 0f;
             NPC.knockBackResist = 0f;
             NPC.dontCountMe = true;
-            NPC.value = Item.buyPrice(0, 0, 4, 0);
+            NPC.value = Item.buyPrice(0, 0, 0, 95);
             NPC.catchItem = (short)ModContent.ItemType<TatteredBarrelItem>();
             NPC.catchItem = (short)ModContent.ItemType<OldSnailItem>();
             NPC.aiStyle = NPCAIStyleID.Snail;
@@ -60,7 +60,7 @@ namespace RealmOne.NPCs.Critters.Farm
             if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
             {
                 int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
-                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
+                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.2f : 0f;
             }
             return 0f;
         }
@@ -69,7 +69,7 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                new FlavorTextBestiaryInfoElement("ne of the oldest creatures to ever migrate to the Abandoned Farm is the Grandfather Snail. This ol man has been carrying his home for 80 years!!"),
+                new FlavorTextBestiaryInfoElement("One of the oldest creatures to ever migrate to the Abandoned Farm is the Grandfather Snail. This ol man has been carrying his home for 80 years!!"),
             });
         }
 
