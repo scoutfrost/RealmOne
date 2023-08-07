@@ -13,9 +13,6 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
 
     public class AcornWand : ModItem
     {
-        public int MIN = -20;
-        public int MAX = -20;
-
         public override void SetStaticDefaults()
         {
 
@@ -30,11 +27,9 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.height = 40;
 
             Item.autoReuse = true;
-            Item.staff[Item.type] = true;
-
             Item.useTurn = true;
             Item.mana = 5;
-            Item.damage = 24;
+            Item.damage = 15;
             Item.DamageType = DamageClass.Magic;
             Item.knockBack = 1f;
             Item.noMelee = true;
@@ -47,13 +42,26 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = Item.buyPrice(silver: 11);
 
-            Item.shoot = ProjectileID.BoneGloveProj;
+            Item.shoot = ModContent.ProjectileType<BouncingAcorn>();
         }
-        
+        public int spreadMax = 22; //Maximal Projectile Spread
+        public int spreadMin = -20; //Minimum Projectile Spread
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 
-            
+            for (int a = 0; a < Main.rand.Next(1, 3); a++)
+            {
+                float angle = Main.rand.NextFloat(MathHelper.PiOver4, -MathHelper.Pi - MathHelper.PiOver2);
+
+                Vector2 PositionArea = Vector2.Normalize(new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle))) * 20f;
+                if (Collision.CanHit(position, 0, 0, position + PositionArea, 0, 0))
+                    position += PositionArea;
+
+            }
+
+            Vector2 muzzleOffset = Vector2.Normalize(velocity) * 4f;
+            if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+                position += muzzleOffset;
 
             float numberProjectiles = 1 + Main.rand.Next(1); // 3, 4, or 5 shotsx`
             float rotation = MathHelper.ToRadians(3);
@@ -67,7 +75,8 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             for (int index = 0; index < numberProjectiles; ++index)
             {
                 Vector2 vector2_1 = new Vector2((float)(player.position.X + player.width * 0.5 +
-                             (Main.rand.Next(201) * -player.direction) + (Main.mouseX + Main.screenPosition.X - player.position.X)),
+                             (Main.rand.Next(201) * -player.direction) + (Main.mouseX +
+                                 Main.screenPosition.X - player.position.X)),
                     (float)(player.position.Y + player.height * 0.5 -
                              600.0));
                 vector2_1.X = (float)((vector2_1.X + player.Center.X) / 2.0) +
@@ -81,7 +90,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
                 float num15 = Item.shootSpeed / num14;
                 float num16 = num12 * num15;
                 float num17 = num13 * num15;
-                float SpeedX = num16 + Main.rand.Next(MIN, MAX) * 0.02f; //Projectile Spread
+                float SpeedX = num16 + Main.rand.Next(spreadMin, spreadMax) * 0.02f; //Projectile Spread
                 float SpeedY = num17 + Main.rand.Next(-40, 41) * 0.02f;
                 Projectile.NewProjectile(Terraria.Entity.GetSource_None(), vector2_1.X, vector2_1.Y, SpeedX, SpeedY, type, damage,
                                  knockback, Main.myPlayer, 0.0f, Main.rand.Next(1));

@@ -8,7 +8,6 @@ using RealmOne.Items.Others;
 using RealmOne.Items.PaperUI;
 using RealmOne.Items.Placeables;
 using RealmOne.Items.Potions;
-using RealmOne.Items.Weapons.Demolitionist;
 using RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops;
 using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
 using RealmOne.Items.Weapons.Summoner;
