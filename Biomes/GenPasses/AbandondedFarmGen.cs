@@ -40,7 +40,7 @@ namespace RealmOne.Biomes.GenPasses
 						if (i == startX + (endX - startX) / 2)
 						{
                         
-                          Generator.GenerateStructure("Structures/Barn1", new Point16, RealmOne.Instance, false);
+                          Generator.GenerateStructure("Structures/Barn1", new Point16(i ,y), RealmOne.Instance, false);
 						}
 						if (i == startX)
 						{
