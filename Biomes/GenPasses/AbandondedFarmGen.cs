@@ -35,6 +35,10 @@ namespace RealmOne.Biomes.GenPasses
 				{
 					if (WorldGen.SolidTile(i, y))
 					{
+						if (i == startX + (endX - startX) / 2)
+						{
+							Generator.GenerateStructure("Structures/Barn1", new Point16(i, y), RealmOne);
+						}
 						if (i == startX)
 						{
 							Dictionary<ushort, int> dictionary = new Dictionary<ushort, int>();
