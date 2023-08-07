@@ -2155,11 +2155,11 @@ Mods: {
 			// StarFlash.DisplayName: Star Flash
 			// Porcelain.DisplayName: Porcelain
 			// Shockwave.DisplayName: Shockwave
-			// PlatinumCoin.DisplayName: Platinum Coin
-			// HugeGoldCoin.DisplayName: Huge Gold Coin
-			// GoldCoin.DisplayName: Gold Coin
-			// Fire.DisplayName: Fire
 			// CopperCoin.DisplayName: Copper Coin
+			// Fire.DisplayName: Fire
+			// GoldCoin.DisplayName: Gold Coin
+			// HugeGoldCoin.DisplayName: Huge Gold Coin
+			// PlatinumCoin.DisplayName: Platinum Coin
 			// SilverCoin.DisplayName: Silver Coin
 		}
 
