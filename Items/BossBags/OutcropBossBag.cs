@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Accessories;
 using RealmOne.Items.Others;
 using RealmOne.Items.Potions;
-using RealmOne.Items.Weapons.Demolitionist;
 using RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops;
 using Terraria;
 using Terraria.GameContent;
@@ -53,7 +52,7 @@ namespace RealmOne.Items.BossBags
             itemLoot.Add(ItemDropRule.Common(ItemID.Wood, 1, 30, 50));
             itemLoot.Add(ItemDropRule.Common(ItemID.StaffofRegrowth, 4, 1, 1));
 
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BotanicLogLauncher>(), 3, 1, 1));
+    //        itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BotanicLogLauncher>(), 3, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FoliageFury>(), 3, 1, 1));
 
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheOutcastsOverseer>(), 3, 1, 1));

@@ -110,7 +110,7 @@ namespace RealmOne.Common.Systems
         */
 
     }
-    
+   
     public class WorldSystem : ModSystem
     {
 
@@ -124,7 +124,7 @@ namespace RealmOne.Common.Systems
             {
                 int x = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow/ 2);
                 int y = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow/ 2);
-                Point16 point = new Point16(x, y);
+                Point16 point = new Point16(x, y); 
                 Generator.GenerateStructure("Structures/Test", point, RealmOne.Instance, false);
             }
 

@@ -8,7 +8,6 @@ using RealmOne.Items.Others;
 using RealmOne.Items.PaperUI;
 using RealmOne.Items.Placeables;
 using RealmOne.Items.Potions;
-using RealmOne.Items.Weapons.Demolitionist;
 using RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops;
 using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
 using RealmOne.Items.Weapons.Summoner;
@@ -34,7 +33,7 @@ namespace RealmOne
 
       
 
-        public static RealmOne Instance;
+        public static RealmOne Instance = new();
 
         public const string AssetPath = $"{nameof(RealmOne)}/Assets/";
 
@@ -98,7 +97,7 @@ namespace RealmOne
                               ModContent.ItemType<TheOutcastsOverseer>(),
                               ModContent.ItemType<TheCalender>(),
                               ModContent.ItemType<BarrenBrew>(),
-                              ModContent.ItemType<BotanicLogLauncher>(),
+                    //          ModContent.ItemType<BotanicLogLauncher>(),
                               ModContent.ItemType<Overgrowth>(),
                               ModContent.ItemType<FoliageFury>(),
 

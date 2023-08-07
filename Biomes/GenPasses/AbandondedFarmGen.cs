@@ -10,10 +10,12 @@ using Terraria.IO;
 using System;
 using RealmOne.Tiles.Blocks;
 using RealmOne.Tiles;
-
+using StructureHelper;
+using Terraria.DataStructures;
+using RealmOne;
 namespace RealmOne.Biomes.GenPasses
 {
-	internal class AbandondedFarmGen : ModSystem
+	public class AbandondedFarmGen : ModSystem
 	{
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
 		{
@@ -27,7 +29,7 @@ namespace RealmOne.Biomes.GenPasses
 			//bool right = WorldGen.genRand.NextBool();
 			int startX = (Main.maxTilesX / 2) + WorldGen.genRand.Next(100, 150) + (int)(Main.maxTilesX / Main.maxTilesY);
 			int endX = startX + WorldGen.genRand.Next(175, 225) + (int)(Main.maxTilesX / Main.maxTilesY);
-
+			int attempts = 0;
 			for (int i = startX; i < endX; i++)
 			{
 				int y = 0;
@@ -35,6 +37,11 @@ namespace RealmOne.Biomes.GenPasses
 				{
 					if (WorldGen.SolidTile(i, y))
 					{
+						if (i == startX + (endX - startX) / 2)
+						{
+                        
+                          Generator.GenerateStructure("Structures/Barn1", new Point16(i ,y), RealmOne.Instance, false);
+						}
 						if (i == startX)
 						{
 							Dictionary<ushort, int> dictionary = new Dictionary<ushort, int>();
@@ -46,7 +53,7 @@ namespace RealmOne.Biomes.GenPasses
 								validLocation = true;
 							}
 						}
-						if (validLocation)
+						if (validLocation || attempts >= 30)
 						{
 							WorldGen.EmptyLiquid(i, y);
 							WorldGen.TileRunner(i, y, WorldGen.genRand.Next(35, 45), WorldGen.genRand.Next(10, 15), ModContent.TileType<FarmSoil>());
@@ -64,6 +71,7 @@ namespace RealmOne.Biomes.GenPasses
 						}
 						else
 						{
+      							attempts++;
 							endX -= 1;
 							startX -= 1;
 							i = startX;
