@@ -21,6 +21,12 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Biomes\Farm\FarmSapling.png" />
+	  <None Remove="Projectiles\Piggy\CopperCoin.png" />
+	  <None Remove="Projectiles\Piggy\Fire.png" />
+	  <None Remove="Projectiles\Piggy\GoldCoin.png" />
+	  <None Remove="Projectiles\Piggy\HugeGoldCoin.png" />
+	  <None Remove="Projectiles\Piggy\PlatinumCoin.png" />
+	  <None Remove="Projectiles\Piggy\SilverCoin.png" />
 	  <None Remove="Tiles\FarmPylonTile_CrystalHighlight.png" />
 	</ItemGroup>
 	<ItemGroup>

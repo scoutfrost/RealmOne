@@ -98,7 +98,7 @@ namespace RealmOne
                               ModContent.ItemType<TheOutcastsOverseer>(),
                               ModContent.ItemType<TheCalender>(),
                               ModContent.ItemType<BarrenBrew>(),
-                              ModContent.ItemType<BotanicLogLauncher>(),
+                    //          ModContent.ItemType<BotanicLogLauncher>(),
                               ModContent.ItemType<Overgrowth>(),
                               ModContent.ItemType<FoliageFury>(),
 

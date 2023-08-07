@@ -8,7 +8,9 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="BossBars\PiggyBossBar.png" />
     <None Remove="NPCs\Enemies\MiniBoss\PossessedPiggy.png" />
+    <None Remove="NPCs\Enemies\MiniBoss\PossessedPiggy_Head_Boss.png" />
     <None Remove="Projectiles\Piggy\Porcelain.png" />
     <None Remove="Projectiles\Piggy\Shockwave.png" />
   </ItemGroup>
