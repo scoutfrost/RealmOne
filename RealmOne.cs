@@ -35,10 +35,6 @@ namespace RealmOne
         {
             Instance = this;
         }
-        public override void UnLoad()
-        {
-            Instance = null;
-        }
 
         public const string AssetPath = $"{nameof(RealmOne)}/Assets/";
         public static float ModTime { get; internal set; }
