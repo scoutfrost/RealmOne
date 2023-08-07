@@ -10,10 +10,12 @@ using Terraria.IO;
 using System;
 using RealmOne.Tiles.Blocks;
 using RealmOne.Tiles;
-
+using StructureHelper;
+using Terraria.DataStructures;
+using RealmOne;
 namespace RealmOne.Biomes.GenPasses
 {
-	internal class AbandondedFarmGen : ModSystem
+	public class AbandondedFarmGen : ModSystem
 	{
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
 		{
@@ -37,7 +39,7 @@ namespace RealmOne.Biomes.GenPasses
 					{
 						if (i == startX + (endX - startX) / 2)
 						{
-							Generator.GenerateStructure("Structures/Barn1", new Point16(i, y), RealmOne);
+                             Generator.GenerateStructure("Structures/Barn1", new Point16(i, y), RealmOne.Instance);
 						}
 						if (i == startX)
 						{
