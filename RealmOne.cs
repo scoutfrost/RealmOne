@@ -33,7 +33,7 @@ namespace RealmOne
 
       
 
-        public static RealmOne Instance;
+        public static RealmOne Instance = new();
 
         public const string AssetPath = $"{nameof(RealmOne)}/Assets/";
 
