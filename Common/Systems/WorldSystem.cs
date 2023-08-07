@@ -114,7 +114,7 @@ namespace RealmOne.Common.Systems
     public class WorldSystem : ModSystem
     {
 
-  /*      public class Test: GenPass
+        public class Test: GenPass
         {
             public Test(string name, double loadWeight) : base(name, loadWeight)
             {
@@ -128,7 +128,7 @@ namespace RealmOne.Common.Systems
                 Generator.GenerateStructure("Structures/Test", point, RealmOne.Instance, false);
             }
 
-        }*/
+        }
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
             int shiniesIndex = tasks.FindIndex((GenPass genpass) => genpass.Name.Equals("Shinies"));
