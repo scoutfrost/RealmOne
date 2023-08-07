@@ -20,7 +20,7 @@ namespace RealmOne.Projectiles.Piggy
         {
             Projectile.width = 14;
             Projectile.height = 16;
-            Projectile.aiStyle = 1;
+            Projectile.aiStyle = 0;
             Projectile.light = 0.2f;
             Projectile.timeLeft = 2400;
             Projectile.penetrate = 1;

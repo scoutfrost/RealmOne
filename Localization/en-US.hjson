@@ -1854,24 +1854,6 @@ Mods: {
 				Tooltip: @Zero
 			}
 
-			SquirmItem: {
-				DisplayName: Squirm
-				Tooltip: ""
-			}
-
-			Suitcase: {
-				DisplayName: Lovecraft's Rift Suitcase
-				Tooltip:
-					'''
-					Your Journey Begins!!
-					Right Click  crack open H.P Lovecraft's Rift Essentials
-					Below are the Weapons you get from it!(You also get other necessities!)
-						[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
-						[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
-						
-					'''
-			}
-
 			BerrybackItem: {
 				DisplayName: Berryback Item
 				Tooltip: ""
@@ -1879,6 +1861,21 @@ Mods: {
 
 			RoosterItem: {
 				DisplayName: Rooster Item
+				Tooltip: ""
+			}
+
+			SquirmItem: {
+				DisplayName: Squirm Item
+				Tooltip: ""
+			}
+
+			Suitcase: {
+				DisplayName: Suitcase
+				Tooltip: ""
+			}
+
+			WattlePot: {
+				DisplayName: Wattle Pot
 				Tooltip: ""
 			}
 
@@ -1894,6 +1891,11 @@ Mods: {
 
 			TatteredMask: {
 				DisplayName: Tattered Mask
+				Tooltip: ""
+			}
+
+			SunHat: {
+				DisplayName: Sun Hat
 				Tooltip: ""
 			}
 
@@ -1919,16 +1921,6 @@ Mods: {
 
 			TatteredSword: {
 				DisplayName: Tattered Sword
-				Tooltip: ""
-			}
-
-			WattlePot: {
-				DisplayName: Wattle Pot
-				Tooltip: ""
-			}
-
-			SunHat: {
-				DisplayName: Sun Hat
 				Tooltip: ""
 			}
 		}
@@ -2155,6 +2147,12 @@ Mods: {
 			StarFlash.DisplayName: Star Flash
 			Porcelain.DisplayName: Porcelain
 			Shockwave.DisplayName: Shockwave
+			CopperCoin.DisplayName: Copper Coin
+			Fire.DisplayName: Fire
+			GoldCoin.DisplayName: Gold Coin
+			HugeGoldCoin.DisplayName: Huge Gold Coin
+			PlatinumCoin.DisplayName: Platinum Coin
+			SilverCoin.DisplayName: Silver Coin
 		}
 
 		NPCs: {
@@ -2175,54 +2173,20 @@ Mods: {
 			MegaSquirmBody.DisplayName: Mega Squirm Body
 			MegaSquirmHead.DisplayName: Mega Squirm Head
 			MegaSquirmTail.DisplayName: Mega Squirm Tail
-
-			MossyMarauder: {
-				DisplayName: Mossy Marauder
-
-				BossChecklistIntegration: {
-					EntryName: The Outcrop Outcast
-					SpawnInfo:
-						'''
-						To this day, the dirt titan is a remarkable standpoint of the growth of Terraria, from its hard life and from its happiest life, it will always be a symbol of the land. The name that is given to it now is called The Outcrop Outcast, for many reasons. The dirt effigy still remains on this day and is untouched even for the irresponsible. Would you rather defeat the past or lose the future?
-
-						'''
-					DespawnMessage: ""
-				}
-			}
-
+			MossyMarauder.DisplayName: Mossy Marauder
 			RustedCenturion.DisplayName: Rusted Centurion
 			GlitterdustSlime.DisplayName: Glitterdust Slime
 			Eslime.DisplayName: E-Slime
 			ImpactTurret.DisplayName: Impact Turret
 			Inkling.DisplayName: Inkling Promenade
 			LightbulbBouncer.DisplayName: Lightbulb Bouncer
-
-			PossessedPiggy: {
-				DisplayName: Possessed Piggy
-
-				BossChecklistIntegration: {
-					EntryName: Possessed Piggy Bank
-					SpawnInfo: A rare scavenger of the land, looking for any Terrarian to stumble across it, stealing all its loot!!
-					DespawnMessage: ""
-				}
-			}
-
+			PossessedPiggy.DisplayName: Possessed Piggy
 			NecroDude.DisplayName: Necromonical Envoy
 			FunnelWebSpider.DisplayName: Funnel Web Spider
 			HuntsmanSpider.DisplayName: Huntsman Spider
 			RedbackSpider.DisplayName: Redback Spider
 			SquirmoTail.DisplayName: Squirmo Tail
-
-			SquirmoHead: {
-				DisplayName: Squirmo Head
-
-				BossChecklistIntegration: {
-					EntryName: Squirmo
-					SpawnInfo: Even from the past dread of worm adaptation, they havent really caused global damage. But for Squirmo, ever seeking revenge on human inhabitants is still a current warning for people.  Adhere the relief of the soil by defeating Squirmo!!
-					DespawnMessage: ""
-				}
-			}
-
+			SquirmoHead.DisplayName: Squirmo Head
 			SquirmoBody.DisplayName: Squirmo Body
 			ZombieFarmer.DisplayName: Zombie Farmer
 			Espider1.DisplayName: E-Spider

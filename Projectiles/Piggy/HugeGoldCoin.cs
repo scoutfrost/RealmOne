@@ -6,6 +6,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
+using RealmOne.RealmPlayer;
 
 namespace RealmOne.Projectiles.Piggy
 {
@@ -75,10 +76,11 @@ namespace RealmOne.Projectiles.Piggy
 
         public override void Kill(int timeLeft)
         {
+            Main.LocalPlayer.GetModPlayer<Screenshake>().ScreenShake = 45;
             for (int i = 0; i < 300; i++)
             {
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                Dust dust1 = Dust.NewDustPerfect(Projectile.Center, DustID.Gold, speed * 50, Scale: 1.5f);
+                Dust dust1 = Dust.NewDustPerfect(Projectile.Center, DustID.GoldCoin, speed * 50, Scale: 1.5f);
                 dust1.noGravity = true;
             }
             SoundEngine.PlaySound(SoundID.Item119, Projectile.position);

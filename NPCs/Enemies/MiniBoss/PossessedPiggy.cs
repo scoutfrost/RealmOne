@@ -42,6 +42,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         int chargingUp = 0;
         int direction = 0;
         int fireCD = 0;
+        int maximunTileHop = 0;
 
         //Coin Rain
         int coinRain;
@@ -115,7 +116,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         public override void FindFrame(int frameHeight)
         {
 
-            if (OverHeatSlide == true)
+            if (OverHeatSlide == true || time >= 0 && time <= 119 && CoinsAreRaining == true)
             {
                 if (NPC.frameCounter == 2)
                 {
@@ -371,7 +372,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     {
                         t.GetModPlayer<Screenshake>().ScreenShake = 45;
                         SoundEngine.PlaySound(SoundID.DD2_BetsyFlameBreath, NPC.position);
-                        for (int i = 0; i < 40; i++)
+                        for (int i = 0; i < 60; i++)
                         {
                             Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
                             Dust dust1 = Dust.NewDustPerfect(NPC.Center, DustID.Torch, speed * 8, Scale: 3.3f);
@@ -387,7 +388,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     if (chargingUp == 15)
                     {
                         SoundEngine.PlaySound(SoundID.DD2_BetsyFireballImpact, NPC.position);
-                        for (int i = 0; i < 40; i++)
+                        for (int i = 0; i < 80; i++)
                         {
                             Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
                             Dust dust1 = Dust.NewDustPerfect(NPC.Center, DustID.Torch, speed * 8, Scale: 2f);
@@ -399,7 +400,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     {
                         t.GetModPlayer<Screenshake>().BigShake = 15;
                         SoundEngine.PlaySound(SoundID.DD2_BetsyFlameBreath, NPC.position);
-                        for (int i = 0; i < 40; i++)
+                        for (int i = 0; i < 60; i++)
                         {
                             Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
                             Dust dust1 = Dust.NewDustPerfect(NPC.Center, DustID.Torch, speed * 8, Scale: 4f);
@@ -432,6 +433,21 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         if (NPC.collideX == true)
                         {
                             NPC.position.Y -= 8;
+                            maximunTileHop++;
+                            if (maximunTileHop == 6)
+                            {
+                                NPC.damage = dmg;
+                                NPC.defense = 15;
+                                chargingUp = -1;
+                                overHeat = 600;
+                                coinRain = 300;
+                                groundPound = 400;
+                                OverHeatSlide = false;
+                            }
+                        }
+                        else
+                        {
+                            maximunTileHop = 0;
                         }
                     }
                     else
@@ -488,36 +504,50 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 }
                 if (CoinsAreRaining == true)
                 {
-                    if (time == 0)
+                    if (time >= 0 && time <= 119)
                     {
-                        SoundEngine.PlaySound(SoundID.Item6, NPC.position);
-                        Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(NPC.Center.X + 5, NPC.Center.Y), new Vector2(0, -5f), ModContent.ProjectileType<HugeGoldCoin>(), 0, 0f, Main.myPlayer);
+                        NPC.velocity.Y = 0;
+                        NPC.noGravity = true;
+                        NPC.velocity.X = 0;
+                        t.GetModPlayer<Screenshake>().ScreenShake = 120;
                     }
                     int select = Main.rand.Next(1, 4);
                     time++;
-                    NPC.noGravity = false;
-                    if (time >= 100)
+                    
+                    if (time == 120)
+                    {
+                        for (int i = 0; i < 50; i++)
+                        {
+                            Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                            Dust dust1 = Dust.NewDustPerfect(NPC.Center, DustID.PinkCrystalShard, speed * 8, Scale: 1.5f);
+                            dust1.noGravity = true;
+                        }
+                        NPC.noGravity = false;
+                        SoundEngine.PlaySound(SoundID.Item6, NPC.position);
+                        Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(NPC.Center.X + 5, NPC.Center.Y), new Vector2(0, -5f), ModContent.ProjectileType<HugeGoldCoin>(), 0, 0f, Main.myPlayer);
+                    }
+                    if (time >= 220)
                     {   
                         if (coinCD == 0)
                         {
                             SoundEngine.PlaySound(SoundID.Item9, NPC.position);
-                            coinCD = 2;
+                            coinCD = 4;
                             Vector2 coinLoc = new Vector2(t.Center.X - 900, t.Center.Y - 1000);
                             if (select == 1)
                             {
-                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 5f), ModContent.ProjectileType<PlatinumCoin>(), damage / 3, 0f, Main.myPlayer);
+                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<PlatinumCoin>(), damage / 3, 0f, Main.myPlayer);
                             }
                             if (select == 2)
                             {
-                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 5f), ModContent.ProjectileType<GoldCoin>(), damage / 3, 0f, Main.myPlayer);
+                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<GoldCoin>(), damage / 3, 0f, Main.myPlayer);
                             }
                             if (select == 3)
                             {
-                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 5f), ModContent.ProjectileType<SilverCoin>(), damage / 3, 0f, Main.myPlayer);
+                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<SilverCoin>(), damage / 3, 0f, Main.myPlayer);
                             }
                             if (select == 4)
                             {
-                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 5f), ModContent.ProjectileType<CopperCoin>(), damage / 3, 0f, Main.myPlayer);
+                                Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(coinLoc.X + Main.rand.Next(10, 1800), coinLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<CopperCoin>(), damage / 3, 0f, Main.myPlayer);
                             }
                         }
                     }
@@ -534,11 +564,40 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 //end
 
                 //movement ai, hopping
-                if (move <= 0 && PoundAttacking == false && falling == 0 && OverHeatSlide == false)
+                if (move <= 0 && CoinsAreRaining == true && time >= 120)
                 {
                     if (t.Center.Y - 200 > NPC.Center.Y)
                     {
                         fallingInAi = true;
+                        NPC.frameCounter = 16;
+                    }
+                    else
+                    {
+                        fallingInAi = false;
+                        NPC.velocity = d * 3;
+                    }
+                    move = 35;
+                }
+                if (move == 33 && CoinsAreRaining == true && time >= 120)
+                {
+                    if (t.Center.Y - 200 > NPC.Center.Y)
+                    {
+                        fallingInAi = true;
+                        NPC.frameCounter = 16;
+                    }
+                    else
+                    {
+                        fallingInAi = false;
+                        NPC.velocity.Y -= 5;
+                    }
+                }
+
+                if (move <= 0 && PoundAttacking == false && falling == 0 && OverHeatSlide == false && time !>= 0 && time !<= 119 && CoinsAreRaining == false)
+                {
+                    if (t.Center.Y - 200 > NPC.Center.Y)
+                    {
+                        fallingInAi = true;
+                        NPC.frameCounter = 16;
                     }
                     else
                     {
@@ -547,7 +606,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     }
                     move = 35;
                 }
-                if (move == 33 && PoundAttacking == false && falling == 0 && OverHeatSlide == false)
+                if (move == 33 && PoundAttacking == false && falling == 0 && OverHeatSlide == false && time !>= 0 && time !<= 119 && CoinsAreRaining == false)
                 {
                     if (t.Center.Y - 200 > NPC.Center.Y)
                     {
@@ -718,6 +777,13 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         }
         public override void OnSpawn(IEntitySource source)
         {
+            for (int i = 0; i < 50; i++)
+            {
+                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                Dust dust1 = Dust.NewDustPerfect(NPC.Center, DustID.PinkCrystalShard, speed * 8, Scale: 1.5f);
+                dust1.noGravity = true;
+            }
+
             groundPound = 240;
             overHeat = 400;
             coinRain = 300;
