@@ -30,12 +30,7 @@ namespace RealmOne
 {
     public class RealmOne : Mod
     {
-        public static RealmOne Instance = this;
-        public override void Load()
-        {
-            //Instance = this;
-        }
-
+        public static RealmOne Instance = new();
         public const string AssetPath = $"{nameof(RealmOne)}/Assets/";
         public static float ModTime { get; internal set; }
         public static object MessageType { get; internal set; }
