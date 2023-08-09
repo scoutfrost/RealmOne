@@ -1,7 +1,5 @@
 ﻿using RealmOne.Common.Core;
 using RealmOne.Tiles;
-using RealmOne.Tiles.Furniture;
-using RealmOne.Tiles.PlantTiles;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;

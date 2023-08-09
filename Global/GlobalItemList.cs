@@ -98,7 +98,7 @@ namespace RealmOne.Global
 
 
 
-            
+
 
 
             //Pre-Hardmode Weapons

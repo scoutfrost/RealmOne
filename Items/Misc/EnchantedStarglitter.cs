@@ -1,13 +1,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.RealmPlayer;
-using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace RealmOne.Items.Misc
 {
@@ -15,7 +12,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Enchanted Starglitter"); 
+            DisplayName.SetDefault("Enchanted Starglitter");
             Tooltip.SetDefault("'Paraphernalia of a shooting star!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
@@ -36,7 +33,7 @@ namespace RealmOne.Items.Misc
             Item.CloneDefaults(ItemID.FallenStar);
 
         }
-      
+
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {

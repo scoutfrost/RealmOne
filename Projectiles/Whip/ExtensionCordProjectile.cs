@@ -79,7 +79,7 @@ namespace RealmOne.Projectiles.Whip
             }
         }
 
-     
+
         private bool Charge(Player owner)
         {
             if (!owner.channel || ChargeTime >= 120)

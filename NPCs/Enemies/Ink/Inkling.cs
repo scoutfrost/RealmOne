@@ -66,7 +66,7 @@ namespace RealmOne.NPCs.Enemies.Ink
         public override void HitEffect(NPC.HitInfo hit)
         {
 
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 

@@ -13,7 +13,7 @@ namespace RealmOne.Items.Food
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Vegemite Toast"); 
+            DisplayName.SetDefault("Vegemite Toast");
             Tooltip.SetDefault("'How do people not like VEGEMITE!!!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;

@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Bosses;
-using RealmOne.NPCs.Enemies.MiniBoss;
 using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent;
@@ -10,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.BossBars
 {
-   
+
     public class PiggyBossBar : ModBossBar
     {
         private int bossHeadIndex = -1;

@@ -19,7 +19,7 @@ namespace RealmOne.Items.Weapons.PreHM.OldGold
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Antiquity Revolver"); 
+            DisplayName.SetDefault("Antiquity Revolver");
             Tooltip.SetDefault("'An antique and pristine revolver!'");
             ItemGlowy.AddItemGlowMask(Item.type, "RealmOne/Items/Weapons/PreHM/OldGold/Oldy_Glow");
 

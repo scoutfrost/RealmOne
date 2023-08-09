@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Crimcore"); 
+            DisplayName.SetDefault("Crimcore");
             Tooltip.SetDefault("A bloody, dark and cold stone, dropped from the enemies that have surpassed and crumbled in the flesh");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 

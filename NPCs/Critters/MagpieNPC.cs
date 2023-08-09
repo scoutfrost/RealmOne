@@ -64,7 +64,7 @@ namespace RealmOne.NPCs.Critters
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("MagpieGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("MagpieGore2").Type, 1f);
@@ -91,11 +91,11 @@ namespace RealmOne.NPCs.Critters
         public override void AI()
         {
             NPC.TargetClosest(true);
-                Player player = Main.player[NPC.target];
-        /*    if (NPC.HasValidTarget && NPC.Distance(player.Center) <= 300)
-            {
-                SoundEngine.PlaySound(rorAudio.MagpieCalling, NPC.position);
-            }*/
+            Player player = Main.player[NPC.target];
+            /*    if (NPC.HasValidTarget && NPC.Distance(player.Center) <= 300)
+                {
+                    SoundEngine.PlaySound(rorAudio.MagpieCalling, NPC.position);
+                }*/
         }
     }
 }

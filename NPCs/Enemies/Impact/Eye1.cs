@@ -87,9 +87,8 @@ namespace RealmOne.NPCs.Enemies.Impact
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+           
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
@@ -97,7 +96,7 @@ namespace RealmOne.NPCs.Enemies.Impact
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EeyeGore2").Type, 1f);
 
                 }
-            }
+            
 
             for (int i = 0; i < 10; i++)
             {

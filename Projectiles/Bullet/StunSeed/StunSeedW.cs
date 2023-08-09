@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Bullet.StunSeed
@@ -48,7 +48,7 @@ namespace RealmOne.Projectiles.Bullet.StunSeed
 
             if (bounce >= maxBounces) return true;
             else return false;
-        }   
+        }
 
         public override void Kill(int timeLeft)
         {

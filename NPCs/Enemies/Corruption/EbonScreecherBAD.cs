@@ -1,14 +1,13 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria.ID;
-using RealmOne.Items.Misc.EnemyDrops;
-using Terraria.GameContent.ItemDropRules;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent.Bestiary;
 using RealmOne.Items.Food;
+using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Weapons.PreHM.Corruption;
-using RealmOne.Items.Food.FarmFood;
+using Terraria;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {
@@ -16,7 +15,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
     {
         public override void SetStaticDefaults()
         {
-           
+
 
             NPCID.Sets.TrailingMode[NPC.type] = 0;
             NPCID.Sets.TrailCacheLength[NPC.type] = 10;
@@ -41,14 +40,14 @@ namespace RealmOne.NPCs.Enemies.Corruption
             AIType = NPCID.GiantFlyingAntlion;
             NPC.value = Item.buyPrice(0, 2, 50, 5);
             NPC.knockBackResist = 0.50f;
-           
+
 
             NPC.HitSound = SoundID.ChesterOpen;
             NPC.DeathSound = SoundID.NPCDeath38;
 
 
         }
-      
+
         public override void FindFrame(int frameHeight)
         {
             NPC.frameCounter += 0.19f;
@@ -58,7 +57,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         }
         public override void AI()
         {
-            Lighting.AddLight(NPC.position, r: 0.1f, g:0.8f, b:0.1f);
+            Lighting.AddLight(NPC.position, r: 0.1f, g: 0.8f, b: 0.1f);
             NPC.velocity *= 1.0075f;
             Player target = Main.player[NPC.target];
             NPC.spriteDirection = NPC.direction;
@@ -67,15 +66,15 @@ namespace RealmOne.NPCs.Enemies.Corruption
             Vector2 center = NPC.Center;
             for (int j = 0; j < 120; j++)
             {
-                int dust1 = Dust.NewDust(center, 0, 0, 75, 0f, 0f, 100,default, 0.7f);
+                int dust1 = Dust.NewDust(center, 0, 0, 75, 0f, 0f, 100, default, 0.7f);
                 Main.dust[dust1].noGravity = true;
                 Main.dust[dust1].velocity = Vector2.Zero;
-                Main.dust[dust1].noLight = false;       
+                Main.dust[dust1].noLight = false;
             }
 
             if (++NPC.ai[2] % 130 == 0)
             {
-               int p=  Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ProjectileID.CursedFlameFriendly, 15, 0, Main.myPlayer, 0, 0);
+                int p = Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ProjectileID.CursedFlameFriendly, 15, 0, Main.myPlayer, 0, 0);
                 Main.projectile[p].scale = 0.5f;
                 Main.projectile[p].friendly = false;
                 Main.projectile[p].hostile = true;
@@ -107,7 +106,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
@@ -125,7 +124,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
             {
                 Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptionThorns);
             }
-           
+
 
 
 

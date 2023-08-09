@@ -200,7 +200,6 @@ namespace RealmOne.Projectiles.Explosive
                     minTileY = 0;
                 if (maxTileY > Main.maxTilesY)
                     maxTileY = Main.maxTilesY;
-                bool canKillWalls = false;
                 for (int x = minTileX; x <= maxTileX; x++)
                     for (int y = minTileY; y <= maxTileY; y++)
                     {
@@ -209,7 +208,6 @@ namespace RealmOne.Projectiles.Explosive
                         double distance = Math.Sqrt((double)(diffX * diffX + diffY * diffY));
                         if (distance < explosionRadius && Main.tile[x, y] != null && Main.tile[x, y].WallType == 0)
                         {
-                            canKillWalls = true;
                             break;
                         }
                     }

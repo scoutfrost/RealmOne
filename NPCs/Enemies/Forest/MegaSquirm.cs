@@ -77,14 +77,14 @@ namespace RealmOne.NPCs.Enemies.Forest
               BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
               BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				new FlavorTextBestiaryInfoElement("Consuming and scavenging anything and anywhere it goes, serving for something much more disasterous"),
+                new FlavorTextBestiaryInfoElement("Consuming and scavenging anything and anywhere it goes, serving for something much more disasterous"),
 
-				
+
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
 
@@ -237,7 +237,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
@@ -277,9 +277,8 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
-                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("SquirmoGore1").Type, 1f);
 
             }

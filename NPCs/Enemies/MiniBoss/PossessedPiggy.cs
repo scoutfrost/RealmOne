@@ -1,8 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
-using RealmOne.Projectiles.Piggy;
 using RealmOne.BossBars;
 using RealmOne.Common.Systems;
 using RealmOne.Items.Misc.EnemyDrops;
+using RealmOne.Projectiles.Piggy;
+using RealmOne.RealmPlayer;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -12,8 +13,6 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using System.Collections;
-using RealmOne.RealmPlayer;
 
 namespace RealmOne.NPCs.Enemies.MiniBoss
 {
@@ -513,7 +512,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     }
                     int select = Main.rand.Next(1, 4);
                     time++;
-                    
+
                     if (time == 120)
                     {
                         for (int i = 0; i < 50; i++)
@@ -527,7 +526,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(NPC.Center.X + 5, NPC.Center.Y), new Vector2(0, -5f), ModContent.ProjectileType<HugeGoldCoin>(), 0, 0f, Main.myPlayer);
                     }
                     if (time >= 220)
-                    {   
+                    {
                         if (coinCD == 0)
                         {
                             SoundEngine.PlaySound(SoundID.Item9, NPC.position);
@@ -592,7 +591,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     }
                 }
 
-                if (move <= 0 && PoundAttacking == false && falling == 0 && OverHeatSlide == false && time !>= 0 && time !<= 119 && CoinsAreRaining == false)
+                if (move <= 0 && PoundAttacking == false && falling == 0 && OverHeatSlide == false && time! >= 0 && time! <= 119 && CoinsAreRaining == false)
                 {
                     if (t.Center.Y - 200 > NPC.Center.Y)
                     {
@@ -606,7 +605,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     }
                     move = 35;
                 }
-                if (move == 33 && PoundAttacking == false && falling == 0 && OverHeatSlide == false && time !>= 0 && time !<= 119 && CoinsAreRaining == false)
+                if (move == 33 && PoundAttacking == false && falling == 0 && OverHeatSlide == false && time! >= 0 && time! <= 119 && CoinsAreRaining == false)
                 {
                     if (t.Center.Y - 200 > NPC.Center.Y)
                     {
@@ -699,12 +698,12 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				new FlavorTextBestiaryInfoElement("An abandoned piggy bank owned by a child who needed money for his dying mother. Unfortunate circumstances led the child to die and his soul fused into the piggy bank. He becomes mad when you waste money."),
+                new FlavorTextBestiaryInfoElement("An abandoned piggy bank owned by a child who needed money for his dying mother. Unfortunate circumstances led the child to die and his soul fused into the piggy bank. He becomes mad when you waste money."),
 
-				
+
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
@@ -714,9 +713,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 Vector2 down = new Vector2(0, -1f).RotatedBy(MathHelper.ToRadians(-100));
                 Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, down, ModContent.ProjectileType<Porcelain>(), NPC.damage / 2, 0f, Main.myPlayer);
             }
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+           
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore1").Type, 1f);
 
@@ -730,7 +728,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("PiggyGore4").Type, 1.5f);
 
 
-                }
+                
             }
             for (int i = 0; i < 26; i++)
             {
@@ -738,7 +736,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 Vector2 speed = Main.rand.NextVector2Square(1f, 1f);
 
                 var d = Dust.NewDustPerfect(NPC.position, DustID.DungeonPink, speed * 5, Scale: 1.5f);
-                
+
                 d.noGravity = true;
             }
         }
@@ -758,11 +756,11 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             target.AddBuff(buffType, timeToAdd);
 
         }
-   /*     public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
-        {
-            CombatText.NewText(new Rectangle((int)NPC.position.X, (int)NPC.position.Y - 20, NPC.width, NPC.height), new Color(234, 129, 178, 180), "Ow that hurt!", false, false);
+        /*     public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+             {
+                 CombatText.NewText(new Rectangle((int)NPC.position.X, (int)NPC.position.Y - 20, NPC.width, NPC.height), new Color(234, 129, 178, 180), "Ow that hurt!", false, false);
 
-        }*/
+             }*/
 
         public override void OnKill()
         {
@@ -773,7 +771,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             }
             NPC.SetEventFlagCleared(ref DownedBossSystem.downedPiggy, -1);
 
-          
+
         }
         public override void OnSpawn(IEntitySource source)
         {

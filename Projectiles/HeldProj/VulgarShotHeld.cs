@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.Audio;
-using RealmOne.Common;
-using Terraria.ID;
 using RealmOne.Common.Systems;
-using RealmOne.Items.Weapons.PreHM.Corruption;
 using RealmOne.Projectiles.Arrow;
 using RealmOne.Projectiles.Bullet;
+using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.HeldProj
 {
@@ -53,7 +46,7 @@ namespace RealmOne.Projectiles.HeldProj
             }
             Player player = Main.player[Projectile.owner];
             Projectile.ai[0] += 1f;
-           
+
 
             if (Projectile.ai[0] >= 90f)
             {
@@ -68,7 +61,7 @@ namespace RealmOne.Projectiles.HeldProj
                     Dust dust1 = Dust.NewDustPerfect(Projectile.Center, DustID.CursedTorch, speed * 7, Scale: 1.2f);
                     dust1.noGravity = true;
 
-                  
+
                 }
             }
             if (timerUp == true)
@@ -84,7 +77,7 @@ namespace RealmOne.Projectiles.HeldProj
                 ShootBullets();
             if (Projectile.ai[0] == 87)
                 ShootBullets();
-            if (Projectile.ai[0] >  78 && Projectile.ai[0] < 86)
+            if (Projectile.ai[0] > 78 && Projectile.ai[0] < 86)
                 recoilFX = true;
             else
                 recoilFX = false;

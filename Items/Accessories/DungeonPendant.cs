@@ -10,7 +10,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Dungeon Pendant"); 
+            DisplayName.SetDefault("Dungeon Pendant");
             Tooltip.SetDefault("'An ancient, but still powerful dungeon charm'"
                 + "\nImmunity to spikes"
                 + "\nDungeon enemies do 50% less damage to you"

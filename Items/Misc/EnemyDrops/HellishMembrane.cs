@@ -13,7 +13,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
             DisplayName.SetDefault("Hellish Membrane");
             Tooltip.SetDefault("The souls of underworld monstrosities");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
-            ItemID.Sets.ItemIconPulse[Item.type] = true; 
+            ItemID.Sets.ItemIconPulse[Item.type] = true;
             ItemID.Sets.ItemNoGravity[Item.type] = true;
         }
 
@@ -29,7 +29,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
 
         public override void PostUpdate()
         {
-            Lighting.AddLight(Item.Center, Color.Orange.ToVector3() * 0.65f * Main.essScale); 
+            Lighting.AddLight(Item.Center, Color.Orange.ToVector3() * 0.65f * Main.essScale);
         }
     }
 }

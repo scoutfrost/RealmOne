@@ -83,6 +83,7 @@ namespace RealmOne.NPCs.Critters
         }
         public override void AI()
         {
+            NPC.spriteDirection = NPC.direction;
             Lighting.AddLight(NPC.position, r: 0f, g: 0.3f, b: 1f);
         }
     }

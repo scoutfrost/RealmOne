@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Misc.EnemyDrops;
 using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -70,10 +69,10 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             Main.EntitySpriteDraw(glow.Value, NPC.Center - screenPos + new Vector2(0, 3), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.None, 0);
         }
-        
+
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("MangoBatGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("MangoBatGore2").Type, 1f);
@@ -92,15 +91,13 @@ namespace RealmOne.NPCs.Enemies.Forest
 
 
 
-      
+
 
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface  ,
-                                     BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime ,
-
+                   
 
 
                 new FlavorTextBestiaryInfoElement("When this flying fella is near, expect all ya' mangoes to be gone by the morning. This angry lil bat feeds off the flesh of mango, and when disturbed, humans! "),

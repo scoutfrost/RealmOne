@@ -13,8 +13,8 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Empty Locket of The Lords");  
-            Tooltip.SetDefault("'The internal chaos from the locket was too much for the gods to bespoke..." 
+            DisplayName.SetDefault("Empty Locket of The Lords");
+            Tooltip.SetDefault("'The internal chaos from the locket was too much for the gods to bespoke..."
                 + "\nSo they abandoned it to a new rival that can withstand the essence'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -48,7 +48,7 @@ namespace RealmOne.Items.Accessories
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-           
+
             recipe.AddIngredient(ModContent.ItemType<EntropyMedallion>(), 1);
 
             recipe.Register();

@@ -1,17 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Common.Systems;
+using RealmOne.Items.Others;
+using RealmOne.Items.Placeables.Furniture;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.GameContent.ObjectInteractions;
 using Terraria.Enums;
+using Terraria.GameContent.ObjectInteractions;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using System.Collections.Generic;
-using RealmOne.Items.Placeables.Furniture;
-using RealmOne.Common.Systems;
-using RealmOne.Items.Others;
 
 namespace RealmOne.Tiles.Furniture
 {

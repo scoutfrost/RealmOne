@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gizmo Scrap"); 
+            DisplayName.SetDefault("Gizmo Scrap");
             Tooltip.SetDefault("A mixture of ores, metal and handy parts in one clump"
                 + "\n'Dropped from the sneakiest of goblins'");
 

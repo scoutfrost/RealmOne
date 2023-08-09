@@ -10,7 +10,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("The Outcast's Overseer"); 
+            DisplayName.SetDefault("The Outcast's Overseer");
             Tooltip.SetDefault("'A physical form of the dirt titan's purpose'"
                 + "\n6% increased critical chance"
                 + "\nCrits have a chance to increase your crit chance"

@@ -1,11 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Food.FarmFood;
-using RealmOne.Items.Misc;
-using RealmOne.Projectiles.Magic;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
-using ReLogic.Content;
 using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -39,7 +35,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.height = 20;
             NPC.defense = 5;
             NPC.lifeMax = 5;
-            NPC.value = Item.buyPrice(0,2,0,0);
+            NPC.value = Item.buyPrice(0, 2, 0, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.HitSound = SoundID.NPCHit1;
 
@@ -50,7 +46,7 @@ namespace RealmOne.NPCs.Critters.Farm
 
 
         }
-     
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             Player player = spawnInfo.Player;
@@ -100,7 +96,7 @@ namespace RealmOne.NPCs.Critters.Farm
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-          
+
             for (int i = 0; i < 20; i++)
             {
 
@@ -111,7 +107,7 @@ namespace RealmOne.NPCs.Critters.Farm
                 d.noGravity = false;
             }
         }
-        
-      
+
+
     }
 }

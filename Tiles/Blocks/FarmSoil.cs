@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using static Terraria.ID.ContentSamples.CreativeHelper;
 
 namespace RealmOne.Tiles.Blocks
 {
@@ -33,7 +32,7 @@ namespace RealmOne.Tiles.Blocks
 
 
         }
-       
+
         public override void RandomUpdate(int i, int j)
         {
             Tile tile = Framing.GetTileSafely(i, j);
@@ -69,6 +68,6 @@ namespace RealmOne.Tiles.Blocks
                 }
             }
         }
-      
+
     }
 }

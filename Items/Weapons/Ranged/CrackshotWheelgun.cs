@@ -156,7 +156,7 @@ namespace RealmOne.Items.Weapons.Ranged
                     for (int i = 0; i < 3; i++)
                     {
                         Vector2 velocity = Vector2.Normalize(proj.velocity).RotatedBy(Main.rand.NextFloat(-0.6f, 0.6f)) * Main.rand.NextFloat(1.3f, 3);
-                        Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.Center, velocity, ProjectileID.MolotovFire3, Projectile.damage,0, Owner.whoAmI).scale = Main.rand.NextFloat(0.85f, 1.15f);
+                        Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.Center, velocity, ProjectileID.MolotovFire3, Projectile.damage, 0, Owner.whoAmI).scale = Main.rand.NextFloat(0.85f, 1.15f);
                     }
                 }
         }

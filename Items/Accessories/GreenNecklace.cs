@@ -10,7 +10,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Renaissance Cross"); 
+            DisplayName.SetDefault("Renaissance Cross");
             Tooltip.SetDefault("'Wrap Evolution around your neck'"
                  + "\n'Worn from the dying soldiers of the past'"
                  + "\nAll weapons and equipment inflict 'Tangled'"

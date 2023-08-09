@@ -1,10 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
-using Terraria.Audio;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
+using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Piggy
 {
@@ -43,7 +40,7 @@ namespace RealmOne.Projectiles.Piggy
             return false;
         }
 
-        
+
 
     }
 }

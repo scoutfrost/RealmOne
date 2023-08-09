@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.Food;
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Weapons.PreHM.Forest;
 using Terraria;
@@ -67,6 +68,8 @@ namespace RealmOne.NPCs.Enemies.Forest
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RotteredElbowbone>(), 40, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TreeSapJuice>(), 20, 1, 1));
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MossMarrow>(), 40, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GoopyGrass>(), 2, 1, 3));
 
@@ -76,7 +79,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("MossyGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("MossyGore2").Type, 1f);

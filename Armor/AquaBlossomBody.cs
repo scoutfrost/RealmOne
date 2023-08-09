@@ -1,9 +1,9 @@
+using RealmOne.Items.Misc;
+using RealmOne.Items.Misc.Plants;
 using Terraria;
 using Terraria.GameContent.Creative;
-using Terraria.ModLoader;
 using Terraria.ID;
-using RealmOne.Items.Misc.Plants;
-using RealmOne.Items.Misc;
+using Terraria.ModLoader;
 
 namespace RealmOne.Armor
 {

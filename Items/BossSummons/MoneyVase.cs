@@ -11,7 +11,7 @@ namespace RealmOne.Items.BossSummons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Money Vase"); 
+            DisplayName.SetDefault("Money Vase");
             Tooltip.SetDefault("'Why you takin allat money for kid?'"
                 + "\n'Your bank account finna be empty after using this dawg'"
                 + "\nSummons The Possessed Piggy Bank");
@@ -28,7 +28,7 @@ namespace RealmOne.Items.BossSummons
             Item.rare = ItemRarityID.Pink;
             Item.consumable = false;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 30;  
+            Item.useTime = 30;
             Item.useAnimation = 20;
             Item.UseSound = SoundID.Item1;
             Item.shoot = ModContent.ProjectileType<MoneyVaseProj>();

@@ -1,10 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Misc;
-using RealmOne.Projectiles.Magic;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
-using ReLogic.Content;
 using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -87,9 +83,8 @@ namespace RealmOne.NPCs.Critters.Farm
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+            
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HoneyHareGore1").Type, 1f);
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HoneyHareGore2").Type, 1f);
@@ -100,7 +95,7 @@ namespace RealmOne.NPCs.Critters.Farm
 
                 }
 
-            }
+            
             for (int i = 0; i < 20; i++)
             {
 
@@ -111,10 +106,10 @@ namespace RealmOne.NPCs.Critters.Farm
                 d.noGravity = false;
             }
         }
-        
+
         public override void OnKill()
         {
-             Projectile.NewProjectile(NPC.GetSource_Death(), NPC.Center, NPC.velocity, ProjectileID.BeeHive, 10,1);
+            Projectile.NewProjectile(NPC.GetSource_Death(), NPC.Center, NPC.velocity, ProjectileID.BeeHive, 10, 1);
 
         }
     }

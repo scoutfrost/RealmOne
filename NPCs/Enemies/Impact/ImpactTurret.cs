@@ -70,7 +70,7 @@ namespace RealmOne.NPCs.Enemies.Impact
                    BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
 
-				new FlavorTextBestiaryInfoElement("An unknown device that teleports around the world. Almost scanning as an envoy for something much more larger in hiarachy.Be careful it can deal a lot of damage!"),
+                new FlavorTextBestiaryInfoElement("An unknown device that teleports around the world. Almost scanning as an envoy for something much more larger in hiarachy.Be careful it can deal a lot of damage!"),
 
             });
         }
@@ -83,7 +83,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
 
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("TurretGore1").Type, 1f);

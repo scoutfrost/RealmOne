@@ -1,23 +1,21 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Common.Core;
-using RealmOne.Projectiles.Magic;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Bullet
 {
 
-    public class OldGoldBullet: ModProjectile
+    public class OldGoldBullet : ModProjectile
     {
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Old Gold Bullet");
             Main.projFrames[Projectile.type] = 1;
-            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10; 
+            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
 
@@ -42,7 +40,7 @@ namespace RealmOne.Projectiles.Bullet
             Lighting.AddLight(Projectile.position, 0.3f, 0.38f, 0.2f);
             Lighting.Brightness(1, 1);
 
-          
+
         }
         public PrimitiveTrail trail = new();
         public List<Vector2> oldPositions = new List<Vector2>();
@@ -65,13 +63,13 @@ namespace RealmOne.Projectiles.Bullet
             trail.width = 2;
 
             Main.instance.LoadProjectile(Projectile.type);
-            Texture2D texture = ModContent.Request<Texture2D>("RealmOne/Assets/Effects/GlowLight").Value; 
+            Texture2D texture = ModContent.Request<Texture2D>("RealmOne/Assets/Effects/GlowLight").Value;
             for (int k = 0; k < Projectile.oldPos.Length; k++)
             {
                 var offset = new Vector2(Projectile.width / 2f, Projectile.height / 2f);
                 var frame = texture.Frame(1, Main.projFrames[Projectile.type], 0, Projectile.frame);
-                float sizec = Projectile.scale * (Projectile.oldPos.Length - k) / (Projectile.oldPos.Length * 1.7f); 
-                Color ProjColor = new Color(244, 204, 39) * (1f - Projectile.alpha) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length); 
+                float sizec = Projectile.scale * (Projectile.oldPos.Length - k) / (Projectile.oldPos.Length * 1.7f);
+                Color ProjColor = new Color(244, 204, 39) * (1f - Projectile.alpha) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
                 Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + offset;
 
                 Main.EntitySpriteDraw(texture, drawPos, frame, color, Projectile.oldRot[k], frame.Size() / 2f, sizec, SpriteEffects.None, 0);

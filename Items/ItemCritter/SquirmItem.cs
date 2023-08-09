@@ -1,12 +1,11 @@
 ﻿using RealmOne.NPCs.Critters;
-using RealmOne.NPCs.Enemies.Spiders;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace RealmOne.Items.ItemCritter
 {
-    public class SquirmItem: ModItem
+    public class SquirmItem : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -26,7 +25,7 @@ namespace RealmOne.Items.ItemCritter
             Item.noMelee = true;
             Item.noUseGraphic = true;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.value = Item.sellPrice( silver:5);
+            Item.value = Item.sellPrice(silver: 5);
         }
 
         public override bool? UseItem(Player player)

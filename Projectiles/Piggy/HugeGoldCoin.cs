@@ -1,12 +1,12 @@
-﻿using Terraria.ID;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using RealmOne.RealmPlayer;
 using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
-using RealmOne.RealmPlayer;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Piggy
 {

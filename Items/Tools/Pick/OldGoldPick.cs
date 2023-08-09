@@ -31,7 +31,7 @@ namespace RealmOne.Items.Tools.Pick
             Item.useAnimation = 13;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 6;
-            Item.value = Item.buyPrice(0,5,50,30);
+            Item.value = Item.buyPrice(0, 5, 50, 30);
             Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;

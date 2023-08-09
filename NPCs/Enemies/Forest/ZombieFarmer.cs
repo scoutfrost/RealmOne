@@ -48,7 +48,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         {
             Player player = spawnInfo.Player;
 
-            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && !Main.dayTime  && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
+            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && !Main.dayTime && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
             {
                 int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
                 return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
@@ -86,9 +86,8 @@ namespace RealmOne.NPCs.Enemies.Forest
         public override void HitEffect(NPC.HitInfo hit)
         {
 
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+            
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
@@ -98,9 +97,9 @@ namespace RealmOne.NPCs.Enemies.Forest
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ZombieFarmerGore4").Type, 1f);
 
                 }
-            }
+            
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 15; i++)
             {
 
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);

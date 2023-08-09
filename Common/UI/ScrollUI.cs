@@ -16,7 +16,7 @@ namespace RealmOne.Common.UI
         private UIImage barFrame;
 
         public override void OnInitialize()
-        {   
+        {
 
             area = new UIElement();
             area.Left.Set(-area.Width.Pixels - 1480, 1f);

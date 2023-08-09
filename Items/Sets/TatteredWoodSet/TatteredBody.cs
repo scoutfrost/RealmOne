@@ -15,7 +15,7 @@ namespace RealmOne.Items.Sets.TatteredWoodSet
             base.SetStaticDefaults();
             DisplayName.SetDefault("Tattered Wood Breastplate");
             Tooltip.SetDefault("5% increased damage and knockback");
-              
+
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
 

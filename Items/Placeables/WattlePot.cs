@@ -1,5 +1,4 @@
-﻿using RealmOne.Tiles.Blocks;
-using RealmOne.Tiles.PlantTiles;
+﻿using RealmOne.Tiles.PlantTiles;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -7,9 +6,9 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables
 {
-    
 
-    public class WattlePot: ModItem
+
+    public class WattlePot : ModItem
     {
 
         public override void SetStaticDefaults()

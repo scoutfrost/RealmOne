@@ -27,7 +27,7 @@ namespace RealmOne
 
         public override void OnSelected()
         {
-            	SoundEngine.PlaySound(rorAudio.ModMenuClick);
+            SoundEngine.PlaySound(rorAudio.ModMenuClick);
 
         }
 
@@ -39,7 +39,7 @@ namespace RealmOne
             Texture2D MenuBG = (Texture2D)ModContent.Request<Texture2D>("RealmOne/Assets/Textures/Menu/yes", (AssetRequestMode)2);
             Vector2 zero = Vector2.Zero;
             float width = Main.screenWidth / (float)MenuBG.Width;
-            _=   Main.screenHeight / (float)MenuBG.Height;
+            _ = Main.screenHeight / (float)MenuBG.Height;
             spriteBatch.Draw(MenuBG, new Vector2(zero.X + MathHelper.Lerp(-98f, -82f, floatX), zero.Y + MathHelper.Lerp(-50f, -47f, floatY)), null, Color.White, 0f, Vector2.Zero, width * 1.1f, 0, 0f);
             return true;
         }

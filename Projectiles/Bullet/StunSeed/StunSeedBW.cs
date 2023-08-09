@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Bullet.StunSeed

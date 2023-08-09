@@ -1,55 +1,50 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Items.Food;
+using RealmOne.Items.Food.FarmFood;
+using RealmOne.Items.Misc.Plants;
 using RealmOne.Items.Placeables;
+using RealmOne.NPCs.Critters;
+using RealmOne.NPCs.Critters.Farm;
+using RealmOne.Tiles.Blocks;
 using ReLogic.Content;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
-using System.Collections.Generic;
-using RealmOne.NPCs.Critters;
-using RealmOne.Items.Food;
-using RealmOne.NPCs.Enemies.Forest;
-using RealmOne.Tiles.Blocks;
-using RealmOne.Items.Misc.Plants;
-using RealmOne.NPCs.Critters.Farm;
-using RealmOne.Items.Food.FarmFood;
 
 namespace RealmOne.Biomes.Farm
 {
-	public class FarmTree : ModTree
-	{
-		
-		public override TreePaintingSettings TreeShaderSettings => new TreePaintingSettings {
-			UseSpecialGroups = true,
-			SpecialGroupMinimalHueValue = 11f / 72f,
-			SpecialGroupMaximumHueValue = 0.25f,
-			SpecialGroupMinimumSaturationValue = 0.88f,
-			SpecialGroupMaximumSaturationValue = 1f
-		};
+    public class FarmTree : ModTree
+    {
+
+        public override TreePaintingSettings TreeShaderSettings => new TreePaintingSettings
+        {
+            UseSpecialGroups = true,
+            SpecialGroupMinimalHueValue = 11f / 72f,
+            SpecialGroupMaximumHueValue = 0.25f,
+            SpecialGroupMinimumSaturationValue = 0.88f,
+            SpecialGroupMaximumSaturationValue = 1f
+        };
 
         public override void SetStaticDefaults() => GrowsOnTileId = new int[] { ModContent.TileType<FarmSoil>() };
 
         public override int CreateDust() => DustID.WoodFurniture;
-		public override int TreeLeaf() => GoreID.TreeLeaf_Palm;
+        public override int TreeLeaf() => GoreID.TreeLeaf_Palm;
         public override int DropWood() => ModContent.ItemType<TatteredWood>();
 
         public override Asset<Texture2D> GetTexture() => ModContent.Request<Texture2D>("RealmOne/Biomes/Farm/FarmTree", AssetRequestMode.ImmediateLoad);
         public override Asset<Texture2D> GetTopTextures() => ModContent.Request<Texture2D>("RealmOne/Biomes/Farm/FarmTree_Tops", AssetRequestMode.ImmediateLoad);
-		public override Asset<Texture2D> GetBranchTextures() => ModContent.Request<Texture2D>("RealmOne/Biomes/Farm/FarmTree_Branches", AssetRequestMode.ImmediateLoad);
-      
+        public override Asset<Texture2D> GetBranchTextures() => ModContent.Request<Texture2D>("RealmOne/Biomes/Farm/FarmTree_Branches", AssetRequestMode.ImmediateLoad);
 
-		public override int SaplingGrowthType(ref int style) {
-			style = 0;
-			return ModContent.TileType<FarmSapling>();
-		}
+
+        public override int SaplingGrowthType(ref int style)
+        {
+            style = 0;
+            return ModContent.TileType<FarmSapling>();
+        }
 
         public override void SetTreeFoliageSettings(Tile tile, ref int xoffset, ref int treeFrame, ref int floorY, ref int topTextureFrameWidth, ref int topTextureFrameHeight)
         {
@@ -69,7 +64,7 @@ namespace RealmOne.Biomes.Farm
 
             FarmTreeEnum effect = options;
 
-//# A small helper from Spirit Mod. All credits go to them for this lil tree helper.
+            //# A small helper from Spirit Mod. All credits go to them for this lil tree helper.
             if (effect == FarmTreeEnum.Acorn)
             {
                 Vector2 offset = this.GetRandomTreePosition(Main.tile[x, y]);
@@ -118,7 +113,7 @@ namespace RealmOne.Biomes.Farm
         }
 
 
-       
+
         public enum FarmTreeEnum
         {
             None = 0,

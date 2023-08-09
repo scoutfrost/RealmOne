@@ -1,11 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using RealmOne;
 using Terraria;
 using Terraria.Graphics.Capture;
 using Terraria.ModLoader;
-using System;
-using Terraria.ModLoader.Utilities;
-using Terraria.WorldBuilding;
 
 namespace RealmOne.Biomes.Farm
 {
@@ -23,7 +19,7 @@ namespace RealmOne.Biomes.Farm
 
         public override Color? BackgroundColor => base.BackgroundColor;
         public override string MapBackground => BackgroundPath; // Re-uses Bestiary Background for Map Background
-        
+
 
         public override bool IsBiomeActive(Player player)
         {
@@ -31,7 +27,7 @@ namespace RealmOne.Biomes.Farm
             bool b1 = ModContent.GetInstance<BiomeTileCount>().FarmCount >= 40;
 
             // Second, we will limit this biome to the inner horizontal third of the map as our second custom condition
-       //     bool b2 = Math.Abs(player.position.ToTileCoordinates().X - Main.maxTilesX / 2) < Main.maxTilesX / 6;
+            //     bool b2 = Math.Abs(player.position.ToTileCoordinates().X - Main.maxTilesX / 2) < Main.maxTilesX / 6;
 
             // Finally, we will limit the height at which this biome can be active to above ground (ie sky and surface). Most (if not all) surface biomes will use this condition.
             bool b3 = player.ZoneSkyHeight || player.ZoneOverworldHeight;

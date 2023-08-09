@@ -143,7 +143,7 @@ namespace RealmOne.Bosses
 
             {
                 int explosionRadius = 250;
-          
+
                 int minTileX = (int)(Projectile.position.X / 16f - explosionRadius);
                 int maxTileX = (int)(Projectile.position.X / 16f + explosionRadius);
                 int minTileY = (int)(Projectile.position.Y / 16f - explosionRadius);
@@ -167,8 +167,6 @@ namespace RealmOne.Bosses
                 {
                     maxTileY = Main.maxTilesY;
                 }
-
-                bool canKillWalls = false;
                 for (int x = minTileX; x <= maxTileX; x++)
                 {
                     for (int y = minTileY; y <= maxTileY; y++)
@@ -178,7 +176,6 @@ namespace RealmOne.Bosses
                         double distance = Math.Sqrt((double)(diffX * diffX + diffY * diffY));
                         if (distance < explosionRadius && Main.tile[x, y] != null && Main.tile[x, y].WallType == 0)
                         {
-                            canKillWalls = true;
                             break;
                         }
                     }

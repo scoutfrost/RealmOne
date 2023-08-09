@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria.GameContent.Bestiary;
-using Terraria.ID;
-using RealmOne.Items.Misc;
-using Terraria.GameContent.ItemDropRules;
-using RealmOne.Items.Placeables;
+﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.ItemCritter;
+using RealmOne.Items.Placeables;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
+using System;
+using System.Linq;
+using Terraria;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
+using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Critters.Farm
@@ -64,8 +60,8 @@ namespace RealmOne.NPCs.Critters.Farm
             }
             return 0f;
         }
-    
-     
+
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
@@ -80,9 +76,8 @@ namespace RealmOne.NPCs.Critters.Farm
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+          
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("OldSnail1").Type, 1f);
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("OldSnail2").Type, 1f);
@@ -92,7 +87,7 @@ namespace RealmOne.NPCs.Critters.Farm
 
 
                 }
-            }
+            
             for (int i = 0; i < 13; i++)
             {
 

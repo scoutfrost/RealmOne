@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Fresh Seaweed"); 
+            DisplayName.SetDefault("Fresh Seaweed");
             Tooltip.SetDefault("'Way too salty for my liking'"
                 + "\n'Can be dried and wrapped up in sushi!'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;

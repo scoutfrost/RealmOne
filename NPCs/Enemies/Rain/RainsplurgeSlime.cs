@@ -1,18 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Misc;
-using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Misc.Plants;
-using RealmOne.Items.Placeables.BannerItems;
-using RealmOne.Projectiles.Magic;
-using ReLogic.Content;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Enemies.Rain
 {
@@ -45,9 +39,9 @@ namespace RealmOne.NPCs.Enemies.Rain
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.netAlways = true;
             NPC.netUpdate = true;
-            AIType = NPCID.GoldenSlime ;
+            AIType = NPCID.GoldenSlime;
             AnimationType = NPCID.GreenSlime;
-            
+
         }
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
@@ -65,7 +59,7 @@ namespace RealmOne.NPCs.Enemies.Rain
         {
             Lighting.AddLight(NPC.position, r: 0.1f, g: 0.2f, b: 0.6f);
         }
-       
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
@@ -77,7 +71,7 @@ namespace RealmOne.NPCs.Enemies.Rain
 				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("Covered in algae and extremely slippery sludge, this slime hunts things in the rain!"),
 
-				
+
             });
         }
         public override void FindFrame(int frameHeight)
@@ -112,7 +106,7 @@ namespace RealmOne.NPCs.Enemies.Rain
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 1, 5));
-             
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Aquablossom>(), 2, 2, 4));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WaterDriplets>(), 2, 2, 4));
 
@@ -122,7 +116,7 @@ namespace RealmOne.NPCs.Enemies.Rain
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-           
+
 
             int buffType = BuffID.Wet;
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;

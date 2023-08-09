@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria.ID;
-using Terraria.ModLoader.Utilities;
-using RealmOne.Items.Misc.EnemyDrops;
-using Terraria.GameContent.ItemDropRules;
-using System.Drawing.Text;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {
@@ -48,7 +41,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
             NPC.knockBackResist = 0.50f;
 
             NPC.friendly = false;
-            NPC.townNPC = false ;
+            NPC.townNPC = false;
 
             NPC.HitSound = SoundID.ChesterOpen;
             NPC.DeathSound = SoundID.NPCHit23;
@@ -56,7 +49,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (spawnInfo.Player.ZoneCorrupt)
+            if (spawnInfo.Player.ZoneCorrupt && DownedBossSystem.downedSquirmo == true)
             {
                 return SpawnCondition.Corruption.Chance * 0.12f;
             }
@@ -93,8 +86,8 @@ namespace RealmOne.NPCs.Enemies.Corruption
                 Dust.NewDustPerfect(NPC.Center, DustID.CorruptionThorns, Scale: 0.5f, Alpha: 120);
             }
 
-           
-           
+
+
             /*  int npcaway = (int)Math.Sqrt((NPC.Center.X - target.Center.X) * (NPC.Center.X - target.Center.X) + (NPC.Center.Y - target.Center.Y) * (NPC.Center.Y - target.Center.Y));
               if (npcaway <= 400 || NPC.life < NPC.lifeMax && !target.dead)
               {
@@ -102,7 +95,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
               }
             */
         }
-        
+
         public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Vector2 drawOrigin = NPC.frame.Size() / 2;
@@ -111,7 +104,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
@@ -154,7 +147,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
                 d.noGravity = true;
             }
         }
-     }
-     
     }
+
+}
 

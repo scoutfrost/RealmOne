@@ -3,7 +3,6 @@ using RealmOne.Common.Systems;
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Projectiles.HeldProj;
 using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -15,10 +14,10 @@ namespace RealmOne.Items.Weapons.PreHM.Corruption
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Vulgar Shot"); 
+            DisplayName.SetDefault("Vulgar Shot");
             Tooltip.SetDefault("'Absolutely Vile!'"
                 + "\nCharges up Vile Eyes from the bow"
-                +"\nReleasing the button shoots all Vile Eyes at once");
+                + "\nReleasing the button shoots all Vile Eyes at once");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
         }
@@ -32,7 +31,7 @@ namespace RealmOne.Items.Weapons.PreHM.Corruption
             Item.useTime = 10;
             Item.useAnimation = 10;
             Item.knockBack = 3;
-            Item.value = Item.buyPrice(0,0,75,0);
+            Item.value = Item.buyPrice(0, 0, 75, 0);
             Item.rare = ItemRarityID.Green;
             Item.autoReuse = true;
             Item.useStyle = ItemUseStyleID.Shoot;

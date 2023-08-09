@@ -16,7 +16,7 @@ namespace RealmOne.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
 
-           
+
 
 
             if (player.ZoneForest)

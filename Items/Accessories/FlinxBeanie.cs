@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Flinx Beanie"); 
+            DisplayName.SetDefault("Flinx Beanie");
             Tooltip.SetDefault("Immune to Chilled and Frozen"
                 + "\n'My goly gosh its so soft!'");
 

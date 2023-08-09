@@ -1923,6 +1923,11 @@ Mods: {
 				DisplayName: Tattered Sword
 				Tooltip: ""
 			}
+
+			Goreberry: {
+				DisplayName: Goreberry
+				Tooltip: Dangerously sweet, increases your heart rate'
+			}
 		}
 
 		Buffs: {
@@ -2173,20 +2178,54 @@ Mods: {
 			MegaSquirmBody.DisplayName: Mega Squirm Body
 			MegaSquirmHead.DisplayName: Mega Squirm Head
 			MegaSquirmTail.DisplayName: Mega Squirm Tail
-			MossyMarauder.DisplayName: Mossy Marauder
+
+			MossyMarauder: {
+				DisplayName: Mossy Marauder
+
+				BossChecklistIntegration: {
+					EntryName: The Outcrop Outcast
+					SpawnInfo:
+						'''
+						To this day, the dirt titan is a remarkable standpoint of the growth of Terraria, from its hard life and from its happiest life, it will always be a symbol of the land. The name that is given to it now is called The Outcrop Outcast, for many reasons. The dirt effigy still remains on this day and is untouched even for the irresponsible. Would you rather defeat the past or lose the future?
+
+						'''
+					DespawnMessage: ""
+				}
+			}
+
 			RustedCenturion.DisplayName: Rusted Centurion
 			GlitterdustSlime.DisplayName: Glitterdust Slime
 			Eslime.DisplayName: E-Slime
 			ImpactTurret.DisplayName: Impact Turret
 			Inkling.DisplayName: Inkling Promenade
 			LightbulbBouncer.DisplayName: Lightbulb Bouncer
-			PossessedPiggy.DisplayName: Possessed Piggy
+
+			PossessedPiggy: {
+				DisplayName: Possessed Piggy
+
+				BossChecklistIntegration: {
+					EntryName: Possessed Piggy Bank
+					SpawnInfo: A rare scavenger of the land, looking for any Terrarian to stumble across it, stealing all its loot!!
+					DespawnMessage: ""
+				}
+			}
+
 			NecroDude.DisplayName: Necromonical Envoy
 			FunnelWebSpider.DisplayName: Funnel Web Spider
 			HuntsmanSpider.DisplayName: Huntsman Spider
 			RedbackSpider.DisplayName: Redback Spider
 			SquirmoTail.DisplayName: Squirmo Tail
-			SquirmoHead.DisplayName: Squirmo Head
+
+			SquirmoHead: {
+				DisplayName: Squirmo Head
+
+				BossChecklistIntegration: {
+					SpawnInfo: Even from the past dread of worm adaptation, they havent really caused global damage. But for Squirmo, ever seeking revenge on human inhabitants is still a current warning for people.  Adhere the relief of the soil by defeating Squirmo!!
+					DespawnMessage: ""
+					EntryName: Squirmo
+				}
+			}
+
 			SquirmoBody.DisplayName: Squirmo Body
 			ZombieFarmer.DisplayName: Zombie Farmer
 			Espider1.DisplayName: E-Spider
@@ -2248,6 +2287,7 @@ Mods: {
 			HoneyHare.DisplayName: Honey Hare
 			Berryback.DisplayName: Berryback
 			Rooster.DisplayName: Rooster
+			HaySlime.DisplayName: Hay Slime
 		}
 
 		Tiles: {
@@ -2291,7 +2331,7 @@ Mods: {
 		Biomes: {
 			FarmSurface: {
 				DisplayName: The Abandoned Farm
-				TownNPCDialogueName: The Abandoned Farm
+				TownNPCDialogueName: Abandoned Farm
 			}
 		}
 	}

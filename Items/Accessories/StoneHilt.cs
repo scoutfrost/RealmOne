@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Stone Hilt"); 
+            DisplayName.SetDefault("Stone Hilt");
             Tooltip.SetDefault("'Smoothened stone, tied around the sword handle'"
                  + "\n'I'm positive this is what the vikings did when they invigorated their swords'"
                  + "\n7% increased melee speed and knockback"

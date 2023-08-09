@@ -61,9 +61,9 @@ namespace RealmOne.NPCs.Enemies.Forest
                    BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				new FlavorTextBestiaryInfoElement("A larger and more poisonous variant of its smaller size. Soaks up more damage with its large size"),
+                new FlavorTextBestiaryInfoElement("A larger and more poisonous variant of its smaller size. Soaks up more damage with its large size"),
 
-				
+
             });
         }
 

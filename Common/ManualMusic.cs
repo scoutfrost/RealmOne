@@ -2,12 +2,12 @@
 
 namespace RealmOne.Common
 {
-    
+
     public sealed class ManualMusic : ILoadable
     {
         public void Load(Mod mod)
         {
-            
+
 
             MusicLoader.AddMusic(mod, "Assets/Music/squirmointro");
             MusicLoader.AddMusic(mod, "Assets/Music/Rlyeh");
@@ -17,9 +17,9 @@ namespace RealmOne.Common
 
         }
 
-        public void Unload() 
+        public void Unload()
         {
-      
+
         }
     }
 }

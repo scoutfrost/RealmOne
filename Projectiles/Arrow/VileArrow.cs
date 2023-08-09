@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using Terraria.ID;
-using Terraria.Audio;
-using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Common.Core;
+using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Arrow
 {
@@ -64,6 +56,6 @@ namespace RealmOne.Projectiles.Arrow
             Lighting.Brightness(1, 1);
 
         }
-       
+
     }
 }

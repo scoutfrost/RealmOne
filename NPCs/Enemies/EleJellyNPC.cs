@@ -49,9 +49,9 @@ namespace RealmOne.NPCs.Enemies
                    BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				new FlavorTextBestiaryInfoElement("A more reckless and more conductive jellyfish, this jellyfish does a major amount of damage compared to other jellies."),
+                new FlavorTextBestiaryInfoElement("A more reckless and more conductive jellyfish, this jellyfish does a major amount of damage compared to other jellies."),
 
-				
+
             });
         }
 

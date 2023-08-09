@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RealmOne.Tiles.Furniture;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
-using RealmOne.Tiles.Furniture;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables.Furniture
 {
     public class FarmChest : ModItem
     {
-       
-            public override void SetDefaults()
-            {
-                Item.DefaultToPlaceableTile(ModContent.TileType<FarmChestTile>());
-                 Item.placeStyle = 1; // Use this to place the chest in its locked style
-                Item.width = 26;
-                Item.height = 22;
-                Item.value = Item.buyPrice(0,0,8,0);
-            }
+
+        public override void SetDefaults()
+        {
+            Item.DefaultToPlaceableTile(ModContent.TileType<FarmChestTile>());
+            Item.placeStyle = 1; // Use this to place the chest in its locked style
+            Item.width = 26;
+            Item.height = 22;
+            Item.value = Item.buyPrice(0, 0, 8, 0);
+        }
 
         public override void AddRecipes()
         {

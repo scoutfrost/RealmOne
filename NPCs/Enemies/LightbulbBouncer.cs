@@ -60,7 +60,7 @@ namespace RealmOne.NPCs.Enemies
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.20f;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.16f;
         }
         private int dustTimer;
 
@@ -87,15 +87,15 @@ namespace RealmOne.NPCs.Enemies
                    BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
 
-				new FlavorTextBestiaryInfoElement("Light is super important, especially when its night, but when these deceptive floating bulbs are around, you know they're up to no good."),
+                new FlavorTextBestiaryInfoElement("Light is super important, especially when its night, but when these deceptive floating bulbs are around, you know they're up to no good."),
 
-				
+
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
 
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("LightbulbBouncerGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("LightbulbBouncerGore2").Type, 1f);
@@ -133,7 +133,7 @@ namespace RealmOne.NPCs.Enemies
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-           
+
             int buffType = BuffID.Blackout;
 
             int timeToAdd = 2 * 60; //This makes it 5 seconds, one second is 60 ticks

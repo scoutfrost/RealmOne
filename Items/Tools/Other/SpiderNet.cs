@@ -1,19 +1,16 @@
-﻿using System;
+﻿using RealmOne.Items.Misc.Bars;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-using Terraria.DataStructures;
-using Microsoft.Xna.Framework;
 using Terraria.ID;
-using RealmOne.Items.Misc.Bars;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Tools.Other
 {
-    public class SpiderNet  : ModItem
+    public class SpiderNet : ModItem
     {
         public override void SetStaticDefaults()
         {
-            
+
             ItemID.Sets.CatchingTool[Item.type] = true;
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -21,7 +18,7 @@ namespace RealmOne.Items.Tools.Other
 
         public override void SetDefaults()
         {
-            
+
             Item.width = 24;
             Item.height = 28;
             Item.rare = ItemRarityID.Blue;
@@ -46,7 +43,7 @@ namespace RealmOne.Items.Tools.Other
             {
 
                 return false;
-                
+
             }
 
             // For all cases where true isn't explicitly returned, we'll return null so that vanilla catching rules and effects can take place.

@@ -25,7 +25,7 @@ namespace RealmOne.Items.Food
 
         public override void SetDefaults()
         {
-            
+
             Item.width = 24;
             Item.height = 24;
             Item.useTime = 15;
