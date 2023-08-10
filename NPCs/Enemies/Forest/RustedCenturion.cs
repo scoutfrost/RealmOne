@@ -2,6 +2,7 @@
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Tools.Hooks;
 using RealmOne.Items.Weapons.PreHM.Forest;
+using RealmOne.Items.Weapons.PreHM.Throwing;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -74,6 +75,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             npcLoot.Add(ItemDropRule.Common(ItemID.LeadBar, 10, 3, 6));
 
             npcLoot.Add(ItemDropRule.Common(ItemID.MudBlock, 2, 3, 6));
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PoisonPrickles>(), 13, 4, 6));
 
         }
 

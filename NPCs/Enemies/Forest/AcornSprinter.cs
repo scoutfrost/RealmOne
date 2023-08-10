@@ -2,6 +2,7 @@
 using RealmOne.Common.Systems;
 using RealmOne.Items.Food;
 using RealmOne.Items.Placeables.BannerItems;
+using RealmOne.Items.Weapons.PreHM.Throwing;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -94,13 +95,15 @@ namespace RealmOne.NPCs.Enemies.Forest
             npcLoot.Add(ItemDropRule.Common(ItemID.Wood, 2, 4, 6));
             npcLoot.Add(ItemDropRule.Common(ItemID.LivingWoodWand, 40, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ToastedNutBar>(), 20));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PoisonPrickles>(), 13, 5, 8));
+
 
 
         }
 
-      
 
-       
+
+
     }
 }
 
