@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using RealmOne.RealmPlayer;
+using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,8 +14,7 @@ namespace RealmOne.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Piggy Patroller Bodyplate");
-            Tooltip.SetDefault("5% increased knockback but 8% decreased movement speed"
-                + "\nDiscount on all Shop Items!"
+            Tooltip.SetDefault("8% increased damage reduction, +20 max health, 5% decreased movement speed"
                 + "\n'Carrying a heavy bodyplate full of porcelain'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -32,9 +32,10 @@ namespace RealmOne.Armor
 
         public override void UpdateEquip(Player player)
         {
-            player.GetKnockback(DamageClass.Generic) += 0.05f;
-            player.moveSpeed -= 0.08f;
-            player.discountAvailable = true;
+            player.statLifeMax2 += 20;
+            player.endurance += 0.08f;
+            player.moveSpeed -= 0.05f;
+            //player.discountAvailable = true;
 
         }
 

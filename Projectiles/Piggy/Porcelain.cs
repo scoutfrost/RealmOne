@@ -79,6 +79,11 @@ namespace RealmOne.Projectiles.Piggy
             return false;
         }
 
+        public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)
+        {
+            return true;
+        }
+
         public override void Kill(int timeLeft)
         {
             for (int i = 0; i < 7; i++)

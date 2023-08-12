@@ -287,6 +287,7 @@ namespace RealmOne.RealmPlayer
             GreenNeck = false;
             marbleJustJumped = false;
 
+            piggy = false;
             brassSet = false;
 
         }
@@ -363,6 +364,8 @@ namespace RealmOne.RealmPlayer
             {
                 Player.AddBuff(ModContent.BuffType<OverseerBuff>(), 400);
             }
+
+
         }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Projectile, consider using OnHitNPC instead */
         {
@@ -376,8 +379,19 @@ namespace RealmOne.RealmPlayer
             public bool brightProjectiles = false;
 
         }
+
+        
+
+        public override void OnHitByProjectile(Projectile proj, Player.HurtInfo hurtInfo)
+        {
+            base.OnHitByProjectile(proj, hurtInfo);
+        }
+
+
+
         public override void PreUpdate()
         {
+            
 
             if (!brassSet)
                 marbleJustJumped = false;

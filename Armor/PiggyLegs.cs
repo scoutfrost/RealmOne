@@ -24,7 +24,7 @@ namespace RealmOne.Armor
             Item.height = 18;
             Item.value = Item.sellPrice(gold: 1);
             Item.rare = ItemRarityID.Blue;
-            Item.defense = 3;
+            Item.defense = 4;
         }
 
         public override void UpdateEquip(Player player)

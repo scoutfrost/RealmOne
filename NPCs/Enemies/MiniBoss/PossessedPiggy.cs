@@ -46,7 +46,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
         //Coin Rain
         int coinRain;
-        bool CoinsAreRaining;
+        bool CoinsAreRaining = false;
         int coinCD;
         int time;
         int burstCD;
@@ -485,7 +485,6 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         chargingUp = -1;
                         overHeat = 600;
                         coinRain = 300;
-                        groundPound = 400;
                         OverHeatSlide = false;
                     }
 
@@ -509,7 +508,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         NPC.velocity.Y = 0;
                         NPC.noGravity = true;
                         NPC.velocity.X = 0;
-                        t.GetModPlayer<Screenshake>().ScreenShake = 120;
+                        t.GetModPlayer<Screenshake>().ScreenShake = 2;
                     }
                     int select = Main.rand.Next(1, 4);
                     time++;

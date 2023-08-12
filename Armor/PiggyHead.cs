@@ -13,7 +13,7 @@ namespace RealmOne.Armor
         {
 
             DisplayName.SetDefault("Piggy Patroller Mask");
-            Tooltip.SetDefault("5% increased damage but 5% decreased acceleration"
+            Tooltip.SetDefault("7% increased damage, 10% faster usetime, 3% decreased acceleration"
                 + "\n'This is so uncomfortable, but it does the job'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -25,13 +25,14 @@ namespace RealmOne.Armor
             Item.height = 18;
             Item.value = Item.sellPrice(gold: 1);
             Item.rare = ItemRarityID.Blue;
-            Item.defense = 4;
+            Item.defense = 3;
         }
 
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage(DamageClass.Generic) += 0.05f;
-            player.runAcceleration -= 0.05f;
+            player.GetDamage(DamageClass.Generic) += 0.07f;
+            player.runAcceleration -= 0.03f;
+            player.GetAttackSpeed(DamageClass.Generic) += 0.10f;
 
         }
 
