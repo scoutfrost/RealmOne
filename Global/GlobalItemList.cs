@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RealmOne.Items.Misc.Bars;
+using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -852,6 +853,13 @@ namespace RealmOne.Global
             climbingclaws1.AddTile(TileID.Anvils);
             climbingclaws1.Register();
 
+
+            Recipe extractinator = Recipe.Create(ItemID.Extractinator);
+            extractinator.AddRecipeGroup("IronBar", 15);
+            extractinator.AddIngredient(ModContent.ItemType<BrassIngot>(), 8);
+            extractinator.AddIngredient(ItemID.Glass, 10);
+            extractinator.AddTile(TileID.HeavyWorkBench);   
+            extractinator.Register();
 
             Recipe obj = Recipe.Create(ItemID.Blowpipe);
             obj.AddIngredient(Mod, "WoodenGunBarrel", 1);

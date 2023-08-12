@@ -1052,10 +1052,10 @@ Mods: {
 			GizmoScrap: {
 				Tooltip:
 					'''
-					A mixture of ores, metal and handy parts in one clump
+					A mixture of small chips, wires and other junk
 					Dropped from the sneakiest of goblins
 					'''
-				DisplayName: Gizmo Scrap
+				DisplayName: Gizmo Microchips
 			}
 
 			FreshSeaweed: {
@@ -1777,7 +1777,7 @@ Mods: {
 
 			ChickenCoopItem: {
 				DisplayName: Chicken Coop
-				Tooltip: ""
+				Tooltip: Cluck Cluck Cluck!!
 			}
 
 			TractorTileItem: {
@@ -1855,17 +1855,17 @@ Mods: {
 			}
 
 			BerrybackItem: {
-				DisplayName: Berryback Item
+				DisplayName: Berryback
 				Tooltip: ""
 			}
 
 			RoosterItem: {
-				DisplayName: Rooster Item
+				DisplayName: Rooster
 				Tooltip: ""
 			}
 
 			SquirmItem: {
-				DisplayName: Squirm Item
+				DisplayName: Squirm
 				Tooltip: ""
 			}
 
@@ -1876,7 +1876,7 @@ Mods: {
 
 			WattlePot: {
 				DisplayName: Wattle Pot
-				Tooltip: ""
+				Tooltip: Gives the Happy Buff!
 			}
 
 			TatteredBody: {
@@ -1895,8 +1895,8 @@ Mods: {
 			}
 
 			SunHat: {
-				DisplayName: Sun Hat
-				Tooltip: ""
+				DisplayName: Lost Farmer's Straw Hat
+				Tooltip: Sunflower Effect when worn in the day!
 			}
 
 			TatteredAxe: {
@@ -1927,6 +1927,38 @@ Mods: {
 			Goreberry: {
 				DisplayName: Goreberry
 				Tooltip: Dangerously sweet, increases your heart rate'
+			}
+
+			ChillrendBody: {
+				DisplayName: Chillrend Body
+				Tooltip:
+					'''
+					6% increases ranged damage
+					6% increased ranged speed
+					'''
+			}
+
+			ChillrendHead: {
+				DisplayName: Chillrend Head
+				Tooltip:
+					'''
+					6% increased ranged damage
+					6%increased ranged attack speed
+					'''
+			}
+
+			ChillrendLegs: {
+				DisplayName: Chillrend Legs
+				Tooltip:
+					'''
+					6% increased movement speed
+					You leave a trail of ice!
+					'''
+			}
+
+			FarmTorchItem: {
+				DisplayName: Farm Torch
+				Tooltip: ""
 			}
 		}
 
@@ -2319,6 +2351,7 @@ Mods: {
 			Depths.MapEntry: Depths
 			Nothing.MapEntry: Nothing
 			HangingWattle.MapEntry: Hanging Wattle
+			FarmTorch.MapEntry: Farm Torch
 		}
 
 		DamageClasses: {

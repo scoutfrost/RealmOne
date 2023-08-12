@@ -5,7 +5,7 @@ using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RealmOne.Armor
+namespace RealmOne.Armor.Chillrend
 {
 
     [AutoloadEquip(EquipType.Body)]
@@ -32,18 +32,32 @@ namespace RealmOne.Armor
         public override void UpdateEquip(Player player)
         {
 
-            player.GetDamage(DamageClass.Ranged) += 0.06f;
-            player.GetAttackSpeed(DamageClass.Ranged) += 0.06f;
+            player.GetKnockback(DamageClass.Ranged) += 0.06f;
+
         }
+        
         public override void AddRecipes()
         {
             CreateRecipe()
 
-            .AddIngredient(ItemID.IceBlock, 16)
-                                    .AddIngredient(ModContent.ItemType<WaterDriplets>(), 8)
+            .AddIngredient(ItemID.IceBlock,22)
+                        .AddIngredient(ItemID.GoldBar, 10)
+
+                                    .AddIngredient(ModContent.ItemType<WaterDriplets>(), 4)
 
             .AddTile(TileID.Anvils)
             .Register();
+
+            CreateRecipe()
+
+        .AddIngredient(ItemID.IceBlock, 22)
+                    .AddIngredient(ItemID.PlatinumBar  , 10)
+
+                                .AddIngredient(ModContent.ItemType<WaterDriplets>(), 4)
+
+        .AddTile(TileID.Anvils)
+        .Register();
+
 
         }
     }

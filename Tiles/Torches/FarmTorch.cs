@@ -60,7 +60,7 @@ namespace RealmOne.Tiles.Torches
             // Assets
             if (!Main.dedServ)
             {
-                flameTexture = ModContent.Request<Texture2D>(Texture+ "_flame");
+                flameTexture = ModContent.Request<Texture2D>(Texture+ "_Flame");
             }
         }
 

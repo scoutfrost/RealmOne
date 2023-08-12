@@ -89,7 +89,7 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
 
         public override Vector2? HoldoutOffset()
         {
-            var offset = new Vector2(3, 0);
+            var offset = new Vector2(-2, 0);
             return offset;
         }
     }

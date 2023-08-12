@@ -16,7 +16,7 @@ namespace RealmOne.Projectiles.Throwing
         public override void SetDefaults()
         {
             Projectile.width = 6;
-            Projectile.height = 12;
+            Projectile.height = 14;
 
             Projectile.aiStyle = 2;
             Projectile.DamageType = DamageClass.Ranged;
@@ -30,12 +30,20 @@ namespace RealmOne.Projectiles.Throwing
             Projectile.CloneDefaults(ProjectileID.ThrowingKnife);
             AIType = ProjectileID.ThrowingKnife;
         }
+        public override void AI()
+        {
+
+            
+            Lighting.AddLight(Projectile.position, r: 0.1f, g: 0.3f, b: 0.9f);
+
+        }
         public override void Kill(int timeleft)
 
         {
-            for (int i = 0; i < 6; i++)
+
+
+            for (int i = 0; i < 10; i++)
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Ice, 0f, 0f, 0, default, 1f);
-            Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             SoundEngine.PlaySound(SoundID.Item50, Projectile.position);
 
         }

@@ -45,7 +45,7 @@ namespace RealmOne.Projectiles.Throwing
         public override void Kill(int timeleft)
 
         {
-
+        
 
             for (int i = 0; i < 17; i++)
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.DungeonPink, 0f, 0f, 50, default, 2f);

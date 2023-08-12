@@ -33,7 +33,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.height = 25;
             NPC.defense = 0;
             NPC.lifeMax = 7;
-            NPC.value = Item.buyPrice(0, 1, 0, 0);
+            NPC.value = Item.buyPrice(0,0 , 4, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.HitSound = SoundID.NPCHit1;
 

@@ -1,6 +1,7 @@
 ﻿using RealmOne.Rarities;
 using Terraria;
 using Terraria.GameContent.Creative;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace RealmOne.Vanities
@@ -36,7 +37,15 @@ namespace RealmOne.Vanities
 
         }
 
+        public override void UpdateEquip(Player player)
+        {
+            if (Main.dayTime == true)
+            {
+                player.AddBuff(BuffID.Sunflower, 1);
+            }
 
+
+        }
 
         // IsArmorSet determines what armor pieces are needed for the setbonus to take effect
         /*	public override bool IsArmorSet(Item head, Item body, Item legs)
