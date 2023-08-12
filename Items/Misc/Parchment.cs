@@ -20,7 +20,7 @@ namespace RealmOne.Items.Misc
 
         public override void SetDefaults()
         {
-                Item.width = 20;
+            Item.width = 20;
             Item.height = 20;
             Item.value = Item.buyPrice(copper: 69);
             Item.rare = ItemRarityID.White;

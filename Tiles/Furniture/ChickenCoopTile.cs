@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.Enums;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -14,12 +12,12 @@ namespace RealmOne.Tiles.Furniture
 
         public override void SetStaticDefaults()
         {
-   
+
             Main.tileLavaDeath[Type] = true;
-         //   AnimationFrameHeight = 50;
+            //   AnimationFrameHeight = 50;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-           
+
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.Width = 5;
@@ -33,7 +31,7 @@ namespace RealmOne.Tiles.Furniture
 
         }
 
-        
+
 
     }
 }

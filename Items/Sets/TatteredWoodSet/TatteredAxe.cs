@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RealmOne.Items.Placeables;
 using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using Terraria.ID;
-using RealmOne.Items.Placeables;
+using Terraria.ModLoader;
 
 namespace RealmOne.Items.Sets.TatteredWoodSet
 {

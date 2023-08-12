@@ -10,7 +10,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Noxius Leaf"); 
+            DisplayName.SetDefault("Noxius Leaf");
             Tooltip.SetDefault("'Bacteria infected leaf, radiating with nature's power'"
                  + "\n10% increased summon damage");
 

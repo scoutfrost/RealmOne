@@ -6,7 +6,6 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.ObjectData;
 
 namespace RealmOne.Tiles.Blocks
 {
@@ -15,13 +14,13 @@ namespace RealmOne.Tiles.Blocks
         public override void SetStaticDefaults()
         {
             TileID.Sets.AllTiles[Type] = true;
-            
+
             Main.tileSolid[Type] = true;
             Main.tileMergeDirt[Type] = true;
 
             LocalizedText name = CreateMapEntryName();
             name.SetDefault("Tattered Wood");
-            AddMapEntry(new Color(160,80,80 ), name);
+            AddMapEntry(new Color(160, 80, 80), name);
 
             DustType = DustID.BorealWood;
 
@@ -33,7 +32,7 @@ namespace RealmOne.Tiles.Blocks
         }
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-          
+
             SoundEngine.PlaySound(rorAudio.BrokenBarrel);
 
 
@@ -60,5 +59,5 @@ namespace RealmOne.Tiles.Blocks
         }
     }
 
-    
+
 }

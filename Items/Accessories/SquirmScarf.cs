@@ -11,7 +11,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Squirm Scarf"); 
+            DisplayName.SetDefault("Squirm Scarf");
             Tooltip.SetDefault("Reduces damage taken by 8%");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

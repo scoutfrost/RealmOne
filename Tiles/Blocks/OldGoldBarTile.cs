@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -21,7 +20,7 @@ namespace RealmOne.Tiles.Blocks
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.addTile(Type);
 
-            AddMapEntry(new Color(237, 222, 98), Language.GetText("MapObject.MetalBar")); 
+            AddMapEntry(new Color(237, 222, 98), Language.GetText("MapObject.MetalBar"));
         }
     }
 }

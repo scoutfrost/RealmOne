@@ -359,3 +359,4 @@ C:\Users\OMISTAJA\.openjfx\OneDrive\Tiedostot\My Games\Terraria\tModLoader\ModSo
 C:\Users\OMISTAJA\.openjfx\OneDrive\Tiedostot\My Games\Terraria\tModLoader\ModSources\RealmOne\obj\Debug\net6.0\refint\RealmOne.dll
 C:\Users\OMISTAJA\.openjfx\OneDrive\Tiedostot\My Games\Terraria\tModLoader\ModSources\RealmOne\obj\Debug\net6.0\RealmOne.pdb
 C:\Users\OMISTAJA\.openjfx\OneDrive\Tiedostot\My Games\Terraria\tModLoader\ModSources\RealmOne\obj\Debug\net6.0\ref\RealmOne.dll
+C:\Users\cmcdo\OneDrive\Documents\My Games\Terraria\tModLoader\ModSources\RealmOne\bin\Debug\net6.0\StructureHelper.dll

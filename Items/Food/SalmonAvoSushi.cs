@@ -11,7 +11,7 @@ namespace RealmOne.Items.Food
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Salmon Avo Sushi Roll"); 
+            DisplayName.SetDefault("Salmon Avo Sushi Roll");
             Tooltip.SetDefault("'A tasty blend of the most carefully caught salmon in the ocean and fresh creamy slices of avocado'"
             + "\nGives Minor Improvements to all stats"
             + "\nIncreases Charm Duration by 8+ seconds"
@@ -31,7 +31,7 @@ namespace RealmOne.Items.Food
         public override void SetDefaults()
         {
             Item.DefaultToFood(22, 22, BuffID.WellFed, 57600);
-           
+
             Item.useTime = 15;
             Item.useAnimation = 15;
             Item.maxStack = 99;

@@ -169,7 +169,11 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
             .Register();
 
         }
-
+        public override Vector2? HoldoutOffset()
+        {
+            var offset = new Vector2(-1, 0);
+            return offset;
+        }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 

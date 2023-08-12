@@ -1,16 +1,10 @@
-﻿using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ModLoader;
-using Terraria.DataStructures;
 using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.ObjectData;
-using Terraria.GameContent.ObjectInteractions;
-using Terraria.Enums;
+using Terraria.DataStructures;
 using Terraria.ID;
-using Microsoft.Xna.Framework;
-using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
 
 namespace RealmOne.Tiles
 {
@@ -42,12 +36,12 @@ namespace RealmOne.Tiles
 
 
             // Placement
-          
-           
+
+
             //      ChestDrop = ModContent.ItemType<TatteredBarrelItem>();
 
 
-          
+
             TileObjectData.addTile(Type);
         }
 
@@ -67,7 +61,7 @@ namespace RealmOne.Tiles
 
         public override void KillMultiTile(int x, int y, int frameX, int frameY)
         {
-         //   Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<RizzStatueItem>(), Main.rand.Next(1, 1));
+            //   Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<RizzStatueItem>(), Main.rand.Next(1, 1));
 
             if (Main.netMode != NetmodeID.Server)
             {
@@ -86,14 +80,14 @@ namespace RealmOne.Tiles
                 for (int i = 0; i < 1; i++)
                 {
                     Gore.NewGore(entitySource, new Vector2(x * 16, y * 16), new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), BGore1);
-                    Gore.NewGore(entitySource, new Vector2(x * 16, y * 16), new Vector2(Main.rand.Next(0,0), Main.rand.Next(0, 0)), BGore2);
+                    Gore.NewGore(entitySource, new Vector2(x * 16, y * 16), new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), BGore2);
                     Gore.NewGore(entitySource, new Vector2(x * 16, y * 16), new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), BGore3);
                     Gore.NewGore(entitySource, new Vector2(x * 16, y * 16), new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), BGore4);
 
 
                 }
             }
-            
+
 
         }
     }

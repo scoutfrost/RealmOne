@@ -4,7 +4,6 @@ using RealmOne.Tiles;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Creative;
-using Terraria.ID;
 using Terraria.ModLoader;
 namespace RealmOne.Items.Misc
 {
@@ -12,7 +11,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bread Loaf"); 
+            DisplayName.SetDefault("Bread Loaf");
             Tooltip.SetDefault($"[c/BBA95E:'Freshly baked from the rustic and antique stone baker ovens']");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 10;
 

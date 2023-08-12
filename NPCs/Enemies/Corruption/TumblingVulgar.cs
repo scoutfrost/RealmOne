@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Terraria.ID;
-using Terraria.ModLoader.Utilities;
+﻿using RealmOne.Items.Food;
 using RealmOne.Items.Misc.EnemyDrops;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
-using RealmOne.Items.Food;
-using RealmOne.Items.Food.FarmFood;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Enemies.Corruption
 {
@@ -32,7 +25,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
             NPC.defense = 1;
             NPC.damage = 20;
             NPC.lifeMax = 100;
-            NPC.value = Item.buyPrice(0, 0,6, 5);
+            NPC.value = Item.buyPrice(0, 0, 6, 5);
             NPC.noGravity = false;
             NPC.noTileCollide = false;
             NPC.knockBackResist = 0.50f;
@@ -59,12 +52,12 @@ namespace RealmOne.NPCs.Enemies.Corruption
             Player player = Main.player[NPC.target];
             if (NPC.velocity.X / 4 >= 1 || NPC.velocity.X / 4 <= -1)
             {
-                Dust.NewDustPerfect(NPC.Center, DustID.CorruptionThorns, Scale: 0.5f, Alpha: 120) ;
+                Dust.NewDustPerfect(NPC.Center, DustID.CorruptionThorns, Scale: 0.5f, Alpha: 120);
             }
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("VulgarGore1").Type, 1f);
@@ -89,7 +82,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfectedViscus>(), 4, 1, 2));
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedBerries>(),16));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CursedBerries>(), 16));
 
 
         }

@@ -14,7 +14,7 @@ namespace RealmOne.Biomes.Farm
 {
     public class FarmSapling : ModTile
     {
-          public override void SetStaticDefaults()
+        public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
@@ -49,7 +49,7 @@ namespace RealmOne.Biomes.Farm
             DustType = DustID.Grass;
             AdjTiles = new int[] { TileID.Saplings };
         }
-    
+
 
 
         public override void RandomUpdate(int i, int j)

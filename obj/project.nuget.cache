@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8Y/vd3At4YJvMzEY89tdSkNy2ItQeetOk8VZSXAGPqLGVWEb7bfisGAPfceslo07kl2K1/lTg7Sst18LeOm3uw==",
+  "dgSpecHash": "BxK4fNmDsgDCWN0aC0i49o0HYMS4BgyECUFYLWsu0V/DmZhwOIsEZd63mSCc2MmU5Ff63HfRMoesgA9nlFvH2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OMISTAJA\\.openjfx\\OneDrive\\Tiedostot\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
+  "projectFilePath": "C:\\Users\\cmcdo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\OMISTAJA\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+    "C:\\Users\\cmcdo\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
   ],
   "logs": []
 }

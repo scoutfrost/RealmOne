@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Core;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ModLoader;
-using RealmOne.Common.Core;
 namespace RealmOne.Projectiles.Bullet
 {
 

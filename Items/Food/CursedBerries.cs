@@ -1,7 +1,5 @@
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -13,7 +11,7 @@ namespace RealmOne.Items.Food
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Berries"); 
+            DisplayName.SetDefault("Cursed Berries");
             Tooltip.SetDefault("'Sour, but too sour, it makes enemy spawn increased!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
@@ -28,13 +26,13 @@ namespace RealmOne.Items.Food
         }
         public override void SetDefaults()
         {
-            Item.DefaultToFood(20, 20, BuffID.WellFed, 57600);
+            Item.DefaultToFood(20, 20, BuffID.WellFed, 20600);
 
             Item.useTime = 17;
             Item.useAnimation = 17;
             Item.maxStack = 99;
             Item.useStyle = ItemUseStyleID.EatFood;
-            Item.value = Item.buyPrice(0,0,3,95);
+            Item.value = Item.buyPrice(0, 0, 3, 95);
             Item.rare = ItemRarityID.Green;
             Item.consumable = true;
             Item.UseSound = SoundID.Item2;
@@ -46,7 +44,7 @@ namespace RealmOne.Items.Food
             return true;
         }
 
-       
-       
+
+
     }
 }

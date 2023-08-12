@@ -18,7 +18,7 @@ namespace RealmOne.Buffs.AlcoholBuffs
 
             player.GetAttackSpeed(DamageClass.Generic) -= 0.15f;
             player.endurance += 0.10f;
-         
+
             player.GetArmorPenetration(DamageClass.Generic) += 3f;
 
         }

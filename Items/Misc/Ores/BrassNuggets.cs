@@ -9,7 +9,7 @@ namespace RealmOne.Items.Misc.Ores
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Brass Nuggets"); 
+            DisplayName.SetDefault("Brass Nuggets");
             Tooltip.SetDefault("A durable and inexpensive chunk of common brass");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 

@@ -30,7 +30,7 @@ namespace RealmOne.NPCs.Enemies
                 Position = new Vector2(40f, 28f),
                 PortraitPositionXOverride = 0f,
                 PortraitPositionYOverride = 11f,
-                PortraitScale = 1.4f,
+                PortraitScale = 1.45f,
 
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, drawModifier);
@@ -51,7 +51,6 @@ namespace RealmOne.NPCs.Enemies
             NPC.DeathSound = SoundID.NPCDeath50;
             NPC.netAlways = true;
             NPC.netUpdate = true;
-            NPC.npcSlots = 0;
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
@@ -91,9 +90,8 @@ namespace RealmOne.NPCs.Enemies
                 d.noGravity = true;
             }
 
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+          
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
@@ -103,7 +101,7 @@ namespace RealmOne.NPCs.Enemies
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("NecroDudeStick").Type, 1f);
 
                 }
-            }
+            
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
@@ -132,7 +130,6 @@ namespace RealmOne.NPCs.Enemies
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TatteredBarrelItem>(), 1, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EidolicInk>(), 2, 3, 5));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Parchment>(), 3, 3, 5));
 

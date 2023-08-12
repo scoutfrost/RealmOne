@@ -2,6 +2,7 @@
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Tools.Hooks;
 using RealmOne.Items.Weapons.PreHM.Forest;
+using RealmOne.Items.Weapons.PreHM.Throwing;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -75,6 +76,8 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             npcLoot.Add(ItemDropRule.Common(ItemID.MudBlock, 2, 3, 6));
 
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PoisonPrickles>(), 13, 4, 6));
+
         }
 
         public override void HitEffect(NPC.HitInfo hit)
@@ -89,7 +92,7 @@ namespace RealmOne.NPCs.Enemies.Forest
                 d.noGravity = true;
             }
 
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
@@ -124,9 +127,6 @@ namespace RealmOne.NPCs.Enemies.Forest
             if ((player.Center - NPC.Center).Length() < 800)
             {
                 float projectileSpeed = 8f;
-                int damage = 65;
-                float knockBack = 3;
-                int type = ProjectileID.JavelinHostile;
                 Vector2 velocity = Vector2.Normalize(new Vector2(player.position.X + player.width / 2, player.position.Y + player.height / 2) -
                     new Vector2(NPC.position.X + NPC.width / 2, NPC.position.Y + NPC.height / 2)) * projectileSpeed;
 

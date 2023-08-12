@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bone Bag"); 
+            DisplayName.SetDefault("Bone Bag");
             Tooltip.SetDefault("'Used from the Clothier a long time when he was still trapped in the dungeon'"
                 + "\n'Ya bonehead!'"
                 + "\nSkeletons and dungeon enemies drop more loot and bones"

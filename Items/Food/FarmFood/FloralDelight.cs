@@ -1,7 +1,5 @@
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -16,9 +14,9 @@ namespace RealmOne.Items.Food.FarmFood
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Floral Delight");
-            Tooltip.SetDefault("'Sweet, eadable flowers, filled with nutrients and goodness!" 
-                +"Gives the Heartreach buff"
-             +   "You can wear this on your head as well!");
+            Tooltip.SetDefault("'Sweet, eadable flowers, filled with nutrients and goodness!"
+                + "Gives the Heartreach buff"
+             + "You can wear this on your head as well!");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 

@@ -8,7 +8,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Royal Rawhide"); 
+            DisplayName.SetDefault("Royal Rawhide");
             Tooltip.SetDefault("5% increased acceleration and movement speed"
             + "\nWhen you are hit by an enemy you are granted a slime dash buff"
             + "\nThe buff cannot be stacked, as soon as your hit, the buff will last for 4 seconds"

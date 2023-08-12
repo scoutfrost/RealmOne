@@ -13,7 +13,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Lightbulb Liquid"); 
+            DisplayName.SetDefault("Lightbulb Liquid");
             Tooltip.SetDefault("'Liquid when light gets into its spatial property'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 

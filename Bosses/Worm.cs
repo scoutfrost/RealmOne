@@ -11,18 +11,18 @@ namespace RealmOne.Bosses
 {
     public enum WormSegmentType
     {
-        
+
         Head,
-     
+
         Body,
-       
+
         Tail
     }
 
 
     public abstract class Worm : ModNPC
     {
-       
+
         public abstract WormSegmentType SegmentType { get; }
 
         /// <summary>

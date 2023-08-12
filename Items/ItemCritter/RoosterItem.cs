@@ -1,5 +1,4 @@
-﻿using RealmOne.NPCs.Critters;
-using RealmOne.NPCs.Critters.Farm;
+﻿using RealmOne.NPCs.Critters.Farm;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

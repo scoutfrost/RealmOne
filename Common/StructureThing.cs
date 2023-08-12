@@ -1,5 +1,4 @@
 ﻿using RealmOne.Tiles;
-using RealmOne.Tiles.Blocks;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -24,7 +23,7 @@ namespace RealmOne.Common
                 };
 
                 bool placingtheFUCKINGSTUPIDTHING = true;
-                for (int i = 0; i < 3; i++) 
+                for (int i = 0; i < 3; i++)
                     for (int j = 0; j < 4; j++)
                     {
                         Tile tile = Framing.GetTileSafely(baseCheckX + i, baseCheckY + j);
@@ -34,7 +33,7 @@ namespace RealmOne.Common
                             break;
                         }
                     }
-                for (int i = 0; i < 3; i++) 
+                for (int i = 0; i < 3; i++)
                 {
                     Tile tile = Framing.GetTileSafely(baseCheckX + i, baseCheckY + 4);
                     if (!WorldGen.SolidTile(tile) || !blocksallowed.Contains(tile.TileType))
@@ -67,7 +66,7 @@ namespace RealmOne.Common
                 return false;
             }
 
-            int positionX = Main.spawnTileX - 1; 
+            int positionX = Main.spawnTileX - 1;
             int positionY = Main.spawnTileY - 4;
             bool placed = false;
             for (int offsetX = -20; offsetX <= 50; offsetX++)
@@ -87,4 +86,3 @@ namespace RealmOne.Common
         }
     }
 }
-    

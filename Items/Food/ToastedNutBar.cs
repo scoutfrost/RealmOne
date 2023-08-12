@@ -19,7 +19,7 @@ namespace RealmOne.Items.Food
 
             Main.RegisterItemAnimation(Type, new DrawAnimationVertical(int.MaxValue, 3));
 
-                
+
             ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
                 new Color(195, 142, 77),
                 new Color(222, 220, 96),
@@ -32,7 +32,7 @@ namespace RealmOne.Items.Food
 
         public override void SetDefaults()
         {
-            
+
             Item.width = 24;
             Item.height = 24;
             Item.useTime = 15;

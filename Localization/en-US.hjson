@@ -1052,10 +1052,10 @@ Mods: {
 			GizmoScrap: {
 				Tooltip:
 					'''
-					A mixture of ores, metal and handy parts in one clump
+					A mixture of small chips, wires and other junk
 					Dropped from the sneakiest of goblins
 					'''
-				DisplayName: Gizmo Scrap
+				DisplayName: Gizmo Microchips
 			}
 
 			FreshSeaweed: {
@@ -1777,7 +1777,7 @@ Mods: {
 
 			ChickenCoopItem: {
 				DisplayName: Chicken Coop
-				Tooltip: ""
+				Tooltip: Cluck Cluck Cluck!!
 			}
 
 			TractorTileItem: {
@@ -1855,17 +1855,17 @@ Mods: {
 			}
 
 			BerrybackItem: {
-				DisplayName: Berryback Item
+				DisplayName: Berryback
 				Tooltip: ""
 			}
 
 			RoosterItem: {
-				DisplayName: Rooster Item
+				DisplayName: Rooster
 				Tooltip: ""
 			}
 
 			SquirmItem: {
-				DisplayName: Squirm Item
+				DisplayName: Squirm
 				Tooltip: ""
 			}
 
@@ -1876,7 +1876,7 @@ Mods: {
 
 			WattlePot: {
 				DisplayName: Wattle Pot
-				Tooltip: ""
+				Tooltip: Gives the Happy Buff!
 			}
 
 			TatteredBody: {
@@ -1895,8 +1895,8 @@ Mods: {
 			}
 
 			SunHat: {
-				DisplayName: Sun Hat
-				Tooltip: ""
+				DisplayName: Lost Farmer's Straw Hat
+				Tooltip: Sunflower Effect when worn in the day!
 			}
 
 			TatteredAxe: {
@@ -1921,6 +1921,43 @@ Mods: {
 
 			TatteredSword: {
 				DisplayName: Tattered Sword
+				Tooltip: ""
+			}
+
+			Goreberry: {
+				DisplayName: Goreberry
+				Tooltip: Dangerously sweet, increases your heart rate'
+			}
+
+			ChillrendBody: {
+				DisplayName: Chillrend Body
+				Tooltip:
+					'''
+					6% increases ranged damage
+					6% increased ranged speed
+					'''
+			}
+
+			ChillrendHead: {
+				DisplayName: Chillrend Head
+				Tooltip:
+					'''
+					6% increased ranged damage
+					6%increased ranged attack speed
+					'''
+			}
+
+			ChillrendLegs: {
+				DisplayName: Chillrend Legs
+				Tooltip:
+					'''
+					6% increased movement speed
+					You leave a trail of ice!
+					'''
+			}
+
+			FarmTorchItem: {
+				DisplayName: Farm Torch
 				Tooltip: ""
 			}
 		}
@@ -2173,20 +2210,54 @@ Mods: {
 			MegaSquirmBody.DisplayName: Mega Squirm Body
 			MegaSquirmHead.DisplayName: Mega Squirm Head
 			MegaSquirmTail.DisplayName: Mega Squirm Tail
-			MossyMarauder.DisplayName: Mossy Marauder
+
+			MossyMarauder: {
+				DisplayName: Mossy Marauder
+
+				BossChecklistIntegration: {
+					EntryName: The Outcrop Outcast
+					SpawnInfo:
+						'''
+						To this day, the dirt titan is a remarkable standpoint of the growth of Terraria, from its hard life and from its happiest life, it will always be a symbol of the land. The name that is given to it now is called The Outcrop Outcast, for many reasons. The dirt effigy still remains on this day and is untouched even for the irresponsible. Would you rather defeat the past or lose the future?
+
+						'''
+					DespawnMessage: ""
+				}
+			}
+
 			RustedCenturion.DisplayName: Rusted Centurion
 			GlitterdustSlime.DisplayName: Glitterdust Slime
 			Eslime.DisplayName: E-Slime
 			ImpactTurret.DisplayName: Impact Turret
 			Inkling.DisplayName: Inkling Promenade
 			LightbulbBouncer.DisplayName: Lightbulb Bouncer
-			PossessedPiggy.DisplayName: Possessed Piggy
+
+			PossessedPiggy: {
+				DisplayName: Possessed Piggy
+
+				BossChecklistIntegration: {
+					EntryName: Possessed Piggy Bank
+					SpawnInfo: A rare scavenger of the land, looking for any Terrarian to stumble across it, stealing all its loot!!
+					DespawnMessage: ""
+				}
+			}
+
 			NecroDude.DisplayName: Necromonical Envoy
 			FunnelWebSpider.DisplayName: Funnel Web Spider
 			HuntsmanSpider.DisplayName: Huntsman Spider
 			RedbackSpider.DisplayName: Redback Spider
 			SquirmoTail.DisplayName: Squirmo Tail
-			SquirmoHead.DisplayName: Squirmo Head
+
+			SquirmoHead: {
+				DisplayName: Squirmo Head
+
+				BossChecklistIntegration: {
+					SpawnInfo: Even from the past dread of worm adaptation, they havent really caused global damage. But for Squirmo, ever seeking revenge on human inhabitants is still a current warning for people.  Adhere the relief of the soil by defeating Squirmo!!
+					DespawnMessage: ""
+					EntryName: Squirmo
+				}
+			}
+
 			SquirmoBody.DisplayName: Squirmo Body
 			ZombieFarmer.DisplayName: Zombie Farmer
 			Espider1.DisplayName: E-Spider
@@ -2248,6 +2319,7 @@ Mods: {
 			HoneyHare.DisplayName: Honey Hare
 			Berryback.DisplayName: Berryback
 			Rooster.DisplayName: Rooster
+			HaySlime.DisplayName: Hay Slime
 		}
 
 		Tiles: {
@@ -2279,6 +2351,7 @@ Mods: {
 			Depths.MapEntry: Depths
 			Nothing.MapEntry: Nothing
 			HangingWattle.MapEntry: Hanging Wattle
+			FarmTorch.MapEntry: Farm Torch
 		}
 
 		DamageClasses: {
@@ -2291,7 +2364,7 @@ Mods: {
 		Biomes: {
 			FarmSurface: {
 				DisplayName: The Abandoned Farm
-				TownNPCDialogueName: The Abandoned Farm
+				TownNPCDialogueName: Abandoned Farm
 			}
 		}
 	}

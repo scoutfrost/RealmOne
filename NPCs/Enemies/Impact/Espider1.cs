@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Misc.EnemyDrops;
 using ReLogic.Content;
+using System.Security.Cryptography.X509Certificates;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent.Bestiary;
@@ -80,12 +81,11 @@ namespace RealmOne.NPCs.Enemies.Impact
         {
             Lighting.AddLight(NPC.position, r: 0.1f, g: 0.2f, b: 1.0f);
         }
-
+        
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+          
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     // These gores work by simply existing as a texture inside any folder which path contains "Gores/"
 
@@ -95,8 +95,7 @@ namespace RealmOne.NPCs.Enemies.Impact
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EspiderGore4").Type, 1f);
 
                 }
-            }
-
+            
             for (int i = 0; i < 10; i++)
             {
 

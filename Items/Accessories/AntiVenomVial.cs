@@ -9,7 +9,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Anti-Venom Vial"); 
+            DisplayName.SetDefault("Anti-Venom Vial");
             Tooltip.SetDefault("Full immunity to Venom"
                 + "\n'This anti-venom works for other critters too!'");
 

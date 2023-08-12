@@ -11,7 +11,7 @@ namespace RealmOne.Items.Food
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tuna and Avocado Sushi Roll"); 
+            DisplayName.SetDefault("Tuna and Avocado Sushi Roll");
             Tooltip.SetDefault("'A simple roll of sushi with beautiful Japanese Red Fin Tuna and creamy slices of avacado'"
             + "\nGives Minor Improvements to all stats"
             + "\nIncreases Charm Duration by 6+ seconds"

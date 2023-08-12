@@ -3,7 +3,6 @@ using RealmOne.Bosses;
 using RealmOne.Common.Systems;
 using RealmOne.Items.ItemCritter;
 using RealmOne.NPCs.Enemies.Forest;
-using RealmOne.Projectiles.Bullet;
 using RealmOne.Rarities;
 using RealmOne.RealmPlayer;
 using Terraria;
@@ -20,7 +19,7 @@ namespace RealmOne.Items.BossSummons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Worm Infested Carrot"); 
+            DisplayName.SetDefault("Worm Infested Carrot");
             Tooltip.SetDefault("'Awaken the sludgy scavenger of the soil'"
                 + "\n'The soil will adhere relief!!'"
                 + "\nSummons Squirmo");
@@ -56,22 +55,22 @@ namespace RealmOne.Items.BossSummons
             //    return !Main.dayTime && !NPC.AnyNPCs(ModContent.NPCType<MinionBossBody>()); would mean "not daytime and no MinionBossBody currently alive"
             return !NPC.AnyNPCs(ModContent.NPCType<SquirmoHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>()) && !NPC.AnyNPCs(ModContent.NPCType<MegaSquirmHead>());
         }
-      /*  public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 1f;
+        /*  public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+          {
+              Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 1f;
 
-            if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
-                position += muzzleOffset;
+              if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+                  position += muzzleOffset;
 
-            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore1").Type, 1f);
-            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore2").Type, 1f);
-            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore3").Type, 1f);
-            Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore4").Type, 1f);
+              Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore1").Type, 1f);
+              Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore2").Type, 1f);
+              Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore3").Type, 1f);
+              Gore.NewGore(source, player.Center + muzzleOffset * 1, new Vector2(player.direction * -1, -0.5f) * 2, Mod.Find<ModGore>("CarrotGore4").Type, 1f);
 
 
 
-            return true;
-        }*/
+              return true;
+          }*/
 
         public override bool? UseItem(Player player)
         {
@@ -159,7 +158,7 @@ namespace RealmOne.Items.BossSummons
         {
             CreateRecipe(1)
            .AddIngredient(Mod, "Carrot", 1)
-           .AddIngredient(ModContent.ItemType<SquirmItem>(), 4 )
+           .AddIngredient(ModContent.ItemType<SquirmItem>(), 4)
                       .AddIngredient(ItemID.Worm, 4)
 
             .AddTile(TileID.WorkBenches)

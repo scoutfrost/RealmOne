@@ -1,15 +1,14 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.NPCs.Enemies.Forest;
 using RealmOne.Items.Placeables.BannerItems;
+using RealmOne.NPCs.Enemies.Forest;
+using RealmOne.NPCs.Enemies.Impact;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using RealmOne.NPCs.Enemies.Impact;
-using RealmOne.NPCs.Enemies.Rain;
 
 namespace RealmOne.Tiles.Banners
 {
@@ -33,14 +32,16 @@ namespace RealmOne.Tiles.Banners
             AddMapEntry(new Color(200, 200, 200), name);
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY) {
+        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        {
             int style = frameX / 18;
-            switch (style) {
+            switch (style)
+            {
                 case 0:
-                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16) , i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.AcornSprinterB>());
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.AcornSprinterB>());
                     break;
-               case 1:
-                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16) , i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.AcornStiltB>());
+                case 1:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48, ModContent.ItemType<BannerItem.AcornStiltB>());
                     break;
 
                 case 2:
@@ -58,14 +59,17 @@ namespace RealmOne.Tiles.Banners
                 default:
                     return;
             }
-            
+
         }
 
-        public override void NearbyEffects(int i, int j, bool closer) {
-            if (closer) {
+        public override void NearbyEffects(int i, int j, bool closer)
+        {
+            if (closer)
+            {
                 Player player = Main.LocalPlayer;
                 int style = Main.tile[i, j].TileFrameX / 18;
-                switch (style) {
+                switch (style)
+                {
                     case 0:
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<AcornSprinter>()] = true;
                         Main.SceneMetrics.hasBanner = true;
@@ -94,12 +98,14 @@ namespace RealmOne.Tiles.Banners
                         return;
                 }
 
-                
+
             }
         }
 
-        public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects) {
-            if (i % 2 == 1) {
+        public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
+        {
+            if (i % 2 == 1)
+            {
                 spriteEffects = SpriteEffects.FlipHorizontally;
             }
         }

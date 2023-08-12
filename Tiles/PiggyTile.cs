@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
-using RealmOne.Items.Misc.EnemyDrops;
-using RealmOne.Items.Misc.Ores;
 using RealmOne.NPCs.Enemies.MiniBoss;
 using Terraria;
 using Terraria.Audio;
@@ -68,7 +66,7 @@ namespace RealmOne.Tiles
 
         public override void KillMultiTile(int x, int y, int frameX, int frameY)
         {
-            NPC.NewNPC(new EntitySource_TileBreak(x, y), x * 16, y * 16,ModContent.NPCType<PossessedPiggy>(), 32);
+            NPC.NewNPC(new EntitySource_TileBreak(x, y), x * 16, y * 16, ModContent.NPCType<PossessedPiggy>(), 32);
 
             Chest.DestroyChest(x, y);
             SoundEngine.PlaySound(SoundID.Shatter);
@@ -94,10 +92,10 @@ namespace RealmOne.Tiles
 
             }
 
-         
+
         }
 
 
-      
+
     }
 }

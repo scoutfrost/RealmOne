@@ -28,7 +28,7 @@ namespace RealmOne.Projectiles.Bullet
             Projectile.timeLeft = 4;
             Projectile.friendly = false;
             Projectile.aiStyle = 0;
-            Projectile.scale = 0.9f;
+            Projectile.scale = 1f;
             Projectile.alpha = 255;
         }
 

@@ -17,7 +17,7 @@ namespace RealmOne.Projectiles.Throwing
 
         public override void SetDefaults()
         {
-            Projectile.width = 8;
+            Projectile.width = 12;
 
             Projectile.height = 18;
             Projectile.aiStyle = ProjAIStyleID.Arrow;

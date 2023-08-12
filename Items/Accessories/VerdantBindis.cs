@@ -11,7 +11,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Verdant Bindis"); 
+            DisplayName.SetDefault("Verdant Bindis");
             Tooltip.SetDefault("2+ Base Damage on all weapons"
                  + "\nYou are poisoned when equipping this, I mean you're carrying around Poisonous Bindis? :skull:");
 

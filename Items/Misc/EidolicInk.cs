@@ -11,7 +11,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Eidolic Ink"); 
+            DisplayName.SetDefault("Eidolic Ink");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 50;
 

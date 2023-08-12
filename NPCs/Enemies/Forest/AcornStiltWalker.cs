@@ -2,6 +2,7 @@
 using RealmOne.Common.Systems;
 using RealmOne.Items.Food;
 using RealmOne.Items.Placeables.BannerItems;
+using RealmOne.Items.Weapons.PreHM.Throwing;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -59,13 +60,13 @@ namespace RealmOne.NPCs.Enemies.Forest
 				   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
                                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
 
-				new FlavorTextBestiaryInfoElement("Being in the forest gets a bit boring sometimes, so this Acorn found some tree branches and stuck it to its legs! "),
+                new FlavorTextBestiaryInfoElement("Being in the forest gets a bit boring sometimes, so this Acorn found some tree branches and stuck it to its legs! "),
 
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("AcornStiltGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("AcornStiltGore1").Type, 1f);
@@ -93,25 +94,15 @@ namespace RealmOne.NPCs.Enemies.Forest
             npcLoot.Add(ItemDropRule.Common(ItemID.LivingWoodWand, 40, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.PortableStool, 42, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ToastedNutBar>(), 20));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PoisonPrickles>(), 13, 5, 8));
 
 
-        }
-
-        public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
-        {
-            // Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
-            // Common use is applying buffs/debuffs:
-
-            for (int d = 0; d < 30; d++)
-                Dust.NewDust(target.position, target.width, target.height, DustID.t_LivingWood, 0f, 0f, 150, default, 1.5f);
 
         }
 
-        public override void OnSpawn(IEntitySource source)
-        {
-            SoundEngine.PlaySound(rorAudio.SFX_Acorn);
 
-        }
+
+
     }
 }
 

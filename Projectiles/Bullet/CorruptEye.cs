@@ -39,7 +39,7 @@ namespace RealmOne.Projectiles.Bullet
             Lighting.AddLight(Projectile.position, 0.1f, 0.6f, 0.2f);
             Lighting.Brightness(1, 1);
 
-          
+
         }
         public PrimitiveTrail trail = new();
         public List<Vector2> oldPositions = new List<Vector2>();

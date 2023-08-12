@@ -19,7 +19,7 @@ namespace RealmOne.Bosses
     [AutoloadBossHead]
     internal class SquirmoHead : WormHead
     {
-       
+
         public ref float RemainingShields => ref NPC.localAI[2];
 
         public int MinionMaxHealthTotal
@@ -54,8 +54,8 @@ namespace RealmOne.Bosses
 
 
             var drawModifier = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
-            { 
-                CustomTexturePath = "RealmOne/NPCs/Enemies/ArtyWorm", 
+            {
+                CustomTexturePath = "RealmOne/NPCs/Enemies/ArtyWorm",
                 Position = new Vector2(40f, 28f),
                 PortraitPositionXOverride = 0f,
                 PortraitPositionYOverride = 12f,
@@ -101,15 +101,15 @@ namespace RealmOne.Bosses
                 NPC.defense = 6;
             }
         }
-      
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-            
 
-				new FlavorTextBestiaryInfoElement("The dreaded controller and ruler of all creepy crawlies of the soil. Attacks anything that touches a grain of dirt, without any care of destruction"),
 
-				
+                new FlavorTextBestiaryInfoElement("The dreaded controller and ruler of all creepy crawlies of the soil. Attacks anything that touches a grain of dirt, without any care of destruction"),
+
+
             });
         }
         public override void HitEffect(NPC.HitInfo hit)
@@ -267,7 +267,7 @@ namespace RealmOne.Bosses
             }
         }
 
-        
+
     }
     internal class SquirmoBody : WormBody
     {
@@ -277,7 +277,7 @@ namespace RealmOne.Bosses
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
-                Hide = true 
+                Hide = true
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
         }
@@ -342,7 +342,7 @@ namespace RealmOne.Bosses
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
-                Hide = true 
+                Hide = true
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
         }

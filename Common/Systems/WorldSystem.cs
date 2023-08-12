@@ -7,22 +7,18 @@ using RealmOne.Items.Opens;
 using RealmOne.Items.Weapons.PreHM.Classless;
 using RealmOne.Items.Weapons.PreHM.Grenades;
 using RealmOne.Items.Weapons.PreHM.Throwing;
+using RealmOne.NPCs.Critters;
 using RealmOne.NPCs.Enemies.Forest;
-using RealmOne.NPCs.Enemies.MiniBoss;
 using RealmOne.NPCs.Enemies.Underground;
+using StructureHelper;
 using System.Collections.Generic;
-using System.Reflection.Emit;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.ModLoader;
 using Terraria.WorldBuilding;
-using StructureHelper;
-using RealmOne.Biomes.Farm;
 using static Terraria.ModLoader.ModContent;
-using RealmOne.NPCs.Critters;
-using RealmOne.Items.Food.FarmFood;
 
 namespace RealmOne.Common.Systems
 {
@@ -38,21 +34,28 @@ namespace RealmOne.Common.Systems
             {
                 Player player = Main.LocalPlayer;
 
-                if (type == 3 && Main.rand.NextBool(38))
+                if (type == 3 && Main.rand.NextBool(4))
                 {
-                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ItemType<RegenMush>(),1);
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ItemType<RegenMush>(), 1);
                 }
 
-                if (type == TileID.Sunflower && Main.rand.NextBool(1))
+                if (type == TileID.Sunflower && Main.rand.NextBool(2))
                 {
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ItemType<SunflowerPetal>(), 3);
                 }
 
-                if (type == TileID.Trees && Main.rand.NextBool(10) && player.ZoneCorrupt)
+                if (type == TileID.Trees && Main.rand.NextBool(12) && player.ZoneCorrupt)
                 {
-                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<CursedBerries>(), Main.rand.Next(1, 3));
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<CursedBerries>(), Main.rand.Next(1, 2));
                 }
-
+                if (type == TileID.Trees && Main.rand.NextBool(12) && player.ZoneCrimson)
+                {
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<Goreberry>(), Main.rand.Next(1, 2));
+                }
+                if (type == TileID.Trees && Main.rand.NextBool(8) && player.ZoneForest)
+                {
+                    NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<AcornSprinter>(), 1);
+                }
                 if (type == TileID.Seaweed && Main.rand.NextBool(2))
                 {
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<FreshSeaweed>(), Main.rand.Next(1, 4));
@@ -67,7 +70,7 @@ namespace RealmOne.Common.Systems
                     NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<HeartBat>(), 1);
                 }
 
-           
+
 
 
                 if (type == TileID.Dirt && DownedBossSystem.downedSquirmo == false && Main.rand.NextBool(10))
@@ -78,43 +81,43 @@ namespace RealmOne.Common.Systems
             }
         }
 
-        
+
     }
- 
+
 
     public sealed class SourceDependentItemTweaks : GlobalItem
     {
-       /* public override void OnSpawn(Item item, IEntitySource source)
-        {
-            if (source is EntitySource_ShakeTree)
-            {
-                IEntitySource newSource = item.GetSource_FromThis(); // Use a separate source for the newly created projectiles, to not cause a stack overflow.
-                if (Main.rand.NextBool(7))
-                {
-                    NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
-                    if (Main.dayTime!)
-                    {
-                    }
-                }
+        /* public override void OnSpawn(Item item, IEntitySource source)
+         {
+             if (source is EntitySource_ShakeTree)
+             {
+                 IEntitySource newSource = item.GetSource_FromThis(); // Use a separate source for the newly created projectiles, to not cause a stack overflow.
+                 if (Main.rand.NextBool(7))
+                 {
+                     NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
+                     if (Main.dayTime!)
+                     {
+                     }
+                 }
 
-                else if (Main.rand.NextBool(4))
+                 else if (Main.rand.NextBool(4))
 
-                {
+                 {
 
-                    NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<MangoBat>());
-                }
+                     NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<MangoBat>());
+                 }
 
-            }
-        }
+             }
+         }
 
-        */
+         */
 
     }
-   
+
     public class WorldSystem : ModSystem
     {
 
-        public class Test: GenPass
+        public class Test : GenPass
         {
             public Test(string name, double loadWeight) : base(name, loadWeight)
             {
@@ -122,9 +125,9 @@ namespace RealmOne.Common.Systems
 
             protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration)
             {
-                int x = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow/ 2);
-                int y = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow/ 2);
-                Point16 point = new Point16(x, y); 
+                int x = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow / 2);
+                int y = (int)(GenVars.worldSurfaceLow + GenVars.worldSurfaceLow / 2);
+                Point16 point = new Point16(x, y);
                 Generator.GenerateStructure("Structures/Test", point, RealmOne.Instance, false);
             }
 

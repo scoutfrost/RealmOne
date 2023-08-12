@@ -1,6 +1,5 @@
 using RealmOne.Tiles.Banners;
 using Terraria.GameContent.Creative;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables.BannerItems
@@ -9,7 +8,7 @@ namespace RealmOne.Items.Placeables.BannerItems
     {
 
 
-       public  class AcornSprinterB : ModItem
+        public class AcornSprinterB : ModItem
         {
             public override void SetStaticDefaults()
             {

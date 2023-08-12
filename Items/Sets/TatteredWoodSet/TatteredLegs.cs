@@ -34,7 +34,7 @@ namespace RealmOne.Items.Sets.TatteredWoodSet
 
         }
 
-      
+
 
         public override void AddRecipes()
         {

@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ModLoader;
-using Terraria.ID;
-using Microsoft.Xna.Framework;
-using Terraria.Enums;
-using Terraria.ObjectData;
-using Terraria.DataStructures;
-using Terraria.Localization;
+﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.Placeables;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.Enums;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
 
 namespace RealmOne.Tiles.PlantTiles
 {

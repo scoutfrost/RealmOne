@@ -7,7 +7,6 @@ using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.Utilities;
 
 namespace RealmOne.NPCs.Critters.Rain
 {
@@ -55,7 +54,7 @@ namespace RealmOne.NPCs.Critters.Rain
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("WaterLizardGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("WaterLizardGore2").Type, 1f);
@@ -69,7 +68,7 @@ namespace RealmOne.NPCs.Critters.Rain
                 Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
 
                 var d = Dust.NewDustPerfect(NPC.position, DustID.Water, speed * 5, Scale: 1.5f);
-                ;
+                
                 d.noGravity = true;
             }
         }

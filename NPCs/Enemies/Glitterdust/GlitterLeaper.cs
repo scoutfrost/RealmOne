@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Common.Systems;
 using RealmOne.Items.Misc;
 using RealmOne.Projectiles.Magic;
 using ReLogic.Content;
@@ -40,7 +39,7 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
             NPC.damage = 10;
             NPC.lifeMax = 50;
             NPC.value = Item.buyPrice(0, 0, 3, 70);
-            NPC.aiStyle = NPCAIStyleID.Fighter ;
+            NPC.aiStyle = NPCAIStyleID.Fighter;
             NPC.HitSound = SoundID.MaxMana;
             NPC.DeathSound = SoundID.DD2_LightningBugDeath;
             NPC.netAlways = true;
@@ -91,7 +90,7 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
 
             if (++NPC.ai[0] % 180 == 0)
             {
-                int p = Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ModContent.ProjectileType<Stary>(), 15, 0, 0,0);
+                int p = Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ModContent.ProjectileType<Stary>(), 15, 0, 0, 0);
                 Main.projectile[p].scale = 1f;
                 Main.projectile[p].friendly = false;
                 Main.projectile[p].hostile = true;
@@ -111,20 +110,20 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
             }
 
 
-         /*   dustTimer++;
-            if (dustTimer >= 18)
-            {
-                for (int i = 0; i < 60; i++)
-                {
-                    Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                    var d = Dust.NewDustPerfect(NPC.Center, DustID.YellowStarDust, speed * 6, Scale: 1f);
-                    ;
-                    d.noGravity = true;
-                }
+            /*   dustTimer++;
+               if (dustTimer >= 18)
+               {
+                   for (int i = 0; i < 60; i++)
+                   {
+                       Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                       var d = Dust.NewDustPerfect(NPC.Center, DustID.YellowStarDust, speed * 6, Scale: 1f);
+                       ;
+                       d.noGravity = true;
+                   }
 
-                dustTimer = 0;
-         */
-            
+                   dustTimer = 0;
+            */
+
         }
         public override void OnSpawn(IEntitySource source)
         {

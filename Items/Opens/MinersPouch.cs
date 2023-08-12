@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Misc;
-using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.ItemDropRules;
@@ -52,7 +50,7 @@ namespace RealmOne.Items.Opens
             itemLoot.Add(ItemDropRule.Common(ItemID.Bomb, 4, 8, 10));
             itemLoot.Add(ItemDropRule.Common(ItemID.Dynamite, 4, 4, 6));
             itemLoot.Add(ItemDropRule.Common(ItemID.SpelunkerPotion, 4, 2, 4));
-           
+
 
         }
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)

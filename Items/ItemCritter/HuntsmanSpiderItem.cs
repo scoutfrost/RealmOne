@@ -1,12 +1,11 @@
-﻿using RealmOne.NPCs.Critters;
-using RealmOne.NPCs.Enemies.Spiders;
+﻿using RealmOne.NPCs.Enemies.Spiders;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace RealmOne.Items.ItemCritter
 {
-    public class HuntsmanSpiderItem: ModItem
+    public class HuntsmanSpiderItem : ModItem
     {
         public override void SetStaticDefaults()
         {

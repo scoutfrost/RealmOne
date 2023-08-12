@@ -15,7 +15,7 @@ namespace RealmOne.Items.Weapons.PreHM.Crossbows
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Combuster Crossbow"); 
+            DisplayName.SetDefault("Combuster Crossbow");
             Tooltip.SetDefault("Hold out a burning and powerful crossbow that shoots flaming bolts"
                 + "\nThe crossbow shoots out 2 crossbolts, having to let go of the button and reload"
                 + "\nThe crossbow is equipped with a helpful scope to zoom out and scout further out");

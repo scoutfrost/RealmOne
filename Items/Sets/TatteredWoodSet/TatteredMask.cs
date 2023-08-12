@@ -8,7 +8,7 @@ namespace RealmOne.Items.Sets.TatteredWoodSet
 {
     [AutoloadEquip(EquipType.Head)]
 
-    public class TatteredMask: ModItem
+    public class TatteredMask : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -43,7 +43,7 @@ namespace RealmOne.Items.Sets.TatteredWoodSet
         {
             player.setBonus = "You are immune to Slow and Poisoned. 5% increased weapon knockback"; // This is the setbonus tooltip
             player.buffImmune[BuffID.Slow] = true;
-            player.GetKnockback(DamageClass.Generic) += 0.05f ;
+            player.GetKnockback(DamageClass.Generic) += 0.05f;
             player.buffImmune[BuffID.Poisoned] = true;
 
 

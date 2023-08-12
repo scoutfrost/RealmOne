@@ -12,7 +12,7 @@ namespace RealmOne.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Static Stone"); 
+            DisplayName.SetDefault("Static Stone");
             Tooltip.SetDefault("Increases the effectiveness of the Electrified buff"
                 + "\nFull immunity to the Electrified debuff"
                 + "\nBuffs E-Weapons");

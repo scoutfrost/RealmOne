@@ -38,11 +38,11 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             Item.useTime = 40;
             Item.useAnimation = 40;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.knockBack = 2f;
+            Item.knockBack = 1f;
             Item.value = 30000;
             Item.rare = RarityType<ModRarities>();
             Item.autoReuse = true;
-            Item.useAmmo = AmmoID.Bullet;
+            Item.useAmmo = ModContent.ItemType<RustedBullets>();
             Item.noMelee = true;
             Item.shootSpeed = 16f;
             Item.shoot = ProjectileType<OldChainHook>();
@@ -51,7 +51,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
         public override bool CanUseItem(Player player)
         {
-           
+
 
             if (player.altFunctionUse == 2)
             {
@@ -61,10 +61,10 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
                 Item.noUseGraphic = true;
                 Item.UseSound = SoundID.Item1;
                 Item.autoReuse = false;
-                Item.shootSpeed = 16f;
+                Item.shootSpeed = 15f;
                 Item.shoot = ProjectileType<OldChainHook>();
-                Item.damage = 16;
-                Item.knockBack = 6f;
+                Item.damage = 15;
+                Item.knockBack = 4f;
 
             }
             else
@@ -77,8 +77,8 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
                 Item.UseSound = rorAudio.SFX_PumpShotgun;
                 Item.shoot = ProjectileID.Bullet;
                 Item.damage = 5;
-                Item.knockBack = 2f;
-                Item.useAmmo = AmmoID.Bullet;
+                Item.knockBack = 1f;
+                Item.useAmmo = ModContent.ItemType<RustedBullets>();
             }
 
             return base.CanUseItem(player);
@@ -103,7 +103,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             }
             else
             {
-                Lighting.AddLight(player.position, r: 0.8f, 0.5f, 0.0f);
+                Lighting.AddLight(player.position, 0.8f, 0.5f, 0.0f);
                 const int NumProjectiles = 3;
 
                 for (int i = 0; i < NumProjectiles; i++)

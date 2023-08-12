@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles.Bullet.StunSeed
@@ -39,7 +39,7 @@ namespace RealmOne.Projectiles.Bullet.StunSeed
                 Projectile.velocity.X = -oldVelocity.X / 2;
                 SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
             }
-            if (Projectile.velocity.Y != oldVelocity.Y) 
+            if (Projectile.velocity.Y != oldVelocity.Y)
             {
                 Projectile.velocity.Y = -oldVelocity.Y / 2;
                 SoundEngine.PlaySound(SoundID.Dig, Projectile.position);

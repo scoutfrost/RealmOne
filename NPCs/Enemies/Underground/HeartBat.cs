@@ -70,7 +70,7 @@ namespace RealmOne.NPCs.Enemies.Underground
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (NPC.life <= 0)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HeartbatGore1").Type, 1f);
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HeartbatGore2").Type, 1f);
@@ -101,14 +101,20 @@ namespace RealmOne.NPCs.Enemies.Underground
               spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
               return false;
           }*/
-
+        public override void AI()
+        {
+            NPC.lifeRegen += 5;
+        }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemID.LifeCrystal, 15, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemID.LifeCrystal, 20, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.Heart, 1, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.Heart, 1, 1, 1));
 
-            npcLoot.Add(ItemDropRule.Common(ItemID.LifeforcePotion, 10, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Heart, 1, 1, 1));
+
+
+            npcLoot.Add(ItemDropRule.Common(ItemID.LifeforcePotion, 12, 1, 1));
             npcLoot.Add(ItemDropRule.Common(ItemID.RegenerationPotion, 6, 1, 1));
 
         }

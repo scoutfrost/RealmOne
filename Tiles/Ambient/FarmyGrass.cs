@@ -1,8 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using RealmOne.NPCs.Critters.Farm;
-using RealmOne.NPCs.Enemies.MiniBoss;
-using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -26,7 +23,7 @@ namespace RealmOne.Tiles.Ambient
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            
+
 
 
             AddMapEntry(new Color(120, 142, 68));
@@ -35,7 +32,7 @@ namespace RealmOne.Tiles.Ambient
         public override void NumDust(int i, int j, bool fail, ref int num)
             => num = 2;
 
-        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY) 
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
             => offsetY = 2;
 
         public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
@@ -54,7 +51,7 @@ namespace RealmOne.Tiles.Ambient
             {
                 NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, ModContent.NPCType<OldSnail>(), 32);
             }
-            if (Main.rand.NextBool(12))  
+            if (Main.rand.NextBool(12))
             {
                 NPC.NewNPC(new EntitySource_TileBreak(i, j), (int)i * 16 + 8, (int)j * 16 + 16, ModContent.NPCType<NPCs.Critters.Squirm>(), 0, 2, 1, 0, 0, Main.myPlayer);
             }

@@ -37,7 +37,7 @@ namespace RealmOne.Biomes.Farm
         private static int SurfaceFrame;
         public override int ChooseMiddleTexture()
         {
-          
+
             switch (SurfaceFrame)
             {
                 case 0:

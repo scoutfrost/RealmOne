@@ -1,15 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using RealmOne.Items.Food.FarmFood;
-using RealmOne.Items.Misc;
-using RealmOne.Projectiles.Magic;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
-using ReLogic.Content;
 using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
@@ -39,7 +33,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.height = 25;
             NPC.defense = 0;
             NPC.lifeMax = 7;
-            NPC.value = Item.buyPrice(0,1,0,0);
+            NPC.value = Item.buyPrice(0,0 , 4, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.HitSound = SoundID.NPCHit1;
 
@@ -50,7 +44,7 @@ namespace RealmOne.NPCs.Critters.Farm
 
 
         }
-     
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             Player player = spawnInfo.Player;
@@ -82,7 +76,7 @@ namespace RealmOne.NPCs.Critters.Farm
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-          
+
 
 
 
@@ -93,9 +87,8 @@ namespace RealmOne.NPCs.Critters.Farm
 
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (Main.netMode != NetmodeID.Server)
-            {
-                if (NPC.life <= 0)
+       
+                if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
                 {
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("RoosterGore1").Type, 1f);
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("RoosterGore2").Type, 1f);
@@ -105,7 +98,7 @@ namespace RealmOne.NPCs.Critters.Farm
 
 
                 }
-            }
+            
 
             for (int i = 0; i < 13; i++)
             {
@@ -117,7 +110,7 @@ namespace RealmOne.NPCs.Critters.Farm
                 d.noGravity = true;
             }
         }
-        
-      
+
+
     }
 }
