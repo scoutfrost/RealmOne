@@ -81,6 +81,7 @@ namespace RealmOne.Projectiles.Piggy
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)
         {
+            fallThrough = true;
             return true;
         }
 
