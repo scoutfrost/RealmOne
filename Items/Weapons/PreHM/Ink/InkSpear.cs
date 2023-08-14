@@ -30,7 +30,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ink
             Item.UseSound = SoundID.DD2_GoblinBomberThrow;
             Item.autoReuse = true;
 
-            Item.damage = 18;
+            Item.damage = 15;
             Item.knockBack = 2f;
             Item.noUseGraphic = true;
             Item.DamageType = DamageClass.Melee;

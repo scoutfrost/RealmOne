@@ -1052,10 +1052,10 @@ Mods: {
 			GizmoScrap: {
 				/* Tooltip:
 					'''
-					A mixture of ores, metal and handy parts in one clump
+					A mixture of small chips, wires and other junk
 					Dropped from the sneakiest of goblins
 					''' */
-				// DisplayName: Gizmo Scrap
+				// DisplayName: Gizmo Microchips
 			}
 
 			FreshSeaweed: {

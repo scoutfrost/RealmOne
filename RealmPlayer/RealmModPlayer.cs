@@ -278,6 +278,8 @@ namespace RealmOne.RealmPlayer
         public bool Rusty = false;
         public bool brassSet = false;
 
+        public bool piggy = false;
+
         public float marbleJump = 0f;
 
         public override void ResetEffects()
