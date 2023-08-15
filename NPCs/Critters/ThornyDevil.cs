@@ -1,4 +1,5 @@
-﻿using RealmOne.Items.ItemCritter;
+﻿using RealmOne.Common.Systems;
+using RealmOne.Items.ItemCritter;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
@@ -65,7 +66,11 @@ namespace RealmOne.NPCs.Critters
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDayDesert.Chance * 0.4f;
+            if (spawnInfo.Player.ZoneDesert)
+            {
+                return SpawnCondition.OverworldDayDesert.Chance * 0.14f;
+            }
+            return 0;
         }
 
 

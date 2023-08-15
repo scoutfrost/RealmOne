@@ -4,6 +4,7 @@ using RealmOne.Buffs;
 using RealmOne.Common.Core;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Opens;
+using RealmOne.Items.PaperUI;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -464,10 +465,12 @@ namespace RealmOne.RealmPlayer
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
 
-            return (IEnumerable<Item>)(object)new Item[2]
+            return (IEnumerable<Item>)(object)new Item[3]
             {
                 new Item(ModContent.ItemType<Suitcase>(), 1, 0),
                 new Item(ModContent.ItemType<BreadLoaf>(), 1, 0),
+                new Item(ModContent.ItemType<LovecraftPaper>(), 1, 0),
+
 
 
             };
