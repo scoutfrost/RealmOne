@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.ItemCritter;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -25,17 +26,22 @@ namespace RealmOne.NPCs.Critters.Farm
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
             NPCID.Sets.CountsAsCritter[Type] = true;
+            Main.npcCatchable[NPC.type] = true;
 
         }
 
         public override void SetDefaults()
         {
+            NPC.catchItem = (short)ModContent.ItemType<HoneyHareItem>();
+
             NPC.width = 23;
             NPC.height = 20;
             NPC.defense = 0;
             NPC.lifeMax = 5;
             NPC.value = Item.buyPrice(0, 0, 5, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
+            NPC.dontCountMe = true;
+
             NPC.HitSound = SoundID.NPCHit1;
 
             NPC.DeathSound = SoundID.NPCDeath1;

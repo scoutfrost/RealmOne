@@ -7,8 +7,8 @@ namespace RealmOne.Projectiles.HeldProj;
 
 public class WoodenTippedSpearProj : ModProjectile
 {
-    protected virtual float HoldoutRangeMin => 26f;
-    protected virtual float HoldoutRangeMax => 108f;
+    protected virtual float HoldoutRangeMin => 24f;
+    protected virtual float HoldoutRangeMax => 95f;
 
     public override void SetStaticDefaults()
     {
@@ -18,7 +18,7 @@ public class WoodenTippedSpearProj : ModProjectile
     public override void SetDefaults()
     {
         Projectile.CloneDefaults(ProjectileID.Spear);
-        Projectile.scale = 0.98f;
+        Projectile.scale = 1f;
     }
 
     public override bool PreAI()

@@ -13,6 +13,7 @@ namespace RealmOne.NPCs.Critters
         {
             DisplayName.SetDefault("Squirm");
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[2];
+            Main.npcCatchable[NPC.type] = true;
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             { // Influences how the NPC looks in the Bestiary

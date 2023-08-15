@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.Food.FarmFood;
+using RealmOne.Items.ItemCritter;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -26,11 +27,15 @@ namespace RealmOne.NPCs.Critters.Farm
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
             NPCID.Sets.CountsAsCritter[Type] = true;
+            Main.npcCatchable[NPC.type] = true;
+
 
         }
 
         public override void SetDefaults()
         {
+            NPC.catchItem = (short)ModContent.ItemType<BerrybackItem>();
+
             NPC.width = 23;
             NPC.height = 20;
             NPC.defense = 5;
@@ -38,6 +43,8 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.value = Item.buyPrice(0, 0,6, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.HitSound = SoundID.NPCHit1;
+            NPC.dontCountMe = true;
+
 
             NPC.DeathSound = SoundID.NPCDeath1;
             AIType = NPCID.Turtle;

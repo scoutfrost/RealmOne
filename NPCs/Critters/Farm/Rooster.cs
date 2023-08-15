@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.ItemCritter;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -24,11 +25,15 @@ namespace RealmOne.NPCs.Critters.Farm
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
             NPCID.Sets.CountsAsCritter[Type] = true;
+            Main.npcCatchable[NPC.type] = true;
+
 
         }
 
         public override void SetDefaults()
         {
+            NPC.catchItem = (short)ModContent.ItemType<RoosterItem>();
+
             NPC.width = 25;
             NPC.height = 25;
             NPC.defense = 0;

@@ -288,7 +288,7 @@ namespace RealmOne.Tiles.Furniture
                         player.cursorItemIconID = ModContent.ItemType<FarmKey>();
                     }
 
-                    player.cursorItemIconText = "BOY WHAT DA HELL";
+                    player.cursorItemIconText = "It needs an ancient key of some sort";
                 }
             }
 
@@ -300,7 +300,7 @@ namespace RealmOne.Tiles.Furniture
         {
             MouseOver(i, j);
             Player player = Main.LocalPlayer;
-            if (player.cursorItemIconText == "MAN STFU")
+            if (player.cursorItemIconText == "What's this?")
             {
                 player.cursorItemIconEnabled = false;
                 player.cursorItemIconID = 0;

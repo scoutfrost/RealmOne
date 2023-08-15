@@ -1960,6 +1960,11 @@ Mods: {
 				// DisplayName: Farm Torch
 				// Tooltip: ""
 			}
+
+			HoneyHareItem: {
+				// DisplayName: Honey Hare Item
+				// Tooltip: ""
+			}
 		}
 
 		Buffs: {

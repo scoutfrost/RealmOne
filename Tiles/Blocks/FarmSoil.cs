@@ -54,7 +54,7 @@ namespace RealmOne.Tiles.Blocks
                 }
             }
 
-            if (WorldGen.genRand.NextBool(50) && !tileAbove.HasTile && !(tileBelow.LiquidType == LiquidID.Lava))
+            if (WorldGen.genRand.NextBool(30) && !tileAbove.HasTile && !(tileBelow.LiquidType == LiquidID.Lava))
             {
                 if (!tile.BottomSlope && !tile.TopSlope && !tile.IsHalfBlock && !tile.TopSlope)
                 {
