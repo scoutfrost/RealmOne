@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Localization"
   ],
+  "SelectedNode": "\\Localization\\en-US.hjson",
   "PreviewInSolutionExplorer": false
 }
