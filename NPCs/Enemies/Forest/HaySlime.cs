@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.Food;
 using RealmOne.Items.Misc;
+using RealmOne.Items.Others;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -76,6 +77,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<VegeToast>(), 18));
 
             npcLoot.Add(ItemDropRule.Common(ItemID.Hay, 2, 3, 4));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
+
 
         }
         public override void AI()

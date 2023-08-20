@@ -31,19 +31,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
+    "C:\\Users\\cmcdo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
+      "projectUniqueName": "C:\\Users\\cmcdo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
       "projectName": "RealmOne",
-      "projectPath": "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\obj\\",
+      "projectPath": "C:\\Users\\cmcdo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
+      "packagesPath": "C:\\Users\\cmcdo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cmcdo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cmcdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

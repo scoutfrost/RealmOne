@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.ItemCritter;
+using RealmOne.Items.Others;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -85,7 +86,9 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.HoneyBucket, 5, 1, 3));
-            npcLoot.Add(ItemDropRule.Common(ItemID.BottomlessHoneyBucket, 25, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemID.BottomlessHoneyBucket, 30, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
+
 
         }
 

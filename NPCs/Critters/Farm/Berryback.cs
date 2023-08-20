@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.Food.FarmFood;
 using RealmOne.Items.ItemCritter;
+using RealmOne.Items.Others;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -93,6 +94,7 @@ namespace RealmOne.NPCs.Critters.Farm
             npcLoot.Add(ItemDropRule.Common(ItemID.Moonglow, 9, 1, 2));
             npcLoot.Add(ItemDropRule.Common(ItemID.Shiverthorn, 9, 1, 2));
             npcLoot.Add(ItemDropRule.Common(ItemID.Fireblossom, 9, 1, 2));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
 
 
 
