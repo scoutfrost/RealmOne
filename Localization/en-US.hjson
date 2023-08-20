@@ -1846,12 +1846,12 @@ Mods: {
 
 			DepthsPNT: {
 				DisplayName: The Depths
-				Tooltip: @Zero and The Possum
+				Tooltip: "[c/880808:By Zero and The Possum]"
 			}
 
 			NothingPNT: {
-				DisplayName: Nothing
-				Tooltip: @Zero
+				DisplayName: Nothingness
+				Tooltip: "[c/880808:By Zero and The Possum]"
 			}
 
 			BerrybackItem: {
@@ -1873,11 +1873,19 @@ Mods: {
 				DisplayName: Lovecraft's Rift Suitcase
 				Tooltip:
 					'''
+<<<<<<< HEAD
 					Your Journey Begins!!
 					Right Click  crack open H.P Lovecraft's Rift Essentials
 					Below are the Weapons you get from it!(You also get other necessities!)
 					[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
 					[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
+=======
+						Your Journey Begins!!
+						Right Click  crack open H.P Lovecraft's Rift Essentials
+						Below are the Weapons you get from it!(You also get other necessities!)
+							[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
+							[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
+>>>>>>> 9725829fd99088478cefff9b9ced7a9d4dcd43fd
 					'''
 			}
 

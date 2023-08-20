@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Localization"
   ],
-  "SelectedNode": "\\-Realm-of-R-lyeh-.sln",
+  "SelectedNode": "\\Localization\\en-US.hjson",
   "PreviewInSolutionExplorer": false
 }
