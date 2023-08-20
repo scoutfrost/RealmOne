@@ -41,6 +41,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.value = Item.buyPrice(0, 0, 5, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.dontCountMe = true;
+            NPC.npcSlots = 0;
 
             NPC.HitSound = SoundID.NPCHit1;
 
@@ -48,6 +49,7 @@ namespace RealmOne.NPCs.Critters.Farm
             AIType = NPCID.Bunny;
             AnimationType = NPCID.Bunny;
             SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
+
 
 
         }
@@ -58,7 +60,7 @@ namespace RealmOne.NPCs.Critters.Farm
             if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
             {
                 int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
-                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
+                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.3f : 0f;
             }
             return 0f;
         }

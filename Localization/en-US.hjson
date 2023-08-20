@@ -1861,7 +1861,7 @@ Mods: {
 
 			RoosterItem: {
 				DisplayName: Rooster
-				Tooltip: "CLUCK CLUCK CLUCK""
+				Tooltip: CLUCK CLUCK CLUCK
 			}
 
 			SquirmItem: {
@@ -1871,14 +1871,13 @@ Mods: {
 
 			Suitcase: {
 				DisplayName: Lovecraft's Rift Suitcase
-				Tooltip: 
-				'''
+				Tooltip:
+					'''
 					Your Journey Begins!!
 					Right Click  crack open H.P Lovecraft's Rift Essentials
 					Below are the Weapons you get from it!(You also get other necessities!)
-						[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
-						[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
-
+					[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
+					[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
 					'''
 			}
 
@@ -2333,6 +2332,30 @@ Mods: {
 			Berryback.DisplayName: Berryback
 			Rooster.DisplayName: Rooster
 			HaySlime.DisplayName: Hay Slime
+
+			LostFarmer: {
+				DisplayName: Lost Farmer
+
+				TownNPCMood: {
+					Content: I am content.
+					NoHome: I hate not having a home.
+					FarFromHome: I am too far from home.
+					LoveSpace: I love having so much space.
+					DislikeCrowded: I dislike how crowded I am.
+					HateCrowded: I hate how crowded I am.
+					LoveBiome: I love {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I dislike {BiomeName}.
+					LoveNPC: I love {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I dislike {NPCName}.
+					HateNPC: I hate {NPCName}.
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
+			}
+
+			LostFarmerTied.DisplayName: Lost Farmer Tied
 		}
 
 		Tiles: {

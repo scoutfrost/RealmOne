@@ -44,6 +44,7 @@ namespace RealmOne.NPCs.Critters.Farm
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.dontCountMe = true;
+            NPC.npcSlots = 0;
 
 
             NPC.DeathSound = SoundID.NPCDeath1;

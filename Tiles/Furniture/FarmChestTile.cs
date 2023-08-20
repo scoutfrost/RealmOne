@@ -104,12 +104,12 @@ namespace RealmOne.Tiles.Furniture
 
         public override bool UnlockChest(int i, int j, ref short frameXAdjustment, ref int dustType, ref bool manual)
         {
-            if (Main.dayTime)
+            /*if (Main.dayTime)
             {
                 Main.NewText("You must defeat the wanderer of the field, The Scarecrow!.", Color.DarkOrange);
                 return false;
             }
-
+            */
             DustType = dustType;
             return true;
         }

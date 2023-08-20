@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.Ammo;
 using RealmOne.Projectiles.Bullet;
 using RealmOne.Rarities;
 using RealmOne.RealmPlayer;
@@ -36,7 +37,7 @@ namespace RealmOne.Items.Weapons.Ranged
             Item.UseSound = SoundID.Item1;
             Item.rare = ModContent.RarityType<ModRarities>();
             Item.autoReuse = true;
-            Item.useAmmo = AmmoID.Bullet;
+            Item.useAmmo = ModContent.ItemType<RustedBullets>();
             Item.noMelee = true;
             Item.shootSpeed = 70f;
             Item.shoot = ModContent.ProjectileType<WagonWheel>();

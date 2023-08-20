@@ -22,7 +22,7 @@ namespace RealmOne.Items.Weapons.PreHM.Piggy
 
         public override void SetDefaults()
         {
-            Item.damage = 15;
+            Item.damage = 20;
             Item.DamageType = DamageClass.Melee;
             Item.width = 42;
             Item.height = 42;
