@@ -1956,7 +1956,7 @@ Mods: {
 			}
 
 			ChillrendHead: {
-				// DisplayName: Chillrend Head
+				// DisplayName: Chillrend Helmet
 				/* Tooltip:
 					'''
 					6% increased ranged damage
@@ -1979,12 +1979,22 @@ Mods: {
 			}
 
 			HoneyHareItem: {
-				// DisplayName: Honey Hare Item
+				// DisplayName: Honey Hare
 				// Tooltip: ""
 			}
 
 			CoindropWand: {
 				// DisplayName: Coindrop Wand
+				// Tooltip: ""
+			}
+
+			SquirmoMusicBox: {
+				// DisplayName: Squirmo Music Box
+				// Tooltip: ""
+			}
+
+			FarmMusicItem: {
+				// DisplayName: Farm Music Box
 				// Tooltip: ""
 			}
 		}
@@ -2423,7 +2433,7 @@ Mods: {
 
 			// FarmSapling.MapEntry: Farm Sapling
 			// FarmSoil.MapEntry: Farm Soil
-			// FarmPylonTile.MapEntry: Farm Pylon
+			// FarmPylonTile.MapEntry: "{$Mods.RealmOne.Items..DisplayName}"
 			// Depths.MapEntry: Depths
 			// Nothing.MapEntry: Nothing
 			// HangingWattle.MapEntry: Hanging Wattle

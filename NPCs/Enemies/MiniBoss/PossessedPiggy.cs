@@ -690,10 +690,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
 
 
-        public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
-            return SpawnCondition.OverworldDay.Chance * 0.087f;
-        }
+        
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {

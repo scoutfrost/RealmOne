@@ -85,7 +85,7 @@ namespace RealmOne.Bosses
 
             if (!Main.dedServ)
             {
-                Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/SquirmoDrip");
+                Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/InfestedSoil");
             }
         }
         public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */

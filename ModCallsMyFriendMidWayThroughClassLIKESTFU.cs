@@ -15,7 +15,7 @@ namespace RealmOne
             AddMusic("Assets/Music/PiggyPatrol", "Piggy Patrol", "Mr Liquid");
 
             AddMusic("Assets/Music/squirmointro", "Digging Disasters", "Elosir");
-            AddMusic("Assets/Music/squirmotheme", "Infested Soil", "Elosir");
+            AddMusic("Assets/Music/InfestedSoil", "Infested Soil", "Elosir");
 
 
         }
