@@ -68,8 +68,7 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
+                  
 
                 new FlavorTextBestiaryInfoElement("The leader of all cocks, this brave and fiesty rooster will protect the fields, and also his hens."),
 

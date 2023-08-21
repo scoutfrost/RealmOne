@@ -23,6 +23,8 @@ using RealmOne.Items.Weapons.Ranged;
 using RealmOne.Vanities;
 using RealmOne.Items.Others;
 using RealmOne.Biomes.Farm;
+using RealmOne.Items.Weapons.PreHM.Throwing;
+using RealmOne.Projectiles.Throwing;
 
 namespace RealmOne.NPCs.TownNPC
 {
@@ -83,6 +85,7 @@ namespace RealmOne.NPCs.TownNPC
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
+            SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
 
             AnimationType = NPCID.Guide;
         }
@@ -116,7 +119,7 @@ namespace RealmOne.NPCs.TownNPC
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
 			
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+			
 
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement("Abandoned, just like his home, the Lost Farmer was a child left by himself in a cursed timeline"),
@@ -238,7 +241,7 @@ namespace RealmOne.NPCs.TownNPC
 
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
         {
-            projType = ModContent.ProjectileType<Projectiles.HeldProj.StoneTippedSpearProj>();
+            projType = ModContent.ProjectileType<AcornNadeProj>();
             attackDelay = 1;
         }
 

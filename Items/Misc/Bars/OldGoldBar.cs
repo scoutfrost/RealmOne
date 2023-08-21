@@ -22,12 +22,15 @@ namespace RealmOne.Items.Misc.Bars
 
         public override void SetDefaults()
         {
-            Item.material = true;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useTime = 15;
+            Item.useAnimation = 15;
             Item.width = 20;
             Item.height = 20;
             Item.value = 20000;
             Item.rare = ItemRarityID.Orange;
             Item.maxStack = 999;
+            Item.consumable = true;
             Item.createTile = ModContent.TileType<OldGoldBarTile>();
 
         }

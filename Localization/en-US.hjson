@@ -2365,7 +2365,7 @@ Mods: {
 				}
 			}
 
-			LostFarmerTied.DisplayName: Lost Farmer Tied
+			LostFarmerTied.DisplayName: Tangled Lost Farmer
 		}
 
 		Dialogue: {
@@ -2405,7 +2405,7 @@ Mods: {
 
 			FarmSapling.MapEntry: Farm Sapling
 			FarmSoil.MapEntry: Farm Soil
-			FarmPylonTile.MapEntry: Farm Pylon Tile
+			FarmPylonTile.MapEntry: Farm Pylon
 			Depths.MapEntry: Depths
 			Nothing.MapEntry: Nothing
 			HangingWattle.MapEntry: Hanging Wattle

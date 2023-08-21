@@ -70,9 +70,7 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
-
+                  
                 new FlavorTextBestiaryInfoElement("This bunny got a bit too curious hanging around in the farm, its got a bucket full of honey wedged onto its head, and a beehive on its back!!??"),
 
             });

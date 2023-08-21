@@ -2365,18 +2365,18 @@ Mods: {
 				}
 			}
 
-			// LostFarmerTied.DisplayName: Lost Farmer Tied
+			// LostFarmerTied.DisplayName: Tangled Lost Farmer
 		}
 
 		Dialogue: {
 			LostFarmer: {
-				// LostTalk: Thank you!
+				// LostTalk: I can't thank you enough, kind friend, you spared an old mans life!
 				// StandardDialogue1: Do you have any spare seeds?
-				// StandardDialogue2: What's your favorite color? My favorite colors are white and black.
-				// StandardDialogue3: What? I don't have any arms or legs? Oh, don't be ridiculous!
-				// CommonDialogue: This message has a weight of 5, meaning it appears 5 times more often.
-				// RareDialogue: This message has a weight of 0.1, meaning it appears 10 times as rare.
-				// TalkALot: I'm getting tired of talking to you. I have to go.
+				// StandardDialogue2: What's your favorite type of soil? Mine is slightly soft with slight dampness.
+				// StandardDialogue3: Wanna hear the backstory of the farm, well its kinda of dark, literally.
+				// CommonDialogue: Howdy partner, whats on the agenda for you today?
+				// RareDialogue: It was his fault, everything you see is cursed.
+				// TalkALot: I'm getting kinda old man, I have to go.
 			}
 		}
 
@@ -2405,7 +2405,7 @@ Mods: {
 
 			// FarmSapling.MapEntry: Farm Sapling
 			// FarmSoil.MapEntry: Farm Soil
-			// FarmPylonTile.MapEntry: Farm Pylon Tile
+			// FarmPylonTile.MapEntry: Farm Pylon
 			// Depths.MapEntry: Depths
 			// Nothing.MapEntry: Nothing
 			// HangingWattle.MapEntry: Hanging Wattle
