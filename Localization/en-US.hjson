@@ -1462,7 +1462,7 @@ Mods: {
 			PiggyLegs: {
 				Tooltip:
 					'''
-					15% increased fall speed but 8% decreased running speed
+					10% increased movement speed and acceleration
 					'Kicking something will probably shatter the grieves'
 					'''
 				DisplayName: Piggy Patroller Grieves
@@ -1471,7 +1471,7 @@ Mods: {
 			PiggyHead: {
 				Tooltip:
 					'''
-					5% increased damage but 5% decreased acceleration
+					7% increased damage, 10% faster usetime, 3% decreased acceleration
 					'This is so uncomfortable, but it does the job'
 					'''
 				DisplayName: Piggy Patroller Mask
@@ -1480,8 +1480,7 @@ Mods: {
 			PiggyBody: {
 				Tooltip:
 					'''
-					5% increased knockback but 8% decreased movement speed
-					Discount on all Shop Items!
+					8% increased damage reduction, +20 max health, 5% decreased movement speed
 					'Carrying a heavy bodyplate of porcelain'
 					'''
 				DisplayName: Piggy Patroller Bodyplate
@@ -1960,6 +1959,11 @@ Mods: {
 				DisplayName: Farm Torch
 				Tooltip: ""
 			}
+
+			CoindropWand: {
+				DisplayName: Coindrop Wand
+				Tooltip: Rains coins at your cursor
+			}
 		}
 
 		Buffs: {
@@ -2054,18 +2058,23 @@ Mods: {
 			}
 
 			BrassMight: {
-				Description: Mods.RealmOne.Buffs.BrassMight.Description
+				Description: Mighty!
 				DisplayName: Brass Might
 			}
 
 			WineBuff: {
-				Description: Mods.RealmOne.Buffs.WineBuff.Description
+				Description: Dont you think this is a bit too much?
 				DisplayName: Wine Buff
 			}
 
 			BeerBuff: {
-				Description: Mods.RealmOne.Buffs.BeerBuff.Description
+				Description: Dont you think this is a bit too much?
 				DisplayName: Beer Buff
+			}
+
+			PiggyDebuff: {
+				DisplayName: Explosive Piggy Bank Cooldown
+				Description: Locks explosive piggy bank in a cage
 			}
 		}
 
@@ -2190,6 +2199,14 @@ Mods: {
 			HugeGoldCoin.DisplayName: Huge Gold Coin
 			PlatinumCoin.DisplayName: Platinum Coin
 			SilverCoin.DisplayName: Silver Coin
+			SilverCoinFriendly.DisplayName: Silver Coin Friendly
+			ShockwaveFriendly.DisplayName: Shockwave Friendly
+			PorcelainFriendly.DisplayName: Porcelain Friendly
+			PlatinumCoinFriendly.DisplayName: Platinum Coin Friendly
+			PiggyBankFalling.DisplayName: Piggy Bank Falling
+			GoldCoinFriendly.DisplayName: Gold Coin Friendly
+			FireFriendly.DisplayName: Fire Friendly
+			CopperCoinFriendly.DisplayName: Copper Coin Friendly
 		}
 
 		NPCs: {

@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RealmOne.Projectiles.Piggy
+namespace RealmOne.Projectiles.Other
 {
-    public class Shockwave : ModProjectile
+    public class ShockwaveFriendly : ModProjectile
     {
 
         public override void SetStaticDefaults()
@@ -17,8 +17,7 @@ namespace RealmOne.Projectiles.Piggy
             Projectile.ArmorPenetration = 999999999;
             Projectile.width = 32;
             Projectile.height = 32;
-            Projectile.friendly = false;
-            Projectile.hostile = true;
+            Projectile.friendly = true;
             Projectile.tileCollide = true;
             Projectile.timeLeft = 60;
             Projectile.aiStyle = 1;

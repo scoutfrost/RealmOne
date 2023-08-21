@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Projectiles.Other;
 using RealmOne.BossBars;
 using RealmOne.Common.Systems;
 using RealmOne.Items.Misc.EnemyDrops;
@@ -509,7 +510,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         NPC.velocity.X = 0;
                         t.GetModPlayer<Screenshake>().ScreenShake = 2;
                     }
-                    int select = Main.rand.Next(1, 4);
+                    int select = Main.rand.Next(1, 5);
                     time++;
 
                     if (time == 120)
@@ -783,7 +784,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
             groundPound = 240;
             overHeat = 400;
-            coinRain = 300;
+            coinRain = 500;
 
             Player player = Main.player[NPC.target];
 

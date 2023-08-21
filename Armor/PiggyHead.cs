@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using RealmOne.RealmPlayer;
+using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,8 +14,6 @@ namespace RealmOne.Armor
         {
 
             DisplayName.SetDefault("Piggy Patroller Mask");
-            Tooltip.SetDefault("7% increased damage, 10% faster usetime, 3% decreased acceleration"
-                + "\n'This is so uncomfortable, but it does the job'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -43,8 +42,9 @@ namespace RealmOne.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "4% increased armour penetration to all weapons" + "\nGreatly increases coin pickup"; // This is the setbonus tooltip
-            player.GetArmorPenetration(DamageClass.Generic) += 4f;
+            player.setBonus = "10% Armor penetration\nGreatly increased coin pickup range\nTaking damage has a chance to rain coins around you\nUpon going under 60% health, a healing piggy bank drops on your cursor\nIt explodes, dealing damage to enemies\nThis has a minute cooldown"; // This is the setbonus tooltip
+            player.GetArmorPenetration(DamageClass.Generic) += 10f;
+            player.GetModPlayer<RealmModPlayer>().PiggySet = true;
             player.goldRing = true;
         }
 
