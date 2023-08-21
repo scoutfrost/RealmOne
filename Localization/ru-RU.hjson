@@ -1982,6 +1982,11 @@ Mods: {
 				// DisplayName: Honey Hare Item
 				// Tooltip: ""
 			}
+
+			CoindropWand: {
+				// DisplayName: Coindrop Wand
+				// Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2088,6 +2093,11 @@ Mods: {
 			BeerBuff: {
 				// Description: Mods.RealmOne.Buffs.BeerBuff.Description
 				// DisplayName: Beer Buff
+			}
+
+			PiggyDebuff: {
+				// DisplayName: Piggy Debuff
+				// Description: Mods.RealmOne.Buffs.PiggyDebuff.Description
 			}
 		}
 
@@ -2212,6 +2222,14 @@ Mods: {
 			// HugeGoldCoin.DisplayName: Huge Gold Coin
 			// PlatinumCoin.DisplayName: Platinum Coin
 			// SilverCoin.DisplayName: Silver Coin
+			// CopperCoinFriendly.DisplayName: Copper Coin Friendly
+			// FireFriendly.DisplayName: Fire Friendly
+			// GoldCoinFriendly.DisplayName: Gold Coin Friendly
+			// PiggyBankFalling.DisplayName: Piggy Bank Falling
+			// PlatinumCoinFriendly.DisplayName: Platinum Coin Friendly
+			// PorcelainFriendly.DisplayName: Porcelain Friendly
+			// ShockwaveFriendly.DisplayName: Shockwave Friendly
+			// SilverCoinFriendly.DisplayName: Silver Coin Friendly
 		}
 
 		NPCs: {

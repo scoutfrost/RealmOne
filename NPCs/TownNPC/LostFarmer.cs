@@ -28,8 +28,11 @@ using RealmOne.Projectiles.Throwing;
 
 namespace RealmOne.NPCs.TownNPC
 {
+    [AutoloadHead]
+
     public class LostFarmer : ModNPC
     {
+
         public const string ShopName = "Shop";
         public override void SetStaticDefaults()
         {
