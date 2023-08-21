@@ -52,6 +52,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             NPC.npcSlots = 0;
             NPC.aiStyle = NPCAIStyleID.Bat;
             AIType = NPCID.CaveBat;
+            SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
+
             AnimationType = NPCID.CaveBat;
 
         }
@@ -62,6 +64,7 @@ namespace RealmOne.NPCs.Enemies.Forest
 
 
         }
+
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {

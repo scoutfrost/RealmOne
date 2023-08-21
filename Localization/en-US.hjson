@@ -2388,7 +2388,7 @@ Mods: {
 				}
 			}
 
-			LostFarmerTied.DisplayName: Lost Farmer Tied
+			LostFarmerTied.DisplayName: Tangled Lost Farmer
 		}
 
 		Dialogue: {

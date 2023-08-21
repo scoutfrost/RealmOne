@@ -44,6 +44,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             AnimationType = NPCID.Zombie;
             NPC.netAlways = true;
             NPC.netUpdate = true;
+            SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
+
 
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
@@ -63,9 +65,7 @@ namespace RealmOne.NPCs.Enemies.Forest
             // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
 				// Sets the spawning conditions of this NPC that is listed in the bestiary.
-                   BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
-
+             
 				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("A withered and undead zombie, looking for its next meal to plant in its fields"),
 

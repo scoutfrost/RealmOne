@@ -42,6 +42,8 @@ namespace RealmOne.NPCs.Enemies.Forest
             AnimationType = NPCID.GreenSlime;
             NPC.netAlways = true;
             NPC.netUpdate = true;
+            SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
+
 
         }
 

@@ -77,8 +77,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPC.width = 66;
             NPC.height = 40;
             NPC.damage = 26;
-            NPC.defense = 15;
-            NPC.lifeMax = 500;
+            NPC.defense = 8;
+            NPC.lifeMax = 475;
             NPC.knockBackResist = 0.6f;
             NPC.value = Item.buyPrice(0, 2, 50, 50);
             NPC.aiStyle = -1;

@@ -21,7 +21,11 @@ namespace RealmOne.Items.Misc.Bars
 
         public override void SetDefaults()
         {
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useTime = 15;
+            Item.useAnimation = 15;
             Item.width = 20;
+            Item.consumable = true;
             Item.height = 20;
             Item.rare = ItemRarityID.Blue;
             Item.maxStack = 999;
