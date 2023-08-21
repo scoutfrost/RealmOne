@@ -1836,11 +1836,6 @@ Mods: {
 					''' */
 			}
 
-			FarmPylonItem: {
-				// DisplayName: Farm Pylon
-				// Tooltip: ""
-			}
-
 			OldSnailItem: {
 				// DisplayName: Grandfather Snail
 				// Tooltip: ""
@@ -1982,6 +1977,21 @@ Mods: {
 				// DisplayName: Honey Hare Item
 				// Tooltip: ""
 			}
+
+			CoindropWand: {
+				// DisplayName: Coindrop Wand
+				// Tooltip: ""
+			}
+
+			SquirmoMusicBox: {
+				// DisplayName: Squirmo Music Box
+				// Tooltip: ""
+			}
+
+			FarmPylonItem: {
+				// DisplayName: Abandoned Farm Pylon
+				// Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2088,6 +2098,11 @@ Mods: {
 			BeerBuff: {
 				// Description: Mods.RealmOne.Buffs.BeerBuff.Description
 				// DisplayName: Beer Buff
+			}
+
+			PiggyDebuff: {
+				// DisplayName: Piggy Debuff
+				// Description: Mods.RealmOne.Buffs.PiggyDebuff.Description
 			}
 		}
 
@@ -2212,6 +2227,14 @@ Mods: {
 			// HugeGoldCoin.DisplayName: Huge Gold Coin
 			// PlatinumCoin.DisplayName: Platinum Coin
 			// SilverCoin.DisplayName: Silver Coin
+			// CopperCoinFriendly.DisplayName: Copper Coin Friendly
+			// FireFriendly.DisplayName: Fire Friendly
+			// GoldCoinFriendly.DisplayName: Gold Coin Friendly
+			// PiggyBankFalling.DisplayName: Piggy Bank Falling
+			// PlatinumCoinFriendly.DisplayName: Platinum Coin Friendly
+			// PorcelainFriendly.DisplayName: Porcelain Friendly
+			// ShockwaveFriendly.DisplayName: Shockwave Friendly
+			// SilverCoinFriendly.DisplayName: Silver Coin Friendly
 		}
 
 		NPCs: {
@@ -2370,13 +2393,13 @@ Mods: {
 
 		Dialogue: {
 			LostFarmer: {
-				// LostTalk: Thank you!
+				// LostTalk: I can't thank you enough, kind friend, you spared an old mans life!
 				// StandardDialogue1: Do you have any spare seeds?
-				// StandardDialogue2: What's your favorite color? My favorite colors are white and black.
-				// StandardDialogue3: What? I don't have any arms or legs? Oh, don't be ridiculous!
-				// CommonDialogue: This message has a weight of 5, meaning it appears 5 times more often.
-				// RareDialogue: This message has a weight of 0.1, meaning it appears 10 times as rare.
-				// TalkALot: I'm getting tired of talking to you. I have to go.
+				// StandardDialogue2: What's your favorite type of soil? Mine is slightly soft with slight dampness.
+				// StandardDialogue3: Wanna hear the backstory of the farm, well its kinda of dark, literally.
+				// CommonDialogue: Howdy partner, whats on the agenda for you today?
+				// RareDialogue: It was his fault, everything you see is cursed.
+				// TalkALot: I'm getting kinda old man, I have to go.
 			}
 		}
 
@@ -2386,17 +2409,17 @@ Mods: {
 			// OldGoldOreT.MapEntry: Old Gold Ore
 			// GrassPylonTile.MapEntry: Grass Pylon
 			// PhotosynthesisTile1.MapEntry: Photosynthesis Pillar
-			// StoneOvenTilee.MapEntry: Stone Oven Tilee
+			// StoneOvenTilee.MapEntry: Stone Oven
 			// TatteredBarrel.MapEntry: Tattered Barrel
 			// ProtonTorch.MapEntry: Proton Torch
 			// MiniWattleBush.MapEntry: Mini Wattle Bush
 			// PiggyTile.MapEntry: Piggy Tile
 			// MusicNotePNTtile.MapEntry: Quavers
 			// AddictionPNTtile.MapEntry: Addiction
-			// NewtonCradleTile.MapEntry: Newton Cradle Tile
-			// ChickenCoopTile.MapEntry: Chicken Coop Tile
+			// NewtonCradleTile.MapEntry: Newton Cradle
+			// ChickenCoopTile.MapEntry: Chicken Coop
 			// Banners.MapEntry: Banners
-			// TatteredWoodTile.MapEntry: Tattered Wood Tile
+			// TatteredWoodTile.MapEntry: Tattered Wood
 
 			FarmChestTile: {
 				// MapEntry0: Farm Chest
@@ -2405,7 +2428,7 @@ Mods: {
 
 			// FarmSapling.MapEntry: Farm Sapling
 			// FarmSoil.MapEntry: Farm Soil
-			// FarmPylonTile.MapEntry: Farm Pylon Tile
+			// FarmPylonTile.MapEntry: Farm Pylon
 			// Depths.MapEntry: Depths
 			// Nothing.MapEntry: Nothing
 			// HangingWattle.MapEntry: Hanging Wattle

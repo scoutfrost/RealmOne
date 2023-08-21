@@ -9,10 +9,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Items.Placeables
 {
-    /// <summary>
-    /// The coupled item that places the Example Pylon tile. For more information on said tile,
-    /// see <seealso cref="ExamplePylonTile"/>.
-    /// </summary>
+    
     public class FarmPylonItem : ModItem
     {
         public override void SetDefaults()

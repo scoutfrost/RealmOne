@@ -15,6 +15,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Color = Microsoft.Xna.Framework.Color;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
+using RealmOne.Items.PaperUI;
 
 namespace RealmOne.RealmPlayer
 {
@@ -294,7 +295,7 @@ namespace RealmOne.RealmPlayer
             Rusty = false;
             GreenNeck = false;
             marbleJustJumped = false;
-
+    
             FallSpeed = false;
             brassSet = false;
             PiggySet = false;
