@@ -89,7 +89,7 @@ namespace RealmOne.NPCs.TownNPC
         public override string GetChat()
         {
             // Make the Town NPC say something unique when first rescued.
-            return Language.GetTextValue("Mods.RealmOne.NPCs.TutorialTownNPC.Dialogue.");
+            return Language.GetTextValue("Mods.RealmOne.NPCs.LostFarmerTied.Dialogue");
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)

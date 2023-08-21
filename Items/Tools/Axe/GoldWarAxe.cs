@@ -23,8 +23,8 @@ namespace RealmOne.Items.Tools.Axe
             Item.DamageType = DamageClass.Melee;
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 30;
-            Item.useAnimation = 30;
+            Item.useTime = 25;
+            Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 5f;
             Item.axe = 10;

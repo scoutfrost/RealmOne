@@ -553,6 +553,8 @@ Mods: {
 					'''
 					Shoots 2 fast moving cactus darts in a tight spread
 					Right click to summon rope snakes you can climb on
+					Uses Cactus
+					[i:276]
 					'''
 			}
 
@@ -1678,12 +1680,12 @@ Mods: {
 
 			PlatWarAxe: {
 				Tooltip: ""
-				DisplayName: Plat War Axe
+				DisplayName: Platinum War Axe
 			}
 
 			GoldWarAxe: {
 				Tooltip: ""
-				DisplayName: Gold War Axe
+				DisplayName: Golden War Axe
 			}
 
 			MusicNotePNT: {
@@ -1873,19 +1875,19 @@ Mods: {
 				DisplayName: Lovecraft's Rift Suitcase
 				Tooltip:
 					'''
-<<<<<<< HEAD
+					<<<<<<< HEAD
 					Your Journey Begins!!
 					Right Click  crack open H.P Lovecraft's Rift Essentials
 					Below are the Weapons you get from it!(You also get other necessities!)
 					[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
 					[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
-=======
+					=======
 						Your Journey Begins!!
 						Right Click  crack open H.P Lovecraft's Rift Essentials
 						Below are the Weapons you get from it!(You also get other necessities!)
 							[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
 							[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
->>>>>>> 9725829fd99088478cefff9b9ced7a9d4dcd43fd
+					>>>>>>> 9725829fd99088478cefff9b9ced7a9d4dcd43fd
 					'''
 			}
 
@@ -2364,6 +2366,19 @@ Mods: {
 			}
 
 			LostFarmerTied.DisplayName: Lost Farmer Tied
+		}
+
+		Dialogue: {
+			LostFarmer: {
+				StandardDialogue1: Do you have any spare seeds?
+				StandardDialogue2: What's your favorite color? My favorite colors are white and black.
+				StandardDialogue3: What? I don't have any arms or legs? Oh, don't be ridiculous!
+				CommonDialogue: This message has a weight of 5, meaning it appears 5 times more often.
+				RareDialogue: This message has a weight of 0.1, meaning it appears 10 times as rare.
+				TalkALot: I'm getting tired of talking to you. I have to go.
+			}
+
+			LostFarmerTied.Dialogue: Thank you kind boy for saving me!
 		}
 
 		Tiles: {

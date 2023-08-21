@@ -23,7 +23,7 @@ namespace RealmOne.Projectiles.HeldProj
             ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 210f;
             // YoyosTopSpeed is top speed of the yoyo projectile. 
             // Vanilla values range from 9f(Wood) to 17.5f(Terrarian), and defaults to 10f
-            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 10f;
+            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 13f;
             Projectile.CloneDefaults(ProjectileID.TheEyeOfCthulhu);
 
         }
