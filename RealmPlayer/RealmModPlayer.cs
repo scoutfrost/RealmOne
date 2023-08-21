@@ -5,8 +5,6 @@ using RealmOne.Buffs;
 using RealmOne.Common.Core;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Opens;
-using RealmOne.Projectiles.Other;
-using RealmOne.Projectiles.Piggy;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -286,6 +284,8 @@ namespace RealmOne.RealmPlayer
         int coinFallAmount = 0;
         bool hasStriken = false;
 
+        public bool piggy = false;
+
         public float marbleJump = 0f;
 
         public override void ResetEffects()
@@ -544,10 +544,12 @@ namespace RealmOne.RealmPlayer
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
 
-            return (IEnumerable<Item>)(object)new Item[2]
+            return (IEnumerable<Item>)(object)new Item[3]
             {
                 new Item(ModContent.ItemType<Suitcase>(), 1, 0),
                 new Item(ModContent.ItemType<BreadLoaf>(), 1, 0),
+                new Item(ModContent.ItemType<LovecraftPaper>(), 1, 0),
+
 
 
             };
