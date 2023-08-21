@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RealmOne.Projectiles.Piggy
+namespace RealmOne.Projectiles.Other
 {
-    public class Shockwave : ModProjectile
+    public class FireFriendly : ModProjectile
     {
 
         public override void SetStaticDefaults()
@@ -14,13 +14,11 @@ namespace RealmOne.Projectiles.Piggy
         }
         public override void SetDefaults()
         {
-            Projectile.ArmorPenetration = 999999999;
-            Projectile.width = 32;
-            Projectile.height = 32;
-            Projectile.friendly = false;
-            Projectile.hostile = true;
+            Projectile.width = 200;
+            Projectile.height = 16;
+            Projectile.friendly = true;
             Projectile.tileCollide = true;
-            Projectile.timeLeft = 60;
+            Projectile.timeLeft = 1200;
             Projectile.aiStyle = 1;
             Projectile.penetrate = -1;
             Projectile.extraUpdates = 1;
@@ -30,15 +28,24 @@ namespace RealmOne.Projectiles.Piggy
         public override void AI()
         {
             int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Torch);
-            Main.dust[dust].scale = 2f;
+            Main.dust[dust].scale = 1.5f;
             Main.dust[dust].noGravity = true;
+
         }
+
+        public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)
+        {
+            fallThrough = true;
+            return true;
+        }
+
 
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
-            Projectile.velocity.X *= 1f;
             return false;
         }
+
+
 
     }
 }

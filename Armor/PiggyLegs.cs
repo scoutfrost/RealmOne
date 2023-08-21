@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using RealmOne.RealmPlayer;
+using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,7 +14,7 @@ namespace RealmOne.Armor
         {
 
             DisplayName.SetDefault("Piggy Patroller Grieves");
-            Tooltip.SetDefault("15% increased fall speed but 8% decreased running speed"
+            Tooltip.SetDefault("10% increased movement speed and acceleration"
                 + "\n'Kicking something will probably shatter the grieves'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -29,9 +30,9 @@ namespace RealmOne.Armor
 
         public override void UpdateEquip(Player player)
         {
-            player.maxRunSpeed -= 0.08f;
-            player.maxFallSpeed += 0.15f;
-
+            player.moveSpeed += 0.10f;
+            player.runAcceleration += 0.10f;
+            player.GetModPlayer<RealmModPlayer>().FallSpeed = true;
         }
 
 

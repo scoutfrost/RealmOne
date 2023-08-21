@@ -1,10 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Projectiles.Other;
 using RealmOne.Buffs;
 using RealmOne.Common.Core;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Opens;
-using RealmOne.Items.PaperUI;
+using RealmOne.Projectiles.Other;
+using RealmOne.Projectiles.Piggy;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -278,8 +280,11 @@ namespace RealmOne.RealmPlayer
         public bool Overseer = false;
         public bool Rusty = false;
         public bool brassSet = false;
-
-        public bool piggy = false;
+        public bool FallSpeed = false;
+        public bool PiggySet = false;
+        int coinFall = 0;
+        int coinFallAmount = 0;
+        bool hasStriken = false;
 
         public float marbleJump = 0f;
 
@@ -290,8 +295,10 @@ namespace RealmOne.RealmPlayer
             GreenNeck = false;
             marbleJustJumped = false;
 
-            piggy = false;
+            FallSpeed = false;
             brassSet = false;
+            PiggySet = false;
+            hasStriken = false;
 
         }
 
@@ -308,6 +315,16 @@ namespace RealmOne.RealmPlayer
 		}*/
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
+            Player p = Main.LocalPlayer;
+
+            if (FallSpeed == true)
+            {
+                if (p.controlDownHold)
+                {
+                    p.maxFallSpeed += 0.5f;
+                }
+            }
+
             if (brassSet && Player.controlUp && Player.releaseUp & marbleJump <= 0)
             {
                 Player.AddBuff(ModContent.BuffType<BrassMight>(), 400);
@@ -383,18 +400,23 @@ namespace RealmOne.RealmPlayer
 
         }
 
-        
 
-        public override void OnHitByProjectile(Projectile proj, Player.HurtInfo hurtInfo)
+        public override void OnHurt(Player.HurtInfo info)
         {
-            base.OnHitByProjectile(proj, hurtInfo);
+            if (PiggySet == true)
+            {
+                if (Main.rand.Next(101) < 80 && coinFallAmount <= 0)
+                {
+                    coinFallAmount = 6;
+                }
+            }
         }
 
 
 
         public override void PreUpdate()
         {
-            
+
 
             if (!brassSet)
                 marbleJustJumped = false;
@@ -414,6 +436,63 @@ namespace RealmOne.RealmPlayer
                 }
             }
         }
+
+        public override void PostUpdate()
+        {
+            Player p = Main.LocalPlayer;
+
+            if (PiggySet == true)
+            {
+                if (coinFall > 0)
+                {
+                    coinFall--;
+                }
+
+                if (coinFall == 0 && coinFallAmount > 0)
+                {
+                    coinFall = 5;
+                    coinFallAmount--;
+                    SoundEngine.PlaySound(SoundID.Item9, p.position);
+                    Vector2 SpawnLoc = new Vector2(p.position.X - 128, p.position.Y - 900);
+                    int select = Main.rand.Next(1, 5);
+                    if (select == 1)
+                    {
+                        Projectile.NewProjectile(p.GetSource_FromThis(), new Vector2(SpawnLoc.X + Main.rand.Next(1, 257), SpawnLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<PlatinumCoinFriendly>(), Main.rand.Next(20, 31), 6f, Main.myPlayer);
+                    }
+                    if (select == 2)
+                    {
+                        Projectile.NewProjectile(p.GetSource_FromThis(), new Vector2(SpawnLoc.X + Main.rand.Next(1, 257), SpawnLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<GoldCoinFriendly>(), Main.rand.Next(20, 31), 6f, Main.myPlayer);
+                    }
+                    if (select == 3)
+                    {
+                        Projectile.NewProjectile(p.GetSource_FromThis(), new Vector2(SpawnLoc.X + Main.rand.Next(1, 257), SpawnLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<SilverCoinFriendly>(), Main.rand.Next(20, 31), 6f, Main.myPlayer);
+                    }
+                    if (select == 4)
+                    {
+                        Projectile.NewProjectile(p.GetSource_FromThis(), new Vector2(SpawnLoc.X + Main.rand.Next(1, 257), SpawnLoc.Y), new Vector2(0, 9f), ModContent.ProjectileType<CopperCoinFriendly>(), Main.rand.Next(20, 31), 6f, Main.myPlayer);
+                    }
+                }
+
+                if (p.statLife <= p.statLifeMax2 / 1.65)
+                {
+                    if (!p.HasBuff<PiggyDebuff>() && hasStriken == false)
+                    {
+                        Projectile.NewProjectile(p.GetSource_FromThis(), new Vector2(Main.MouseWorld.X, Main.MouseWorld.Y - 900), new Vector2(0, 14f), ModContent.ProjectileType<PiggyBankFalling>(), Main.rand.Next(90, 111), 9f, Main.myPlayer);
+                        p.AddBuff(ModContent.BuffType<PiggyDebuff>(), 60 * 60);
+                        hasStriken = true;
+                    }
+                }
+
+                if (p.statLife > p.statLifeMax2 / 1.65f)
+                {
+                    if (hasStriken == true)
+                    {
+                        hasStriken = false;
+                    }
+                }
+            }
+        }
+
 
         public override void OnEnterWorld()
         {
@@ -465,12 +544,10 @@ namespace RealmOne.RealmPlayer
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
 
-            return (IEnumerable<Item>)(object)new Item[3]
+            return (IEnumerable<Item>)(object)new Item[2]
             {
                 new Item(ModContent.ItemType<Suitcase>(), 1, 0),
                 new Item(ModContent.ItemType<BreadLoaf>(), 1, 0),
-                new Item(ModContent.ItemType<LovecraftPaper>(), 1, 0),
-
 
 
             };
