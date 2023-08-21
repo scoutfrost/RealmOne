@@ -77,12 +77,12 @@ namespace RealmOne.Projectiles.Other
             {
                 Vector2 rotation = Projectile.velocity.RotatedBy(1);
                 Vector2 rotation2 = Projectile.velocity.RotatedBy(-1);
-                Projectile.NewProjectile(Projectile.GetSource_FromThis(), new Vector2(Projectile.Center.X, Projectile.Center.Y + 8), new Vector2(0, 0), ModContent.ProjectileType<FireFriendly>(), Projectile.damage / 3, 8f, Main.myPlayer);
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), new Vector2(Projectile.Center.X, Projectile.Center.Y + 8), new Vector2(0, 0), ModContent.ProjectileType<FireFriendly>(), Projectile.damage / 5, 8f, Main.myPlayer);
                 for (int i = 0; i < 6; i++)
                 {
                     Vector2 velocity = Projectile.velocity / 3;
                     Vector2 speed = velocity.RotatedBy(angle);
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, speed, ModContent.ProjectileType<PorcelainFriendly>(), Projectile.damage / 3, 8f, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, speed, ModContent.ProjectileType<PorcelainFriendly>(), Projectile.damage / 5, 8f, Main.myPlayer);
                     angle += 15;
                 }
                 const int ExplosionSize = 250;
