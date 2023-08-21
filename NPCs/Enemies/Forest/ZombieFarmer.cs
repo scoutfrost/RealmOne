@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.BossSummons;
+using RealmOne.Items.Food.FarmFood;
 using RealmOne.Items.Misc;
+using RealmOne.Items.Others;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -48,7 +50,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         {
             Player player = spawnInfo.Player;
 
-            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && !Main.dayTime && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
+            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && Main.dayTime ==false  && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
             {
                 int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
                 return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
@@ -77,7 +79,9 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             npcLoot.Add(ItemDropRule.Common(ItemID.Hay, 1, 6, 10));
             npcLoot.Add(ItemDropRule.Common(ItemID.Sickle, 40, 1, 1));
-            npcLoot.Add(ItemDropRule.Common(ItemID.GrassSeeds, 3, 1, 5));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
+
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Carrot>(), 3, 1, 2));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Wheat>(), 2, 5, 8));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SquirmoSummon>(), 60, 1, 1));
 

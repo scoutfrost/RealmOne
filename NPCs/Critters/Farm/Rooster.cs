@@ -1,9 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.ItemCritter;
+using RealmOne.Items.Others;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
@@ -24,11 +27,15 @@ namespace RealmOne.NPCs.Critters.Farm
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
             NPCID.Sets.CountsAsCritter[Type] = true;
+            Main.npcCatchable[NPC.type] = true;
+
 
         }
 
         public override void SetDefaults()
         {
+            NPC.catchItem = (short)ModContent.ItemType<RoosterItem>();
+
             NPC.width = 25;
             NPC.height = 25;
             NPC.defense = 0;
@@ -78,6 +85,7 @@ namespace RealmOne.NPCs.Critters.Farm
         {
 
 
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
 
 
 

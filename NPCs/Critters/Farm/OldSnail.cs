@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Items.ItemCritter;
+using RealmOne.Items.Others;
 using RealmOne.Items.Placeables;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
@@ -102,6 +103,8 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TatteredBarrelItem>(), 3, 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
+
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TatteredWood>(), 1, 1, 4));
 
         }

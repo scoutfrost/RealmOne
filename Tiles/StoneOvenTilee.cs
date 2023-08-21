@@ -49,9 +49,6 @@ namespace RealmOne.Tiles
         // We can change frames manually, but since we are just simulating a different tile, we can just use the same value
         //    frame = Main.tileFrame[TileID.GoldGrasshopperCage];
         //  }
-        public override void KillMultiTile(int x, int y, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<Items.Placeables.StoneOvenItem>());
-        }
+       
     }
 }

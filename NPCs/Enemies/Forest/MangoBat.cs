@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Items.Others;
 using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -56,7 +57,9 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ItemID.Mango, 18));
+            npcLoot.Add(ItemDropRule.Common(ItemID.Mango, 16));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
+
 
         }
 

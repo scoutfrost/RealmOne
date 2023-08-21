@@ -104,12 +104,12 @@ namespace RealmOne.Tiles.Furniture
 
         public override bool UnlockChest(int i, int j, ref short frameXAdjustment, ref int dustType, ref bool manual)
         {
-            if (Main.dayTime)
+            /*if (Main.dayTime)
             {
                 Main.NewText("You must defeat the wanderer of the field, The Scarecrow!.", Color.DarkOrange);
                 return false;
             }
-
+            */
             DustType = dustType;
             return true;
         }
@@ -288,7 +288,7 @@ namespace RealmOne.Tiles.Furniture
                         player.cursorItemIconID = ModContent.ItemType<FarmKey>();
                     }
 
-                    player.cursorItemIconText = "BOY WHAT DA HELL";
+                    player.cursorItemIconText = "It needs an ancient key of some sort";
                 }
             }
 
@@ -300,7 +300,7 @@ namespace RealmOne.Tiles.Furniture
         {
             MouseOver(i, j);
             Player player = Main.LocalPlayer;
-            if (player.cursorItemIconText == "MAN STFU")
+            if (player.cursorItemIconText == "What's this?")
             {
                 player.cursorItemIconEnabled = false;
                 player.cursorItemIconID = 0;

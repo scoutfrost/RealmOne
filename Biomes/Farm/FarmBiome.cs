@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Biomes.Farm;
 using Terraria;
 using Terraria.Graphics.Capture;
 using Terraria.ModLoader;
@@ -15,7 +16,7 @@ namespace RealmOne.Biomes.Farm
         public override int Music => MusicLoader.GetMusicSlot(Mod, "Assets/Music/CottageOrchestra");
 
         public override string BestiaryIcon => base.BestiaryIcon;
-        public override string BackgroundPath => base.BackgroundPath;
+        public override string BackgroundPath => "RealmOne/Biomes/Farm/FarmBestiaryBG";
 
         public override Color? BackgroundColor => base.BackgroundColor;
         public override string MapBackground => BackgroundPath; // Re-uses Bestiary Background for Map Background

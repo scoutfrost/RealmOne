@@ -11,12 +11,12 @@ namespace RealmOne.NPCs.Critters
 {
     public class ImpactBunny : ModNPC
     {
-        static Asset<Texture2D> glowmask;
+       // static Asset<Texture2D> glowmask;
 
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("E-Bunny");
-            glowmask = ModContent.Request<Texture2D>(Texture + "_Glow");
+       //     glowmask = ModContent.Request<Texture2D>(Texture + "_Glow");
 
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Bunny];
 
@@ -49,14 +49,18 @@ namespace RealmOne.NPCs.Critters
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            Color color = GetAlpha(Color.LightBlue) ?? Color.LightBlue;
+            Main.spriteBatch.Draw(
+                Mod.Assets.Request<Texture2D>("NPCs/Critters/ImpactBunny_Glow").Value,
+                NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY),
+                NPC.frame,
+                Color.White,
+                NPC.rotation,
+                NPC.frame.Size() / 2,
+                NPC.scale,
+                SpriteEffects.None,
+                0
+            );
 
-            if (NPC.IsABestiaryIconDummy)
-                color = Color.LightBlue;
-            // var effects =NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
-            //  spriteBatch.Draw(TextureAssets.Npc[NPC.type].Value, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, effects, 0);
-
-            Main.EntitySpriteDraw(glowmask.Value, NPC.Center - screenPos + new Vector2(0, 0), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.FlipHorizontally, 0);
         }
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
@@ -83,7 +87,6 @@ namespace RealmOne.NPCs.Critters
         }
         public override void AI()
         {
-            NPC.spriteDirection = NPC.direction;
             Lighting.AddLight(NPC.position, r: 0f, g: 0.3f, b: 1f);
         }
     }

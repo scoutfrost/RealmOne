@@ -10,6 +10,9 @@ namespace RealmOne.Items.Sets.TatteredWoodSet
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.LeadBroadsword);
+            Item.autoReuse = true;
+            Item.scale = 1.3f;
+            Item.useTurn = true;
         }
 
         public override void AddRecipes()

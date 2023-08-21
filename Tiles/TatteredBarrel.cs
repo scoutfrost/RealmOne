@@ -2,6 +2,7 @@
 using RealmOne.Common.Systems;
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Misc.Ores;
+using RealmOne.Items.Placeables;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -68,14 +69,25 @@ namespace RealmOne.Tiles
         {
             num = 1;
         }
+        public override bool CanDrop(int i, int j)
+        {
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<BrassNuggets>(), Main.rand.Next(3, 4));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ItemID.Wood, Main.rand.Next(5, 10));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(2, 6));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(1, 2));
+    //        Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<TatteredBarrelItem>(), 0);
 
+
+
+            return false;
+        }
         public override void KillMultiTile(int x, int y, int frameX, int frameY)
         {
-            Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<BrassNuggets>(), Main.rand.Next(10, 10));
-            Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ItemID.Wood, Main.rand.Next(25, 30));
-            Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(10, 30));
+     //       Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<BrassNuggets>(), Main.rand.Next(10, 10));
+    //        Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ItemID.Wood, Main.rand.Next(25, 30));
+     //       Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 48, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(10, 30));
 
-            Chest.DestroyChest(x, y);
+  //          Chest.DestroyChest(x, y);
             SoundEngine.PlaySound(rorAudio.BrokenBarrel);
             if (Main.netMode != NetmodeID.Server)
             {

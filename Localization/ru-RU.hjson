@@ -553,6 +553,8 @@ Mods: {
 					'''
 					Shoots 2 fast moving cactus darts in a tight spread
 					Right click to summon rope snakes you can climb on
+					Uses Cactus
+					[i:276]
 					''' */
 			}
 
@@ -1462,7 +1464,7 @@ Mods: {
 			PiggyLegs: {
 				/* Tooltip:
 					'''
-					10% increased movement speed and acceleration
+					15% increased fall speed but 8% decreased running speed
 					'Kicking something will probably shatter the grieves'
 					''' */
 				// DisplayName: Piggy Patroller Grieves
@@ -1471,7 +1473,7 @@ Mods: {
 			PiggyHead: {
 				/* Tooltip:
 					'''
-					7% increased damage, 10% faster usetime, 3% decreased acceleration
+					5% increased damage but 5% decreased acceleration
 					'This is so uncomfortable, but it does the job'
 					''' */
 				// DisplayName: Piggy Patroller Mask
@@ -1480,7 +1482,8 @@ Mods: {
 			PiggyBody: {
 				/* Tooltip:
 					'''
-					8% increased damage reduction, +20 max health, 5% decreased movement speed
+					5% increased knockback but 8% decreased movement speed
+					Discount on all Shop Items!
 					'Carrying a heavy bodyplate of porcelain'
 					''' */
 				// DisplayName: Piggy Patroller Bodyplate
@@ -1677,12 +1680,12 @@ Mods: {
 
 			PlatWarAxe: {
 				// Tooltip: ""
-				// DisplayName: Plat War Axe
+				// DisplayName: Platinum War Axe
 			}
 
 			GoldWarAxe: {
 				// Tooltip: ""
-				// DisplayName: Gold War Axe
+				// DisplayName: Golden War Axe
 			}
 
 			MusicNotePNT: {
@@ -1845,12 +1848,12 @@ Mods: {
 
 			DepthsPNT: {
 				// DisplayName: The Depths
-				// Tooltip: @Zero and The Possum
+				// Tooltip: "[c/880808:By Zero and The Possum]"
 			}
 
 			NothingPNT: {
-				// DisplayName: Nothing
-				// Tooltip: @Zero
+				// DisplayName: Nothingness
+				// Tooltip: "[c/880808:By Zero and The Possum]"
 			}
 
 			BerrybackItem: {
@@ -1860,7 +1863,7 @@ Mods: {
 
 			RoosterItem: {
 				// DisplayName: Rooster
-				// Tooltip: ""
+				// Tooltip: CLUCK CLUCK CLUCK
 			}
 
 			SquirmItem: {
@@ -1869,8 +1872,23 @@ Mods: {
 			}
 
 			Suitcase: {
-				// DisplayName: Suitcase
-				// Tooltip: ""
+				// DisplayName: Lovecraft's Rift Suitcase
+				/* Tooltip:
+					'''
+					<<<<<<< HEAD
+					Your Journey Begins!!
+					Right Click  crack open H.P Lovecraft's Rift Essentials
+					Below are the Weapons you get from it!(You also get other necessities!)
+					[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
+					[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
+					=======
+						Your Journey Begins!!
+						Right Click  crack open H.P Lovecraft's Rift Essentials
+						Below are the Weapons you get from it!(You also get other necessities!)
+							[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
+							[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
+					>>>>>>> 9725829fd99088478cefff9b9ced7a9d4dcd43fd
+					''' */
 			}
 
 			WattlePot: {
@@ -1960,9 +1978,9 @@ Mods: {
 				// Tooltip: ""
 			}
 
-			CoindropWand: {
-				// DisplayName: Coindrop Wand
-				// Tooltip: Rains coins at your cursor
+			HoneyHareItem: {
+				// DisplayName: Honey Hare Item
+				// Tooltip: ""
 			}
 		}
 
@@ -2058,23 +2076,18 @@ Mods: {
 			}
 
 			BrassMight: {
-				// Description: Mighty!
+				// Description: Mods.RealmOne.Buffs.BrassMight.Description
 				// DisplayName: Brass Might
 			}
 
 			WineBuff: {
-				// Description: Dont you think this is a bit too much?
+				// Description: Mods.RealmOne.Buffs.WineBuff.Description
 				// DisplayName: Wine Buff
 			}
 
 			BeerBuff: {
-				// Description: Dont you think this is a bit too much?
+				// Description: Mods.RealmOne.Buffs.BeerBuff.Description
 				// DisplayName: Beer Buff
-			}
-
-			PiggyDebuff: {
-				// DisplayName: Explosive Piggy Bank Cooldown
-				// Description: Locks explosive piggy bank in a cage
 			}
 		}
 
@@ -2199,14 +2212,6 @@ Mods: {
 			// HugeGoldCoin.DisplayName: Huge Gold Coin
 			// PlatinumCoin.DisplayName: Platinum Coin
 			// SilverCoin.DisplayName: Silver Coin
-			// SilverCoinFriendly.DisplayName: Silver Coin Friendly
-			// ShockwaveFriendly.DisplayName: Shockwave Friendly
-			// PorcelainFriendly.DisplayName: Porcelain Friendly
-			// PlatinumCoinFriendly.DisplayName: Platinum Coin Friendly
-			// PiggyBankFalling.DisplayName: Piggy Bank Falling
-			// GoldCoinFriendly.DisplayName: Gold Coin Friendly
-			// FireFriendly.DisplayName: Fire Friendly
-			// CopperCoinFriendly.DisplayName: Copper Coin Friendly
 		}
 
 		NPCs: {
@@ -2337,6 +2342,42 @@ Mods: {
 			// Berryback.DisplayName: Berryback
 			// Rooster.DisplayName: Rooster
 			// HaySlime.DisplayName: Hay Slime
+
+			LostFarmer: {
+				// DisplayName: Lost Farmer
+
+				TownNPCMood: {
+					// Content: I am content.
+					// NoHome: I hate not having a home.
+					// FarFromHome: I am too far from home.
+					// LoveSpace: I love having so much space.
+					// DislikeCrowded: I dislike how crowded I am.
+					// HateCrowded: I hate how crowded I am.
+					// LoveBiome: I love {BiomeName}.
+					// LikeBiome: I like {BiomeName}.
+					// DislikeBiome: I dislike {BiomeName}.
+					// LoveNPC: I love {NPCName}.
+					// LikeNPC: I like {NPCName}.
+					// DislikeNPC: I dislike {NPCName}.
+					// HateNPC: I hate {NPCName}.
+					// LikeNPC_Princess: I like {NPCName}.
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+			}
+
+			// LostFarmerTied.DisplayName: Lost Farmer Tied
+		}
+
+		Dialogue: {
+			LostFarmer: {
+				// LostTalk: Thank you!
+				// StandardDialogue1: Do you have any spare seeds?
+				// StandardDialogue2: What's your favorite color? My favorite colors are white and black.
+				// StandardDialogue3: What? I don't have any arms or legs? Oh, don't be ridiculous!
+				// CommonDialogue: This message has a weight of 5, meaning it appears 5 times more often.
+				// RareDialogue: This message has a weight of 0.1, meaning it appears 10 times as rare.
+				// TalkALot: I'm getting tired of talking to you. I have to go.
+			}
 		}
 
 		Tiles: {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.ItemCritter;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
@@ -13,6 +14,9 @@ namespace RealmOne.NPCs.Critters
         {
             DisplayName.SetDefault("Squirm");
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[2];
+            Main.npcCatchable[NPC.type] = true;
+
+            NPCID.Sets.CountsAsCritter[Type] = true;
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             { // Influences how the NPC looks in the Bestiary
@@ -23,6 +27,8 @@ namespace RealmOne.NPCs.Critters
 
         public override void SetDefaults()
         {
+            NPC.catchItem = (short)ModContent.ItemType<SquirmItem>();
+
             NPC.width = 26;
             NPC.height = 14;
             NPC.damage = 7;
@@ -35,6 +41,8 @@ namespace RealmOne.NPCs.Critters
             NPC.scale = 1.2f;
             AIType = NPCID.Worm;
             AnimationType = NPCID.Worm;
+            NPC.npcSlots = 0;
+            NPC.dontCountMe = true;
 
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)

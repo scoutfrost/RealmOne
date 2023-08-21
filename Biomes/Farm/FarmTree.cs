@@ -95,7 +95,7 @@ namespace RealmOne.Biomes.Farm
             {
                 WeightedRandom<int> getRepeats = new WeightedRandom<int>();
                 getRepeats.Add(1, 1f);
-                getRepeats.Add(2, 0.39f);
+                getRepeats.Add(2, 0.3f);
                 getRepeats.Add(3, 0.2f);
                 getRepeats.Add(6, 0.05f);
 
@@ -107,6 +107,9 @@ namespace RealmOne.Biomes.Farm
                     Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, fruit ? ModContent.ItemType<PumpkinSoup>() : ModContent.ItemType<Carrot>(), 1);
 
                     Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, fruit ? ModContent.ItemType<ToastedNutBar>() : ModContent.ItemType<FloralDelight>(), 1);
+
+                    Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, fruit ? ModContent.ItemType<FloralDelight>() : ModContent.ItemType<Carrot>(), 1);
+
                 }
             }
             return false;

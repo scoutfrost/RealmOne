@@ -19,7 +19,7 @@ namespace RealmOne.Items.ItemCritter
             Item.maxStack = 99;
             Item.autoReuse = true;
             Item.consumable = true;
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Green;
             Item.useAnimation = 18;
             Item.useTime = 18;
             Item.noMelee = true;

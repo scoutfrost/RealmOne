@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.ItemCritter;
+using RealmOne.Items.Others;
 using RealmOne.RealmPlayer;
 using RealmOne.Tiles.Blocks;
 using System.Linq;
@@ -25,23 +27,30 @@ namespace RealmOne.NPCs.Critters.Farm
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
             NPCID.Sets.CountsAsCritter[Type] = true;
+            Main.npcCatchable[NPC.type] = true;
 
         }
 
         public override void SetDefaults()
         {
+            NPC.catchItem = (short)ModContent.ItemType<HoneyHareItem>();
+
             NPC.width = 23;
             NPC.height = 20;
             NPC.defense = 0;
             NPC.lifeMax = 5;
             NPC.value = Item.buyPrice(0, 0, 5, 0);
             NPC.aiStyle = NPCAIStyleID.Passive;
+            NPC.dontCountMe = true;
+            NPC.npcSlots = 0;
+
             NPC.HitSound = SoundID.NPCHit1;
 
             NPC.DeathSound = SoundID.NPCDeath1;
             AIType = NPCID.Bunny;
             AnimationType = NPCID.Bunny;
             SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
+
 
 
         }
@@ -52,7 +61,7 @@ namespace RealmOne.NPCs.Critters.Farm
             if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
             {
                 int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
-                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
+                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.3f : 0f;
             }
             return 0f;
         }
@@ -77,7 +86,9 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.HoneyBucket, 5, 1, 3));
-            npcLoot.Add(ItemDropRule.Common(ItemID.BottomlessHoneyBucket, 25, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ItemID.BottomlessHoneyBucket, 30, 1, 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmKey>(), 35, 1, 1));
+
 
         }
 
