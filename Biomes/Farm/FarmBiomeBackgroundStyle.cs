@@ -9,7 +9,7 @@ namespace RealmOne.Biomes.Farm
         public override int ChooseMiddleTexture() =>BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/FarmBG_Mid");
         public override int ChooseCloseTexture(ref float scale, ref double parallax, ref float a, ref float b)
         {
-            b -=550;
+            b -=500;
             scale *= 0.6f;
             return BackgroundTextureLoader.GetBackgroundSlot(Mod, "Assets/Textures/Backgrounds/FarmBG_Close");
         }

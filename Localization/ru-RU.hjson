@@ -2370,6 +2370,7 @@ Mods: {
 
 		Dialogue: {
 			LostFarmer: {
+				// LostTalk: Thank you!
 				// StandardDialogue1: Do you have any spare seeds?
 				// StandardDialogue2: What's your favorite color? My favorite colors are white and black.
 				// StandardDialogue3: What? I don't have any arms or legs? Oh, don't be ridiculous!
@@ -2377,8 +2378,6 @@ Mods: {
 				// RareDialogue: This message has a weight of 0.1, meaning it appears 10 times as rare.
 				// TalkALot: I'm getting tired of talking to you. I have to go.
 			}
-
-			// LostFarmerTied.Dialogue: Thank you kind boy for saving me!
 		}
 
 		Tiles: {

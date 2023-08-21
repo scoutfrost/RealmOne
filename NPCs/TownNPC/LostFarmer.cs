@@ -96,7 +96,7 @@ namespace RealmOne.NPCs.TownNPC
             chat.Add(Language.GetTextValue("Mods.RealmOne.Dialogue.LostFarmer.StandardDialogue2"));
             chat.Add(Language.GetTextValue("Mods.RealmOne.Dialogue.LostFarmer.StandardDialogue3"));
             chat.Add(Language.GetTextValue("Mods.RealmOne.Dialogue.LostFarmer.CommonDialogue"));
-            chat.Add(Language.GetTextValue("Mods.RealmOne.Dialogue.LostFarmer.RareDialogue"), 0.1);
+            chat.Add(Language.GetTextValue("Mods.RealmOne.Dialogue.LostFarmer.RareDialogue"), 0.3);
 
             
 
@@ -115,8 +115,7 @@ namespace RealmOne.NPCs.TownNPC
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the preferred biomes of this town NPC listed in the bestiary.
-				// With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
+			
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
 				// Sets your NPC's flavor text in the bestiary.
@@ -151,23 +150,53 @@ namespace RealmOne.NPCs.TownNPC
                 shop = ShopName; // Name of the shop tab we want to open.
             }
         }
+        public override void HitEffect(NPC.HitInfo hit)
+        {
+            int num = NPC.life > 0 ? 1 : 5;
 
+            for (int k = 0; k < num; k++)
+            {
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Hay);
+            }
+
+            if (Main.netMode != NetmodeID.Server && NPC.life <= 0)
+            {
+                string variant = "";
+             
+                int headGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Head").Type;
+                int armGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Arm").Type;
+                int legGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Leg").Type;
+                int forkGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Leg").Type;
+
+
+                // Spawn the gores. The positions of the arms and legs are lowered for a more natural look.
+
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, headGore, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 22), NPC.velocity, forkGore);
+
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
+            }
+        
+    }
         public override void AddShops()
         {
             var npcShop = new NPCShop(Type, ShopName)
-                .Add(new Item(ModContent.ItemType<StunSeed>()) { shopCustomPrice = Item.buyPrice(gold: 7) })
+                .Add(new Item(ModContent.ItemType<StunSeed>()) { shopCustomPrice = Item.buyPrice(gold: 5) })
 
-                .Add(new Item(ModContent.ItemType<AntiVenomVial>()) { shopCustomPrice = Item.buyPrice(gold: 2, silver: 50) })
+                .Add(new Item(ModContent.ItemType<AntiVenomVial>()) { shopCustomPrice = Item.buyPrice(gold: 2) })
 
 
-                                .Add(new Item(ModContent.ItemType<SunHat>()) { shopCustomPrice = Item.buyPrice(gold: 3, silver: 25) })
+                                .Add(new Item(ModContent.ItemType<SunHat>()) { shopCustomPrice = Item.buyPrice(gold: 2, silver: 25) })
 
-                .Add(new Item(ModContent.ItemType<Wheat>()) { shopCustomPrice = Item.buyPrice(silver: 5) })
+                .Add(new Item(ModContent.ItemType<Wheat>()) { shopCustomPrice = Item.buyPrice(silver: 2) })
                  .Add(new Item(ItemID.Hay) { shopCustomPrice = Item.buyPrice(copper: 10) })
                  .Add(new Item(ModContent.ItemType<FarmAcorn>()) { shopCustomPrice = Item.buyPrice(copper: 80) })
-                                  .Add(new Item(ItemID.Sunflower) { shopCustomPrice = Item.buyPrice(silver: 50) })
+                                  .Add(new Item(ItemID.Sunflower) { shopCustomPrice = Item.buyPrice(silver: 30) })
 
-                 .Add(new Item(ModContent.ItemType<FarmKey>()) { shopCustomPrice = Item.buyPrice(gold: 5) })
+                 .Add(new Item(ModContent.ItemType<FarmKey>()) { shopCustomPrice = Item.buyPrice(gold: 3) })
                  
 
                 .Add<SquirmoSummon>(Condition.TimeNight);
