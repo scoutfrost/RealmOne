@@ -25,15 +25,16 @@ namespace RealmOne.Biomes.GenPasses
 			if (genIndex != -1)
 				tasks.Insert(genIndex - 1, new PassLegacy("Abandoned Farm", FarmBiomeGen));
 		}
-		int startX = (Main.maxTilesX / 2) + WorldGen.genRand.Next(100, 150);
+		int startX;
         public void FarmBiomeGen(GenerationProgress progress, GameConfiguration config)
 		{
-            int endX = startX + WorldGen.genRand.Next(200, 250) + Main.maxTilesY / 200;
+			startX = (Main.maxTilesX / 2) + WorldGen.genRand.Next(150, 250);
+			int endX = startX + WorldGen.genRand.Next(200, 250) + Main.maxTilesY / 200;
             int attempts = 0;
             bool validLocation = false;
             for (int i = startX; i < endX; i++)
 			{
-				int y = (int)(Main.worldSurface * 0.35f);
+				int y = (int)(Main.worldSurface * 0.5f);
 				while (y < Main.worldSurface)
 				{
 					if (WorldGen.SolidTile(i, y))
@@ -41,15 +42,19 @@ namespace RealmOne.Biomes.GenPasses
 						if (i == startX)
 						{
 							Dictionary<ushort, int> dictionary = new Dictionary<ushort, int>();
-							WorldUtils.Gen(new Point(startX, y + 15), new Shapes.Rectangle(endX, 30), new Actions.TileScanner(TileID.Dirt).Output(dictionary));
+							WorldUtils.Gen(new Point(startX, y + 15), new Shapes.Rectangle(endX - startX, 30), new Actions.TileScanner(TileID.Dirt, TileID.Cloud).Output(dictionary));
 							int dirtCount = dictionary[TileID.Dirt];
-
-							if (dirtCount > endX * 30 / 4)
+							int cloudCount = dictionary[TileID.Cloud];
+							if (dirtCount > endX * 30 / 3 && cloudCount == 0)
 							{
 								validLocation = true;
 							}
+							else if (cloudCount != 0)
+                            {
+								y++;
+                            }
 						}
-						if (validLocation || attempts >= 30)
+						if (validLocation || attempts >= 40)
 						{
 							WorldGen.EmptyLiquid(i, y);
 							WorldGen.TileRunner(i, y, WorldGen.genRand.Next(35, 45), WorldGen.genRand.Next(10, 15), ModContent.TileType<FarmSoil>());
@@ -57,8 +62,8 @@ namespace RealmOne.Biomes.GenPasses
 						else
 						{
       						attempts++;
-							endX -= 1;
-							startX -= 1;
+							endX--;
+							startX--;
 							i = startX;
 						}
 						break;
@@ -86,18 +91,16 @@ namespace RealmOne.Biomes.GenPasses
 			}
 			if (validLocation)
 			{
-				Generator.GenerateStructure("Structures/Barn1", new Point16(barnStartX, y - barnHeight), Mod, false);
-				for (int i = barnStartX; i <= barnWidth; i++)
+				for (int i = barnStartX; i < barnStartX + barnWidth; i++)
 				{
-					int j = y + barnHeight;
-					while(!WorldGen.SolidTile(i, j))
-					{
-						j--;
-						WorldGen.PlaceTile(i, j, ModContent.TileType<FarmSoil>());
-					}
+					WorldGen.TileRunner(i, y + 7, 12, 10, ModContent.TileType<FarmSoil>(), true);
 				}
+				Generator.GenerateStructure("Structures/Barn1", new Point16(barnStartX, y - barnHeight), Mod, false);
 			}
         }
 	}
 }
+
+
+
 
