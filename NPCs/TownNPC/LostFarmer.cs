@@ -232,8 +232,8 @@ namespace RealmOne.NPCs.TownNPC
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
-            damage = 20;
-            knockback = 4f;
+            damage = 8;
+            knockback = 1f;
         }
 
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)

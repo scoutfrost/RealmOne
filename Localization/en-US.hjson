@@ -2296,10 +2296,10 @@ Mods: {
 			FunnelWebSpider.DisplayName: Funnel Web Spider
 			HuntsmanSpider.DisplayName: Huntsman Spider
 			RedbackSpider.DisplayName: Redback Spider
-			SquirmoTail.DisplayName: Squirmo Tail
+			SquirmoTail.DisplayName: Squirmo
 
 			SquirmoHead: {
-				DisplayName: Squirmo Head
+				DisplayName: Squirmo
 
 				BossChecklistIntegration: {
 					SpawnInfo: Even from the past dread of worm adaptation, they havent really caused global damage. But for Squirmo, ever seeking revenge on human inhabitants is still a current warning for people.  Adhere the relief of the soil by defeating Squirmo!!
@@ -2308,7 +2308,7 @@ Mods: {
 				}
 			}
 
-			SquirmoBody.DisplayName: Squirmo Body
+			SquirmoBody.DisplayName: Squirmo 
 			ZombieFarmer.DisplayName: Zombie Farmer
 			Espider1.DisplayName: E-Spider
 			Eye1.DisplayName: E-Eye

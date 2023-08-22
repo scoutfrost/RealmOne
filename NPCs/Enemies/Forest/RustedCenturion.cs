@@ -31,7 +31,7 @@ namespace RealmOne.NPCs.Enemies.Forest
             NPC.width = 20;
             NPC.height = 42;
             NPC.damage = 30;
-            NPC.defense = 5;
+            NPC.defense = 4;
             NPC.lifeMax = 95;
             NPC.value = Item.buyPrice(0, 0, 9, 33);
             NPC.aiStyle = 3;

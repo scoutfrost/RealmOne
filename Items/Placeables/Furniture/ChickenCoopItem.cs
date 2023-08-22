@@ -5,7 +5,7 @@ using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RealmOne.Items.Placeables
+namespace RealmOne.Items.Placeables.Furniture
 {
     public class ChickenCoopItem : ModItem
     {
