@@ -1997,6 +1997,16 @@ Mods: {
 				DisplayName: Farm Music Box
 				Tooltip: ""
 			}
+
+			Bloomarang: {
+				DisplayName: Bloomarang
+				Tooltip: ""
+			}
+
+			SunflowerStaff: {
+				DisplayName: Sunflower Staff
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2240,6 +2250,9 @@ Mods: {
 			PorcelainFriendly.DisplayName: Porcelain Friendly
 			ShockwaveFriendly.DisplayName: Shockwave Friendly
 			SilverCoinFriendly.DisplayName: Silver Coin Friendly
+			BloomarangProj.DisplayName: Bloomarang Proj
+			SpinFlower.DisplayName: Spin Flower
+			SunPetal.DisplayName: Sun Petal
 		}
 
 		NPCs: {
@@ -2308,7 +2321,7 @@ Mods: {
 				}
 			}
 
-			SquirmoBody.DisplayName: Squirmo 
+			SquirmoBody.DisplayName: Squirmo
 			ZombieFarmer.DisplayName: Zombie Farmer
 			Espider1.DisplayName: E-Spider
 			Eye1.DisplayName: E-Eye

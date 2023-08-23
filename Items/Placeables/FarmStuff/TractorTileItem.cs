@@ -5,11 +5,10 @@ using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RealmOne.Items.Placeables
+namespace RealmOne.Items.Placeables.FarmStuff
 {
     public class TractorTileItem : ModItem
     {
-        public override string Texture => Helper.Empty;
 
         public override void SetStaticDefaults()
         {

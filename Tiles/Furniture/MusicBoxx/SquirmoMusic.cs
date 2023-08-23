@@ -6,7 +6,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace RealmOne.Tiles
+namespace RealmOne.Tiles.Furniture.MusicBoxx
 {
     public class SquirmoMusic : ModTile
     {

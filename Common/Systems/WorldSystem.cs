@@ -53,10 +53,7 @@ namespace RealmOne.Common.Systems
                 {
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<Goreberry>(), Main.rand.Next(1, 2));
                 }
-                if (type == TileID.Trees && Main.rand.NextBool(8) && player.ZoneForest)
-                {
-                    NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<AcornSprinter>(), 1);
-                }
+               
                 if (type == TileID.Seaweed && Main.rand.NextBool(2))
                 {
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<FreshSeaweed>(), Main.rand.Next(1, 4));
@@ -93,30 +90,20 @@ namespace RealmOne.Common.Systems
 
     public sealed class SourceDependentItemTweaks : GlobalItem
     {
-        /* public override void OnSpawn(Item item, IEntitySource source)
+         public override void OnSpawn(Item item, IEntitySource source)
          {
              if (source is EntitySource_ShakeTree)
              {
                  IEntitySource newSource = item.GetSource_FromThis(); // Use a separate source for the newly created projectiles, to not cause a stack overflow.
-                 if (Main.rand.NextBool(7))
-                 {
-                     NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
-                     if (Main.dayTime!)
-                     {
-                     }
-                 }
 
-                 else if (Main.rand.NextBool(4))
-
-                 {
-
-                     NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<MangoBat>());
-                 }
-
+                if (Main.dayTime == true)
+                {
+                    NPC.NewNPC(newSource, (int)item.position.X, (int)item.position.Y, NPCType<AcornSprinter>());
+                }
              }
          }
 
-         */
+         
 
     }
 

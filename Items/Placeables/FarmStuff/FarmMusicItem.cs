@@ -4,7 +4,7 @@ using RealmOne.Tiles.Furniture.MusicBoxx;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace RealmOne.Items.Placeables
+namespace RealmOne.Items.Placeables.FarmStuff
 {
     public class FarmMusicItem : ModItem
     {

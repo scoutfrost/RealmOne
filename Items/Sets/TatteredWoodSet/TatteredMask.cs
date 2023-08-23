@@ -1,4 +1,5 @@
-﻿using RealmOne.Items.Placeables.FarmStuff;
+﻿using RealmOne.Items.Placeables;
+using RealmOne.Items.Placeables.FarmStuff;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;

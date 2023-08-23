@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
-namespace RealmOne.Items.Placeables
+namespace RealmOne.Items.Placeables.FarmStuff
 {
 
     public class TatteredBarrelItem : ModItem

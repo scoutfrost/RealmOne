@@ -10,7 +10,6 @@ namespace RealmOne.Items.Placeables.Furniture
     public class ChickenCoopItem : ModItem
     {
 
-        public override string Texture => Helper.Empty;
 
 
         public override void SetStaticDefaults()
