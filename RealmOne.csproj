@@ -21,6 +21,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Biomes\Farm\FarmSapling.png" />
+	  <None Remove="Items\Weapons\PreHM\BloodMoon\BloodBlower_Glow.png" />
 	  <None Remove="Projectiles\Piggy\CopperCoin.png" />
 	  <None Remove="Projectiles\Piggy\Fire.png" />
 	  <None Remove="Projectiles\Piggy\GoldCoin.png" />
@@ -33,6 +34,8 @@
 		<PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Folder Include="Items\Weapons\Fighter\" />
+	  <Folder Include="Items\Weapons\PreHM\Crimson\" />
 	  <Folder Include="lib\" />
 	</ItemGroup>
 	<ItemGroup>

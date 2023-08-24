@@ -47,7 +47,7 @@ namespace RealmOne.Projectiles.Other
         }
 
         public override void Load()
-        { // This is called once on mod (re)load when this piece of content is being loaded.
+        { // This is called once on mod (re)load when this piece of content is being loaded.    
           // This is the path to the texture that we'll use for the hook's chain. Make sure to update it.
             Idol = Request<Texture2D>("RealmOne/Assets/Effects/Idol");
         }

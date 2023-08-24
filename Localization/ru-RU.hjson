@@ -9,7 +9,7 @@ Mods: {
 
 		Items: {
 			StunSeed: {
-				// DisplayName: Stun Seed
+				// DisplayName: Stun Seed Cannon
 				/* Tooltip:
 					'''
 					Features a large assortment of nuts that stun enemies!
@@ -1836,6 +1836,11 @@ Mods: {
 					''' */
 			}
 
+			FarmPylonItem: {
+				// DisplayName: Farm Pylon
+				// Tooltip: ""
+			}
+
 			OldSnailItem: {
 				// DisplayName: Grandfather Snail
 				// Tooltip: ""
@@ -1951,7 +1956,7 @@ Mods: {
 			}
 
 			ChillrendHead: {
-				// DisplayName: Chillrend Head
+				// DisplayName: Chillrend Helmet
 				/* Tooltip:
 					'''
 					6% increased ranged damage
@@ -1974,7 +1979,7 @@ Mods: {
 			}
 
 			HoneyHareItem: {
-				// DisplayName: Honey Hare Item
+				// DisplayName: Honey Hare
 				// Tooltip: ""
 			}
 
@@ -1988,8 +1993,33 @@ Mods: {
 				// Tooltip: ""
 			}
 
-			FarmPylonItem: {
-				// DisplayName: Abandoned Farm Pylon
+			FarmMusicItem: {
+				// DisplayName: Farm Music Box
+				// Tooltip: ""
+			}
+
+			Bloomarang: {
+				// DisplayName: Bloomarang
+				// Tooltip: ""
+			}
+
+			SunflowerStaff: {
+				// DisplayName: Sunflower Staff
+				// Tooltip: ""
+			}
+
+			BloodHook: {
+				// Tooltip: ""
+				// DisplayName: Blood Hook
+			}
+
+			Crimclub: {
+				// DisplayName: Crimclub
+				// Tooltip: ""
+			}
+
+			BloodBlower: {
+				// DisplayName: Blood Blower
 				// Tooltip: ""
 			}
 		}
@@ -2235,6 +2265,12 @@ Mods: {
 			// PorcelainFriendly.DisplayName: Porcelain Friendly
 			// ShockwaveFriendly.DisplayName: Shockwave Friendly
 			// SilverCoinFriendly.DisplayName: Silver Coin Friendly
+			// BloomarangProj.DisplayName: Bloomarang Proj
+			// SpinFlower.DisplayName: Spin Flower
+			// SunPetal.DisplayName: Sun Petal
+			// BloodHookProj.DisplayName: Blood Hook Proj
+			// CrimclubSwing.DisplayName: Crimclub Swing
+			// BloodBlowerProj.DisplayName: Blood Blower Proj
 		}
 
 		NPCs: {
@@ -2291,10 +2327,10 @@ Mods: {
 			// FunnelWebSpider.DisplayName: Funnel Web Spider
 			// HuntsmanSpider.DisplayName: Huntsman Spider
 			// RedbackSpider.DisplayName: Redback Spider
-			// SquirmoTail.DisplayName: Squirmo Tail
+			// SquirmoTail.DisplayName: Squirmo
 
 			SquirmoHead: {
-				// DisplayName: Squirmo Head
+				// DisplayName: Squirmo
 
 				BossChecklistIntegration: {
 					// SpawnInfo: Even from the past dread of worm adaptation, they havent really caused global damage. But for Squirmo, ever seeking revenge on human inhabitants is still a current warning for people.  Adhere the relief of the soil by defeating Squirmo!!
@@ -2303,7 +2339,7 @@ Mods: {
 				}
 			}
 
-			// SquirmoBody.DisplayName: Squirmo Body
+			// SquirmoBody.DisplayName: Squirmo
 			// ZombieFarmer.DisplayName: Zombie Farmer
 			// Espider1.DisplayName: E-Spider
 			// Eye1.DisplayName: E-Eye
@@ -2409,17 +2445,17 @@ Mods: {
 			// OldGoldOreT.MapEntry: Old Gold Ore
 			// GrassPylonTile.MapEntry: Grass Pylon
 			// PhotosynthesisTile1.MapEntry: Photosynthesis Pillar
-			// StoneOvenTilee.MapEntry: Stone Oven
+			// StoneOvenTilee.MapEntry: Stone Oven Tilee
 			// TatteredBarrel.MapEntry: Tattered Barrel
 			// ProtonTorch.MapEntry: Proton Torch
 			// MiniWattleBush.MapEntry: Mini Wattle Bush
 			// PiggyTile.MapEntry: Piggy Tile
 			// MusicNotePNTtile.MapEntry: Quavers
 			// AddictionPNTtile.MapEntry: Addiction
-			// NewtonCradleTile.MapEntry: Newton Cradle
-			// ChickenCoopTile.MapEntry: Chicken Coop
+			// NewtonCradleTile.MapEntry: Newton Cradle Tile
+			// ChickenCoopTile.MapEntry: Chicken Coop Tile
 			// Banners.MapEntry: Banners
-			// TatteredWoodTile.MapEntry: Tattered Wood
+			// TatteredWoodTile.MapEntry: Tattered Wood Tile
 
 			FarmChestTile: {
 				// MapEntry0: Farm Chest
@@ -2428,7 +2464,7 @@ Mods: {
 
 			// FarmSapling.MapEntry: Farm Sapling
 			// FarmSoil.MapEntry: Farm Soil
-			// FarmPylonTile.MapEntry: Farm Pylon
+			// FarmPylonTile.MapEntry: "{$Mods.RealmOne.Items..DisplayName}"
 			// Depths.MapEntry: Depths
 			// Nothing.MapEntry: Nothing
 			// HangingWattle.MapEntry: Hanging Wattle

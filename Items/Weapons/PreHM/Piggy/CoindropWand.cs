@@ -28,18 +28,20 @@ namespace RealmOne.Items.Weapons.PreHM.Piggy
 
         public override void SetDefaults()
         {
-            Item.damage = 22;
+            Item.damage = 14;
             Item.DamageType = DamageClass.Magic;
             Item.width = 32;
             Item.height = 36;
             Item.useTime = 50;
-            Item.useAnimation = 50;
-            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useAnimation = 30;
+            Item.staff[Item.type] = true;
+            Item.mana = 10;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 3f;
             Item.value = Item.buyPrice(0, 0, 87, 34);
-            Item.rare = ItemRarityID.Yellow;
+            Item.rare = ItemRarityID.Blue;
             Item.useTurn = true;
-            Item.crit = 10;
+            Item.crit = 2;
             Item.UseSound = SoundID.Item30;
         }
 

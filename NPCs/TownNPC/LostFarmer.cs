@@ -20,16 +20,19 @@ using RealmOne.Items.Accessories;
 using RealmOne.Items.BossSummons;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Weapons.Ranged;
-using RealmOne.Vanities;
 using RealmOne.Items.Others;
 using RealmOne.Biomes.Farm;
 using RealmOne.Items.Weapons.PreHM.Throwing;
 using RealmOne.Projectiles.Throwing;
+using RealmOne.Items.Vanities;
 
 namespace RealmOne.NPCs.TownNPC
 {
+    [AutoloadHead]
+
     public class LostFarmer : ModNPC
     {
+
         public const string ShopName = "Shop";
         public override void SetStaticDefaults()
         {
@@ -229,8 +232,8 @@ namespace RealmOne.NPCs.TownNPC
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
-            damage = 20;
-            knockback = 4f;
+            damage = 8;
+            knockback = 1f;
         }
 
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)

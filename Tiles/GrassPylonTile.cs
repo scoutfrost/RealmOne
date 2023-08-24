@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Placeables;
-using RealmOne.TileEntities;
+using RealmOne.Tiles.TileEntities;
 using ReLogic.Content;
 using Terraria;
 using Terraria.DataStructures;

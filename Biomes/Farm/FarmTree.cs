@@ -5,6 +5,7 @@ using RealmOne.Items.Food;
 using RealmOne.Items.Food.FarmFood;
 using RealmOne.Items.Misc.Plants;
 using RealmOne.Items.Placeables;
+using RealmOne.Items.Placeables.FarmStuff;
 using RealmOne.NPCs.Critters;
 using RealmOne.NPCs.Critters.Farm;
 using RealmOne.Tiles.Blocks;

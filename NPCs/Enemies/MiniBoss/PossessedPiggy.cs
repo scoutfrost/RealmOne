@@ -78,7 +78,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPC.height = 40;
             NPC.damage = 26;
             NPC.defense = 8;
-            NPC.lifeMax = 475;
+            NPC.lifeMax = 450;
             NPC.knockBackResist = 0.6f;
             NPC.value = Item.buyPrice(0, 2, 50, 50);
             NPC.aiStyle = -1;
@@ -95,15 +95,15 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
             if (Main.masterMode == true)
             {
-                dmg = 78;
+                dmg = 70;
             }
             else if (Main.expertMode == true)
             {
-                dmg = 52;
+                dmg = 43;
             }
             else
             {
-                dmg = 26;
+                dmg = 23;
             }
         }
 
@@ -268,7 +268,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
                 if (fallingCounter == 0 && falling == 1)
                 {
-                    NPC.defense = 15;
+                    NPC.defense = 10;
                     NPC.damage = dmg;
                     falling = 0;
                     overHeat = 230;
@@ -311,7 +311,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                             coinRain = 800;
                             falling = 1;
                             fallingCounter = 240;
-                            NPC.defense = 30;
+                            NPC.defense = 20;
                             NPC.damage = dmg * 2;
                         }
                     }
@@ -437,7 +437,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                             if (maximunTileHop == 6)
                             {
                                 NPC.damage = dmg;
-                                NPC.defense = 15;
+                                NPC.defense = 10;
                                 chargingUp = -1;
                                 overHeat = 600;
                                 coinRain = 300;
@@ -690,10 +690,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
 
 
-        public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
-            return SpawnCondition.OverworldDay.Chance * 0.087f;
-        }
+        
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {

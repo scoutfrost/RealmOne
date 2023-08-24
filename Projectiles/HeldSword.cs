@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Projectiles
 {
-    internal abstract class HeldSword : ModProjectile
+    public abstract class HeldSword : ModProjectile
     {
         protected Player Owner => Main.player[Projectile.owner];
 
