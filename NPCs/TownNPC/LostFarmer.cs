@@ -20,11 +20,11 @@ using RealmOne.Items.Accessories;
 using RealmOne.Items.BossSummons;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Weapons.Ranged;
-using RealmOne.Vanities;
 using RealmOne.Items.Others;
 using RealmOne.Biomes.Farm;
 using RealmOne.Items.Weapons.PreHM.Throwing;
 using RealmOne.Projectiles.Throwing;
+using RealmOne.Items.Vanities;
 
 namespace RealmOne.NPCs.TownNPC
 {

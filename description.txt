@@ -1,8 +1,9 @@
-
 Most of the information is on the server!
 https://discord.gg/Npk2dDzRdt
 
-
+Realm of R'lyeh is a mod that focuses on the theme of Lovecraftian Mythos. Furthermore. with a 'vintage' and 'eidolic' feel about it.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+The world has been enchanted into a cursed, and transcendental timeline, with creatures, items, bosses and hidden unknown mysteries.
 
 [c/E12C00:Current Items]
 
@@ -17,12 +18,12 @@ https://discord.gg/Npk2dDzRdt
 -35 New enemies and critters
 -2 New Ores to be found underground!!!
 -5 Armour Sets
-- 1 Vanity
+- 4 Vanities
 -Plenty of Vanilla Changes including unique ones!!
 -Tons of Lore!
 -Buffed/Nerfed tons of items!
 -Plenty Vanilla recipe add ons.
-- 2 new Pylon
+- 2 new Pylons
 
 [c/2BCD49:Current Developers]
 [c/58D68D:Owner:] Magma!!
@@ -39,3 +40,7 @@ This mod will take around 4-5 years to finish, we are aiming for 26 bosses.
 
 
 
+
+
+
+[quote=tModLoader]Developed By Magma![/quote]

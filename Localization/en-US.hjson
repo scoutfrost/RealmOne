@@ -9,7 +9,7 @@ Mods: {
 
 		Items: {
 			StunSeed: {
-				DisplayName: Stun Seed
+				DisplayName: Stun Seed Cannon
 				Tooltip:
 					'''
 					Features a large assortment of nuts that stun enemies!
@@ -2007,6 +2007,21 @@ Mods: {
 				DisplayName: Sunflower Staff
 				Tooltip: ""
 			}
+
+			BloodHook: {
+				Tooltip: ""
+				DisplayName: Blood Hook
+			}
+
+			Crimclub: {
+				DisplayName: Crimclub
+				Tooltip: ""
+			}
+
+			BloodBlower: {
+				DisplayName: Blood Blower
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2253,6 +2268,9 @@ Mods: {
 			BloomarangProj.DisplayName: Bloomarang Proj
 			SpinFlower.DisplayName: Spin Flower
 			SunPetal.DisplayName: Sun Petal
+			BloodHookProj.DisplayName: Blood Hook Proj
+			CrimclubSwing.DisplayName: Crimclub Swing
+			BloodBlowerProj.DisplayName: Blood Blower Proj
 		}
 
 		NPCs: {

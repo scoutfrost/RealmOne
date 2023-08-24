@@ -23,8 +23,8 @@ namespace RealmOne.Items.Sets.SunflowerSet
 
         public override void SetDefaults()
         {
-            Projectile.width = 32;
-            Projectile.height = 32;
+            Projectile.width = 45;
+            Projectile.height = 40;
             Projectile.friendly = true;
             Projectile.penetrate = -2;
             Projectile.timeLeft = 160;

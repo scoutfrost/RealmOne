@@ -3,7 +3,7 @@ using RealmOne.BossBars;
 using RealmOne.Common.Systems;
 using RealmOne.Items.BossBags;
 using RealmOne.Items.Placeables.Furniture.BossThing;
-using RealmOne.Vanities;
+using RealmOne.Items.Vanities;
 using System.IO;
 using Terraria;
 using Terraria.Audio;

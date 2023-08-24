@@ -5,16 +5,16 @@ using RealmOne.Common.Systems;
 using RealmOne.Items.BossSummons;
 using RealmOne.Items.PaperUI;
 using RealmOne.Items.Placeables.Furniture.BossThing;
+using RealmOne.Items.Vanities;
 using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
 using RealmOne.Items.Weapons.Summoner;
-using RealmOne.Vanities;
 using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 
 namespace RealmOne
 {
-    
+
     public class Integrations : ModSystem
     {
         public override void PostSetupContent()
