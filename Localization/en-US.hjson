@@ -2110,7 +2110,8 @@ Mods: {
 			PompeiisPullProjectile.DisplayName: Pompeiis Pull Projectile
 			OldGoldHookProjectile.DisplayName: Old Gold Hook Projectile
 			OldChainHook.DisplayName: Old Chain Hook
-			WagonWheel.DisplayName: Wagon Wheel
+			
+			.DisplayName: Wagon Wheel
 			CrossBowBolt.DisplayName: Cross Bow Bolt
 			HellBolt.DisplayName: Hell Bolt
 			CrimBulletProjectile.DisplayName: Crim Bullet Projectile
