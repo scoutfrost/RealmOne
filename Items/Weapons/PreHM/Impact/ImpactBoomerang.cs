@@ -48,7 +48,7 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(1);
-            recipe.AddIngredient(Mod, "ImpactTech", 10);
+            recipe.AddIngredient(Mod, "ImpactTech", 10 );
 
             recipe.AddTile(TileID.Anvils);
             recipe.Register();

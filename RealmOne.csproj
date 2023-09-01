@@ -35,6 +35,7 @@
 		<PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Folder Include="Items\Tools\Other\" />
 	  <Folder Include="Items\Weapons\Fighter\" />
 	  <Folder Include="Items\Weapons\PreHM\Crimson\" />
 	  <Folder Include="lib\" />

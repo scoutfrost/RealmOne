@@ -57,7 +57,6 @@ namespace RealmOne.Items.BossBags
 
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheOutcastsOverseer>(), 3, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EarthEmerald>(), 3, 1, 1));
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheCalender>(), 5, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BarrenBrew>(), 3, 4, 6));
 
 

@@ -39,7 +39,7 @@ namespace RealmOne
 
 
 
-        public override void PostSetupContent()
+     /*   public override void PostSetupContent()
         {
             ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist);
             if (bossChecklist != null)
@@ -82,7 +82,6 @@ namespace RealmOne
 
                               ModContent.ItemType<EarthEmerald>(),
                               ModContent.ItemType<TheOutcastsOverseer>(),
-                              ModContent.ItemType<TheCalender>(),
                               ModContent.ItemType<BarrenBrew>(),
                     //          ModContent.ItemType<BotanicLogLauncher>(),
                               ModContent.ItemType<Overgrowth>(),
@@ -108,6 +107,6 @@ namespace RealmOne
                       ""
                });
             }
-        }
+        }*/
     }
 }
