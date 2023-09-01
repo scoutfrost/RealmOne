@@ -72,8 +72,8 @@ namespace RealmOne.Projectiles.Throwing
             Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, -4, 0, ProjectileID.SeedlerNut, Projectile.damage, Projectile.knockBack, Projectile.owner);
             Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, 0, ProjectileID.SeedlerNut, Projectile.damage, Projectile.knockBack, Projectile.owner);
 
-            Player player = Main.player[Projectile.owner];
-            player.GetModPlayer<Screenshake>().SmallScreenshake = true;
+        //    Player player = Main.player[Projectile.owner];
+     //       player.GetModPlayer<Screenshake>().SmallScreenshake = true;
             Collision.AnyCollision(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
             SoundEngine.PlaySound(rorAudio.SFX_GrenadeRoll, Projectile.position);
 

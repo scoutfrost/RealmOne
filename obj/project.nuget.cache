@@ -1,18 +1,17 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "BxK4fNmDsgDCWN0aC0i49o0HYMS4BgyECUFYLWsu0V/DmZhwOIsEZd63mSCc2MmU5Ff63HfRMoesgA9nlFvH2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\cmcdo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cmcdo\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
-=======
-  "dgSpecHash": "1rnvXAYzoMTJyQ4r1rLpuo0B/9OQoTnhwjiSSeVz9j0waUXlVE2BpjiQg36IWFUUR970tYNYm0JIYjVzHuIbvA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\ADMIN\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\RealmOne.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ADMIN\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
->>>>>>> 6d7d50d161ddc5ed1b8b831ae459ac57f37dd9cb
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\cmcdo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\RealmOne\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

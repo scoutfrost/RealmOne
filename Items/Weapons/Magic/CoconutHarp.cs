@@ -25,12 +25,12 @@ namespace RealmOne.Items.Weapons.Magic
 
         public override void SetDefaults()
         {
-            Item.damage = 17;
+            Item.damage = 15;
             Item.DamageType = DamageClass.Magic;
             Item.width = 24;
             Item.height = 32;
-            Item.useTime = 28;
-            Item.useAnimation = 28;
+            Item.useTime = 30;
+            Item.useAnimation = 30;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 3;
             Item.value = 30000;
@@ -38,7 +38,7 @@ namespace RealmOne.Items.Weapons.Magic
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_Harp");
 
             Item.shoot = ModContent.ProjectileType<GrassNote>();
-            Item.shootSpeed = 13f;
+            Item.shootSpeed = 10f;
             Item.value = Item.buyPrice(gold: 2, silver: 75);
             Item.mana = 7;
             Item.noMelee = true;
