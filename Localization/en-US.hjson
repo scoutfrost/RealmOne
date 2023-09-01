@@ -2146,11 +2146,7 @@ Mods: {
 			PompeiisPullProjectile.DisplayName: Pompeiis Pull Projectile
 			OldGoldHookProjectile.DisplayName: Old Gold Hook Projectile
 			OldChainHook.DisplayName: Old Chain Hook
-<<<<<<< HEAD
 			WagonWheel.DisplayName: Wagon Wheel
-=======
-			.DisplayName: Wagon Wheel
->>>>>>> 6d7d50d161ddc5ed1b8b831ae459ac57f37dd9cb
 			CrossBowBolt.DisplayName: Cross Bow Bolt
 			HellBolt.DisplayName: Hell Bolt
 			CrimBulletProjectile.DisplayName: Crim Bullet Projectile
@@ -2281,7 +2277,6 @@ Mods: {
 			BloodHookProj.DisplayName: Blood Hook Proj
 			CrimclubSwing.DisplayName: Crimclub Swing
 			BloodBlowerProj.DisplayName: Blood Blower Proj
-			WagonWheel.DisplayName: Wagon Wheel
 			TatteredJavlinProj.DisplayName: Tattered Javlin Proj
 		}
 

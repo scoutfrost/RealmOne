@@ -189,7 +189,7 @@ Mods: {
 				// DisplayName: Cigarette
 				/* Tooltip:
 					'''
-					When you light cigarette...
+					When you light a cigarette...
 					Your life burns with it.
 					You gain 20% increased damage and weapon speed but no life regen nor pickup hearts
 					''' */
@@ -856,10 +856,11 @@ Mods: {
 				// DisplayName: Lovecraft's Chain Shotgun
 				/* Tooltip:
 					'''
-					Shoots a random spread of bullets
 					Right click to shoot out a chain that splits out of the gun
 					The gun extends into the chain!
 					[c/ACAD4D:'I used this to protect myself from my own creations, preposterous activity!]
+					Uses Rusted Bullets [i:RealmOne/RustedBullets]
+
 					''' */
 			}
 
@@ -2101,7 +2102,7 @@ Mods: {
 			}
 
 			CigaretteBuff: {
-				// Description: You're really feelin it right now
+				// Description: You're really feeling it right now
 				// DisplayName: Cigarette Buff
 			}
 
@@ -2145,7 +2146,7 @@ Mods: {
 			// PompeiisPullProjectile.DisplayName: Pompeiis Pull Projectile
 			// OldGoldHookProjectile.DisplayName: Old Gold Hook Projectile
 			// OldChainHook.DisplayName: Old Chain Hook
-			// .DisplayName: Wagon Wheel
+			// WagonWheel.DisplayName: Wagon Wheel
 			// CrossBowBolt.DisplayName: Cross Bow Bolt
 			// HellBolt.DisplayName: Hell Bolt
 			// CrimBulletProjectile.DisplayName: Crim Bullet Projectile
@@ -2276,7 +2277,6 @@ Mods: {
 			// BloodHookProj.DisplayName: Blood Hook Proj
 			// CrimclubSwing.DisplayName: Crimclub Swing
 			// BloodBlowerProj.DisplayName: Blood Blower Proj
-			// WagonWheel.DisplayName: Wagon Wheel
 			// TatteredJavlinProj.DisplayName: Tattered Javlin Proj
 		}
 
