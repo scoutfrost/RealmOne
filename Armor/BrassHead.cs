@@ -129,7 +129,7 @@ namespace RealmOne.Armor
 
                     case PressUp when Player.velocity.Y > -Thing:
                         {
-                            Player.AddBuff(ModContent.BuffType<BrassMight>(), 400);
+                            Player.AddBuff(ModContent.BuffType<BrassMight>(), 750);
                             SoundEngine.PlaySound(SoundID.MaxMana, Player.position);
 
                             for (int i = 0; i < 80; i++)
@@ -140,8 +140,9 @@ namespace RealmOne.Armor
                                 d.noGravity = true;
                             }
                             break;
+
                         }
-                        
+
                     default:
                         return;
                 }
@@ -149,7 +150,7 @@ namespace RealmOne.Armor
 
                 Delay = Cooldown;
                 Timer = Duration;
-
+               
 
 
             }
