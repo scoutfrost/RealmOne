@@ -22,6 +22,8 @@ namespace RealmOne.Projectiles.Bullet
             Projectile.aiStyle = ProjAIStyleID.GroundProjectile;
             Projectile.tileCollide = true;
             AIType = ProjectileID.Glowstick;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -33,6 +35,8 @@ namespace RealmOne.Projectiles.Bullet
 
         private void Explode()
         {
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
             SoundEngine.PlaySound(SoundID.Tink);
             for (int i = 0; i < 10; i++)
             {

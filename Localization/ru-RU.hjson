@@ -2425,6 +2425,8 @@ Mods: {
 			}
 
 			// LostFarmerTied.DisplayName: Tangled Lost Farmer
+			// JumboEye.DisplayName: Jumbo Eye
+			// JumboEyeMedium.DisplayName: Jumbo Eye Medium
 		}
 
 		Dialogue: {

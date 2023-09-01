@@ -31,6 +31,8 @@ namespace RealmOne.Projectiles.Bullet
             Projectile.penetrate = 2;
             Projectile.extraUpdates = 1;
             Projectile.scale = 1.2f;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
         public override void AI()
         {

@@ -80,9 +80,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("Purged and paralyzed, this slime is nothing but artificial plasma."),
 
-				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
-				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
-				// so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
+
             });
         }
         public override void HitEffect(NPC.HitInfo hit)

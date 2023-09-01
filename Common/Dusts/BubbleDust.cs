@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace RealmOne.Dusts
+namespace RealmOne.Common.Dusts
 {
     public class BubbleDust : ModDust
     {

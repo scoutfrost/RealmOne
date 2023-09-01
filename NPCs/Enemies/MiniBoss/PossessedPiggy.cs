@@ -86,6 +86,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPC.DeathSound = SoundID.Item59;
             NPC.netAlways = true;
             NPC.netUpdate = true;
+            
             NPC.noGravity = false;
             NPC.boss = true;
             AnimationType = -1;
@@ -175,7 +176,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
         public override void AI()
         {
-
+            NPC.netAlways = true;
+            NPC.netUpdate = true;
             if (Main.masterMode == true)
             {
                 damage = Main.rand.Next(45, 53);
@@ -313,6 +315,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                             fallingCounter = 240;
                             NPC.defense = 20;
                             NPC.damage = dmg * 2;
+                            NPC.netAlways = true;
+                            NPC.netUpdate = true;
                         }
                     }
                     else
@@ -407,6 +411,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                             dust1.noGravity = true;
                         }
                         NPC.damage = dmg * 2;
+                        NPC.netAlways = true;
+                        NPC.netUpdate = true;
                         NPC.defense = 0;
                     }
                     if (chargingUp >= 165)
@@ -442,6 +448,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                                 overHeat = 600;
                                 coinRain = 300;
                                 groundPound = 400;
+                                NPC.netAlways = true;
+                                NPC.netUpdate = true;
                                 OverHeatSlide = false;
                             }
                         }
@@ -482,6 +490,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         }
                         NPC.damage = dmg;
                         NPC.defense = 15;
+                        NPC.netAlways = true;
+                        NPC.netUpdate = true;
                         chargingUp = -1;
                         overHeat = 600;
                         coinRain = 300;

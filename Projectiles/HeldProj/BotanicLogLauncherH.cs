@@ -29,6 +29,8 @@ namespace RealmOne.Projectiles.HeldProj
             Projectile.knockBack = 4;
             Projectile.ownerHitCheck = true;//so it cant attack through walls
             Projectile.scale = 1.2f;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
         public override bool? CanDamage()
         {
@@ -37,12 +39,15 @@ namespace RealmOne.Projectiles.HeldProj
         private bool recoilFX;
         public override void AI()
         {
+
             Player player = Main.player[Projectile.owner];
             Projectile.ai[0] += 1f;
             if (Projectile.ai[0] >= 90f)
             {
                 Projectile.ai[0] = -1f;
                 timerUp = true;
+                Projectile.netUpdate = true;
+                Projectile.netImportant = true;
                 Projectile.netUpdate = true;
             }
 
@@ -82,7 +87,8 @@ namespace RealmOne.Projectiles.HeldProj
         {
             Projectile.Center = playerhandpos;
             Projectile.spriteDirection = Projectile.direction;
-
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
             // Constantly resetting player.itemTime and player.itemAnimation prevents the player from switching items or doing anything else.
             player.ChangeDir(Projectile.direction);
             player.heldProj = Projectile.whoAmI;
@@ -106,6 +112,8 @@ namespace RealmOne.Projectiles.HeldProj
 
             if (aim != Projectile.velocity)
                 Projectile.netUpdate = true;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
             Projectile.velocity = aim;
         }
         public override bool PreDraw(ref Color lightColor)
