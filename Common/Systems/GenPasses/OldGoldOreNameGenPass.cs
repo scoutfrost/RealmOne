@@ -16,11 +16,12 @@ internal class OldGoldOreNameGenPass : GenPass
     protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration)
     {
         progress.Message = "Spawning an ancient and pristine ore";
-        for (int i = 0; i < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 0.0001); i++)
+        for (int i = 0; i < (int)(Main.maxTilesX * Main.maxTilesY * 6E-05); i++)
         {
             int num = WorldGen.genRand.Next(0, Main.maxTilesX);
             int y = WorldGen.genRand.Next((int)GenVars.worldSurface, Main.maxTilesY);
-            WorldGen.TileRunner(num, y, (double)WorldGen.genRand.Next(3, 4), WorldGen.genRand.Next(1, 4), ModContent.TileType<OldGoldOreT>(), false, 0f, 0f, false, true, -1);
+            WorldGen.TileRunner(num, y, WorldGen.genRand.Next(3, 4), WorldGen.genRand.Next(1, 4), ModContent.TileType<OldGoldOreT>(), false, 0f, 0f, false, true, -1);
         }
     }
 }
+d
