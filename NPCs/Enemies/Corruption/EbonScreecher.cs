@@ -51,7 +51,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         {
             if (spawnInfo.Player.ZoneCorrupt && DownedBossSystem.downedSquirmo == true)
             {
-                return SpawnCondition.Corruption.Chance * 0.12f;
+                return SpawnCondition.Corruption.Chance * 0.10f;
             }
             return 0;
         }

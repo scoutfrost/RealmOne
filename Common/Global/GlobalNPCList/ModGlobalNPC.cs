@@ -160,7 +160,6 @@ namespace RealmOne.Common.Global.GlobalNPCList
 
             if (npc.type == NPCID.WallofFlesh)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Crimcore>(), 2, 1, 12));
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellishMembrane>(), 2, 1, 12));
             }
 

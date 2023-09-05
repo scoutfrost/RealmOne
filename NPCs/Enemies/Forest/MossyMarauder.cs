@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*using Microsoft.Xna.Framework;
 using RealmOne.Items.Food;
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Weapons.PreHM.Forest;
@@ -113,3 +113,4 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
     }
 }
+*/

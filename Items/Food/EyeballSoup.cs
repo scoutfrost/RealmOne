@@ -28,7 +28,7 @@ namespace RealmOne.Items.Food
         public override void SetDefaults()
         {
             Item.DefaultToFood(20, 20, BuffID.WellFed2, 20600);
-
+                
             Item.useTime = 17;
             Item.useAnimation = 17;
             Item.maxStack = 99;

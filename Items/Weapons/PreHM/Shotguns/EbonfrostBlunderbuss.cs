@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+/*using Microsoft.Xna.Framework;
 using RealmOne.Projectiles.Bullet;
 using Terraria;
 using Terraria.DataStructures;
@@ -85,4 +85,4 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             return offset;
         }
     }
-}
+}*/ 

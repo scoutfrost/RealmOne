@@ -52,7 +52,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         {
             Player player = spawnInfo.Player;
 
-            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && Main.dayTime ==false  && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
+            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && !Main.dayTime && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
             {
                 int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
                 return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;

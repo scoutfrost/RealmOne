@@ -70,19 +70,12 @@ namespace RealmOne.Items.Weapons.Ranged
         {
             Recipe recipe = CreateRecipe();
             recipe.AddRecipeGroup("Wood", 10);
-            recipe.AddIngredient(Mod, "FleshyCornea", 8);
+            recipe.AddIngredient(Mod, "FleshyCornea", 15);
             recipe.AddIngredient(ItemID.IllegalGunParts, 1);
-            recipe.AddIngredient(Mod, "IronGunBarrel", 1);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
-            Recipe recipe1 = CreateRecipe();
-            recipe1.AddRecipeGroup("Wood", 10);
-            recipe1.AddIngredient(Mod, "FleshyCornea", 8);
-            recipe1.AddIngredient(ItemID.IllegalGunParts, 1);
-            recipe1.AddIngredient(Mod, "LeadGunBarrel", 1);
-            recipe1.AddTile(TileID.Anvils);
-            recipe1.Register();
+          
         }
         public override bool CanConsumeAmmo(Item ammo, Player player)
         {

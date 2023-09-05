@@ -90,19 +90,10 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
             recipe.AddIngredient(ItemID.IllegalGunParts, 1);
             recipe.AddIngredient(ItemID.Chain, 2);
-            recipe.AddIngredient(Mod, "LeadGunBarrel");
             recipe.AddTile(TileID.HeavyWorkBench);
             recipe.Register();
 
-            Recipe recipe1 = CreateRecipe();
-            recipe1.AddIngredient(ItemID.Wood, 25);
-            recipe1.AddRecipeGroup("IronBar", 12);
-
-            recipe1.AddIngredient(ItemID.IllegalGunParts, 1);
-            recipe1.AddIngredient(ItemID.Chain, 2);
-            recipe1.AddIngredient(Mod, "IronGunBarrel");
-            recipe1.AddTile(TileID.HeavyWorkBench);
-            recipe1.Register();
+            
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {

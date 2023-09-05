@@ -68,7 +68,7 @@ namespace RealmOne.NPCs.Enemies.Forest
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDay.Chance * 0.099f;
+            return SpawnCondition.OverworldDay.Chance * 0.09f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -159,26 +159,8 @@ namespace RealmOne.NPCs.Enemies.Forest
                FadeIn();
             */
 
-            if (Main.netMode != NetmodeID.MultiplayerClient)
-            {
-                if (attackCounter > 0)
-                    attackCounter--; // tick down the attack counter.
-
-                Player target = Main.player[NPC.target];
-                // If the attack counter is 0, this NPC is less than 12.5 tiles away from its target, and has a path to the target unobstructed by blocks, summon a projectile.
-                if (attackCounter <= 0 && Vector2.Distance(NPC.Center, target.Center) < 200 && Collision.CanHit(NPC.Center, 1, 1, target.Center, 1, 1))
-                {
-                    Vector2 direction = (target.Center - NPC.Center).SafeNormalize(Vector2.UnitX);
-                    direction = direction.RotatedByRandom(MathHelper.ToRadians(10));
-
-                    int projectile = Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, direction * 1, ProjectileID.MudBall, 5, 0, Main.myPlayer);
-                    Main.projectile[projectile].timeLeft = 300;
-                    attackCounter = 450;
-                    NPC.netUpdate = true;
-                    Main.projectile[projectile].velocity *= 12f;
-
-                }
-            }
+          
+            
         }
         /*   private bool Despawn()
            {

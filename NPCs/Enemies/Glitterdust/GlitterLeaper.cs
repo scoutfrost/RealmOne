@@ -55,19 +55,7 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
 
             Main.EntitySpriteDraw(glowmask.Value, NPC.Center - screenPos + new Vector2(0, 0), NPC.frame, color, NPC.rotation, NPC.frame.Size() / 2f, 1f, SpriteEffects.None, 0);
         }
-        public override void OnKill()
-        {
-
-            int p = Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ModContent.ProjectileType<Stary>(), 15, 0, Main.myPlayer, 0, 0);
-            Main.projectile[p].scale = 1f;
-            Main.projectile[p].friendly = false;
-            Main.projectile[p].hostile = true;
-            Main.projectile[p].velocity *= 2f;
-            Main.projectile[p].position = NPC.Center;
-
-
-
-        }
+       
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (spawnInfo.Player.ZoneOverworldHeight)
@@ -84,19 +72,14 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
 
             NPC.TargetClosest(true);
 
-            NPC.velocity *= 1.01f;
+            NPC.velocity *= 1.012f;
             Player target = Main.player[NPC.target];
             NPC.spriteDirection = NPC.direction;
 
             if (++NPC.ai[0] % 180 == 0)
             {
-                int p = Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, NPC.velocity, ModContent.ProjectileType<Stary>(), 15, 0, 0, 0);
-                Main.projectile[p].scale = 1f;
-                Main.projectile[p].friendly = false;
-                Main.projectile[p].hostile = true;
-                Main.projectile[p].velocity *= 4f;
 
-                SoundEngine.PlaySound(SoundID.MaxMana);
+
 
                 for (int i = 0; i < 60; i++)
                 {
@@ -125,10 +108,7 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
             */
 
         }
-        public override void OnSpawn(IEntitySource source)
-        {
-
-        }
+       
         /* public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
          {
 

@@ -80,17 +80,7 @@ namespace RealmOne.Tiles
                     return false;
 
             Player player = Main.player[Main.myPlayer];
-            if (player.HasItem(ModContent.ItemType<IronGunBarrel>()))
-            {
-                int x = i;
-                int y = j;
-                while (Main.tile[x, y].TileType == Type)
-                    x--;
-                x++;
-                while (Main.tile[x, y].TileType == Type)
-                    y--;
-                y++;
-            }
+         
 
             return false;
         }

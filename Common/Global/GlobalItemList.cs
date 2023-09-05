@@ -862,9 +862,10 @@ namespace RealmOne.Global
             extractinator.Register();
 
             Recipe obj = Recipe.Create(ItemID.Blowpipe);
-            obj.AddIngredient(Mod, "WoodenGunBarrel", 1);
+            obj.AddIngredient(ItemID.Wood, 30);
+
             obj.AddIngredient(ItemID.Acorn, 5);
-            obj.AddTile(TileID.WorkBenches);
+            obj.AddTile(TileID.Anvils);
             obj.Register();
             Recipe obj2 = Recipe.Create(ItemID.BandofRegeneration, 1);
             obj2.AddIngredient(ItemID.LesserHealingPotion, 5);

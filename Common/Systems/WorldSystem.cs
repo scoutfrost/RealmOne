@@ -76,7 +76,7 @@ namespace RealmOne.Common.Systems
                     NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<Squirm>(), 1);
                 }
 
-                if (type == ModContent.TileType<FarmSoil>() && DownedBossSystem.downedSquirmo == false && Main.rand.NextBool(10))
+                if (type == ModContent.TileType<FarmSoil>() && DownedBossSystem.downedSquirmo == false && Main.rand.NextBool(12))
                 {
                     NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<Squirm>(), 1);
                 }
@@ -88,7 +88,7 @@ namespace RealmOne.Common.Systems
     }
 
 
-    public sealed class SourceDependentItemTweaks : GlobalItem
+  /* public sealed class SourceDependentItemTweaks : GlobalItem
     {
          public override void OnSpawn(Item item, IEntitySource source)
          {
@@ -103,9 +103,9 @@ namespace RealmOne.Common.Systems
              }
          }
 
-         
+         */
 
-    }
+    
 
     public class WorldSystem : ModSystem
     {
@@ -132,11 +132,11 @@ namespace RealmOne.Common.Systems
             {
                 tasks.Insert(shiniesIndex + 1, (GenPass)(object)new OldGoldOreNameGenPass("OldGoldOreNameGenPass", 320f));
             }
-            int shiniesIndex2 = tasks.FindIndex((GenPass genpass1) => genpass1.Name.Equals("Shinies"));
+          /*  int shiniesIndex2 = tasks.FindIndex((GenPass genpass1) => genpass1.Name.Equals("Shinies"));
             if (shiniesIndex2 != -1)
             {
                 tasks.Insert(shiniesIndex2 + 1, (GenPass)(object)new FlorenceMarbleOreNameGenPass("FlorenceMarbleOreNameGenPass", 320f));
-            }
+            }*/
         }
         public override void PostWorldGen()
         {
