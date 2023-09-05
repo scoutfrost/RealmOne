@@ -9,7 +9,6 @@ using RealmOne.Items.Placeables;
 using RealmOne.Items.Potions;
 using RealmOne.Items.Weapons.PreHM.BossDrops.OutcastDrops;
 using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
-using RealmOne.Items.Weapons.Summoner;
 using RealmOne.NPCs.Enemies.Forest;
 using RealmOne.NPCs.Enemies.MiniBoss;
 using System;

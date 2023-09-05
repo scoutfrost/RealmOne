@@ -67,7 +67,7 @@ namespace RealmOne.Items.Misc.EnemyDrops
                 for (int index2 = 0; index2 < num7; ++index2)
                 {
                     Color color3 = Item.GetAlpha(color2) * (0.65f - num8);
-                    Main.spriteBatch.Draw(texture, position + new Vector2(4, 3), new Microsoft.Xna.Framework.Rectangle?(r), color3, 0f, vector2_3, Item.scale * .38f + num8, spriteEffects, 0.0f);
+                    Main.spriteBatch.Draw(texture, position + new Vector2(3, 2), new Microsoft.Xna.Framework.Rectangle?(r), color3, 0f, vector2_3, Item.scale * .38f + num8, spriteEffects, 0.0f);
                 }
             }
 

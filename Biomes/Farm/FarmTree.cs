@@ -69,7 +69,7 @@ namespace RealmOne.Biomes.Farm
             if (effect == FarmTreeEnum.Acorn)
             {
                 Vector2 offset = this.GetRandomTreePosition(Main.tile[x, y]);
-                Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, ModContent.ItemType<Wattle>(), Main.rand.Next(1, 2));
+                Item.NewItem(WorldGen.GetItemSource_FromTreeShake(x, y), new Vector2(x, y) * 16 + offset, ModContent.ItemType<FarmAcorn>(), Main.rand.Next(1, 2));
             }
             else if (effect == FarmTreeEnum.Wood)
             {
@@ -98,7 +98,7 @@ namespace RealmOne.Biomes.Farm
                 getRepeats.Add(1, 1f);
                 getRepeats.Add(2, 0.3f);
                 getRepeats.Add(3, 0.2f);
-                getRepeats.Add(6, 0.05f);
+                getRepeats.Add(5, 0.05f);
 
                 bool fruit = Main.rand.NextBool();
                 int repeats = getRepeats;
@@ -114,7 +114,7 @@ namespace RealmOne.Biomes.Farm
                 }
             }
             return false;
-        }
+        }       
 
 
 

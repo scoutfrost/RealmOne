@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+/*using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
 using System.Collections.Generic;
 using Terraria;
@@ -94,7 +94,7 @@ namespace RealmOne.Items.Weapons.Summoner
               .Register();
 
           }
-        */
+        
 
         public override Vector2? HoldoutOffset()
         {
@@ -103,3 +103,4 @@ namespace RealmOne.Items.Weapons.Summoner
         }
     }
 }
+*/

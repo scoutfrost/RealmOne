@@ -15,7 +15,6 @@ namespace RealmOne.Items.Weapons.PreHM.Hell
             Tooltip.SetDefault("Get a fresh breeze of FYAARRR"
             + $"\nUses Gel [i:{ItemID.Gel}]");
 
-            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(7, 3));
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 

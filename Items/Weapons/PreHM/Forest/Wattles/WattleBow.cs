@@ -78,9 +78,11 @@ namespace RealmOne.Items.Weapons.PreHM.Forest.Wattles
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<Wattle>(), 14)
-                 .AddIngredient(ItemID.Wood, 10)
-                 .AddTile(TileID.WorkBenches)
+                .AddIngredient(ItemID.RichMahogany, 18)
+                 .AddIngredient(ItemID.JungleSpores, 10)
+                                  .AddIngredient(ItemID.Vine, 3)
+
+                 .AddTile(TileID.Anvils)
             .Register();
         }
         public override Vector2? HoldoutOffset()

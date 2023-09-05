@@ -29,10 +29,10 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
             Item.DamageType = DamageClass.Melee;
             Item.width = 24;
             Item.height = 24;
-            Item.useTime = 15;
-            Item.useAnimation = 15;
+            Item.useTime = 18;
+            Item.useAnimation = 18;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.knockBack = 4;
+            Item.knockBack = 2f;
             Item.value = 30000;
             Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
@@ -47,6 +47,10 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
         }
         private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
+        public override bool MeleePrefix()
+        {
+            return true;
+        }
         public override bool AllowPrefix(int pre)
         {
             // return false to make the game reroll the prefix

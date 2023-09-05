@@ -1,4 +1,4 @@
-using RealmOne.RealmPlayer;
+/*using RealmOne.RealmPlayer;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -38,4 +38,4 @@ namespace RealmOne.Items.Accessories
 
         }
     }
-}
+}*/

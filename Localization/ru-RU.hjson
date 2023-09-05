@@ -559,26 +559,21 @@ Mods: {
 			}
 
 			SandTwister: {
-				// DisplayName: Sand Twister
+				// DisplayName: The Resplendent
 				/* Tooltip:
 					'''
-					Summons mini sandstorms near the yoyo
-					'Don't get twisted!'
+					The string is made out of premium horsehair!
+					Summons sandstorms near the cursor
+
 					''' */
 			}
 
-			StormStrikerSpinner: {
-				// DisplayName: Storm Striker Spinner
-				// Tooltip: Spins a stormstriker baton
-			}
-
 			AcornBlunderbuss: {
-				// DisplayName: Acorn Blunderbuss
+				// DisplayName: Blunderbush
 				/* Tooltip:
 					'''
-					Not very sturdy for a starter gun, but it sure makes a crunch!
-					Shoots fast velocity acorn fragments that explode at falling speed
-					'The acorns explode into sharp acorn shrapnel'
+					A bushy and heavy blunderbuss!
+					Shoots outs explosive acorns that explode into acorn shrapnel
 					Uses Crushed Acorns as ammo [i:RealmOne/CrushedAcorns]
 					''' */
 			}
@@ -1630,19 +1625,9 @@ Mods: {
 				// Tooltip: ""
 			}
 
-			SpiderNet: {
-				// Tooltip: ""
-				// DisplayName: Spider Net
-			}
-
 			NewtonCradleItem: {
 				// Tooltip: ""
-				// DisplayName: Newton Cradle Item
-			}
-
-			MiniWattleBushItem: {
-				// Tooltip: ""
-				// DisplayName: Wattle Bush
+				// DisplayName: Newton's Cradle
 			}
 
 			Wattle: {
@@ -1665,8 +1650,8 @@ Mods: {
 			}
 
 			WattleBow: {
-				// Tooltip: Shoots a Wattle Arrow that has a chance to summon a thorn on kill
-				// DisplayName: Wattle Bow
+				// Tooltip: Shoots a Vine Arrow that splits into nettles on impact
+				// DisplayName: Rainforest Bow
 			}
 
 			AcornWand: {
@@ -1876,19 +1861,12 @@ Mods: {
 				// DisplayName: Lovecraft's Rift Suitcase
 				/* Tooltip:
 					'''
-					<<<<<<< HEAD
 					Your Journey Begins!!
-					Right Click  crack open H.P Lovecraft's Rift Essentials
+					Right Click to crack open H.P Lovecraft's Rift Essentials
 					Below are the Weapons you get from it!(You also get other necessities!)
 					[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
 					[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
-					=======
-						Your Journey Begins!!
-						Right Click  crack open H.P Lovecraft's Rift Essentials
-						Below are the Weapons you get from it!(You also get other necessities!)
-							[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
-							[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
-					>>>>>>> 9725829fd99088478cefff9b9ced7a9d4dcd43fd
+
 					''' */
 			}
 
@@ -1898,12 +1876,12 @@ Mods: {
 			}
 
 			TatteredBody: {
-				// DisplayName: Tattered Body
+				// DisplayName: Tattered Breastplates
 				// Tooltip: ""
 			}
 
 			TatteredLegs: {
-				// DisplayName: Tattered Legs
+				// DisplayName: Tattered Trousers
 				// Tooltip: ""
 			}
 
@@ -2001,12 +1979,16 @@ Mods: {
 
 			Bloomarang: {
 				// DisplayName: Bloomarang
-				// Tooltip: ""
+				// Tooltip: Throws out 6 bloomerangs that shoot out in a circle
 			}
 
 			SunflowerStaff: {
-				// DisplayName: Sunflower Staff
-				// Tooltip: ""
+				// DisplayName: Sunflower Scepter
+				/* Tooltip:
+					'''
+					Conjures a glowing and growing sunflower on the cursor's position
+					Explodes into fast moving sunflower petals and catch in the wind.
+					''' */
 			}
 
 			BloodHook: {
@@ -2021,12 +2003,32 @@ Mods: {
 
 			BloodBlower: {
 				// DisplayName: Blood Blower
-				// Tooltip: ""
+				// Tooltip: Shoots 2 Flesh Darts and a Bloodshot that penetrate enemies
 			}
 
 			TatteredJavlin: {
 				// DisplayName: Tattered Javlin
 				// Tooltip: ""
+			}
+
+			BarrensludgeJelly: {
+				// DisplayName: Barrensludge Jelly
+				// Tooltip: Sludgy!
+			}
+
+			BarrensludgeLime: {
+				// DisplayName: Barrensludge Lime
+				// Tooltip: Sour!
+			}
+
+			EyeballSoup: {
+				// DisplayName: Eyeball Soup
+				// Tooltip: Stares at you while you slurp it down!
+			}
+
+			JellyfishPlatter: {
+				// DisplayName: Jellyfish Platter
+				// Tooltip: Slimy, electric but also very nutritious
 			}
 		}
 
@@ -2038,7 +2040,7 @@ Mods: {
 
 			TreeSapBuff: {
 				// Description: The power of rust!!
-				// DisplayName: Brass Might
+				// DisplayName: Tree Sap
 			}
 
 			TraditionalCologneBuff: {
@@ -2122,23 +2124,23 @@ Mods: {
 			}
 
 			BrassMight: {
-				// Description: Mods.RealmOne.Buffs.BrassMight.Description
+				// Description: You feel like a Brass Knight!
 				// DisplayName: Brass Might
 			}
 
 			WineBuff: {
-				// Description: Mods.RealmOne.Buffs.WineBuff.Description
+				// Description: Bitter and spicy.
 				// DisplayName: Wine Buff
 			}
 
 			BeerBuff: {
-				// Description: Mods.RealmOne.Buffs.BeerBuff.Description
+				// Description: Sour and tangy.
 				// DisplayName: Beer Buff
 			}
 
 			PiggyDebuff: {
 				// DisplayName: Piggy Debuff
-				// Description: Mods.RealmOne.Buffs.PiggyDebuff.Description
+				// Description: Piggy Power!
 			}
 		}
 

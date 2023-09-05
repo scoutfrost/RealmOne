@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+/*using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Common.Systems;
 using RealmOne.Projectiles.Sword;
@@ -70,13 +70,13 @@ namespace RealmOne.Items.Weapons.Melee
             );
         }
 
-        /*   public override void MeleeEffects(Player player, Rectangle hitbox)
+          public override void MeleeEffects(Player player, Rectangle hitbox)
            {
                int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.Electric, 1f, 1f, 0, default, 1f);
                Main.dust[dust].noGravity = true;
                Main.dust[dust].velocity *= 1.5f;
 
-           }*/
+           }
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
@@ -125,4 +125,4 @@ namespace RealmOne.Items.Weapons.Melee
             return offset;
         }
     }
-}
+}*/
