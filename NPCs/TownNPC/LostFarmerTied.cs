@@ -45,7 +45,8 @@ namespace RealmOne.NPCs.TownNPC
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            NPC.rarity = 1; // To make our NPC will show up on the Lifeform Analyzer.
+            NPC.rarity = 1; // To make our NPC will show up on the Lifeform Analyzer.\
+            NPC.dontTakeDamageFromHostiles = true;  
             
         }
 

@@ -82,9 +82,9 @@ namespace RealmOne.NPCs.Enemies.Forest
         public override void HitEffect(NPC.HitInfo hit)
         {
 
-            for (int k = 0; k < 30; k++)
+            for (int k = 0; k < 20; k++)
             {
-                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.BubbleBurst_Green, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.7f);
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.BubbleBurst_Green, 2.7f * hit.HitDirection, -2.5f, 0, Color.White, 0.7f);
             }
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

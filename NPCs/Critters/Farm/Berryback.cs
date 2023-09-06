@@ -106,7 +106,17 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void HitEffect(NPC.HitInfo hit)
         {
 
-            for (int k = 0; k < 30; k++)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
+            {
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore1").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore2").Type, 1f);
+
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore3").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore4").Type, 1f);
+
+
+            }
+            for (int k = 0; k < 14; k++)
             {
                 Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Grass, 2.5f * hit.HitDirection, -2.5f, Alpha: 25);
             }

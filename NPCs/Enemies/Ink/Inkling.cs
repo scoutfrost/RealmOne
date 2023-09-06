@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*using Microsoft.Xna.Framework;
 using RealmOne.Items.Misc;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -89,3 +89,4 @@ namespace RealmOne.NPCs.Enemies.Ink
     }
 }
 
+*/

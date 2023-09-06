@@ -703,8 +703,8 @@ Mods: {
 				// DisplayName: Impact Interceptor
 				/* Tooltip:
 					'''
-					Calls down randomly positioned pulse lasers that spark into electricity when homed onto an enemy
-					The lasers depend on the mouse position when firing
+					Releases an electric pulse sonar that damages enemies in a large area
+					Goes through walls		
 					'No WI-FI password required!'
 					''' */
 			}
@@ -2280,6 +2280,7 @@ Mods: {
 			// CrimclubSwing.DisplayName: Crimclub Swing
 			// BloodBlowerProj.DisplayName: Blood Blower Proj
 			// TatteredJavlinProj.DisplayName: Tattered Javlin Proj
+			// ImpactSonarShot.DisplayName: Impact Sonar Shot
 		}
 
 		NPCs: {

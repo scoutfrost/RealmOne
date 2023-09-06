@@ -96,7 +96,7 @@ namespace RealmOne.NPCs.Enemies.Impact
 
                 }
 
-            for (int k = 0; k < 30; k++)
+            for (int k = 0; k < 18; k++)
             {
                 Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Electric, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
@@ -116,7 +116,7 @@ namespace RealmOne.NPCs.Enemies.Impact
             int buffType = BuffID.Electrified;
             // Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
-            int timeToAdd = 2 * 60; //This makes it 5 seconds, one second is 60 ticks
+            int timeToAdd = 1 * 60; //This makes it 5 seconds, one second is 60 ticks
             target.AddBuff(buffType, timeToAdd);
         }
     }

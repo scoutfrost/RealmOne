@@ -88,7 +88,7 @@ namespace RealmOne.Armor
 
 
         public const int Cooldown = 1400;
-        public const int Duration = 45;
+        public const int Duration = 30;
 
 
         public const float Thing = 10f;

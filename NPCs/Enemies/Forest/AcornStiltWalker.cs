@@ -76,9 +76,9 @@ namespace RealmOne.NPCs.Enemies.Forest
 
             }
 
-            for (int k = 0; k < 30; k++)
+            for (int k = 0; k < 15; k++)
             {
-                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.WoodFurniture, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.WoodFurniture, 3.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.7f);
             }
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)

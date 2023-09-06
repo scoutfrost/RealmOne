@@ -33,6 +33,12 @@ namespace RealmOne.Tiles.Blocks
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
 
+           
+
+        }
+
+        public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        {
             SoundEngine.PlaySound(rorAudio.BrokenBarrel);
 
 
@@ -55,9 +61,6 @@ namespace RealmOne.Tiles.Blocks
                 Gore.NewGore(entitySource, new Vector2(i * 16, j * 16), new Vector2(Main.rand.Next(0, 0), Main.rand.Next(0, 0)), BGore3);
 
             }
-
         }
     }
-
-
 }
