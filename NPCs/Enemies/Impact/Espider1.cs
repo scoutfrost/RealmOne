@@ -37,7 +37,7 @@ namespace RealmOne.NPCs.Enemies.Impact
             NPC.height = 22;
             NPC.damage = 21;
             NPC.defense = 2;
-            NPC.lifeMax = 110;
+            NPC.lifeMax = 90;
             NPC.value = Item.buyPrice(0, 0, 6, 15);
             NPC.aiStyle = 3;
             NPC.HitSound = SoundID.NPCHit29;
@@ -95,15 +95,10 @@ namespace RealmOne.NPCs.Enemies.Impact
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EspiderGore4").Type, 1f);
 
                 }
-            
-            for (int i = 0; i < 10; i++)
+
+            for (int k = 0; k < 30; k++)
             {
-
-                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-
-                var d = Dust.NewDustPerfect(NPC.position, DustID.Electric, speed * 5, Scale: 1f);
-                ;
-                d.noGravity = true;
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Electric, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)

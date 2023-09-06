@@ -19,7 +19,7 @@ namespace RealmOne.Projectiles.HeldProj
         {
             DisplayName.SetDefault("Sand Yoyo");
             ProjectileID.Sets.TrailingMode[Type] = 2;
-            ProjectileID.Sets.TrailCacheLength[Type] = 70;
+            ProjectileID.Sets.TrailCacheLength[Type] = 60;
 
             ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = 4f;
             
@@ -65,7 +65,7 @@ namespace RealmOne.Projectiles.HeldProj
             {
                 var offset = new Vector2(Projectile.width / 2f, Projectile.height / 2f);
                 var frame = texture.Frame(1, Main.projFrames[Projectile.type], 0, Projectile.frame);
-                float sizec = Projectile.scale * (Projectile.oldPos.Length - k) / (Projectile.oldPos.Length * 1.3f);
+                float sizec = Projectile.scale * (Projectile.oldPos.Length - k) / (Projectile.oldPos.Length * 1.5f);
                 Color ProjColor = new Color(236, 217, 100) * (1f - Projectile.alpha) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
                 Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + offset;
 

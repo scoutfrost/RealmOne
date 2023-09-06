@@ -76,9 +76,9 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         {
             NPC.width = 66;
             NPC.height = 40;
-            NPC.damage = 26;
-            NPC.defense = 8;
-            NPC.lifeMax = 450;
+            NPC.damage = 20;
+            NPC.defense = 7;
+            NPC.lifeMax = 400;
             NPC.knockBackResist = 0.6f;
             NPC.value = Item.buyPrice(0, 2, 50, 50);
             NPC.aiStyle = -1;
@@ -737,14 +737,9 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
                 
             }
-            for (int i = 0; i < 26; i++)
+            for (int k = 0; k < 37; k++)
             {
-
-                Vector2 speed = Main.rand.NextVector2Square(1f, 1f);
-
-                var d = Dust.NewDustPerfect(NPC.position, DustID.DungeonPink, speed * 5, Scale: 1.5f);
-
-                d.noGravity = true;
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.DungeonPink, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 1f);
             }
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)

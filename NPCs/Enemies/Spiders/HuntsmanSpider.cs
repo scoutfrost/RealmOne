@@ -31,7 +31,7 @@ namespace RealmOne.NPCs.Enemies.Spiders
 
             NPC.width = 20;
             NPC.height = 15;
-            NPC.damage = 10;
+            NPC.damage = 8;
             NPC.defense = 0;
             NPC.lifeMax = 26;
             NPC.value = Item.buyPrice(0, 0, 1, 25);
@@ -46,7 +46,7 @@ namespace RealmOne.NPCs.Enemies.Spiders
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDay.Chance * 0.18f;
+            return SpawnCondition.OverworldDay.Chance * 0.14f;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

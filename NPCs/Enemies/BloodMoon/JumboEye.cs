@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Placeables.BannerItems;
 using RealmOne.NPCs.Enemies.Corruption;
 using System;
@@ -83,6 +84,10 @@ namespace RealmOne.NPCs.Enemies.BloodMoon
                 Gore.NewGore(NPC.GetSource_Death(), NPC.Bottom, NPC.velocity, Mod.Find<ModGore>("JumboEyeGore4").Type, 1f);
 
 
+            }
+            for (int k = 0; k < 30; k++)
+            {
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Blood, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
         }
         public override void AI()

@@ -52,7 +52,7 @@ namespace RealmOne.NPCs.Enemies.Impact
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.158f;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.15f;
         }
 
         public override void AI()
@@ -94,16 +94,11 @@ namespace RealmOne.NPCs.Enemies.Impact
                     Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("EeyeGore2").Type, 1f);
 
                 }
-            
 
-            for (int i = 0; i < 10; i++)
+
+            for (int k = 0; k < 30; k++)
             {
-
-                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-
-                var d = Dust.NewDustPerfect(NPC.position, DustID.Electric, speed * 5, Scale: 2f);
-                ;
-                d.noGravity = true;
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Electric, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)

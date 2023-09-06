@@ -75,14 +75,9 @@ namespace RealmOne.NPCs.Enemies.Ink
 
             }
 
-            for (int i = 0; i < 20; i++)
+            for (int k = 0; k < 20; k++)
             {
-
-                Vector2 speed = Main.rand.NextVector2Square(1f, 1f);
-
-                var d = Dust.NewDustPerfect(NPC.position, DustID.Obsidian, speed * 5, Scale: 1.5f);
-                ;
-                d.noGravity = false;
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Obsidian, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)

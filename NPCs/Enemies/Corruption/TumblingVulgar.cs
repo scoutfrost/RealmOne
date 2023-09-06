@@ -1,4 +1,5 @@
-﻿using RealmOne.Items.Food;
+﻿using Microsoft.Xna.Framework;
+using RealmOne.Items.Food;
 using RealmOne.Items.Misc.EnemyDrops;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
@@ -70,9 +71,9 @@ namespace RealmOne.NPCs.Enemies.Corruption
 
             }
 
-            for (int k = 0; k < 20; k++)
+            for (int k = 0; k < 30; k++)
             {
-                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptionThorns);
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptionThorns, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
 
 
