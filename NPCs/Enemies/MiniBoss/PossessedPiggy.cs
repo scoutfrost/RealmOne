@@ -96,15 +96,15 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
             if (Main.masterMode == true)
             {
-                dmg = 70;
+                dmg = 40;
             }
             else if (Main.expertMode == true)
             {
-                dmg = 43;
+                dmg = 30;
             }
             else
             {
-                dmg = 23;
+                dmg = 20;
             }
         }
 
