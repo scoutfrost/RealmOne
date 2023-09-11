@@ -12,6 +12,10 @@ using Terraria.DataStructures;
 using ReLogic.Content;
 using Terraria.GameContent;
 using RealmOne.Common.Core;
+using Terraria.Audio;
+using RealmOne.Common.Systems;
+using RealmOne.Projectiles.Bullet;
+using RealmOne.Projectiles.Other;
 
 namespace RealmOne.Projectiles.Magic
 { 
@@ -50,6 +54,14 @@ namespace RealmOne.Projectiles.Magic
         public override void OnSpawn(IEntitySource source)
         {
             NumOfImages = 1;
+        }
+        public override void Kill(int timeLeft)
+        {
+            SoundEngine.PlaySound(rorAudio.BulbShatter, Projectile.position);
+            Projectile.NewProjectile(Projectile.GetSource_Death(), Projectile.Center.X, Projectile.Center.Y, 0, 0, ModContent.ProjectileType<Starbang>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore1").Type, 1f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore2").Type, 1f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore3").Type, 1f);
         }
         public override void AI()
         {

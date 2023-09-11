@@ -38,6 +38,7 @@
 	  <Folder Include="Items\Tools\Other\" />
 	  <Folder Include="Items\Weapons\Fighter\" />
 	  <Folder Include="Items\Weapons\PreHM\Crimson\" />
+	  <Folder Include="Items\Weapons\PreHM\Forest\Wattles\" />
 	  <Folder Include="lib\" />
 	</ItemGroup>
 	<ItemGroup>

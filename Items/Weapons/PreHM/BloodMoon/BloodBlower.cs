@@ -54,7 +54,7 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
                 Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y)) * 13f;
                 if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
                     position += muzzleOffset;
-            int p=     Projectile.NewProjectile(player.GetSource_ItemUse(Item), position + muzzleOffset, velocity, ProjectileID.BloodShot, 0, 0, player.whoAmI);
+            int p=     Projectile.NewProjectile(player.GetSource_ItemUse(Item), position + muzzleOffset, velocity, ProjectileID.BloodShot, 18, 0, player.whoAmI);
                 Main.projectile[p].scale = 1f;
                 Main.projectile[p].friendly = true;
                 Main.projectile[p].hostile = false;

@@ -31,19 +31,19 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.autoReuse = true;
             Item.useTurn = true;
             Item.mana = 11;
-            Item.damage = 10;
+            Item.damage = 6;
             Item.DamageType = DamageClass.Magic;
             Item.noMelee = true;
             Item.rare = ItemRarityID.Blue;
             Item.shootSpeed = 3f;
-            Item.useAnimation = 71;
-            Item.useTime = 71;
+            Item.useAnimation = 20;
+            Item.useTime = 20;
             Item.UseSound = SoundID.Item132;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = Item.buyPrice(silver: 60);
             Item.timeLeftInWhichTheItemCannotBeTakenByEnemies = 200;
             Item.channel = true;
-            Item.scale = 0.8f;
+            Item.scale = 1f;
 
             Item.shoot = ProjectileType<LightBulbRing1>();
         }

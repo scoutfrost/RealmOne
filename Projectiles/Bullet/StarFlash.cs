@@ -16,7 +16,7 @@ namespace RealmOne.Projectiles.Bullet
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Jelly Spark");
+            DisplayName.SetDefault("Pristine Starbang");
         }
 
         public override string Texture => Helper.Empty;

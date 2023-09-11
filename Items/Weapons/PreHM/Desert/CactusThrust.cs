@@ -22,13 +22,13 @@ namespace RealmOne.Items.Weapons.PreHM.Desert
             Item.value = Item.sellPrice(silver: 95);
 
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useAnimation = 29;
-            Item.useTime = 29;
+            Item.useAnimation = 36;
+            Item.useTime = 36;
             Item.UseSound = SoundID.DD2_GoblinBomberThrow;
             Item.autoReuse = true;
 
-            Item.damage = 18;
-            Item.knockBack = 2f;
+            Item.damage = 14;
+            Item.knockBack = 1f;
             Item.noUseGraphic = true;
             Item.DamageType = DamageClass.Melee;
             Item.noMelee = true;

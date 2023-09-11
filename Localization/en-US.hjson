@@ -397,7 +397,7 @@ Mods: {
 
 			MagicGobBag: {
 				Tooltip: Conjures a rift that sucks in nearby enemies.
-				DisplayName: Magic Gob Bag
+				DisplayName: Sorcerer's Rift Pouch
 			}
 
 			WaterQuarry: {
@@ -680,7 +680,7 @@ Mods: {
 			}
 
 			GushingFrostMinnow: {
-				DisplayName: Gushing Frost Minnow
+				DisplayName: Scoutfrost Minnow
 				Tooltip: "'A rare fish of the snow that has been frozen over time, filled with icy water'"
 			}
 
@@ -1649,8 +1649,13 @@ Mods: {
 				DisplayName: Super Snowball Cannon
 			}
 
-			WattleBow: {
-				Tooltip: Shoots a Vine Arrow that splits into nettles on impact
+			RainforestBow: {
+				Tooltip:
+					'''
+					Shoots out jungle arrows
+					Has a chance to shoot out a dangerous jungle arrow that creates nettles on impact
+					With a chance of a jungle spore to shoot out, exploding on contact.
+					'''
 				DisplayName: Rainforest Bow
 			}
 
@@ -2281,6 +2286,7 @@ Mods: {
 			BloodBlowerProj.DisplayName: Blood Blower Proj
 			TatteredJavlinProj.DisplayName: Tattered Javlin Proj
 			ImpactSonarShot.DisplayName: Impact Sonar Shot
+			Starbang.DisplayName: Starbang
 		}
 
 		NPCs: {

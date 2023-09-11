@@ -85,7 +85,7 @@ namespace RealmOne.Projectiles.Other
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, speed, ModContent.ProjectileType<PorcelainFriendly>(), Projectile.damage / 5, 8f, Main.myPlayer);
                     angle += 15;
                 }
-                const int ExplosionSize = 250;
+                const int ExplosionSize = 270;
 
                 Projectile.position -= new Vector2(ExplosionSize / 2f) - Projectile.Size / 2f;
                 Projectile.width = Projectile.height = ExplosionSize;

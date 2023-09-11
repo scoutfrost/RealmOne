@@ -20,21 +20,20 @@ namespace RealmOne.Items.Weapons.PreHM.Brass
         {
             Item.width = 24;
             Item.height = 24;
-            Item.damage = 11;
-            Item.crit = 1;
+            Item.damage = 3;
             Item.noMelee = true;
             Item.DamageType = DamageClass.Ranged;
             Item.useAmmo = AmmoID.Arrow;
-            Item.useTime = 28;
-            Item.useAnimation = 28;
-            Item.value = Item.buyPrice(copper: 80, silver: 20);
+            Item.useTime = 6;
+            Item.useAnimation = 6;
+            Item.value = Item.buyPrice(copper: 80, silver: 5);
             Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item5;
             Item.autoReuse = true;
             Item.shoot = ProjectileID.WoodenArrowFriendly;
             Item.shootSpeed = 22f;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.scale = 1.2f;
+            Item.scale = 1f;
 
         }
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
