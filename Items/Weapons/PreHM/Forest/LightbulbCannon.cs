@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using RealmOne.Items.Misc;
 using RealmOne.Projectiles.Bullet;
 using Terraria;
 using Terraria.DataStructures;
@@ -24,14 +25,14 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.DamageType = DamageClass.Ranged;
             Item.width = 40;
             Item.height = 40;
-            Item.useTime = 35;
-            Item.useAnimation = 35;
+            Item.useTime = 50;
+            Item.useAnimation = 50;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 5f;
             Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item61;
             Item.autoReuse = true;
-            Item.shootSpeed = 31f;
+            Item.shootSpeed = 25f;
             Item.shoot = ModContent.ProjectileType<LightbulbBullet>();
             // Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_Scroll");
 
@@ -58,16 +59,16 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(Mod, "BrassIngot", 10);
+            recipe.AddIngredient(Mod, "BrassIngot", 4);
             recipe.AddIngredient(ItemID.Glass, 15);
 
-            recipe.AddIngredient(Mod, "LightbulbLiquid", 12);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Lightbulb>(), 8);
+            recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }
         public override Vector2? HoldoutOffset()
         {
-            var offset = new Vector2(6, 0);
+            var offset = new Vector2(3, 0);
             return offset;
         }
     }

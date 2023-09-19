@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Common.Systems;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
@@ -44,6 +45,7 @@ namespace RealmOne.Projectiles.Bullet
             Dust.NewDust(Projectile.Left + Projectile.velocity, Projectile.width, Projectile.height, DustID.YellowTorch, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Scale: 0.8f);
 
             Player player = Main.player[Projectile.owner];
+            Projectile.rotation = Projectile.velocity.ToRotation();
 
             Lighting.AddLight(Projectile.Center, r: 2f, g: 2.2f, 1f);
             //  Projectile.rotation = Projectile.ai[0];
@@ -66,7 +68,7 @@ namespace RealmOne.Projectiles.Bullet
         public override void Load()
         { // This is called once on mod (re)load when this piece of content is being loaded.
           // This is the path to the texture that we'll use for the hook's chain. Make sure to update it.
-            Spark = Request<Texture2D>("RealmOne/Assets/Effects/lighty");
+            Spark = Request<Texture2D>("RealmOne/Assets/Effects/GlowLight");
         }
 
         public override void Unload()
@@ -85,7 +87,7 @@ namespace RealmOne.Projectiles.Bullet
         }
         public override void Kill(int timeLeft)
         {
-            SoundEngine.PlaySound(SoundID.Shatter, Projectile.position);
+            SoundEngine.PlaySound(rorAudio.BulbShatter, Projectile.position);
 
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore1").Type, 1.5f);
             Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("LightbulbBulletGore2").Type, 1.5f);

@@ -1585,6 +1585,11 @@ Mods: {
 				Tooltip: "'Shoots a massive lightbulb that release a large aura of light'"
 			}
 
+			Lightbulb: {
+				DisplayName: Lightbulb
+				Tooltip: ""
+			}
+
 			MagmaBody: {
 				DisplayName: Magma Body
 				Tooltip: Hot cape fr
@@ -2035,6 +2040,11 @@ Mods: {
 				DisplayName: Jellyfish Platter
 				Tooltip: Slimy, electric but also very nutritious
 			}
+
+			ToothedTendril: {
+				DisplayName: Toothed Tendril
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2287,6 +2297,7 @@ Mods: {
 			TatteredJavlinProj.DisplayName: Tattered Javlin Proj
 			ImpactSonarShot.DisplayName: Impact Sonar Shot
 			Starbang.DisplayName: Starbang
+			ToothedTendrilProj.DisplayName: Toothed Tendril Proj
 		}
 
 		NPCs: {

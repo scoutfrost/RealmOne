@@ -19,7 +19,7 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-                     Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(9, 5));
+                     Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(9, 9));
 
         }
         public override void SetDefaults()
@@ -50,13 +50,13 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
         {
             Projectile.DefaultToWhip();
 
-            Projectile.WhipSettings.Segments = 7;
+            Projectile.WhipSettings.Segments = 8;
             Projectile.WhipSettings.RangeMultiplier = 1f;
         }
 
         public override void AI()
         {
-            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.WoodFurniture, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Alpha: 180, Scale: 0.8f);
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.t_Flesh, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f, Alpha: 180, Scale: 0.8f);
 
         }
         private void DrawLine(List<Vector2> list)
@@ -85,9 +85,9 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
         {
             Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
             SoundEngine.PlaySound(rorAudio.BrokenBarrel, Projectile.position);
-            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Left, Vector2.Zero, Mod.Find<ModGore>("ToothGore1").Type, 1.5f);
-            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("ToothGore2").Type, 1.5f);
-            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Right, Vector2.Zero, Mod.Find<ModGore>("ToothGore3").Type, 1.5f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Left, Vector2.Zero, Mod.Find<ModGore>("ToothGore1").Type, 1f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("ToothGore2").Type, 1f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Right, Vector2.Zero, Mod.Find<ModGore>("ToothGore3").Type, 1f);
 
 
         }

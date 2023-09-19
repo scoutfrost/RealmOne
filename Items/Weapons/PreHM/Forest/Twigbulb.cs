@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using RealmOne.Items.Misc;
 using RealmOne.Projectiles.Magic;
 using RealmOne.RealmPlayer;
 using ReLogic.Content;
@@ -30,7 +31,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
 
             Item.autoReuse = true;
             Item.useTurn = true;
-            Item.mana = 11;
+            Item.mana = 10;
             Item.damage = 6;
             Item.DamageType = DamageClass.Magic;
             Item.noMelee = true;
@@ -41,7 +42,6 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Item.UseSound = SoundID.Item132;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = Item.buyPrice(silver: 60);
-            Item.timeLeftInWhichTheItemCannotBeTakenByEnemies = 200;
             Item.channel = true;
             Item.scale = 1f;
 
@@ -90,8 +90,8 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
         public override void AddRecipes()
         {
             CreateRecipe(1)
-            .AddIngredient(ItemID.Glass, 10)
-            .AddIngredient(Mod, "LightbulbLiquid", 10)
+            .AddIngredient(ItemID.Glass, 15)
+            .AddIngredient(ModContent.ItemType<Lightbulb>(), 6)
 
             .AddRecipeGroup("Wood", 16)
             .AddTile(TileID.WorkBenches)

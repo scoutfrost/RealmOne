@@ -20,7 +20,7 @@ namespace RealmOne.NPCs.Critters.Farm
         {
             DisplayName.SetDefault("Berryback");
 
-            Main.npcFrameCount[NPC.type] = 9;
+                    Main.npcFrameCount[NPC.type] = 9;
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             { // Influences how the NPC looks in the Bestiary

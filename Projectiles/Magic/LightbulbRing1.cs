@@ -44,6 +44,7 @@ namespace RealmOne.Projectiles.Magic
             Projectile.hostile = false;
             Projectile.DamageType = DamageClass.Magic;
             Projectile.tileCollide = false;
+ 
             Projectile.penetrate = -1;
             Projectile.damage = 1;
         }
@@ -110,7 +111,7 @@ namespace RealmOne.Projectiles.Magic
                 }
             }
 
-            Lighting.AddLight(Projectile.Center, Color.LightGoldenrodYellow.ToVector3() * 0.9f * NumOfImages / maxNumImages);
+            Lighting.AddLight(Projectile.Center, Color.LightGoldenrodYellow.ToVector3() * 1f * NumOfImages / maxNumImages);
         }
         public override bool PreDraw(ref Color lightColor)
         {

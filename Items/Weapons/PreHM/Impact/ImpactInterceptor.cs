@@ -37,19 +37,19 @@ namespace RealmOne.Items.Weapons.PreHM.Impact
             Item.autoReuse = true;
             Item.useTurn = true;
             Item.mana = 8;
-            Item.damage = 25;
+            Item.damage = 16;
             Item.DamageType = DamageClass.Magic;
             Item.knockBack = 2f;
             Item.noMelee = true;
             Item.rare = ItemRarityID.Blue;
             Item.shootSpeed = 4f;
-            Item.useAnimation = 50;
-            Item.useTime = 50;
+            Item.useAnimation = 60;
+            Item.useTime = 60;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.value = Item.buyPrice(silver: 90);
             Item.shoot = ProjectileType<ImpactSonarShot>();
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_Sonar");
-            Item.scale = 0.7f;
+            Item.scale = 1f;
 
         }
 
