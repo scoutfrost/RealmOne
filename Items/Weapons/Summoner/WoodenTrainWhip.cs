@@ -1,4 +1,4 @@
-﻿using RealmOne.Projectiles.Whip;
+﻿/*using RealmOne.Projectiles.Whip;
 using RealmOne.Rarities;
 using Terraria;
 using Terraria.GameContent.Creative;
@@ -29,4 +29,4 @@ namespace RealmOne.Items.Weapons.Summoner
             return true;
         }
     }
-}
+}*/

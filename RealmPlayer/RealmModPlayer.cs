@@ -326,35 +326,9 @@ namespace RealmOne.RealmPlayer
                 }
             }
 
-            if (brassSet && Player.controlUp && Player.releaseUp & marbleJump <= 0)
-            {
-                Player.AddBuff(ModContent.BuffType<BrassMight>(), 400);
-                SoundEngine.PlaySound(SoundID.MaxMana, Player.position);
-                for (int i = 0; i < 8; i++)
-                {
-                    int num = Dust.NewDust(Player.position, Player.width, Player.height, DustID.BlueTorch, 0f, -2f, 0, default, 2f);
-                    Main.dust[num].noGravity = true;
-                    Main.dust[num].position.X += Main.rand.Next(-50, 51) * .05f - 1.5f;
-                    Main.dust[num].position.Y += Main.rand.Next(-50, 51) * .05f - 1.5f;
-                    Main.dust[num].scale *= .25f;
-                    if (Main.dust[num].position != Player.Center)
-                        Main.dust[num].velocity = Player.DirectionTo(Main.dust[num].position) * 6f;
-                }
-                marbleJump = 600;
 
-            }
 
-            if (Player.controlJump)
-            {
-                if (marbleJustJumped)
-                {
-                    marbleJustJumped = false;
-                    if (Player.HasBuff(ModContent.BuffType<BrassMight>()))
-                    {
-
-                    }
-                }
-            }
+         
         }
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
         {

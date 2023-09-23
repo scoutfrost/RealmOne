@@ -45,13 +45,13 @@ namespace RealmOne.Items.BossBags
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
 
-            itemLoot.Add(ItemDropRule.Common(ItemID.MudBlock, 1, 10, 20));
             itemLoot.Add(ItemDropRule.Common(ItemID.Worm, 1, 3, 6));
-
+            
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<GlobGun>(), 3, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SquirmStaff>(), 3, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SquirYo>(), 3, 1, 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SquirmoLorePageOne>(), 6, 1, 1));
+
 
 
         }

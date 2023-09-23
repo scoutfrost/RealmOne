@@ -27,7 +27,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
         public override void SetDefaults()
         {
-            Item.damage = 60;
+            Item.damage = 50;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 24;
             Item.height = 32;
@@ -93,19 +93,10 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
             .AddRecipeGroup("IronBar", 12)
             .AddRecipeGroup("Wood", 8)
              .AddIngredient(Mod, "BrassIngot", 6)
-             .AddIngredient(Mod, "LeadGunBarrel")
             .AddTile(TileID.Anvils)
             .Register();
 
-            CreateRecipe()
-            .AddIngredient(ItemID.TissueSample, 15)
-            .AddIngredient(ItemID.IllegalGunParts, 1)
-            .AddRecipeGroup("IronBar", 12)
-            .AddRecipeGroup("Wood", 8)
-            .AddIngredient(Mod, "BrassIngot", 6)
-            .AddIngredient(Mod, "IronGunBarrel")
-            .AddTile(TileID.Anvils)
-            .Register();
+         
 
         }
         public override Vector2? HoldoutOffset()

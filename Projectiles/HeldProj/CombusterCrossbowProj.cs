@@ -29,6 +29,8 @@ namespace RealmOne.Projectiles.HeldProj
             Projectile.knockBack = 3;
             Projectile.ownerHitCheck = true;//so it cant attack through walls
             Projectile.scale = 1f;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
         public override bool? CanDamage()
         {
@@ -43,6 +45,8 @@ namespace RealmOne.Projectiles.HeldProj
             {
                 Projectile.ai[0] = -1f;
                 timerUp = true;
+                Projectile.netUpdate = true;
+                Projectile.netImportant = true;
                 Projectile.netUpdate = true;
             }
 
@@ -80,6 +84,8 @@ namespace RealmOne.Projectiles.HeldProj
         }
         private void UpdatePlayerVisuals(Player player, Vector2 playerhandpos)
         {
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
             Projectile.Center = playerhandpos;
             Projectile.spriteDirection = Projectile.direction;
 

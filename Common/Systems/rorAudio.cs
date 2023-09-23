@@ -127,6 +127,8 @@ public class rorAudio : ModSystem
 
     public static readonly SoundStyle MagpieCalling;
 
+    public static readonly SoundStyle BulbShatter;
+
 
 
     static rorAudio()
@@ -192,6 +194,7 @@ public class rorAudio : ModSystem
         BIJOU = new SoundStyle("RealmOne/Assets/Soundss/BIJOU", (SoundType)0);
         TheIdol = new SoundStyle("RealmOne/Assets/Soundss/TheIdol", (SoundType)0);
         MagpieCalling = new SoundStyle("RealmOne/Assets/Soundss/MagpieCalling", (SoundType)0);
+        BulbShatter = new SoundStyle("RealmOne/Assets/Soundss/BulbShatter", (SoundType)0);
 
 
     }

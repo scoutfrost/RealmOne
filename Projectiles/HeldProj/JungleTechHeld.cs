@@ -27,6 +27,8 @@ namespace RealmOne.Projectiles.HeldProj
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.knockBack = 4;
             Projectile.ownerHitCheck = true;//so it cant attack through walls
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
 
         public override bool? CanDamage()
@@ -36,6 +38,8 @@ namespace RealmOne.Projectiles.HeldProj
 
         public override void AI()
         {
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
             if (++Projectile.frameCounter >= 15f)
             {
                 Projectile.frameCounter = 0;
@@ -51,6 +55,8 @@ namespace RealmOne.Projectiles.HeldProj
                 SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
                 Projectile.ai[0] = -1f;
                 timerUp = true;
+                Projectile.netUpdate = true;
+                Projectile.netImportant = true;
                 Projectile.netUpdate = true;
                 //dust
                 for (int i = 0; i < 50; i++)
@@ -103,6 +109,8 @@ namespace RealmOne.Projectiles.HeldProj
         }
         private void UpdatePlayerVisuals(Player player, Vector2 playerhandpos)
         {
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
             Projectile.Center = playerhandpos;
             Projectile.spriteDirection = Projectile.direction;
 
@@ -141,7 +149,10 @@ namespace RealmOne.Projectiles.HeldProj
             if (aim != Projectile.velocity)
             {
                 Projectile.netUpdate = true;
+                Projectile.netImportant = true;
+                Projectile.netUpdate = true;
             }
+
 
             Projectile.velocity = aim;
         }

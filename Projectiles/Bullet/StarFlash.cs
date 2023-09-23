@@ -16,7 +16,7 @@ namespace RealmOne.Projectiles.Bullet
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Jelly Spark");
+            DisplayName.SetDefault("Pristine Starbang");
         }
 
         public override string Texture => Helper.Empty;
@@ -39,6 +39,8 @@ namespace RealmOne.Projectiles.Bullet
             Projectile.aiStyle = 0;
             Projectile.scale = 1f;
             Projectile.alpha = 255;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
 
         public override void AI()
@@ -71,10 +73,7 @@ namespace RealmOne.Projectiles.Bullet
                 }
             }
         }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            target.AddBuff(ModContent.BuffType<AltElectrified>(), 600);
-        }
+     
         public override void Load()
         { // This is called once on mod (re)load when this piece of content is being loaded.
           // This is the path to the texture that we'll use for the hook's chain. Make sure to update it.

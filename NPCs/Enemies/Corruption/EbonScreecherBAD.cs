@@ -120,13 +120,10 @@ namespace RealmOne.NPCs.Enemies.Corruption
 
             }
 
-            for (int k = 0; k < 15; k++)
+            for (int k = 0; k < 16; k++)
             {
-                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptionThorns);
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptionThorns, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
-
-
-
 
         }
 

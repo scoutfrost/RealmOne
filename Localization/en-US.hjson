@@ -189,7 +189,7 @@ Mods: {
 				DisplayName: Cigarette
 				Tooltip:
 					'''
-					When you light cigarette...
+					When you light a cigarette...
 					Your life burns with it.
 					You gain 20% increased damage and weapon speed but no life regen nor pickup hearts
 					'''
@@ -397,7 +397,7 @@ Mods: {
 
 			MagicGobBag: {
 				Tooltip: Conjures a rift that sucks in nearby enemies.
-				DisplayName: Magic Gob Bag
+				DisplayName: Sorcerer's Rift Pouch
 			}
 
 			WaterQuarry: {
@@ -559,26 +559,21 @@ Mods: {
 			}
 
 			SandTwister: {
-				DisplayName: Sand Twister
+				DisplayName: The Resplendent
 				Tooltip:
 					'''
-					Summons mini sandstorms near the yoyo
-					'Don't get twisted!'
-					'''
-			}
+					The string is made out of premium horsehair!
+					Summons sandstorms near the cursor
 
-			StormStrikerSpinner: {
-				DisplayName: Storm Striker Spinner
-				Tooltip: Spins a stormstriker baton
+					'''
 			}
 
 			AcornBlunderbuss: {
-				DisplayName: Acorn Blunderbuss
+				DisplayName: Blunderbush
 				Tooltip:
 					'''
-					Not very sturdy for a starter gun, but it sure makes a crunch!
-					Shoots fast velocity acorn fragments that explode at falling speed
-					'The acorns explode into sharp acorn shrapnel'
+					A bushy and heavy blunderbuss!
+					Shoots outs explosive acorns that explode into acorn shrapnel
 					Uses Crushed Acorns as ammo [i:RealmOne/CrushedAcorns]
 					'''
 			}
@@ -685,7 +680,7 @@ Mods: {
 			}
 
 			GushingFrostMinnow: {
-				DisplayName: Gushing Frost Minnow
+				DisplayName: Scoutfrost Minnow
 				Tooltip: "'A rare fish of the snow that has been frozen over time, filled with icy water'"
 			}
 
@@ -708,8 +703,8 @@ Mods: {
 				DisplayName: Impact Interceptor
 				Tooltip:
 					'''
-					Calls down randomly positioned pulse lasers that spark into electricity when homed onto an enemy
-					The lasers depend on the mouse position when firing
+					Releases an electric pulse sonar that damages enemies in a large area
+					Goes through walls		
 					'No WI-FI password required!'
 					'''
 			}
@@ -856,10 +851,11 @@ Mods: {
 				DisplayName: Lovecraft's Chain Shotgun
 				Tooltip:
 					'''
-					Shoots a random spread of bullets
 					Right click to shoot out a chain that splits out of the gun
 					The gun extends into the chain!
 					[c/ACAD4D:'I used this to protect myself from my own creations, preposterous activity!]
+					Uses Rusted Bullets [i:RealmOne/RustedBullets]
+
 					'''
 			}
 
@@ -1589,6 +1585,11 @@ Mods: {
 				Tooltip: "'Shoots a massive lightbulb that release a large aura of light'"
 			}
 
+			Lightbulb: {
+				DisplayName: Lightbulb
+				Tooltip: ""
+			}
+
 			MagmaBody: {
 				DisplayName: Magma Body
 				Tooltip: Hot cape fr
@@ -1629,19 +1630,9 @@ Mods: {
 				Tooltip: ""
 			}
 
-			SpiderNet: {
-				Tooltip: ""
-				DisplayName: Spider Net
-			}
-
 			NewtonCradleItem: {
 				Tooltip: ""
-				DisplayName: Newton Cradle Item
-			}
-
-			MiniWattleBushItem: {
-				Tooltip: ""
-				DisplayName: Wattle Bush
+				DisplayName: Newton's Cradle
 			}
 
 			Wattle: {
@@ -1663,9 +1654,14 @@ Mods: {
 				DisplayName: Super Snowball Cannon
 			}
 
-			WattleBow: {
-				Tooltip: Shoots a Wattle Arrow that has a chance to summon a thorn on kill
-				DisplayName: Wattle Bow
+			RainforestBow: {
+				Tooltip:
+					'''
+					Shoots out jungle arrows
+					Has a chance to shoot out a dangerous jungle arrow that creates nettles on impact
+					With a chance of a jungle spore to shoot out, exploding on contact.
+					'''
+				DisplayName: Rainforest Bow
 			}
 
 			AcornWand: {
@@ -1875,19 +1871,12 @@ Mods: {
 				DisplayName: Lovecraft's Rift Suitcase
 				Tooltip:
 					'''
-					<<<<<<< HEAD
 					Your Journey Begins!!
-					Right Click  crack open H.P Lovecraft's Rift Essentials
+					Right Click to crack open H.P Lovecraft's Rift Essentials
 					Below are the Weapons you get from it!(You also get other necessities!)
 					[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
 					[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
-					=======
-						Your Journey Begins!!
-						Right Click  crack open H.P Lovecraft's Rift Essentials
-						Below are the Weapons you get from it!(You also get other necessities!)
-							[i:RealmOne/ShatteredGemBlade][i:RealmOne/DualWieldCrossbows]
-							[i:RealmOne/Twigbulb][i:RealmOne/EmptyLocket]
-					>>>>>>> 9725829fd99088478cefff9b9ced7a9d4dcd43fd
+
 					'''
 			}
 
@@ -1897,12 +1886,12 @@ Mods: {
 			}
 
 			TatteredBody: {
-				DisplayName: Tattered Body
+				DisplayName: Tattered Breastplates
 				Tooltip: ""
 			}
 
 			TatteredLegs: {
-				DisplayName: Tattered Legs
+				DisplayName: Tattered Trousers
 				Tooltip: ""
 			}
 
@@ -2000,12 +1989,16 @@ Mods: {
 
 			Bloomarang: {
 				DisplayName: Bloomarang
-				Tooltip: ""
+				Tooltip: Throws out 6 bloomerangs that shoot out in a circle
 			}
 
 			SunflowerStaff: {
-				DisplayName: Sunflower Staff
-				Tooltip: ""
+				DisplayName: Sunflower Scepter
+				Tooltip:
+					'''
+					Conjures a glowing and growing sunflower on the cursor's position
+					Explodes into fast moving sunflower petals and catch in the wind.
+					'''
 			}
 
 			BloodHook: {
@@ -2020,6 +2013,36 @@ Mods: {
 
 			BloodBlower: {
 				DisplayName: Blood Blower
+				Tooltip: Shoots 2 Flesh Darts and a Bloodshot that penetrate enemies
+			}
+
+			TatteredJavlin: {
+				DisplayName: Tattered Javlin
+				Tooltip: ""
+			}
+
+			BarrensludgeJelly: {
+				DisplayName: Barrensludge Jelly
+				Tooltip: Sludgy!
+			}
+
+			BarrensludgeLime: {
+				DisplayName: Barrensludge Lime
+				Tooltip: Sour!
+			}
+
+			EyeballSoup: {
+				DisplayName: Eyeball Soup
+				Tooltip: Stares at you while you slurp it down!
+			}
+
+			JellyfishPlatter: {
+				DisplayName: Jellyfish Platter
+				Tooltip: Slimy, electric but also very nutritious
+			}
+
+			ToothedTendril: {
+				DisplayName: Toothed Tendril
 				Tooltip: ""
 			}
 		}
@@ -2032,7 +2055,7 @@ Mods: {
 
 			TreeSapBuff: {
 				Description: The power of rust!!
-				DisplayName: Brass Might
+				DisplayName: Tree Sap
 			}
 
 			TraditionalCologneBuff: {
@@ -2096,7 +2119,7 @@ Mods: {
 			}
 
 			CigaretteBuff: {
-				Description: You're really feelin it right now
+				Description: You're really feeling it right now
 				DisplayName: Cigarette Buff
 			}
 
@@ -2116,23 +2139,23 @@ Mods: {
 			}
 
 			BrassMight: {
-				Description: Mods.RealmOne.Buffs.BrassMight.Description
+				Description: You feel like a Brass Knight!
 				DisplayName: Brass Might
 			}
 
 			WineBuff: {
-				Description: Mods.RealmOne.Buffs.WineBuff.Description
+				Description: Bitter and spicy.
 				DisplayName: Wine Buff
 			}
 
 			BeerBuff: {
-				Description: Mods.RealmOne.Buffs.BeerBuff.Description
+				Description: Sour and tangy.
 				DisplayName: Beer Buff
 			}
 
 			PiggyDebuff: {
 				DisplayName: Piggy Debuff
-				Description: Mods.RealmOne.Buffs.PiggyDebuff.Description
+				Description: Piggy Power!
 			}
 		}
 
@@ -2140,7 +2163,7 @@ Mods: {
 			PompeiisPullProjectile.DisplayName: Pompeiis Pull Projectile
 			OldGoldHookProjectile.DisplayName: Old Gold Hook Projectile
 			OldChainHook.DisplayName: Old Chain Hook
-			.DisplayName: Wagon Wheel
+			WagonWheel.DisplayName: Wagon Wheel
 			CrossBowBolt.DisplayName: Cross Bow Bolt
 			HellBolt.DisplayName: Hell Bolt
 			CrimBulletProjectile.DisplayName: Crim Bullet Projectile
@@ -2271,7 +2294,10 @@ Mods: {
 			BloodHookProj.DisplayName: Blood Hook Proj
 			CrimclubSwing.DisplayName: Crimclub Swing
 			BloodBlowerProj.DisplayName: Blood Blower Proj
-			WagonWheel.DisplayName: Wagon Wheel
+			TatteredJavlinProj.DisplayName: Tattered Javlin Proj
+			ImpactSonarShot.DisplayName: Impact Sonar Shot
+			Starbang.DisplayName: Starbang
+			ToothedTendrilProj.DisplayName: Toothed Tendril Proj
 		}
 
 		NPCs: {
@@ -2426,6 +2452,8 @@ Mods: {
 			}
 
 			LostFarmerTied.DisplayName: Tangled Lost Farmer
+			JumboEye.DisplayName: Jumbo Eye
+			JumboEyeMedium.DisplayName: Jumbo Eye Medium
 		}
 
 		Dialogue: {

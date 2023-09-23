@@ -1,4 +1,4 @@
-﻿using RealmOne.Tiles.Blocks;
+﻿/*using RealmOne.Tiles.Blocks;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -32,4 +32,4 @@ namespace RealmOne.Items.Placeables
             Item.createTile = ModContent.TileType<EvoGrassTile>();
         }
     }
-}
+}*/

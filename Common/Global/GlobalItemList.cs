@@ -7,7 +7,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 
 
-namespace RealmOne.Global
+namespace RealmOne.Common.Global
 {
     public class GlobalItemList : GlobalItem
     {
@@ -22,10 +22,7 @@ namespace RealmOne.Global
             {
                 TooltipLine line = tooltips.FirstOrDefault(x => x.Name == "Tooltip0" && x.Mod == "Terraria");
                 if (line != null)
-                {
                     line.Text = "10% increased melee weapon speed and knockback";
-
-                }
 
             }
 
@@ -34,10 +31,7 @@ namespace RealmOne.Global
             {
                 TooltipLine line = tooltips.FirstOrDefault(x => x.Name == "Tooltip0" && x.Mod == "Terraria");
                 if (line != null)
-                {
                     line.Text = "Enemies are poisoned when touching you" + "\nYour weapons also inflict poisoned";
-
-                }
 
             }
         }
@@ -45,10 +39,7 @@ namespace RealmOne.Global
         public override void UpdateEquip(Item item, Player player)
         {
             if (item.type == ItemID.Shackle)
-            {
                 player.GetKnockback(DamageClass.Generic) += 0.10f;
-
-            }
         }
 
         public override void SetDefaults(Item item)
@@ -364,17 +355,11 @@ namespace RealmOne.Global
 
 
             if (item.type == ItemID.Wood)
-            {
                 item.ammo = item.type;
-            }
             if (item.type == ItemID.MudBlock)
-            {
                 item.ammo = item.type;
-            }
             if (item.type == ItemID.Cactus)
-            {
                 item.ammo = item.type;
-            }
 
 
 
@@ -858,13 +843,14 @@ namespace RealmOne.Global
             extractinator.AddRecipeGroup("IronBar", 15);
             extractinator.AddIngredient(ModContent.ItemType<BrassIngot>(), 8);
             extractinator.AddIngredient(ItemID.Glass, 10);
-            extractinator.AddTile(TileID.HeavyWorkBench);   
+            extractinator.AddTile(TileID.HeavyWorkBench);
             extractinator.Register();
 
             Recipe obj = Recipe.Create(ItemID.Blowpipe);
-            obj.AddIngredient(Mod, "WoodenGunBarrel", 1);
+            obj.AddIngredient(ItemID.Wood, 30);
+
             obj.AddIngredient(ItemID.Acorn, 5);
-            obj.AddTile(TileID.WorkBenches);
+            obj.AddTile(TileID.Anvils);
             obj.Register();
             Recipe obj2 = Recipe.Create(ItemID.BandofRegeneration, 1);
             obj2.AddIngredient(ItemID.LesserHealingPotion, 5);

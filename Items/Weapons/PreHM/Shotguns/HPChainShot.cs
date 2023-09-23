@@ -31,12 +31,12 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
 
         public override void SetDefaults()
         {
-            Item.damage = 5;
+            Item.damage = 4;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 40;
-            Item.useAnimation = 40;
+            Item.useTime = 42;
+            Item.useAnimation = 42;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 1f;
             Item.value = 30000;
@@ -63,7 +63,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
                 Item.autoReuse = false;
                 Item.shootSpeed = 15f;
                 Item.shoot = ProjectileType<OldChainHook>();
-                Item.damage = 15;
+                Item.damage = 14;
                 Item.knockBack = 4f;
 
             }
@@ -76,7 +76,7 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
                 Item.noUseGraphic = false;
                 Item.UseSound = rorAudio.SFX_PumpShotgun;
                 Item.shoot = ProjectileID.Bullet;
-                Item.damage = 5;
+                Item.damage = 4;
                 Item.knockBack = 1f;
                 Item.useAmmo = ModContent.ItemType<RustedBullets>();
             }

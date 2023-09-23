@@ -30,6 +30,8 @@ namespace RealmOne.Projectiles.Bullet
             Projectile.aiStyle = 0;
             Projectile.scale = 1f;
             Projectile.alpha = 255;
+            Projectile.netImportant = true;
+            Projectile.netUpdate = true;
         }
 
         public override void AI()

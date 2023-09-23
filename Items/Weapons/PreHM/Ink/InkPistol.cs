@@ -81,14 +81,12 @@ namespace RealmOne.Items.Weapons.PreHM.Ink
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<EidolicInk>(), 8);
 
-            recipe.AddIngredient(ModContent.ItemType<LeadGunBarrel>(), 1);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
             Recipe recipe1 = CreateRecipe();
             recipe1.AddIngredient(ModContent.ItemType<EidolicInk>(), 8);
 
-            recipe1.AddIngredient(ModContent.ItemType<IronGunBarrel>(), 1);
             recipe1.AddTile(TileID.Anvils);
             recipe1.Register();
         }

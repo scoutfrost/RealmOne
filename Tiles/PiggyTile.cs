@@ -1,5 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
+using RealmOne.Items.Accessories;
+using RealmOne.Items.BossSummons;
+using RealmOne.Items.Misc.Ores;
 using RealmOne.NPCs.Enemies.MiniBoss;
 using Terraria;
 using Terraria.Audio;
@@ -63,7 +66,11 @@ namespace RealmOne.Tiles
         {
             num = 1;
         }
-
+        public override bool CanDrop(int i, int j)
+        {
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<MoneyVase>());
+            return false;
+        }
         public override void KillMultiTile(int x, int y, int frameX, int frameY)
         {
             NPC.NewNPC(new EntitySource_TileBreak(x, y), x * 16, y * 16, ModContent.NPCType<PossessedPiggy>(), 32);

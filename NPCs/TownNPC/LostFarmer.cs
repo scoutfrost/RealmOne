@@ -88,7 +88,6 @@ namespace RealmOne.NPCs.TownNPC
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            SpawnModBiomes = new int[1] { ModContent.GetInstance<Biomes.Farm.FarmSurface>().Type };
 
             AnimationType = NPCID.Guide;
         }

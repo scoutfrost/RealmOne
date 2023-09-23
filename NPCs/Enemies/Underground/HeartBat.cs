@@ -77,6 +77,10 @@ namespace RealmOne.NPCs.Enemies.Underground
                 Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("HeartbatGore3").Type, 1f);
 
             }
+            for (int k = 0; k < 16; k++)
+            {
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.LifeCrystal, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
+            }
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)

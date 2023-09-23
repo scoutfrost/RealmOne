@@ -44,19 +44,13 @@ namespace RealmOne.Items.Weapons.PreHM.Shotguns
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.JungleSpores, 12);
-            recipe.AddIngredient(Mod, "LeadGunBarrel", 1);
+            recipe.AddRecipeGroup("IronBar", 8);
             recipe.AddIngredient(ItemID.RichMahogany, 10);
             recipe.AddIngredient(Mod, "GizmoScrap", 8);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
-            Recipe recipe1 = CreateRecipe();
-            recipe1.AddIngredient(ItemID.JungleSpores, 12);
-            recipe1.AddIngredient(Mod, "IronGunBarrel", 1);
-            recipe1.AddIngredient(ItemID.RichMahogany, 10);
-            recipe1.AddIngredient(Mod, "GizmoScrap", 8);
-            recipe1.AddTile(TileID.Anvils);
-            recipe1.Register();
+            
         }
 
         public override Vector2? HoldoutOffset()

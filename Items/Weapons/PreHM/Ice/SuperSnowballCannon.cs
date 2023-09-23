@@ -79,7 +79,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
             CreateRecipe()
             .AddIngredient(ItemID.SnowballCannon, 1)
             .AddIngredient(ItemID.IllegalGunParts, 1)
-            .AddIngredient(Mod, "LeadGunBarrel", 1)
+            .AddIngredient(ItemID.LeadBar, 10)
             .AddIngredient(Mod, "GizmoScrap", 25)
             .AddTile(TileID.Anvils)
             .Register();
@@ -87,7 +87,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
             CreateRecipe()
             .AddIngredient(ItemID.SnowballCannon, 1)
             .AddIngredient(ItemID.IllegalGunParts, 1)
-            .AddIngredient(Mod, "IronGunBarrel", 1)
+            .AddIngredient(ItemID.IronBar, 5)
             .AddIngredient(Mod, "GizmoScrap", 25)
             .AddTile(TileID.Anvils)
             .Register();

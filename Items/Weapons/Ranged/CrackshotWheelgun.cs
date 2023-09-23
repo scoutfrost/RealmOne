@@ -25,12 +25,12 @@ namespace RealmOne.Items.Weapons.Ranged
         }
         public override void SetDefaults()
         {
-            Item.damage = 15;
+            Item.damage = 13;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 55;
-            Item.useAnimation = 55;
+            Item.useTime = 56;
+            Item.useAnimation = 56;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 2f;
             Item.value = Item.buyPrice(0, 2, 25, 0);
@@ -60,8 +60,8 @@ namespace RealmOne.Items.Weapons.Ranged
             else
             {
                 Item.shootSpeed = 88f;
-                Item.useTime = 55;
-                Item.useAnimation = 55;
+                Item.useTime = 56;
+                Item.useAnimation = 56;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.noUseGraphic = false;
                 Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/WheelgunSound");

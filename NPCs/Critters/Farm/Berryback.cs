@@ -20,7 +20,7 @@ namespace RealmOne.NPCs.Critters.Farm
         {
             DisplayName.SetDefault("Berryback");
 
-            Main.npcFrameCount[NPC.type] = 9;
+                    Main.npcFrameCount[NPC.type] = 9;
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             { // Influences how the NPC looks in the Bestiary
@@ -106,14 +106,19 @@ namespace RealmOne.NPCs.Critters.Farm
         public override void HitEffect(NPC.HitInfo hit)
         {
 
-            for (int i = 0; i < 20; i++)
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
             {
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore1").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore2").Type, 1f);
 
-                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore3").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("BerryBackGore4").Type, 1f);
 
-                var d = Dust.NewDustPerfect(NPC.position, DustID.Grass, speed * 5, Scale: 2f);
-                ;
-                d.noGravity = false;
+
+            }
+            for (int k = 0; k < 14; k++)
+            {
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Grass, 2.5f * hit.HitDirection, -2.5f, Alpha: 25);
             }
         }
 

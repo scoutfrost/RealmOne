@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using RealmOne.Items.Ammo;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -70,7 +71,7 @@ namespace RealmOne.Items.Weapons.PreHM.Forest
             Recipe recipe = CreateRecipe();
             recipe.AddRecipeGroup("Wood", 10);
             recipe.AddIngredient(Mod, "GoopyGrass", 6);
-            recipe.AddIngredient(Mod, "WoodenGunBarrel", 1);
+            recipe.AddIngredient(ModContent.ItemType<CrushedAcorns>(), 25);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

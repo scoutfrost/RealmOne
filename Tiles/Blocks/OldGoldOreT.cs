@@ -25,7 +25,7 @@ namespace RealmOne.Tiles.Blocks
 
             LocalizedText name = CreateMapEntryName();
             name.SetDefault("Old Gold Ore");
-            AddMapEntry(new Color(243, 255, 0), name);
+            AddMapEntry(new Color(243, 255, 5), name);
 
             DustType = DustID.Gold;
 
@@ -46,8 +46,8 @@ namespace RealmOne.Tiles.Blocks
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
-            r = 0.12f;
-            g = 0.1f;
+            r = 0.13f;
+            g = 0.11f;
             b = 0.08f;
         }
 

@@ -44,10 +44,10 @@ namespace RealmOne.NPCs.Critters
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNight.Chance * 0.23f;
+            return SpawnCondition.OverworldNight.Chance * 0.16f;
         }
 
-        public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+       /* public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Main.spriteBatch.Draw(
                 Mod.Assets.Request<Texture2D>("NPCs/Critters/ImpactBunny_Glow").Value,
@@ -61,7 +61,7 @@ namespace RealmOne.NPCs.Critters
                 0
             );
 
-        }
+        }*/
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {

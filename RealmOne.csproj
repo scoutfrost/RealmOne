@@ -22,6 +22,7 @@
 	<ItemGroup>
 	  <None Remove="Biomes\Farm\FarmSapling.png" />
 	  <None Remove="Items\Weapons\PreHM\BloodMoon\BloodBlower_Glow.png" />
+	  <None Remove="NPCs\Enemies\BloodMoon\JumboEyeMedium.png" />
 	  <None Remove="Projectiles\Piggy\CopperCoin.png" />
 	  <None Remove="Projectiles\Piggy\Fire.png" />
 	  <None Remove="Projectiles\Piggy\GoldCoin.png" />
@@ -34,8 +35,10 @@
 		<PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Folder Include="Items\Tools\Other\" />
 	  <Folder Include="Items\Weapons\Fighter\" />
 	  <Folder Include="Items\Weapons\PreHM\Crimson\" />
+	  <Folder Include="Items\Weapons\PreHM\Forest\Wattles\" />
 	  <Folder Include="lib\" />
 	</ItemGroup>
 	<ItemGroup>

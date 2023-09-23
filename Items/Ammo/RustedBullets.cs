@@ -20,7 +20,7 @@ namespace RealmOne.Items.Ammo
             Item.width = 14; // The width of item hitbox
             Item.height = 14; // The height of item hitbox
 
-            Item.damage = 4; // The damage for projectiles isn't actually 8, it actually is the damage combined with the projectile and the item together
+            Item.damage = 3; // The damage for projectiles isn't actually 8, it actually is the damage combined with the projectile and the item together
             Item.DamageType = DamageClass.Ranged; // What type of damage does this ammo affect?
 
             Item.maxStack = 999; // The maximum number of items that can be contained within a single stack
@@ -29,7 +29,6 @@ namespace RealmOne.Items.Ammo
             Item.value = Item.sellPrice(0, 0, 1, 0); // Item price in copper coins (can be converted with Item.sellPrice/Item.buyPrice)
             Item.rare = ItemRarityID.White; // The color that the item's name will be in-game.
             Item.shoot = ProjectileID.Bullet; // The projectile that weapons fire when using this item as ammunition.
-            Item.CloneDefaults(ItemID.MusketBall);
             Item.ammo = Item.type; // Important. The first item in an ammo class sets the AmmoID to its type
         }
 

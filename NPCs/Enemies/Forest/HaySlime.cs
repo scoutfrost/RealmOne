@@ -33,7 +33,7 @@ namespace RealmOne.NPCs.Enemies.Forest
             NPC.width = 24;
             NPC.height = 20;
             NPC.damage = 10;
-            NPC.lifeMax = 63;
+            NPC.lifeMax = 58;
             NPC.value = Item.buyPrice(silver: 5);
             NPC.aiStyle = 1;
             NPC.HitSound = SoundID.NPCHit1;
@@ -103,14 +103,9 @@ namespace RealmOne.NPCs.Enemies.Forest
                 Gore.NewGore(NPC.GetSource_Death(), NPC.Top, NPC.velocity, GoreID.TreeLeaf_Jungle, 1f);
 
             }
-            for (int i = 0; i < 15; i++)
+            for (int k = 0; k < 30; k++)
             {
-
-                Vector2 speed = Main.rand.NextVector2Square(1f, 1f);
-
-                var d = Dust.NewDustPerfect(NPC.position, DustID.Hay, speed * 5, Scale: 1.5f);
-                d.noGravity = true;
-
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Hay, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
             }
         }
 

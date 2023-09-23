@@ -2,6 +2,7 @@
 using RealmOne.Common.Systems;
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Misc.Ores;
+using RealmOne.Items.Others;
 using RealmOne.Items.Placeables;
 using Terraria;
 using Terraria.Audio;
@@ -28,7 +29,7 @@ namespace RealmOne.Tiles
             Main.tileNoAttach[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
 
-            MineResist = 4f;
+            MineResist = 3f;
             MinPick = 20;
 
             DustType = DustID.WoodFurniture;
@@ -74,8 +75,9 @@ namespace RealmOne.Tiles
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<BrassNuggets>(), Main.rand.Next(3, 4));
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ItemID.Wood, Main.rand.Next(5, 10));
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(2, 6));
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(1, 2));
-    //        Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<TatteredBarrelItem>(), 0);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<FarmKey>(), Main.rand.Next(1, 1), Main.rand.NextBool(10));
+
+            //        Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<TatteredBarrelItem>(), 0);
 
 
 

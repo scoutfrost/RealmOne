@@ -7,7 +7,6 @@ using RealmOne.Items.PaperUI;
 using RealmOne.Items.Placeables.Furniture.BossThing;
 using RealmOne.Items.Vanities;
 using RealmOne.Items.Weapons.PreHM.BossDrops.SquirmoDrops;
-using RealmOne.Items.Weapons.Summoner;
 using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
@@ -70,7 +69,6 @@ namespace RealmOne
                               ModContent.ItemType<SquirmStaff>(),
                               ModContent.ItemType<SquirYo>(),
                               ModContent.ItemType<SquirmoLorePageOne>(),
-                              ModContent.ItemType<TwinklingTwig>(),
                               ModContent.ItemType<SquirmoRelicItem>(),
                               ModContent.ItemType<SquirmoMask>(),
                               ModContent.ItemType<SquirmoTrophyItem>(),

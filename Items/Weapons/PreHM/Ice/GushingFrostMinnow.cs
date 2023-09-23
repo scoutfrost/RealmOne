@@ -1,8 +1,12 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using RealmOne.RealmPlayer;
+using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace RealmOne.Items.Weapons.PreHM.Ice
 {
@@ -12,6 +16,7 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
         {
             DisplayName.SetDefault("Gushing Frost Minnow"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("'A rare fish of the snow that has been frozen over time, filled with icy water'");
+            ItemGlowy.AddItemGlowMask(Item.type, Texture +("_Glow"));
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
@@ -33,10 +38,34 @@ namespace RealmOne.Items.Weapons.PreHM.Ice
             Item.autoReuse = true;
             Item.shoot = ProjectileID.WaterStream;
             Item.shootSpeed = 14f;
+            Item.staff[Item.type] = true;
+
             Item.questItem = true;
             Item.uniqueStack = true;
             Item.noMelee = true;
 
+        }
+
+        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+        {
+            Texture2D texture = Request<Texture2D>(Texture+"_Glow", AssetRequestMode.ImmediateLoad).Value;
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    Item.position.X - Main.screenPosition.X + Item.width * 0.5f,
+                    Item.position.Y - Main.screenPosition.Y + Item.height - texture.Height * 0.5f + 2f
+                ),
+                new Rectangle(0, 0, texture.Width, texture.Height),
+
+                Color.White,
+                rotation,
+                texture.Size() * 0.5f,
+                scale,
+                SpriteEffects.None,
+                0f
+            );
         }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {

@@ -24,7 +24,7 @@ namespace RealmOne.Items.Misc
             Item.width = 20;
             Item.height = 20;
             Item.value = 20000;
-            Item.rare = ItemRarityID.Orange;
+            Item.rare = ItemRarityID.Blue;
             Item.maxStack = 999;
 
         }

@@ -21,6 +21,7 @@ namespace RealmOne.NPCs.TownNPC
 
         public override void SetStaticDefaults()
         {
+
             Main.npcFrameCount[Type] = 1;
 
             // Hide this NPC from the bestiary.
@@ -44,7 +45,9 @@ namespace RealmOne.NPCs.TownNPC
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            NPC.rarity = 1; // To make our NPC will show up on the Lifeform Analyzer.
+            NPC.rarity = 1; // To make our NPC will show up on the Lifeform Analyzer.\
+            NPC.dontTakeDamageFromHostiles = true;  
+            
         }
 
         public override bool CanChat()
@@ -63,6 +66,7 @@ namespace RealmOne.NPCs.TownNPC
             // First, don't run this code if it is a multiplayer client.
             if (Main.netMode != NetmodeID.MultiplayerClient)
             {
+             
                 // Loop through every player on the server.
                 for (int i = 0; i < Main.maxPlayers; i++)
                 {
@@ -102,7 +106,7 @@ namespace RealmOne.NPCs.TownNPC
             {
                 if (spawnInfo.SpawnTileType == ModContent.TileType<FarmSoil>() || spawnInfo.SpawnTileType == TileID.Dirt || spawnInfo.SpawnTileType == TileID.WoodBlock)
                 {
-                    return 1f;
+                    return 1.1f;
                 }
             }
             return 0f;
