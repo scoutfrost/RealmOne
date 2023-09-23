@@ -35,8 +35,7 @@ namespace RealmOne.Items.PaperUI
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<Parchment>(), 5)
-                                .AddIngredient(ModContent.ItemType<EidolicInk>(), 5)
+                .AddIngredient(ModContent.ItemType<Parchment>(), 15)
 
                 .AddTile(TileID.WorkBenches)
                 .Register();

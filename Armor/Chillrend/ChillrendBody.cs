@@ -43,7 +43,7 @@ namespace RealmOne.Armor.Chillrend
             .AddIngredient(ItemID.IceBlock,22)
                         .AddIngredient(ItemID.GoldBar, 10)
 
-                                    .AddIngredient(ModContent.ItemType<WaterDriplets>(), 4)
+                                    .AddIngredient(ItemID.Snowball, 50)
 
             .AddTile(TileID.Anvils)
             .Register();
@@ -53,7 +53,7 @@ namespace RealmOne.Armor.Chillrend
         .AddIngredient(ItemID.IceBlock, 22)
                     .AddIngredient(ItemID.PlatinumBar  , 10)
 
-                                .AddIngredient(ModContent.ItemType<WaterDriplets>(), 4)
+                                .AddIngredient(ItemID.Snowball, 50)
 
         .AddTile(TileID.Anvils)
         .Register();
