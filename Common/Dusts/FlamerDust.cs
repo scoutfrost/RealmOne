@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Common.Dusts
 {
-    public class FlamerDust : ModDust
+    /*public class FlamerDust : ModDust
     {
 
         public override void OnSpawn(Dust dust)
@@ -30,6 +30,6 @@ namespace RealmOne.Common.Dusts
 
             return false; // Return false to prevent vanilla behavior.
         }
-    }
+    }*/
 }
 
