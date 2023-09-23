@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework;
 using Terraria.GameContent.Creative;
 using Terraria.Audio;
 using RealmOne.Projectiles;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RealmOne.Items.Weapons.PreHM.BloodMoon
 {
@@ -40,44 +41,19 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
             Item.shootSpeed = 1f;
             Item.shoot = ModContent.ProjectileType<CrimclubSwing>();
         }
-        int swingDirection = 1;
-
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-            swingDirection = -swingDirection;
-            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI, 0, swingDirection);
-            return false;
-        }
     }
 
-    public class CrimclubSwing : HeldSword
+    public class CrimclubSwing : ModProjectile
     {
         public override string Texture => "RealmOne/Items/Weapons/PreHM/BloodMoon/Crimclub";
-      
+
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
         {
             behindNPCsAndTiles.Add(index);
         }
-        public override void AbstractAI()
-        {
-            Player player = Main.player[Projectile.owner];
-           
-        }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hitinfo, int damage)
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                Projectile.NewProjectile(Projectile.GetSource_FromAI(), target.Center, new Vector2(Main.rand.NextFloat(-2, 2), -3), ProjectileID.BloodNautilusShot, (int)(Projectile.damage * 0.3f), 0, 0);
-            }
-        }
-
-        public override void AbstractSetDefaults()
-        {
-            Projectile.width = 48;
-            Projectile.height = 66;
-            SwingSpeed = 30;
-        }
 
 
     }
+
+
 }

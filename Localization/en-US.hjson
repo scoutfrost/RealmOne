@@ -2140,7 +2140,6 @@ Mods: {
 			PompeiisPullProjectile.DisplayName: Pompeiis Pull Projectile
 			OldGoldHookProjectile.DisplayName: Old Gold Hook Projectile
 			OldChainHook.DisplayName: Old Chain Hook
-			
 			.DisplayName: Wagon Wheel
 			CrossBowBolt.DisplayName: Cross Bow Bolt
 			HellBolt.DisplayName: Hell Bolt
@@ -2272,6 +2271,7 @@ Mods: {
 			BloodHookProj.DisplayName: Blood Hook Proj
 			CrimclubSwing.DisplayName: Crimclub Swing
 			BloodBlowerProj.DisplayName: Blood Blower Proj
+			WagonWheel.DisplayName: Wagon Wheel
 		}
 
 		NPCs: {

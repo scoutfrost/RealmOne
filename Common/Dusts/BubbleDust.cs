@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace RealmOne.Dusts
 {
-    public class BubbleDust : ModDust
+    /*public class BubbleDust : ModDust
     {
         public override void OnSpawn(Dust dust)
         {
@@ -28,5 +28,5 @@ namespace RealmOne.Dusts
 
             return false;
         }
-    }
+    }*/
 }
