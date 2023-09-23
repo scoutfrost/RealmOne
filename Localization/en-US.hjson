@@ -2045,6 +2045,11 @@ Mods: {
 				DisplayName: Toothed Tendril
 				Tooltip: ""
 			}
+
+			SuperWheat: {
+				DisplayName: Super Wheat
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2454,6 +2459,21 @@ Mods: {
 			LostFarmerTied.DisplayName: Tangled Lost Farmer
 			JumboEye.DisplayName: Jumbo Eye
 			JumboEyeMedium.DisplayName: Jumbo Eye Medium
+
+			FarmerSlime: {
+				DisplayName: Farmer Slime
+
+				TownNPCMood: {
+					Content: I am content.
+					NoHome: I hate not having a home.
+					FarFromHome: I am too far from home.
+					LoveSpace: I love having so much space.
+					DislikeCrowded: I dislike how crowded I am.
+					HateCrowded: I hate how crowded I am.
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
+			}
 		}
 
 		Dialogue: {
