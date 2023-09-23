@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using RealmOne.Items.Misc;
 using RealmOne.Projectiles.Magic;
@@ -105,17 +105,17 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
                    }
 
                    dustTimer = 0;
-            */
+            
 
         }
        
-        /* public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
          {
 
                  Color color = Helper.IndicatorColor;
                  spriteBatch.Draw(Request<Texture2D>("RealmOne/NPCs/Enemies/GlitterdustSlime_Tex").Value, NPC.position - screenPos + new Vector2(-3, -6), color);
 
-         }*/
+         }
         public override void FindFrame(int frameHeight)
         {
             NPC.frameCounter += 0.14f;
@@ -160,3 +160,4 @@ namespace RealmOne.NPCs.Enemies.Glitterdust
         }
     }
 }
+*/

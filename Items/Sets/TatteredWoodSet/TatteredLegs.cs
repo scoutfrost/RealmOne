@@ -24,7 +24,7 @@ namespace RealmOne.Items.Sets.TatteredWoodSet
         {
             Item.width = 18;
             Item.height = 18;
-            Item.value = Item.sellPrice(gold: 1);
+            Item.value = Item.sellPrice(silver: 12);
             Item.rare = ItemRarityID.Blue;
             Item.defense = 2;
         }

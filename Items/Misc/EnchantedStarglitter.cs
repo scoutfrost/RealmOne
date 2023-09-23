@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+/*using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent;
@@ -12,7 +12,7 @@ namespace RealmOne.Items.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Enchanted Starglitter");
+            DisplayName.SetDefault("Star Gem");
             Tooltip.SetDefault("'Paraphernalia of a shooting star!'");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
@@ -25,7 +25,7 @@ namespace RealmOne.Items.Misc
             Item.useAnimation = 15;
             Item.useTime = 15;
             Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.width = 20;
+            Item.width = 20;    
             Item.height = 20;
             Item.value = Item.buyPrice(silver: 50);
             Item.rare = ItemRarityID.Blue;
@@ -52,4 +52,4 @@ namespace RealmOne.Items.Misc
             .Register();
         }
     }
-}
+}*/
