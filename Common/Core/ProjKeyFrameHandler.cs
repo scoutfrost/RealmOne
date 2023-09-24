@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Insignia.Helpers;
 
-namespace Insignia.Core.Common.Systems
+namespace RealmOne.Common.Core
 {
     public class ProjKeyFrameHandler
     {
