@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 
-namespace Insignia.Helpers
+namespace RealmOne.Common.Core
 {
     internal static class EasingFunctions
     {
