@@ -55,14 +55,14 @@ namespace RealmOne.NPCs.Enemies.BloodMoon
 			Player player = Main.player[NPC.target];
 			Vector2 TargetLocation = new Vector2(player.position.X + ((float)Math.Sin(SinThing)*100), player.position.Y - 150 - ((float)Math.Sin(SinThing) *10));
 
-			float speed = 9f;
+			float speed = 11f;
 			float inertia = 30f;
 			Vector2 direction = TargetLocation - NPC.Center;
 			direction.Normalize();
 			direction *= speed;
 			NPC.velocity = (NPC.velocity * (inertia - 1) + direction) / inertia;
 
-			NPC.rotation = NPC.velocity.X * 0.2f;
+			NPC.rotation = NPC.velocity.X * 0.3f;
 			var entitySource = NPC.GetSource_FromThis();
 			if (Vector2.Distance(TargetLocation, NPC.Center) <= 130)
 			{
@@ -76,14 +76,24 @@ namespace RealmOne.NPCs.Enemies.BloodMoon
 				
 			FindFrame(44);
 		}
-
-        public override void OnHitByProjectile(Projectile projectile, int damage, float knockback, bool crit)
+        public override void HitEffect(NPC.HitInfo hit)
         {
-			for (int i = 0; i < 10; i++)
-			{
-				Dust.NewDust(NPC.Center, NPC.width, NPC.height, DustID.Blood, Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
-			}
-		}
+            if (NPC.life <= 0 && Main.netMode != NetmodeID.Server)
+            {
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ArteryGore1").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ArteryGore2").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ArteryGore3").Type, 1f);
+                Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("ArteryGore4").Type, 1f);
+
+
+            }
+            for (int k = 0; k < 18; k++)
+            {
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Blood, 2.5f * hit.HitDirection, -2.5f, 0, Color.White, 0.9f);
+            }
+        }
+
+
         private int AnimFrameCount;
 		private int AnimTimer;
 		public override void FindFrame(int frameHeight)
@@ -102,32 +112,30 @@ namespace RealmOne.NPCs.Enemies.BloodMoon
 
 	public class ArteryCarrionProjectile :ModProjectile
     {
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 9;
+            ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
+        }
+        public override void SetDefaults()
 		{
 			Projectile.width = 12; // The width of projectile hitbox
 			Projectile.height = 12; // The height of projectile hitbox
-			Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
+			
 			Projectile.friendly = false; // Can the projectile deal damage to enemies?
 			Projectile.hostile = true; // Can the projectile deal damage to the player?
 			Projectile.DamageType = DamageClass.Ranged; // Is the projectile shoot by a ranged weapon?
-			Projectile.penetrate = 5; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-			Projectile.timeLeft = 600; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+			Projectile.penetrate = 3; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+			Projectile.timeLeft = 340; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
 			Projectile.damage = 10;
 			Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
 			Projectile.tileCollide = true; // Can the projectile collide with tiles?
-			Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
-			
+			Projectile.aiStyle = ProjAIStyleID.ThrownProjectile;
 
-			; // Act exactly like default Bullet
 		}
-        public override void OnSpawn(IEntitySource source)
-        {
-			SoundEngine.PlaySound(SoundID.NPCHit13, Projectile.position);
-		}
+       
         public override void AI()
         {
-			Projectile.velocity.Y += .1f;
-			Projectile.rotation += (float)Math.PI / 12;
 			if (Main.rand.NextBool(3))
 			{
 				Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, DustID.Blood, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f);
@@ -135,21 +143,32 @@ namespace RealmOne.NPCs.Enemies.BloodMoon
 		}
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
-            for(int i = 0; i < 10; i++)
+            Projectile.penetrate--; //Make sure it doesnt penetrate anymore
+            if (Projectile.penetrate <= 0)
+                Projectile.Kill();
+            else
             {
-				Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, DustID.Blood, Main.rand.Next(-1,1), Main.rand.Next(-1, 1));
-			}
-			Projectile.Kill();
-			return false;
+                Projectile.velocity *= 0.6f;
+
+                if (Projectile.velocity.Y != oldVelocity.Y)
+                {
+                    Projectile.velocity.Y = -oldVelocity.Y;
+                }
+                if (Projectile.velocity.X != oldVelocity.X)
+                {
+                    Projectile.velocity.X = -oldVelocity.X;
+                }
+
+            }
+            return false;
         }
 
-        public override void OnHitPlayer(Player target, int damage, bool crit)
+        public override void Kill(int timeLeft)
         {
-			for (int i = 0; i < 10; i++)
-			{
-				Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, DustID.Blood, Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
-			}
-			
-		}
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("ArteGore1").Type, 1f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("ArteGore2").Type, 1f);
+            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("ArteGore3").Type, 1f);
+
+        }
     }
 }
