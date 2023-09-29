@@ -2,6 +2,7 @@
 using RealmOne.Items.Misc;
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Opens;
+using RealmOne.Items.Placeables.Furniture.Paintings;
 using RealmOne.Items.Tools.Pick;
 using RealmOne.Items.Weapons.PreHM.Throwing;
 using Terraria;
@@ -21,6 +22,14 @@ namespace RealmOne.Common.Global.GlobalNPCList
                 // Adding an item to a vanilla NPC is easy:
                 // This item sells for the normal price.
                 shop.Add<IllicitStash>();
+            }
+
+            if (shop.NpcType == NPCID.Clothier)
+            {
+                shop.Add<NothingPNT>();
+                shop.Add<DepthsPNT>();
+                //Like i'm sorry, idk if i have to do more??:sob: -Zero
+                //Such an insult that you gave me smth so shrimple:sob::sob:sob:
             }
         }
         // ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.
