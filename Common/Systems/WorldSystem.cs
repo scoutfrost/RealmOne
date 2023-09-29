@@ -35,7 +35,7 @@ namespace RealmOne.Common.Systems
             {
                 Player player = Main.LocalPlayer;
 
-                if (type == 3 && Main.rand.NextBool(80))
+                if (type == 3 && Main.rand.NextBool(82))
                 {
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ItemType<RegenMush>(), 1);
                 }
@@ -63,9 +63,14 @@ namespace RealmOne.Common.Systems
                 {
                     Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<FreshSeaweed>(), Main.rand.Next(1, 4));
                 }
-                if (type == 12 && Main.rand.NextBool(5))
+                if (type == 12 && Main.rand.NextBool(7))
                 {
                     NPC.NewNPC(new EntitySource_TileBreak(i, j), i * 16, j * 16, NPCType<HeartBat>(), 1);
+                }
+
+                if (type == TileID.Cactus && Main.rand.NextBool(70))
+                {
+                    Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 48, ItemType<CactusFruit>(), Main.rand.Next(1, 1));
                 }
 
 
@@ -212,33 +217,7 @@ namespace RealmOne.Common.Systems
                 }
             }
 
-            int[] light = { ItemType<LightbulbLiquid>() };
-            int lightchoice = 0;
-            for (int LchestIndex = 0; LchestIndex < 1000; LchestIndex++)
-
-            {
-
-                Chest lightchest = Main.chest[LchestIndex];
-                if (lightchest != null && Main.tile[lightchest.x, lightchest.y].TileType == TileID.Containers && Main.tile[lightchest.x, lightchest.y].TileFrameX == 1 * 36)
-                {
-
-                    for (int LinventoryIndex = 0; LinventoryIndex < 40; LinventoryIndex++)
-                    {
-
-                        if (lightchest.item[LinventoryIndex].type == ItemID.None)
-                        {
-
-                            lightchest.item[LinventoryIndex].SetDefaults(light[lightchoice]);
-
-                            lightchest.item[LinventoryIndex].stack = WorldGen.genRand.Next(4, 5);
-
-                            lightchoice = (lightchoice + 1) % light.Length;
-                            //chest.item[inventoryIndex].SetDefaults(Main.rand.Next(itemsToPlaceInIceChests;
-                            break;
-                        }
-                    }
-                }
-            }
+          
 
             int[] pot = { ItemType<StackPotions>() };
             int potchoice = 0;
@@ -260,7 +239,7 @@ namespace RealmOne.Common.Systems
 
                             Pchest.item[PinventoryIndex].stack = WorldGen.genRand.Next(2, 5);
 
-                            potchoice = (potchoice + 1) % light.Length;
+                            potchoice = (potchoice + 1) % pot.Length;
                             //chest.item[inventoryIndex].SetDefaults(Main.rand.Next(itemsToPlaceInIceChests;
                             break;
                         }

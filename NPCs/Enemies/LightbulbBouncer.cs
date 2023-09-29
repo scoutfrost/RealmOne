@@ -114,19 +114,11 @@ namespace RealmOne.NPCs.Enemies
                 d.noGravity = true;
             }
 
-            for (int i = 0; i < 10; i++)
-            {
-
-                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-
-                var d = Dust.NewDustPerfect(NPC.position, DustID.Electric, speed * 5, Scale: 2f);
-                ;
-                d.noGravity = true;
-            }
+        
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<LightbulbLiquid>(), 1, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Lightbulb>(), 1, 1, 3));
             npcLoot.Add(ItemDropRule.Common(ItemID.Glass, 1, 1, 5));
 
         }

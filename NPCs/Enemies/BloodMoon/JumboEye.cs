@@ -57,19 +57,14 @@ namespace RealmOne.NPCs.Enemies.BloodMoon
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo) => spawnInfo.SpawnTileY < Main.rockLayer && Main.bloodMoon  ? SpawnCondition.OverworldNightMonster.Chance * 0.12f : 0f;
 
-        public override void FindFrame(int frameHeight)
-        {
-            NPC.frameCounter += 0.25f;
-            NPC.frameCounter %= Main.npcFrameCount[NPC.type];
-            int frame = (int)NPC.frameCounter;
-            NPC.frame.Y = frame * frameHeight;
-        }
+        
 
         public override bool CheckDead()
         {
-            for (int i = 0; i < Main.rand.Next(2, 2); i++)
+            for (int i = 0; i < Main.rand.Next(1, 1); i++)
             {
-             NPC.NewNPCDirect(NPC.GetSource_Death(), NPC.Center, ModContent.NPCType<JumboEyeMedium>(), ai3: 1).scale = 0.7f;
+             NPC.NewNPCDirect(NPC.GetSource_Death(), NPC.Left, ModContent.NPCType<JumboEyeMedium>(), ai3: 1).scale = 0.65f;
+                NPC.NewNPCDirect(NPC.GetSource_Death(), NPC.Right, ModContent.NPCType<JumboEyeMedium>(), ai3: 1).scale = 0.65f;
 
             }
             return true;

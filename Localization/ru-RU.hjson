@@ -2050,6 +2050,11 @@ Mods: {
 				// DisplayName: Super Wheat
 				// Tooltip: ""
 			}
+
+			CactusFruit: {
+				// DisplayName: Cactus Fruit
+				// Tooltip: ""
+			}
 		}
 
 		Buffs: {
