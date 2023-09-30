@@ -1,9 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using RealmOne.Common.Systems;
+using RealmOne.Items.Misc;
 using RealmOne.Items.Misc.EnemyDrops;
 using RealmOne.Items.Misc.Ores;
 using RealmOne.Items.Others;
 using RealmOne.Items.Placeables;
+using RealmOne.Items.Placeables.Furniture.Paintings;
+using RealmOne.Items.Weapons.PreHM.Brass;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -76,6 +79,12 @@ namespace RealmOne.Tiles
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ItemID.Wood, Main.rand.Next(5, 10));
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<GoopyGrass>(), Main.rand.Next(2, 6));
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<FarmKey>(), Main.rand.Next(1, 1), Main.rand.NextBool(10));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<NothingPNT>(), Main.rand.Next(1, 1), Main.rand.NextBool(5));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<Wheat>(), Main.rand.Next(3, 12), Main.rand.NextBool(2));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<SuperWheat>(), Main.rand.Next(1, 1), Main.rand.NextBool(50));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<BrassCandlewick>(), Main.rand.Next(1, 1), Main.rand.NextBool(8));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ItemID.Hay, Main.rand.Next(4, 7), Main.rand.NextBool(3));
+
 
             //        Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<TatteredBarrelItem>(), 0);
 
