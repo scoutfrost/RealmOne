@@ -16,6 +16,7 @@ using Terraria.ModLoader;
 using Color = Microsoft.Xna.Framework.Color;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 using RealmOne.Items.PaperUI;
+using Terraria.GameContent;
 
 namespace RealmOne.RealmPlayer
 {
@@ -322,13 +323,13 @@ namespace RealmOne.RealmPlayer
             {
                 if (p.controlDownHold)
                 {
-                    Main.NewText("Amogus");
+                    p.maxFallSpeed += 4f;
                 }
             }
 
 
 
-         
+
         }
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
         {

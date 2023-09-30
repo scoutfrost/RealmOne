@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="BossBars\PiggyBossBar.png" />
     <None Remove="Buffs\PiggyDebuff.png" />
+    <None Remove="Items\Misc\Lightbulb.png" />
     <None Remove="Items\Misc\SquirmoMusicBox.png" />
     <None Remove="Items\Weapons\PreHM\Piggy\PiggyPursuer.png" />
     <None Remove="NPCs\Enemies\MiniBoss\PossessedPiggy.png" />

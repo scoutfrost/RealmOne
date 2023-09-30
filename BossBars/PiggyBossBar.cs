@@ -13,6 +13,7 @@ namespace RealmOne.BossBars
     {
         private int bossHeadIndex = -1;
 
+
         public override Asset<Texture2D> GetIconTexture(ref Rectangle? iconFrame)
         {
             // Display the previously assigned head index
@@ -28,12 +29,15 @@ namespace RealmOne.BossBars
 
             NPC npc = Main.npc[info.npcIndexToAimAt];
             if (!npc.active)
+            {
                 return false;
-
-            bossHeadIndex = npc.GetBossHeadTextureIndex();
+            }
 
             life = npc.life;
             lifeMax = npc.lifeMax;
+            bossHeadIndex = npc.GetBossHeadTextureIndex();
+
+            
             return true;
         }
     }

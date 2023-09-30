@@ -70,6 +70,30 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 Velocity = 1f // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
+
+            NPCDebuffImmunityData dd = new NPCDebuffImmunityData
+            {
+                SpecificallyImmuneTo = new int[] {
+                    BuffID.Poisoned,
+
+                    BuffID.Confused,
+
+                    BuffID.Venom,
+
+                    BuffID.OnFire,
+
+                    BuffID.Venom,
+
+                    BuffID.Bleeding,
+
+                    BuffID.Frozen,
+
+                    BuffID.Ichor,
+
+                    BuffID.ShadowFlame
+                }
+            };
+            NPCID.Sets.DebuffImmunitySets.Add(Type, dd);
         }
 
         public override void SetDefaults()
@@ -79,7 +103,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPC.damage = 20;
             NPC.defense = 7;
             NPC.lifeMax = 700;
-            NPC.knockBackResist = 100f;
+            NPC.knockBackResist = 0f;
             NPC.value = Item.buyPrice(0, 2, 50, 50);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit4;
@@ -87,6 +111,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPC.netAlways = true;
             NPC.netUpdate = true;
             
+
             NPC.noGravity = false;
             NPC.boss = true;
             AnimationType = -1;
@@ -173,6 +198,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             }
         }
 
+      
 
         public override void AI()
         {
@@ -385,6 +411,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                     }
                     if (chargingUp < 61 && chargingUp != -1)
                     {
+                        NPC.dontTakeDamage = true;
                         int dust = Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.Torch);
                         Main.dust[dust].scale = 1.6f;
                         Main.dust[dust].noGravity = true;
@@ -426,7 +453,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         if (fireCD == 0)
                         {
                             Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(NPC.Center.X, NPC.Center.Y + 8), new Vector2(0, 0), ModContent.ProjectileType<Fire>(), damage / 5, 8f, Main.myPlayer);
-                            fireCD = 1;
+                            fireCD = 6;
                         }
                         if (direction == 1)
                         {
@@ -451,6 +478,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                                 NPC.netAlways = true;
                                 NPC.netUpdate = true;
                                 OverHeatSlide = false;
+                                NPC.dontTakeDamage = false;
                             }
                         }
                         else
@@ -493,9 +521,12 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         NPC.netAlways = true;
                         NPC.netUpdate = true;
                         chargingUp = -1;
-                        overHeat = 600;
+                        groundPound = 500;
+                        overHeat = 700;
                         coinRain = 300;
                         OverHeatSlide = false;
+                        NPC.dontTakeDamage = false;
+
                     }
 
 
@@ -515,6 +546,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                 {
                     if (time >= 0 && time <= 119)
                     {
+                        NPC.dontTakeDamage = true;
                         NPC.velocity.Y = 0;
                         NPC.noGravity = true;
                         NPC.velocity.X = 0;
@@ -532,6 +564,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                             dust1.noGravity = true;
                         }
                         NPC.noGravity = false;
+                        NPC.dontTakeDamage = false;
                         SoundEngine.PlaySound(SoundID.Item6, NPC.position);
                         Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(NPC.Center.X + 5, NPC.Center.Y), new Vector2(0, -5f), ModContent.ProjectileType<HugeGoldCoin>(), 0, 0f, Main.myPlayer);
                     }
