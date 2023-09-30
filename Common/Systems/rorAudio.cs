@@ -129,7 +129,7 @@ public class rorAudio : ModSystem
 
     public static readonly SoundStyle BulbShatter;
 
-
+    public static readonly SoundStyle PorcelainDamaged;
 
     static rorAudio()
     {
@@ -195,7 +195,7 @@ public class rorAudio : ModSystem
         TheIdol = new SoundStyle("RealmOne/Assets/Soundss/TheIdol", (SoundType)0);
         MagpieCalling = new SoundStyle("RealmOne/Assets/Soundss/MagpieCalling", (SoundType)0);
         BulbShatter = new SoundStyle("RealmOne/Assets/Soundss/BulbShatter", (SoundType)0);
-
+        PorcelainDamaged = new SoundStyle("RealmOne/Assets/Soundss/porcelainbreak", (SoundType)0);
 
     }
 }

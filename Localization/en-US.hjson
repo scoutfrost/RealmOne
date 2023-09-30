@@ -780,7 +780,9 @@ Mods: {
 				DisplayName: Piggy Pursuer
 				Tooltip:
 					'''
-					Swing a delicate but sharp porcelain sword
+					It gets damaged per each hit, making it lose some of its porcelain
+					In return, it gets faster
+					If damaged enough, it will shatter into lots of porcelain
 					'And I Huff and I puff and I blow your house down!!'
 					'''
 			}
@@ -2167,6 +2169,16 @@ Mods: {
 				DisplayName: Sealed Piggy Bank
 				Description: A healing piggy bank wont be dropping soon
 			}
+
+			PorcelainOvertime: {
+				DisplayName: Porcelain Overtime
+				Description: Mods.RealmOne.Buffs.PorcelainOvertime.Description
+			}
+
+			PursuerNo: {
+				DisplayName: Broken Piggy Pursuer
+				Description: Your Piggy Pursuer is recovering from the shatter
+			}
 		}
 
 		Projectiles: {
@@ -2309,6 +2321,9 @@ Mods: {
 			Starbang.DisplayName: Starbang
 			ToothedTendrilProj.DisplayName: Toothed Tendril Proj
 			ArteryCarrionProjectile.DisplayName: Artery Carrion Projectile
+			PiggyPursuerHeld.DisplayName: Piggy Pursuer Held
+			HoppingPiggy.DisplayName: Hopping Piggy
+			StickyPorcelain.DisplayName: Sticky Porcelain
 		}
 
 		NPCs: {

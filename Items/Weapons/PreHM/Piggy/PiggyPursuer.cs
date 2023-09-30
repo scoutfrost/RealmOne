@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
+using RealmOne.Buffs;
 using RealmOne.Common.Systems;
+using RealmOne.Projectiles.HeldProj;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent.Creative;
@@ -24,42 +26,34 @@ namespace RealmOne.Items.Weapons.PreHM.Piggy
         {
             Item.damage = 20;
             Item.DamageType = DamageClass.Melee;
-            Item.width = 42;
-            Item.height = 42;
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.width = 56;
+            Item.height = 62;
+            Item.useAnimation = 8;
+            Item.useTime = 8;
+            Item.reuseDelay = 1;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 3f;
             Item.value = 10000;
             Item.rare = ItemRarityID.Blue;
-            Item.useTurn = true;
+            Item.noMelee = true;
+            Item.noUseGraphic = true;
             Item.crit = 3;
+            Item.shoot = ModContent.ProjectileType<PiggyPursuerHeld>();
+            Item.shootSpeed = 20f;
             Item.UseSound = new SoundStyle($"{nameof(RealmOne)}/Assets/Soundss/SFX_MetalSwing");
 
         }
 
-        public override void MeleeEffects(Player player, Rectangle hitbox)
+        public override bool CanUseItem(Player player)
         {
-            int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.DungeonPink, 0f, 0f, 0, default, 1f);
-            Main.dust[dust].noGravity = true;
-            Main.dust[dust].velocity *= 0.8f;
-
+            return player.ownedProjectileCounts[ModContent.ProjectileType<PiggyPursuerHeld>()] < 1;
         }
 
-        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+        public override bool? UseItem(Player player)
         {
-            Collision.AnyCollision(Item.position + Item.velocity, Item.velocity, Item.width, Item.height);
-            SoundEngine.PlaySound(rorAudio.SFX_Porce);
+            
 
-            for (int i = 0; i < 10; i++)
-            {
-
-                Vector2 speed = Main.rand.NextVector2Square(-1f, 1f);
-
-                var d = Dust.NewDustPerfect(target.position, DustID.DungeonPink, speed * 5, Scale: 2f);
-                ;
-                d.noGravity = true;
-            }
+            return base.UseItem(player);
         }
 
         public override void AddRecipes()
@@ -72,10 +66,6 @@ namespace RealmOne.Items.Weapons.PreHM.Piggy
             recipe.Register();
         }
 
-        public override Vector2? HoldoutOffset()
-        {
-            var offset = new Vector2(6, 0);
-            return offset;
-        }
+       
     }
 }

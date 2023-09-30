@@ -282,6 +282,14 @@ namespace RealmOne.RealmPlayer
         public bool brassSet = false;
         public bool FallSpeed = false;
         public bool PiggySet = false;
+
+        public int PiggySwing = 0;
+        public int PorceDMG = 0;
+        public int PorceWidth = 58;
+        public int DMGPor = 0;
+        public int PigSwings = 0;
+        public int cd;
+
         int coinFall = 0;
         int coinFallAmount = 0;
         bool hasStriken = false;
@@ -392,7 +400,12 @@ namespace RealmOne.RealmPlayer
 
         public override void PreUpdate()
         {
+            Player player = Main.LocalPlayer;
 
+            if (player.GetModPlayer<RealmModPlayer>().cd > 1)
+            {
+                player.GetModPlayer<RealmModPlayer>().cd--;
+            }
 
             if (!brassSet)
                 marbleJustJumped = false;

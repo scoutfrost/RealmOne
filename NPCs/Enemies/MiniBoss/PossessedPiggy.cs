@@ -31,6 +31,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         int damage;
         int dmg;
 
+        int porcelaindropcd;
+
         //GroundPound
         Vector2 loc;
         int groundPound;
@@ -202,6 +204,11 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
 
         public override void AI()
         {
+            if (porcelaindropcd > 0)
+            {
+                porcelaindropcd--;
+            }
+
             NPC.netAlways = true;
             NPC.netUpdate = true;
             if (Main.masterMode == true)
@@ -748,8 +755,9 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
         }
         public override void HitEffect(NPC.HitInfo hit)
         {
-            if (Main.rand.Next(100) < 45)
+            if (Main.rand.Next(100) < 45 && porcelaindropcd == 0)
             {
+                porcelaindropcd = 60;
                 Vector2 down = new Vector2(0, -1f).RotatedBy(MathHelper.ToRadians(-100));
                 Projectile.NewProjectile(NPC.GetSource_FromThis(), NPC.Center, down, ModContent.ProjectileType<Porcelain>(), NPC.damage / 2, 0f, Main.myPlayer);
             }
