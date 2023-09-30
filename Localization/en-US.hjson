@@ -2160,7 +2160,7 @@ Mods: {
 
 			BeerBuff: {
 				Description: Sour and tangy.
-				DisplayName: Beer 
+				DisplayName: Beer
 			}
 
 			PiggyDebuff: {

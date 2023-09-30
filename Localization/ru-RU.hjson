@@ -1460,7 +1460,8 @@ Mods: {
 			PiggyLegs: {
 				/* Tooltip:
 					'''
-					15% increased fall speed but 8% decreased running speed
+					10% increased movement speed and acceleration
+					Hold down to fall faster
 					'Kicking something will probably shatter the grieves'
 					''' */
 				// DisplayName: Piggy Patroller Grieves
@@ -1469,7 +1470,7 @@ Mods: {
 			PiggyHead: {
 				/* Tooltip:
 					'''
-					5% increased damage but 5% decreased acceleration
+					7% increased damage, 10% increased attack speed, 3% decreased acceleration
 					'This is so uncomfortable, but it does the job'
 					''' */
 				// DisplayName: Piggy Patroller Mask
@@ -1478,8 +1479,7 @@ Mods: {
 			PiggyBody: {
 				/* Tooltip:
 					'''
-					5% increased knockback but 8% decreased movement speed
-					Discount on all Shop Items!
+					8% increased damage reduction, +20 max health, 5% decreased movement speed
 					'Carrying a heavy bodyplate of porcelain'
 					''' */
 				// DisplayName: Piggy Patroller Bodyplate
@@ -2155,17 +2155,17 @@ Mods: {
 
 			WineBuff: {
 				// Description: Bitter and spicy.
-				// DisplayName: Wine Buff
+				// DisplayName: Wine
 			}
 
 			BeerBuff: {
 				// Description: Sour and tangy.
-				// DisplayName: Beer Buff
+				// DisplayName: Beer
 			}
 
 			PiggyDebuff: {
-				// DisplayName: Piggy Debuff
-				// Description: Piggy Power!
+				// DisplayName: Sealed Piggy Bank
+				// Description: A healing piggy bank wont be dropping soon
 			}
 		}
 

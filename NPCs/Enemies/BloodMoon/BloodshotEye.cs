@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -147,7 +147,7 @@ namespace RealmOne.NPCs.Enemies.Bloodmoon
 
 
 				; // Act exactly like default Bullet
-			}
+			}	
 
 			public override void AI()
 			{
@@ -178,3 +178,4 @@ namespace RealmOne.NPCs.Enemies.Bloodmoon
         }
 	}
 }
+*/
