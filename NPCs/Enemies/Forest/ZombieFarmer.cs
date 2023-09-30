@@ -52,10 +52,10 @@ namespace RealmOne.NPCs.Enemies.Forest
         {
             Player player = spawnInfo.Player;
 
-            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && !Main.dayTime && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
+            if (player.ZoneFarmy() && !spawnInfo.PlayerSafe && (player.ZoneOverworldHeight || player.ZoneSkyHeight) && !(player.ZoneTowerSolar || player.ZoneTowerVortex || player.ZoneTowerNebula || player.ZoneTowerStardust || Main.pumpkinMoon || Main.snowMoon || Main.eclipse) && SpawnCondition.GoblinArmy.Chance == 0)
             {
                 int[] spawnTiles = { ModContent.TileType<FarmSoil>() };
-                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 1.5f : 0f;
+                return spawnTiles.Contains(spawnInfo.SpawnTileType) ? 0.811f : 0f;
             }
             return 0f;
         }
@@ -66,12 +66,9 @@ namespace RealmOne.NPCs.Enemies.Forest
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
 				// Sets the spawning conditions of this NPC that is listed in the bestiary.
              
-				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("A withered and undead zombie, looking for its next meal to plant in its fields"),
 
-				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
-				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
-				// so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
+				
             });
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)

@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*using Microsoft.Xna.Framework;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Placeables;
 using Terraria;
@@ -130,10 +130,11 @@ namespace RealmOne.NPCs.Enemies
         }
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EidolicInk>(), 2, 3, 5));
+           npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EidolicInk>(), 2, 3, 5));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Parchment>(), 3, 3, 5));
 
         }
     }
 }
 
+*/

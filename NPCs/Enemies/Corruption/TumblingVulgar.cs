@@ -42,7 +42,7 @@ namespace RealmOne.NPCs.Enemies.Corruption
         {
             if (spawnInfo.Player.ZoneCorrupt)
             {
-                return SpawnCondition.Corruption.Chance * 0.2f;
+                return SpawnCondition.Corruption.Chance * 0.16f;
             }
             return 0;
         }

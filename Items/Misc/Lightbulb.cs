@@ -36,7 +36,7 @@ namespace RealmOne.Items.Misc
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Glass, 2);
 
-            recipe.AddIngredient(ModContent.ItemType<LightbulbLiquid>(), 2);
+            recipe.AddIngredient(ModContent.ItemType<Lightbulb>(), 2);
             recipe.Register();
         }
     }

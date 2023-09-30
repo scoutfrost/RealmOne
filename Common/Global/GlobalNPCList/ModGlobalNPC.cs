@@ -1,6 +1,8 @@
 ﻿using RealmOne.Items.Accessories;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Misc.EnemyDrops;
+using RealmOne.Items.Opens;
+using RealmOne.Items.Placeables.Furniture.Paintings;
 using RealmOne.Items.Tools.Pick;
 using RealmOne.Items.Weapons.PreHM.Throwing;
 using Terraria;
@@ -13,7 +15,23 @@ namespace RealmOne.Common.Global.GlobalNPCList
 {
     public class ModGlobalNPCList : GlobalNPC
     {
+        public override void ModifyShop(NPCShop shop)
+        {
+            if (shop.NpcType == NPCID.Merchant)
+            {
+                // Adding an item to a vanilla NPC is easy:
+                // This item sells for the normal price.
+                shop.Add<IllicitStash>();
+            }
 
+            if (shop.NpcType == NPCID.Clothier)
+            {
+                shop.Add<NothingPNT>();
+                shop.Add<DepthsPNT>();
+                //Like i'm sorry, idk if i have to do more??:sob: -Zero
+                //Such an insult that you gave me smth so shrimple:sob::sob:sob:
+            }
+        }
         // ModifyNPCLoot uses a unique system called the ItemDropDatabase, which has many different rules for many different drop use cases.
         // Here we go through all of them, and how they can be used.
         // There are tons of other examples in vanilla! In a decompiled vanilla build, GameContent/ItemDropRules/ItemDropDatabase adds item drops to every single vanilla NPC, which can be a good resource.
@@ -36,9 +54,9 @@ namespace RealmOne.Common.Global.GlobalNPCList
                 if (Main.netMode != NetmodeID.Server)
                     Main.NewText(Language.GetTextValue("The seer of the land has been slayed, but you're still being watched."), 178, 30, 250);
 
-            if (npc.type == NPCID.EaterofWorldsHead)
-                if (Main.netMode != NetmodeID.Server)
-                    Main.NewText(Language.GetTextValue("The vile, slithering worm of infection has been slaughtered, decreasing the spread of power of the corruption"), 200, 50, 230);
+      //      if (npc.type == NPCID.EaterofWorldsHead)
+      //          if (Main.netMode != NetmodeID.Server)
+      //              Main.NewText(Language.GetTextValue("The vile, slithering worm of infection has been slaughtered, decreasing the spread of power of the corruption"), 200, 50, 230);
 
             if (npc.type == NPCID.BrainofCthulhu)
                 if (Main.netMode != NetmodeID.Server)

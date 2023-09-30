@@ -33,7 +33,7 @@ namespace RealmOne.NPCs.Enemies.Forest
             NPC.width = 24;
             NPC.height = 20;
             NPC.damage = 10;
-            NPC.lifeMax = 58;
+            NPC.lifeMax = 60;
             NPC.value = Item.buyPrice(silver: 5);
             NPC.aiStyle = 1;
             NPC.HitSound = SoundID.NPCHit1;

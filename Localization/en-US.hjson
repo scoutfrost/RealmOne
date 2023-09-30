@@ -2050,6 +2050,11 @@ Mods: {
 				DisplayName: Super Wheat
 				Tooltip: ""
 			}
+
+			CactusFruit: {
+				DisplayName: Cactus Fruit
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -2303,6 +2308,7 @@ Mods: {
 			ImpactSonarShot.DisplayName: Impact Sonar Shot
 			Starbang.DisplayName: Starbang
 			ToothedTendrilProj.DisplayName: Toothed Tendril Proj
+			ArteryCarrionProjectile.DisplayName: Artery Carrion Projectile
 		}
 
 		NPCs: {
@@ -2474,6 +2480,8 @@ Mods: {
 					Princess_LovesNPC: I like {NPCName}.
 				}
 			}
+
+			ArteryCarrion.DisplayName: Artery Carrion
 		}
 
 		Dialogue: {

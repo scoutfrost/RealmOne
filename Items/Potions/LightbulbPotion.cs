@@ -39,7 +39,7 @@ namespace RealmOne.Items.Potions
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Mushroom, 2);
-            recipe.AddIngredient(ModContent.ItemType<LightbulbLiquid>(), 2);
+            recipe.AddIngredient(ModContent.ItemType<Lightbulb>(), 2);
             recipe.AddIngredient(ItemID.BottledWater, 1);
             recipe.AddTile(TileID.Bottles);
             recipe.Register();

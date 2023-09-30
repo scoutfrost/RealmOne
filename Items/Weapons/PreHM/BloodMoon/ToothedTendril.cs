@@ -25,9 +25,9 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
         public override void SetDefaults()
         {
             Item.DefaultToWhip(ModContent.ProjectileType<ToothedTendrilProj>(), 17, 3, 4);
-            Item.useTime = 30;
-            Item.useAnimation = 30;
-            Item.rare = ModContent.RarityType<ModRarities>();
+            Item.useTime = 35;
+            Item.useAnimation = 35;
+            Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
             Item.channel = true;
         }
@@ -50,8 +50,8 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
         {
             Projectile.DefaultToWhip();
 
-            Projectile.WhipSettings.Segments = 8;
-            Projectile.WhipSettings.RangeMultiplier = 1f;
+            Projectile.WhipSettings.Segments = 15;
+            Projectile.WhipSettings.RangeMultiplier = 1.5f;
         }
 
         public override void AI()
@@ -84,10 +84,11 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
-            SoundEngine.PlaySound(rorAudio.BrokenBarrel, Projectile.position);
-            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Left, Vector2.Zero, Mod.Find<ModGore>("ToothGore1").Type, 1f);
-            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("ToothGore2").Type, 1f);
-            Gore.NewGore(Projectile.GetSource_Death(), Projectile.Right, Vector2.Zero, Mod.Find<ModGore>("ToothGore3").Type, 1f);
+            
+            
+          //  Gore.NewGore(Projectile.GetSource_Death(), Projectile.Left, Vector2.Zero, Mod.Find<ModGore>("ToothGore1").Type, 1f);
+         //   Gore.NewGore(Projectile.GetSource_Death(), Projectile.Center, Vector2.Zero, Mod.Find<ModGore>("ToothGore2").Type, 1f);
+        //    Gore.NewGore(Projectile.GetSource_Death(), Projectile.Right, Vector2.Zero, Mod.Find<ModGore>("ToothGore3").Type, 1f);
 
 
         }

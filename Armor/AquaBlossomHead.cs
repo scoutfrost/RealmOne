@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+/*using Microsoft.Xna.Framework;
 using RealmOne.Items.Misc;
 using RealmOne.Items.Misc.Plants;
 using Terraria;
@@ -76,3 +76,4 @@ namespace RealmOne.Armor
         }
     }
 }
+*/
