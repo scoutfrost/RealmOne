@@ -322,7 +322,7 @@ namespace RealmOne.RealmPlayer
             {
                 if (p.controlDownHold)
                 {
-                    p.maxFallSpeed += 0.5f;
+                    Main.NewText("Amogus");
                 }
             }
 

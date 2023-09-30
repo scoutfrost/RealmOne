@@ -42,7 +42,7 @@ namespace RealmOne.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "10% Armor penetration\nGreatly increased coin pickup range\nTaking damage has a chance to rain coins around you\nUpon going under 60% health, a healing piggy bank drops on your cursor\nIt explodes, dealing damage to enemies\nThis has a minute cooldown"; // This is the setbonus tooltip
+            player.setBonus = "10% increased armor penetration\nGreatly increased coin pickup range\nTaking damage has a chance to rain coins around you\nUpon going under 60% health, a healing piggy bank drops on your cursor\nIt explodes, dealing damage to enemies\nThis has a minute cooldown"; // This is the setbonus tooltip
             player.GetArmorPenetration(DamageClass.Generic) += 10f;
             player.GetModPlayer<RealmModPlayer>().PiggySet = true;
             player.goldRing = true;

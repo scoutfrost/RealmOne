@@ -78,8 +78,8 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
             NPC.height = 40;
             NPC.damage = 20;
             NPC.defense = 7;
-            NPC.lifeMax = 400;
-            NPC.knockBackResist = 0.6f;
+            NPC.lifeMax = 700;
+            NPC.knockBackResist = 100f;
             NPC.value = Item.buyPrice(0, 2, 50, 50);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit4;
@@ -426,7 +426,7 @@ namespace RealmOne.NPCs.Enemies.MiniBoss
                         if (fireCD == 0)
                         {
                             Projectile.NewProjectile(NPC.GetSource_FromThis(), new Vector2(NPC.Center.X, NPC.Center.Y + 8), new Vector2(0, 0), ModContent.ProjectileType<Fire>(), damage / 5, 8f, Main.myPlayer);
-                            fireCD = 6;
+                            fireCD = 1;
                         }
                         if (direction == 1)
                         {

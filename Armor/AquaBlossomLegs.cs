@@ -36,7 +36,7 @@ namespace RealmOne.Armor
         {
             CreateRecipe()
 
-            .AddIngredient(ModContent.ItemType<Aquablossom>(), 4)
+            .AddIngredient(Mod, "Aquablossom", 6)
                                     .AddIngredient(ModContent.ItemType<WaterDriplets>(), 6)
 
             .AddTile(TileID.Anvils)

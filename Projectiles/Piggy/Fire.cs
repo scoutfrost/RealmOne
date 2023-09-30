@@ -14,7 +14,7 @@ namespace RealmOne.Projectiles.Piggy
         }
         public override void SetDefaults()
         {
-            Projectile.width = 64;
+            Projectile.width = 16;
             Projectile.height = 16;
             Projectile.friendly = false;
             Projectile.hostile = true;
