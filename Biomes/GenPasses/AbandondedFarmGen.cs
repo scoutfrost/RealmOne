@@ -14,6 +14,7 @@ using RealmOne.Tiles;
 using Terraria.DataStructures;
 using RealmOne;
 using System.Reflection.Emit;
+using StructureHelper;
 
 namespace RealmOne.Biomes.GenPasses
 {
@@ -95,7 +96,7 @@ namespace RealmOne.Biomes.GenPasses
 				{
 					WorldGen.TileRunner(i, y + 7, 12, 10, ModContent.TileType<FarmSoil>(), true);
 				}
-				//Generator.GenerateStructure("Structures/Barn1", new Point16(barnStartX, y - barnHeight), Mod, false);
+				Generator.GenerateStructure("Structures/Barn1", new Point16(barnStartX, y - barnHeight), Mod, false);
 			}
         }
 	}
