@@ -85,14 +85,16 @@ namespace RealmOne.NPCs.Enemies.Bloodmoon
 			FindFrame(20);
 		}
 
-		public override void OnHitByProjectile(Projectile projectile, int damage, float knockback, bool crit)
-		{
-			for (int i = 0; i < 10; i++)
-			{
-				Dust.NewDust(NPC.Center, NPC.width, NPC.height, DustID.Blood, Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
-			}
-		}
-		private int AnimFrameCount;
+
+        public override void HitEffect(NPC.HitInfo hit) // when the npc is hit, do smth (better than checking when hit by proj or melee)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Dust.NewDust(NPC.Center, NPC.width, NPC.height, DustID.Blood, Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
+            }
+        }
+
+        private int AnimFrameCount;
 		private int AnimTimer;
 		public override void FindFrame(int frameHeight)
 		{
@@ -166,14 +168,13 @@ namespace RealmOne.NPCs.Enemies.Bloodmoon
 				return false;
 			}
 
-			public override void OnHitPlayer(Player target, int damage, bool crit)
-			{
-				for (int i = 0; i < 7; i++)
-				{
-					Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, DustID.Blood, Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
-				}
-
-			}
-		}
+            public override void Kill(int timeLeft) // the proj already dies when it hits the player so you can just make it do the dust then
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, DustID.Blood, Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
+                }
+            }
+        }
 	}
 }
