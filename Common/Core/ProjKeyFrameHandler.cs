@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Insignia.Helpers;
 
 namespace RealmOne.Common.Core
 {
@@ -125,7 +126,7 @@ namespace RealmOne.Common.Core
                     return null;
             }
         }
-        public delegate Vector2 DesiredChange(Vector2 point);
+        public delegate Vector2 DesiredChange(Vector2 point, int i);
         /// <summary>
         /// Change all points in a certain way, implemented by desiredchange.
         /// </summary>
@@ -135,7 +136,7 @@ namespace RealmOne.Common.Core
         {
             for (int i = 0; i < points.Count; i++)
             {
-                points[i] = desiredChange(points[i]);
+                points[i] = desiredChange(points[i], i);
             }
         }
         /// <summary>
@@ -146,26 +147,47 @@ namespace RealmOne.Common.Core
         /// <param name="owner">The projectile's owner.</param>
         /// <param name="points">The returned keypoints from GetPoints().</param>
         /// <param name="i">A timer. Set this to zero if the player is facing right, keypoints.Count - 1 if facing left. Set this in OnSpawn.</param>
+        /// <param name="projOffset">A vector2 offset for the position of the projectile.</param>
+        /// <param name="upswing">Use in conjunction with a modplayer variable. Whether the projectile swings up or not.</param>
+        /// <param name="rotOffset">A float offset for the rotation of the projectile, measured in radians</param>
         /// <returns>The projectile's center with the right movement applied from the points.</returns>
-        public Vector2 CalculateSwordSwingPoints(Projectile projectile, Vector2 mouse, Player owner, List<Vector2> points, ref int i, float rotOffset = 0)
+        public Vector2 CalculateSwordSwingPointsAndApplyRotation(Projectile projectile, Vector2 mouse, Player owner, List<Vector2> points, ref int i, Vector2 projOffset = default, bool upswing = false, float rotOffset = 0)
         {
-            if (i < points.Count - 1 && owner.direction == 1)
+            if (projOffset == default)
             {
-                i++;
-                projectile.rotation = owner.Center.DirectionTo(owner.Center + points[i]).ToRotation() + MathHelper.PiOver4 + owner.Center.DirectionTo(mouse).ToRotation() + rotOffset;
-
+                projOffset = Vector2.Zero;
             }
-            else if (i > 0 && owner.direction == -1)
+            if (upswing)
             {
-                i--;
-                projectile.rotation = owner.Center.DirectionTo(owner.Center + points[i]).ToRotation() - MathHelper.PiOver4 + MathHelper.Pi + owner.Center.DirectionTo(mouse).ToRotation() + rotOffset;
+                rotOffset -= MathHelper.PiOver2 * owner.direction;
+            }
+
+            if ((owner.direction == 1 && !upswing) || owner.direction == -1 && upswing)
+            {
+                if (i < points.Count - 1)
+                {
+                    i++;
+                    projectile.rotation = owner.Center.DirectionTo(owner.Center + points[i]).ToRotation() + MathHelper.PiOver4 + owner.Center.DirectionTo(mouse).ToRotation() + rotOffset;
+                }
+                else
+                {
+                    projectile.Kill();
+                }
             }
             else
             {
-               projectile.Kill();
+                if (i > 0)
+                {
+                    i--;
+                    projectile.rotation = owner.Center.DirectionTo(owner.Center + points[i]).ToRotation() - MathHelper.PiOver4 + MathHelper.Pi + owner.Center.DirectionTo(mouse).ToRotation() + rotOffset;
+                }
+                else
+                {
+                    projectile.Kill();
+                }
             }
 
-            return owner.Center + points[i].RotatedBy(owner.Center.DirectionTo(mouse).ToRotation());
+            return owner.Center + points[i].RotatedBy(owner.Center.DirectionTo(mouse).ToRotation()) + projOffset;
         }
         /// <summary>
         /// Sets common variables that most held projectiles have. Call this in AI.
