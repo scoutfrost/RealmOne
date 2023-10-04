@@ -41,6 +41,11 @@ namespace RealmOne.Items.Weapons.PreHM.BloodMoon
             Item.shootSpeed = 1f;
             Item.shoot = ModContent.ProjectileType<CrimclubSwing>();
         }
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            player.GetModPlayer<CrimClubPlayer>().SwingCount++;
+            return true;
+        }
     }
 
     public class CrimClubSwing : ModProjectile
